@@ -25,8 +25,6 @@ export default function Home() {
         </div>
       </section>
 
-      <RuixenBentoCards />
-      
       <CapabilitiesEngineered />
       
       <LazySections />
