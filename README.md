@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Antigravity Redesign
+
+Modern AI agency website built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. Features 3D sections using Three.js/React Three Fiber, smooth animations with Framer Motion and GSAP, and smooth scrolling with Lenis.
+
+## Features
+
+- Next.js 16 App Router with React 19
+- Tailwind CSS v4 with CSS-first configuration
+- 3D sections with React Three Fiber
+- Smooth animations with Framer Motion & GSAP
+- Lenis smooth scrolling
+- Contact form with Resend API
+- SEO optimized with sitemap and robots.txt
+- Responsive design with dark mode aesthetic
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+GOOGLE_AI_STUDIO_API_KEY=your_google_api_key
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL_TO=your_email@example.com
+CONTACT_EMAIL_FROM=your_domain@resend.dev
+```
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 16.2.1 + React 19.2.4
+- **Styling**: Tailwind CSS v4
+- **3D**: Three.js, @react-three/fiber, @react-three/drei
+- **Animation**: Framer Motion, GSAP, maath
+- **Scroll**: Lenis
+- **Fonts**: Geist (Google Fonts via Next.js)
+- **Email**: Resend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License - see LICENSE file for details.
