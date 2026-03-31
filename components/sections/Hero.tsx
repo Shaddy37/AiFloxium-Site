@@ -24,7 +24,7 @@ export default function Hero() {
   }, [words.length]);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-32 pb-12 md:pb-16 overflow-hidden bg-background">
       {/* Background Animation */}
       <div className="absolute inset-0 z-0">
         <FloatingPaths position={1} />
