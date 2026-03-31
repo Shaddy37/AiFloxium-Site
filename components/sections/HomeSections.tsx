@@ -43,7 +43,7 @@ export function Vision() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-zinc-700" /> Agency Vision
               </h2>
               <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white leading-[0.9] tracking-tighter">
@@ -97,7 +97,7 @@ export function Process() {
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
            <div>
-              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4">
+              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-zinc-700" /> Methodology
               </h2>
               <h3 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tighter">
@@ -175,7 +175,7 @@ export function Trust() {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+            <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
               <span className="w-8 h-[1px] bg-zinc-700" /> Proof of Impact
             </h2>
             <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-white">
@@ -213,7 +213,7 @@ export function Trust() {
                   <div className="w-10 h-10 rounded-lg bg-white/5 border border-zinc-700 flex items-center justify-center">
                     {study.icon}
                   </div>
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">{study.category}</span>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">{study.category}</span>
                 </div>
                 <h4 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 tracking-tight">{study.title}</h4>
                 <p className="text-zinc-400 text-lg leading-relaxed max-w-md mb-8">{study.desc}</p>
@@ -240,13 +240,13 @@ export function Pricing() {
         <CornerPlusIcons />
         
         <div className="w-full lg:w-3/5">
-          <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6">Investment</h2>
+          <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6">Investment</h2>
           <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white">PRICING <br /> PHILOSOPHY.</h3>
           <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
             Every business has vastly unique operational needs. Rather than rigid software, we structure bespoke quotes based entirely on the automation complexity and whether we are building internal tools via Claude Code or wiring webhooks in n8n.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-zinc-700 rounded-lg bg-zinc-900/50 w-fit relative overflow-hidden">
-             <div className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Typical Deployment Range</div>
+             <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
              <div className="text-2xl md:text-3xl font-bold font-heading text-white">$1,500 — $5,000+</div>
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 w-fit">
@@ -300,7 +300,7 @@ export function Founder() {
             </div>
             
             <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
-              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-zinc-700" /> Direct Architect Access
               </h2>
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-8 leading-[1.1]">
@@ -318,7 +318,7 @@ export function Founder() {
                 </Link>
                 <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer">
                   <p className="text-white font-bold font-heading text-xl">Muhammad Shadab Shams</p>
-                  <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest mt-1">Lead Architect & Systems Engineer</p>
+                  <p className="text-zinc-400 font-mono text-xs uppercase tracking-widest mt-1">Lead Architect & Systems Engineer</p>
                 </Link>
               </div>
             </div>
@@ -337,7 +337,7 @@ export function TechStack() {
   return (
     <section className="py-24 px-6 relative bg-background border-y border-white/5 overflow-hidden">
       <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
-        <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0">Arsenal & Tooling:</h2>
+        <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0">Arsenal & Tooling:</h2>
         
         {/* Infinite scrolling marquee wrapper */}
         <div className="w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

@@ -105,24 +105,24 @@ export const Contact2 = ({
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <Label htmlFor="firstname" className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">First Name</Label>
+                <Label htmlFor="firstname" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">First Name</Label>
                 <Input type="text" id="firstname" value={formData.firstname} onChange={handleChange} required placeholder="Jane" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lastname" className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Last Name</Label>
+                <Label htmlFor="lastname" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Last Name</Label>
                 <Input type="text" id="lastname" value={formData.lastname} onChange={handleChange} placeholder="Doe" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Work Email</Label>
+              <Label htmlFor="email" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Work Email</Label>
               <Input type="email" id="email" value={formData.email} onChange={handleChange} required placeholder="jane@company.com" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="subject" className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Objective</Label>
+              <Label htmlFor="subject" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Objective</Label>
               <Input type="text" id="subject" value={formData.subject} onChange={handleChange} required placeholder="n8n Automation / Custom Agents" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message" className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Specification</Label>
+              <Label htmlFor="message" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Specification</Label>
               <Textarea id="message" value={formData.message} onChange={handleChange} required placeholder="Describe your current bottleneck..." className="bg-zinc-950/50 border-white/10 min-h-[120px] rounded-xl focus:ring-white/20 transition-all resize-none text-white placeholder:text-zinc-700 p-4" />
             </div>
             <Button type="submit" disabled={status === "loading" || status === "success"} size="lg" className="w-full h-14 rounded-xl bg-white text-black hover:bg-zinc-200 transition-all font-bold tracking-tight shadow-xl shadow-white/5 active:scale-[0.98]">

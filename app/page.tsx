@@ -18,7 +18,7 @@ export default function Home() {
       {/* Companies We Collaborate With Section */}
       <section className="py-24 px-6 border-y border-white/5 relative bg-zinc-950/20">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="mb-12 font-medium text-lg text-zinc-500 tracking-tight md:text-2xl uppercase tracking-[0.2em]">
+          <h2 className="mb-12 font-medium text-lg text-zinc-400 tracking-tight md:text-2xl uppercase tracking-[0.2em]">
             Companies we <span className="font-semibold text-white">collaborate</span> with.
           </h2>
           <LogoCloud />

@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-                aria-label="Twitter / X"
+                aria-label="Twitter / X profile"
               >
                 <span className="font-bold text-lg">𝕏</span>
               </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn profile of Muhammad Shadab Shams"
               >
                 <span className="font-bold text-lg uppercase font-heading">in</span>
               </a>
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Services</h4>
+            <h3 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Services</h3>
             <ul className="flex flex-col gap-4">
               <li><Link href="/services/n8n-workflow-automation" className="text-muted-foreground hover:text-white transition-colors">n8n Workflow Automation</Link></li>
               <li><Link href="/services/vibe-coding" className="text-muted-foreground hover:text-white transition-colors">Vibe Coding (Claude)</Link></li>
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Company</h4>
+            <h3 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Company</h3>
             <ul className="flex flex-col gap-4">
               <li><Link href="/about" className="text-muted-foreground hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/resources" className="text-muted-foreground hover:text-white transition-colors">Resources</Link></li>

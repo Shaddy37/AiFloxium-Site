@@ -161,6 +161,7 @@ export default function Navbar() {
           variant="ghost" 
           onClick={() => setOpen(!open)} 
           className="lg:hidden text-white hover:bg-transparent z-[110]"
+          aria-label={open ? "Close menu" : "Open menu"}
         >
           <MenuToggleIcon open={open} className="size-6" duration={300} />
         </Button>
