@@ -27,8 +27,8 @@ export default function AIConsultingPage() {
     <main className="relative bg-background min-h-screen">
       <Navbar />
       
-      <div className="pt-40 pb-20 px-6 container mx-auto">
-        <h1 className="text-6xl md:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-[0.9]">
+      <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-[0.9]">
           STRATEGIC <br/><span className="text-gradient">CONSULTING.</span>
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium">

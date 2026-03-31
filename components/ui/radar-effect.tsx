@@ -78,9 +78,9 @@ export const IconContainer = ({
       transition={{ duration: 0.2, delay: delay ?? 0 }}
       className="relative z-50 flex flex-col items-center justify-center space-y-2"
     >
-      <div className="flex h-16 w-16 items-center justify-center rounded-2xl glass-card border-white/20 hover:scale-110 transition-transform duration-300">
+      <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl glass-card border-white/20 hover:scale-110 transition-transform duration-300">
         {icon || (
-          <svg className="h-8 w-8 text-zinc-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
           </svg>
         )}
