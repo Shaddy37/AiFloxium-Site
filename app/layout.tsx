@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";
@@ -137,6 +138,7 @@ export default function RootLayout({
             {children}
           </SmoothScroll>
         </PageLoader>
+        <SpeedInsights />
       </body>
     </html>
   );
