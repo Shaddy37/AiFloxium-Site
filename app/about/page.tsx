@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Vision, Founder } from "@/components/sections/HomeSections";
+import { Accordion05 } from "@/components/ui/accordion-05";
 import { TrendingUp, Database, Cpu } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -84,6 +85,18 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Accordion Section */}
+      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-800/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">THE AIFLOXIUM STORY</h2>
+            <p className="text-zinc-500 font-medium">Everything you need to know about who we are and what we do.</p>
+          </div>
+          <Accordion05 />
         </div>
       </section>
 
