@@ -2,6 +2,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Hero from "@/components/sections/Hero";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import Footer from "@/components/sections/Footer";
+import { Vision } from "@/components/sections/HomeSections";
 import CapabilitiesEngineered from "@/components/sections/CapabilitiesEngineered";
 import RuixenBentoCards from "@/components/ui/ruixen-bento-cards";
 import { DottedSurface } from "@/components/ui/dotted-surface";
@@ -24,6 +25,8 @@ export default function Home() {
           <LogoCloud />
         </div>
       </section>
+
+      <Vision />
 
       <CapabilitiesEngineered />
       

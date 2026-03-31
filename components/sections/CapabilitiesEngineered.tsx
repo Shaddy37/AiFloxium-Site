@@ -141,7 +141,7 @@ export default function CapabilitiesEngineered() {
               </span>
 
               {/* Animated verb */}
-              <div className="relative" style={{ minWidth: "min(60vw, 640px)" }}>
+              <div className="relative w-full" style={{ minWidth: "min(80vw, 640px)" }}>
                 {words.map((w, i) => (
                   <div
                     key={i}
@@ -181,11 +181,11 @@ export default function CapabilitiesEngineered() {
             </h2>
 
             {/* Sublabel — always below the headline, never overlapping */}
-            <div className="relative w-full flex items-center justify-center" style={{ height: "2rem" }}>
+            <div className="relative w-full flex items-center justify-center" style={{ height: "3rem" }}>
               {words.map((w, i) => (
                 <p
                   key={i}
-                  className="absolute whitespace-nowrap text-center transition-all duration-500 ease-in-out text-zinc-500 font-medium tracking-widest uppercase text-sm"
+                  className="absolute text-center transition-all duration-500 ease-in-out text-zinc-500 font-medium tracking-widest uppercase text-xs md:text-sm px-4 max-w-full"
                   style={{
                     opacity: i === activeIndex ? 1 : 0,
                     transform: i === activeIndex ? "translateY(0)" : "translateY(6px)",

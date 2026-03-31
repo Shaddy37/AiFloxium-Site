@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-const Vision = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Vision), { ssr: false });
 const Process = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Process), { ssr: false });
 const RuixenBentoCards = dynamic(() => import("@/components/ui/ruixen-bento-cards"), { ssr: false });
 const Trust = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Trust), { ssr: false });
@@ -17,7 +16,6 @@ const ProjectFocus = dynamic(() => import("@/components/sections/ProjectFocus"),
 export function LazySections() {
   return (
     <>
-      <Vision />
       <Process />
       <RuixenBentoCards />
       <Trust />
