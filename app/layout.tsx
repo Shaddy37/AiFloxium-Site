@@ -2,10 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
-import dynamic from 'next/dynamic';
-
-const CustomCursor = dynamic(() => import('@/components/ui/CustomCursor'), { ssr: false });
-const PageLoader = dynamic(() => import('@/components/ui/page-loader'), { ssr: false });
+import CustomCursor from "@/components/ui/CustomCursor";
+import PageLoader from "@/components/ui/page-loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
