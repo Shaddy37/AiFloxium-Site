@@ -10,7 +10,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Project Overview
 
-This is a Next.js 16.2.1 + React 19.2.4 TypeScript application with Tailwind CSS v4. The project is an AI agency website featuring 3D sections (Three.js/React Three Fiber), animations (Framer Motion, GSAP), and smooth scrolling (Lenis).
+Next.js 16.2.1 + React 19.2.4 TypeScript application with Tailwind CSS v4. AI agency website with 3D sections (Three.js/React Three Fiber), animations (Framer Motion, GSAP), smooth scrolling (Lenis), Vercel Speed Insights, and Vercel Analytics.
 
 ---
 
@@ -19,7 +19,7 @@ This is a Next.js 16.2.1 + React 19.2.4 TypeScript application with Tailwind CSS
 ### Development
 
 ```bash
-npm run dev          # Start development server (port 3000)
+npm run dev          # Start dev server (port 3000)
 npm run build        # Build for production
 npm run start        # Start production server
 ```
@@ -34,7 +34,7 @@ npm run lint <path>   # Lint specific file/folder
 
 ### Testing
 
-**No test framework configured** - Tests are not run as part of CI/CD. To add testing, consider installing Vitest or Jest.
+**No test framework configured** - To add testing, install Vitest or Jest.
 
 ---
 
@@ -42,7 +42,7 @@ npm run lint <path>   # Lint specific file/folder
 
 ### TypeScript
 
-- **Strict Mode**: Enabled in `tsconfig.json` - all strict checks are on
+- **Strict Mode**: Enabled in `tsconfig.json` - all strict checks on
 - **Path Alias**: Use `@/*` for absolute imports (e.g., `@/components/ui/Button`)
 - **Type Annotations**: Prefer explicit types for function parameters and return types
 - **NoEmit**: TypeScript doesn't emit files - use Next.js built-in type checking
@@ -76,8 +76,8 @@ import "./globals.css";
 
 ### Formatting
 
-- Use 2 spaces for indentation (no tabs)
-- Use semicolons at statement end
+- 2 spaces indentation (no tabs)
+- Semicolons at statement end
 - Single quotes for strings (except JSX props)
 - No trailing commas in function parameters
 - Max line length: 100 characters
@@ -95,7 +95,6 @@ Button.displayName = "Button"
 
 // Use CVA for component variants
 import { cva, type VariantProps } from "class-variance-authority"
-
 const buttonVariants = cva("base-classes", {
   variants: {
     variant: { default: "...", destructive: "..." },
@@ -107,9 +106,9 @@ const buttonVariants = cva("base-classes", {
 
 ### Tailwind CSS v4
 
-- Use CSS-first configuration in `app/globals.css` with `@theme` directive
+- CSS-first config in `app/globals.css` with `@theme` directive
 - Use `@import "tailwindcss"` (not @tailwind directives)
-- Use CSS variables for colors: `bg-background`, `text-foreground`
+- Use CSS variables: `bg-background`, `text-foreground`
 - Use `cn()` utility from `@/lib/utils` to merge tailwind classes
 - Avoid arbitrary values - use theme tokens instead
 
@@ -118,18 +117,20 @@ const buttonVariants = cva("base-classes", {
 - Use TypeScript types to prevent runtime errors
 - Use try/catch with proper error boundaries for async operations
 - Add `suppressHydrationWarning` to client components with hydration issues
-- Handle Three.js/React Three Fiber errors gracefully with Suspense/fallback
+- Handle Three.js/React Three Fiber errors with Suspense/fallback
 - Wrap 3D scenes in ErrorBoundary components
 
 ---
 
 ## File Structure
 
-```text
+```
 app/                    # Next.js App Router pages
 ├── page.tsx           # Route pages
 ├── layout.tsx         # Root/layout pages  
 ├── globals.css        # Global styles (Tailwind v4)
+├── blog/              # Blog pages (add new posts here)
+├── api/               # API routes (contact, etc.)
 └── [slug]/           # Dynamic routes
 
 components/
@@ -155,6 +156,7 @@ lib/
 | Scroll | Lenis (smooth scrolling) |
 | Fonts | Next.js Google Fonts (Geist) |
 | Email | Resend |
+| Analytics | @vercel/speed-insights, @vercel/analytics |
 
 ---
 
@@ -184,7 +186,7 @@ export default function ClientComponent() { ... }
 
 ### Performance
 
-- Lazy load 3D scenes with `next/dynamic` and `ssr: false`
+- Lazy load 3D scenes with `next/dynamic` (NOT with ssr: false in Next.js 16+)
 - Use low-poly models with Draco compression
 - Implement loading skeletons/placeholders for 3D content
 
@@ -192,6 +194,12 @@ export default function ClientComponent() { ... }
 
 - Respect `prefers-reduced-motion` media query
 - Provide fallbacks for users without WebGL support
+
+---
+
+## Blog
+
+Add new blog posts by creating folders under `app/blog/` (e.g., `app/blog/my-new-post/page.tsx`).
 
 ---
 
