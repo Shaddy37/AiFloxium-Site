@@ -9,11 +9,12 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'three'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'three', 'gsap'],
   },
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
+  turbopack: {},
 };
 
 export default nextConfig;
