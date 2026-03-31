@@ -105,7 +105,7 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
 
 export default function Services() {
   return (
-    <section id="services" className="py-40 px-6 relative overflow-hidden bg-background">
+    <section id="services" className="py-40 px-4 md:px-6 relative overflow-hidden bg-background">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -120,7 +120,7 @@ export default function Services() {
               <div className="w-1.5 h-1.5 bg-zinc-400 rounded-full" />
               <h2 className="text-zinc-300 tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
             </div>
-            <h3 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]">
+            <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]">
               WE AUTOMATE <br /> <span className="text-gradient">EVERYTHING.</span>
             </h3>
           </motion.div>

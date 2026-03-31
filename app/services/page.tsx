@@ -39,8 +39,8 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Dark Cinematic Hero */}
-      <div className="pt-40 pb-20 px-6 container mx-auto">
-        <h1 className="text-6xl md:text-8xl font-heading font-black text-white tracking-tighter mb-8 bg-gradient-to-br from-white to-zinc-600 text-transparent bg-clip-text">CAPABILITIES.</h1>
+      <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 bg-gradient-to-br from-white to-zinc-600 text-transparent bg-clip-text leading-tight">CAPABILITIES.</h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium">
           Strategic implementation of high-availability AI systems designed to irreversibly transform your operations.
         </p>

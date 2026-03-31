@@ -93,17 +93,17 @@ export function Process() {
   ];
 
   return (
-    <section className="py-24 md:py-40 px-6 relative bg-zinc-950">
+    <section className="py-24 md:py-40 px-4 md:px-6 relative bg-zinc-950">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-           <div>
-              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-zinc-700" /> Methodology
-              </h2>
-              <h3 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tighter">
-                PROTOCOLS OF <br/> EXECUTION.
-              </h3>
-           </div>
+            <div className="w-full text-center md:text-left">
+               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4 md:justify-start justify-center">
+                 <span className="w-8 h-[1px] bg-zinc-700" /> Methodology
+               </h2>
+               <h3 className="text-3xl sm:text-4xl md:text-6xl font-heading font-black text-white tracking-tighter">
+                 PROTOCOLS OF <br/> EXECUTION.
+               </h3>
+            </div>
             <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors group">
                View Full Documentation
                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
