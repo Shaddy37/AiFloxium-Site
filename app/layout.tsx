@@ -2,19 +2,23 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
-import CustomCursor from "@/components/ui/CustomCursor";
-import PageLoader from "@/components/ui/page-loader";
+import dynamic from 'next/dynamic';
+
+const CustomCursor = dynamic(() => import('@/components/ui/CustomCursor'), { ssr: false });
+const PageLoader = dynamic(() => import('@/components/ui/page-loader'), { ssr: false });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const viewport: Viewport = {
