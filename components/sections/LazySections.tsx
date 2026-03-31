@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 const Vision = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Vision), { ssr: false });
 const Process = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Process), { ssr: false });
+const RuixenBentoCards = dynamic(() => import("@/components/ui/ruixen-bento-cards"), { ssr: false });
 const Trust = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Trust), { ssr: false });
 const TechStack = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.TechStack), { ssr: false });
 const Founder = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Founder), { ssr: false });
@@ -18,6 +19,7 @@ export function LazySections() {
     <>
       <Vision />
       <Process />
+      <RuixenBentoCards />
       <Trust />
       <TechStack />
       <Founder />
