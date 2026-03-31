@@ -1,0 +1,29 @@
+{
+  "LOG": true,
+  "LOG_LEVEL": "info",
+  "HOST": "127.0.0.1",
+  "PORT": 3456,
+  "API_TIMEOUT_MS": 600000,
+
+  "Providers": [
+    {
+      "name": "openrouter",
+      "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key": "sk-your-openrouter-key-here",
+      "models": [
+        "mistralai/devstral-2512:free"
+      ],
+      "transformer": {
+        "use": ["openrouter"]
+      }
+    }
+  ],
+
+  "Router": {
+    "default": "openrouter,mistralai/devstral-2512:free",
+    "background": "openrouter,mistralai/devstral-2512:free",
+    "think": "openrouter,mistralai/devstral-2512:free",
+    "longContext": "openrouter,mistralai/devstral-2512:free",
+    "longContextThreshold": 60000
+  }
+}

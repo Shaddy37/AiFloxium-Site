@@ -1,0 +1,361 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUpRight, CheckCircle2, Workflow, Shield, Cpu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { CornerPlusIcons } from "@/components/ui/geometric-elements";
+
+export function Vision() {
+  return (
+    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background">
+      <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -z-10" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-900/40 blur-[150px] rounded-full pointer-events-none -z-10" />
+
+      <div className="container mx-auto max-w-7xl">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+          <div className="w-full lg:w-1/2 relative">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="relative aspect-square md:aspect-[4/3] w-full rounded-lg overflow-hidden border border-dashed border-zinc-700 bg-zinc-950/50"
+            >
+              <CornerPlusIcons />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent" />
+              {/* Abstract Graphic Representation */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-32 h-32 md:w-64 md:h-64 border-[0.5px] border-white/20 rounded-full flex items-center justify-center relative spin-slow">
+                   <div className="w-full h-full absolute animate-ping opacity-10 border border-white/30 rounded-full" style={{ animationDuration: '4s' }} />
+                   <div className="w-16 h-16 md:w-32 md:h-32 border-[0.5px] border-white/30 rounded-full flex items-center justify-center">
+                      <Cpu className="w-8 h-8 text-white/50" />
+                   </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="w-full lg:w-1/2 flex flex-col gap-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-zinc-700" /> Agency Vision
+              </h2>
+              <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white leading-[0.9] tracking-tighter">
+                THE CATALYST <br /> FOR <span className="text-gradient">TRANSFORMATION.</span>
+              </h3>
+            </motion.div>
+            
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl md:text-2xl text-zinc-300 font-medium leading-relaxed"
+            >
+              We engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate. We believe every founder deserves access to an AI infrastructure that makes manual work obsolete.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-white/10"
+            >
+              <div>
+                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">Our Directive</h4>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Eliminate bottlenecks and reduce manual costs by up to 80% through deterministic implementations.</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">Our Ambition</h4>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">To be the invisible backbone for elite agencies and scaling startups worldwide.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Process() {
+  const steps = [
+    { num: "01", title: "Discovery", desc: "Analysis of your business processes and identification of automation vectors tailored to operational needs." },
+    { num: "02", title: "Architecture", desc: "Intelligent automation systems engineered using proven, high-availability frameworks and logic gates." },
+    { num: "03", title: "Optimization", desc: "Rigorous stress testing ensures flawless execution. We optimize metrics and train internal personnel." },
+    { num: "04", title: "Deployment", desc: "Seamless rollout paired with comprehensive documentation and persistent infrastructure support." }
+  ];
+
+  return (
+    <section className="py-24 md:py-40 px-6 relative bg-zinc-950">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+           <div>
+              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-zinc-700" /> Methodology
+              </h2>
+              <h3 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tighter">
+                PROTOCOLS OF <br/> EXECUTION.
+              </h3>
+           </div>
+            <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors group">
+               View Full Documentation
+               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative border border-dashed border-zinc-700 bg-zinc-950 p-10 rounded-lg flex flex-col group transition-all duration-300 overflow-hidden"
+            >
+              <CornerPlusIcons />
+              <div className="absolute top-0 right-0 p-8 opacity-5 transition-opacity">
+                <Workflow className="w-24 h-24 text-white" />
+              </div>
+              <span className="text-sm font-mono text-zinc-600 mb-12 group-hover:text-zinc-300 transition-colors">[{step.num}]</span>
+              <h3 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4 relative z-10">{step.title}</h3>
+              <p className="text-zinc-400 text-sm md:text-base leading-relaxed relative z-10">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Trust() {
+  const caseStudies = [
+    {
+      category: "Creative Agency",
+      title: "Content Repurposing Engine",
+      impact: "100+ hrs/mo Reclaimed",
+      desc: "Built an autonomous pipeline that transcribes, clips, and formats raw video for 5+ platforms with 0 human intervention.",
+      icon: <Workflow className="w-5 h-5 text-primary" />,
+      size: "large"
+    },
+    {
+      category: "SaaS Startup",
+      title: "24/7 Voice SDR",
+      impact: "$4k/mo Saved",
+      desc: "Deployed high-fidelity Vapi agents that qualify 400+ leads monthly via natural voice conversation.",
+      icon: <Cpu className="w-5 h-5 text-primary" />,
+      size: "small"
+    },
+    {
+      category: "Operations",
+      title: "Dynamic CRM Logic",
+      impact: "85% Less Manual Entry",
+      desc: "Architected custom n8n + Claude logic gates to automate complex multi-stage lead routing.",
+      icon: <Shield className="w-5 h-5 text-primary" />,
+      size: "small"
+    }
+  ];
+
+  return (
+    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="flex flex-col md:flex-row gap-12 justify-between items-end mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+              <span className="w-8 h-[1px] bg-zinc-700" /> Proof of Impact
+            </h2>
+            <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-white">
+              WHY FOUNDERS <br /> <span className="text-gradient">TRUST US.</span>
+            </h3>
+          </motion.div>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl font-medium max-w-md text-zinc-400 leading-relaxed pb-4"
+          >
+             We don&apos;t just build &quot;AI tools&quot;. We engineer deterministic architectures that deliver measurable ROI from day one.
+          </motion.p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {caseStudies.map((study, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={cn(
+                "relative border border-dashed border-zinc-700 bg-zinc-950 p-10 rounded-lg flex flex-col justify-between group overflow-hidden",
+                study.size === "large" ? "md:col-span-2" : "md:col-span-1"
+              )}
+            >
+              <CornerPlusIcons />
+              
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-zinc-700 flex items-center justify-center">
+                    {study.icon}
+                  </div>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">{study.category}</span>
+                </div>
+                <h4 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 tracking-tight">{study.title}</h4>
+                <p className="text-zinc-400 text-lg leading-relaxed max-w-md mb-8">{study.desc}</p>
+              </div>
+
+              <div className="pt-8 border-t border-zinc-800 flex items-center justify-between">
+                <span className="text-xl font-bold text-primary font-heading tracking-tight">{study.impact}</span>
+                <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Pricing() {
+  return (
+    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background border-y border-white/5">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-zinc-800/20 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto max-w-7xl relative z-10 border border-dashed border-zinc-700 bg-zinc-950 rounded-lg p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden">
+        <CornerPlusIcons />
+        
+        <div className="w-full lg:w-3/5">
+          <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6">Investment</h2>
+          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white">PRICING <br /> PHILOSOPHY.</h3>
+          <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+            Every business has vastly unique operational needs. Rather than rigid software, we structure bespoke quotes based entirely on the automation complexity and whether we are building internal tools via Claude Code or wiring webhooks in n8n.
+          </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-zinc-700 rounded-lg bg-zinc-900/50 w-fit relative overflow-hidden">
+             <div className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Typical Deployment Range</div>
+             <div className="text-2xl md:text-3xl font-bold font-heading text-white">$1,500 — $5,000+</div>
+          </div>
+          <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 w-fit">
+             <Shield className="w-4 h-4 text-primary" />
+             <span className="text-xs font-bold uppercase tracking-wider text-primary">80% Automation Guarantee</span>
+          </div>
+        </div>
+        
+        <div className="w-full lg:w-1/3 flex flex-col justify-center">
+          <ul className="space-y-6 mb-12">
+            {[ "Deep Tool Stack Audit", "Custom n8n Pipeline Logic", "Claude Code Built Micro-SaaS", "Autonomous Voice Deployment" ].map((feature, i) => (
+               <li key={i} className="flex items-center gap-4 text-zinc-300 font-medium">
+                 <CheckCircle2 className="w-5 h-5 text-white" />
+                 {feature}
+               </li>
+            ))}
+          </ul>
+          <button className="w-full py-6 rounded-lg bg-white text-black font-bold text-sm uppercase tracking-widest hover:bg-zinc-200 transition-colors flex items-center justify-center gap-4 group">
+            Book a Systems Audit
+            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Founder() {
+  return (
+    <section className="py-24 md:py-40 px-6 relative bg-zinc-950">
+      <div className="container mx-auto max-w-7xl">
+         <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative border border-dashed border-zinc-700 bg-zinc-950 rounded-lg p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
+         >
+            <CornerPlusIcons />
+            {/* Abstract Background Noise / Graphical break */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')", backgroundRepeat: 'repeat' }} />
+
+            <div className="w-full lg:w-1/3 aspect-[4/5] rounded-lg bg-zinc-900 border border-dashed border-zinc-700 relative overflow-hidden flex items-center justify-center group">
+               <Image 
+                  src="/founder-headshot.webp"
+                 alt="Muhammad Shadab Shams" 
+                 fill 
+                 className="object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700" 
+               />
+               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent pointer-events-none" />
+               <span className="font-heading text-4xl text-white/90 font-black absolute bottom-8 left-8 z-10 tracking-widest">SHAMS</span>
+            </div>
+            
+            <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
+              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-zinc-700" /> Direct Architect Access
+              </h2>
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-8 leading-[1.1]">
+                BUILT FOR <span className="text-gradient">OPERATIONAL </span> SUPREMACY.
+              </h3>
+               <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6 font-medium">
+                 Muhammad Shadab Shams founded Aifloxium to bridge the gap between &quot;AI Hype&quot; and deterministic engineering. When you hire us, you get direct access to the architect who has engineered 50+ production systems across n8n, Vapi, and custom Social Engines.
+               </p>
+               <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-12 font-bold italic border-l-2 border-white/20 pl-6">
+                 &quot;We specialize in high-fidelity Voice Agents (Vapi/Retell) and automated Social Engines trained on your specific brand tone to dominate LinkedIn and X.&quot;
+               </p>
+              <div className="flex items-center gap-6">
+                <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white flex items-center justify-center hover:scale-110 transition-transform">
+                   <ArrowUpRight className="w-6 h-6 text-black" />
+                </Link>
+                <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer">
+                  <p className="text-white font-bold font-heading text-xl">Muhammad Shadab Shams</p>
+                  <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest mt-1">Lead Architect & Systems Engineer</p>
+                </Link>
+              </div>
+            </div>
+         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+
+export function TechStack() {
+  const tools = [
+    "n8n Orchestration", "Claude 3.5 Sonnet", "Cursor IDE", 
+    "Antigravity", "Gemini Pro", "OpenCode", "Vibe Coding"
+  ];
+  return (
+    <section className="py-24 px-6 relative bg-background border-y border-white/5 overflow-hidden">
+      <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
+        <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0">Arsenal & Tooling:</h2>
+        
+        {/* Infinite scrolling marquee wrapper */}
+        <div className="w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <motion.div 
+            animate={{ x: [0, -1000] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
+            className="flex gap-6 whitespace-nowrap min-w-max"
+          >
+            {[...tools, ...tools, ...tools].map((tool, i) => (
+              <div key={i} className="px-8 py-4 border border-dashed border-zinc-700 rounded-lg bg-zinc-950/50 hover:bg-zinc-900 transition-colors cursor-pointer text-lg font-medium text-zinc-300 flex items-center gap-3 relative overflow-hidden">
+                <CornerPlusIcons />
+                <div className="w-2 h-2 rounded-full bg-zinc-600 animate-pulse" />
+                {tool}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
