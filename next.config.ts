@@ -14,7 +14,9 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  turbopack: {},
+  turbopack: {
+    resolveExtensions: ['.tsx', '.ts', '.jsx', '.js'],
+  },
 };
 
 export default nextConfig;
