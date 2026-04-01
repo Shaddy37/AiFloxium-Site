@@ -53,7 +53,7 @@ export default function HiddenCostSection() {
   const createShardTransforms = (start: number, end: number, side: "left" | "right") => {
     return {
       x: useTransform(smoothProgress, [start, end], [side === "left" ? "-110vw" : "110vw", "0vw"]),
-      y: useTransform(smoothProgress, [start, end], [side === "left" ? "-20vh" : "20vh"], { clamp: false }), // subtle drift
+      y: useTransform(smoothProgress, [start, end], [side === "left" ? "-20vh" : "20vh", "0vh"], { clamp: false }), // subtle drift
       rotateX: useTransform(smoothProgress, [start, end], [45, 0]),
       rotateY: useTransform(smoothProgress, [start, end], [side === "left" ? -25 : 25, 0]),
       z: useTransform(smoothProgress, [start, end], [-500, 0]),
