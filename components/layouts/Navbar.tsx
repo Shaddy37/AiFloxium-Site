@@ -113,6 +113,7 @@ export default function Navbar() {
               width={36} 
               height={36}
               className="w-full h-full object-cover"
+              priority
             />
           </motion.div>
           <span className="text-xl font-heading font-black tracking-widest text-white uppercase italic">AIFLOXIUM</span>

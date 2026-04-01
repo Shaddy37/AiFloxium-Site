@@ -37,6 +37,7 @@ export default function Footer() {
                   width={36} 
                   height={36}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <span className="text-2xl font-heading font-black tracking-tighter text-white">

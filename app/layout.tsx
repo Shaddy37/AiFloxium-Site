@@ -127,6 +127,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="preload" href="/" as="document" />
       </head>
       <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
         <div className="grainy-overlay" />

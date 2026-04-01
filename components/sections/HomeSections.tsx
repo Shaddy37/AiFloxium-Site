@@ -291,10 +291,11 @@ export function Founder() {
             <div className="w-full lg:w-1/3 aspect-[4/5] rounded-lg bg-zinc-900 border border-dashed border-zinc-700 relative overflow-hidden flex items-center justify-center group">
                <Image 
                   src="/founder-headshot.webp"
-                 alt="Muhammad Shadab Shams" 
-                 fill 
-                 className="object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700" 
-               />
+                  alt="Muhammad Shadab Shams" 
+                  fill 
+                  className="object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
+                  loading="lazy"
+                />
                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent pointer-events-none" />
                <span className="font-heading text-4xl text-white/90 font-black absolute bottom-8 left-8 z-10 tracking-widest">SHAMS</span>
             </div>
