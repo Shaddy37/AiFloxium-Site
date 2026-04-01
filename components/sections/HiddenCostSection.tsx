@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 const problems = [
@@ -37,49 +37,47 @@ export default function HiddenCostSection() {
     offset: ["start start", "end end"],
   });
 
-  // Unique trajectories for each card - Called at top level for React Hooks compliance
-  const x1 = useTransform(scrollYProgress, [0.05, 0.6], ["-70vw", "60vw"]);
-  const y1 = useTransform(scrollYProgress, [0.05, 0.6], ["-20vh", "40vh"]);
-  const r1 = useTransform(scrollYProgress, [0.05, 0.6], [-15, 10]);
-  const o1 = useTransform(scrollYProgress, [0.05, 0.15, 0.5, 0.6], [0, 1, 1, 0]);
+  // Smooth scroll progress using spring for extra fluidity
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
-  const x2 = useTransform(scrollYProgress, [0.15, 0.7], ["60vw", "-70vw"]);
-  const y2 = useTransform(scrollYProgress, [0.15, 0.7], ["-40vh", "30vh"]);
-  const r2 = useTransform(scrollYProgress, [0.15, 0.7], [10, -5]);
-  const o2 = useTransform(scrollYProgress, [0.15, 0.25, 0.6, 0.7], [0, 1, 1, 0]);
+  // Header animations - Fades to background opacity (0.1) as cards appear
+  const headerOpacity = useTransform(smoothProgress, [0, 0.15, 0.25, 0.85, 0.95], [0, 1, 0.15, 0.15, 0]);
+  const headerScale = useTransform(smoothProgress, [0, 0.15, 0.25], [0.8, 1, 0.9]);
+  const bgGlowOpacity = useTransform(smoothProgress, [0.2, 0.5, 0.8], [0.3, 0.6, 0.3]);
 
-  const x3 = useTransform(scrollYProgress, [0.25, 0.8], ["-60vw", "50vw"]);
-  const y3 = useTransform(scrollYProgress, [0.25, 0.8], ["40vh", "-30vh"]);
-  const r3 = useTransform(scrollYProgress, [0.25, 0.8], [-5, 15]);
-  const o3 = useTransform(scrollYProgress, [0.25, 0.35, 0.7, 0.8], [0, 1, 1, 0]);
+  // Card 1 & 2: Row 1 (0.15 -> 0.35)
+  const x1 = useTransform(smoothProgress, [0.15, 0.35], ["-100vw", "0vw"]);
+  const o1 = useTransform(smoothProgress, [0.15, 0.25, 0.9, 0.95], [0, 1, 1, 0]);
+  
+  const x2 = useTransform(smoothProgress, [0.15, 0.35], ["100vw", "0vw"]);
+  const o2 = useTransform(smoothProgress, [0.15, 0.25, 0.9, 0.95], [0, 1, 1, 0]);
 
-  const x4 = useTransform(scrollYProgress, [0.35, 0.9], ["50vw", "-60vw"]);
-  const y4 = useTransform(scrollYProgress, [0.35, 0.9], ["30vh", "-40vh"]);
-  const r4 = useTransform(scrollYProgress, [0.35, 0.9], [5, -10]);
-  const o4 = useTransform(scrollYProgress, [0.35, 0.45, 0.8, 0.9], [0, 1, 1, 0]);
+  // Card 3 & 4: Row 2 (0.35 -> 0.55)
+  const x3 = useTransform(smoothProgress, [0.35, 0.55], ["-100vw", "0vw"]);
+  const o3 = useTransform(smoothProgress, [0.35, 0.45, 0.9, 0.95], [0, 1, 1, 0]);
+  
+  const x4 = useTransform(smoothProgress, [0.35, 0.55], ["100vw", "0vw"]);
+  const o4 = useTransform(smoothProgress, [0.35, 0.45, 0.9, 0.95], [0, 1, 1, 0]);
 
-  const x5 = useTransform(scrollYProgress, [0.45, 0.95], ["-80vw", "40vw"]);
-  const y5 = useTransform(scrollYProgress, [0.45, 0.95], ["-10vh", "25vh"]);
-  const r5 = useTransform(scrollYProgress, [0.45, 0.95], [-10, 5]);
-  const o5 = useTransform(scrollYProgress, [0.45, 0.55, 0.85, 0.95], [0, 1, 1, 0]);
+  // Card 5 & 6: Row 3 (0.55 -> 0.75)
+  const x5 = useTransform(smoothProgress, [0.55, 0.75], ["-100vw", "0vw"]);
+  const o5 = useTransform(smoothProgress, [0.55, 0.65, 0.9, 0.95], [0, 1, 1, 0]);
+  
+  const x6 = useTransform(smoothProgress, [0.55, 0.75], ["100vw", "0vw"]);
+  const o6 = useTransform(smoothProgress, [0.55, 0.65, 0.9, 0.95], [0, 1, 1, 0]);
 
-  const x6 = useTransform(scrollYProgress, [0.55, 1.0], ["70vw", "-50vw"]);
-  const y6 = useTransform(scrollYProgress, [0.55, 1.0], ["25vh", "-10vh"]);
-  const r6 = useTransform(scrollYProgress, [0.55, 1.0], [15, -15]);
-  const o6 = useTransform(scrollYProgress, [0.55, 0.65, 0.9, 1.0], [0, 1, 1, 0]);
-
-  const transforms = [
-    { x: x1, y: y1, rotate: r1, opacity: o1 },
-    { x: x2, y: y2, rotate: r2, opacity: o2 },
-    { x: x3, y: y3, rotate: r3, opacity: o3 },
-    { x: x4, y: y4, rotate: r4, opacity: o4 },
-    { x: x5, y: y5, rotate: r5, opacity: o5 },
-    { x: x6, y: y6, rotate: r6, opacity: o6 },
+  const cardStates = [
+    { x: x1, opacity: o1 },
+    { x: x2, opacity: o2 },
+    { x: x3, opacity: o3 },
+    { x: x4, opacity: o4 },
+    { x: x5, opacity: o5 },
+    { x: x6, opacity: o6 },
   ];
-
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
-  const headerScale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.8, 1, 1, 0.8]);
-  const bgGlowOpacity = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.3, 0.6, 0.3]);
 
   return (
     <section 
@@ -91,72 +89,68 @@ export default function HiddenCostSection() {
         {/* Cinematic Backdrop Glow */}
         <motion.div
           style={{ opacity: bgGlowOpacity }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-zinc-500/10 blur-[160px] rounded-full pointer-events-none"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-zinc-500/5 blur-[160px] rounded-full pointer-events-none"
         />
 
-        {/* Sticky Central Heading */}
+        {/* Sticky Background Heading */}
         <motion.div
           style={{ 
             opacity: headerOpacity, 
             scale: headerScale,
           }}
-          className="relative z-0 text-center px-6 max-w-4xl"
+          className="absolute z-0 text-center px-6 w-full max-w-4xl flex flex-col items-center justify-center translate-y-[-10%]"
         >
           <span className="inline-flex items-center gap-3 text-xs md:text-sm font-medium text-zinc-500 tracking-[0.25em] uppercase mb-8">
             <span className="w-8 h-[1px] bg-zinc-700" />
             Is This You?
             <span className="w-8 h-[1px] bg-zinc-700" />
           </span>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white leading-[0.9]">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter text-white leading-[0.9]">
             STOP THE GYMNASTICS. <br />
             <span className="text-zinc-500 opacity-50">START AUTOMATING.</span>
           </h2>
-          <p className="mt-8 text-zinc-400 text-lg md:text-xl font-medium tracking-tight max-w-xl mx-auto italic">
+          <p className="mt-8 text-zinc-400 text-lg font-medium tracking-tight max-w-xl mx-auto italic">
             You&apos;re built for growth, not the operational grind.
           </p>
         </motion.div>
 
-        {/* Parallax Floating Cards Container */}
-        <div className="absolute inset-0 z-20 pointer-events-none">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={index}
-              style={{
-                x: transforms[index].x,
-                y: transforms[index].y,
-                rotate: transforms[index].rotate,
-                opacity: transforms[index].opacity,
-                translateX: "-50%",
-                translateY: "-50%",
-              }}
-              className="absolute top-1/2 left-1/2 w-[320px] md:w-[380px] p-6 md:p-8 rounded-3xl border border-white/10 bg-zinc-900/60 backdrop-blur-xl shadow-2xl pointer-events-auto"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-sm font-bold text-zinc-400 flex-shrink-0">
+        {/* Staggered Grid of Cards */}
+        <div className="relative z-10 w-full max-w-6xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+            {problems.map((problem, index) => (
+              <motion.div
+                key={index}
+                style={{
+                  x: cardStates[index].x,
+                  opacity: cardStates[index].opacity,
+                }}
+                className="w-full p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-white/10 bg-zinc-900/60 backdrop-blur-xl shadow-2xl flex items-start gap-4"
+              >
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-xs md:text-sm font-bold text-zinc-400 flex-shrink-0">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
+                <div className="space-y-1 md:space-y-2">
+                  <h3 className="text-base md:text-lg lg:text-xl font-bold text-white tracking-tight">
                     {problem.title}
                   </h3>
-                  <p className="text-sm md:text-base text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-xs md:text-sm lg:text-base text-zinc-400 leading-relaxed font-medium">
                     {problem.description}
                   </p>
                 </div>
-              </div>
-              
-              {/* Subtle accent line */}
-              <div className="absolute bottom-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/20 to-transparent" />
-            </motion.div>
-          ))}
+
+                {/* Subtle accent line */}
+                <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/10 to-transparent" />
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Scroll Indicator */}
         <motion.div
-          style={{ opacity: useTransform(scrollYProgress, [0, 0.05], [1, 0]) }}
+          style={{ opacity: useTransform(smoothProgress, [0, 0.1], [1, 0]) }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
         >
-          <span className="text-[10px] text-zinc-500 tracking-[0.3em] uppercase font-bold">Scroll to face the reality</span>
+          <span className="text-[10px] text-zinc-500 tracking-[0.3em] uppercase font-bold text-center">Face the reality</span>
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
