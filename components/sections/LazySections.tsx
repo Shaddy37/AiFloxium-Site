@@ -16,7 +16,6 @@ export function LazySections() {
       <RuixenBentoCards />
       <Trust />
       <TechStack />
-      <Founder />
       <Pricing />
     </>
   );

@@ -16,12 +16,12 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-zinc-500/5 rounded-full blur-[160px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-zinc-400/5 rounded-full blur-[160px] animate-pulse-slow pointer-events-none" />
       
-      <div className="relative z-10 text-center space-y-12 max-w-6xl mx-auto px-6 py-12 md:py-24">
+      <div className="relative z-10 text-center space-y-12 max-w-6xl mx-auto px-6 pt-32 pb-12 md:pt-48 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-12"
         >
           {/* Glowing Badge */}
           <motion.div 
@@ -32,7 +32,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-zinc-500/10 via-transparent to-zinc-500/10 animate-pulse" />
             <div className="w-1.5 h-1.5 bg-white rounded-full animate-ping" />
-            <span className="relative z-10 text-[10px] md:text-xs font-bold text-zinc-300 tracking-[0.25em] uppercase">Autonomous Infrastructure for Visionary Brands</span>
+            <span className="relative z-10 text-[10px] md:text-xs font-bold text-zinc-300 tracking-[0.25em] uppercase font-heading">Autonomous Infrastructure for Visionary Brands</span>
           </motion.div>
           
           <div className="space-y-6">
