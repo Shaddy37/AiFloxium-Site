@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { DotGlobeHero } from "@/components/ui/globe-hero";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -16,12 +16,13 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-zinc-500/5 rounded-full blur-[160px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-zinc-400/5 rounded-full blur-[160px] animate-pulse-slow pointer-events-none" />
       
-      <div className="relative z-10 text-center flex flex-col items-center w-full min-h-full max-w-6xl mx-auto px-6 pt-32 pb-20 md:pt-48 md:pb-24">
+      {/* Central Content Grouping */}
+      <div className="relative z-10 text-center flex flex-col items-center w-full max-w-6xl mx-auto px-6 pt-32 md:pt-48 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8 md:space-y-12 flex flex-col items-center"
+          className="space-y-6 md:space-y-10 flex flex-col items-center"
         >
           <div className="space-y-4">
             <motion.h1 
@@ -54,62 +55,53 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="max-w-xl md:max-w-2xl mx-auto space-y-6 md:space-y-8"
+            className="max-w-xl md:max-w-2xl mx-auto space-y-4 md:space-y-6"
           >
             <p className="text-lg md:text-2xl text-zinc-200 leading-relaxed font-medium tracking-tight px-4 md:px-0">
               Stop leaking margin. We architect automated systems that <span className="text-white font-bold underline decoration-white/20 underline-offset-4">reclaim 40+ hours every week.</span>
             </p>
-            <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-dashed border-zinc-700 bg-zinc-900/40">
-               <span className="text-[10px] md:text-sm font-bold tracking-widest uppercase text-zinc-500">Starting at</span>
-               <span className="text-base md:text-xl font-black text-white">$1,500</span>
+            <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-zinc-800 bg-zinc-950/40 backdrop-blur-md">
+               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">Tier-1 Infrastructure</span>
             </div>
           </motion.div>
         </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center pt-10 md:pt-20 w-full sm:w-auto"
-        >
-          <motion.a
-            href="/#initiate"
-            whileHover={{ 
-              scale: 1.05, 
-              boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(255,255,255,0.15)",
-              y: -4
-            }}
-            whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center gap-3 md:gap-4 px-8 py-3.5 md:px-14 md:py-7 bg-white text-black rounded-xl font-black text-[10px] md:text-sm uppercase tracking-[0.25em] shadow-2xl transition-all duration-500 overflow-hidden w-[280px] sm:w-auto justify-center"
-          >
-            <span className="relative z-10">Book a Systems Audit</span>
-            <ArrowRight className="relative z-10 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" />
-          </motion.a>
-          
-          <motion.a
-            href="/services"
-            whileHover={{ 
-              scale: 1.05,
-              borderColor: "rgba(255,255,255,0.5)",
-              boxShadow: "0 15px 40px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.1)",
-              y: -4
-            }}
-            whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center gap-3 md:gap-4 px-8 py-3.5 md:px-14 md:py-7 border-2 border-white/15 rounded-xl font-black text-[10px] md:text-sm uppercase tracking-[0.25em] transition-all duration-500 backdrop-blur-2xl bg-white/5 hover:bg-white/10 shadow-2xl overflow-hidden text-white w-[280px] sm:w-auto justify-center"
-          >
-            <Zap className="relative z-10 w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white" />
-            <span className="relative z-10">Explore Capabilities</span>
-          </motion.a>
-        </motion.div>
       </div>
+
+      {/* FIXED CORNER COMMAND (UI Expert Addition) */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, x: 50 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="fixed bottom-10 right-6 md:right-12 z-50 group"
+      >
+        <motion.a
+          href="/#initiate"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="relative flex items-center justify-center"
+        >
+          {/* Geometric Glow Backplate */}
+          <div className="absolute inset-0 bg-white blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full" />
+          
+          <div className="relative flex items-center gap-4 bg-zinc-950 border border-white/20 pl-8 pr-4 py-4 rounded-full backdrop-blur-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden min-w-[200px]">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent skew-x-[-20deg] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+            <div className="flex flex-col items-start">
+              <span className="text-[9px] font-black text-zinc-500 tracking-[0.3em] uppercase leading-none mb-1">Initiate Protocol</span>
+              <span className="text-xs font-black text-white tracking-[0.1em] uppercase">Book Systems Audit</span>
+            </div>
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform duration-500">
+              <ArrowRight className="w-5 h-5" />
+            </div>
+          </div>
+        </motion.a>
+      </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0.5 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+        className="absolute bottom-10 left-10 md:left-20 flex flex-col items-center gap-4"
       >
         <div className="w-[1px] h-12 md:h-20 bg-gradient-to-b from-white/40 to-transparent" />
       </motion.div>
