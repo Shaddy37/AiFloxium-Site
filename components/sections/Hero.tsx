@@ -16,12 +16,12 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-zinc-500/5 rounded-full blur-[160px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-zinc-400/5 rounded-full blur-[160px] animate-pulse-slow pointer-events-none" />
       
-      <div className="relative z-10 text-center flex flex-col items-center justify-center w-full h-full max-w-6xl mx-auto px-6">
+      <div className="relative z-10 text-center flex flex-col items-center w-full min-h-full max-w-6xl mx-auto px-6 pt-32 pb-20 md:pt-48 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6 md:space-y-10 flex flex-col items-center"
+          className="space-y-8 md:space-y-12 flex flex-col items-center"
         >
           <div className="space-y-4">
             <motion.h1 
@@ -44,7 +44,7 @@ export default function Hero() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
-                  className="absolute -bottom-4 md:-bottom-6 left-0 h-1 md:h-3 bg-gradient-to-r from-white/60 via-white/20 to-transparent rounded-full"
+                  className="absolute -bottom-4 md:-bottom-6 left-0 h-1 md:h-3 bg-gradient-to-r from-white/60 via-white/20 to-transparent rounded-full shadow-2xl"
                 />
               </span>
             </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="max-w-xl md:max-w-2xl mx-auto space-y-6"
+            className="max-w-xl md:max-w-2xl mx-auto space-y-6 md:space-y-8"
           >
             <p className="text-lg md:text-2xl text-zinc-200 leading-relaxed font-medium tracking-tight px-4 md:px-0">
               Stop leaking margin. We architect automated systems that <span className="text-white font-bold underline decoration-white/20 underline-offset-4">reclaim 40+ hours every week.</span>
@@ -71,7 +71,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center pt-8 md:pt-16 w-full sm:w-auto"
+          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center pt-10 md:pt-20 w-full sm:w-auto"
         >
           <motion.a
             href="/#initiate"
