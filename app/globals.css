@@ -28,19 +28,6 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
-.will-change-transform {
-  will-change: transform;
-}
-
-.will-change-opacity {
-  will-change: opacity;
-}
-
-.gpu-accelerate {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
 @keyframes accordion-down {
   from { height: 0; }
   to { height: var(--radix-accordion-content-height); }
@@ -53,10 +40,6 @@
 
 * {
   border-color: var(--border);
-}
-
-html {
-  contain: layout style;
 }
 
 body {
@@ -80,7 +63,7 @@ body {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3Cfilter id='noiseFilter'%3e%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3e%3C/filter%3e%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3e%3C/svg%3e");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .glass-card {
@@ -131,31 +114,3 @@ body {
   animation: width-expand 1.5s ease-out forwards;
   animation-delay: 0.8s;
 }
-
-@keyframes fancy-scatter-1 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-15%, 60%) rotate(8deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-2 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-30%, 30%) rotate(4deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-3 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-20%, 40%) rotate(-6deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-4 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0%, 8%) rotate(-8deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-5 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0%, -20%) rotate(5deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-6 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0%, 20%) rotate(-3deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-7 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0%, -40%) rotate(-5deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-@keyframes fancy-scatter-8 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0%, 15%) rotate(10deg); } 100% { transform: translate(0, 0) rotate(0deg); } }
-
-@keyframes fancy-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3%); }
-}
-
-.fancy-letter {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-.fancy-word:hover .fancy-letter:nth-child(1) { animation: fancy-scatter-1 0.4s ease-in-out, fancy-bounce 0.4s ease-in-out 0.1s; }
-.fancy-word:hover .fancy-letter:nth-child(2) { animation: fancy-scatter-2 0.4s ease-in-out 0.02s, fancy-bounce 0.4s ease-in-out 0.12s; }
-.fancy-word:hover .fancy-letter:nth-child(3) { animation: fancy-scatter-3 0.4s ease-in-out 0.04s, fancy-bounce 0.4s ease-in-out 0.14s; }
-.fancy-word:hover .fancy-letter:nth-child(4) { animation: fancy-scatter-4 0.4s ease-in-out 0.06s, fancy-bounce 0.4s ease-in-out 0.16s; }
-.fancy-word:hover .fancy-letter:nth-child(5) { animation: fancy-scatter-5 0.4s ease-in-out 0.08s, fancy-bounce 0.4s ease-in-out 0.18s; }
-.fancy-word:hover .fancy-letter:nth-child(6) { animation: fancy-scatter-6 0.4s ease-in-out 0.1s, fancy-bounce 0.4s ease-in-out 0.2s; }
-.fancy-word:hover .fancy-letter:nth-child(7) { animation: fancy-scatter-7 0.4s ease-in-out 0.12s, fancy-bounce 0.4s ease-in-out 0.22s; }
-.fancy-word:hover .fancy-letter:nth-child(8) { animation: fancy-scatter-8 0.4s ease-in-out 0.14s, fancy-bounce 0.4s ease-in-out 0.24s; }
