@@ -46,8 +46,11 @@ export default function Footer() {
                 AIFLOXIUM
               </span>
             </Link>
-            <p className="text-muted-foreground text-lg max-w-sm mb-8">
-              Architecting the intelligent enterprise. We build AI systems and premium digital experiences that scale.
+            <p className="text-muted-foreground text-lg max-w-sm mb-4">
+              <span className="text-white font-bold">Muhammad Shadab Shams</span> is the founder and lead automation engineer behind AIFLOXIUM.
+            </p>
+            <p className="text-muted-foreground text-sm max-w-sm mb-8">
+              Building intelligent systems that work 24/7 so businesses do not have to. From workflow automation to AI agents, if it can be automated, I will build it.
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -84,7 +87,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Company</h3>
             <ul className="flex flex-col gap-4">
-              <li><Link href="/about" className="text-muted-foreground hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-white transition-colors">Me</Link></li>
               <li><Link href="/resources" className="text-muted-foreground hover:text-white transition-colors">Resources</Link></li>
               <li><Link href="/blog" className="text-muted-foreground hover:text-white transition-colors">Insights</Link></li>
               <li><Link href="/projects" className="text-muted-foreground hover:text-white transition-colors">Projects</Link></li>
@@ -110,7 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground pt-4">
-          <p>© {new Date().getFullYear()} Aifloxium AI Agency. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AIFLOXIUM by Muhammad Shadab Shams. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

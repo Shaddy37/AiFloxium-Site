@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "@/components/layouts/Navbar";
-import HeroContent from "@/components/sections/HeroContent";
 import Hero3D from "@/components/sections/Hero3D";
 import dynamic from "next/dynamic";
 

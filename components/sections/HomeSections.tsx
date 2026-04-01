@@ -44,7 +44,7 @@ export function Vision() {
               viewport={{ once: true }}
             >
               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-zinc-700" /> Agency Vision
+                <span className="w-8 h-[1px] bg-zinc-700" /> My Vision
               </h2>
               <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white leading-[0.9] tracking-tighter">
                 THE CATALYST <br /> FOR <span className="text-gradient">TRANSFORMATION.</span>
@@ -58,7 +58,7 @@ export function Vision() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-zinc-300 font-medium leading-relaxed"
             >
-              We engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate. We believe every founder deserves access to an AI infrastructure that makes manual work obsolete.
+              I engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate. I believe every founder deserves access to an AI infrastructure that makes manual work obsolete.
             </motion.p>
             
             <motion.div 
@@ -69,11 +69,11 @@ export function Vision() {
               className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-white/10"
             >
               <div>
-                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">Our Directive</h4>
+                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">My Directive</h4>
                 <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Eliminate bottlenecks and reduce manual costs by up to 80% through deterministic implementations.</p>
               </div>
               <div>
-                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">Our Ambition</h4>
+                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">My Ambition</h4>
                 <p className="text-zinc-400 text-sm md:text-base leading-relaxed">To be the invisible backbone for elite agencies and scaling startups worldwide.</p>
               </div>
             </motion.div>
@@ -179,7 +179,7 @@ export function Trust() {
               <span className="w-8 h-[1px] bg-zinc-700" /> Proof of Impact
             </h2>
             <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-white">
-              WHY FOUNDERS <br /> <span className="text-gradient">TRUST US.</span>
+              WHY FOUNDERS <br /> <span className="text-gradient">TRUST ME.</span>
             </h3>
           </motion.div>
           <motion.p 
@@ -189,7 +189,7 @@ export function Trust() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl font-medium max-w-md text-zinc-400 leading-relaxed pb-4"
           >
-             We don&apos;t just build &quot;AI tools&quot;. We engineer deterministic architectures that deliver measurable ROI from day one.
+             I don&apos;t just build &quot;AI tools&quot;. I engineer deterministic architectures that deliver measurable ROI from day one.
           </motion.p>
         </div>
         
@@ -242,12 +242,12 @@ export function Pricing() {
         <div className="w-full lg:w-3/5">
           <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6">Investment</h2>
           <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white">PRICING <br /> PHILOSOPHY.</h3>
-          <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-            Every business has vastly unique operational needs. Rather than rigid software, we structure bespoke quotes based entirely on the automation complexity and whether we are building internal tools via Claude Code or wiring webhooks in n8n.
+            <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+            Every business has vastly unique operational needs. Rather than rigid software, I structure bespoke quotes based entirely on the automation complexity and whether I am building internal tools via Claude Code or wiring webhooks in n8n.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-zinc-700 rounded-lg bg-zinc-900/50 w-fit relative overflow-hidden">
              <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
-             <div className="text-2xl md:text-3xl font-bold font-heading text-white">$1,500 — $5,000+</div>
+             <div className="text-2xl md:text-3xl font-bold font-heading text-white">$1,500 to $5,000+</div>
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 w-fit">
              <Shield className="w-4 h-4 text-primary" />
@@ -308,11 +308,11 @@ export function Founder() {
                 BUILT FOR <span className="text-gradient">OPERATIONAL </span> SUPREMACY.
               </h3>
                <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6 font-medium">
-                 Muhammad Shadab Shams founded Aifloxium to bridge the gap between &quot;AI Hype&quot; and deterministic engineering. When you hire us, you get direct access to the architect who has engineered 50+ production systems across n8n, Vapi, and custom Social Engines.
-               </p>
-               <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-12 font-bold italic border-l-2 border-white/20 pl-6">
-                 &quot;We specialize in high-fidelity Voice Agents (Vapi/Retell) and automated Social Engines trained on your specific brand tone to dominate LinkedIn and X.&quot;
-               </p>
+                  I founded this portfolio to bridge the gap between &quot;AI Hype&quot; and deterministic engineering. When you work with me, you get direct access to the architect who has engineered 50+ production systems across n8n, Vapi, and custom Social Engines.
+                </p>
+                <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-12 font-bold italic border-l-2 border-white/20 pl-6">
+                  &quot;I specialize in high-fidelity Voice Agents (Vapi/Retell) and automated Social Engines trained on your specific brand tone to dominate LinkedIn and X.&quot;
+                </p>
               <div className="flex items-center gap-6">
                 <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white flex items-center justify-center hover:scale-110 transition-transform">
                    <ArrowUpRight className="w-6 h-6 text-black" />

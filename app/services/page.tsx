@@ -8,12 +8,12 @@ import { Contact2 } from "@/components/ui/contact-2";
 import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Custom AI Agent Development Agency | Aifloxium Services',
-  description: 'We provide managed AI automation services including Custom Large Language Model (LLM) implementation, AI workflow automation, and predictive analytics for enterprises.',
-  keywords: ['custom AI agent development agency', 'managed AI automation services', 'AI workflow automation', 'Enterprise-grade NLP integration'],
+  title: 'AI Skills & Automation Services | Muhammad Shadab Shams',
+  description: 'I build AI automation systems including n8n workflows, voice agents, and autonomous agents that reclaim 40+ hours every week.',
+  keywords: ['AI automation services', 'n8n workflow automation', 'AI workflow automation', 'AI skills'],
   openGraph: {
-    title: 'Custom AI Agent Development Agency | Aifloxium Services',
-    description: 'We provide managed AI automation services including Custom LLM implementation, AI workflow automation, and predictive analytics for enterprises.',
+    title: 'AI Skills & Automation Services | Muhammad Shadab Shams',
+    description: 'I build AI automation systems including n8n workflows, voice agents, and autonomous agents.',
     type: 'website',
     url: 'https://aifloxium.online/services',
     images: [
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Aifloxium Services',
+        alt: 'AI Skills & Automation Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Custom AI Agent Development Agency | Aifloxium Services',
-    description: 'Managed AI automation services including LLM implementation and workflow automation.',
+    title: 'AI Skills & Automation Services | Muhammad Shadab Shams',
+    description: 'I build AI automation systems including n8n workflows, voice agents, and autonomous agents.',
     images: ['/og-image.jpg'],
   },
 };
@@ -40,9 +40,9 @@ export default function ServicesPage() {
       
       {/* Dark Cinematic Hero */}
       <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 bg-gradient-to-br from-white to-zinc-600 text-transparent bg-clip-text leading-tight">CAPABILITIES.</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 bg-gradient-to-br from-white to-zinc-600 text-transparent bg-clip-text leading-tight">SKILLS.</h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium">
-          Strategic implementation of high-availability AI systems designed to irreversibly transform your operations.
+          What I build, automate, and engineer for clients who demand results.
         </p>
       </div>
 
@@ -55,14 +55,14 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-6xl flex flex-col lg:flex-row gap-16">
           <div className="w-full lg:w-1/3">
              <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6">INTEGRATION <br /> DIRECTIVES.</h2>
-             <p className="text-zinc-600 font-medium leading-relaxed">Everything you need to know about our enterprise AI automation services, security protocols, and deployment timelines.</p>
+             <p className="text-zinc-600 font-medium leading-relaxed">Everything you need to know about working with me, how I handle your data, and my delivery timelines.</p>
           </div>
           <div className="w-full lg:w-2/3 space-y-6">
             {[
-              { q: "How do you ensure proprietary data remains secure?", a: "We utilize isolated, single-tenant cloud architectures for all RAG and LLM models. Your data is never cross-trained on public language models." },
+              { q: "How do you ensure proprietary data remains secure?", a: "I utilize isolated, single-tenant cloud architectures for all RAG and LLM models. Your data is never cross-trained on public language models." },
               { q: "What is the typical timeframe for a workflow deployment?", a: "MVP logic scripts can be integrated in 7 days. Full-scale autonomous agents and multi-platform RAG architectures take 3 to 6 weeks depending on database complexity." },
-              { q: "Does Aifloxium maintain the systems post-launch?", a: "Yes. All our complex deployments include rigorous SLA uptime guarantees, persistent monitoring, and iterative optimizations." },
-              { q: "Can you modernize our legacy systems?", a: "Our exact specialty is legacy system AI modernization. We build custom API wrappers and middleware vectors that allow modern LLMs to query your ancient mainframes." }
+              { q: "Do you maintain the systems post-launch?", a: "Yes. All my deployments include rigorous SLA uptime guarantees, persistent monitoring, and iterative optimizations." },
+              { q: "Can you modernize our legacy systems?", a: "Yes, I specialize in legacy system AI modernization. I build custom API wrappers and middleware vectors that allow modern LLMs to query your existing infrastructure." }
             ].map((faq, i) => (
                <div key={i} className="group p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
                   <h3 className="text-xl font-bold font-heading mb-4 flex items-center gap-4">
@@ -79,7 +79,7 @@ export default function ServicesPage() {
       <section className="bg-zinc-950/20 border-t border-white/5">
         <Contact2 
           title="Schedule Your Systems Audit."
-          description="Speak directly with our engineering team from Sargodha, Pakistan, and start your automation journey today."
+          description="Speak directly with me from Sargodha, Pakistan, and start your automation journey today."
         />
       </section>
 

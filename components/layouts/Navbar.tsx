@@ -10,9 +10,9 @@ import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
 
 const links = [
+  { name: "Projects", href: "/projects" },
   { name: "Services", href: "/services" },
   { name: "Consulting", href: "/ai-consulting" },
-  { name: "Projects", href: "/projects" },
   { name: "Resources", href: "/resources" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },

@@ -20,8 +20,8 @@ type ContactCardProps = React.ComponentProps<'div'> & {
 };
 
 export function ContactCard({
-	title = 'Contact With Us',
-	description = 'If you have any questions regarding our Services or need help, please fill out the form here. We do our best to respond within 1 business day.',
+	title = 'Get In Touch',
+	description = 'Have questions about my services? Fill out the form and I\'ll get back to you within 24 hours.',
 	contactInfo,
 	className,
 	formSectionClassName,

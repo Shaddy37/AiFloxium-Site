@@ -21,14 +21,14 @@ const features = [
   },
   {
     title: "Multi-Model Intelligence",
-    description: "Don't get locked into one provider. We deploy custom routers that switch between OpenAI, Claude, and DeepSeek based on task complexity and cost efficiency.",
+    description: "Don't get locked into one provider. I deploy custom routers that switch between OpenAI, Claude, and DeepSeek based on task complexity and cost efficiency.",
     imageUrl: "/images/nano-banana/banana-brain.webp",
     bgColor: "bg-zinc-300 dark:bg-zinc-700",
     textColor: "text-zinc-700 dark:text-zinc-300"
   },
   {
     title: "Secure Data Pipelines",
-    description: "Enterprise-grade privacy at the core. We build secure, encrypted pipelines that keep your proprietary data isolated from public training sets while maximizing AI utility.",
+    description: "Enterprise-grade privacy at the core. I build secure, encrypted pipelines that keep your proprietary data isolated from public training sets while maximizing AI utility.",
     imageUrl: "/images/nano-banana/banana-data.webp",
     bgColor: "bg-zinc-400 dark:bg-zinc-600/50",
     textColor: "text-zinc-800 dark:text-zinc-200"
@@ -83,7 +83,7 @@ const AnimatedHeader = () => {
                 className={`text-xl md:text-2xl text-zinc-400 mt-6 transition-all duration-1000 ease-out delay-300 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transformStyle: 'preserve-3d' }}
             >
-                We transition your business from static processes to dynamic, autonomous agentic systems.
+                I transition your business from static processes to dynamic, autonomous agentic systems.
             </p>
         </div>
     );

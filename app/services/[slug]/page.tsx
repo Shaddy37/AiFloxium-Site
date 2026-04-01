@@ -163,7 +163,7 @@ export default async function ServicePage({ params }: Props) {
               <span className="w-6 h-[1px] bg-zinc-700" /> Process
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tighter leading-[1.0]">
-              How we deliver it.
+              How I deliver it.
             </h2>
           </div>
 
@@ -202,7 +202,7 @@ export default async function ServicePage({ params }: Props) {
               <span className="w-6 h-[1px] bg-zinc-700" /> Use Cases
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tighter">
-              Real problems we solve.
+              Real problems I solve.
             </h2>
           </div>
 

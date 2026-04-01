@@ -9,7 +9,7 @@ export const capabilities = [
   {
     slug: "n8n-workflow-automation",
     title: "n8n Workflow Automation",
-    description: "Bridging disparate APIs to automate repetitive manual tasks. We turn human bottlenecks into flawless, instant logic.",
+    description: "Bridging disparate APIs to automate repetitive manual tasks. I turn human bottlenecks into flawless, instant logic.",
     icon: <Cpu className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
@@ -21,7 +21,7 @@ export const capabilities = [
   {
     slug: "vibe-coding",
     title: "Vibe Coding (Claude)",
-    description: "Rapid custom software development powered by advanced LLM reasoning. We build internal tools and web apps lightning-fast.",
+    description: "Rapid custom software development powered by advanced LLM reasoning. I build internal tools and web apps lightning-fast.",
     icon: <Bot className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
@@ -38,8 +38,8 @@ export const capabilities = [
   },
   {
     slug: "agency-scaling-partner",
-    title: "Agency Scaling Partner",
-    description: "We act as your technical backend. We handle the heavy lifting of process engineering so your agency can dominate strategy.",
+    title: "Expert Implementation Partner",
+    description: "I act as your technical backbone. I handle the heavy lifting of process engineering so your team can dominate strategy.",
     icon: <Database className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
 ];

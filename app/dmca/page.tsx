@@ -3,8 +3,8 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: "DMCA Policy | Aifloxium",
-  description: "DMCA Copyright Policy for Aifloxium AI Agency - Information about our copyright protection and takedown procedures.",
+  title: "DMCA Policy | AIFLOXIUM - AI Automation by Muhammad Shadab Shams",
+  description: "DMCA Copyright Policy for AIFLOXIUM AI Automation Agency - Information about our copyright protection and takedown procedures.",
 };
 
 export default function DmcaPage() {
@@ -17,7 +17,7 @@ export default function DmcaPage() {
           
           <div className="prose prose-invert prose-zinc max-w-none">
             <p className="text-zinc-400 text-lg mb-8">
-              Welcome to <span className="text-white">https://aifloxium.online</span> (the &quot;Site&quot;). We respect the intellectual property rights of others just as we expect others to respect our rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to us via our DMCA Agent listed below.
+              Welcome to <span className="text-white">https://aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> trading as AIFLOXIUM. We respect the intellectual property rights of others just as we expect others to respect our rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to us via our DMCA Agent listed below.
             </p>
 
             <section className="mb-8">
@@ -66,7 +66,7 @@ export default function DmcaPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">AI Content Ownership</h2>
               <p className="text-zinc-400">
-                Content generated using AI tools is owned by AIFloxium unless otherwise agreed. Users are prohibited from using AI-generated outputs for commercial purposes or public distribution without explicit permission.
+                Content generated using AI tools is owned by AIFLOXIUM unless otherwise agreed. Users are prohibited from using AI-generated outputs for commercial purposes or public distribution without explicit permission.
               </p>
             </section>
 

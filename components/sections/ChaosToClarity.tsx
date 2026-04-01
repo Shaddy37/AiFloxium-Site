@@ -37,7 +37,7 @@ export default function ChaosToClarity() {
           <span className="text-zinc-500">To Deterministic Clarity.</span>
         </h2>
         <p className="text-xl text-zinc-400 font-medium max-w-2xl">
-          Legacy systems are fragmented, costly, and unpredictable. Aifloxium ingests chaotic workflows and outputs mathematically perfect, automated data structures.
+          Legacy systems are fragmented, costly, and unpredictable. I ingest chaotic workflows and output mathematically perfect, automated data structures.
         </p>
       </div>
 

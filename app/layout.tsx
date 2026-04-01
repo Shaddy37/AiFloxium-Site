@@ -27,12 +27,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aifloxium.online"),
-  title: "Aifloxium | Autonomous Infrastructure Architect for Agencies & SaaS",
-  description: "We engineer custom n8n workflows, high-fidelity voice agents (Vapi), and generative software that reclaim 40+ hours of manual work weekly.",
-  keywords: ["Autonomous Architecture", "Voice Agents", "Vapi Developer", "n8n Workflow Automation", "Claude Code Engineer", "AI Agency", "SaaS Automation"],
+  title: "Muhammad Shadab Shams | AI Automation Expert & Workflow Architect",
+  description: "I engineer custom n8n workflows, high-fidelity voice agents (Vapi), and generative software that reclaim 40+ hours of manual work weekly.",
+  keywords: ["AI Automation", "n8n Workflow Automation", "Voice Agents", "Vapi Developer", "Claude Code Engineer", "Workflow Architect", "SaaS Automation"],
   authors: [{ name: "Muhammad Shadab Shams", url: "https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" }],
   creator: "Muhammad Shadab Shams",
-  publisher: "Aifloxium",
+  publisher: "Muhammad Shadab Shams",
   formatDetection: {
     email: false,
     address: false,
@@ -55,16 +55,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Aifloxium | Agentic Workflows & High-Speed Development",
-    description: "We engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate.",
+    title: "Muhammad Shadab Shams | AI Automation Expert & Workflow Architect",
+    description: "I engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate.",
     url: "https://aifloxium.online",
-    siteName: "Aifloxium",
+    siteName: "Muhammad Shadab Shams - AI Automation",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Aifloxium Agency",
+        alt: "Muhammad Shadab Shams - AI Automation Expert",
       },
     ],
     locale: "en_US",
@@ -72,8 +72,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aifloxium | Intelligent Solutions That Scale",
-    description: "We engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate.",
+    title: "Muhammad Shadab Shams | AI Automation & Workflow Expert",
+    description: "I engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate.",
     images: ["/og-image.jpg"],
   },
   verification: {
@@ -82,16 +82,16 @@ export const metadata: Metadata = {
     yahoo: "yahoo-verification-placeholder",
   },
   category: "technology",
-  classification: "AI Agency",
+  classification: "AI Automation Expert",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Aifloxium",
+  "@type": "Person",
+  "name": "Muhammad Shadab Shams",
   "url": "https://aifloxium.online",
   "logo": "https://aifloxium.online/favicon.ico",
-  "description": "AI automation agency specializing in n8n workflows, voice agents, and autonomous systems.",
+  "description": "AI automation expert specializing in n8n workflows, voice agents, and autonomous systems.",
   "email": "info@aifloxium.online",
   "telephone": "+923464883396",
   "contactPoint": {
@@ -109,10 +109,7 @@ const jsonLd = {
     "https://x.com/ShadabLoveAi",
     "https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/"
   ],
-  "founder": {
-    "@type": "Person",
-    "name": "Muhammad Shadab Shams"
-  }
+  "jobTitle": "AI Automation Expert"
 };
 
 export default function RootLayout({

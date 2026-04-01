@@ -7,13 +7,13 @@ import { ArrowLeft, Clock, Calendar, User, Zap, Target, BookOpen, Layers, Lock, 
 import { BlogArchitecture } from "@/components/sections/BlogArchitecture";
 
 export const metadata: Metadata = {
-  title: 'The Autonomous Sales Rep: A Technical Treatise on SDR Obsolescence | Aifloxium',
-  description: 'An academic deep-dive into the architecture of autonomous outbound systems using n8n and Claude 3.5 Sonnet. Transitioning from deterministic automation to stochastic reasoning.',
+  title: 'The Autonomous Sales Rep: A Technical Treatise on SDR Obsolescence | AIFLOXIUM',
+  description: 'An academic deep-dive into the architecture of autonomous outbound systems using n8n and Claude 3.5 Sonnet by Muhammad Shadab Shams.',
   alternates: {
     canonical: '/blog/autonomous-sales-rep',
   },
   openGraph: {
-    title: 'The Autonomous Sales Rep: A Technical Treatise on SDR Obsolescence | Aifloxium',
+    title: 'The Autonomous Sales Rep: A Technical Treatise on SDR Obsolescence | AIFLOXIUM',
     description: 'An academic deep-dive into the architecture of autonomous outbound systems using n8n and Claude 3.5 Sonnet.',
     type: 'article',
     url: 'https://aifloxium.online/blog/autonomous-sales-rep',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Autonomous Sales Rep | Aifloxium',
+    title: 'The Autonomous Sales Rep | AIFLOXIUM',
     description: 'A technical treatise on the future of autonomous sales orchestration.',
     images: ['/blog/sales-rep-og.jpg'],
   },
@@ -45,7 +45,7 @@ const jsonLd = {
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Aifloxium",
+    "name": "AIFLOXIUM",
     "logo": {
       "@type": "ImageObject",
       "url": "https://aifloxium.online/favicon.ico"
@@ -80,7 +80,7 @@ export default function BlogPostPage() {
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-xs font-mono uppercase tracking-[0.2em] text-zinc-500 animate-fade-in-up delay-100">
             <div className="flex items-center gap-2"><Calendar className="w-3 h-3" /> May 18, 2025</div>
             <div className="flex items-center gap-2"><Clock className="w-3 h-3" /> 15 Min Read</div>
-            <div className="flex items-center gap-2"><User className="w-3 h-3" /> Aifloxium Engineering Lab</div>
+            <div className="flex items-center gap-2"><User className="w-3 h-3" /> Muhammad Shadab Shams</div>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-black text-white tracking-tighter mb-12 leading-[0.85] animate-fade-in-up delay-200">

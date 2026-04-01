@@ -7,30 +7,30 @@ import { CornerPlusIcons } from "@/components/ui/geometric-elements"
 
 const cardContents = [
   {
-     title: "The Silent Cost of &apos;Manual&apos;",
+    title: "The Silent Cost of 'Manual'",
     description:
-      "Every hour your team spends on data entry, lead sorting, or repetitive follow-ups is an hour stolen from high-level strategy. We replace human error with deterministic n8n logic.",
+      "Every hour your team spends on data entry, lead sorting, or repetitive follow-ups is an hour stolen from high-level strategy. Deterministic n8n logic replaces human error, and it's automated.",
   },
   {
     title: "SDRs That Never Sleep",
     description:
-      "Most agencies lose 60% of leads due to slow response times. Our Vapi-powered voice agents qualify and book appointments 24/7 with zero latency and perfect brand recall.",
+      "60% of leads vanish due to slow response times. Vapi-powered voice agents work 24/7, qualifying and booking appointments with zero latency and perfect brand recall.",
   },
   {
     title: "Fragmented Tech Stacks",
     description:
-       "Your tools aren&apos;t talking to each other, creating &apos;data silos&apos; that kill efficiency. We engineer the &apos;Invisible Backbone&apos;—a multi-agent orchestration layer that forces your entire stack to work as a single, unified organism.",
+      "Your tools aren't talking to each other, creating data silos that silently bleed revenue. The fix: an invisible backbone that forces your entire stack to work as one unified system.",
   },  
   {
     title: "Ghosting & Lead Decay",
     description:
-      "Leads go cold in minutes, not hours. We deploy autonomous social engines that engage prospects on LinkedIn and X the moment they show intent, ensuring you're always first to the table.",
+      "Leads go cold in minutes, not hours. Autonomous social engines engage prospects the moment they show intent on LinkedIn or X, ensuring you're always first to the table.",
   },
-       {
-     title: "Deterministic ROI",
-     description:
-       "Stop gambling on &apos;AI prompts&apos; that hallucinate. We build production-ready systems with strict logic gates and 80% automation guarantees. If it isn&apos;t measurable, we don&apos;t ship it.",
-   },
+     {
+    title: "Deterministic ROI",
+    description:
+      "Stop gambling on AI prompts that hallucinate. Production-ready systems with strict logic gates and 80% automation guarantees. If it isn't measurable, it doesn't ship.",
+  },
 ]
 
 
@@ -74,11 +74,11 @@ export default function RuixenBentoCards() {
             <span className="w-8 h-[1px] bg-zinc-700" /> Operational Audit
           </h2>
           <h3 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
-            STOP LEAKING <br /> <span className="text-gradient">REVENUE.</span>
+            YOUR REVENUE IS <br /> <span className="text-gradient">LEAKING.</span>
           </h3>
              <p className="text-xl text-zinc-400 font-medium leading-relaxed">
-               Most businesses don&apos;t have a talent problem; they have an infrastructure problem. We identify the friction points in your workflow and eliminate them with deterministic engineering.
-             </p>
+                You do not have a talent problem. You have systems that were never built to scale. I find exactly where you are losing time and money, then I build the fix.
+              </p>
         </div>
 
         {/* Responsive Grid */}
@@ -96,7 +96,7 @@ export default function RuixenBentoCards() {
             Built for scale. <br /> Engineered for dominance.
           </h2>
              <p className="text-gray-600 dark:text-zinc-400 text-xl font-medium">
-               We don&apos;t sell &apos;AI tools&apos;. We sell hours returned to your day and certainty in your bottom line. Let&apos;s build the systems that make your competition irrelevant.
+               I don&apos;t sell &apos;AI tools&apos;. I sell hours returned to your day and certainty in your bottom line. Let&apos;s build the systems that make your competition irrelevant.
              </p>
         </div>
       </div>

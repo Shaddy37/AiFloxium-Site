@@ -6,15 +6,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Insights | Enterprise AI Implementation Partners',
-  description: 'Read the latest architectural strategies from Aifloxium. Learn how to scale AI automation in large organizations and master AI data pipeline automation.',
-  keywords: ['enterprise AI automation services', 'scaling AI automation in large organizations', 'AI data pipeline automation', 'AI-driven process optimization strategies'],
+  title: 'Insights | AIFLOXIUM by Muhammad Shadab Shams',
+  description: 'Read the latest from Muhammad Shadab Shams on AI automation, n8n workflows, and building intelligent systems that work 24/7.',
+  keywords: ['AI automation insights', 'n8n workflows', 'automation tips', 'AI agents', 'workflow automation'],
   alternates: {
     canonical: '/blog',
   },
   openGraph: {
-    title: 'Insights | Enterprise AI Implementation Partners',
-    description: 'Read the latest architectural strategies from Aifloxium. Learn how to scale AI automation in large organizations.',
+    title: 'Insights | AIFLOXIUM - AI Automation by Muhammad Shadab Shams',
+    description: 'Essays on building intelligent systems that work 24/7 so businesses don\'t have to.',
     type: 'website',
     url: 'https://aifloxium.online/blog',
     images: [
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Aifloxium Blog',
+        alt: 'AIFLOXIUM Insights',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Insights | Enterprise AI Implementation Partners',
-    description: 'Read the latest architectural strategies from Aifloxium.',
+    title: 'Insights | AIFLOXIUM - Muhammad Shadab Shams',
+    description: 'Insights on AI automation and workflow engineering.',
     images: ['/og-image.jpg'],
   },
 };
@@ -65,7 +65,7 @@ export default function BlogPage() {
           <span className="text-gradient">THOUGHTS &</span> <br /> CODE.
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto font-medium">
-          Essays on n8n automation, Vibe Coding, and building elite technical systems as a solo-engineer.
+          Insights on building intelligent systems that work 24/7, from n8n automation to AI agents.
         </p>
       </div>
 
@@ -120,10 +120,10 @@ export default function BlogPage() {
         <div className="glass-card rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border-white/10 group hover:border-white/20 transition-all duration-500">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tight mb-4">
-              LOOKING FOR <span className="text-gradient">WORKFLOWS?</span>
+              LOOKING FOR <span className="text-gradient">AUTOMATIONS?</span>
             </h2>
             <p className="text-zinc-400 text-lg leading-relaxed">
-              We&apos;ve open-sourced our internal library of n8n automations, Claude Code skills, and Notion architecture guides. Every resource we use to scale is available in our hub.
+              Check out my portfolio of 38+ automation projects. From workflow templates to AI agents, if it can be automated, I have built it.
             </p>
           </div>
           <Link 
@@ -138,10 +138,10 @@ export default function BlogPage() {
       {/* High-Contrast White Newsletter CTA */}
       <section className="py-24 bg-white text-black my-24 border-y border-zinc-200">
          <div className="container mx-auto px-6 max-w-4xl text-center">
-            <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6">AUTOMATE YOUR INBOX.</h2>
-            <p className="text-zinc-600 font-medium text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-               Join 10,000+ executives receiving our bi-weekly dispatch on AI digital transformation, data pipeline architectures, and legacy system modernization.
-            </p>
+             <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6">AUTOMATE YOUR INBOX.</h2>
+             <p className="text-zinc-600 font-medium text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+                Get weekly insights on AI automation, n8n workflows, and building systems that actually scale. No fluff, just actionable automation strategies.
+             </p>
             <form className="flex flex-col sm:flex-row gap-4 justify-center">
                <input 
                   type="email" 

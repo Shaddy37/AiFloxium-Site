@@ -26,36 +26,36 @@ export const servicesData: ServiceData[] = [
     title: "n8n Workflow Automation",
     tagline: "Turn your manual bottlenecks into 24/7 autonomous pipelines.",
     description:
-      "We architect end-to-end automation workflows using n8n — connecting your CRMs, databases, communication tools, and APIs into a single intelligent operating layer that never sleeps. Projects start at $2,000.",
+      "I architect end-to-end automation workflows using n8n, connecting your CRMs, databases, communication tools, and APIs into a single intelligent operating layer that never sleeps. Projects start at $2,000.",
     heroIcon: "Workflow",
     color: "zinc",
     whatItIs:
-      "n8n is a powerful open-source workflow automation platform. Unlike Zapier or Make, it gives us full code-level control — custom logic, loops, conditionals, and direct database queries — making it the clear choice for serious automation. We self-host it on your infrastructure so your data never leaves your control.",
+      "n8n is a powerful open-source workflow automation platform. Unlike Zapier or Make, it gives me full code-level control, custom logic, loops, conditionals, and direct database queries, making it the clear choice for serious automation. I self-host it on your infrastructure so your data never leaves your control.",
     howItWorks: [
       {
         step: "01",
         title: "Process Audit",
-        body: "We map every manual task in your team's workflow, identify repetitive triggers, and pinpoint where human time is being wasted on tasks a machine can handle perfectly.",
+        body: "I map every manual task in your team's workflow, identify repetitive triggers, and pinpoint where human time is being wasted on tasks a machine can handle perfectly.",
       },
       {
         step: "02",
         title: "Architecture Design",
-        body: "We design a node-based workflow schema — specifying every input trigger, transformation step, conditional branch, and output action before writing a single line of logic.",
+        body: "I design a node-based workflow schema, specifying every input trigger, transformation step, conditional branch, and output action before writing a single line of logic.",
       },
       {
         step: "03",
         title: "Build & Connect",
-        body: "We build the workflow inside n8n, integrating your tools (Slack, Notion, Airtable, Google Sheets, HubSpot, custom APIs) using REST, GraphQL, or webhooks.",
+        body: "I build the workflow inside n8n, integrating your tools (Slack, Notion, Airtable, Google Sheets, HubSpot, custom APIs) using REST, GraphQL, or webhooks.",
       },
       {
         step: "04",
         title: "Test & Deploy",
-        body: "Every path through the workflow is tested against real data edge cases. We deploy to your self-hosted or cloud instance with error alerting and automatic retry logic.",
+        body: "Every path through the workflow is tested against real data edge cases. I deploy to your self-hosted or cloud instance with error alerting and automatic retry logic.",
       },
       {
         step: "05",
         title: "Monitor & Iterate",
-        body: "Post-launch we monitor execution logs, catch failures before they impact you, and continuously optimise logic as your processes evolve.",
+        body: "Post-launch I monitor execution logs, catch failures before they impact you, and continuously optimise logic as your processes evolve.",
       },
     ],
     useCases: [
@@ -81,55 +81,55 @@ export const servicesData: ServiceData[] = [
       },
       {
         q: "Do I need to understand n8n myself?",
-        a: "Not at all. We handle the entire build. We'll give you a visual overview, but you never need to touch the system unless you want to.",
+        a: "Not at all. I handle the entire build. I'll give you a visual overview, but you never need to touch the system unless you want to.",
       },
       {
         q: "What if an API I use isn't supported?",
-        a: "n8n has 400+ native integrations. For anything else, we build custom HTTP request nodes or write JavaScript function nodes — virtually any REST API can be connected.",
+        a: "n8n has 400+ native integrations. For anything else, I build custom HTTP request nodes or write JavaScript function nodes, virtually any REST API can be connected.",
       },
       {
         q: "Is my data safe?",
-        a: "Yes. We self-host n8n on your own infrastructure. Your data never passes through third-party servers.",
+        a: "Yes. I self-host n8n on your own infrastructure. Your data never passes through third-party servers.",
       },
     ],
     ctaHeading: "Ready to automate your operations?",
-    ctaSubtext: "Book a free 30-minute process audit and we'll identify the top 3 workflows we can automate for you immediately. Starting at $2,000.",
+    ctaSubtext: "Book a free 30-minute process audit and I'll identify the top 3 workflows I can automate for you immediately. Starting at $2,000.",
   },
   {
     slug: "autonomous-voice-agents",
     title: "Autonomous Voice Agents",
     tagline: "Voice AI that sounds human, thinks fast, and never sleeps.",
     description:
-      "We deploy high-fidelity voice agents using Vapi and Retell AI to automate inbound qualification, outbound sales, and 24/7 customer support with zero latency. Starting at $2,500.",
+      "I deploy high-fidelity voice agents using Vapi and Retell AI to automate inbound qualification, outbound sales, and 24/7 customer support with zero latency. Starting at $2,500.",
     heroIcon: "Phone",
     color: "zinc",
     whatItIs:
-      "Voice AI has evolved. We build agents that handle complex human conversations with natural inflection and under 500ms latency. Using Vapi and Retell, we connect your AI reasoning engine to the global phone network, allowing your business to scale communication without scaling headcount.",
+      "Voice AI has evolved. I build agents that handle complex human conversations with natural inflection and under 500ms latency. Using Vapi and Retell, I connect your AI reasoning engine to the global phone network, allowing your business to scale communication without scaling headcount.",
     howItWorks: [
       {
         step: "01",
         title: "Persona & Logic Design",
-        body: "We define the agent's voice, personality, and the decision tree it follows during calls to ensure professional and helpful interactions.",
+        body: "I define the agent's voice, personality, and the decision tree it follows during calls to ensure professional and helpful interactions.",
       },
       {
         step: "02",
         title: "Vapi/Retell Integration",
-        body: "We configure the core voice infrastructure, selecting the best LLM for the task and tuning the Text-to-Speech (TTS) engine for maximum realism.",
+        body: "I configure the core voice infrastructure, selecting the best LLM for the task and tuning the Text-to-Speech (TTS) engine for maximum realism.",
       },
       {
         step: "03",
         title: "Tool & CRM Sync",
-        body: "The agent is given 'hands' — the ability to book meetings in your calendar, update CRM records, or trigger Slack alerts in real-time based on call outcomes.",
+        body: "The agent is given 'hands', the ability to book meetings in your calendar, update CRM records, or trigger Slack alerts in real-time based on call outcomes.",
       },
       {
         step: "04",
         title: "Stress Testing",
-        body: "We run the agent through hundreds of simulated calls to handle interruptions, accents, and complex inquiries perfectly before going live.",
+        body: "I run the agent through hundreds of simulated calls to handle interruptions, accents, and complex inquiries perfectly before going live.",
       },
       {
         step: "05",
         title: "Live Deployment",
-        body: "Your agent goes live. We provide a dashboard to monitor call recordings, transcripts, and conversion metrics.",
+        body: "Your agent goes live. I provide a dashboard to monitor call recordings, transcripts, and conversion metrics.",
       },
     ],
     useCases: [
@@ -149,7 +149,7 @@ export const servicesData: ServiceData[] = [
     faqs: [
       {
         q: "Does it sound like a robot?",
-        a: "No. With modern TTS engines like ElevenLabs, most callers cannot distinguish our agents from a high-quality human operator.",
+        a: "No. With modern TTS engines like ElevenLabs, most callers cannot distinguish my agents from a high-quality human operator.",
       },
       {
         q: "Can it handle interruptions?",
@@ -161,43 +161,43 @@ export const servicesData: ServiceData[] = [
       },
     ],
     ctaHeading: "Ready to automate your phones?",
-    ctaSubtext: "Schedule a demo and we'll let you talk to one of our live agents yourself. Architectures start at $2,500.",
+    ctaSubtext: "Schedule a demo and I'll let you talk to one of my live agents yourself. Architectures start at $2,500.",
   },
   {
     slug: "vibe-coding",
     title: "Vibe Coding (Claude)",
     tagline: "Ship production-grade software in days, not months.",
     description:
-      "We use Claude Code and frontier LLMs to build bespoke internal tools, micro-SaaS products, and web applications at a speed that traditional development simply cannot match. Starting at $1,500.",
+      "I use Claude Code and frontier LLMs to build bespoke internal tools, micro-SaaS products, and web applications at a speed that traditional development simply cannot match. Starting at $1,500.",
     heroIcon: "Code2",
     color: "zinc",
     whatItIs:
-      "Vibe Coding is a development methodology where experienced engineers use AI coding assistants (Claude, GPT-4, Cursor) as force multipliers — not replacements. We still architect, review, and ship everything. The AI accelerates the repetitive scaffolding, test generation, and boilerplate, so our engineers focus purely on the hard problems. The result: you get senior-level software at startup speed.",
+      "Vibe Coding is a development methodology where experienced engineers use AI coding assistants (Claude, GPT-4, Cursor) as force multipliers, not replacements. I still architect, review, and ship everything. The AI accelerates the repetitive scaffolding, test generation, and boilerplate, so my engineers focus purely on the hard problems. The result: you get senior-level software at startup speed.",
     howItWorks: [
       {
         step: "01",
         title: "Spec & Scope",
-        body: "We reverse-engineer exactly what you need: user flows, data models, integrations, and edge cases. We produce a tight technical spec before writing anything.",
+        body: "I reverse-engineer exactly what you need: user flows, data models, integrations, and edge cases. I produce a tight technical spec before writing anything.",
       },
       {
         step: "02",
         title: "Scaffold & Architect",
-        body: "We establish the tech stack, project structure, authentication, database schema, and API layer — the foundation that won't need to be rebuilt later.",
+        body: "I establish the tech stack, project structure, authentication, database schema, and API layer, the foundation that won't need to be rebuilt later.",
       },
       {
         step: "03",
         title: "Rapid Feature Build",
-        body: "Using Claude Code and Cursor, we construct features in parallel with AI-assisted pattern generation. Every output is reviewed and tested by a human engineer.",
+        body: "Using Claude Code and Cursor, I construct features in parallel with AI-assisted pattern generation. Every output is reviewed and tested by a human engineer.",
       },
       {
         step: "04",
         title: "QA & Polish",
-        body: "Automated tests, manual edge-case testing, and UI polish. We don't ship MVPs that look like MVPs.",
+        body: "Automated tests, manual edge-case testing, and UI polish. I don't ship MVPs that look like MVPs.",
       },
       {
         step: "05",
         title: "Deploy & Hand Off",
-        body: "We deploy to your preferred cloud (Vercel, AWS, VPS). Full documentation and optional maintenance retainers available.",
+        body: "I deploy to your preferred cloud (Vercel, AWS, VPS). Full documentation and optional maintenance retainers available.",
       },
     ],
     useCases: [
@@ -219,15 +219,15 @@ export const servicesData: ServiceData[] = [
     faqs: [
       {
         q: "Is vibe-coded software lower quality?",
-        a: "No — when done correctly, the opposite is true. AI accelerates the commodity work. Our engineers focus on architecture and quality. Every line ships through human review.",
+        a: "No, when done correctly, the opposite is true. AI accelerates the commodity work. Our engineers focus on architecture and quality. Every line ships through human review.",
       },
       {
         q: "What's the minimum viable project size?",
-        a: "We typically start from a £1,500+ project ($2,000 approx). Smaller tools may be better served by our automation tier.",
+        a: "I typically start from a £1,500+ project ($2,000 approx). Smaller tools may be better served by my automation tier.",
       },
       {
         q: "Do you build mobile apps?",
-        a: "We primarily build web applications (which work great on mobile). Native iOS/Android is outside our current scope.",
+        a: "I primarily build web applications (which work great on mobile). Native iOS/Android is outside my current scope.",
       },
       {
         q: "Who owns the code?",
@@ -235,18 +235,18 @@ export const servicesData: ServiceData[] = [
       },
     ],
     ctaHeading: "Have a tool idea you want built?",
-    ctaSubtext: "Tell us what you need. We'll scope it, price it, and can usually start within the week. Million Dollar sites start at $1,500.",
+    ctaSubtext: "Tell me what you need. I'll scope it, price it, and can usually start within the week. Million Dollar sites start at $1,500.",
   },
   {
     slug: "seo-optimization",
     title: "AI-Powered SEO",
     tagline: "Dominate search rankings with automated content and technical precision.",
     description:
-      "We combine deep technical SEO with AI-driven content systems to scale your organic traffic without the high cost of traditional agencies. Starting at $1,800.",
+      "I combine deep technical SEO with AI-driven content systems to scale your organic traffic without the high cost of traditional agencies. Starting at $1,800.",
     heroIcon: "Search",
     color: "zinc",
     whatItIs:
-      "Modern SEO requires both technical excellence and high-volume, high-quality content. We build custom AI engines that research keywords, generate optimized articles in your brand voice, and monitor your technical health (speed, structure, metadata) to ensure you rank #1 for the terms that drive revenue.",
+      "Modern SEO requires both technical excellence and high-volume, high-quality content. I build custom AI engines that research keywords, generate optimized articles in your brand voice, and monitor your technical health (speed, structure, metadata) to ensure you rank #1 for the terms that drive revenue.",
     howItWorks: [
       {
         step: "01",
@@ -303,18 +303,18 @@ export const servicesData: ServiceData[] = [
       },
     ],
     ctaHeading: "Ready to rank higher?",
-    ctaSubtext: "Get a free SEO audit of your top 3 competitors and see exactly how we can beat them. Engines start at $1,800.",
+    ctaSubtext: "Get a free SEO audit of your top 3 competitors and see exactly how I can beat them. Engines start at $1,800.",
   },
   {
     slug: "autonomous-agents",
     title: "Autonomous Agents",
-    tagline: "Deploy AI agents that work, decide, and act — 24/7.",
+    tagline: "Deploy AI agents that work, decide, and act, 24/7.",
     description:
       "We build multi-agent systems powered by Claude, GPT-4, and custom tool-use frameworks that autonomously handle research, outreach, data processing, and decision-making at scale.",
     heroIcon: "Brain",
     color: "zinc",
     whatItIs:
-      "An autonomous agent is an AI system given a goal, a set of tools (search, email, database, browser), and the ability to reason step-by-step to achieve that goal without a human in the loop. We architect these systems using LangChain, custom Python orchestrators, or n8n AI nodes — then harden them with guardrails, logging, and human-override mechanisms.",
+      "An autonomous agent is an AI system given a goal, a set of tools (search, email, database, browser), and the ability to reason step-by-step to achieve that goal without a human in the loop. We architect these systems using LangChain, custom Python orchestrators, or n8n AI nodes, then harden them with guardrails, logging, and human-override mechanisms.",
     howItWorks: [
       {
         step: "01",
@@ -329,7 +329,7 @@ export const servicesData: ServiceData[] = [
       {
         step: "03",
         title: "Prompt Architecture",
-        body: "System prompts, task instructions, few-shot examples, and output parsers are engineered to produce consistent, reliable agent behaviour — not hallucinations.",
+        body: "System prompts, task instructions, few-shot examples, and output parsers are engineered to produce consistent, reliable agent behaviour, not hallucinations.",
       },
       {
         step: "04",
@@ -365,30 +365,30 @@ export const servicesData: ServiceData[] = [
       },
       {
         q: "How much does an autonomous agent cost to run?",
-        a: "Ongoing API costs (OpenAI/Anthropic) are billed separately and vary by usage. We optimise prompts and caching to keep these as low as possible.",
+        a: "Ongoing API costs (OpenAI/Anthropic) are billed separately and vary by usage. I optimise prompts and caching to keep these as low as possible.",
       },
       {
         q: "Can agents integrate with our existing software?",
-        a: "Yes — we build custom tools that connect to any system with an API. If it's accessible via HTTP, we can give an agent access to it.",
+        a: "Yes, I build custom tools that connect to any system with an API. If it's accessible via HTTP, I can give an agent access to it.",
       },
       {
         q: "How do I stay in control?",
-        a: "Every agent system we build includes an admin dashboard, full execution logging, and manual override controls. You always have the final say.",
+        a: "Every agent system I build includes an admin dashboard, full execution logging, and manual override controls. You always have the final say.",
       },
     ],
     ctaHeading: "Ready to deploy your first AI agent?",
-    ctaSubtext: "Let's define the goal, the tools, and the guardrails — then build the agent that does the work.",
+    ctaSubtext: "Let's define the goal, the tools, and the guardrails, then build the agent that does the work.",
   },
   {
     slug: "agency-scaling-partner",
     title: "Agency Scaling Partner",
     tagline: "Your AI technical backend. We build the systems, you close the clients.",
     description:
-      "We embed as the automation and AI engineering layer behind digital agencies, consultancies, and service businesses — building the technical infrastructure that lets you punch above your weight without hiring a full engineering team. Starting at $5,000.",
+      "We embed as the automation and AI engineering layer behind digital agencies, consultancies, and service businesses, building the technical infrastructure that lets you punch above your weight without hiring a full engineering team. Starting at $5,000.",
     heroIcon: "TrendingUp",
     color: "zinc",
     whatItIs:
-      "Most agencies win on strategy, creativity, and relationships — but lose time and margin trying to deliver technical automation work they can't fully productise. We operate as your invisible technical partner: scoping, building, and maintaining AI automation systems under your brand, so you can offer enterprise-grade AI deliverables to your clients without the overhead.",
+      "Most agencies win on strategy, creativity, and relationships, but lose time and margin trying to deliver technical automation work they can't fully productise. We operate as your invisible technical partner: scoping, building, and maintaining AI automation systems under your brand, so you can offer enterprise-grade AI deliverables to your clients without the overhead.",
     howItWorks: [
       {
         step: "01",
@@ -403,7 +403,7 @@ export const servicesData: ServiceData[] = [
       {
         step: "03",
         title: "White-Label Delivery",
-        body: "We build under your brand. All deliverables — documentation, dashboards, handoff calls — carry your agency's name.",
+        body: "We build under your brand. All deliverables, documentation, dashboards, handoff calls, carry your agency's name.",
       },
       {
         step: "04",
@@ -413,7 +413,7 @@ export const servicesData: ServiceData[] = [
       {
         step: "05",
         title: "Ongoing Retainer",
-        body: "For clients that retain your agency post-launch, we provide the ongoing automation maintenance and development under a predictable monthly rate.",
+        body: "For clients that retain your agency post-launch, I provide the ongoing automation maintenance and development under a predictable monthly rate.",
       },
     ],
     useCases: [
@@ -443,11 +443,11 @@ export const servicesData: ServiceData[] = [
       },
       {
         q: "Do you work with agencies outside the UK and Pakistan?",
-        a: "Yes — we work remotely with agency partners globally across EU, North America, and the Middle East.",
+        a: "Yes, I work remotely with agency partners globally across EU, North America, and the Middle East.",
       },
       {
         q: "What if a project is outside your capabilities?",
-        a: "We'll tell you upfront. We'd rather decline a project than underdeliver. We only take on work we can execute to a high standard.",
+        a: "I'll tell you upfront. I'd rather decline a project than underdeliver. I only take on work I can execute to a high standard.",
       },
     ],
     ctaHeading: "Want to scale your agency without scaling headcount?",

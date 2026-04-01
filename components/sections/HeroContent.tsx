@@ -15,14 +15,14 @@ export default function HeroContent() {
               className="text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] font-heading font-black tracking-tighter leading-[0.8] select-none"
             >
               <span className="block font-light text-zinc-500 mb-2 md:mb-4 text-3xl sm:text-4xl md:text-7xl lg:text-8xl">
-                ENGINEERED
+                STOP DOING
               </span>
               <span className="block relative">
                 <span className="bg-gradient-to-br from-white via-white to-zinc-500/80 bg-clip-text text-transparent font-black relative z-10">
-                  AUTONOMY.
+                  ROBOT WORK.
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-zinc-500/80 bg-clip-text text-transparent font-black blur-2xl opacity-40 scale-105">
-                  AUTONOMY.
+                  ROBOT WORK.
                 </div>
                 <div
                   className="absolute -bottom-4 md:-bottom-6 left-0 h-1 md:h-3 bg-gradient-to-r from-white/60 via-white/20 to-transparent rounded-full shadow-2xl animate-width"
@@ -33,10 +33,10 @@ export default function HeroContent() {
           
           <div className="max-w-xl md:max-w-2xl mx-auto space-y-4 md:space-y-6">
             <p className="text-lg md:text-2xl text-zinc-200 leading-relaxed font-medium tracking-tight px-4 md:px-0">
-              Stop leaking margin. We architect automated systems that <span className="text-white font-bold underline decoration-white/20 underline-offset-4">reclaim 40+ hours every week.</span>
+              Your team deserves to work on <span className="text-white font-bold">high-level strategy</span>, not spreadsheets. I build AI systems that reclaim 40+ hours every week.
             </p>
             <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-zinc-800 bg-zinc-950/40 backdrop-blur-md">
-               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">Tier-1 Infrastructure</span>
+               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">AI Automation Agency</span>
             </div>
           </div>
         </div>

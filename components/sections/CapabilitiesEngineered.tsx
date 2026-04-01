@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 /**
  * CapabilitiesEngineered
  *
- * Sticky-scroll section: "we can [verb]." where a new verb appears at the
+ * Sticky-scroll section: "I can [verb]." where a new verb appears at the
  * viewport centre as the user scrolls through the section.
  *
  * Implementation strategy:
@@ -25,7 +25,7 @@ const words = [
   { label: "deploy.",      sublabel: "Production-ready systems shipped fast." },
   { label: "integrate.",   sublabel: "APIs, webhooks & third-party ecosystems." },
   { label: "optimize.",    sublabel: "Continuous auditing & performance tuning." },
-  { label: "ship.",        sublabel: "From spec to live — on time, every time." },
+  { label: "ship.",        sublabel: "From spec to live, on time, every time." },
 ];
 
 const COUNT = words.length;
@@ -125,19 +125,19 @@ export default function CapabilitiesEngineered() {
             <div className="flex items-center gap-4">
               <span className="w-8 h-[1px] bg-zinc-700" />
               <p className="text-zinc-500 tracking-[0.2em] font-medium text-xs uppercase">
-                What we do
+                What I build
               </p>
               <span className="w-8 h-[1px] bg-zinc-700" />
             </div>
 
-            {/* Headline row: "we can [verb]" */}
+            {/* Headline row: "I can [verb]" */}
             <h2 
               className="flex flex-col md:flex-row items-center md:items-baseline gap-3 md:gap-5 text-center md:text-left font-heading font-black tracking-tighter m-0"
               style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 1.2 }}
             >
               {/* Static prefix */}
               <span className="text-zinc-500 whitespace-nowrap">
-                we&nbsp;can
+                I&nbsp;can
               </span>
 
               {/* Animated verb */}

@@ -3,8 +3,8 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Aifloxium",
-  description: "Privacy policy for Aifloxium AI Agency - Learn how we collect, use, and protect your information.",
+  title: "Privacy Policy | AIFLOXIUM - AI Automation by Muhammad Shadab Shams",
+  description: "Privacy policy for AIFLOXIUM AI Automation Agency. Learn how Muhammad Shadab Shams collects, uses, and protects your information.",
 };
 
 export default function PrivacyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           
           <div className="prose prose-invert prose-zinc max-w-none">
             <p className="text-zinc-400 text-lg mb-8">
-              Welcome to <span className="text-white">https://aifloxium.online</span> (the &quot;Site&quot;). We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies concerning those users of the Site (&quot;Visitors&quot;) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by AIFloxium (collectively, &quot;Services&quot;) (&quot;Authorized Customers&quot;).
+              Welcome to <span className="text-white">https://aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> as AIFLOXIUM. We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies concerning those users of the Site (&quot;Visitors&quot;) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by AIFLOXIUM (collectively, &quot;Services&quot;) (&quot;Authorized Customers&quot;).
             </p>
 
             <section className="mb-8">

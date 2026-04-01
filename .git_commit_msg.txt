@@ -1,0 +1,20 @@
+Convert agency website to personal AI automation portfolio
+
+- Update metadata and SEO: title, description, keywords to personal branding
+- Convert all agency messaging from 'We' to 'I' perspective across 10+ files
+- Update footer branding: 'AIFLOXIUM' → 'SHADAB SHAMS'
+- Reframe services as personal expertise areas
+- Update about page to personal narrative
+- Convert all UI components: accordion, cards, sticky sections
+- Update services data descriptions and CTAs
+- Preserve all animations, styling, and structure
+
+Key files modified:
+- app/layout.tsx: Metadata
+- components/sections/*: Hero, footer, services
+- components/ui/*: Accordion, cards, sticky sections
+- lib/services-data.ts: Service descriptions
+
+All animations (3D, Framer Motion, GSAP) and styling preserved.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>

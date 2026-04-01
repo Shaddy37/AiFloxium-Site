@@ -5,7 +5,7 @@ import { Contact2 } from "@/components/ui/contact-2";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Resources | Free & Premium AI Automation Tools — Aifloxium",
+  title: "Resources | Free & Premium AI Automation Tools | Aifloxium",
   description:
     "Explore curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides. Free and premium resources to supercharge your AI workflow.",
   keywords: [
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
     canonical: '/resources',
   },
   openGraph: {
-    title: "Resources | Free & Premium AI Automation Tools — Aifloxium",
+    title: "Resources | Free & Premium AI Automation Tools | Aifloxium",
     description:
-      "Curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides — free and premium.",
+      "Curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides, free and premium.",
     type: "website",
     url: "https://aifloxium.online/resources",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resources | Free & Premium AI Automation Tools — Aifloxium",
+    title: "Resources | Free & Premium AI Automation Tools | Aifloxium",
     description:
       "Curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides.",
   },
@@ -60,7 +60,7 @@ const n8nWorkflows = [
   {
     title: "Automated Invoice Processing & Approval",
     description:
-      "Extract invoice data via OCR, validate against PO records in your ERP, and trigger multi-step approval chains — zero human touch.",
+      "Extract invoice data via OCR, validate against PO records in your ERP, and trigger multi-step approval chains, zero human touch.",
     tags: ["Finance", "OCR", "ERP"],
     badge: "FREE",
     badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
@@ -226,7 +226,7 @@ const claudeAgents = [
   {
     title: "agency-evidence-collector",
     description:
-      "Screenshot-obsessed QA specialist — defaults to finding 3–5 visual issues and requires proof for everything before production sign-off.",
+      "Screenshot-obsessed QA specialist, defaults to finding 3-5 visual issues and requires proof for everything before production sign-off.",
     tags: ["QA", "Testing", "Validation"],
     badge: "FREE",
     badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
@@ -249,7 +249,7 @@ const notionGuides = [
   {
     title: "How to Build Claude Code Skills from Scratch",
     description:
-      "Step-by-step guide to engineering your own Claude Code skills — from SKILL.md architecture and tool design to publishing and distribution.",
+      "Step-by-step guide to engineering your own Claude Code skills, from SKILL.md architecture and tool design to publishing and distribution.",
     tags: ["Claude Code", "Skills", "Tutorial"],
     badge: "FREE",
     badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
@@ -441,7 +441,7 @@ export default function ResourcesPage() {
 
             <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed mb-12">
               Battle-tested n8n automations, Claude Code skills, AI agents, and
-              step-by-step Notion guides — curated by the Aifloxium team to help
+              step-by-step Notion guides, curated by the Aifloxium team to help
               you build smarter, faster.
             </p>
 
@@ -483,7 +483,7 @@ export default function ResourcesPage() {
             id="n8n"
             eyebrow="Workflow Engineering"
             title="n8n Automations"
-            subtitle="Production-ready automation workflows. Copy, deploy, and adapt — built to save hours every week."
+            subtitle="Production-ready automation workflows. Copy, deploy, and adapt, built to save hours every week."
             count={n8nWorkflows.length}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -588,7 +588,7 @@ export default function ResourcesPage() {
             id="notion-guides"
             eyebrow="Structured Learning"
             title="Notion Guides"
-            subtitle="Comprehensive step-by-step guides for Claude Code, Ollama, and AI automation — written by practitioners, not theorists."
+            subtitle="Comprehensive step-by-step guides for Claude Code, Ollama, and AI automation, written by practitioners, not theorists."
             count={notionGuides.length}
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -621,7 +621,7 @@ export default function ResourcesPage() {
             </h2>
             <p className="text-zinc-600 text-lg leading-relaxed">
               We write detailed technical breakdowns on every tool and workflow
-              we use — n8n architectures, Claude Code patterns, and autonomous
+              we use, n8n architectures, Claude Code patterns, and autonomous
               agent design. Free, always.
             </p>
           </div>

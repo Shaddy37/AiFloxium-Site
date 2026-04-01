@@ -5,28 +5,28 @@ import { useRef } from "react";
 
 const problems = [
   {
-    title: "OPERATIONAL OVERHEAD",
-    description: "Manual labor and inefficient workflows eat into your margins. You're spending more but getting less.",
+    title: "HOURS LOST TO BUSY WORK",
+    description: "Your team spends 20+ hours weekly on tasks that a properly configured workflow handles in minutes. That's money walking out the door.",
   },
   {
-    title: "REPETITIVE TASKS",
-    description: "Your team wastes hours on repetitive work, stuck in operational grind instead of strategic work.",
+    title: "LEADS DYING IN YOUR CRM",
+    description: "Prospects go cold because your follow-up system is manual. Automation means every lead gets contacted in under 5 minutes.",
   },
   {
-    title: "SCALING VULNERABILITY",
-    description: "As your business grows, manual processes break down. You need systems that scale with your ambition.",
+    title: "DATA SCATTERED EVERYWHERE",
+    description: "Customer info lives in 5 different tools. No wonder you can't make decisions. Connect the dots and see your business clearly.",
   },
   {
-    title: "TOOL FATIGUE",
-    description: "The AI landscape is overwhelming. Unclear roadmaps and fragmented systems stall your transformation.",
+    title: "MANUAL INVOICING CHAOS",
+    description: "Chasing payments wastes more time than chasing prospects. Automate your billing and get paid 3x faster.",
   },
   {
-    title: "DATA SILOS",
-    description: "Fragmented data across tools makes it impossible to get a real-time pulse on business performance.",
+    title: "TEAM BURNOUT RISING",
+    description: "Your best people are leaving because they're stuck doing robot work. Give them systems that let them actually solve problems.",
   },
   {
-    title: "INCONSISTENT CX",
-    description: "Manual responses lead to varied quality and slow turnarounds, frustrating high-value clients.",
+    title: "SCALING MEANS HIRING MORE",
+    description: "Wrong. Smart automation means you grow revenue without growing headcount. Same team, double the output.",
   },
 ];
 
@@ -126,15 +126,15 @@ export default function HiddenCostSection() {
         >
           <span className="flex items-center gap-4 text-xs md:text-sm font-bold text-zinc-500 tracking-[0.4em] uppercase mb-10">
             <span className="w-10 h-[1px] bg-zinc-800" />
-            IS THIS YOU?
+            SOUNDS FAMILIAR?
             <span className="w-10 h-[1px] bg-zinc-800" />
           </span>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white leading-[0.8] mb-12">
-            STOP THE GYMNASTICS. <br />
+            STOP THE CHAOS. <br />
             <span className="text-zinc-500 opacity-40">START AUTOMATING.</span>
           </h2>
           <p className="text-zinc-500 text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
-            Eliminate the operational bottlenecks holding you back.
+            Every business has bottlenecks. The difference is who fixes them.
           </p>
         </motion.div>
 
@@ -162,7 +162,7 @@ export default function HiddenCostSection() {
           }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <span className="text-[10px] text-zinc-500 tracking-[0.4em] uppercase font-bold text-center">Face the Reality</span>
+          <span className="text-[10px] text-zinc-500 tracking-[0.4em] uppercase font-bold text-center">Time to fix this</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-zinc-700 via-zinc-500 to-transparent" />
         </motion.div>
       </div>

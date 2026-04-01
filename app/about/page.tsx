@@ -6,15 +6,15 @@ import { Accordion05 } from "@/components/ui/accordion-05";
 import { TrendingUp, Database, Cpu } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'About Aifloxium | Enterprise AI Automation Services',
-  description: 'Aifloxium is a premier AI consulting for business automation agency. We engineer custom workflow architectures that reduce operational costs by up to 80%.',
-  keywords: ['enterprise AI automation services', 'AI digital transformation consultancy', 'custom AI workflow solutions'],
+  title: 'About Muhammad Shadab Shams | AI Automation Expert',
+  description: 'I am an AI automation expert specializing in n8n workflows and enterprise automation. I engineer custom workflow architectures that reduce operational costs by up to 80%.',
+  keywords: ['AI automation expert', 'n8n workflow automation', 'custom AI workflow solutions'],
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Aifloxium | Enterprise AI Automation Services',
-    description: 'Aifloxium is a premier AI consulting for business automation agency. We engineer custom workflow architectures that reduce operational costs by up to 80%.',
+    title: 'About Muhammad Shadab Shams | AI Automation Expert',
+    description: 'I am an AI automation expert specializing in n8n workflows and enterprise automation. I engineer custom workflow architectures that reduce operational costs by up to 80%.',
     type: 'website',
     url: 'https://aifloxium.online/about',
     images: [
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Aifloxium About Page',
+        alt: 'Muhammad Shadab Shams - AI Automation Expert',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Aifloxium | Enterprise AI Automation Services',
-    description: 'Aifloxium is a premier AI consulting for business automation agency.',
+    title: 'About Muhammad Shadab Shams | AI Automation Expert',
+    description: 'I am an AI automation expert specializing in n8n workflows and enterprise automation.',
     images: ['/og-image.jpg'],
   },
 };
@@ -43,10 +43,10 @@ export default function AboutPage() {
       <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-800/20 blur-[150px] rounded-full pointer-events-none -z-10" />
         <h1 className="text-6xl md:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-[0.9]">
-          ENGINEERED <br /><span className="text-gradient">FOR THE FUTURE.</span>
+          THE AUTOMATOR <br /><span className="text-gradient">BEHIND AIFLOXIUM.</span>
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium leading-relaxed">
-          Built on the belief that intelligent automation is the absolute standard for scaling enterprise revenue without permanently scaling human capital.
+          I am <span className="text-white font-bold">Muhammad Shadab Shams</span>, the founder of AIFLOXIUM. I build intelligent systems that work 24/7 so businesses do not have to.
         </p>
       </div>
 
@@ -93,8 +93,8 @@ export default function AboutPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-800/10 blur-[150px] rounded-full pointer-events-none -z-10" />
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">THE AIFLOXIUM STORY</h2>
-            <p className="text-zinc-500 font-medium">Everything you need to know about who we are and what we do.</p>
+            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">MY STORY</h2>
+            <p className="text-zinc-500 font-medium">Everything you need to know about who I am and what I do.</p>
           </div>
           <Accordion05 />
         </div>
