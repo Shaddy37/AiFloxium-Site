@@ -3,9 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
-import SmoothScroll from "@/components/providers/SmoothScroll";
-import CustomCursor from "@/components/ui/CustomCursor";
-import PageLoader from "@/components/ui/page-loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -126,9 +123,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://aifloxium.vercel.app" />
-        <link rel="dns-prefetch" href="https://aifloxium.vercel.app" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -136,12 +130,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
         <div className="grainy-overlay" />
-        <CustomCursor />
-        <PageLoader>
-          <SmoothScroll>
-            {children}
-          </SmoothScroll>
-        </PageLoader>
+        {children}
         <SpeedInsights />
         <Analytics />
       </body>
