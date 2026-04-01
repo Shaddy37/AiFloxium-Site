@@ -1,8 +1,8 @@
 import Navbar from "@/components/layouts/Navbar";
 import Hero from "@/components/sections/Hero";
+import HiddenCostSection from "@/components/sections/HiddenCostSection";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import Footer from "@/components/sections/Footer";
-import { Vision } from "@/components/sections/HomeSections";
 import CapabilitiesEngineered from "@/components/sections/CapabilitiesEngineered";
 import RuixenBentoCards from "@/components/ui/ruixen-bento-cards";
 import { DottedSurface } from "@/components/ui/dotted-surface";
@@ -13,9 +13,10 @@ export default function Home() {
     <main className="relative bg-background">
       <Navbar />
       <Hero />
+      <HiddenCostSection />
       
       <DottedSurface className="z-0" />
-      
+
       {/* Companies We Collaborate With Section */}
       <section className="py-24 px-6 border-y border-white/5 relative bg-zinc-950/20">
         <div className="container mx-auto max-w-4xl text-center">
@@ -25,8 +26,6 @@ export default function Home() {
           <LogoCloud />
         </div>
       </section>
-
-      <Vision />
 
       <CapabilitiesEngineered />
       
