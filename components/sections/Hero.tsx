@@ -2,8 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { DotGlobeHero } from "@/components/ui/globe-hero";
+import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
+
+const DotGlobeHero = dynamic(() => import("@/components/ui/globe-hero").then(mod => mod.DotGlobeHero), {
+  ssr: false,
+  loading: () => <div className="h-screen bg-background" />,
+});
 
 export default function Hero() {
   return (
@@ -24,7 +29,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-6 md:space-y-10 flex flex-col items-center"
         >
-          <div className="space-y-4">
+          <div className="space-y-4" style={{ contain: "layout paint" }}>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

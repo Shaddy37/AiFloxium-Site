@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 const problems = [
@@ -30,6 +30,72 @@ const problems = [
   },
 ];
 
+function ProblemCard({ 
+  problem, 
+  index, 
+  smoothProgress 
+}: { 
+  problem: typeof problems[0]; 
+  index: number;
+  smoothProgress: ReturnType<typeof useSpring>;
+}) {
+  const total = problems.length;
+  const step = 0.7 / total;
+  const start = 0.15 + index * step;
+  const end = start + step;
+  const mid = (start + end) / 2;
+
+  const y = useTransform(smoothProgress, [start, mid, end], ["120%", "0%", "-120%"]);
+  const opacity = useTransform(smoothProgress, [start, mid, end], [0, 1, 0]);
+  const scale = useTransform(smoothProgress, [start, mid, end], [0.9, 1, 0.9]);
+  const rotateX = useTransform(smoothProgress, [start, mid, end], [10, 0, -10]);
+
+  return (
+    <motion.div
+      style={{ 
+        y, 
+        opacity, 
+        scale,
+        rotateX 
+      }}
+      className="absolute inset-x-6 md:inset-x-0 mx-auto"
+    >
+      <div 
+        className="relative group p-8 md:p-12 bg-zinc-900/60 backdrop-blur-2xl border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] overflow-hidden"
+        style={{ clipPath: "polygon(0% 0%, 88% 0%, 100% 12%, 100% 100%, 0% 100%)" }}
+      >
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+        
+        <motion.div
+          animate={{ left: ["-100%", "200%"] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-20deg]"
+        />
+
+        <div className="relative z-10 flex flex-col md:flex-row items-start gap-8">
+          <div className="flex flex-col items-center gap-6">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-zinc-800 border border-white/20 flex items-center justify-center text-xl md:text-2xl font-black text-white/50 transform rotate-45">
+              <span className="-rotate-45">{String(index + 1).padStart(2, "0")}</span>
+            </div>
+            <div className="w-[1px] h-24 bg-gradient-to-b from-zinc-700 to-transparent hidden md:block" />
+          </div>
+          
+          <div className="space-y-4 pt-1">
+            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none border-l-4 border-zinc-700 pl-6">
+              {problem.title}
+            </h3>
+            <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
+              {problem.description}
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-zinc-700 opacity-50" />
+      </div>
+    </motion.div>
+  );
+}
+
 export default function HiddenCostSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -43,29 +109,8 @@ export default function HiddenCostSection() {
     restDelta: 0.001
   });
 
-  // Background heading fades to 0.1 as sequential reveal starts
   const headerOpacity = useTransform(smoothProgress, [0, 0.1, 0.15, 0.85, 0.95], [0, 1, 0.08, 0.08, 0]);
   const headerScale = useTransform(smoothProgress, [0, 0.1, 0.15], [0.95, 1, 0.98]);
-
-  // Sequential Reveal Logic (Sequential Stack)
-  // Each card occupies a specific scroll window without the chaos of multi-direction
-  const getCardTransforms = (index: number) => {
-    const total = problems.length;
-    const step = 0.7 / total; // total duration of cards is 0.7 of progress
-    const start = 0.15 + index * step;
-    const end = start + step;
-    const mid = (start + end) / 2;
-
-    // Movement: Enters from bottom, exits to top
-    // Scale: Subtle 3D pop on enter
-    // 3D: Very subtle "tech" tilt on desktop (ignored by mobile class)
-    return {
-      y: useTransform(smoothProgress, [start, mid, end], ["120%", "0%", "-120%"]),
-      opacity: useTransform(smoothProgress, [start, mid, end], [0, 1, 0]),
-      scale: useTransform(smoothProgress, [start, mid, end], [0.9, 1, 0.9]),
-      rotateX: useTransform(smoothProgress, [start, mid, end], [10, 0, -10]),
-    };
-  };
 
   return (
     <section 
@@ -75,7 +120,6 @@ export default function HiddenCostSection() {
     >
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
         
-        {/* Background Heading (Stationary) */}
         <motion.div
           style={{ opacity: headerOpacity, scale: headerScale }}
           className="absolute z-0 text-center px-6 w-full max-w-5xl flex flex-col items-center justify-center translate-y-[-10%] pointer-events-none"
@@ -94,71 +138,23 @@ export default function HiddenCostSection() {
           </p>
         </motion.div>
 
-        {/* Global Radar Glow behind the active card */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-zinc-500/10 blur-[140px] rounded-full pointer-events-none"
         />
 
-        {/* Sequential Central Stack */}
         <div className="relative z-20 w-full max-w-2xl px-6">
-          {problems.map((problem, index) => {
-            const { y, opacity, scale, rotateX } = getCardTransforms(index);
-            return (
-              <motion.div
-                key={index}
-                style={{ 
-                  y, 
-                  opacity, 
-                  scale,
-                  rotateX 
-                }}
-                className="absolute inset-x-6 md:inset-x-0 mx-auto"
-              >
-                {/* Geometric Slab Body (Beveled Corner) */}
-                <div 
-                  className="relative group p-8 md:p-12 bg-zinc-900/60 backdrop-blur-2xl border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] overflow-hidden"
-                  style={{ clipPath: "polygon(0% 0%, 88% 0%, 100% 12%, 100% 100%, 0% 100%)" }}
-                >
-                  {/* Internal Geometric Accent (Dot pattern) */}
-                  <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
-                  
-                  {/* Subtle Light Scan gleam */}
-                  <motion.div
-                    animate={{ left: ["-100%", "200%"] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-20deg]"
-                  />
-
-                  {/* Content */}
-                  <div className="relative z-10 flex flex-col md:flex-row items-start gap-8">
-                    <div className="flex flex-col items-center gap-6">
-                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-zinc-800 border border-white/20 flex items-center justify-center text-xl md:text-2xl font-black text-white/50 transform rotate-45">
-                        <span className="-rotate-45">{String(index + 1).padStart(2, "0")}</span>
-                      </div>
-                      <div className="w-[1px] h-24 bg-gradient-to-b from-zinc-700 to-transparent hidden md:block" />
-                    </div>
-                    
-                    <div className="space-y-4 pt-1">
-                      <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none border-l-4 border-zinc-700 pl-6">
-                        {problem.title}
-                      </h3>
-                      <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
-                        {problem.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Geometric Corner Detail */}
-                  <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-zinc-700 opacity-50" />
-                </div>
-              </motion.div>
-            );
-          })}
+          {problems.map((problem, index) => (
+            <ProblemCard 
+              key={index} 
+              problem={problem} 
+              index={index}
+              smoothProgress={smoothProgress}
+            />
+          ))}
         </div>
 
-        {/* Floating Scroll Guide */}
         <motion.div
           style={{ 
             opacity: useTransform(smoothProgress, [0, 0.05], [1, 0]),
