@@ -1,12 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Navbar from "@/components/layouts/Navbar";
-
-const Hero = dynamic(() => import("@/components/sections/Hero"), {
-  ssr: false,
-  loading: () => <div className="h-screen bg-background" />,
-});
+import HeroContent from "@/components/sections/HeroContent";
+import Hero3D from "@/components/sections/Hero3D";
+import dynamic from "next/dynamic";
 
 const HiddenCostSection = dynamic(() => import("@/components/sections/HiddenCostSection"), {
   ssr: false,
@@ -37,7 +34,7 @@ export default function Home() {
   return (
     <main className="relative bg-background">
       <Navbar />
-      <Hero />
+      <Hero3D />
       <HiddenCostSection />
       
       <DottedSurface className="z-0" />

@@ -101,6 +101,16 @@ body {
   }
 }
 
+@keyframes width-expand {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
 .spin-slow {
   animation: spin-slow 20s linear infinite;
+}
+
+.animate-width {
+  animation: width-expand 1.5s ease-out forwards;
+  animation-delay: 0.8s;
 }
