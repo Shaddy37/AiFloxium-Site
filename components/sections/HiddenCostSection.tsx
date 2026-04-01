@@ -40,38 +40,38 @@ export default function HiddenCostSection() {
   // Unique trajectories for each card
   const cardTransforms = [
     {
-      x: useTransform(scrollYProgress, [0.1, 0.4], ["-120%", "20%"]),
-      y: useTransform(scrollYProgress, [0.1, 0.4], ["-20%", "120%"]),
+      x: useTransform(scrollYProgress, [0.1, 0.4], ["-60vw", "60vw"]),
+      y: useTransform(scrollYProgress, [0.1, 0.4], ["-30vh", "30vh"]),
       rotate: useTransform(scrollYProgress, [0.1, 0.4], [-15, 10]),
       opacity: useTransform(scrollYProgress, [0.1, 0.2, 0.35, 0.4], [0, 1, 1, 0]),
     },
     {
-      x: useTransform(scrollYProgress, [0.2, 0.5], ["120%", "-30%"]),
-      y: useTransform(scrollYProgress, [0.2, 0.5], ["-50%", "100%"]),
+      x: useTransform(scrollYProgress, [0.2, 0.5], ["60vw", "-60vw"]),
+      y: useTransform(scrollYProgress, [0.2, 0.5], ["-40vh", "40vh"]),
       rotate: useTransform(scrollYProgress, [0.2, 0.5], [10, -5]),
       opacity: useTransform(scrollYProgress, [0.2, 0.3, 0.45, 0.5], [0, 1, 1, 0]),
     },
     {
-      x: useTransform(scrollYProgress, [0.3, 0.6], ["-110%", "40%"]),
-      y: useTransform(scrollYProgress, [0.3, 0.6], ["100%", "-20%"]),
+      x: useTransform(scrollYProgress, [0.3, 0.6], ["-50vw", "50vw"]),
+      y: useTransform(scrollYProgress, [0.3, 0.6], ["40vh", "-40vh"]),
       rotate: useTransform(scrollYProgress, [0.3, 0.6], [-5, 15]),
       opacity: useTransform(scrollYProgress, [0.3, 0.4, 0.55, 0.6], [0, 1, 1, 0]),
     },
     {
-      x: useTransform(scrollYProgress, [0.4, 0.7], ["100%", "-40%"]),
-      y: useTransform(scrollYProgress, [0.4, 0.7], ["110%", "-10%"]),
+      x: useTransform(scrollYProgress, [0.4, 0.7], ["50vw", "-50vw"]),
+      y: useTransform(scrollYProgress, [0.4, 0.7], ["30vh", "-30vh"]),
       rotate: useTransform(scrollYProgress, [0.4, 0.7], [5, -10]),
       opacity: useTransform(scrollYProgress, [0.4, 0.5, 0.65, 0.7], [0, 1, 1, 0]),
     },
     {
-      x: useTransform(scrollYProgress, [0.5, 0.8], ["-130%", "10%"]),
-      y: useTransform(scrollYProgress, [0.5, 0.8], ["20%", "40%"]),
+      x: useTransform(scrollYProgress, [0.5, 0.8], ["-70vw", "70vw"]),
+      y: useTransform(scrollYProgress, [0.5, 0.8], ["-10vh", "15vh"]),
       rotate: useTransform(scrollYProgress, [0.5, 0.8], [-10, 5]),
       opacity: useTransform(scrollYProgress, [0.5, 0.6, 0.75, 0.8], [0, 1, 1, 0]),
     },
     {
-      x: useTransform(scrollYProgress, [0.6, 0.9], ["110%", "-20%"]),
-      y: useTransform(scrollYProgress, [0.6, 0.9], ["60%", "10%"]),
+      x: useTransform(scrollYProgress, [0.6, 0.9], ["70vw", "-70vw"]),
+      y: useTransform(scrollYProgress, [0.6, 0.9], ["15vh", "-10vh"]),
       rotate: useTransform(scrollYProgress, [0.6, 0.9], [15, -15]),
       opacity: useTransform(scrollYProgress, [0.6, 0.7, 0.85, 0.9], [0, 1, 1, 0]),
     },
@@ -124,7 +124,7 @@ export default function HiddenCostSection() {
                 rotate: cardTransforms[index].rotate,
                 opacity: cardTransforms[index].opacity,
               }}
-              className="absolute w-[320px] md:w-[380px] p-6 md:p-8 rounded-3xl border border-white/10 bg-zinc-900/60 backdrop-blur-xl shadow-2xl pointer-events-auto"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[380px] p-6 md:p-8 rounded-3xl border border-white/10 bg-zinc-900/60 backdrop-blur-xl shadow-2xl pointer-events-auto"
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-sm font-bold text-zinc-400 flex-shrink-0">
