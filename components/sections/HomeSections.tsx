@@ -19,7 +19,7 @@ export function Vision() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1 }}
               className="relative aspect-square md:aspect-[4/3] w-full rounded-lg overflow-hidden border border-dashed border-zinc-700 bg-zinc-950/50"
             >
@@ -41,7 +41,7 @@ export function Vision() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-zinc-700" /> My Vision
@@ -54,7 +54,7 @@ export function Vision() {
             <motion.p 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-zinc-300 font-medium leading-relaxed"
             >
@@ -64,7 +64,7 @@ export function Vision() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: 0.3 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-white/10"
             >
@@ -116,8 +116,8 @@ export function Process() {
               key={i} 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.12 }}
               className="relative border border-dashed border-zinc-700 bg-zinc-950 p-10 rounded-lg flex flex-col group transition-all duration-300 overflow-hidden"
             >
               <CornerPlusIcons />
@@ -213,7 +213,7 @@ export function Trust() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="max-w-2xl"
           >
             <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
@@ -226,7 +226,7 @@ export function Trust() {
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl font-medium max-w-md text-zinc-400 leading-relaxed pb-4"
           >
@@ -241,8 +241,8 @@ export function Trust() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.08 }}
               className="border border-white/10 bg-zinc-950/50 p-6 group hover:border-white/20 hover:bg-zinc-950 transition-all"
             >
               <div className="flex items-start gap-3 mb-4">
@@ -265,8 +265,8 @@ export function Trust() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.12 }}
               className={cn(
                 "relative border border-white/10 bg-zinc-950 p-10 flex flex-col justify-between group overflow-hidden hover:border-white/20 transition-all",
                 study.size === "large" ? "md:col-span-2" : "md:col-span-1"
@@ -308,7 +308,7 @@ export function Trust() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="border border-white/10 bg-zinc-950/50 p-12"
         >
           <div className="flex flex-col md:flex-row gap-8 md:gap-12">
@@ -403,7 +403,7 @@ export function Founder() {
          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="relative border border-dashed border-zinc-700 bg-zinc-950 rounded-lg p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
          >
             <CornerPlusIcons />
@@ -430,12 +430,12 @@ export function Founder() {
                 BUILT FOR <span className="text-gradient">OPERATIONAL </span> SUPREMACY.
               </h3>
                <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 font-medium">
-                 I didn't build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I've learned that <span className="text-white font-bold">real automation isn't about flashy AI demos. It's about boring, bulletproof architecture that prints ROI.</span>
+                 I didn&apos;t build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I&apos;ve learned that <span className="text-white font-bold">real automation isn&apos;t about flashy AI demos. It&apos;s about boring, bulletproof architecture that prints ROI.</span>
                </p>
                <div className="relative mb-10">
-                 <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif">"</span>
-                 <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-white/30">
-                   While others talk about AI, I engineer Voice Agents that actually close deals and Social Engines that dominate timelines—built on your brand's DNA, not generic prompts.
+                  <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif">&quot;</span>
+                  <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-white/30">
+                    While others talk about AI, I engineer Voice Agents that actually close deals and Social Engines that dominate timelines—built on your brand&apos;s DNA, not generic prompts.
                  </p>
                </div>
                <div className="flex items-center gap-6">
@@ -465,13 +465,8 @@ export function TechStack() {
       <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
         <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0">Arsenal & Tooling:</h2>
         
-        {/* Infinite scrolling marquee wrapper */}
-        <div className="w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <motion.div 
-            animate={{ x: [0, -1000] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
-            className="flex gap-6 whitespace-nowrap min-w-max"
-          >
+        <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex gap-6 whitespace-nowrap animate-marquee w-max">
             {[...tools, ...tools, ...tools].map((tool, i) => (
               <div key={i} className="px-8 py-4 border border-dashed border-zinc-700 rounded-lg bg-zinc-950/50 hover:bg-zinc-900 transition-colors cursor-pointer text-lg font-medium text-zinc-300 flex items-center gap-3 relative overflow-hidden">
                 <CornerPlusIcons />
@@ -479,7 +474,7 @@ export function TechStack() {
                 {tool}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ShieldCheck, Zap } from "lucide-react";
 
 export default function ChaosToClarity() {
     const containerRef = useRef(null);
+    const isInView = useInView(containerRef, { once: true, margin: "200px" });
 
     const chaosPaths = [
         "M0,100 Q150,50 250,200 T450,200",
@@ -81,7 +82,7 @@ export default function ChaosToClarity() {
           ))}
 
            {/* ANIMATED PACKETS (CHAOS) */}
-           {chaosPaths.map((d: string, i: number) => (
+           {isInView && chaosPaths.map((d: string, i: number) => (
              <motion.path
                key={`anim-chaos-${i}`}
                d={d}
@@ -111,8 +112,8 @@ export default function ChaosToClarity() {
           ))}
 
           {/* ANIMATED PACKETS (CLARITY) */}
-          {clarityPaths.map((d, i) => (
-            <motion.path
+           {isInView && clarityPaths.map((d, i) => (
+             <motion.path
               key={`anim-clear-${i}`}
               d={d}
               stroke="#ffffff"

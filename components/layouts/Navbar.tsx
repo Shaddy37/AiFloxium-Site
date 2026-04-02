@@ -44,7 +44,7 @@ const linkVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.1 + i * 0.05, duration: 0.4, ease: "easeOut" as const },
+    transition: { delay: 0.1 + i * 0.08, duration: 0.4, ease: "easeOut" as const },
   }),
 };
 

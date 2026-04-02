@@ -35,8 +35,8 @@ export function BlogArchitecture() {
              key={i} 
              initial={{ opacity: 0, x: -20 }}
              whileInView={{ opacity: 1, x: 0 }}
-             transition={{ duration: 0.5, delay: i * 0.2 }}
-             viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              viewport={{ once: true, amount: 0.3 }}
              className="flex gap-6 items-start relative z-10"
            >
               <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center shrink-0 font-mono text-white text-xs bg-zinc-950 shadow-[0_0_15px_rgba(255,255,255,0.05)]">

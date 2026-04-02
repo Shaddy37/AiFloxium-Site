@@ -1,8 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 const SCATTER_TRANSFORMS: Record<number, { x: string; y: string; rotate: number }> = {
@@ -26,95 +25,54 @@ interface FancyTextHoverProps {
   className?: string
 }
 
-export default function FancyTextHover({ links = [], className }: FancyTextHoverProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useGSAP(
-    () => {
-      if (!containerRef.current) return
-
-      const fancyEls = containerRef.current.querySelectorAll<HTMLAnchorElement>('.fancy-word')
-
-      fancyEls.forEach((anchor) => {
-        const text = anchor.textContent ?? ''
-        anchor.textContent = ''
-
-        text.split('').forEach((char, i) => {
-          const outer = document.createElement('span')
-          outer.className = 'inline-block'
-          gsap.set(outer, { transition: 'transform 0.3s cubic-bezier(0.76, 0, 0.24, 1)' })
-
-          const inner = document.createElement('span')
-          inner.className = 'inline-block'
-
-          const letter = document.createElement('span')
-          letter.className = 'inline-block'
-          letter.textContent = char
-
-          inner.appendChild(letter)
-          outer.appendChild(inner)
-          anchor.appendChild(outer)
-
-          const randomDelay = Math.floor(Math.random() * 5)
-
-          const onEnter = () => {
-            const childIndex = i + 1
-            const transform = SCATTER_TRANSFORMS[childIndex]
-            if (transform) {
-              gsap.to(outer, {
-                xPercent: parseFloat(transform.x),
-                yPercent: parseFloat(transform.y),
-                rotation: transform.rotate,
-                duration: 0.2,
-                ease: 'power3.inOut',
-              })
-            }
-            gsap.to(inner, {
-              keyframes: [
-                { yPercent: 0, duration: 0 },
-                { yPercent: -3, duration: 2.5, ease: 'power3.inOut' },
-                { yPercent: 0, duration: 2.5, ease: 'power3.inOut' },
-              ],
-              repeat: -1,
-              delay: randomDelay,
-            })
-          }
-
-          const onLeave = () => {
-            gsap.killTweensOf(inner)
-            gsap.to(outer, {
-              xPercent: 0,
-              yPercent: 0,
-              rotation: 0,
-              duration: 0.35,
-              ease: 'power3.inOut',
-            })
-            gsap.to(inner, { yPercent: 0, duration: 0.35, ease: 'power3.inOut' })
-          }
-
-          anchor.addEventListener('mouseenter', onEnter)
-          anchor.addEventListener('mouseleave', onLeave)
-        })
-      })
-    },
-    { scope: containerRef }
-  )
+function FancyWord({ label, href }: { label: string; href: string }) {
+  const [hovered, setHovered] = useState(false)
 
   return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="fancy-word text-zinc-600 hover:text-white text-5xl md:text-7xl font-heading font-black uppercase no-underline transition-colors duration-250 ease-[cubic-bezier(0.76,0,0.24,1)] tracking-tighter"
+    >
+      {label.split('').map((char, i) => {
+        const childIndex = i + 1
+        const transform = SCATTER_TRANSFORMS[childIndex]
+        const xPercent = hovered && transform ? parseFloat(transform.x) : 0
+        const yPercent = hovered && transform ? parseFloat(transform.y) : 0
+        const rotation = hovered && transform ? transform.rotate : 0
+
+        return (
+          <motion.span
+            key={i}
+            className="inline-block"
+            animate={{
+              x: xPercent,
+              y: yPercent,
+              rotate: rotation,
+            }}
+            transition={{
+              duration: hovered ? 0.2 : 0.35,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            {char}
+          </motion.span>
+        )
+      })}
+    </a>
+  )
+}
+
+export default function FancyTextHover({ links = [], className }: FancyTextHoverProps) {
+  return (
     <div
-      ref={containerRef}
       className={cn('flex w-full flex-col items-center justify-center gap-4 py-2', className)}
     >
       {links.map((link) => (
-        <a
-          key={link.label}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fancy-word text-zinc-600 hover:text-white text-5xl md:text-7xl font-heading font-black uppercase no-underline transition-colors duration-250 ease-[cubic-bezier(0.76,0,0.24,1)] tracking-tighter"
-        >
-          {link.label}
-        </a>
+        <FancyWord key={link.label} label={link.label} href={link.href} />
       ))}
     </div>
   )

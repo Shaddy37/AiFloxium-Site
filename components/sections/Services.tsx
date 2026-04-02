@@ -69,8 +69,8 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.3, margin: "-50px" }}
+      transition={{ duration: 0.8, delay: index * 0.12 }}
       className="perspective-1000"
     >
       <motion.div
@@ -113,7 +113,7 @@ export default function Services() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col gap-4"
           >
             <div className="flex items-center gap-4 border border-white/10 bg-white/5 px-4 py-1.5 rounded-md w-max">

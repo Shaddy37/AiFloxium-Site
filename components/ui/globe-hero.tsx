@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
-import React, { useRef } from "react";
+import React, { useRef, Suspense } from "react";
 import * as THREE from "three";
 import { cn } from "@/lib/utils";
 
@@ -69,14 +69,16 @@ const DotGlobeHero = React.forwardRef<
       
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Canvas>
-          <PerspectiveCamera makeDefault position={[0, 0, 3]} fov={75} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} />
-          
-          <Globe
-            rotationSpeed={rotationSpeed}
-            radius={globeRadius}
-          />
+          <Suspense fallback={null}>
+            <PerspectiveCamera makeDefault position={[0, 0, 3]} fov={75} />
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} intensity={1} />
+            
+            <Globe
+              rotationSpeed={rotationSpeed}
+              radius={globeRadius}
+            />
+          </Suspense>
         </Canvas>
       </div>
     </div>

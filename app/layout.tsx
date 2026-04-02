@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
+import SmoothScroll from "@/components/providers/SmoothScroll";
+import CustomCursor from "@/components/ui/CustomCursor";
+import PageTransition from "@/components/providers/PageTransition";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -127,7 +130,12 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
         <div className="grainy-overlay" />
-        {children}
+        <SmoothScroll>
+          <CustomCursor />
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </SmoothScroll>
         <SpeedInsights />
         <Analytics />
       </body>
