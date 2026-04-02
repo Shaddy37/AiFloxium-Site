@@ -31,7 +31,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass-card rounded-3xl p-6 cursor-pointer group"
+      className="glass-card border border-white/10 p-6 cursor-pointer group"
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="flex flex-col gap-4">
@@ -39,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex flex-col gap-2">
             <span
               className={cn(
-                "text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full w-max",
+                "text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md w-max",
                 categoryColors[project.category]
               )}
             >
@@ -93,7 +93,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 ))}
               </div>
 
-              <div className="flex items-center gap-2 p-3 rounded-xl bg-white/5">
+              <div className="flex items-center gap-2 p-3 bg-white/5 border border-white/5">
                 <CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" />
                 <span className="text-sm font-medium text-zinc-300">
                   {project.result}

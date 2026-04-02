@@ -42,8 +42,8 @@ export default function AboutPage() {
       {/* Dark Cinematic Hero */}
       <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-800/20 blur-[150px] rounded-full pointer-events-none -z-10" />
-        <h1 className="text-6xl md:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-[0.9]">
-          THE AUTOMATOR <br /><span className="text-gradient">BEHIND AIFLOXIUM.</span>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9]">
+          THE <span className="block md:inline">AUTOMATOR</span> <br /><span className="text-gradient">BEHIND AIFLOXIUM.</span>
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium leading-relaxed">
           I am <span className="text-white font-bold">Muhammad Shadab Shams</span>, the founder of AIFLOXIUM. I build intelligent systems that work 24/7 so businesses do not have to.

@@ -1,5 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const VideoPopup = dynamic(() => import("@/components/sections/VideoPopup"), {
+  ssr: false,
+});
 
 export default function HeroContent() {
   return (
@@ -36,7 +41,7 @@ export default function HeroContent() {
               Your team deserves to work on <span className="text-white font-bold">high-level strategy</span>, not spreadsheets. I build AI systems that reclaim 40+ hours every week.
             </p>
             <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-zinc-800 bg-zinc-950/40 backdrop-blur-md">
-               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">AI Automation Agency</span>
+               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">Muhammad Shadab Shams</span>
             </div>
           </div>
         </div>
@@ -69,6 +74,8 @@ export default function HeroContent() {
       >
         <div className="w-[1px] h-12 md:h-20 bg-gradient-to-b from-white/40 to-transparent" />
       </div>
+
+      <VideoPopup />
     </>
   );
 }

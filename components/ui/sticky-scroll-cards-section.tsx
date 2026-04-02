@@ -106,7 +106,7 @@ export function StickyFeatureSection() {
                 <div
                     key={index}
                     // The sticky class makes the card stick to the top of the container.
-                    className={`${feature.bgColor} grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12 p-8 md:p-16 rounded-[3rem] border border-white/5 shadow-2xl sticky bg-opacity-95 backdrop-blur-md`}
+                    className={`${feature.bgColor} grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12 p-8 md:p-16 border border-white/10 shadow-2xl sticky bg-opacity-95 backdrop-blur-md`}
                     // All cards will stick at the same position, creating the stacking effect.
                     style={{ top: `${150 + index * 20}px` }}
                 >
@@ -122,13 +122,13 @@ export function StickyFeatureSection() {
                   </div>
                   
                   {/* Card Image */}
-                  <div className="image-wrapper mt-8 md:mt-0 relative aspect-[4/3] group overflow-hidden rounded-2xl">
+                  <div className="image-wrapper mt-8 md:mt-0 relative aspect-[4/3] group overflow-hidden border border-white/10">
                     <Image 
                         src={feature.imageUrl} 
                         alt={feature.title}
                         fill
                         unoptimized
-                        className="rounded-2xl shadow-lg object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100"
+                        className="shadow-lg object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
                   </div>

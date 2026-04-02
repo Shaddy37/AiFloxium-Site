@@ -175,7 +175,7 @@ export default async function ServicePage({ params }: Props) {
               {service.howItWorks.map((step, i) => (
                 <div key={i} className="flex gap-8 md:gap-12 group">
                   {/* Step number bubble */}
-                  <div className="flex-shrink-0 w-14 h-14 rounded-full border border-white/10 bg-zinc-950 flex items-center justify-center font-mono text-xs text-zinc-500 group-hover:border-white/30 group-hover:text-white transition-all z-10">
+                  <div className="flex-shrink-0 w-14 h-14 border border-white/10 bg-zinc-950 flex items-center justify-center font-mono text-xs text-zinc-500 group-hover:border-white/30 group-hover:text-white transition-all z-10">
                     {step.step}
                   </div>
                   {/* Content */}
@@ -210,7 +210,7 @@ export default async function ServicePage({ params }: Props) {
             {service.useCases.map((useCase, i) => (
               <div
                 key={i}
-                className="flex items-start gap-4 p-6 rounded-2xl border border-white/5 bg-zinc-950/60 hover:border-white/15 hover:bg-zinc-900/40 transition-all group"
+                className="flex items-start gap-4 p-6 border border-white/10 bg-zinc-950/60 hover:border-white/15 hover:bg-zinc-900/40 transition-all group"
               >
                 <CheckCircle2 className="w-5 h-5 text-zinc-600 group-hover:text-zinc-300 transition-colors shrink-0 mt-0.5" />
                 <p className="text-zinc-400 font-medium leading-relaxed group-hover:text-zinc-200 transition-colors">
@@ -238,7 +238,7 @@ export default async function ServicePage({ params }: Props) {
             {service.techStack.map((tech, i) => (
               <div
                 key={i}
-                className="p-6 rounded-2xl border border-white/5 bg-zinc-950/60 hover:border-white/15 transition-all group"
+                className="p-6 border border-white/10 bg-zinc-950/60 hover:border-white/15 transition-all group"
               >
                 <p className="font-mono text-zinc-600 text-xs mb-2">
                   {String(i + 1).padStart(2, "0")} {"//"}
@@ -269,7 +269,7 @@ export default async function ServicePage({ params }: Props) {
             {service.faqs.map((faq, i) => (
               <div
                 key={i}
-                className="p-8 rounded-3xl border border-white/5 bg-zinc-950/60 hover:border-white/10 hover:bg-zinc-900/40 transition-all group cursor-default"
+                className="p-8 border border-white/10 bg-zinc-950/60 hover:border-white/10 hover:bg-zinc-900/40 transition-all group cursor-default"
               >
                 <h3 className="text-lg font-heading font-bold text-white tracking-tight mb-3 flex items-start gap-4">
                   <span className="font-mono text-zinc-700 text-sm shrink-0 mt-0.5">

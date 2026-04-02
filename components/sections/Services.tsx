@@ -78,13 +78,13 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative group h-full glass-card rounded-[2rem] p-10 transition-all duration-300"
+        className="relative group h-full glass-card border border-white/10 p-10 transition-all duration-300"
       >
-        {/* Hover Radial Glow */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem] bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08)_0%,transparent_70%)]" />
+        {/* Hover Glow */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08)_0%,transparent_70%)]" />
 
         <div style={{ transform: "translateZ(30px)" }} className="flex flex-col h-full">
-          <div className="w-16 h-16 rounded-2xl bg-zinc-800/50 border border-white/5 flex items-center justify-center mb-8 shadow-inner shadow-white/5">
+          <div className="w-16 h-16 bg-zinc-800 border border-white/10 flex items-center justify-center mb-8">
             {cap.icon}
           </div>
           <h3 className="text-2xl font-bold font-heading mb-4 text-white tracking-tight">{cap.title}</h3>
@@ -116,8 +116,8 @@ export default function Services() {
             viewport={{ once: true }}
             className="flex flex-col gap-4"
           >
-            <div className="flex items-center gap-4 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full w-max">
-              <div className="w-1.5 h-1.5 bg-zinc-400 rounded-full" />
+            <div className="flex items-center gap-4 border border-white/10 bg-white/5 px-4 py-1.5 rounded-md w-max">
+              <div className="w-1.5 h-1.5 bg-zinc-400" />
               <h2 className="text-zinc-300 tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
             </div>
             <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]">

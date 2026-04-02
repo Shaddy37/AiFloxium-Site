@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import FancyTextHover from "@/components/ui/fancy-text-hover";
 
@@ -31,18 +30,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
 
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 group mb-6 inline-flex">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden bg-black border border-white/20">
-                <Image 
-                  src="/logo.svg" 
-                  alt="AIFLOXIUM" 
-                  width={36} 
-                  height={36}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <span className="text-2xl font-heading font-black tracking-tighter text-white">
+            <Link href="/" className="group mb-6 inline-block">
+              <span className="text-2xl font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-zinc-400 bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-zinc-300 transition-all duration-300 inline-block">
                 AIFLOXIUM
               </span>
             </Link>

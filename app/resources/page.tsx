@@ -276,7 +276,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
   return (
     <a
       href={`#${id}`}
-      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all duration-300"
+      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all duration-300"
     >
       {label}
     </a>
@@ -285,7 +285,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
 
 function TagPill({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/10 text-zinc-500">
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest border border-white/10 text-zinc-500">
       {label}
     </span>
   );
@@ -315,14 +315,14 @@ function ResourceCard({
   blogSlug,
 }: ResourceCardProps) {
   return (
-    <div className="glass-card rounded-2xl p-6 flex flex-col gap-4 group hover:border-white/10 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+    <div className="glass-card border border-white/10 p-6 flex flex-col gap-4 group hover:border-white/20 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-base font-bold text-white font-heading tracking-tight leading-snug group-hover:text-zinc-200 transition-colors flex-1">
           {title}
         </h3>
         <span
-          className={`shrink-0 text-[10px] font-black uppercase tracking-widest border px-2 py-1 rounded-full ${badgeColor}`}
+          className={`shrink-0 text-[10px] font-bold uppercase tracking-widest border px-2 py-1 rounded-md bg-zinc-800 text-zinc-300`}
         >
           {badge}
         </span>
@@ -340,7 +340,7 @@ function ResourceCard({
 
       {/* Install Snippet */}
       {copyText && (
-        <div className="bg-black/50 rounded-xl px-4 py-3 font-mono text-[11px] text-zinc-500 border border-white/5 truncate select-all">
+        <div className="bg-black/50 px-4 py-3 font-mono text-[11px] text-zinc-500 border border-white/5 truncate select-all">
           {copyText}
         </div>
       )}
@@ -351,14 +351,14 @@ function ResourceCard({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 text-center py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-all duration-300"
+          className="flex-1 text-center py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-all duration-300"
         >
           View Resource →
         </a>
         {blogSlug && (
           <Link
             href={`/blog/${blogSlug}`}
-            className="px-4 py-2.5 rounded-xl bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300"
+            className="px-4 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300"
           >
             Read Guide
           </Link>

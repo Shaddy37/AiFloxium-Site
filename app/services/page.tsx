@@ -51,7 +51,7 @@ export default function ServicesPage() {
       <StickyFeatureSection />
 
       {/* Pristine White FAQ Accordion Block */}
-      <section className="py-32 px-6 bg-white text-black relative -mt-4 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+      <section className="py-32 px-6 bg-white text-black relative -mt-4 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
         <div className="container mx-auto max-w-6xl flex flex-col lg:flex-row gap-16">
           <div className="w-full lg:w-1/3">
              <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6">INTEGRATION <br /> DIRECTIVES.</h2>
@@ -64,7 +64,7 @@ export default function ServicesPage() {
               { q: "Do you maintain the systems post-launch?", a: "Yes. All my deployments include rigorous SLA uptime guarantees, persistent monitoring, and iterative optimizations." },
               { q: "Can you modernize our legacy systems?", a: "Yes, I specialize in legacy system AI modernization. I build custom API wrappers and middleware vectors that allow modern LLMs to query your existing infrastructure." }
             ].map((faq, i) => (
-               <div key={i} className="group p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+               <div key={i} className="group p-8 bg-zinc-50 border border-zinc-200 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
                   <h3 className="text-xl font-bold font-heading mb-4 flex items-center gap-4">
                      <CheckCircle2 className="text-zinc-400 group-hover:text-white shrink-0" />
                      {faq.q}

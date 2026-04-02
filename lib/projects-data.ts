@@ -70,6 +70,7 @@ export const projects: Project[] = [
     solution: "Built an automated pipeline that collects feedback from multiple channels, analyzes sentiment using AI, and generates actionable insights.",
     techStack: ["n8n", "OpenAI", "Slack", "Google Sheets"],
     result: "Real-time sentiment tracking, 60% faster response to issues",
+    featured: true,
   },
   {
     id: "6",
@@ -81,6 +82,7 @@ export const projects: Project[] = [
     solution: "Created a fully automated onboarding workflow that handles document collection, account setup, training scheduling, and notifications.",
     techStack: ["n8n", "Google Workspace", "Slack", "HR Software"],
     result: "75% less HR time per hire, zero missed tasks",
+    featured: true,
   },
   {
     id: "7",

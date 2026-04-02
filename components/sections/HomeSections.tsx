@@ -300,32 +300,35 @@ export function Founder() {
                <span className="font-heading text-4xl text-white/90 font-black absolute bottom-8 left-8 z-10 tracking-widest">SHAMS</span>
             </div>
             
-            <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
+<div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-zinc-700" /> Direct Architect Access
               </h2>
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-8 leading-[1.1]">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[1.1]">
                 BUILT FOR <span className="text-gradient">OPERATIONAL </span> SUPREMACY.
               </h3>
-               <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6 font-medium">
-                  I founded this portfolio to bridge the gap between &quot;AI Hype&quot; and deterministic engineering. When you work with me, you get direct access to the architect who has engineered 50+ production systems across n8n, Vapi, and custom Social Engines.
-                </p>
-                <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-12 font-bold italic border-l-2 border-white/20 pl-6">
-                  &quot;I specialize in high-fidelity Voice Agents (Vapi/Retell) and automated Social Engines trained on your specific brand tone to dominate LinkedIn and X.&quot;
-                </p>
-              <div className="flex items-center gap-6">
-                <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white flex items-center justify-center hover:scale-110 transition-transform">
-                   <ArrowUpRight className="w-6 h-6 text-black" />
-                </Link>
-                <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer">
-                  <p className="text-white font-bold font-heading text-xl">Muhammad Shadab Shams</p>
-                  <p className="text-zinc-400 font-mono text-xs uppercase tracking-widest mt-1">Lead Architect & Systems Engineer</p>
-                </Link>
-              </div>
+               <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 font-medium">
+                 I didn't build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I've learned that <span className="text-white font-bold">real automation isn't about flashy AI demos. It's about boring, bulletproof architecture that prints ROI.</span>
+               </p>
+               <div className="relative mb-10">
+                 <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif">"</span>
+                 <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-white/30">
+                   While others talk about AI, I engineer Voice Agents that actually close deals and Social Engines that dominate timelines—built on your brand's DNA, not generic prompts.
+                 </p>
+               </div>
+               <div className="flex items-center gap-6">
+                 <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white flex items-center justify-center hover:scale-110 transition-transform">
+                    <ArrowUpRight className="w-6 h-6 text-black" />
+                 </Link>
+                 <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer">
+                   <p className="text-white font-bold font-heading text-xl">Muhammad Shadab Shams</p>
+                   <p className="text-zinc-400 font-mono text-xs uppercase tracking-widest mt-1">Lead Architect & Systems Engineer</p>
+                 </Link>
+               </div>
             </div>
-         </motion.div>
-      </div>
-    </section>
+          </motion.div>
+        </div>
+      </section>
   );
 }
 

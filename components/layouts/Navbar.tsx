@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -101,22 +100,16 @@ export default function Navbar() {
         }}
         transition={headerTransition}
       >
-        <Link href="/" className="relative group flex items-center gap-3 z-[110]" onClick={() => setOpen(false)}>
+        <Link href="/" className="relative group z-[110]" onClick={() => setOpen(false)}>
           <motion.div 
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden bg-black border border-white/20"
+            className="relative"
           >
-            <Image 
-              src="/logo.svg" 
-              alt="AIFLOXIUM" 
-              width={36} 
-              height={36}
-              className="w-full h-full object-cover"
-              priority
-            />
+            <span className="text-lg font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-zinc-400 bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-zinc-300 transition-all duration-300">
+              AIFLOXIUM
+            </span>
           </motion.div>
-          <span className="text-xl font-heading font-black tracking-widest text-white uppercase italic">AIFLOXIUM</span>
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">

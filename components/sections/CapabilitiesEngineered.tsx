@@ -137,7 +137,7 @@ export default function CapabilitiesEngineered() {
             >
               {/* Static prefix */}
               <span className="text-zinc-500 whitespace-nowrap">
-                I&nbsp;can
+                I&nbsp;will
               </span>
 
               {/* Animated verb */}

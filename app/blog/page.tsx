@@ -78,7 +78,7 @@ export default function BlogPage() {
               href={`/blog/${post.slug}`}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/5 group-hover:border-white/20 transition-all duration-500">
+              <div className="relative aspect-[4/3] overflow-hidden border border-white/10 group-hover:border-white/20 transition-all duration-500">
                 <CornerPlusIcons />
                 {post.image ? (
                   <>
@@ -92,8 +92,8 @@ export default function BlogPage() {
                   </>
                 ) : (
                   <div className="absolute inset-0 bg-zinc-900 flex items-center justify-center">
-                    <div className="w-24 h-24 border border-white/10 rounded-full flex items-center justify-center">
-                      <div className="w-12 h-12 border border-white/20 rounded-full" />
+                    <div className="w-24 h-24 border border-white/10 flex items-center justify-center">
+                      <div className="w-12 h-12 border border-white/20" />
                     </div>
                   </div>
                 )}
@@ -117,7 +117,7 @@ export default function BlogPage() {
 
       {/* Internal Linking: Resources Callout */}
       <section className="container mx-auto px-6 mb-32">
-        <div className="glass-card rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border-white/10 group hover:border-white/20 transition-all duration-500">
+        <div className="glass-card p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 group hover:border-white/20 transition-all duration-500">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tight mb-4">
               LOOKING FOR <span className="text-gradient">AUTOMATIONS?</span>
@@ -128,7 +128,7 @@ export default function BlogPage() {
           </div>
           <Link 
             href="/resources" 
-            className="px-10 py-5 rounded-full bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:scale-105"
+            className="px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:scale-105"
           >
             Explore Resources →
           </Link>
