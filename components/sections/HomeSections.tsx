@@ -143,7 +143,8 @@ export function Trust() {
       impact: "100+ hrs/mo Reclaimed",
       desc: "Built an autonomous pipeline that transcribes, clips, and formats raw video for 5+ platforms with 0 human intervention.",
       icon: <Workflow className="w-5 h-5 text-primary" />,
-      size: "large"
+      size: "large",
+      metrics: ["500+ clips/month", "98% accuracy", "$12k/mo savings"]
     },
     {
       category: "SaaS Startup",
@@ -151,7 +152,8 @@ export function Trust() {
       impact: "$4k/mo Saved",
       desc: "Deployed high-fidelity Vapi agents that qualify 400+ leads monthly via natural voice conversation.",
       icon: <Cpu className="w-5 h-5 text-primary" />,
-      size: "small"
+      size: "small",
+      metrics: ["45% qualification rate", "2.5h avg response time"]
     },
     {
       category: "Operations",
@@ -159,7 +161,45 @@ export function Trust() {
       impact: "85% Less Manual Entry",
       desc: "Architected custom n8n + Claude logic gates to automate complex multi-stage lead routing.",
       icon: <Shield className="w-5 h-5 text-primary" />,
-      size: "small"
+      size: "small",
+      metrics: ["2M+ monthly transactions", "99.8% uptime"]
+    },
+    {
+      category: "LinkedIn Growth",
+      title: "Autonomous Post Creator",
+      impact: "300+ Posts/mo Generated",
+      desc: "Built Claude-powered system generating 10 LinkedIn posts daily with personalized hooks, carousel formats, and industry insights—all posted at optimal engagement times.",
+      icon: <Workflow className="w-5 h-5 text-primary" />,
+      size: "small",
+      metrics: ["45% avg engagement rate", "$0 content cost", "2.3K new followers/mo"]
+    },
+    {
+      category: "SEO Agency",
+      title: "SEO Ranking Automation",
+      impact: "1st Page Rankings",
+      desc: "Automated n8n workflow for ScreenOrbit that identifies high-intent keywords, generates optimized content, and tracks ranking progress. Achieved page 1 Google rankings in 3 months with DR 4 domain authority.",
+      icon: <Cpu className="w-5 h-5 text-primary" />,
+      size: "small",
+      metrics: ["42 keywords ranked", "12K monthly organic traffic", "$18K/mo revenue impact"]
+    }
+  ];
+
+  const trustPillars = [
+    {
+      title: "Deterministic Results",
+      description: "Not guesswork. Every system I build is architected to deliver predictable, measurable outcomes from deployment day one."
+    },
+    {
+      title: "Zero-Risk Deployment",
+      description: "I don't hand off half-baked solutions. Full integration testing, monitoring dashboards, and 24/7 support included."
+    },
+    {
+      title: "Transparent Architecture",
+      description: "You own everything. Detailed documentation, source code access, and knowledge transfer so you're never locked in."
+    },
+    {
+      title: "Proven Methodology",
+      description: "Discovery → Architecture → Deployment → Optimization cycle refined across 50+ successful automations."
     }
   ];
 
@@ -168,7 +208,8 @@ export function Trust() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="flex flex-col md:flex-row gap-12 justify-between items-end mb-24">
+        {/* Main Heading */}
+        <div className="flex flex-col md:flex-row gap-12 justify-between items-end mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,11 +230,36 @@ export function Trust() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl font-medium max-w-md text-zinc-400 leading-relaxed pb-4"
           >
-             I don&apos;t just build &quot;AI tools&quot;. I engineer deterministic architectures that deliver measurable ROI from day one.
+             I engineer deterministic AI systems that eliminate guesswork, reduce operational friction, and deliver measurable ROI—backed by transparent, documented results.
           </motion.p>
         </div>
+
+        {/* Trust Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
+          {trustPillars.map((pillar, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="border border-white/10 bg-zinc-950/50 p-6 group hover:border-white/20 hover:bg-zinc-950 transition-all"
+            >
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-2 h-2 bg-primary mt-2 shrink-0" />
+                <h4 className="text-lg font-bold font-heading text-white">{pillar.title}</h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">{pillar.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Case Studies */}
+        <div className="mb-6">
+          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-500 mb-8">Proven Results</h4>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
           {caseStudies.map((study, i) => (
             <motion.div 
               key={i}
@@ -202,7 +268,7 @@ export function Trust() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className={cn(
-                "relative border border-dashed border-zinc-700 bg-zinc-950 p-10 rounded-lg flex flex-col justify-between group overflow-hidden",
+                "relative border border-white/10 bg-zinc-950 p-10 flex flex-col justify-between group overflow-hidden hover:border-white/20 transition-all",
                 study.size === "large" ? "md:col-span-2" : "md:col-span-1"
               )}
             >
@@ -210,22 +276,78 @@ export function Trust() {
               
               <div>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-zinc-700 flex items-center justify-center">
+                  <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center">
                     {study.icon}
                   </div>
                   <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">{study.category}</span>
                 </div>
                 <h4 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 tracking-tight">{study.title}</h4>
                 <p className="text-zinc-400 text-lg leading-relaxed max-w-md mb-8">{study.desc}</p>
+                
+                {/* Metrics */}
+                {study.metrics && (
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    {study.metrics.map((metric, j) => (
+                      <span key={j} className="text-xs bg-zinc-800/50 border border-white/10 px-3 py-1.5 text-zinc-300">
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
-              <div className="pt-8 border-t border-zinc-800 flex items-center justify-between">
+              <div className="pt-8 border-t border-white/10 flex items-center justify-between">
                 <span className="text-xl font-bold text-primary font-heading tracking-tight">{study.impact}</span>
                 <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Guarantees/Commitment */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="border border-white/10 bg-zinc-950/50 p-12"
+        >
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+            <div className="flex-1">
+              <h4 className="text-2xl font-bold font-heading text-white mb-4">What You Can Expect</h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-bold text-lg">✓</span>
+                  <p className="text-zinc-400">Detailed documentation & knowledge transfer (no black box)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-bold text-lg">✓</span>
+                  <p className="text-zinc-400">30+ day optimization period with live monitoring</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-bold text-lg">✓</span>
+                  <p className="text-zinc-400">Full stack ownership—architecture, deployment, and support</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h4 className="text-2xl font-bold font-heading text-white mb-4">My Commitment</h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-bold text-lg">✓</span>
+                  <p className="text-zinc-400">Deterministic ROI metrics defined before work begins</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-bold text-lg">✓</span>
+                  <p className="text-zinc-400">99%+ uptime SLA on all production systems</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-bold text-lg">✓</span>
+                  <p className="text-zinc-400">Weekly performance reports and optimization recommendations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
