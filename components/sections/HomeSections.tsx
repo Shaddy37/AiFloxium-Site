@@ -369,7 +369,7 @@ export function Pricing() {
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-zinc-700 rounded-lg bg-zinc-900/50 w-fit relative overflow-hidden">
              <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
-             <div className="text-2xl md:text-3xl font-bold font-heading text-white">$1,500 to $5,000+</div>
+             <div className="text-2xl md:text-3xl font-bold font-heading text-white">$800 to $5,000+</div>
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 w-fit">
              <Shield className="w-4 h-4 text-primary" />
