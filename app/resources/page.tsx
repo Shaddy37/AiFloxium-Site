@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Contact2 } from "@/components/ui/contact-2";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -647,18 +648,6 @@ export default function ResourcesPage() {
 
       {/* ── Contact CTA ──────────────────────────────────────────────── */}
       <section className="bg-zinc-950/20 border-t border-white/5 py-24">
-        <Contact2
-          title="Need a Custom Workflow?"
-          description="Tell us what you're trying to automate. We'll build the exact n8n workflow, Claude agent, or full automation system you need."
-        />
-      </section>
-
-      <Footer />
-    </main>
-  );
-}
-�──────── */}
-      <section className="bg-brand-bg/20 border-t border-brand-plum/10">
         <Contact2
           title="Need a Custom Workflow?"
           description="Tell us what you're trying to automate. We'll build the exact n8n workflow, Claude agent, or full automation system you need."
