@@ -44,7 +44,7 @@ export const Radar = ({ className }: { className?: string }) => {
         style={{ transformOrigin: "right center" }}
         className="animate-radar-spin absolute right-1/2 top-1/2 z-40 flex h-[5px] w-[400px] items-end justify-center overflow-hidden bg-transparent"
       >
-        <div className="relative z-40 h-[1px] w-full bg-gradient-to-r from-transparent via-zinc-400 to-transparent" />
+        <div className="relative z-40 h-[1px] w-full bg-gradient-to-r from-transparent via-brand-orange to-transparent shadow-[0_0_15px_rgba(255,107,0,0.5)]" />
       </div>
       {/* Concentric circles */}
       {circles.map((_, idx) => (
@@ -52,7 +52,7 @@ export const Radar = ({ className }: { className?: string }) => {
           style={{
             height: `${(idx + 1) * 5}rem`,
             width: `${(idx + 1) * 5}rem`,
-            border: `1px solid rgba(255, 255, 255, ${1 - (idx + 1) * 0.1})`,
+            border: `1px solid rgba(88, 28, 135, ${0.4 - (idx + 1) * 0.05})`,
           }}
           key={`circle-${idx}`}
           idx={idx}
@@ -78,15 +78,17 @@ export const IconContainer = ({
       transition={{ duration: 0.2, delay: delay ?? 0 }}
       className="relative z-50 flex flex-col items-center justify-center space-y-2"
     >
-      <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl glass-card border-white/20 hover:scale-110 transition-transform duration-300">
-        {icon || (
-          <svg className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
-          </svg>
-        )}
+      <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl glass-card border-brand-plum/20 hover:scale-110 transition-transform duration-300 group">
+        <div className="text-zinc-400 group-hover:text-brand-orange transition-colors duration-300">
+          {icon || (
+            <svg className="h-6 w-6 md:h-8 md:w-8" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+            </svg>
+          )}
+        </div>
       </div>
-      <div className="hidden rounded-md px-2 py-1 md:block bg-zinc-950/80 mt-2 border border-white/10">
-        <div className="text-center text-xs font-bold text-zinc-300 tracking-widest uppercase font-mono">
+      <div className="hidden rounded-md px-2 py-1 md:block bg-brand-bg/80 mt-2 border border-brand-plum/10 backdrop-blur-md">
+        <div className="text-center text-[10px] font-bold text-zinc-400 tracking-widest uppercase font-mono group-hover:text-brand-orange transition-colors">
           {text || "Web Development"}
         </div>
       </div>

@@ -75,7 +75,7 @@ export default function ProjectsPage() {
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-brand-plum/5 border border-brand-plum/20 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-orange/40 focus:bg-brand-plum/10 transition-all"
+                className="w-full bg-brand-plum/10 border border-brand-plum/20 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-orange/40 focus:bg-brand-plum/20 transition-all backdrop-blur-sm"
               />
             </div>
 
@@ -85,10 +85,10 @@ export default function ProjectsPage() {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={cn(
-                    "px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all",
+                    "px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all",
                     activeCategory === category.id
-                      ? "bg-brand-orange text-white shadow-[0_0_20px_rgba(255,107,0,0.3)]"
-                      : "bg-brand-plum/10 text-zinc-400 hover:text-white hover:bg-brand-plum/20 border border-brand-plum/20"
+                      ? "bg-brand-orange text-white shadow-[0_0_20px_rgba(255,107,0,0.4)]"
+                      : "bg-brand-plum/10 text-zinc-400 hover:text-white hover:bg-brand-plum/30 border border-brand-plum/20"
                   )}
                 >
                   {category.name}

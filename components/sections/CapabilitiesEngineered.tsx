@@ -64,9 +64,9 @@ export default function CapabilitiesEngineered() {
           /* Fixed gradient: white band at viewport 50vh */
           background: linear-gradient(
             180deg,
-            rgba(63, 63, 70, 0.35) 0 calc(50vh - 0.6lh),
+            rgba(88, 28, 135, 0.2) 0 calc(50vh - 0.6lh),
             #ffffff              calc(50vh - 0.65lh) calc(50vh + 0.65lh),
-            rgba(63, 63, 70, 0.35) calc(50vh + 0.6lh)
+            rgba(88, 28, 135, 0.2) calc(50vh + 0.6lh)
           );
           background-attachment: fixed;
           color: transparent;
@@ -77,7 +77,7 @@ export default function CapabilitiesEngineered() {
           display: block;
           font-size: clamp(3rem, 8vw, 6rem);
           /* non-active words are dimmer */
-          opacity: 0.3;
+          opacity: 0.2;
         }
         .cap-word.active {
           opacity: 1;
@@ -92,9 +92,9 @@ export default function CapabilitiesEngineered() {
       >
         {/* Section badge pin — only visible at the top via absolute */}
         <div className="absolute top-8 w-full flex justify-center z-30 pointer-events-none">
-          <div className="flex items-center gap-3 border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-sm px-5 py-2 rounded-full">
+          <div className="flex items-center gap-3 border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-md px-5 py-2 rounded-full">
             <div className="w-1.5 h-1.5 bg-brand-orange rounded-full animate-pulse" />
-            <span className="text-zinc-400 tracking-[0.2em] font-medium text-xs uppercase">
+            <span className="text-zinc-500 tracking-[0.2em] font-black text-[10px] uppercase">
               Capabilities Engineered
             </span>
           </div>
@@ -106,11 +106,11 @@ export default function CapabilitiesEngineered() {
         >
           {/* Subtle grid background */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-30"
+            className="absolute inset-0 pointer-events-none opacity-20"
             style={{
               backgroundImage: `
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px 45px),
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px 45px)
+                linear-gradient(90deg, rgba(88, 28, 135, 0.1) 1px, transparent 1px 45px),
+                linear-gradient(rgba(88, 28, 135, 0.1) 1px, transparent 1px 45px)
               `,
               backgroundSize: "45px 45px",
               backgroundPosition: "16px 14px",
@@ -123,16 +123,16 @@ export default function CapabilitiesEngineered() {
 
             {/* Section heading */}
             <div className="flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-brand-plum/40" />
-              <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase">
-                What I build
+              <span className="w-12 h-[1px] bg-brand-plum/30" />
+              <p className="text-brand-plum tracking-[0.3em] font-black text-xs uppercase">
+                Systems Scope
               </p>
-              <span className="w-8 h-[1px] bg-brand-plum/40" />
+              <span className="w-12 h-[1px] bg-brand-plum/30" />
             </div>
 
             {/* Headline row: "I can [verb]" */}
             <h2 
-              className="flex flex-col md:flex-row items-center md:items-baseline gap-3 md:gap-5 text-center md:text-left font-heading font-black tracking-tighter m-0"
+              className="flex flex-col md:flex-row items-center md:items-baseline gap-3 md:gap-5 text-center md:text-left font-heading font-black tracking-tighter m-0 uppercase"
               style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 1.2 }}
             >
               {/* Static prefix */}
@@ -186,7 +186,7 @@ export default function CapabilitiesEngineered() {
               {words.map((w, i) => (
                 <p
                   key={i}
-                  className="absolute text-center transition-all duration-500 ease-in-out text-zinc-500 font-medium tracking-widest uppercase text-xs md:text-sm px-4 max-w-full"
+                  className="absolute text-center transition-all duration-500 ease-in-out text-brand-orange/60 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs px-4 max-w-full"
                   style={{
                     opacity: i === activeIndex ? 1 : 0,
                     transform: i === activeIndex ? "translateY(0)" : "translateY(6px)",

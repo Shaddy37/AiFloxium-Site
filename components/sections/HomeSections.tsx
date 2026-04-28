@@ -355,25 +355,29 @@ export function Trust() {
 
 export function Pricing() {
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background border-y border-white/5">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-zinc-800/20 blur-[150px] rounded-full pointer-events-none" />
+    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-brand-bg border-y border-brand-plum/10">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-plum-glow opacity-30 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto max-w-7xl relative z-10 border border-dashed border-brand-plum/30 bg-brand-bg rounded-lg p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden">
+      <div className="container mx-auto max-w-7xl relative z-10 border border-dashed border-brand-plum/30 bg-brand-plum/5 rounded-3xl p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden">
         <CornerPlusIcons />
         
         <div className="w-full lg:w-3/5">
-          <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6">Investment</h2>
-          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white">PRICING <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2">PHILOSOPHY.</span></h3>
+          <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+            <span className="w-8 h-[1px] bg-brand-plum/30" /> Investment
+          </h2>
+          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white uppercase leading-[0.9]">
+            PRICING <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2">PHILOSOPHY.</span>
+          </h3>
             <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
             Every business has vastly unique operational needs. Rather than rigid software, I structure bespoke quotes based entirely on the automation complexity and whether I am building internal tools via Claude Code or wiring webhooks in n8n.
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-brand-plum/30 rounded-lg bg-brand-plum/5 w-fit relative overflow-hidden">
-             <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
-             <div className="text-2xl md:text-3xl font-bold font-heading text-white">$800 to $5,000+</div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-brand-plum/30 rounded-2xl bg-brand-plum/10 w-fit relative overflow-hidden">
+             <div className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Typical Deployment Range</div>
+             <div className="text-2xl md:text-3xl font-black font-heading text-brand-orange">$800 to $5,000+</div>
           </div>
-          <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 w-fit">
-             <Shield className="w-4 h-4 text-primary" />
-             <span className="text-xs font-bold uppercase tracking-wider text-primary">80% Automation Guarantee</span>
+          <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-brand-orange/20 bg-brand-orange/5 w-fit">
+             <Shield className="w-4 h-4 text-brand-orange" />
+             <span className="text-xs font-black uppercase tracking-wider text-brand-orange">80% Automation Guarantee</span>
           </div>
         </div>
         
@@ -381,12 +385,12 @@ export function Pricing() {
           <ul className="space-y-6 mb-12">
             {[ "Deep Tool Stack Audit", "Custom n8n Pipeline Logic", "Claude Code Built Micro-SaaS", "Autonomous Voice Deployment" ].map((feature, i) => (
                <li key={i} className="flex items-center gap-4 text-zinc-300 font-medium">
-                 <CheckCircle2 className="w-5 h-5 text-white" />
+                 <CheckCircle2 className="w-5 h-5 text-brand-orange" />
                  {feature}
                </li>
             ))}
           </ul>
-          <button className="w-full py-6 rounded-lg bg-brand-orange text-white font-bold text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.2)]">
+          <button className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
             Book a Systems Audit
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>
@@ -404,47 +408,47 @@ export function Founder() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="relative border border-dashed border-brand-plum/30 bg-brand-plum/5 rounded-lg p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
+            className="relative border border-dashed border-brand-plum/30 bg-brand-plum/5 rounded-3xl p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
          >
             <CornerPlusIcons />
             {/* Abstract Background Noise / Graphical break */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')", backgroundRepeat: 'repeat' }} />
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.65\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E')", backgroundRepeat: 'repeat' }} />
 
-            <div className="w-full lg:w-1/3 aspect-[4/5] rounded-lg bg-brand-bg border border-dashed border-brand-plum/30 relative overflow-hidden flex items-center justify-center group">
+            <div className="w-full lg:w-1/3 aspect-[4/5] rounded-2xl bg-brand-bg border border-dashed border-brand-plum/30 relative overflow-hidden flex items-center justify-center group">
                <Image 
                   src="/founder-headshot.webp"
                   alt="Muhammad Shadab Shams" 
                   fill 
-                  className="object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
+                  className="object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
-               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent pointer-events-none" />
-               <span className="font-heading text-4xl text-white/90 font-black absolute bottom-8 left-8 z-10 tracking-widest">SHAMS</span>
+               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-bg via-brand-bg/50 to-transparent pointer-events-none" />
+               <span className="font-heading text-4xl text-white/90 font-black absolute bottom-8 left-8 z-10 tracking-widest uppercase leading-none">SHAMS</span>
             </div>
             
             <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
-              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-zinc-700" /> Direct Architect Access
+              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-brand-plum/30" /> Direct Architect Access
               </h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[1.1]">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9] uppercase">
                 BUILT FOR <span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">OPERATIONAL </span> SUPREMACY.
               </h3>
                <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 font-medium">
-                 I didn&apos;t build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I&apos;ve learned that <span className="text-brand-orange font-bold">real automation isn&apos;t about flashy AI demos. It&apos;s about boring, bulletproof architecture that prints ROI.</span>
+                 I didn&apos;t build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I&apos;ve learned that <span className="text-brand-orange font-black">real automation isn&apos;t about flashy AI demos. It&apos;s about boring, bulletproof architecture that prints ROI.</span>
                </p>
                <div className="relative mb-10">
-                  <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif">&quot;</span>
-                  <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-white/30">
+                  <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif leading-none">&quot;</span>
+                  <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-brand-orange/30">
                     While others talk about AI, I engineer Voice Agents that actually close deals and Social Engines that dominate timelines—built on your brand&apos;s DNA, not generic prompts.
                   </p>
                </div>
                <div className="flex items-center gap-6">
-                 <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white flex items-center justify-center hover:scale-110 transition-transform">
+                 <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white flex items-center justify-center hover:scale-110 transition-transform">
                     <ArrowUpRight className="w-6 h-6 text-black" />
                  </Link>
                  <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer">
-                   <p className="text-white font-bold font-heading text-xl">Muhammad Shadab Shams</p>
-                   <p className="text-zinc-400 font-mono text-xs uppercase tracking-widest mt-1">Lead Architect & Systems Engineer</p>
+                   <p className="text-white font-black font-heading text-xl uppercase tracking-tighter">Muhammad Shadab Shams</p>
+                   <p className="text-brand-orange font-mono text-[10px] font-bold uppercase tracking-[0.3em] mt-1">Lead Architect & Systems Engineer</p>
                  </Link>
                </div>
             </div>
@@ -461,16 +465,18 @@ export function TechStack() {
     "Antigravity", "Gemini Pro", "OpenCode", "Vibe Coding"
   ];
   return (
-    <section className="py-24 px-6 relative bg-background border-y border-white/5 overflow-hidden">
+    <section className="py-24 px-6 relative bg-brand-bg border-y border-brand-plum/10 overflow-hidden">
       <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
-        <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0">Arsenal & Tooling:</h2>
+        <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
+          <span className="w-8 h-[1px] bg-brand-plum/30" /> Arsenal & Tooling
+        </h2>
         
         <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-6 whitespace-nowrap animate-marquee w-max">
             {[...tools, ...tools, ...tools].map((tool, i) => (
-              <div key={i} className="px-8 py-4 border border-dashed border-brand-plum/30 rounded-lg bg-brand-plum/5 hover:bg-brand-plum/10 transition-colors cursor-pointer text-lg font-medium text-zinc-300 flex items-center gap-3 relative overflow-hidden">
-                <CornerPlusIcons />
-                <div className="w-2 h-2 rounded-full bg-zinc-600 animate-pulse" />
+              <div key={i} className="px-8 py-4 border border-dashed border-brand-plum/30 rounded-xl bg-brand-plum/5 hover:border-brand-plum/50 hover:bg-brand-plum/10 transition-all cursor-pointer text-lg font-bold text-zinc-300 flex items-center gap-3 relative overflow-hidden group">
+                <CornerPlusIcons className="opacity-20 group-hover:opacity-100 transition-opacity" />
+                <div className="w-2 h-2 rounded-full bg-brand-orange animate-pulse shadow-[0_0_8px_rgba(255,107,0,0.5)]" />
                 {tool}
               </div>
             ))}

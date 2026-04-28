@@ -57,24 +57,24 @@ export default function ServicesPage() {
       <section className="py-32 px-6 bg-white text-black relative -mt-4 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
         <div className="container mx-auto max-w-6xl flex flex-col lg:flex-row gap-16">
           <div className="w-full lg:w-1/3">
-             <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6 text-brand-plum">
+             <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6 text-brand-plum uppercase leading-[0.9]">
                INTEGRATION <br /> <span className="text-brush text-3xl md:text-5xl mt-2">DIRECTIVES.</span>
              </h2>
              <p className="text-zinc-600 font-medium leading-relaxed">Everything you need to know about working with me, how I handle your data, and my delivery timelines.</p>
           </div>
-          <div className="w-full lg:w-2/3 space-y-6">
+          <div className="w-full lg:w-2/3 space-y-4">
             {[
               { q: "How do you ensure proprietary data remains secure?", a: "I utilize isolated, single-tenant cloud architectures for all RAG and LLM models. Your data is never cross-trained on public language models." },
               { q: "What is the typical timeframe for a workflow deployment?", a: "MVP logic scripts can be integrated in 7 days. Full-scale autonomous agents and multi-platform RAG architectures take 3 to 6 weeks depending on database complexity." },
               { q: "Do you maintain the systems post-launch?", a: "Yes. All my deployments include rigorous SLA uptime guarantees, persistent monitoring, and iterative optimizations." },
               { q: "Can you modernize our legacy systems?", a: "Yes, I specialize in legacy system AI modernization. I build custom API wrappers and middleware vectors that allow modern LLMs to query your existing infrastructure." }
             ].map((faq, i) => (
-               <div key={i} className="group p-8 bg-gray-50 border border-gray-200 hover:bg-brand-plum hover:text-white transition-all duration-300 cursor-pointer">
-                  <h3 className="text-xl font-bold font-heading mb-4 flex items-center gap-4 text-brand-plum group-hover:text-white transition-colors">
-                     <CheckCircle2 className="text-brand-orange group-hover:text-white shrink-0" />
+               <div key={i} className="group p-8 bg-gray-50 border border-gray-200 hover:border-brand-plum/30 transition-all duration-300">
+                  <h3 className="text-xl font-black font-heading mb-4 flex items-center gap-4 text-brand-plum group-hover:text-brand-orange transition-colors">
+                     <CheckCircle2 className="text-brand-orange shrink-0 group-hover:scale-110 transition-transform" />
                      {faq.q}
                   </h3>
-                  <p className="text-zinc-600 group-hover:text-white/80 font-medium pl-10 leading-relaxed transition-colors">{faq.a}</p>
+                  <p className="text-zinc-600 font-medium pl-10 leading-relaxed transition-colors">{faq.a}</p>
                </div>
             ))}
           </div>

@@ -333,8 +333,4 @@ export default async function ServicePage({ params }: Props) {
       <Footer />
     </main>
   );
-
-      <Footer />
-    </main>
-  );
 }

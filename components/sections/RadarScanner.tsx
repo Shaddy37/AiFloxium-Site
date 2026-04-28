@@ -13,17 +13,17 @@ export function RadarScanner() {
             <IconContainer
               text="Legacy Systems"
               delay={0.2}
-              icon={<Server className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />}
+              icon={<Server className="h-6 w-6 md:h-8 md:w-8" />}
             />
             <IconContainer
               delay={0.4}
               text="API Endpoints"
-              icon={<Network className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />}
+              icon={<Network className="h-6 w-6 md:h-8 md:w-8" />}
             />
             <IconContainer
               text="Data Warehouses"
               delay={0.3}
-              icon={<Database className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />}
+              icon={<Database className="h-6 w-6 md:h-8 md:w-8" />}
             />
           </div>
         </div>
@@ -33,12 +33,12 @@ export function RadarScanner() {
             <IconContainer
               text="Security Protocols"
               delay={0.5}
-              icon={<ShieldCheck className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />}
+              icon={<ShieldCheck className="h-6 w-6 md:h-8 md:w-8" />}
             />
             <IconContainer
               text="Cloud Infra"
               delay={0.8}
-              icon={<Cpu className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />}
+              icon={<Cpu className="h-6 w-6 md:h-8 md:w-8" />}
             />
           </div>
         </div>
@@ -48,18 +48,18 @@ export function RadarScanner() {
             <IconContainer
               delay={0.6}
               text="Human Bottlenecks"
-              icon={<Workflow className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />}
+              icon={<Workflow className="h-6 w-6 md:h-8 md:w-8" />}
             />
             <IconContainer
               delay={0.7}
               text="System Recon"
-              icon={<Search className="h-6 w-6 md:h-8 md:w-8 text-zinc-400" />} 
+              icon={<Search className="h-6 w-6 md:h-8 md:w-8" />} 
             />
           </div>
         </div>
 
         <Radar className="absolute -bottom-12" />
-        <div className="absolute bottom-0 z-[41] h-px w-full bg-gradient-to-r from-transparent via-zinc-500 to-transparent" />
+        <div className="absolute bottom-0 z-[41] h-px w-full bg-gradient-to-r from-transparent via-brand-plum to-transparent" />
       </div>
     </div>
   );
