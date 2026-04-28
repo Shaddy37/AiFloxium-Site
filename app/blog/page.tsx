@@ -1,164 +1,148 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Contact2 } from "@/components/ui/contact-2";
-import Link from 'next/link';
-import Image from 'next/image';
+import { ArrowRight, Clock, Calendar, User, Zap, ChevronRight, Search } from "lucide-react";
+import { getAllPosts } from "@/lib/mdx";
 
 export const metadata: Metadata = {
-  title: 'Insights | AIFLOXIUM by Muhammad Shadab Shams',
-  description: 'Read the latest from Muhammad Shadab Shams on AI automation, n8n workflows, and building intelligent systems that work 24/7.',
-  keywords: ['AI automation insights', 'n8n workflows', 'automation tips', 'AI agents', 'workflow automation'],
+  title: 'Blog | AIFLOXIUM - AI Automation & Advanced Infrastructure',
+  description: 'Deep-dives into AI agents, n8n workflows, LinkedIn automation, and the future of autonomous business systems.',
   alternates: {
     canonical: '/blog',
   },
-  openGraph: {
-    title: 'Insights | AIFLOXIUM - AI Automation by Muhammad Shadab Shams',
-    description: 'Essays on building intelligent systems that work 24/7 so businesses don\'t have to.',
-    type: 'website',
-    url: 'https://aifloxium.online/blog',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AIFLOXIUM Insights',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Insights | AIFLOXIUM - Muhammad Shadab Shams',
-    description: 'Insights on AI automation and workflow engineering.',
-    images: ['/og-image.jpg'],
-  },
 };
 
-const CornerPlusIcons = () => (
-  <>
-    <span className="absolute -top-3 -left-3 w-3 h-3 border-t border-l border-white/40" />
-    <span className="absolute -top-3 -right-3 w-3 h-3 border-t border-r border-white/40" />
-    <span className="absolute -bottom-3 -left-3 w-3 h-3 border-b border-l border-white/40" />
-    <span className="absolute -bottom-3 -right-3 w-3 h-3 border-b border-r border-white/40" />
-  </>
-);
-
-export default function BlogPage() {
-  const articles = [
-    { 
-      title: "Building an Autonomous Sales Rep with n8n and Claude 3.5 Sonnet", 
-      cat: "Workflow Engineering", 
-      date: "May 18, 2025",
-      slug: "autonomous-sales-rep",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-      desc: "Learn how to build a fully autonomous sales representative using n8n and Claude"
-    },
-  ];
+export default async function BlogPage() {
+  const posts = await getAllPosts();
 
   return (
-    <main className="relative bg-background min-h-screen">
+    <main className="relative bg-brand-bg min-h-screen text-zinc-300 font-medium selection:bg-brand-orange selection:text-black overflow-x-hidden">
       <Navbar />
       
-      {/* Dark Cinematic Hero */}
-      <div className="pt-40 pb-24 px-6 container mx-auto text-center">
-        <h1 className="text-6xl md:text-[7rem] font-heading font-black text-white tracking-tighter mb-8 leading-[0.9]">
-          <span className="text-gradient">THOUGHTS &</span> <br /> CODE.
-        </h1>
-        <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto font-medium">
-          Insights on building intelligent systems that work 24/7, from n8n automation to AI agents.
-        </p>
-      </div>
+      {/* Blog Hero */}
+      <section className="pt-40 pb-20 px-6 relative bg-hero-gradient overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-brand-plum-glow opacity-80 pointer-events-none" />
+        <div className="container mx-auto max-w-6xl text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-white/5 mb-8 animate-fade-in-up">
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-400">Research & Intelligence</span>
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white tracking-tighter mb-12 leading-[0.8] uppercase animate-fade-in-up delay-100">
+            INSIGHTS <br /><span className="text-brush text-5xl md:text-7xl lg:text-9xl ml-4">HUB.</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed italic border-l-2 border-zinc-800 pl-8 animate-fade-in delay-200">
+            &quot;Decodifying the engineering behind autonomous systems and cognitive orchestration.&quot;
+          </p>
+        </div>
+      </section>
 
-      {/* Geometric Image Cards Grid */}
-      <div className="container mx-auto px-6 max-w-6xl mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {articles.map((post, i) => (
-            <Link 
-              key={i} 
-              href={`/blog/${post.slug}`}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden border border-white/10 group-hover:border-white/20 transition-all duration-500">
-                <CornerPlusIcons />
-                {post.image ? (
-                  <>
-                    <Image 
-                      src={post.image} 
-                      alt={post.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                  </>
-                ) : (
-                  <div className="absolute inset-0 bg-zinc-900 flex items-center justify-center">
-                    <div className="w-24 h-24 border border-white/10 flex items-center justify-center">
-                      <div className="w-12 h-12 border border-white/20" />
-                    </div>
+      {/* Featured Post (First one) */}
+      {posts.length > 0 && (
+        <section className="py-20 px-6">
+          <div className="container mx-auto max-w-6xl">
+            <Link href={`/blog/${posts[0].slug}`} className="group block relative overflow-hidden rounded-[3rem] border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-xl hover:bg-brand-plum/10 transition-colors">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="aspect-[16/10] lg:aspect-auto relative overflow-hidden order-1 lg:order-2 bg-brand-bg/50">
+                   <div className="absolute inset-0 bg-gradient-to-t from-brand-bg to-transparent z-10 opacity-80" />
+                   <div className="absolute inset-0 bg-brand-plum/10 animate-pulse" />
+                   {/* Placeholder for real image in the future */}
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <Zap className="w-24 h-24 text-brand-plum opacity-20" />
+                   </div>
+                </div>
+                
+                <div className="p-12 md:p-16 flex flex-col justify-center order-2 lg:order-1">
+                  <div className="flex items-center gap-6 mb-8 text-[10px] font-mono uppercase tracking-widest text-zinc-500">
+                    <span className="flex items-center gap-2 text-brand-orange"><Zap className="w-3 h-3 fill-brand-orange" /> {posts[0].frontmatter.category}</span>
+                    <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {posts[0].frontmatter.date}</span>
                   </div>
-                )}
-                <div className="absolute inset-0 bg-radial-glow opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <span className="text-xs font-mono text-zinc-500 mb-3 block uppercase tracking-widest">{post.cat}</span>
-                  <h3 className="text-2xl md:text-3xl font-heading font-medium text-white group-hover:text-zinc-300 tracking-tight leading-tight mb-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm md:text-base line-clamp-2">{post.desc}</p>
-                  <div className="flex items-center gap-4 mt-4 text-zinc-400 font-mono text-xs uppercase tracking-widest">
-                    <span>{post.date}</span>
-                    <span className="w-8 h-[1px] bg-white/20" />
+                  
+                  <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] mb-8 group-hover:text-brand-orange transition-all duration-500">
+                    {posts[0].frontmatter.title}
+                  </h2>
+                  
+                  <p className="text-lg text-zinc-400 mb-12 leading-relaxed max-w-lg">
+                    {posts[0].frontmatter.description}
+                  </p>
+                  
+                  <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-[0.2em] text-white">
+                    Read Intelligence <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Internal Linking: Resources Callout */}
-      <section className="container mx-auto px-6 mb-32">
-        <div className="glass-card p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 group hover:border-white/20 transition-all duration-500">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tight mb-4">
-              LOOKING FOR <span className="text-gradient">AUTOMATIONS?</span>
-            </h2>
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              Check out my portfolio of 38+ automation projects. From workflow templates to AI agents, if it can be automated, I have built it.
-            </p>
           </div>
-          <Link 
-            href="/resources" 
-            className="px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:scale-105"
-          >
-            Explore Resources →
-          </Link>
+        </section>
+      )}
+
+      {/* Blog Grid */}
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 border-b border-white/5 pb-12">
+             <div className="max-w-xl">
+               <h3 className="text-4xl font-black text-white tracking-tighter uppercase mb-4">Latest Research</h3>
+               <p className="text-zinc-500 font-medium">Technological explorations in neural workflows, agentic reasoning, and scalable AI architectures.</p>
+             </div>
+             
+             {/* Search/Filter Simulation */}
+             <div className="relative group">
+               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+               <input 
+                  type="text" 
+                  placeholder="SEARCH PAPERS..." 
+                  className="bg-brand-plum/10 border border-brand-plum/20 rounded-full pl-12 pr-6 py-4 text-[10px] font-mono tracking-widest text-white w-full md:w-64 focus:outline-none focus:border-brand-orange/40 transition-all uppercase"
+               />
+             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {posts.slice(1).map((post, index) => (
+              <Link 
+                key={post.slug} 
+                href={`/blog/${post.slug}`}
+                className="group p-8 md:p-12 rounded-[2.5rem] bg-brand-plum/5 border border-brand-plum/10 hover:border-brand-orange/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-20px_rgba(88,28,135,0.3)]"
+              >
+                <div className="flex items-center justify-between mb-8">
+                  <span className="px-3 py-1 rounded-full bg-brand-bg text-[10px] font-mono text-brand-orange border border-brand-orange/20 uppercase tracking-widest">
+                    {post.frontmatter.category}
+                  </span>
+                  <span className="text-[10px] font-mono text-brand-plum uppercase tracking-widest flex items-center gap-2">
+                    <Calendar className="w-3 h-3" /> {post.frontmatter.date}
+                  </span>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-[0.9] mb-6 group-hover:text-zinc-400 transition-colors">
+                  {post.frontmatter.title}
+                </h3>
+                
+                <p className="text-zinc-500 text-sm leading-relaxed mb-10 line-clamp-3">
+                  {post.frontmatter.description}
+                </p>
+                
+                <div className="flex items-center justify-between pt-8 border-t border-white/5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-black text-[10px] text-white">
+                      {post.frontmatter.author?.charAt(0) || 'A'}
+                    </div>
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">{post.frontmatter.author}</span>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-brand-plum group-hover:text-brand-orange group-hover:translate-x-1 transition-all" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* High-Contrast White Newsletter CTA */}
-      <section className="py-24 bg-white text-black my-24 border-y border-zinc-200">
-         <div className="container mx-auto px-6 max-w-4xl text-center">
-             <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-6">AUTOMATE YOUR INBOX.</h2>
-             <p className="text-zinc-600 font-medium text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-                Get weekly insights on AI automation, n8n workflows, and building systems that actually scale. No fluff, just actionable automation strategies.
-             </p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center">
-               <input 
-                  type="email" 
-                  placeholder="name@enterprise.com" 
-                  className="px-6 py-4 rounded-full bg-zinc-100 border border-zinc-200 w-full sm:w-96 text-black focus:outline-none focus:border-black transition-colors"
-               />
-               <button className="px-8 py-4 rounded-full bg-black text-white font-bold uppercase tracking-widest text-sm hover:opacity-80 transition-opacity">
-                  Subscribe
-               </button>
-            </form>
-         </div>
-      </section>
-
-      <section className="bg-zinc-950/20 border-t border-white/5 py-24">
+      {/* CTA Section */}
+      <section className="bg-brand-plum/5 py-16 border-t border-brand-plum/10">
         <Contact2 
-          title="Scale Your Logic."
-          description="Interested in implementing any of these architectural patterns? Our SAR team is ready for deployment."
+          title="Custom Workflows Built for Scale."
+          description="Ready to automate your operations with state-of-the-art AI infrastructure? Let's connect."
         />
       </section>
 

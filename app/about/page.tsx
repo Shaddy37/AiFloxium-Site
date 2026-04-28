@@ -36,14 +36,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="relative bg-background min-h-screen">
+    <main className="relative bg-brand-bg min-h-screen">
       <Navbar />
       
       {/* Dark Cinematic Hero */}
-      <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-800/20 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden bg-hero-gradient rounded-b-[3rem]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-80 blur-[150px] rounded-full pointer-events-none -z-10" />
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9]">
-          THE <span className="block md:inline">AUTOMATOR</span> <br /><span className="text-gradient">BEHIND AIFLOXIUM.</span>
+          THE <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">AUTOMATOR</span> <br /><span className="text-gradient">BEHIND AIFLOXIUM.</span>
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium leading-relaxed">
           I am <span className="text-white font-bold">Muhammad Shadab Shams</span>, the founder of AIFLOXIUM. I build intelligent systems that work 24/7 so businesses do not have to.
@@ -52,15 +52,15 @@ export default function AboutPage() {
 
       <Vision />
 
-      {/* Clean White Timeline Section */}
-      <section className="py-24 md:py-32 bg-white text-black clip-path-slant-top-bottom relative z-20">
+      {/* Cinematic Timeline Section */}
+      <section className="py-24 md:py-32 bg-brand-bg text-white relative z-20 border-y border-brand-plum/10">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
-            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">THE AIFLOXIUM TIMELINE</h2>
-            <p className="text-zinc-600 font-medium">From custom scripts to full-scale enterprise architectures.</p>
+            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4 uppercase">THE AIFLOXIUM TIMELINE</h2>
+            <p className="text-zinc-500 font-medium">From custom scripts to full-scale enterprise architectures.</p>
           </div>
           
-          <div className="space-y-16 pl-4 md:pl-0 border-l-2 md:border-l-0 border-zinc-200">
+          <div className="space-y-16 pl-4 md:pl-0 border-l-2 md:border-l-0 border-brand-plum/10">
             {[
               { year: "Phase 1: Inception", title: "Custom Scripts & Basic Logic", desc: "Started by identifying massive operational inefficiencies in local businesses and deploying Python-based scraping and automation vectors.", icon: <Cpu /> },
               { year: "Phase 2: Integration", title: "API & Data Pipeline Mastery", desc: "Graduated to connecting disparate enterprise tools across finance and CRMs, reducing cross-platform manual data entry by 85%.", icon: <Database /> },
@@ -68,20 +68,20 @@ export default function AboutPage() {
             ].map((item, i) => (
               <div key={i} className="relative flex flex-col md:flex-row gap-8 md:items-center">
                 <div className="hidden md:flex flex-col items-center absolute left-1/2 -translate-x-1/2 w-full h-full">
-                   <div className="w-0.5 h-full bg-zinc-200" />
-                   <div className="absolute top-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shadow-lg -translate-y-1/2">
+                   <div className="w-0.5 h-full bg-brand-plum/10" />
+                   <div className="absolute top-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center shadow-lg -translate-y-1/2">
                       {item.icon}
                    </div>
                 </div>
                 
                 <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:ml-auto'}`}>
-                  <span className="text-sm font-bold text-zinc-400 uppercase tracking-widest block mb-2">{item.year}</span>
-                  <h3 className="text-2xl font-bold font-heading mb-4">{item.title}</h3>
-                  <p className="text-zinc-600 font-medium leading-relaxed bg-zinc-50 p-6 rounded-2xl">{item.desc}</p>
+                  <span className="text-sm font-bold text-brand-orange uppercase tracking-widest block mb-2">{item.year}</span>
+                  <h3 className="text-2xl font-bold font-heading mb-4 text-white">{item.title}</h3>
+                  <p className="text-zinc-400 font-medium leading-relaxed bg-brand-plum/10 p-6 rounded-2xl border border-brand-plum/20">{item.desc}</p>
                 </div>
                 
                 {/* Mobile icon dot */}
-                <div className="md:hidden absolute -left-[25px] top-0 w-4 h-4 rounded-full bg-black border-4 border-white" />
+                <div className="md:hidden absolute -left-[25px] top-0 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-bg" />
               </div>
             ))}
           </div>
@@ -89,8 +89,8 @@ export default function AboutPage() {
       </section>
 
       {/* Accordion Section */}
-      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-800/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <section className="py-24 md:py-32 bg-brand-bg relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-plum-glow opacity-30 blur-[150px] rounded-full pointer-events-none -z-10" />
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">MY STORY</h2>

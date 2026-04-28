@@ -46,18 +46,18 @@ const PlusCard: React.FC<{
   return (
     <div
       className={cn(
-        "relative border border-dashed border-zinc-400 dark:border-zinc-700 rounded-lg p-8 bg-white dark:bg-zinc-950 min-h-[240px]",
-        "flex flex-col justify-between group hover:bg-zinc-900/50 transition-colors duration-300",
+        "relative border border-dashed border-brand-plum/30 rounded-lg p-8 bg-brand-bg min-h-[240px]",
+        "flex flex-col justify-between group hover:bg-brand-plum/10 transition-colors duration-300",
         className
       )}
     ><Link href="/services">
       <CornerPlusIcons />
       {/* Content */}
       <div className="relative z-10 space-y-4">
-        <h3 className="text-2xl font-black font-heading tracking-tighter text-gray-900 dark:text-gray-100 uppercase">
+        <h3 className="text-2xl font-black font-heading tracking-tighter text-white uppercase group-hover:text-brand-orange transition-colors">
           {title}
         </h3>
-        <p className="text-gray-700 dark:text-zinc-400 text-lg leading-relaxed font-medium">{description}</p>
+        <p className="text-zinc-400 text-lg leading-relaxed font-medium">{description}</p>
       </div></Link>
     </div>
   )
@@ -65,16 +65,16 @@ const PlusCard: React.FC<{
 
 export default function RuixenBentoCards() {
   return (
-    <section id="bottlenecks" className="bg-white dark:bg-black dark:bg-transparent border-y border-gray-200 dark:border-zinc-800">
-      <div className="mx-auto container border-x border-gray-200 dark:border-zinc-800 py-24 border-t-0 px-6">
+    <section id="bottlenecks" className="bg-brand-bg border-y border-brand-plum/10">
+      <div className="mx-auto container border-x border-brand-plum/10 py-24 border-t-0 px-6">
         
         {/* Narrative Header */}
         <div className="max-w-3xl mb-16">
           <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-zinc-700" /> Operational Audit
+            <span className="w-8 h-[1px] bg-brand-plum/30" /> Operational Audit
           </h2>
           <h3 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
-            YOUR REVENUE IS <br /> <span className="text-gradient">LEAKING.</span>
+            YOUR REVENUE IS <br /> <span className="text-brush text-4xl md:text-6xl lg:text-7xl ml-2">LEAKING.</span>
           </h3>
              <p className="text-xl text-zinc-400 font-medium leading-relaxed">
                 You do not have a talent problem. You have systems that were never built to scale. I find exactly where you are losing time and money, then I build the fix.
@@ -87,15 +87,15 @@ export default function RuixenBentoCards() {
           <PlusCard {...cardContents[1]} className="lg:col-span-3 lg:row-span-2" />
           <PlusCard {...cardContents[2]} className="lg:col-span-4 lg:row-span-1" />
           <PlusCard {...cardContents[3]} className="lg:col-span-2 lg:row-span-1" />
-          <PlusCard {...cardContents[4]} className="lg:col-span-6 lg:row-span-1 border-primary/20 bg-primary/5" />
+          <PlusCard {...cardContents[4]} className="lg:col-span-6 lg:row-span-1 border-brand-orange/20 bg-brand-orange/5" />
         </div>
 
         {/* Section Footer Heading */}
         <div className="max-w-3xl ml-auto text-right px-4 mt-20">
-          <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-black dark:text-white mb-6 uppercase">
+          <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-white mb-6 uppercase">
             Built for scale. <br /> Engineered for dominance.
           </h2>
-             <p className="text-gray-600 dark:text-zinc-400 text-xl font-medium">
+             <p className="text-zinc-400 text-xl font-medium">
                I don&apos;t sell &apos;AI tools&apos;. I sell hours returned to your day and certainty in your bottom line. Let&apos;s build the systems that make your competition irrelevant.
              </p>
         </div>

@@ -26,7 +26,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 		const container = containerRef.current;
 
 		const scene = new THREE.Scene();
-		scene.fog = new THREE.Fog(0x000000, 2000, 10000);
+		scene.fog = new THREE.Fog(0x130716, 2000, 10000);
 
 		const camera = new THREE.PerspectiveCamera(
 			60,
@@ -58,7 +58,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 				const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
 
 				positions.push(x, y, z);
-				colors.push(80, 80, 80);
+				colors.push(0.2, 0.05, 0.4);
 			}
 		}
 

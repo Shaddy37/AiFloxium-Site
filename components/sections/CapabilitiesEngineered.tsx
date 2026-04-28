@@ -87,13 +87,13 @@ export default function CapabilitiesEngineered() {
       <section
         id="capabilities"
         ref={sectionRef}
-        className="relative bg-background"
+        className="relative bg-brand-bg"
         style={{ height: `${COUNT * 100}vh` }}
       >
         {/* Section badge pin — only visible at the top via absolute */}
         <div className="absolute top-8 w-full flex justify-center z-30 pointer-events-none">
-          <div className="flex items-center gap-3 border border-white/10 bg-zinc-950/80 backdrop-blur-sm px-5 py-2 rounded-full">
-            <div className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-pulse" />
+          <div className="flex items-center gap-3 border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-sm px-5 py-2 rounded-full">
+            <div className="w-1.5 h-1.5 bg-brand-orange rounded-full animate-pulse" />
             <span className="text-zinc-400 tracking-[0.2em] font-medium text-xs uppercase">
               Capabilities Engineered
             </span>
@@ -123,11 +123,11 @@ export default function CapabilitiesEngineered() {
 
             {/* Section heading */}
             <div className="flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-zinc-700" />
-              <p className="text-zinc-500 tracking-[0.2em] font-medium text-xs uppercase">
+              <span className="w-8 h-[1px] bg-brand-plum/40" />
+              <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase">
                 What I build
               </p>
-              <span className="w-8 h-[1px] bg-zinc-700" />
+              <span className="w-8 h-[1px] bg-brand-plum/40" />
             </div>
 
             {/* Headline row: "I can [verb]" */}
@@ -161,8 +161,9 @@ export default function CapabilitiesEngineered() {
                       style={{
                         fontSize: "clamp(3rem, 8vw, 6rem)",
                         lineHeight: 1.2,
-                        color: "#ffffff",
+                        color: i === activeIndex ? "var(--brand-orange)" : "#ffffff",
                         display: "block",
+                        transition: "color 0.5s ease"
                       }}
                     >
                       {w.label}
@@ -208,7 +209,8 @@ export default function CapabilitiesEngineered() {
                 style={{
                   width: i === activeIndex ? "24px" : "6px",
                   height: "6px",
-                  background: i === activeIndex ? "white" : "rgba(82,82,91,0.5)",
+                  background: i === activeIndex ? "var(--brand-orange)" : "var(--brand-plum)",
+                  opacity: i === activeIndex ? 1 : 0.3,
                 }}
               />
             ))}

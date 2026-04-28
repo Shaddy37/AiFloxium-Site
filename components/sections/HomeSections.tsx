@@ -9,9 +9,9 @@ import { CornerPlusIcons } from "@/components/ui/geometric-elements";
 
 export function Vision() {
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background">
-      <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -z-10" />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-900/40 blur-[150px] rounded-full pointer-events-none -z-10" />
+    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-hero-gradient">
+      <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-plum/20 to-transparent -z-10" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-plum-glow opacity-80 blur-[150px] rounded-full pointer-events-none -z-10" />
 
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
@@ -21,16 +21,16 @@ export function Vision() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1 }}
-              className="relative aspect-square md:aspect-[4/3] w-full rounded-lg overflow-hidden border border-dashed border-zinc-700 bg-zinc-950/50"
+              className="relative aspect-square md:aspect-[4/3] w-full rounded-lg overflow-hidden border border-dashed border-brand-plum/30 bg-brand-plum/5"
             >
               <CornerPlusIcons />
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent" />
               {/* Abstract Graphic Representation */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 md:w-64 md:h-64 border-[0.5px] border-white/20 rounded-full flex items-center justify-center relative spin-slow">
-                   <div className="w-full h-full absolute animate-ping opacity-10 border border-white/30 rounded-full" style={{ animationDuration: '4s' }} />
-                   <div className="w-16 h-16 md:w-32 md:h-32 border-[0.5px] border-white/30 rounded-full flex items-center justify-center">
-                      <Cpu className="w-8 h-8 text-white/50" />
+                <div className="w-32 h-32 md:w-64 md:h-64 border-[0.5px] border-brand-plum/30 rounded-full flex items-center justify-center relative spin-slow">
+                   <div className="w-full h-full absolute animate-ping opacity-10 border border-brand-orange/30 rounded-full" style={{ animationDuration: '4s' }} />
+                   <div className="w-16 h-16 md:w-32 md:h-32 border-[0.5px] border-brand-plum/50 rounded-full flex items-center justify-center">
+                      <Cpu className="w-8 h-8 text-brand-orange" />
                    </div>
                 </div>
               </div>
@@ -43,11 +43,11 @@ export function Vision() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-zinc-700" /> My Vision
+              <h2 className="text-brand-orange tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-brand-plum" /> My Vision
               </h2>
               <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white leading-[0.9] tracking-tighter">
-                THE CATALYST <br /> FOR <span className="text-gradient">TRANSFORMATION.</span>
+                THE CATALYST <br /> FOR <span className="text-brush text-3xl md:text-6xl lg:text-7xl ml-2">TRANSFORMATION.</span>
               </h3>
             </motion.div>
             
@@ -93,7 +93,7 @@ export function Process() {
   ];
 
   return (
-    <section className="py-24 md:py-40 px-4 md:px-6 relative bg-zinc-950">
+    <section className="py-24 md:py-40 px-4 md:px-6 relative bg-brand-bg border-y border-brand-plum/10">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="w-full text-center md:text-left">
@@ -101,7 +101,7 @@ export function Process() {
                  <span className="w-8 h-[1px] bg-zinc-700" /> Methodology
                </h2>
                <h3 className="text-3xl sm:text-4xl md:text-6xl font-heading font-black text-white tracking-tighter">
-                 PROTOCOLS OF <br/> EXECUTION.
+                 PROTOCOLS OF <br/><span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">EXECUTION.</span>
                </h3>
             </div>
             <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors group">
@@ -118,7 +118,7 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.12 }}
-              className="relative border border-dashed border-zinc-700 bg-zinc-950 p-10 rounded-lg flex flex-col group transition-all duration-300 overflow-hidden"
+              className="relative border border-dashed border-brand-plum/30 bg-brand-plum/5 p-10 rounded-lg flex flex-col group transition-all duration-300 overflow-hidden"
             >
               <CornerPlusIcons />
               <div className="absolute top-0 right-0 p-8 opacity-5 transition-opacity">
@@ -204,7 +204,7 @@ export function Trust() {
   ];
 
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background">
+    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-hero-gradient">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -217,10 +217,10 @@ export function Trust() {
             className="max-w-2xl"
           >
             <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-zinc-700" /> Proof of Impact
+              <span className="w-8 h-[1px] bg-brand-plum" /> Proof of Impact
             </h2>
             <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-white">
-              WHY FOUNDERS <br /> <span className="text-gradient">TRUST ME.</span>
+              WHY FOUNDERS <br /> <span className="text-brush text-4xl md:text-6xl lg:text-8xl ml-2">TRUST ME.</span>
             </h3>
           </motion.div>
           <motion.p 
@@ -243,7 +243,7 @@ export function Trust() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.08 }}
-              className="border border-white/10 bg-zinc-950/50 p-6 group hover:border-white/20 hover:bg-zinc-950 transition-all"
+              className="border border-brand-plum/20 bg-brand-bg p-6 group hover:border-brand-plum/40 hover:bg-brand-plum/10 transition-all"
             >
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-2 h-2 bg-primary mt-2 shrink-0" />
@@ -268,7 +268,7 @@ export function Trust() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.12 }}
               className={cn(
-                "relative border border-white/10 bg-zinc-950 p-10 flex flex-col justify-between group overflow-hidden hover:border-white/20 transition-all",
+                "relative border border-brand-plum/20 bg-brand-bg p-10 flex flex-col justify-between group overflow-hidden hover:border-brand-plum/40 transition-all",
                 study.size === "large" ? "md:col-span-2" : "md:col-span-1"
               )}
             >
@@ -309,7 +309,7 @@ export function Trust() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="border border-white/10 bg-zinc-950/50 p-12"
+          className="border border-brand-plum/20 bg-brand-plum/10 p-12"
         >
           <div className="flex flex-col md:flex-row gap-8 md:gap-12">
             <div className="flex-1">
@@ -358,16 +358,16 @@ export function Pricing() {
     <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-background border-y border-white/5">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-zinc-800/20 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto max-w-7xl relative z-10 border border-dashed border-zinc-700 bg-zinc-950 rounded-lg p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden">
+      <div className="container mx-auto max-w-7xl relative z-10 border border-dashed border-brand-plum/30 bg-brand-bg rounded-lg p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden">
         <CornerPlusIcons />
         
         <div className="w-full lg:w-3/5">
           <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6">Investment</h2>
-          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white">PRICING <br /> PHILOSOPHY.</h3>
+          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white">PRICING <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2">PHILOSOPHY.</span></h3>
             <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
             Every business has vastly unique operational needs. Rather than rigid software, I structure bespoke quotes based entirely on the automation complexity and whether I am building internal tools via Claude Code or wiring webhooks in n8n.
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-zinc-700 rounded-lg bg-zinc-900/50 w-fit relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-brand-plum/30 rounded-lg bg-brand-plum/5 w-fit relative overflow-hidden">
              <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
              <div className="text-2xl md:text-3xl font-bold font-heading text-white">$800 to $5,000+</div>
           </div>
@@ -386,7 +386,7 @@ export function Pricing() {
                </li>
             ))}
           </ul>
-          <button className="w-full py-6 rounded-lg bg-white text-black font-bold text-sm uppercase tracking-widest hover:bg-zinc-200 transition-colors flex items-center justify-center gap-4 group">
+          <button className="w-full py-6 rounded-lg bg-brand-orange text-white font-bold text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.2)]">
             Book a Systems Audit
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>
@@ -398,19 +398,19 @@ export function Pricing() {
 
 export function Founder() {
   return (
-    <section className="py-24 md:py-40 px-6 relative bg-zinc-950">
+    <section className="py-24 md:py-40 px-6 relative bg-brand-bg">
       <div className="container mx-auto max-w-7xl">
          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="relative border border-dashed border-zinc-700 bg-zinc-950 rounded-lg p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
+            className="relative border border-dashed border-brand-plum/30 bg-brand-plum/5 rounded-lg p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
          >
             <CornerPlusIcons />
             {/* Abstract Background Noise / Graphical break */}
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')", backgroundRepeat: 'repeat' }} />
 
-            <div className="w-full lg:w-1/3 aspect-[4/5] rounded-lg bg-zinc-900 border border-dashed border-zinc-700 relative overflow-hidden flex items-center justify-center group">
+            <div className="w-full lg:w-1/3 aspect-[4/5] rounded-lg bg-brand-bg border border-dashed border-brand-plum/30 relative overflow-hidden flex items-center justify-center group">
                <Image 
                   src="/founder-headshot.webp"
                   alt="Muhammad Shadab Shams" 
@@ -422,21 +422,21 @@ export function Founder() {
                <span className="font-heading text-4xl text-white/90 font-black absolute bottom-8 left-8 z-10 tracking-widest">SHAMS</span>
             </div>
             
-<div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
+            <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-zinc-700" /> Direct Architect Access
               </h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[1.1]">
-                BUILT FOR <span className="text-gradient">OPERATIONAL </span> SUPREMACY.
+                BUILT FOR <span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">OPERATIONAL </span> SUPREMACY.
               </h3>
                <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 font-medium">
-                 I didn&apos;t build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I&apos;ve learned that <span className="text-white font-bold">real automation isn&apos;t about flashy AI demos. It&apos;s about boring, bulletproof architecture that prints ROI.</span>
+                 I didn&apos;t build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I&apos;ve learned that <span className="text-brand-orange font-bold">real automation isn&apos;t about flashy AI demos. It&apos;s about boring, bulletproof architecture that prints ROI.</span>
                </p>
                <div className="relative mb-10">
                   <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif">&quot;</span>
                   <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-white/30">
                     While others talk about AI, I engineer Voice Agents that actually close deals and Social Engines that dominate timelines—built on your brand&apos;s DNA, not generic prompts.
-                 </p>
+                  </p>
                </div>
                <div className="flex items-center gap-6">
                  <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-white flex items-center justify-center hover:scale-110 transition-transform">
@@ -448,9 +448,9 @@ export function Founder() {
                  </Link>
                </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
+         </motion.div>
+      </div>
+    </section>
   );
 }
 
@@ -468,7 +468,7 @@ export function TechStack() {
         <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-6 whitespace-nowrap animate-marquee w-max">
             {[...tools, ...tools, ...tools].map((tool, i) => (
-              <div key={i} className="px-8 py-4 border border-dashed border-zinc-700 rounded-lg bg-zinc-950/50 hover:bg-zinc-900 transition-colors cursor-pointer text-lg font-medium text-zinc-300 flex items-center gap-3 relative overflow-hidden">
+              <div key={i} className="px-8 py-4 border border-dashed border-brand-plum/30 rounded-lg bg-brand-plum/5 hover:bg-brand-plum/10 transition-colors cursor-pointer text-lg font-medium text-zinc-300 flex items-center gap-3 relative overflow-hidden">
                 <CornerPlusIcons />
                 <div className="w-2 h-2 rounded-full bg-zinc-600 animate-pulse" />
                 {tool}

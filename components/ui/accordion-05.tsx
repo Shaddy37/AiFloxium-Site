@@ -64,10 +64,10 @@ export function Accordion05() {
     <div className="w-full max-w-3xl mx-auto">
       <Accordion type="single" defaultValue="5" collapsible className="w-full">
         {items.map((item) => (
-          <AccordionItem value={item.id} key={item.id} className="last:border-b border-zinc-800">
+          <AccordionItem value={item.id} key={item.id} className="last:border-b border-brand-plum/20">
             <AccordionTrigger className="text-left pl-6 md:pl-14 overflow-hidden text-white/20 duration-200 hover:no-underline cursor-pointer -space-y-6 data-[state=open]:space-y-0 data-[state=open]:text-white [&>svg]:hidden">
               <div className="flex flex-1 items-start gap-4">
-                <p className="text-xs font-mono text-zinc-500">{item.id}</p>
+                <p className="text-xs font-mono text-brand-orange/60">{item.id}</p>
                 <h1
                   className={cn(
                     "uppercase relative text-center text-3xl md:text-5xl font-heading font-black tracking-tighter transition-colors duration-300",

@@ -1,14 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b; /* zinc-950 */
+  --background: #130716; /* Midnight Plum */
   --foreground: #fafafa;
-  --accent: #3f3f46; /* zinc-700 */
+  --accent: #581C87; /* Plum */
   --accent-foreground: #ffffff;
-  --muted: #18181b; /* zinc-900 */
-  --muted-foreground: #a1a1aa; /* zinc-400 */
-  --border: #27272a; /* zinc-800 */
-  --glow: rgba(255, 255, 255, 0.05);
+  --muted: #1c0a21;
+  --muted-foreground: #a1a1aa;
+  --border: rgba(88, 28, 135, 0.2);
+  --primary: #FF6B00; /* Brand Orange */
+  --primary-foreground: #ffffff;
+  --glow: rgba(88, 28, 135, 0.1);
+
+  /* New Branding Colors - Refined for Cinematic Plum */
+  --brand-plum: #581C87; /* Saturated Violet */
+  --brand-orange: #FF6B00;
+  --brand-bg: #130716; /* Deep Midnight Plum */
+  --brand-purple-glow: rgba(88, 28, 135, 0.4);
 }
 
 @theme {
@@ -19,10 +27,17 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-glow: var(--glow);
+
+  --color-brand-plum: var(--brand-plum);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-bg: var(--brand-bg);
   
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Clash Display", var(--font-geist-sans), sans-serif;
+  --font-brush: var(--font-permanent-marker), cursive;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -86,10 +101,26 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #d8b4fe 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.text-brush {
+  font-family: var(--font-brush);
+  color: var(--brand-orange);
+  letter-spacing: -0.02em;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.bg-brand-plum-glow {
+  background: radial-gradient(circle at center, var(--brand-purple-glow) 0%, transparent 70%);
+}
+
+.bg-hero-gradient {
+  background: radial-gradient(circle at top right, #2E1030 0%, #130716 50%, #08040C 100%);
 }
 
 @keyframes spin-slow {

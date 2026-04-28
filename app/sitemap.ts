@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { servicesData } from '@/lib/services-data'
+import { getAllPostSlugs } from '@/lib/mdx'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://aifloxium.online'
@@ -24,9 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  const blogRoutes: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/blog/autonomous-sales-rep`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.6 },
-  ]
+  const blogSlugs = getAllPostSlugs();
+  const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.6,
+  }))
 
   return [...staticRoutes, ...serviceRoutes, ...blogRoutes]
 }

@@ -83,9 +83,9 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 z-[100] mx-auto w-full border-b border-transparent',
         {
-          'bg-black/80 supports-[backdrop-filter]:bg-black/40 border-white/5 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
+          'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
             scrolled && !open,
-          'bg-black': open,
+          'bg-brand-bg': open,
         },
       )}
     >
@@ -106,7 +106,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <span className="text-lg font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-zinc-400 bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-zinc-300 transition-all duration-300">
+            <span className="text-lg font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-brand-plum/80 transition-all duration-300">
               AIFLOXIUM
             </span>
           </motion.div>
@@ -142,7 +142,7 @@ export default function Navbar() {
               href="#initiate" 
               className={cn(
                 buttonVariants({ variant: "default" }), 
-                "rounded-full bg-white text-black hover:bg-zinc-200 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(255,107,0,0.3)] border-none"
               )}
             >
               Book an Audit
@@ -168,7 +168,7 @@ export default function Navbar() {
             animate="visible"
             exit="exit"
             variants={mobileMenuVariants}
-            className="bg-black fixed inset-0 z-[105] flex flex-col overflow-hidden pt-24 md:hidden"
+            className="bg-brand-bg fixed inset-0 z-[105] flex flex-col overflow-hidden pt-24 md:hidden"
           >
             <div className="flex h-full w-full flex-col justify-between gap-y-8 p-10">
               <div className="grid gap-y-4">
@@ -182,7 +182,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="text-4xl font-black text-white hover:text-zinc-500 transition-colors uppercase italic tracking-tighter"
+                      className="text-4xl font-black text-white hover:text-brand-orange transition-colors uppercase italic tracking-tighter"
                     >
                       {link.name}
                     </Link>
@@ -198,7 +198,7 @@ export default function Navbar() {
                 <Link 
                   href="#initiate" 
                   onClick={() => setOpen(false)}
-                  className="w-full h-16 rounded-3xl bg-white text-black flex items-center justify-center font-bold uppercase tracking-widest text-sm hover:bg-zinc-200 transition-all shadow-xl shadow-white/5"
+                  className="w-full h-16 rounded-3xl bg-brand-orange text-white flex items-center justify-center font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-xl shadow-brand-orange/10"
                 >
                   Book a Systems Audit
                 </Link>

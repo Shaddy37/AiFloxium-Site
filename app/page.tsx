@@ -31,7 +31,7 @@ const Footer = dynamic(() => import("@/components/sections/Footer"), {
 
 export default function Home() {
   return (
-    <main className="relative bg-background">
+    <main className="relative bg-brand-bg">
       <Navbar />
       <Hero3D />
       <HiddenCostSection />

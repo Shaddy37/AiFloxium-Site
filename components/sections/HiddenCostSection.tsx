@@ -61,7 +61,7 @@ function ProblemCard({
       className="absolute inset-x-6 md:inset-x-0 mx-auto"
     >
       <div 
-        className="relative group p-8 md:p-12 bg-zinc-900/60 backdrop-blur-2xl border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] overflow-hidden"
+        className="relative group p-8 md:p-12 bg-brand-bg/80 backdrop-blur-2xl border border-brand-plum/30 shadow-[0_0_80px_rgba(0,0,0,0.5)] overflow-hidden"
         style={{ clipPath: "polygon(0% 0%, 88% 0%, 100% 12%, 100% 100%, 0% 100%)" }}
       >
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -74,14 +74,14 @@ function ProblemCard({
 
         <div className="relative z-10 flex flex-col md:flex-row items-start gap-8">
           <div className="flex flex-col items-center gap-6">
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-zinc-800 border border-white/20 flex items-center justify-center text-xl md:text-2xl font-black text-white/50 transform rotate-45">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-brand-plum/10 border border-brand-plum/40 flex items-center justify-center text-xl md:text-2xl font-black text-brand-orange transform rotate-45">
               <span className="-rotate-45">{String(index + 1).padStart(2, "0")}</span>
             </div>
-            <div className="w-[1px] h-24 bg-gradient-to-b from-zinc-700 to-transparent hidden md:block" />
+            <div className="w-[1px] h-24 bg-gradient-to-b from-brand-plum/30 to-transparent hidden md:block" />
           </div>
           
           <div className="space-y-4 pt-1">
-            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none border-l-4 border-zinc-700 pl-6">
+            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none border-l-4 border-brand-plum/50 pl-6">
               {problem.title}
             </h3>
             <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
@@ -90,7 +90,7 @@ function ProblemCard({
           </div>
         </div>
 
-        <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-zinc-700 opacity-50" />
+        <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-brand-plum/30 opacity-50" />
       </div>
     </motion.div>
   );
@@ -118,20 +118,20 @@ export default function HiddenCostSection() {
       className="relative z-10 perspective-1000" 
       style={{ height: "800vh" }}
     >
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-background">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-brand-bg">
         
         <motion.div
           style={{ opacity: headerOpacity, scale: headerScale }}
           className="absolute z-0 text-center px-6 w-full max-w-5xl flex flex-col items-center justify-center translate-y-[-10%] pointer-events-none"
         >
-          <span className="flex items-center gap-4 text-xs md:text-sm font-bold text-zinc-500 tracking-[0.4em] uppercase mb-10">
-            <span className="w-10 h-[1px] bg-zinc-800" />
+          <span className="flex items-center gap-4 text-xs md:text-sm font-bold text-brand-plum tracking-[0.4em] uppercase mb-10">
+            <span className="w-10 h-[1px] bg-brand-plum/30" />
             SOUNDS FAMILIAR?
-            <span className="w-10 h-[1px] bg-zinc-800" />
+            <span className="w-10 h-[1px] bg-brand-plum/30" />
           </span>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white leading-[0.8] mb-12">
-            STOP THE CHAOS. <br />
-            <span className="text-zinc-500 opacity-40">START AUTOMATING.</span>
+            STOP THE <span className="text-brush text-4xl md:text-6xl lg:text-8xl ml-4">CHAOS</span>. <br />
+            <span className="text-brand-orange">START AUTOMATING.</span>
           </h2>
           <p className="text-zinc-500 text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
             Every business has bottlenecks. The difference is who fixes them.
@@ -140,8 +140,8 @@ export default function HiddenCostSection() {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-zinc-500/10 blur-[140px] rounded-full pointer-events-none"
+          animate={{ opacity: 0.8 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-brand-plum-glow opacity-30 blur-[140px] rounded-full pointer-events-none"
         />
 
         <div className="relative z-20 w-full max-w-2xl px-6">
@@ -162,8 +162,8 @@ export default function HiddenCostSection() {
           }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <span className="text-[10px] text-zinc-500 tracking-[0.4em] uppercase font-bold text-center">Time to fix this</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-zinc-700 via-zinc-500 to-transparent" />
+          <span className="text-[10px] text-brand-plum tracking-[0.4em] uppercase font-bold text-center">Time to fix this</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-brand-orange via-brand-plum to-transparent" />
         </motion.div>
       </div>
     </section>

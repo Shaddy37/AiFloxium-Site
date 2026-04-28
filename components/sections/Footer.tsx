@@ -11,16 +11,16 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-brand-bg border-t border-brand-plum/10 overflow-hidden">
       {/* Structural Border */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-plum/20 to-transparent" />
 
       {/* ── Fancy Social Links ───────────────────────────────── */}
-      <div className="container mx-auto px-6 pt-24 pb-16 border-b border-white/5">
-        <p className="text-zinc-700 tracking-[0.2em] font-medium text-xs uppercase text-center mb-10 flex items-center justify-center gap-4">
-          <span className="w-8 h-[1px] bg-zinc-800" />
+      <div className="container mx-auto px-6 pt-24 pb-16 border-b border-brand-plum/10">
+        <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase text-center mb-10 flex items-center justify-center gap-4">
+          <span className="w-8 h-[1px] bg-brand-plum/30" />
           Find us online
-          <span className="w-8 h-[1px] bg-zinc-800" />
+          <span className="w-8 h-[1px] bg-brand-plum/30" />
         </p>
         <FancyTextHover links={SOCIAL_LINKS} />
       </div>
@@ -31,7 +31,7 @@ export default function Footer() {
 
           <div className="lg:col-span-2">
             <Link href="/" className="group mb-6 inline-block">
-              <span className="text-2xl font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-zinc-400 bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-zinc-300 transition-all duration-300 inline-block">
+              <span className="text-2xl font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-brand-plum/80 transition-all duration-300 inline-block">
                 AIFLOXIUM
               </span>
             </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                 href="https://x.com/ShadabLoveAi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                className="w-12 h-12 rounded-full border border-brand-plum/20 flex items-center justify-center hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-colors"
                 aria-label="Twitter / X profile"
               >
                 <span className="font-bold text-lg">𝕏</span>
@@ -55,7 +55,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                className="w-12 h-12 rounded-full border border-brand-plum/20 flex items-center justify-center hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-colors"
                 aria-label="LinkedIn profile of Muhammad Shadab Shams"
               >
                 <span className="font-bold text-lg uppercase font-heading">in</span>
@@ -87,14 +87,14 @@ export default function Footer() {
         </div>
 
         {/* Massive Call to Action */}
-        <div className="flex flex-col md:flex-row items-center justify-between py-12 border-y border-white/10 mb-8">
+        <div className="flex flex-col md:flex-row items-center justify-between py-12 border-y border-brand-plum/10 mb-8">
           <h2 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-6 md:mb-0">
             READY TO <br />
-            <span className="text-accent">SCALE?</span>
+            <span className="text-brand-orange">SCALE?</span>
           </h2>
           <Link
             href="#initiate"
-            className="h-40 w-40 rounded-full bg-white text-black font-bold text-lg flex flex-col items-center justify-center gap-2 group hover:bg-zinc-200 transition-colors"
+            className="h-40 w-40 rounded-full bg-brand-orange text-white font-bold text-lg flex flex-col items-center justify-center gap-2 group hover:bg-brand-orange/80 transition-colors shadow-[0_0_50px_rgba(255,107,0,0.2)]"
           >
             Let&apos;s Talk
             <ArrowRight className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
