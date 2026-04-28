@@ -46,18 +46,18 @@ const PlusCard: React.FC<{
   return (
     <div
       className={cn(
-        "relative border border-dashed border-brand-plum/30 rounded-lg p-8 bg-brand-bg min-h-[240px]",
-        "flex flex-col justify-between group hover:bg-brand-plum/10 transition-colors duration-300",
+        "relative border border-dashed border-gray-300 rounded-lg p-8 bg-white min-h-[240px]",
+        "flex flex-col justify-between group hover:bg-gray-50 transition-colors duration-300",
         className
       )}
     ><Link href="/services">
       <CornerPlusIcons />
       {/* Content */}
       <div className="relative z-10 space-y-4">
-        <h3 className="text-2xl font-black font-heading tracking-tighter text-white uppercase group-hover:text-brand-orange transition-colors">
+        <h3 className="text-2xl font-black font-heading tracking-tighter text-brand-plum uppercase group-hover:text-brand-orange transition-colors">
           {title}
         </h3>
-        <p className="text-zinc-400 text-lg leading-relaxed font-medium">{description}</p>
+        <p className="text-zinc-600 text-lg leading-relaxed font-medium">{description}</p>
       </div></Link>
     </div>
   )
@@ -65,37 +65,37 @@ const PlusCard: React.FC<{
 
 export default function RuixenBentoCards() {
   return (
-    <section id="bottlenecks" className="bg-brand-bg border-y border-brand-plum/10">
-      <div className="mx-auto container border-x border-brand-plum/10 py-24 border-t-0 px-6">
+    <section id="bottlenecks" className="bg-white border-y border-gray-100">
+      <div className="mx-auto container border-x border-gray-100 py-24 border-t-0 px-6">
         
         {/* Narrative Header */}
         <div className="max-w-3xl mb-16">
           <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-brand-plum/30" /> Operational Audit
+            <span className="w-8 h-[1px] bg-brand-plum/20" /> Operational Audit
           </h2>
-          <h3 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
+          <h3 className="text-5xl md:text-7xl font-heading font-black text-brand-plum tracking-tighter leading-[0.9] mb-8">
             YOUR REVENUE IS <br /> <span className="text-brush text-4xl md:text-6xl lg:text-7xl ml-2">LEAKING.</span>
           </h3>
-             <p className="text-xl text-zinc-400 font-medium leading-relaxed">
+             <p className="text-xl text-zinc-600 font-medium leading-relaxed">
                 You do not have a talent problem. You have systems that were never built to scale. I find exactly where you are losing time and money, then I build the fix.
               </p>
         </div>
 
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 auto-rows-auto gap-6">
-          <PlusCard {...cardContents[0]} className="lg:col-span-3 lg:row-span-2" />
-          <PlusCard {...cardContents[1]} className="lg:col-span-3 lg:row-span-2" />
-          <PlusCard {...cardContents[2]} className="lg:col-span-4 lg:row-span-1" />
-          <PlusCard {...cardContents[3]} className="lg:col-span-2 lg:row-span-1" />
+          <PlusCard {...cardContents[0]} className="lg:col-span-3 lg:row-span-2 bg-gray-50/50 border-gray-200" />
+          <PlusCard {...cardContents[1]} className="lg:col-span-3 lg:row-span-2 bg-gray-50/50 border-gray-200" />
+          <PlusCard {...cardContents[2]} className="lg:col-span-4 lg:row-span-1 bg-gray-50/50 border-gray-200" />
+          <PlusCard {...cardContents[3]} className="lg:col-span-2 lg:row-span-1 bg-gray-50/50 border-gray-200" />
           <PlusCard {...cardContents[4]} className="lg:col-span-6 lg:row-span-1 border-brand-orange/20 bg-brand-orange/5" />
         </div>
 
         {/* Section Footer Heading */}
         <div className="max-w-3xl ml-auto text-right px-4 mt-20">
-          <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-white mb-6 uppercase">
-            Built for scale. <br /> Engineered for dominance.
+          <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-brand-plum mb-6 uppercase">
+            Built for scale. <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2">Engineered for dominance.</span>
           </h2>
-             <p className="text-zinc-400 text-xl font-medium">
+             <p className="text-zinc-600 text-xl font-medium">
                I don&apos;t sell &apos;AI tools&apos;. I sell hours returned to your day and certainty in your bottom line. Let&apos;s build the systems that make your competition irrelevant.
              </p>
         </div>

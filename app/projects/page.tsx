@@ -41,7 +41,7 @@ export default function ProjectsPage() {
   const allWorkflows = projects.filter((p) => !p.featured);
 
   return (
-    <main className="relative bg-background min-h-screen">
+    <main className="relative bg-brand-bg min-h-screen">
       <Navbar />
 
       <div className="pt-32 pb-20 px-6 container mx-auto">
@@ -49,10 +49,11 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative overflow-hidden bg-hero-gradient py-20 rounded-[3rem]"
         >
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter mb-4">
-            SHOWCASE
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
+          <h1 className="text-5xl md:text-7xl lg:text-9xl font-heading font-black text-white tracking-tighter mb-4 uppercase leading-[0.8]">
+            PROJECT <span className="text-brush text-4xl md:text-7xl lg:text-9xl ml-4">SHOWCASE.</span>
           </h1>
           <p className="text-xl text-zinc-400 font-medium max-w-2xl mx-auto">
             Building intelligent systems that work 24/7 so businesses don&apos;t have to
@@ -68,13 +69,13 @@ export default function ProjectsPage() {
         >
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
             <div className="relative w-full md:w-96">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-plum" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-zinc-900/50 border border-white/10 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-500 focus:outline-none focus:border-white/20 transition-colors"
+                className="w-full bg-brand-plum/5 border border-brand-plum/20 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-orange/40 focus:bg-brand-plum/10 transition-all"
               />
             </div>
 
@@ -86,8 +87,8 @@ export default function ProjectsPage() {
                   className={cn(
                     "px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all",
                     activeCategory === category.id
-                      ? "bg-white text-black"
-                      : "bg-zinc-900/50 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-white/5"
+                      ? "bg-brand-orange text-white shadow-[0_0_20px_rgba(255,107,0,0.3)]"
+                      : "bg-brand-plum/10 text-zinc-400 hover:text-white hover:bg-brand-plum/20 border border-brand-plum/20"
                   )}
                 >
                   {category.name}
@@ -98,10 +99,7 @@ export default function ProjectsPage() {
           </div>
         </motion.div>
 
-        {/* ═══════════════════════════════════════════════════════════ */}
         {/* CLAUDE CODE SKILLS SECTION */}
-        {/* ═══════════════════════════════════════════════════════════ */}
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,14 +107,14 @@ export default function ProjectsPage() {
           className="mb-24"
         >
           <div className="flex items-center gap-4 mb-10">
-            <span className="w-12 h-[1px] bg-zinc-800" />
-            <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+            <span className="w-12 h-[1px] bg-brand-plum/30" />
+            <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-orange">
               Claude Code Skills
             </h2>
-            <span className="w-12 h-[1px] bg-zinc-800" />
+            <span className="w-12 h-[1px] bg-brand-plum/30" />
           </div>
 
-          <p className="text-zinc-400 mb-8 max-w-3xl">
+          <p className="text-zinc-400 mb-8 max-w-3xl font-medium leading-relaxed">
             Specialized AI skills built with Claude that automate content creation, lead generation, and business workflows.
             Each skill is a ready-to-use solution that can be deployed immediately.
           </p>
@@ -128,10 +126,7 @@ export default function ProjectsPage() {
           </div>
         </motion.div>
 
-        {/* ═══════════════════════════════════════════════════════════ */}
         {/* N8N AUTOMATIONS SECTION */}
-        {/* ═══════════════════════════════════════════════════════════ */}
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -140,13 +135,13 @@ export default function ProjectsPage() {
         >
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center gap-4">
-              <span className="w-12 h-[1px] bg-zinc-800" />
-              <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+              <span className="w-12 h-[1px] bg-brand-plum/30" />
+              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-orange">
                 n8n Workflow Automations
               </h2>
-              <span className="w-12 h-[1px] bg-zinc-800" />
+              <span className="w-12 h-[1px] bg-brand-plum/30" />
             </div>
-            <div className="text-xs text-zinc-500 font-medium">
+            <div className="text-xs text-brand-plum font-black uppercase tracking-widest">
               {featuredProjects.length} Featured • {allWorkflows.length} Total
             </div>
           </div>
@@ -182,10 +177,10 @@ export default function ProjectsPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowAllWorkflows(true)}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/20 text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 hover:border-white/40 transition-all"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-brand-plum/10 border border-brand-plum/30 text-white font-bold uppercase tracking-widest text-sm hover:bg-brand-plum/20 hover:border-brand-plum/50 transition-all shadow-[0_0_20px_rgba(0,0,0,0.3)]"
               >
                 View All {allWorkflows.length} Workflows
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-brand-orange" />
               </motion.button>
             </motion.div>
           )}
@@ -198,20 +193,21 @@ export default function ProjectsPage() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center"
         >
-          <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[2rem] bg-zinc-900/30 border border-white/5">
-            <h3 className="text-3xl md:text-4xl font-heading font-black text-white tracking-tight">
-              READY TO BUILD SOMETHING LIKE THIS?
+          <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[3rem] bg-brand-plum/5 border border-brand-plum/10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-brand-plum/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            <h3 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tight uppercase leading-tight">
+              READY TO BUILD <br /> <span className="text-brush text-2xl md:text-4xl mt-2">SOMETHING LIKE THIS?</span>
             </h3>
-            <p className="text-zinc-400 max-w-md">
+            <p className="text-zinc-400 max-w-md font-medium leading-relaxed">
               Let&apos;s combine Claude Code skills with n8n workflows to automate your business.
-              From concept to deployment in days, not months.
+              From concept to deployment in days.
             </p>
             <Link
               href="/#initiate"
-              className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-200 transition-colors"
+              className="inline-flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-[0_0_30px_rgba(255,107,0,0.3)]"
             >
               Let&apos;s Talk
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </motion.div>

@@ -67,13 +67,13 @@ export const Contact2 = ({
   };
 
   return (
-    <section id="initiate" className="py-32 px-6 bg-zinc-950/20 border-y border-white/5">
+    <section id="initiate" className="py-32 px-6 bg-brand-bg border-y border-brand-plum/10">
       <div className="container mx-auto max-w-6xl">
         <ContactCard
           title={title}
           description={description}
-          className="rounded-[3rem] overflow-visible border-white/10 bg-zinc-900/40 backdrop-blur-xl"
-          formSectionClassName="bg-zinc-950/40 p-10 md:p-12 lg:p-14"
+          className="rounded-[3rem] overflow-visible border-brand-plum/20 bg-brand-bg/80 backdrop-blur-xl shadow-2xl"
+          formSectionClassName="bg-brand-plum/5 p-10 md:p-12 lg:p-14 rounded-[2rem]"
           contactInfo={[
             {
               icon: PhoneIcon,
@@ -105,30 +105,30 @@ export const Contact2 = ({
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <Label htmlFor="firstname" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">First Name</Label>
-                <Input type="text" id="firstname" value={formData.firstname} onChange={handleChange} required placeholder="Jane" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
+                <Label htmlFor="firstname" className="text-brand-plum text-[10px] font-black uppercase tracking-[0.2em]">First Name</Label>
+                <Input type="text" id="firstname" value={formData.firstname} onChange={handleChange} required placeholder="Jane" className="bg-brand-bg/50 border-brand-plum/20 h-12 rounded-xl focus:ring-brand-orange/20 transition-all text-white placeholder:text-zinc-700" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lastname" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Last Name</Label>
-                <Input type="text" id="lastname" value={formData.lastname} onChange={handleChange} placeholder="Doe" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
+                <Label htmlFor="lastname" className="text-brand-plum text-[10px] font-black uppercase tracking-[0.2em]">Last Name</Label>
+                <Input type="text" id="lastname" value={formData.lastname} onChange={handleChange} placeholder="Doe" className="bg-brand-bg/50 border-brand-plum/20 h-12 rounded-xl focus:ring-brand-orange/20 transition-all text-white placeholder:text-zinc-700" />
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Work Email</Label>
-              <Input type="email" id="email" value={formData.email} onChange={handleChange} required placeholder="jane@company.com" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
+              <Label htmlFor="email" className="text-brand-plum text-[10px] font-black uppercase tracking-[0.2em]">Work Email</Label>
+              <Input type="email" id="email" value={formData.email} onChange={handleChange} required placeholder="jane@company.com" className="bg-brand-bg/50 border-brand-plum/20 h-12 rounded-xl focus:ring-brand-orange/20 transition-all text-white placeholder:text-zinc-700" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="subject" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Objective</Label>
-              <Input type="text" id="subject" value={formData.subject} onChange={handleChange} required placeholder="n8n Automation / Custom Agents" className="bg-zinc-950/50 border-white/10 h-12 rounded-xl focus:ring-white/20 transition-all text-white placeholder:text-zinc-700" />
+              <Label htmlFor="subject" className="text-brand-plum text-[10px] font-black uppercase tracking-[0.2em]">Objective</Label>
+              <Input type="text" id="subject" value={formData.subject} onChange={handleChange} required placeholder="n8n Automation / Custom Agents" className="bg-brand-bg/50 border-brand-plum/20 h-12 rounded-xl focus:ring-brand-orange/20 transition-all text-white placeholder:text-zinc-700" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message" className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Specification</Label>
-              <Textarea id="message" value={formData.message} onChange={handleChange} required placeholder="Describe your current bottleneck..." className="bg-zinc-950/50 border-white/10 min-h-[120px] rounded-xl focus:ring-white/20 transition-all resize-none text-white placeholder:text-zinc-700 p-4" />
+              <Label htmlFor="message" className="text-brand-plum text-[10px] font-black uppercase tracking-[0.2em]">Specification</Label>
+              <Textarea id="message" value={formData.message} onChange={handleChange} required placeholder="Describe your current bottleneck..." className="bg-brand-bg/50 border-brand-plum/20 min-h-[120px] rounded-xl focus:ring-brand-orange/20 transition-all resize-none text-white placeholder:text-zinc-700 p-4" />
             </div>
-            <Button type="submit" disabled={status === "loading" || status === "success"} size="lg" className="w-full h-14 rounded-xl bg-white text-black hover:bg-zinc-200 transition-all font-bold tracking-tight shadow-xl shadow-white/5 active:scale-[0.98]">
+            <Button type="submit" disabled={status === "loading" || status === "success"} size="lg" className="w-full h-14 rounded-xl bg-brand-orange text-white hover:bg-brand-orange/90 transition-all font-bold tracking-[0.1em] uppercase shadow-xl shadow-brand-orange/10 active:scale-[0.98] border-none">
               {status === "loading" ? "Initializing..." : status === "success" ? "Protocol Sent ✓" : "Initialize Audit →"}
             </Button>
-            {status === "error" && <p className="text-red-500 text-[10px] font-bold tracking-widest uppercase mt-4 text-center">Connection Failed. Please try direct email.</p>}
+            {status === "error" && <p className="text-brand-orange text-[10px] font-bold tracking-widest uppercase mt-4 text-center">Connection Failed. Please try direct email.</p>}
           </form>
         </ContactCard>
       </div>

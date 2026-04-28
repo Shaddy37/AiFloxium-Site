@@ -23,18 +23,21 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
           whileHover={{ y: -2 }}
           className={cn(
             "group relative overflow-hidden p-6 h-full min-h-[320px]",
-            "glass-card border border-white/10 cursor-pointer",
-            "hover:border-white/20 transition-all duration-500"
+            "glass-card border border-brand-plum/20 cursor-pointer",
+            "hover:border-brand-plum/40 transition-all duration-500"
           )}
         >
+          {/* Hover Glow */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,var(--brand-plum)_0%,transparent_70%)]" />
+
           {/* Content */}
           <div className="relative z-10 flex flex-col h-full">
             {/* Header */}
             <div className="mb-4">
-              <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-zinc-800 text-zinc-300 inline-block mb-3">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-md bg-brand-plum/10 text-brand-plum inline-block mb-3 border border-brand-plum/20">
                 {skill.category}
               </span>
-              <h3 className="text-lg font-bold text-white group-hover:text-zinc-200 transition-colors">
+              <h3 className="text-lg font-bold text-white group-hover:text-brand-orange transition-colors font-heading tracking-tight">
                 {skill.title}
               </h3>
             </div>
@@ -45,16 +48,16 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
             </p>
 
             {/* Results Preview */}
-            <div className="space-y-2 mb-4 pb-4 border-b border-white/5">
+            <div className="space-y-2 mb-4 pb-4 border-b border-brand-plum/10">
               <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Key Results</p>
               <ul className="space-y-1">
                 <li className="text-sm text-zinc-300 flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-zinc-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange mt-0.5 flex-shrink-0" />
                   <span className="line-clamp-1">{skill.results.metric1}</span>
                 </li>
                 {skill.results.metric2 && (
                   <li className="text-sm text-zinc-300 flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-zinc-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange mt-0.5 flex-shrink-0" />
                     <span className="line-clamp-1">{skill.results.metric2}</span>
                   </li>
                 )}
@@ -68,7 +71,7 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
                 {skill.techStack.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/5 text-zinc-400"
+                    className="px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-brand-plum/10 text-zinc-400 border border-brand-plum/20"
                   >
                     {tech}
                   </span>
@@ -82,7 +85,7 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-2 text-xs font-bold text-zinc-400 group-hover:text-white transition-colors">
+            <div className="flex items-center gap-2 text-xs font-bold text-brand-plum group-hover:text-brand-orange transition-colors uppercase tracking-widest">
               View Case Study
               <ArrowRight className="w-3 h-3 transform group-hover:translate-x-0.5 transition-transform" />
             </div>

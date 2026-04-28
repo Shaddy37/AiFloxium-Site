@@ -32,10 +32,19 @@ const Globe: React.FC<{
       <mesh>
         <sphereGeometry args={[radius, 64, 64]} />
         <meshBasicMaterial
+          color="#FF6B00"
+          transparent
+          opacity={0.15}
+          wireframe
+        />
+      </mesh>
+      {/* Add a secondary inner glow sphere */}
+      <mesh scale={0.98}>
+        <sphereGeometry args={[radius, 32, 32]} />
+        <meshBasicMaterial
           color="#581C87"
           transparent
-          opacity={0.3}
-          wireframe
+          opacity={0.05}
         />
       </mesh>
     </group>

@@ -78,21 +78,21 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative group h-full glass-card border border-white/10 p-10 transition-all duration-300"
+        className="relative group h-full glass-card border border-brand-plum/20 p-10 transition-all duration-300"
       >
         {/* Hover Glow */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,var(--brand-plum)_0%,transparent_70%)]" />
 
         <div style={{ transform: "translateZ(30px)" }} className="flex flex-col h-full">
-          <div className="w-16 h-16 bg-zinc-800 border border-white/10 flex items-center justify-center mb-8">
+          <div className="w-16 h-16 bg-brand-plum/10 border border-brand-plum/20 flex items-center justify-center mb-8 rounded-xl group-hover:bg-brand-plum/20 transition-colors">
             {cap.icon}
           </div>
-          <h3 className="text-2xl font-bold font-heading mb-4 text-white tracking-tight">{cap.title}</h3>
+          <h3 className="text-2xl font-bold font-heading mb-4 text-white tracking-tight group-hover:text-brand-orange transition-colors">{cap.title}</h3>
           <p className="text-zinc-400 font-medium leading-relaxed flex-grow">{cap.description}</p>
 
           <Link
             href={`/services/${cap.slug}`}
-            className="mt-10 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors"
+            className="mt-10 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-brand-orange transition-colors"
           >
             <span>Explore Service</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -105,8 +105,8 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
 
 export default function Services() {
   return (
-    <section id="services" className="py-40 px-4 md:px-6 relative overflow-hidden bg-background">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section id="services" className="py-40 px-4 md:px-6 relative overflow-hidden bg-brand-bg">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-brand-plum/20 to-transparent" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-12">
@@ -116,12 +116,12 @@ export default function Services() {
             viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col gap-4"
           >
-            <div className="flex items-center gap-4 border border-white/10 bg-white/5 px-4 py-1.5 rounded-md w-max">
-              <div className="w-1.5 h-1.5 bg-zinc-400" />
-              <h2 className="text-zinc-300 tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
+            <div className="flex items-center gap-4 border border-brand-plum/20 bg-brand-plum/5 px-4 py-1.5 rounded-md w-max">
+              <div className="w-1.5 h-1.5 bg-brand-orange animate-pulse" />
+              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
             </div>
             <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]">
-              WE AUTOMATE <br /> <span className="text-gradient">EVERYTHING.</span>
+              WE AUTOMATE <br /> <span className="text-brush text-3xl md:text-6xl lg:text-7xl mt-2">EVERYTHING.</span>
             </h3>
           </motion.div>
 
