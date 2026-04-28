@@ -242,7 +242,7 @@ export function SkillDetailModalContent() {
                           <div className="glass-card border border-white/10 p-6 sm:p-8">
                             <div className="space-y-4">
                               <p className="text-lg text-zinc-300 italic leading-relaxed">
-                                "{skill.clientTestimonial.quote}"
+                                &quot;{skill.clientTestimonial.quote}&quot;
                               </p>
                               <div className="pt-4 border-t border-white/10">
                                 <p className="font-bold text-white">

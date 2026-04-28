@@ -5,6 +5,15 @@ import path from "path";
 
 const POSTS_PATH = path.join(process.cwd(), "lib/content/posts");
 
+export interface PostFrontmatter {
+  title: string;
+  date: string;
+  excerpt: string;
+  coverImage?: string;
+  category?: string;
+  [key: string]: any;
+}
+
 export const getPostBySlug = async (slug: string) => {
   const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`);
   
@@ -27,7 +36,7 @@ export const getPostBySlug = async (slug: string) => {
 
   return {
     code,
-    frontmatter,
+    frontmatter: frontmatter as PostFrontmatter,
   };
 };
 
@@ -52,9 +61,9 @@ export const getAllPosts = () => {
 
         return {
             slug,
-            frontmatter: data,
+            frontmatter: data as PostFrontmatter,
         };
     });
 
-    return allPostsData.sort((a: any, b: any) => (new Date(a.frontmatter.date) < new Date(b.frontmatter.date) ? 1 : -1));
+    return allPostsData.sort((a, b) => (new Date(a.frontmatter.date) < new Date(b.frontmatter.date) ? 1 : -1));
 };
