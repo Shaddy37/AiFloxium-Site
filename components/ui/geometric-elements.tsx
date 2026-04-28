@@ -16,11 +16,11 @@ export const PlusIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-export const CornerPlusIcons = () => (
-  <>
+export const CornerPlusIcons = ({ className }: { className?: string }) => (
+  <div className={cn("", className)}>
     <PlusIcon className="absolute -top-3 -left-3" />
     <PlusIcon className="absolute -top-3 -right-3" />
     <PlusIcon className="absolute -bottom-3 -left-3" />
     <PlusIcon className="absolute -bottom-3 -right-3" />
-  </>
+  </div>
 )
