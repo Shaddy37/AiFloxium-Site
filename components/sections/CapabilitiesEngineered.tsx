@@ -55,46 +55,17 @@ export default function CapabilitiesEngineered() {
 
   return (
     <>
-      {/* Inject keyframe CSS once */}
-      <style>{`
-        .cap-word {
-          font-family: var(--font-heading, 'Geist', sans-serif);
-          font-weight: 900;
-          letter-spacing: -0.04em;
-          /* Fixed gradient: white band at viewport 50vh */
-          background: linear-gradient(
-            180deg,
-            rgba(88, 28, 135, 0.2) 0 calc(50vh - 0.6lh),
-            #ffffff              calc(50vh - 0.65lh) calc(50vh + 0.65lh),
-            rgba(88, 28, 135, 0.2) calc(50vh + 0.6lh)
-          );
-          background-attachment: fixed;
-          color: transparent;
-          background-clip: text;
-          -webkit-background-clip: text;
-          transition: opacity 0.3s ease;
-          line-height: 1.2;
-          display: block;
-          font-size: clamp(3rem, 8vw, 6rem);
-          /* non-active words are dimmer */
-          opacity: 0.2;
-        }
-        .cap-word.active {
-          opacity: 1;
-        }
-      `}</style>
-
       <section
         id="capabilities"
         ref={sectionRef}
-        className="relative bg-brand-bg"
+        className="relative bg-white border-y border-gray-100"
         style={{ height: `${COUNT * 100}vh` }}
       >
         {/* Section badge pin — only visible at the top via absolute */}
         <div className="absolute top-8 w-full flex justify-center z-30 pointer-events-none">
-          <div className="flex items-center gap-3 border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-md px-5 py-2 rounded-full">
+          <div className="flex items-center gap-3 border border-brand-plum/10 bg-brand-plum/[0.03] backdrop-blur-md px-5 py-2 rounded-full shadow-sm">
             <div className="w-1.5 h-1.5 bg-brand-orange rounded-full animate-pulse" />
-            <span className="text-zinc-500 tracking-[0.2em] font-black text-[10px] uppercase">
+            <span className="text-brand-plum/60 tracking-[0.2em] font-black text-[10px] uppercase">
               Capabilities Engineered
             </span>
           </div>
@@ -104,39 +75,29 @@ export default function CapabilitiesEngineered() {
         <div
           className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden"
         >
-          {/* Subtle grid background */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-20"
-            style={{
-              backgroundImage: `
-                linear-gradient(90deg, rgba(88, 28, 135, 0.1) 1px, transparent 1px 45px),
-                linear-gradient(rgba(88, 28, 135, 0.1) 1px, transparent 1px 45px)
-              `,
-              backgroundSize: "45px 45px",
-              backgroundPosition: "16px 14px",
-              maskImage: "linear-gradient(-20deg, transparent 50%, white)",
-            }}
-          />
+          {/* Subtle grid background matching RuixenBentoCards */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+               style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #581C87 1px, transparent 0)`, backgroundSize: '40px 40px' }} />
 
           {/* Main content: heading label + headline + sublabel stacked vertically */}
           <div className="relative z-10 flex flex-col items-center gap-8 px-8 w-full max-w-5xl">
 
             {/* Section heading */}
             <div className="flex items-center gap-4">
-              <span className="w-12 h-[1px] bg-brand-plum/30" />
-              <p className="text-brand-plum tracking-[0.3em] font-black text-xs uppercase">
+              <span className="w-12 h-[1px] bg-brand-plum/20" />
+              <p className="text-brand-plum/40 tracking-[0.3em] font-black text-xs uppercase">
                 Systems Scope
               </p>
-              <span className="w-12 h-[1px] bg-brand-plum/30" />
+              <span className="w-12 h-[1px] bg-brand-plum/20" />
             </div>
 
-            {/* Headline row: "I can [verb]" */}
+            {/* Headline row: "I will [verb]" */}
             <h2 
               className="flex flex-col md:flex-row items-center md:items-baseline gap-3 md:gap-5 text-center md:text-left font-heading font-black tracking-tighter m-0 uppercase"
               style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 1.2 }}
             >
               {/* Static prefix */}
-              <span className="text-zinc-500 whitespace-nowrap">
+              <span className="text-zinc-400 whitespace-nowrap">
                 I&nbsp;will
               </span>
 
@@ -161,7 +122,7 @@ export default function CapabilitiesEngineered() {
                       style={{
                         fontSize: "clamp(3rem, 8vw, 6rem)",
                         lineHeight: 1.2,
-                        color: i === activeIndex ? "var(--brand-orange)" : "#ffffff",
+                        color: i === activeIndex ? "var(--brand-orange)" : "rgba(88, 28, 135, 0.05)",
                         display: "block",
                         transition: "color 0.5s ease"
                       }}
@@ -186,7 +147,7 @@ export default function CapabilitiesEngineered() {
               {words.map((w, i) => (
                 <p
                   key={i}
-                  className="absolute text-center transition-all duration-500 ease-in-out text-brand-orange/60 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs px-4 max-w-full"
+                  className="absolute text-center transition-all duration-500 ease-in-out text-zinc-500 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs px-4 max-w-full"
                   style={{
                     opacity: i === activeIndex ? 1 : 0,
                     transform: i === activeIndex ? "translateY(0)" : "translateY(6px)",
@@ -209,8 +170,8 @@ export default function CapabilitiesEngineered() {
                 style={{
                   width: i === activeIndex ? "24px" : "6px",
                   height: "6px",
-                  background: i === activeIndex ? "var(--brand-orange)" : "var(--brand-plum)",
-                  opacity: i === activeIndex ? 1 : 0.3,
+                  background: i === activeIndex ? "var(--brand-plum)" : "var(--brand-plum)",
+                  opacity: i === activeIndex ? 1 : 0.1,
                 }}
               />
             ))}
@@ -221,10 +182,10 @@ export default function CapabilitiesEngineered() {
             className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 z-10 transition-opacity duration-500"
             style={{ opacity: activeIndex === 0 ? 0.6 : 0 }}
           >
-            <span className="font-mono text-zinc-600 text-xs uppercase tracking-widest rotate-90 origin-center mb-6">
+            <span className="font-mono text-zinc-400 text-xs uppercase tracking-widest rotate-90 origin-center mb-6">
               scroll
             </span>
-            <div className="w-px h-16 bg-gradient-to-b from-transparent to-zinc-700" />
+            <div className="w-px h-16 bg-gradient-to-b from-transparent to-zinc-200" />
           </div>
         </div>
       </section>
