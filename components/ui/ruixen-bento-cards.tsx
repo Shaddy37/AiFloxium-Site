@@ -93,7 +93,7 @@ const PlusCard: React.FC<{
 
 export default function RuixenBentoCards() {
   return (
-    <section id="bottlenecks" className="bg-white border-y border-gray-100 relative overflow-hidden">
+    <section id="bottlenecks" data-theme="light" className="bg-white border-y border-gray-100 relative overflow-hidden">
       {/* Blueprint Grid Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #581C87 1px, transparent 0)`, backgroundSize: '40px 40px' }} />

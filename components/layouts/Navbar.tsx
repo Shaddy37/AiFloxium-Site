@@ -53,6 +53,22 @@ export default function Navbar() {
   const { scrolled, scrollY } = useScroll({ threshold: 50 });
   const lastScrollY = React.useRef(0);
   const [visible, setVisible] = React.useState(true);
+  const [isLight, setIsLight] = React.useState(false);
+
+  React.useEffect(() => {
+    // Check if navbar is over a light section
+    const checkTheme = () => {
+      // Check at the center of the navbar's current position
+      const element = document.elementFromPoint(window.innerWidth / 2, 40);
+      const section = element?.closest('section');
+      const theme = section?.getAttribute('data-theme');
+      setIsLight(theme === 'light');
+    };
+
+    checkTheme();
+    window.addEventListener('scroll', checkTheme, { passive: true });
+    return () => window.removeEventListener('scroll', checkTheme);
+  }, [scrollY]);
 
   React.useEffect(() => {
     if (scrollY > lastScrollY.current && scrollY > 100) {
@@ -81,10 +97,12 @@ export default function Navbar() {
       variants={navVariants}
       transition={headerTransition}
       className={cn(
-        'fixed top-0 z-[100] mx-auto w-full border-b border-transparent',
+        'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-300',
         {
           'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
-            scrolled && !open,
+            scrolled && !open && !isLight,
+          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] left-1/2 -translate-x-1/2':
+            scrolled && !open && isLight,
           'bg-brand-bg': open,
         },
       )}
@@ -106,7 +124,10 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <span className="text-lg font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-brand-plum/80 transition-all duration-300">
+            <span className={cn(
+              "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300 bg-clip-text text-transparent drop-shadow-lg",
+              isLight && !open ? "from-brand-plum via-brand-plum to-brand-plum" : "from-white via-white to-brand-plum"
+            )}>
               AIFLOXIUM
             </span>
           </motion.div>
@@ -125,7 +146,10 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   buttonVariants({ variant: "ghost" }), 
-                  "text-zinc-400 hover:text-white rounded-full px-5 text-xs font-bold uppercase tracking-widest transition-all hover:bg-white/5"
+                  "rounded-full px-5 text-xs font-bold uppercase tracking-widest transition-all",
+                  isLight && !open 
+                    ? "text-zinc-600 hover:text-brand-plum hover:bg-brand-plum/5" 
+                    : "text-zinc-400 hover:text-white hover:bg-white/5"
                 )}
               >
                 {link.name}
@@ -154,7 +178,10 @@ export default function Navbar() {
           size="icon" 
           variant="ghost" 
           onClick={() => setOpen(!open)} 
-          className="lg:hidden text-white hover:bg-transparent z-[110]"
+          className={cn(
+            "lg:hidden z-[110] transition-colors",
+            isLight && !open ? "text-brand-plum" : "text-white"
+          )}
           aria-label={open ? "Close menu" : "Open menu"}
         >
           <MenuToggleIcon open={open} className="size-6" duration={300} />

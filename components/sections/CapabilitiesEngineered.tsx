@@ -58,6 +58,7 @@ export default function CapabilitiesEngineered() {
       <section
         id="capabilities"
         ref={sectionRef}
+        data-theme="light"
         className="relative bg-white border-y border-gray-100"
         style={{ height: `${COUNT * 100}vh` }}
       >
