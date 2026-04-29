@@ -55,15 +55,20 @@ export default function Navbar() {
   const [visible, setVisible] = React.useState(true);
   const [isLight, setIsLight] = React.useState(false);
 
+  // Handle scroll-related effects (visibility and theme checking)
   React.useEffect(() => {
+    // 1. Update Visibility
+    if (scrollY > lastScrollY.current && scrollY > 100) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    lastScrollY.current = scrollY;
+
+    // 2. Update Theme based on section under navbar
     const checkTheme = () => {
-      // Find all sections with data-theme="light"
       const lightSections = document.querySelectorAll('section[data-theme="light"]');
       let currentIsLight = false;
-
-      // The navbar is at the top, so we check if any light section is currently under it
-      // Standard navbar height is around 80px
-      const navBottom = 80; 
 
       lightSections.forEach((section) => {
         const rect = section.getBoundingClientRect();
@@ -78,17 +83,6 @@ export default function Navbar() {
     };
 
     checkTheme();
-    window.addEventListener('scroll', checkTheme, { passive: true });
-    return () => window.removeEventListener('scroll', checkTheme);
-  }, []);
-
-  React.useEffect(() => {
-    if (scrollY > lastScrollY.current && scrollY > 100) {
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
-    lastScrollY.current = scrollY;
   }, [scrollY]);
 
   React.useEffect(() => {
