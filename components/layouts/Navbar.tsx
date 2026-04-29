@@ -56,19 +56,31 @@ export default function Navbar() {
   const [isLight, setIsLight] = React.useState(false);
 
   React.useEffect(() => {
-    // Check if navbar is over a light section
     const checkTheme = () => {
-      // Check at the center of the navbar's current position
-      const element = document.elementFromPoint(window.innerWidth / 2, 40);
-      const section = element?.closest('section');
-      const theme = section?.getAttribute('data-theme');
-      setIsLight(theme === 'light');
+      // Find all sections with data-theme="light"
+      const lightSections = document.querySelectorAll('section[data-theme="light"]');
+      let currentIsLight = false;
+
+      // The navbar is at the top, so we check if any light section is currently under it
+      // Standard navbar height is around 80px
+      const navBottom = 80; 
+
+      lightSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        // If the top of a light section has passed the navbar top 
+        // OR if the navbar is currently within a light section
+        if (rect.top <= 40 && rect.bottom >= 40) {
+          currentIsLight = true;
+        }
+      });
+
+      setIsLight(currentIsLight);
     };
 
     checkTheme();
     window.addEventListener('scroll', checkTheme, { passive: true });
     return () => window.removeEventListener('scroll', checkTheme);
-  }, [scrollY]);
+  }, []);
 
   React.useEffect(() => {
     if (scrollY > lastScrollY.current && scrollY > 100) {
@@ -97,11 +109,11 @@ export default function Navbar() {
       variants={navVariants}
       transition={headerTransition}
       className={cn(
-        'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-300',
+        'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-500',
         {
           'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
             scrolled && !open && !isLight,
-          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] left-1/2 -translate-x-1/2':
+          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
             scrolled && !open && isLight,
           'bg-brand-bg': open,
         },
@@ -125,8 +137,10 @@ export default function Navbar() {
             className="relative"
           >
             <span className={cn(
-              "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300 bg-clip-text text-transparent drop-shadow-lg",
-              isLight && !open ? "from-brand-plum via-brand-plum to-brand-plum" : "from-white via-white to-brand-plum"
+              "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
+              isLight && !open 
+                ? "text-brand-plum" 
+                : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
             )}>
               AIFLOXIUM
             </span>
@@ -148,8 +162,8 @@ export default function Navbar() {
                   buttonVariants({ variant: "ghost" }), 
                   "rounded-full px-5 text-xs font-bold uppercase tracking-widest transition-all",
                   isLight && !open 
-                    ? "text-zinc-600 hover:text-brand-plum hover:bg-brand-plum/5" 
-                    : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    ? "text-zinc-700 hover:text-brand-plum hover:bg-brand-plum/5" 
+                    : "text-zinc-100/70 hover:text-white hover:bg-white/5"
                 )}
               >
                 {link.name}
@@ -166,7 +180,7 @@ export default function Navbar() {
               href="#initiate" 
               className={cn(
                 buttonVariants({ variant: "default" }), 
-                "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(255,107,0,0.3)] border-none"
+                "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-lg border-none"
               )}
             >
               Book an Audit
