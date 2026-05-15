@@ -58,7 +58,9 @@ export function Vision() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-zinc-300 font-medium leading-relaxed"
             >
-              I engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate. I believe every founder deserves access to an AI infrastructure that makes manual work obsolete.
+              I build automation systems, internal tools, and practical AI
+              workflows that help founders move faster without adding more
+              manual overhead.
             </motion.p>
             
             <motion.div 
@@ -70,11 +72,11 @@ export function Vision() {
             >
               <div>
                 <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">My Directive</h4>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Eliminate bottlenecks and reduce manual costs by up to 80% through deterministic implementations.</p>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Find the bottleneck, build the fix, and leave behind a system your team can actually use.</p>
               </div>
               <div>
                 <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">My Ambition</h4>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">To be the invisible backbone for elite agencies and scaling startups worldwide.</p>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Be the technical partner startups and growing businesses call when they need something shipped properly.</p>
               </div>
             </motion.div>
           </div>
@@ -86,10 +88,10 @@ export function Vision() {
 
 export function Process() {
   const steps = [
-    { num: "01", title: "Discovery", desc: "Analysis of your business processes and identification of automation vectors tailored to operational needs." },
-    { num: "02", title: "Architecture", desc: "Intelligent automation systems engineered using proven, high-availability frameworks and logic gates." },
-    { num: "03", title: "Optimization", desc: "Rigorous stress testing ensures flawless execution. We optimize metrics and train internal personnel." },
-    { num: "04", title: "Deployment", desc: "Seamless rollout paired with comprehensive documentation and persistent infrastructure support." }
+    { num: "01", title: "Discovery", desc: "We identify the bottleneck, map the workflow, and define what success should look like before building." },
+    { num: "02", title: "Architecture", desc: "I design the automation, tool integrations, or product flow so the build is clear before implementation starts." },
+    { num: "03", title: "Build & Test", desc: "The system is implemented, tested against real edge cases, and refined until it is reliable enough to hand over." },
+    { num: "04", title: "Launch & Improve", desc: "I deploy, document, and tune the system so your team can run it confidently after launch." }
   ];
 
   return (
@@ -141,7 +143,7 @@ export function Trust() {
       category: "Creative Agency",
       title: "Content Repurposing Engine",
       impact: "100+ hrs/mo Reclaimed",
-      desc: "Built an autonomous pipeline that transcribes, clips, and formats raw video for 5+ platforms with 0 human intervention.",
+      desc: "Built an automated content pipeline that turns one source asset into reusable outputs across multiple channels.",
       icon: <Workflow className="w-5 h-5 text-primary" />,
       size: "large",
       metrics: ["500+ clips/month", "98% accuracy", "$12k/mo savings"]
@@ -150,7 +152,7 @@ export function Trust() {
       category: "SaaS Startup",
       title: "24/7 Voice SDR",
       impact: "$4k/mo Saved",
-      desc: "Deployed high-fidelity Vapi agents that qualify 400+ leads monthly via natural voice conversation.",
+      desc: "Deployed voice qualification logic that handled lead intake and booking without relying on manual first response.",
       icon: <Cpu className="w-5 h-5 text-primary" />,
       size: "small",
       metrics: ["45% qualification rate", "2.5h avg response time"]
@@ -159,7 +161,7 @@ export function Trust() {
       category: "Operations",
       title: "Dynamic CRM Logic",
       impact: "85% Less Manual Entry",
-      desc: "Architected custom n8n + Claude logic gates to automate complex multi-stage lead routing.",
+      desc: "Architected custom n8n plus LLM logic to automate routing, enrichment, and next-step assignment.",
       icon: <Shield className="w-5 h-5 text-primary" />,
       size: "small",
       metrics: ["2M+ monthly transactions", "99.8% uptime"]
@@ -168,7 +170,7 @@ export function Trust() {
       category: "LinkedIn Growth",
       title: "Autonomous Post Creator",
       impact: "300+ Posts/mo Generated",
-      desc: "Built Claude-powered system generating 10 LinkedIn posts daily with personalized hooks, carousel formats, and industry insights—all posted at optimal engagement times.",
+      desc: "Built a content engine for research, drafting, and scheduling so publishing was consistent instead of manual.",
       icon: <Workflow className="w-5 h-5 text-primary" />,
       size: "small",
       metrics: ["45% avg engagement rate", "$0 content cost", "2.3K new followers/mo"]
@@ -177,7 +179,7 @@ export function Trust() {
       category: "SEO Agency",
       title: "SEO Ranking Automation",
       impact: "1st Page Rankings",
-      desc: "Automated n8n workflow for ScreenOrbit that identifies high-intent keywords, generates optimized content, and tracks ranking progress. Achieved page 1 Google rankings in 3 months with DR 4 domain authority.",
+      desc: "Automated keyword discovery, content planning, and reporting so SEO work was tied to a repeatable operating system.",
       icon: <Cpu className="w-5 h-5 text-primary" />,
       size: "small",
       metrics: ["42 keywords ranked", "12K monthly organic traffic", "$18K/mo revenue impact"]
@@ -187,19 +189,19 @@ export function Trust() {
   const trustPillars = [
     {
       title: "Deterministic Results",
-      description: "Not guesswork. Every system I build is architected to deliver predictable, measurable outcomes from deployment day one."
+      description: "You get a clear scope, documented build, and a system designed around a real business workflow."
     },
     {
       title: "Zero-Risk Deployment",
-      description: "I don't hand off half-baked solutions. Full integration testing, monitoring dashboards, and 24/7 support included."
+      description: "I do not hand off half-built ideas. The goal is a system your team can run, review, and improve."
     },
     {
       title: "Transparent Architecture",
-      description: "You own everything. Detailed documentation, source code access, and knowledge transfer so you're never locked in."
+      description: "You keep the code, the workflow logic, and the implementation context. No black-box dependency."
     },
     {
       title: "Proven Methodology",
-      description: "Discovery → Architecture → Deployment → Optimization cycle refined across 50+ successful automations."
+      description: "Discovery, architecture, build, and launch in a sequence that keeps the work understandable and testable."
     }
   ];
 
@@ -230,7 +232,8 @@ export function Trust() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl font-medium max-w-md text-zinc-400 leading-relaxed pb-4"
           >
-             I engineer deterministic AI systems that eliminate guesswork, reduce operational friction, and deliver measurable ROI—backed by transparent, documented results.
+             I build practical systems with clear handoff, visible logic, and
+             proof of what was shipped.
           </motion.p>
         </div>
 
@@ -377,7 +380,7 @@ export function Pricing() {
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-brand-orange/20 bg-brand-orange/5 w-fit">
              <Shield className="w-4 h-4 text-brand-orange" />
-             <span className="text-xs font-black uppercase tracking-wider text-brand-orange">80% Automation Guarantee</span>
+             <span className="text-xs font-black uppercase tracking-wider text-brand-orange">Custom-scoped projects</span>
           </div>
         </div>
         
@@ -390,10 +393,10 @@ export function Pricing() {
                </li>
             ))}
           </ul>
-          <button className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
-            Book a Systems Audit
+          <Link href="#initiate" className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
+            Book a Discovery Call
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -431,15 +434,20 @@ export function Founder() {
                 <span className="w-8 h-[1px] bg-brand-plum/30" /> Direct Architect Access
               </h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9] uppercase">
-                BUILT FOR <span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">OPERATIONAL </span> SUPREMACY.
+                BUILT FOR <span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">REAL </span> OPERATIONS.
               </h3>
                <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 font-medium">
-                 I didn&apos;t build AIFLOXIUM to chase trends—I built it to solve what everyone else is too busy to fix: systems that actually work while you sleep. 50+ production systems later, I&apos;ve learned that <span className="text-brand-orange font-black">real automation isn&apos;t about flashy AI demos. It&apos;s about boring, bulletproof architecture that prints ROI.</span>
+                 I built AIFLOXIUM as the container for my work: a personal
+                 studio focused on automation, internal tools, and product-grade
+                 AI systems. The goal is simple: build software and workflows
+                 that remove repeated work and make operations easier to run.
                </p>
                <div className="relative mb-10">
                   <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif leading-none">&quot;</span>
                   <p className="text-xl md:text-2xl leading-relaxed font-bold text-white italic pl-4 border-l-4 border-brand-orange/30">
-                    While others talk about AI, I engineer Voice Agents that actually close deals and Social Engines that dominate timelines—built on your brand&apos;s DNA, not generic prompts.
+                    The best automation work is rarely flashy. It is the system
+                    that quietly saves time every week and keeps working after
+                    the launch call is over.
                   </p>
                </div>
                <div className="flex items-center gap-6">

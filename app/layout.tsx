@@ -1,10 +1,22 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Permanent_Marker } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";
 import PageTransition from "@/components/providers/PageTransition";
+import {
+  BRAND_NAME,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  LINKEDIN_URL,
+  PERSON_NAME,
+  PERSON_ROLE,
+  PHONE_NUMBER,
+  PRIMARY_EMAIL,
+  SITE_URL,
+  X_URL
+} from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,13 +48,21 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aifloxium.online"),
-  title: "Muhammad Shadab Shams | AI Automation Expert & Workflow Architect",
-  description: "I engineer custom n8n workflows, high-fidelity voice agents (Vapi), and generative software that reclaim 40+ hours of manual work weekly.",
-  keywords: ["AI Automation", "n8n Workflow Automation", "Voice Agents", "Vapi Developer", "Claude Code Engineer", "Workflow Architect", "SaaS Automation"],
-  authors: [{ name: "Muhammad Shadab Shams", url: "https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" }],
-  creator: "Muhammad Shadab Shams",
-  publisher: "Muhammad Shadab Shams",
+  metadataBase: new URL(SITE_URL),
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
+  keywords: [
+    "Muhammad Shadab Shams",
+    "AI automation engineer",
+    "n8n workflow automation",
+    "AI systems for startups",
+    "custom internal tools",
+    "voice agents",
+    "AI consulting"
+  ],
+  authors: [{ name: PERSON_NAME, url: LINKEDIN_URL }],
+  creator: PERSON_NAME,
+  publisher: PERSON_NAME,
   formatDetection: {
     email: false,
     address: false,
@@ -65,16 +85,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Muhammad Shadab Shams | AI Automation Expert & Workflow Architect",
-    description: "I engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate.",
-    url: "https://aifloxium.online",
-    siteName: "Muhammad Shadab Shams - AI Automation",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    siteName: `${PERSON_NAME} | ${BRAND_NAME}`,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Muhammad Shadab Shams - AI Automation Expert",
+        alt: `${PERSON_NAME} portfolio preview`,
       },
     ],
     locale: "en_US",
@@ -82,31 +102,29 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Shadab Shams | AI Automation & Workflow Expert",
-    description: "I engineer custom n8n workflows and generative software that irreversibly transform how fast you can operate.",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: ["/og-image.jpg"],
   },
   verification: {
     google: "google-site-verification-placeholder",
-    yandex: "yandex-verification-placeholder",
-    yahoo: "yahoo-verification-placeholder",
   },
   category: "technology",
-  classification: "AI Automation Expert",
+  classification: PERSON_ROLE,
 };
 
-const jsonLd = {
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Muhammad Shadab Shams",
-  "url": "https://aifloxium.online",
-  "logo": "https://aifloxium.online/favicon.ico",
-  "description": "AI automation expert specializing in n8n workflows, voice agents, and autonomous systems.",
-  "email": "info@aifloxium.online",
-  "telephone": "+923464883396",
+  "name": PERSON_NAME,
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/favicon.ico`,
+  "description": DEFAULT_DESCRIPTION,
+  "email": PRIMARY_EMAIL,
+  "telephone": PHONE_NUMBER,
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+923464883396",
+    "telephone": PHONE_NUMBER,
     "contactType": "customer service",
     "availableLanguage": "English"
   },
@@ -116,10 +134,26 @@ const jsonLd = {
     "addressCountry": "PK"
   },
   "sameAs": [
-    "https://x.com/ShadabLoveAi",
-    "https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/"
+    X_URL,
+    LINKEDIN_URL
   ],
-  "jobTitle": "AI Automation Expert"
+  "jobTitle": PERSON_ROLE,
+  "worksFor": {
+    "@type": "Organization",
+    "name": BRAND_NAME
+  }
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": `${PERSON_NAME} Portfolio`,
+  "url": SITE_URL,
+  "description": DEFAULT_DESCRIPTION,
+  "publisher": {
+    "@type": "Person",
+    "name": PERSON_NAME
+  }
 };
 
 export default function RootLayout({
@@ -132,7 +166,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>

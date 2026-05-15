@@ -12,31 +12,31 @@ const cardContents = [
   {
     title: "The Silent Cost of 'Manual'",
     description:
-      "Every hour your team spends on data entry, lead sorting, or repetitive follow-ups is an hour stolen from high-level strategy. Deterministic n8n logic replaces human error, and it's automated.",
+      "Every hour your team spends on data entry, lead sorting, or repetitive follow-ups is time that should have gone into better work.",
     icon: <Layers className="w-6 h-6" />,
   },
   {
     title: "SDRs That Never Sleep",
     description:
-      "60% of leads vanish due to slow response times. Vapi-powered voice agents work 24/7, qualifying and booking appointments with zero latency and perfect brand recall.",
+      "Slow follow-up kills good opportunities. Voice and chat workflows help capture interest before it goes cold.",
     icon: <Bot className="w-6 h-6" />,
   },
   {
     title: "Fragmented Tech Stacks",
     description:
-      "Your tools aren't talking to each other, creating data silos that silently bleed revenue. The fix: an invisible backbone that forces your entire stack to work as one unified system.",
+      "When your tools do not talk to each other, your team becomes the integration layer. That is expensive and fragile.",
     icon: <Zap className="w-6 h-6" />,
   },  
   {
     title: "Ghosting & Lead Decay",
     description:
-      "Leads go cold in minutes, not hours. Autonomous social engines engage prospects the moment they show intent on LinkedIn or X, ensuring you're always first to the table.",
+      "Leads go cold fast. A better system helps your team respond, route, and follow up without manual chasing.",
     icon: <Target className="w-6 h-6" />,
   },
   {
     title: "Deterministic ROI",
     description:
-      "Stop gambling on AI prompts that hallucinate. Production-ready systems with strict logic gates and 80% automation guarantees. If it isn't measurable, it doesn't ship.",
+      "The goal is not flashy AI. The goal is a measurable system that reliably saves time, removes errors, or increases throughput.",
     icon: <BarChart3 className="w-6 h-6" />,
   },
 ]
@@ -120,9 +120,9 @@ export default function RuixenBentoCards() {
             viewport={{ once: true }}
             className="text-6xl md:text-8xl font-heading font-black text-brand-plum tracking-tighter leading-[0.85] mb-10 uppercase"
           >
-            YOUR REVENUE IS <br /> 
+            YOUR SYSTEM HAS <br /> 
             <span className="relative inline-block mt-4">
-              <span className="text-brush text-5xl md:text-8xl lg:text-9xl">LEAKING.</span>
+              <span className="text-brush text-5xl md:text-8xl lg:text-9xl">FRICTION.</span>
               <motion.span 
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
@@ -140,7 +140,8 @@ export default function RuixenBentoCards() {
             transition={{ delay: 0.2 }}
             className="text-2xl text-zinc-600 font-medium leading-tight max-w-2xl"
           >
-            You do not have a talent problem. You have systems that were never built to scale. I find exactly where you are losing time and money, then I build the fix.
+            Most teams do not have a people problem. They have repeated work,
+            disconnected tools, and no reliable operating system behind them.
           </motion.p>
         </div>
 
@@ -162,17 +163,18 @@ export default function RuixenBentoCards() {
             className="space-y-8"
           >
             <h2 className="text-5xl md:text-7xl font-black font-heading tracking-tighter text-brand-plum mb-6 uppercase leading-[0.9]">
-              Built for scale. <br /> 
-              <span className="text-brush text-4xl md:text-6xl lg:text-7xl mt-2">Engineered for dominance.</span>
+              Built for real work. <br /> 
+              <span className="text-brush text-4xl md:text-6xl lg:text-7xl mt-2">Engineered to last.</span>
             </h2>
             <p className="text-zinc-500 text-2xl font-medium max-w-2xl ml-auto leading-tight">
-              I don&apos;t sell &apos;AI tools&apos;. I sell hours returned to your day and certainty in your bottom line. Let&apos;s build the systems that make your competition irrelevant.
+              I do not sell generic AI. I build systems that return hours to your
+              team, reduce avoidable errors, and make the operation easier to run.
             </p>
             <Link 
               href="/services"
               className="inline-flex items-center gap-4 text-sm font-black uppercase tracking-[0.3em] text-brand-plum hover:text-brand-orange transition-colors group"
             >
-              Explore the core skills <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              Explore services <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

@@ -79,22 +79,26 @@ export default async function BlogPage() {
         </section>
       )}
 
-      {/* Blog Grid */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 border-b border-white/5 pb-12">
+      {/* Blog Grid - Mixture: Light Section */}
+      <section className="py-32 px-6 bg-white border-y border-gray-100 relative overflow-hidden" data-theme="light">
+        {/* Blueprint Grid Background */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+             style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #581C87 1px, transparent 0)`, backgroundSize: '40px 40px' }} />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 border-b border-gray-100 pb-12">
              <div className="max-w-xl">
-               <h3 className="text-4xl font-black text-white tracking-tighter uppercase mb-4">Latest Research</h3>
-               <p className="text-zinc-500 font-medium">Technological explorations in neural workflows, agentic reasoning, and scalable AI architectures.</p>
+               <h3 className="text-4xl font-black text-black tracking-tighter uppercase mb-4">Latest Research</h3>
+               <p className="text-black font-bold">Technological explorations in neural workflows, agentic reasoning, and scalable AI architectures.</p>
              </div>
              
              {/* Search/Filter Simulation */}
              <div className="relative group">
-               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black/50" />
                <input 
                   type="text" 
                   placeholder="SEARCH PAPERS..." 
-                  className="bg-brand-plum/10 border border-brand-plum/20 rounded-full pl-12 pr-6 py-4 text-[10px] font-mono tracking-widest text-white w-full md:w-64 focus:outline-none focus:border-brand-orange/40 transition-all uppercase"
+                  className="bg-gray-50 border border-gray-200 rounded-full pl-12 pr-6 py-4 text-[10px] font-mono tracking-widest text-black w-full md:w-64 focus:outline-none focus:border-brand-orange/40 transition-all uppercase"
                />
              </div>
           </div>
@@ -104,31 +108,31 @@ export default async function BlogPage() {
               <Link 
                 key={post.slug} 
                 href={`/blog/${post.slug}`}
-                className="group p-8 md:p-12 rounded-[2.5rem] bg-brand-plum/5 border border-brand-plum/10 hover:border-brand-orange/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-20px_rgba(88,28,135,0.3)]"
+                className="group p-8 md:p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:border-brand-plum/30 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-20px_rgba(88,28,135,0.15)]"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <span className="px-3 py-1 rounded-full bg-brand-bg text-[10px] font-mono text-brand-orange border border-brand-orange/20 uppercase tracking-widest">
+                  <span className="px-3 py-1 rounded-full bg-white text-[10px] font-mono text-black border border-brand-plum/10 uppercase tracking-widest">
                     {post.frontmatter.category}
                   </span>
-                  <span className="text-[10px] font-mono text-brand-plum uppercase tracking-widest flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest flex items-center gap-2">
                     <Calendar className="w-3 h-3" /> {post.frontmatter.date}
                   </span>
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-[0.9] mb-6 group-hover:text-zinc-400 transition-colors">
+                <h3 className="text-3xl md:text-4xl font-black text-black tracking-tighter leading-[0.9] mb-6 group-hover:text-brand-orange transition-colors">
                   {post.frontmatter.title}
                 </h3>
                 
-                <p className="text-zinc-500 text-sm leading-relaxed mb-10 line-clamp-3">
+                <p className="text-black text-sm font-medium leading-relaxed mb-10 line-clamp-3">
                   {post.frontmatter.description}
                 </p>
                 
-                <div className="flex items-center justify-between pt-8 border-t border-white/5">
+                <div className="flex items-center justify-between pt-8 border-t border-gray-100">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-black text-[10px] text-white">
+                    <div className="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center font-black text-[10px] text-black">
                       {post.frontmatter.author?.charAt(0) || 'A'}
                     </div>
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">{post.frontmatter.author}</span>
+                    <span className="text-[10px] font-mono text-zinc-800 font-bold uppercase tracking-widest">{post.frontmatter.author}</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-brand-plum group-hover:text-brand-orange group-hover:translate-x-1 transition-all" />
                 </div>

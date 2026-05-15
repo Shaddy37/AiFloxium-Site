@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next'
 import { servicesData } from '@/lib/services-data'
 import { getAllPostSlugs } from '@/lib/mdx'
+import { SITE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aifloxium.online'
+  const baseUrl = SITE_URL
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },

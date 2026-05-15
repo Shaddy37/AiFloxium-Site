@@ -22,9 +22,9 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev',
       to: process.env.CONTACT_EMAIL_TO as string,
-      subject: `[Aifloxium] ${subject || 'New Lead'} from ${firstname}`,
+      subject: `[Portfolio] ${subject || 'New Lead'} from ${firstname}`,
       html: `
-        <h2>New Contact Submission from Aifloxium.com</h2>
+        <h2>New portfolio inquiry</h2>
         <p><strong>First Name:</strong> ${firstname}</p>
         <p><strong>Last Name:</strong> ${lastname || 'N/A'}</p>
         <p><strong>Email Address:</strong> ${email}</p>

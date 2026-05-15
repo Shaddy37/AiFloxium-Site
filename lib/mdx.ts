@@ -2,6 +2,8 @@ import { bundleMDX } from "mdx-bundler";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
+import remarkGfm from "remark-gfm";
+import remarkUnwrapImages from "remark-unwrap-images";
 
 const POSTS_PATH = path.join(process.cwd(), "lib/content/posts");
 
@@ -28,7 +30,7 @@ export const getPostBySlug = async (slug: string) => {
     source,
     cwd: POSTS_PATH,
     mdxOptions(options) {
-      options.remarkPlugins = [...(options.remarkPlugins ?? [])];
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm, remarkUnwrapImages];
       options.rehypePlugins = [...(options.rehypePlugins ?? [])];
       return options;
     },

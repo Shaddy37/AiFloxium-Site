@@ -4,19 +4,20 @@ import Footer from "@/components/sections/Footer";
 import { Vision, Founder } from "@/components/sections/HomeSections";
 import { Accordion05 } from "@/components/ui/accordion-05";
 import { TrendingUp, Database, Cpu } from "lucide-react";
+import { DEFAULT_DESCRIPTION, PERSON_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: 'About Muhammad Shadab Shams | AI Automation Expert',
-  description: 'I am an AI automation expert specializing in n8n workflows and enterprise automation. I engineer custom workflow architectures that reduce operational costs by up to 80%.',
-  keywords: ['AI automation expert', 'n8n workflow automation', 'custom AI workflow solutions'],
+  title: `About ${PERSON_NAME} | AI Automation Engineer`,
+  description: DEFAULT_DESCRIPTION,
+  keywords: ['Muhammad Shadab Shams', 'AI automation engineer', 'n8n workflow automation', 'custom AI systems'],
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Muhammad Shadab Shams | AI Automation Expert',
-    description: 'I am an AI automation expert specializing in n8n workflows and enterprise automation. I engineer custom workflow architectures that reduce operational costs by up to 80%.',
+    title: `About ${PERSON_NAME} | AI Automation Engineer`,
+    description: DEFAULT_DESCRIPTION,
     type: 'website',
-    url: 'https://aifloxium.online/about',
+    url: `${SITE_URL}/about`,
     images: [
       {
         url: '/og-image.jpg',
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Muhammad Shadab Shams | AI Automation Expert',
-    description: 'I am an AI automation expert specializing in n8n workflows and enterprise automation.',
+    title: `About ${PERSON_NAME} | AI Automation Engineer`,
+    description: DEFAULT_DESCRIPTION,
     images: ['/og-image.jpg'],
   },
 };
@@ -43,10 +44,12 @@ export default function AboutPage() {
       <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden bg-hero-gradient rounded-b-[3rem]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-80 blur-[150px] rounded-full pointer-events-none -z-10" />
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9]">
-          THE <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">AUTOMATOR</span> <br /><span className="text-gradient">BEHIND AIFLOXIUM.</span>
+          THE PERSON <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">BUILDING</span> <br /><span className="text-gradient">AIFLOXIUM.</span>
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium leading-relaxed">
-          I am <span className="text-white font-bold">Muhammad Shadab Shams</span>, the founder of AIFLOXIUM. I build intelligent systems that work 24/7 so businesses do not have to.
+          I am <span className="text-white font-bold">{PERSON_NAME}</span>. I build
+          automation systems, internal tools, and practical AI products for teams
+          that need real execution, not just ideas.
         </p>
       </div>
 
@@ -56,15 +59,15 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 bg-brand-bg text-white relative z-20 border-y border-brand-plum/10">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
-            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4 uppercase">THE AIFLOXIUM TIMELINE</h2>
-            <p className="text-zinc-500 font-medium">From custom scripts to full-scale enterprise architectures.</p>
+            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4 uppercase">HOW THE WORK EVOLVED</h2>
+            <p className="text-zinc-500 font-medium">From single automations to full systems and shipped products.</p>
           </div>
           
           <div className="space-y-16 pl-4 md:pl-0 border-l-2 md:border-l-0 border-brand-plum/10">
             {[
-              { year: "Phase 1: Inception", title: "Custom Scripts & Basic Logic", desc: "Started by identifying massive operational inefficiencies in local businesses and deploying Python-based scraping and automation vectors.", icon: <Cpu /> },
-              { year: "Phase 2: Integration", title: "API & Data Pipeline Mastery", desc: "Graduated to connecting disparate enterprise tools across finance and CRMs, reducing cross-platform manual data entry by 85%.", icon: <Database /> },
-              { year: "Phase 3: Supremacy", title: "AI Agent & RAG Architectures", desc: "Present day. Deploying massive intelligence systems, autonomous agents, and RAG architectures that allow companies to instantly query their own proprietary data.", icon: <TrendingUp /> }
+              { year: "Phase 1", title: "Automation Foundations", desc: "Started with workflow fixes, scraping, and repetitive task automation for businesses that were spending too much time on manual work.", icon: <Cpu /> },
+              { year: "Phase 2", title: "Integrations & Internal Systems", desc: "Moved into deeper tool integration, data flows, and business systems that connected CRMs, operations, and reporting.", icon: <Database /> },
+              { year: "Phase 3", title: "AI Products & Agentic Workflows", desc: "Current focus: product-grade builds, AI agents, content systems, and software that can be shipped as real business infrastructure.", icon: <TrendingUp /> }
             ].map((item, i) => (
               <div key={i} className="relative flex flex-col md:flex-row gap-8 md:items-center">
                 <div className="hidden md:flex flex-col items-center absolute left-1/2 -translate-x-1/2 w-full h-full">
@@ -93,8 +96,8 @@ export default function AboutPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-plum-glow opacity-30 blur-[150px] rounded-full pointer-events-none -z-10" />
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">MY STORY</h2>
-            <p className="text-zinc-500 font-medium">Everything you need to know about who I am and what I do.</p>
+            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">WORKING STYLE</h2>
+            <p className="text-zinc-500 font-medium">How I approach projects, delivery, and technical execution.</p>
           </div>
           <Accordion05 />
         </div>

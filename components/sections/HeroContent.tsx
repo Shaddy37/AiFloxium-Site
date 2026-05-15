@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { APEPUBLISH_URL } from "@/lib/site";
 
 const VideoPopup = dynamic(() => import("@/components/sections/VideoPopup"), {
   ssr: false,
@@ -42,13 +43,20 @@ export default function HeroContent() {
           className="space-y-6 md:space-y-10 flex flex-col items-center"
         >
           <div className="space-y-4">
+            <motion.p
+              variants={fadeUp}
+              custom={0}
+              className="text-[10px] md:text-xs font-black tracking-[0.35em] uppercase text-brand-orange"
+            >
+              Muhammad Shadab Shams | AI systems builder
+            </motion.p>
             <motion.h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] font-heading font-black tracking-tighter leading-[0.8] select-none">
               <motion.span
                 variants={fadeUp}
                 custom={0}
-                className="block font-light text-zinc-500 mb-2 md:mb-4 text-3xl sm:text-4xl md:text-7xl lg:text-8xl"
+                className="block font-light text-zinc-500 mb-2 md:mb-4 text-2xl sm:text-4xl md:text-6xl lg:text-7xl"
               >
-                STOP DOING
+                AI systems for
               </motion.span>
               <motion.span
                 variants={fadeUp}
@@ -56,10 +64,10 @@ export default function HeroContent() {
                 className="block relative"
               >
                 <span className="bg-gradient-to-br from-white via-white to-brand-plum bg-clip-text text-transparent font-black relative z-10">
-                  <span className="text-brush text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] mr-4 md:mr-8">ROBOT</span> WORK.
+                  STARTUPS &amp; <span className="text-brush text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] mr-4 md:mr-8">SMBS</span>.
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-brand-plum bg-clip-text text-transparent font-black blur-2xl opacity-40 scale-105">
-                  <span className="text-brush text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] mr-4 md:mr-8">ROBOT</span> WORK.
+                  STARTUPS &amp; <span className="text-brush text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] mr-4 md:mr-8">SMBS</span>.
                 </div>
                 <motion.div
                   variants={lineExpand}
@@ -75,19 +83,54 @@ export default function HeroContent() {
             className="max-w-xl md:max-w-2xl mx-auto space-y-4 md:space-y-6"
           >
             <p className="text-lg md:text-2xl text-zinc-200 leading-relaxed font-medium tracking-tight px-4 md:px-0">
-              Your team deserves to work on{" "}
-              <span className="text-white font-bold">high-level strategy</span>,
-              not spreadsheets. I build AI systems that reclaim 40+ hours every
-              week.
+              I build workflow automation, internal tools, AI agents, and shipped
+              products that remove bottlenecks, speed up teams, and turn messy
+              operations into reliable systems.
             </p>
             <motion.div
               variants={fadeUp}
               custom={0.5}
-              className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-md"
+              className="flex flex-wrap items-center justify-center gap-3"
             >
-              <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">
-                Muhammad Shadab Shams
-              </span>
+              {[
+                'AIFLOXIUM studio',
+                'ApePublish shipped',
+                'Discovery calls open'
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-md text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-300"
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
+            <motion.div
+              variants={fadeUp}
+              custom={0.65}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+            >
+              <Link
+                href="/#initiate"
+                className="inline-flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-[0_0_30px_rgba(255,107,0,0.3)]"
+              >
+                Book a discovery call
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-3 border border-brand-plum/30 bg-brand-bg/60 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-plum/10 transition-all"
+              >
+                View proof
+              </Link>
+              <a
+                href={APEPUBLISH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-zinc-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest"
+              >
+                See ApePublish
+              </a>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -109,10 +152,10 @@ export default function HeroContent() {
             <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent skew-x-[-20deg] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
             <div className="flex flex-col items-start">
               <span className="text-[9px] font-black text-brand-orange tracking-[0.3em] uppercase leading-none mb-1">
-                Initiate Protocol
+                Primary CTA
               </span>
               <span className="text-xs font-black text-white tracking-[0.1em] uppercase">
-                Book Systems Audit
+                Book discovery call
               </span>
             </div>
             <div className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-500">

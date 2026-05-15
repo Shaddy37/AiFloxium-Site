@@ -13,6 +13,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "0",
+    title: "ApePublish",
+    slug: "apepublish",
+    category: "business",
+    clientType: "SaaS Product",
+    problem: "Creators and operators often have one strong source asset but no fast way to repurpose it into platform-specific social content.",
+    solution: "Built ApePublish as a live SaaS product that turns long-form content into social-ready outputs with product UX, positioning, metadata, and launch execution.",
+    techStack: ["Next.js", "React", "AI Content Workflows", "SEO", "Product UX"],
+    result: "Live product shipped as proof of end-to-end product and growth execution",
+    featured: true,
+  },
+  {
     id: "1",
     title: "Invoice Processing Automation",
     slug: "invoice-processing-automation",
@@ -439,8 +451,8 @@ export const projects: Project[] = [
 ];
 
 export const categories = [
-  { id: "all", name: "All", count: 38 },
-  { id: "business", name: "Business Automation", count: 13 },
+  { id: "all", name: "All", count: 39 },
+  { id: "business", name: "Business Automation", count: 14 },
   { id: "seo", name: "SEO", count: 1 },
   { id: "social", name: "Social Media", count: 16 },
   { id: "ai-agents", name: "AI Agents", count: 8 },

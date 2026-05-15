@@ -5,6 +5,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { servicesData } from "@/lib/services-data";
 import { ArrowRight, ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
+import { BRAND_NAME, PERSON_NAME, SITE_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,16 +18,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = servicesData.find((s) => s.slug === slug);
   if (!service) return {};
   return {
-    title: `${service.title} | Aifloxium`,
+    title: `${service.title} | ${PERSON_NAME}`,
     description: service.description,
     alternates: {
       canonical: `/services/${slug}`,
     },
     openGraph: {
-      title: `${service.title} | Aifloxium`,
+      title: `${service.title} | ${PERSON_NAME}`,
       description: service.description,
       type: "website",
-      url: `https://aifloxium.online/services/${slug}`,
+      url: `${SITE_URL}/services/${slug}`,
     },
   };
 }
@@ -45,9 +46,13 @@ export default async function ServicePage({ params }: Props) {
     "name": service.title,
     "description": service.description,
     "provider": {
-      "@type": "Organization",
-      "name": "Aifloxium",
-      "url": "https://aifloxium.online"
+      "@type": "Person",
+      "name": PERSON_NAME,
+      "url": SITE_URL,
+      "worksFor": {
+        "@type": "Organization",
+        "name": BRAND_NAME
+      }
     },
     "serviceType": "AI Automation",
     "areaServed": "Worldwide",
@@ -117,7 +122,7 @@ export default async function ServicePage({ params }: Props) {
               href="/#initiate"
               className="inline-flex items-center gap-3 bg-brand-orange text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-brand-orange/90 transition-all shadow-[0_0_20px_rgba(255,107,0,0.3)] border-none"
             >
-              Get Started <ArrowRight className="w-4 h-4" />
+              Book a Discovery Call <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/services"
@@ -140,8 +145,8 @@ export default async function ServicePage({ params }: Props) {
               <span className="w-6 h-[1px] bg-brand-plum/30" /> What it is
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tighter leading-[1.1] mb-8">
-              THE TECHNOLOGY BEHIND<br />
-              <span className="text-brush text-2xl md:text-4xl mt-2">THE RESULTS.</span>
+              WHAT THIS SERVICE DOES<br />
+              <span className="text-brush text-2xl md:text-4xl mt-2">AND HOW IT HELPS.</span>
             </h2>
           </div>
           <div>
@@ -307,7 +312,7 @@ export default async function ServicePage({ params }: Props) {
             href="/#initiate"
             className="inline-flex items-center gap-3 bg-brand-orange text-white font-bold text-sm uppercase tracking-widest px-10 py-5 rounded-full hover:bg-brand-orange/90 transition-all shadow-[0_0_30px_rgba(255,107,0,0.3)] border-none"
           >
-            Book a Free Call <ArrowRight className="w-4 h-4" />
+            Book a Discovery Call <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

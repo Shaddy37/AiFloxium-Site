@@ -13,49 +13,49 @@ const items = [
     id: "1",
     title: "Who I Am",
     content:
-      "I am an architect of the impossible. I bridge the gap between human creativity and machine intelligence, building autonomous systems that think, adapt, and execute.",
+      "I am Muhammad Shadab Shams, an automation engineer focused on workflows, internal tools, and practical AI systems for real businesses.",
   },
   {
     id: "2",
     title: "What I Build",
     content:
-      "Intelligent automation ecosystems. From custom AI agents to enterprise-scale RAG architectures, I engineer systems that reduce operational costs by up to 80% while scaling infinitely.",
+      "I build n8n workflows, product MVPs, internal dashboards, content systems, AI agents, and integrations that remove repeated manual work.",
   },
   {
     id: "3",
     title: "My Philosophy",
     content:
-      "I do not just automate, I elevate. Every workflow I design is built on the belief that intelligent automation is the absolute standard for scaling enterprise revenue without permanently scaling human capital.",
+      "Good automation should be useful, understandable, and maintainable. If the system saves time but the team cannot trust it, it is not finished.",
   },
   {
     id: "4",
     title: "The Geometric Approach",
     content:
-      "I see patterns where others see chaos. My methodology transforms complex, scattered operations into clean, geometric workflows, every element purposeful, every connection deliberate.",
+      "I start by mapping where the work breaks, then I simplify the flow until the logic is clear enough to build and hand over.",
   },
   {
     id: "5",
     title: "What Sets Me Apart",
     content:
-      "I do not template. Every architecture is engineered from first principles to match your exact operational DNA. No off-the-shelf solutions, just precision-built intelligence.",
+      "I am not selling generic AI packaging. I combine strategy, implementation, and product thinking so the work actually ships.",
   },
   {
     id: "6",
     title: "Who I Serve",
     content:
-      "Enterprises ready to transcend legacy limitations. From finance to healthcare, I work with organizations that demand more than automation, they demand transformation.",
+      "My best-fit clients are startups, SMBs, and service businesses that need better systems without hiring a full internal engineering team.",
   },
   {
     id: "7",
     title: "My Stack",
     content:
-      "Python, Next.js, LangChain, autonomous agents, vector databases, and custom ML pipelines. I use whatever serves the vision, but always with surgical precision.",
+      "n8n, Next.js, TypeScript, Claude-powered workflows, APIs, custom product builds, and the surrounding stack needed to ship and maintain them.",
   },
   {
     id: "8",
     title: "Let's Build",
     content:
-      "Ready to transform your operations? Reach out at contact@aifloxium.online or connect with me directly. The future waits for no one.",
+      "If you need automation, internal tools, or a product-minded technical partner, reach out and tell me what is blocking the business right now.",
   },
 ];
 

@@ -9,37 +9,37 @@ export const capabilities = [
   {
     slug: "n8n-workflow-automation",
     title: "n8n Workflow Automation",
-    description: "Bridging disparate APIs to automate repetitive manual tasks. I turn human bottlenecks into flawless, instant logic.",
+    description: "I connect the tools your team already uses and remove repetitive manual work with reliable n8n workflows.",
     icon: <Cpu className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "autonomous-voice-agents",
     title: "Autonomous Voice Agents",
-    description: "Human-fidelity AI agents for inbound qualification and outbound sales. Zero latency, 24/7 availability.",
+    description: "I build voice agents for inbound qualification, support, and booking so every lead gets a fast response.",
     icon: <Phone className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "vibe-coding",
     title: "Vibe Coding (Claude)",
-    description: "Rapid custom software development powered by advanced LLM reasoning. I build internal tools and web apps lightning-fast.",
+    description: "I ship internal tools, client portals, and product MVPs quickly without cutting corners on architecture.",
     icon: <Bot className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "seo-optimization",
     title: "AI-Powered SEO",
-    description: "Automated content scaling and technical precision to dominate search rankings without the high agency overhead.",
+    description: "I combine technical SEO and content systems so your site is easier to rank and easier to trust.",
     icon: <Search className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "autonomous-agents",
     title: "Autonomous Agents",
-    description: "Intelligent systems that handle dynamic inquiries across platforms, scrape data, and execute complex decision trees.",
+    description: "I design agentic systems that research, enrich, route, and act inside your workflows with guardrails.",
     icon: <Fingerprint className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "agency-scaling-partner",
     title: "Expert Implementation Partner",
-    description: "I act as your technical backbone. I handle the heavy lifting of process engineering so your team can dominate strategy.",
+    description: "I plug in as your technical execution layer when you need shipping velocity without hiring a full internal team.",
     icon: <Database className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
   },
 ];
@@ -121,7 +121,7 @@ export default function Services() {
               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
             </div>
             <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]">
-              WE AUTOMATE <br /> <span className="text-brush text-3xl md:text-6xl lg:text-7xl mt-2">EVERYTHING.</span>
+              WHAT I <br /> <span className="text-brush text-3xl md:text-6xl lg:text-7xl mt-2">BUILD.</span>
             </h3>
           </motion.div>
 
@@ -132,7 +132,8 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-xl text-zinc-400 font-medium max-w-md md:text-right leading-relaxed"
           >
-            From simple n8n webhook integrations to complex multi-agent architectures built with Claude Code and Cursor. Let&apos;s eradicate your bottlenecks.
+            Practical AI systems for startups and growing businesses: automation,
+            internal software, product builds, and workflows that save real time.
           </motion.p>
         </div>
 

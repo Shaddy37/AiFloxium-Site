@@ -7,6 +7,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
+import { BRAND_NAME, PERSON_NAME } from '@/lib/site';
 
 const links = [
   { name: "Projects", href: "/projects" },
@@ -130,14 +131,24 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <span className={cn(
+            <div className="flex flex-col leading-none">
+              <span className={cn(
               "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
               isLight && !open 
                 ? "text-brand-plum" 
                 : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
             )}>
-              AIFLOXIUM
-            </span>
+                {BRAND_NAME}
+              </span>
+              <span
+                className={cn(
+                  'mt-1 text-[9px] font-bold uppercase tracking-[0.25em] transition-colors',
+                  isLight && !open ? 'text-zinc-500' : 'text-zinc-500'
+                )}
+              >
+                by {PERSON_NAME.split(' ')[0]}
+              </span>
+            </div>
           </motion.div>
         </Link>
 
@@ -177,7 +188,7 @@ export default function Navbar() {
                 "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-lg border-none"
               )}
             >
-              Book an Audit
+              Book a Call
             </Link>
           </motion.div>
         </div>
@@ -235,7 +246,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className="w-full h-16 rounded-3xl bg-brand-orange text-white flex items-center justify-center font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-xl shadow-brand-orange/10"
                 >
-                  Book a Systems Audit
+                  Book a Discovery Call
                 </Link>
               </motion.div>
             </div>

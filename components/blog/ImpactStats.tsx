@@ -35,23 +35,23 @@ export const ImpactStats = ({ stats, className }: ImpactStatsProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="p-8 rounded-[2rem] bg-zinc-900 border border-white/5 relative overflow-hidden group hover:border-white/10 transition-colors"
+            className="p-8 rounded-[2rem] bg-gray-50 border border-gray-200 relative overflow-hidden group hover:border-brand-plum/20 transition-all"
           >
-            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Icon className="w-24 h-24" />
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Icon className="w-24 h-24 text-brand-plum" />
             </div>
             
-            <Icon className="w-5 h-5 text-zinc-500 mb-6" />
+            <Icon className="w-5 h-5 text-brand-plum mb-6" />
             
-            <div className="text-5xl font-black text-white tracking-tighter mb-2 group-hover:text-gradient transition-all duration-500">
+            <div className="text-5xl font-black text-black tracking-tighter mb-2 group-hover:translate-x-1 transition-transform duration-500">
               {stat.value}
             </div>
             
-            <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 mb-4">
+            <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-plum mb-4 font-black">
               {stat.label}
             </div>
             
-            <p className="text-zinc-400 text-sm leading-relaxed font-medium">
+            <p className="text-black text-sm leading-relaxed font-bold">
               {stat.description}
             </p>
           </motion.div>

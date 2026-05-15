@@ -38,7 +38,7 @@ export default function ProjectsPage() {
   }, [searchQuery, activeCategory]);
 
   const featuredProjects = filteredProjects.filter((p) => p.featured);
-  const allWorkflows = projects.filter((p) => !p.featured);
+  const allWorkflows = filteredProjects.filter((p) => !p.featured);
 
   return (
     <main className="relative bg-brand-bg min-h-screen">
@@ -53,10 +53,10 @@ export default function ProjectsPage() {
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-heading font-black text-white tracking-tighter mb-4 uppercase leading-[0.8]">
-            PROJECT <span className="text-brush text-4xl md:text-7xl lg:text-9xl ml-4">SHOWCASE.</span>
+            SHIPPED <span className="text-brush text-4xl md:text-7xl lg:text-9xl ml-4">WORK.</span>
           </h1>
           <p className="text-xl text-zinc-400 font-medium max-w-2xl mx-auto">
-            Building intelligent systems that work 24/7 so businesses don&apos;t have to
+            Real workflow builds, AI systems, and product proof including ApePublish.
           </p>
         </motion.div>
 
@@ -109,14 +109,14 @@ export default function ProjectsPage() {
           <div className="flex items-center gap-4 mb-10">
             <span className="w-12 h-[1px] bg-brand-plum/30" />
             <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-orange">
-              Claude Code Skills
+              Proof Assets
             </h2>
             <span className="w-12 h-[1px] bg-brand-plum/30" />
           </div>
 
           <p className="text-zinc-400 mb-8 max-w-3xl font-medium leading-relaxed">
-            Specialized AI skills built with Claude that automate content creation, lead generation, and business workflows.
-            Each skill is a ready-to-use solution that can be deployed immediately.
+            Reusable skills and system patterns that support the delivery work on this portfolio.
+            These are part of how I build faster without lowering the bar.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
             <div className="flex items-center gap-4">
               <span className="w-12 h-[1px] bg-brand-plum/30" />
               <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-orange">
-                n8n Workflow Automations
+                Featured Projects
               </h2>
               <span className="w-12 h-[1px] bg-brand-plum/30" />
             </div>
@@ -147,8 +147,8 @@ export default function ProjectsPage() {
           </div>
 
           <p className="text-zinc-400 mb-8 max-w-3xl">
-            Custom n8n workflows that connect your tools, automate repetitive tasks, and integrate AI into your business processes.
-            From invoice processing to AI agents, these automations save teams 10-50+ hours weekly.
+            A mix of automation systems, AI workflows, and product work that show how
+            I approach real business problems.
           </p>
 
           {/* Featured Workflows */}
@@ -179,7 +179,7 @@ export default function ProjectsPage() {
                 onClick={() => setShowAllWorkflows(true)}
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-brand-plum/10 border border-brand-plum/30 text-white font-bold uppercase tracking-widest text-sm hover:bg-brand-plum/20 hover:border-brand-plum/50 transition-all shadow-[0_0_20px_rgba(0,0,0,0.3)]"
               >
-                View All {allWorkflows.length} Workflows
+                View All {allWorkflows.length} Projects
                 <ArrowRight className="w-4 h-4 text-brand-orange" />
               </motion.button>
             </motion.div>
@@ -196,17 +196,17 @@ export default function ProjectsPage() {
           <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[3rem] bg-brand-plum/5 border border-brand-plum/10 relative overflow-hidden group">
             <div className="absolute inset-0 bg-brand-plum/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <h3 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tight uppercase leading-tight">
-              READY TO BUILD <br /> <span className="text-brush text-2xl md:text-4xl mt-2">SOMETHING LIKE THIS?</span>
+              READY TO BUILD <br /> <span className="text-brush text-2xl md:text-4xl mt-2">SOMETHING USEFUL?</span>
             </h3>
             <p className="text-zinc-400 max-w-md font-medium leading-relaxed">
-              Let&apos;s combine Claude Code skills with n8n workflows to automate your business.
-              From concept to deployment in days.
+              If you need a workflow, internal tool, or product-minded technical build,
+              let&apos;s talk through the fastest credible path.
             </p>
             <Link
               href="/#initiate"
               className="inline-flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-[0_0_30px_rgba(255,107,0,0.3)]"
             >
-              Let&apos;s Talk
+              Book a Discovery Call
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
