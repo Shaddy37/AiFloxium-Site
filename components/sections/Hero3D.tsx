@@ -11,8 +11,8 @@ const DotGlobeHero = dynamic(() => import("@/components/ui/globe-hero").then(mod
 export default function Hero3D() {
   return (
     <DotGlobeHero
-      rotationSpeed={0.004}
-      className="bg-background relative overflow-hidden h-screen"
+      rotationSpeed={0.002}
+      className="bg-white relative overflow-hidden h-screen"
     >
       <HeroContent />
     </DotGlobeHero>

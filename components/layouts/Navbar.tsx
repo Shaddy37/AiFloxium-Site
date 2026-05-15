@@ -110,7 +110,7 @@ export default function Navbar() {
             scrolled && !open && !isLight,
           'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
             scrolled && !open && isLight,
-          'bg-brand-bg': open,
+          'bg-brand-bg': open || (!scrolled && !open),
         },
       )}
     >

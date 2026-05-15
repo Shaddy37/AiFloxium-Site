@@ -34,7 +34,7 @@ const Globe: React.FC<{
         <meshBasicMaterial
           color="#FF6B00"
           transparent
-          opacity={0.15}
+          opacity={0.08}
           wireframe
         />
       </mesh>
@@ -44,7 +44,7 @@ const Globe: React.FC<{
         <meshBasicMaterial
           color="#581C87"
           transparent
-          opacity={0.05}
+          opacity={0.02}
         />
       </mesh>
     </group>
@@ -57,7 +57,7 @@ const DotGlobeHero = React.forwardRef<
   HTMLDivElement,
   DotGlobeHeroProps
 >(({
-  rotationSpeed = 0.005,
+  rotationSpeed = 0.002,
   globeRadius = 1,
   className,
   children,
@@ -67,7 +67,7 @@ const DotGlobeHero = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "relative w-full h-screen bg-brand-bg overflow-hidden",
+        "relative w-full h-screen bg-white overflow-hidden",
         className
       )}
       {...props}
