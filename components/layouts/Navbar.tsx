@@ -107,10 +107,10 @@ export default function Navbar() {
         'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-500',
         {
           'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
-            scrolled && !open && !isLight,
+            !open && !isLight,
           'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
             scrolled && !open && isLight,
-          'bg-brand-bg': open || (!scrolled && !open),
+          'bg-brand-bg': open,
         },
       )}
     >
@@ -119,9 +119,9 @@ export default function Navbar() {
           'container mx-auto flex h-20 w-full items-center justify-between px-6',
         )}
         animate={{
-          height: scrolled ? 64 : 80,
-          paddingTop: scrolled ? 8 : 12,
-          paddingBottom: scrolled ? 8 : 12,
+          height: 64,
+          paddingTop: 8,
+          paddingBottom: 8,
         }}
         transition={headerTransition}
       >

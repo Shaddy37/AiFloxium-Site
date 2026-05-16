@@ -1,0 +1,7 @@
+interface:
+  display_name: "Antigravity Blog Conversion"
+  short_description: "Convert drafts into polished Next.js posts"
+  default_prompt: "Use $antigravity-blog-conversion to convert `blogs/<blogname>.md` into a published Antigravity blog post without rewriting the content."
+
+policy:
+  allow_implicit_invocation: true

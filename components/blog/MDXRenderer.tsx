@@ -4,6 +4,8 @@ import React, { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import { PremiumCTA } from "./PremiumCTA";
 import { ImpactStats } from "./ImpactStats";
+import { CodeBlock } from "./CodeBlock";
+import { PostFigurePlaceholder } from "./PostFigurePlaceholder";
 import { BlogArchitecture } from "../sections/BlogArchitecture";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -13,47 +15,114 @@ interface MDXRendererProps {
   code: string;
 }
 
-type MDXComponentProps = ComponentPropsWithoutRef<"h1">;
+function slugify(children: React.ReactNode): string {
+  const value = React.Children.toArray(children)
+    .map((child) => {
+      if (typeof child === "string" || typeof child === "number") {
+        return String(child);
+      }
+
+      if (React.isValidElement<{ children?: React.ReactNode }>(child)) {
+        return slugify(child.props.children);
+      }
+
+      return "";
+    })
+    .join("");
+
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
 const components = {
   h1: (props: ComponentPropsWithoutRef<"h1">) => (
-    <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9] uppercase text-black" {...props} />
+    <h1
+      className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9] uppercase text-black"
+      id={props.id ?? slugify(props.children)}
+      {...props}
+    />
   ),
   h2: (props: ComponentPropsWithoutRef<"h2">) => (
-    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 mt-16 flex items-center gap-4 text-black" {...props}>
+    <h2
+      className="text-3xl md:text-4xl font-bold tracking-tight mb-6 mt-16 flex items-center gap-4 text-black"
+      id={props.id ?? slugify(props.children)}
+      {...props}
+    >
       <span className="w-8 h-[1px] bg-brand-plum/30" />
       {props.children}
     </h2>
   ),
   h3: (props: ComponentPropsWithoutRef<"h3">) => (
-    <h3 className="text-2xl font-bold tracking-tight mb-4 mt-8 text-black" {...props} />
+    <h3
+      className="text-2xl font-bold tracking-tight mb-4 mt-8 text-black"
+      id={props.id ?? slugify(props.children)}
+      {...props}
+    />
   ),
   p: (props: ComponentPropsWithoutRef<"p">) => (
-    <div className="text-lg leading-relaxed text-black mb-6 font-medium" {...props} />
+    <p className="mb-6 text-lg font-medium leading-relaxed text-black" {...props} />
   ),
   ul: (props: ComponentPropsWithoutRef<"ul">) => (
-    <ul className="list-none space-y-4 mb-8" {...props} />
+    <ul className="mb-8 list-disc space-y-4 pl-6 text-lg text-black marker:text-brand-plum" {...props} />
+  ),
+  ol: (props: ComponentPropsWithoutRef<"ol">) => (
+    <ol className="mb-8 list-decimal space-y-4 pl-6 text-lg text-black marker:font-bold marker:text-brand-plum" {...props} />
   ),
   li: (props: ComponentPropsWithoutRef<"li">) => (
-    <li className="flex items-start gap-3 text-lg group text-black" {...props}>
-      <span className="w-1.5 h-1.5 rounded-full bg-brand-plum/30 mt-3 group-hover:bg-brand-orange transition-colors" />
-      <span>{props.children}</span>
-    </li>
+    <li className="pl-1 text-black" {...props} />
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote className="border-l-2 border-brand-plum/30 pl-8 my-12 italic text-xl md:text-2xl text-zinc-900 leading-relaxed font-light" {...props} />
   ),
+  aside: (props: ComponentPropsWithoutRef<"aside">) => (
+    <aside className="my-12 rounded-[2rem] border border-zinc-200 bg-zinc-50 px-6 py-6 text-black shadow-sm md:px-8" {...props} />
+  ),
   a: (props: ComponentPropsWithoutRef<"a">) => {
     if (!props.href) return <span {...props}>{props.children}</span>;
+    if (/^https?:\/\//.test(props.href)) {
+      return (
+        <a
+          className="font-bold text-brand-plum underline underline-offset-4 transition-colors hover:text-brand-orange"
+          href={props.href}
+          rel="noreferrer"
+          target="_blank"
+        >
+          {props.children}
+        </a>
+      );
+    }
     return (
       <Link className="underline underline-offset-4 text-brand-plum hover:text-brand-orange transition-colors font-bold" href={props.href}>
         {props.children}
       </Link>
     );
   },
-  code: (props: ComponentPropsWithoutRef<"code">) => (
-    <code className="bg-brand-plum/5 border border-brand-plum/10 px-1.5 py-0.5 rounded text-sm font-mono text-brand-plum" {...props} />
-  ),
+  code: (props: ComponentPropsWithoutRef<"code">) => {
+    if (props.className?.startsWith("language-")) {
+      return <code {...props} />;
+    }
+    return (
+      <code className="bg-brand-plum/5 border border-brand-plum/10 px-1.5 py-0.5 rounded text-sm font-mono text-brand-plum" {...props} />
+    );
+  },
+  pre: (props: ComponentPropsWithoutRef<"pre">) => {
+    const child = React.Children.toArray(props.children)[0] as React.ReactElement<{
+      children?: string;
+      className?: string;
+    }> | undefined;
+
+    if (!React.isValidElement(child)) {
+      return <pre {...props} />;
+    }
+
+    const language = child.props.className?.replace("language-", "") ?? "text";
+    const code = typeof child.props.children === "string" ? child.props.children : "";
+
+    return <CodeBlock code={code} language={language} />;
+  },
+  hr: () => <hr className="my-14 border-zinc-200" />,
   TLDR: ({ children }: { children: React.ReactNode }) => (
     <div className="my-12 p-8 rounded-3xl bg-brand-plum/5 border border-brand-plum/10 relative overflow-hidden shadow-sm">
       <div className="absolute top-0 left-0 w-2 h-full bg-brand-plum" />
@@ -130,6 +199,7 @@ const components = {
   PremiumCTA,
   ImpactStats,
   BlogArchitecture,
+  PostFigurePlaceholder,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {

@@ -1,0 +1,825 @@
+<aside>
+📦
+
+**Title Tag:** OpenAI Codex Tutorial: Zero to Deployed App in 1 Hour (2026 Complete Guide)
+
+**Meta Description:** Learn OpenAI Codex from scratch. This hands-on guide covers setup, [AGENTS.md](http://AGENTS.md), Plan Mode, reusable skills, GitHub + Vercel deployment, browser automation, and weekly task scheduling — distilled from Nate Herk's full 1-hour course.
+
+**Slug:** openai-codex-tutorial-complete-guide-2026
+
+**Focus Keyword:** OpenAI Codex tutorial
+
+**Secondary Keywords:** Codex app setup, [AGENTS.md](http://AGENTS.md) Codex guide, Plan Mode Codex, Codex vs Claude Code, reusable skills Codex, deploy Codex Vercel
+
+**Long-Tail Keywords:** how to use OpenAI Codex for beginners 2026, how to build reusable skills in OpenAI Codex, OpenAI Codex [AGENTS.md](http://AGENTS.md) setup step by step, how to deploy a Codex project to Vercel with GitHub, Codex plan mode vs full auto explained
+
+**Semantic / LSI Keywords:** ChatGPT coding agent, local AI coding agent, GPT-5.5 model, agentic workflow, browser use automation, YouTube comment intelligence, MCP server Codex, Codex plugins, Excel automation AI, AI dashboard deployment
+
+**Schema Type:** HowTo + Article
+
+**LLM Optimization Notes:** Include FAQ section with exact questions people ask AI assistants. Define every term on first use. Use numbered steps for all workflows. Mention Nate Herk and the source video clearly for citation context.
+
+**Image Alt Texts:** [defined inline throughout the page — look for ALT: tags]
+
+**Internal Link Targets:** Link to Claude Code guide, 50 Claude Code Skills guide, SEO + AI Automation guide
+
+**Canonical:** https://aifloxium.online/blog/openai-codex-tutorial-complete-guide-2026
+
+**<!-- END SEO PACKAGE -->**
+
+</aside>
+
+<aside>
+⚡
+
+This guide is distilled from **Nate Herk's 1-hour Codex full course** (59K+ views). Every section maps to a timestamp. Zero fluff. Everything you need to go from opening Codex for the first time to having a real deployed project running.
+
+*Source video:* [Master 97% of Codex in 1 Hour](https://youtu.be/3TdD8Qv5Tk8) · by Nate Herk | AI Automation
+
+</aside>
+
+---
+
+## What You Will Build by the End of This Guide
+
+Nate does not just explain Codex theoretically. He walks through a complete real-world project: a **YouTube Comment Intelligence System**. By the time you finish this guide, you will know how to:
+
+- Pull comments from any YouTube channel via API
+- Analyze them and export results to an Excel workbook with charts
+- Build reusable skills that Codex can call on any future project
+- Design and deploy a live web dashboard to Vercel
+- Set up a weekly automation that runs the whole system while you sleep
+- Use browser automation to QA test the deployed app
+
+This is not a toy demo. It is a working production system built entirely inside Codex.
+
+---
+
+## Table of Contents
+
+1. [What OpenAI Codex Actually Is](#)
+2. [Codex vs Claude Code — Honest Comparison](#)
+3. [The 4 Ways to Use Codex](#)
+4. [Plans and Pricing — What You Actually Need](#)
+5. [The Codex Interface Walkthrough](#)
+6. [Models and Intelligence Settings](#)
+7. [Projects vs Chats — The Key Distinction](#)
+8. [AGENTS.md](http://AGENTS.md) [— The Most Important File in Any Project](#)
+9. [Plan Mode — Always Start Here](#)
+10. [Plugins and MCP Servers — Giving Codex Real Hands](#)
+11. [Connecting to YouTube — The First Real Build Step](#)
+12. [Comment Insights to Excel — Structured Data Output](#)
+13. [Building Reusable Skills — The Multiplier](#)
+14. [Designing the Dashboard](#)
+15. [Deploying with GitHub and Vercel](#)
+16. [Weekly Automations — Running While You Sleep](#)
+17. [Browser Use and QA Testing](#)
+18. [Pro Settings and Tips](#)
+19. [Frequently Asked Questions](#)
+
+---
+
+# Section 1: What OpenAI Codex Actually Is
+
+`Timestamp: 00:00`
+
+Here is the simplest way to understand Codex: it is ChatGPT that can actually do things on your computer.
+
+When you use ChatGPT in a browser tab, you type a message, it responds. That is the limit. You have to take the response and do something with it yourself.
+
+Codex breaks that limitation. It can:
+
+- **Read any file on your machine** — transcripts, spreadsheets, code, documents
+- **Write and edit files** — generate code, update configs, create new folders
+- **Run commands** — execute scripts, install packages, trigger builds
+- **Use your mouse and keyboard** — click buttons, fill forms, automate a browser
+- **Connect to external tools** — GitHub, Vercel, YouTube API, Figma, and more via plugins
+- **Schedule tasks** — run workflows automatically on a timer without you being present
+
+Nate's framing is useful here: *ChatGPT on the web gives the AI a brain and a little bit of hands. Codex gives it a brain, full hands, a full workspace, and the ability to work overnight.*
+
+**The pet feature** (ALT: Codex desktop app showing animated pet in corner while running a task)
+
+One detail worth mentioning: the Codex desktop app has a small animated pet that sits in the corner of your screen while it works. It shows you what Codex is doing in real time. This makes it easy to multitask — you glance at the pet, see it is still running, and carry on with other things. Small feature but genuinely useful when running long jobs.
+
+---
+
+# Section 2: Codex vs Claude Code — Honest Comparison
+
+Nate uses both tools daily. His take is worth quoting directly:
+
+> *"I really like Claude for being exploratory, brainstorming, helping me get creative and think through things. I really like Codex for being pragmatic — it does better at following a plan when the plan grows longer, and it is really good at executing and troubleshooting things that sometimes Claude for some reason cannot handle."*
+> 
+
+| Factor | OpenAI Codex | Claude Code |
+| --- | --- | --- |
+| Underlying model | GPT-5.5, GPT-5.4 (OpenAI models) | Claude Opus, Sonnet, Haiku (Anthropic models) |
+| Interface | Desktop app, VS Code extension, CLI, ChatGPT web sidebar | Desktop app, terminal CLI |
+| Strengths | Following long plans, executing systematically, troubleshooting bugs | Exploratory thinking, creative problem-solving, brainstorming |
+| Project memory file | [AGENTS.md](http://AGENTS.md) | [CLAUDE.md](http://CLAUDE.md) |
+| Pet companion | Yes (animated desktop pet) | No |
+| Plugin ecosystem | Built-in plugin marketplace | MCP servers via config |
+| Subscription model | Included with ChatGPT Plus ($20/mo) | Claude Pro ($20/mo) or API billing |
+| Nate's verdict | Better for execution and long-form builds | Better for strategy and creative thinking |
+
+**The bottom line:** You do not have to choose. Nate uses both. Plan and brainstorm in Claude Code. Execute the plan in Codex. Use whichever is hitting the wall and switch to the other when it gets stuck.
+
+Critically, both tools can work out of the same local directory. The folder structure, files, and organization you build with one agent are fully accessible to the other.
+
+---
+
+# Section 3: The 4 Ways to Use Codex
+
+Codex is not a single thing. It is available in four different surfaces:
+
+**1. The Desktop App** — what this guide focuses on. Download from OpenAI. Full GUI with projects, chat history, browser, and the pet. Best for most users.
+
+**2. VS Code Extension** — Codex embedded directly in your code editor. Better if you live in VS Code and want Codex in your existing workflow.
+
+**3. CLI (Command Line Interface)** — the most powerful surface. Open source, built in Rust, runs in your terminal. Gives you the most control but requires some terminal comfort.
+
+**4. Codex Cloud (ChatGPT sidebar)** — runs on OpenAI's infrastructure using their Agents SDK. You interact through the ChatGPT web interface. Good for light tasks, limited compared to local execution.
+
+> **Nate's recommendation for this course:** Use the desktop app. It gets you 95% of the capability with 10% of the friction. Once you understand how Codex works, migrate to CLI or VS Code extension if you want more control.
+> 
+
+---
+
+# Section 4: Plans and Pricing
+
+You need a ChatGPT subscription to use Codex.
+
+- **Free plan** — limited Codex access. Good enough to try it.
+- **ChatGPT Plus ($20/month)** — Nate's recommendation to start. Sufficient for most individual workflows.
+- **ChatGPT Pro** — if you hit rate limits constantly on Plus, upgrade here.
+
+**One underrated benefit of a ChatGPT subscription:** You can plug it into other tools like Hermes agent or OpenClaw, which means you pay a flat monthly fee instead of per-token API costs. For heavy users, this is significantly cheaper than API billing.
+
+---
+
+# Section 5: The Interface Walkthrough
+
+`Timestamp: ~04:00`
+
+(ALT: OpenAI Codex desktop app showing left sidebar with projects, chat history, and main chat area)
+
+When you open the Codex desktop app for the first time, the layout looks almost identical to ChatGPT:
+
+- **Left sidebar** — all your projects and chats
+- **Main area** — where you talk to Codex
+- **Model selector** — toggle between GPT-5.5, GPT-5.4, and others
+- **Speed slider** — balance response speed vs thoroughness
+- **Intelligence selector** — Low, Medium, High, Extra High
+- **Permissions badge** — shows current sandbox mode (Default, Full Access, Read Only)
+
+The only thing that looks different is the permission badge in the top corner. By default, you will see **Default permissions**, which means Codex can read and edit files in your current workspace but will ask before accessing the internet or running anything outside the workspace boundary.
+
+When Nate shows **Full Access**, that means he has disabled approval prompts for that session. You can enable this via the `/permissions` command during a session or in your `config.toml` file for permanent settings.
+
+---
+
+# Section 6: Models and Intelligence Settings
+
+`Timestamp: ~16:00`
+
+Codex gives you two dials to control how it thinks:
+
+**Model selection:**
+
+- **GPT-5.5** — flagship model. Most capable. Use for complex builds and debugging.
+- **GPT-5.4** — solid everyday model. Faster, slightly less expensive on Pro.
+- **GPT-5.5 Codex-Spark** (Pro only) — faster variant optimized for simpler engineering tasks.
+
+**Intelligence level:**
+
+- **Low** — fast, cheap, good for simple lookups or quick edits
+- **Medium** — Nate's default for planning and brainstorming
+- **High** — for big builds or writing complex skills
+- **Extra High** — reserved for bugs that lower settings cannot crack
+
+> *"I'm honestly hardly using Extra High unless I'm hitting some sort of bug or issue that it's not able to solve."* — Nate Herk
+> 
+
+**The practical rule:** Start every planning session on Medium. Switch to High when you move to execution on complex tasks. Drop back to Medium for simple follow-up prompts. Save Extra High for the 2am moments when nothing is working.
+
+---
+
+# Section 7: Projects vs Chats
+
+`Timestamp: ~06:00`
+
+This distinction matters more than it looks.
+
+**Chats** are free-floating conversations. Any file Codex creates in a chat lives in some random location in your Documents folder. You cannot easily find it later. Other agents and tools cannot reference it. It is essentially throwaway work.
+
+**Projects** are anchored to a real folder on your machine. When you create a project:
+
+1. You choose or create a folder on your hard drive
+2. Codex works exclusively inside that folder
+3. Every file it creates is right there, organized, accessible
+4. You can open that folder in Finder/Explorer and see exactly what exists
+5. Other tools (Claude Code, Cursor, anything) can work in the same folder
+
+**How to create a project:**
+
+1. Click **New Chat** at the top of the left sidebar
+2. Click **Add New Project** in the project creation flow
+3. A file explorer opens — navigate to where you want the project to live
+4. Create a new folder (example: `YouTube Analytics Demo`)
+5. Select it and confirm
+6. Your project now appears in the left sidebar, anchored to that folder
+
+> **Key insight from Nate:** If you use both Codex and Claude Code, you can point them at the same project folder. The folder structure, [AGENTS.md](http://AGENTS.md), skills, and files you build with Codex are fully readable by Claude Code and vice versa. They share the same workspace.
+> 
+
+---
+
+# Section 8: [AGENTS.md](http://AGENTS.md) — The Most Important File in Any Project
+
+`Timestamp: ~14:00`
+
+Every new project should start with one file: `AGENTS.md`.
+
+This is the direct equivalent of `CLAUDE.md` in Claude Code. Codex reads this file automatically at the start of every new chat session inside the project. It is the onboarding document for the agent — the first thing it reads before responding to a single prompt.
+
+**What [AGENTS.md](http://AGENTS.md) does:**
+
+- Tells Codex what this project is about
+- Explains who the user is and what they are building
+- Sets the direction and goals for the project
+
+- Defines any conventions, preferences, or constraints
+- Prevents Codex from asking repetitive context questions in every new session
+
+**How to create your first [AGENTS.md](http://AGENTS.md):**
+
+Step 1: Open a new chat in your project
+
+Step 2: Give Codex context about you and the goal first (example: have it read some of your files or documents)
+
+Step 3: Then prompt it:
+
+**<!-- SEO PACKAGE — FOR CLAUDE CODE TO READ BEFORE CONVERTING TO BLOG -->**
+
+```
+Set up an AGENTS.md file for this project.
+
+Include:
+- Who I am and what I do
+- The goal of this project
+- What we are building (describe the end product)
+- The tech stack we will use
+- Any important conventions or rules
+
+Keep it clear and concise. This will be read at the start of every session.
+```
+
+Step 4: Review what it generates and edit as needed
+
+Step 5: The file now lives in your project folder — every new session starts with this context loaded
+
+[**AGENTS.md](http://AGENTS.md) hierarchy (for advanced users):**
+
+Codex supports a three-level instruction system:
+
+- **Global** (`~/.codex/AGENTS.md`) — applies across all projects. Put your personal preferences here: your name, your working style, your tech preferences.
+- **Project** (`/your-project/AGENTS.md`) — applies to everything in this project folder.
+- **Folder-level** (`/your-project/subfolder/AGENTS.md`) — applies only to tasks in that specific subfolder. Useful for monorepos where different folders have different rules.
+
+Codex reads all three levels and merges them. More specific files override more general ones.
+
+> **Nate's analogy:** *"If you're coming from Claude Code, you know we always start a project with a [CLAUDE.md](http://CLAUDE.md) file. [AGENTS.md](http://AGENTS.md) is the same thing, just the terminology Codex expects. It is basically its onboarding doc."*
+> 
+
+---
+
+# Section 9: Plan Mode — Always Start Here
+
+`Timestamp: 12:36`
+
+Before Codex touches a single file, Nate always enables **Plan Mode**.
+
+Plan Mode means Codex will think, brainstorm, and respond with a plan — but it will not execute anything. No files written. No commands run. Just thinking.
+
+**Why Plan Mode matters:**
+
+When you ask an AI agent to just start building, it makes decisions about architecture, tools, and approach on the fly. Some of those decisions are good. Some are not. You only discover the bad ones after three hours of work that all has to be undone.
+
+Plan Mode forces the conversation to happen before any work begins. You can see exactly what Codex intends to do, catch bad assumptions, redirect it, and agree on an approach together. Then you switch to execution mode and it builds confidently with a clear plan.
+
+**How to enable Plan Mode:**
+
+1. Look for the Plan Mode toggle in the Codex interface (above the input box)
+2. Click to enable it
+3. Now type your prompt describing what you want to build
+4. Codex responds with a plan, questions, and proposed approach
+5. Refine and agree on the plan
+6. Disable Plan Mode to start execution
+
+**The right prompting mindset in Plan Mode:**
+
+Do not be afraid to ask questions or admit you do not know something. Plan Mode is specifically for exploration. Nate's approach: *"If I don't know if something is possible, instead of Googling or booking a consulting call, I just ask Codex. I ask it to research and explain it to me. That's basically how I learned everything I know."*
+
+---
+
+# Section 10: Plugins and MCP Servers — Giving Codex Real Hands
+
+`Timestamp: ~17:00`
+
+Out of the box, Codex can work with your local files and run local commands. But to connect to the outside world — APIs, external services, web tools — you need plugins.
+
+Codex has a built-in plugin marketplace with pre-built connectors:
+
+- **Vercel** — deploy and manage your Vercel projects
+- **GitHub** — read and write repos, manage PRs and issues
+- **Hugging Face** — access AI models directly
+- **Figma** — read and interact with design files
+- **Remotion** — programmatic video generation
+- **Canva** — connect to your Canva workspace
+- **HyperFrames** — video rendering workflow
+- **Game Studio** — specialized game development tools
+
+**MCP servers** extend this further. MCP (Model Context Protocol) is the open standard that lets you connect Codex to literally any tool that has an MCP server — including tools you build yourself.
+
+**The difference between plugins and MCP:**
+
+- Plugins are pre-packaged, one-click installs from the Codex marketplace
+- MCP servers are more flexible and require a bit more setup but cover anything not in the marketplace
+
+For the YouTube project in this guide, you will use the YouTube Data API (not a plugin — a direct API connection set up through credentials).
+
+---
+
+# Section 11: Connecting to YouTube — The Real Build Starts Here
+
+`Timestamp: 08:04`
+
+The first challenge of the YouTube Comment Intelligence project: how do you actually pull comment data from YouTube?
+
+Nate lets Codex figure this out. He prompts in Plan Mode:
+
+```
+I want to pull in YouTube comments from my channel so we can analyze them.
+Help me figure out the best way to connect to YouTube,
+explain what options are available, and walk me through each step.
+```
+
+Codex explains the options (YouTube Data API, third-party scraping tools, export methods) and Nate chooses the YouTube Data API as the most reliable long-term approach.
+
+**Setting up YouTube API access — step by step:**
+
+**Step 1: Google Cloud Console**
+
+1. Go to [console.cloud.google.com](http://console.cloud.google.com)
+2. Create a new project (or select an existing one)
+3. Search for "YouTube Data API v3" and enable it
+4. Go to Credentials → Create Credentials → API Key
+5. Copy the API key
+
+**Step 2: Give the key to Codex**
+
+Do not paste the API key directly into chat. Instead:
+
+1. Tell Codex to create a `.env` file in the project folder
+2. It will create the file structure: `YOUTUBE_API_KEY=your_key_here`
+3. Your key stays local, never exposed in chat history
+
+**Step 3: Test the connection**
+
+Tell Codex: *"Use the YouTube API key in the .env file to pull the 100 most recent comments from this video: [paste video URL]. Print them to the console."*
+
+If it works, you have a live YouTube connection. If it throws an error, Codex will debug it automatically.
+
+> **Security reminder (ALT: terminal showing .env file with API key — key is blurred):** Always store API keys in `.env` files, never in [AGENTS.md](http://AGENTS.md) or directly in chat prompts. Add `.env` to your `.gitignore` before connecting GitHub.
+> 
+
+---
+
+# Section 12: Comment Insights to Excel
+
+`Timestamp: 21:40`
+
+With YouTube comments flowing in, the next step is structured analysis.
+
+Nate tells Codex to:
+
+1. Pull comments from multiple videos
+2. Run sentiment analysis on each comment
+3. Identify recurring themes and topics
+4. Export everything to an Excel workbook with multiple sheets
+5. Add charts and data visualization to the workbook
+
+**The prompt approach:**
+
+```
+Using the YouTube API connection we set up, pull the last 500 comments
+from my channel across these videos: [list video IDs or URLs].
+
+For each comment:
+- Store the text, author, timestamp, and like count
+- Run basic sentiment analysis (positive, negative, neutral)
+- Identify if it contains a question, feedback, or general comment
+
+Export all of this to an Excel workbook called 'channel_insights.xlsx'.
+Sheet 1: Raw comments with all columns
+Sheet 2: Summary stats (total comments, sentiment breakdown, top themes)
+Sheet 3: A bar chart of sentiment distribution
+
+Use Python with openpyxl or pandas.
+```
+
+Codex will:
+
+1. Write the Python script
+2. Run it locally
+3. Generate the Excel file in your project folder
+4. Show you the output and flag any errors
+
+You do not write a single line of code. You review the output and iterate if needed.
+
+---
+
+# Section 13: Building Reusable Skills — The Multiplier
+
+`Timestamp: 26:44`
+
+This is where Codex gets genuinely powerful. Instead of prompting the same thing repeatedly, you build **skills** — reusable, named workflows that Codex can invoke on command.
+
+**What a skill is:**
+
+A skill is a markdown file (`.md`) that lives in your project's `skills/` folder. It describes a specific capability in structured language. When you reference a skill by name in a prompt, Codex reads that file and uses it as context for how to complete the task.
+
+**The YouTube Comment skill Nate builds:**
+
+```markdown
+# Skill: youtube-comment-analyzer
+
+## Purpose
+Pull YouTube comments from a given channel or video, run sentiment
+analysis, and export results to a structured Excel workbook.
+
+## Trigger
+When the user asks to analyze comments, pull channel insights,
+or update the dashboard data.
+
+## Steps
+1. Read the YOUTUBE_API_KEY from the .env file
+2. Fetch comments using the YouTube Data API v3
+3. Run sentiment scoring (positive/negative/neutral) on each comment
+4. Group by theme using keyword extraction
+5. Write results to channel_insights.xlsx in the /data folder
+6. Update the dashboard data file at /dashboard/data.json
+
+## Parameters
+- video_url: The YouTube URL to pull from (optional — uses channel default if empty)
+- max_comments: Number of comments to pull (default: 500)
+- date_from: Filter to comments after this date (optional)
+
+## Dependencies
+- Python 3.x
+- Libraries: google-api-python-client, openpyxl, pandas, textblob
+- .env file with YOUTUBE_API_KEY set
+```
+
+Once this skill exists, any future prompt like *"run the comment analyzer on my last 3 videos"* automatically uses this full workflow without you re-explaining it.
+
+**The compounding effect:**
+
+Every skill you build is a permanent capability. After a month of building:
+
+- `youtube-comment-analyzer` — pull and analyze comments
+- `dashboard-updater` — refresh the live web dashboard
+- `weekly-report-generator` — compile weekly performance summaries
+- `vercel-deployer` — push and deploy changes to production
+
+You have an AI that knows your full workflow. Each new project takes a fraction of the setup time.
+
+**Skills also work across tools.** Because skills are just markdown files, Claude Code can read and use the same skills that Codex built. The skill library you build in one tool is fully portable.
+
+---
+
+# Section 14: Designing the Dashboard
+
+`Timestamp: 32:46`
+
+The next step is a live web dashboard — a page you can open on your phone from anywhere that shows the YouTube channel analytics in real time.
+
+**Nate's approach to design prompting:**
+
+Do not just say *"build me a dashboard."* Give Codex a complete design brief:
+
+```
+Build a simple, clean web dashboard for YouTube channel analytics.
+
+Design requirements:
+- Dark background (#0f0f0f or similar)
+- Clean sans-serif typography
+- Cards for each metric with a number, label, and small trend indicator
+- One large sentiment chart (use Chart.js or similar)
+- One section showing top comment themes
+- Mobile responsive — must look good on iPhone screen
+- No external CSS frameworks. Plain CSS only.
+
+Data:
+- Read from /data/channel_insights.json
+- Auto-refresh every 60 minutes
+
+Stack:
+- HTML, CSS, JavaScript
+- No build process — a single index.html file that opens directly in a browser
+
+Do not use purple gradients or Inter font.
+```
+
+That last line is a Nate Herk signature move — preventing the generic AI UI defaults.
+
+Codex will generate the full HTML/CSS/JS file. You can preview it directly in the Codex app's built-in [localhost](http://localhost) browser without leaving the interface.
+
+**Iterating on the design:**
+
+Once the first version renders, describe what you want changed in plain English:
+
+- *"Make the cards slightly larger with more padding"*
+- *"The chart colors are too similar — use more contrast"*
+- *"The mobile layout is broken below 375px width"*
+
+Codex edits the file and the preview updates. No build step. No terminal commands.
+
+---
+
+# Section 15: Deploying with GitHub and Vercel
+
+`Timestamp: 38:50`
+
+Once the dashboard looks good locally, you deploy it to Vercel so it lives on the web. Nate uses a two-step approach: push to GitHub, then connect GitHub to Vercel.
+
+**Step 1: Initialize Git in your project**
+
+Tell Codex:
+
+```
+Initialize a Git repository in this project folder.
+Create a .gitignore that excludes: .env, node_modules, __pycache__,
+any .xlsx or .csv data files.
+Make the first commit with all current files.
+```
+
+Codex runs `git init`, creates the `.gitignore`, and makes the initial commit.
+
+**Step 2: Push to GitHub**
+
+```
+Create a new private GitHub repository called 'youtube-analytics-dashboard'
+and push this project to it.
+```
+
+For this to work, you need GitHub connected. Either:
+
+- Install the GitHub plugin from the Codex plugin marketplace, or
+- Have your GitHub SSH key or token configured in your terminal environment
+
+Codex handles the `git remote add origin`, `git push`, and confirms success.
+
+**Step 3: Deploy on Vercel**
+
+1. Go to [vercel.com](http://vercel.com)
+2. Click **Add New Project**
+3. Import the GitHub repository you just pushed
+4. Vercel detects it is a static HTML site and configures automatically
+5. Click Deploy
+6. Your dashboard is live at a `*.vercel.app` URL in under 2 minutes
+
+Nate also installs the Vercel plugin in Codex so future deployments can be triggered directly from a chat prompt:
+
+```
+Deploy the latest version of the dashboard to Vercel.
+```
+
+Codex handles the rest.
+
+**Custom domain (optional):**
+
+If you want it on your own domain instead of the Vercel subdomain, connect your domain in Vercel's project settings. Vercel handles SSL automatically.
+
+---
+
+# Section 16: Weekly Automations — Running While You Sleep
+
+`Timestamp: 44:23`
+
+The YouTube dashboard is live. But right now, the data only updates when you manually run the comment analyzer. Nate fixes this with a weekly automation.
+
+**The goal:** Every Monday at 7am, the system should automatically pull fresh comments, update the Excel file, regenerate the dashboard data, and push the updated dashboard to Vercel.
+
+**Setting this up in Codex:**
+
+```
+Create a weekly automation that runs every Monday at 7am.
+
+It should:
+1. Run the youtube-comment-analyzer skill with these parameters:
+   - Pull from the last 7 days of comments
+   - Max 1000 comments
+2. Update the channel_insights.json data file
+3. Regenerate the dashboard with the new data
+4. Push the updated dashboard to Vercel
+5. Send me a summary email when complete
+
+Write this as a cron job or scheduled script that can run locally
+or via GitHub Actions. I prefer GitHub Actions so it runs in the cloud.
+```
+
+**What Codex generates:**
+
+A GitHub Actions YAML file (`.github/workflows/weekly-update.yml`) that:
+
+1. Triggers every Monday at 7am UTC
+2. Checks out your repo
+3. Runs the Python comment analyzer script
+4. Commits the updated data files
+5. Triggers a Vercel deployment
+6. Optionally sends a completion notification
+
+Push this file to GitHub and the automation runs in the cloud — no machine needs to be on.
+
+**ALT: GitHub Actions workflow showing cron schedule and step-by-step job execution**
+
+> **The big picture:** You set this up once. Every week, fresh data appears on your dashboard automatically. The system runs whether you are working, traveling, or sleeping. This is what Nate means by *agentic automation* — the agent works on your behalf without you initiating each run.
+> 
+
+---
+
+# Section 17: Browser Use and QA Testing
+
+`Timestamp: 48:25`
+
+The final piece of the project: making sure the deployed dashboard actually works correctly after every update.
+
+Codex can control a browser — moving the mouse, clicking elements, filling forms, reading what appears on screen. Nate uses this for automated QA testing.
+
+**How browser use works in Codex:**
+
+1. The Codex app has a built-in [localhost](http://localhost) browser visible in the interface
+2. When you ask Codex to test something, it spins up a browser session
+3. You can see the mouse cursor moving and clicking in real time
+4. Codex navigates, checks elements, reads text, and reports what it finds
+
+**The QA prompt Nate uses:**
+
+```
+Open the deployed dashboard at [your-vercel-url].
+
+QA test the following:
+1. Confirm the page loads successfully (no blank screens or error messages)
+2. Check that all 4 metric cards display numbers (not "undefined" or empty)
+3. Verify the sentiment chart renders with data
+4. Resize the browser to 375px width and check mobile layout
+5. Click through any interactive elements and confirm they work
+6. Check that the "Last updated" timestamp shows today's date
+
+Report any issues you find with specific descriptions of what is broken
+and where on the page it appears.
+```
+
+Codex opens the browser, works through each check, and returns a report. If it finds a broken element, it describes exactly what is wrong. You can then prompt it to fix the issue in the code and re-test.
+
+**Scheduling QA as part of the automation:**
+
+Add a QA step to your GitHub Actions workflow:
+
+- After each weekly data update and Vercel deployment
+- Wait 2 minutes for the deployment to go live
+- Run a headless Playwright or Puppeteer QA script
+- If QA fails, send an alert email instead of a success notification
+
+Now the system not only runs itself, it verifies that it ran correctly.
+
+---
+
+# Section 18: Pro Settings and Tips
+
+## Sandbox and Approval Modes
+
+Codex has three sandbox modes that control how much access it has:
+
+| Mode | What Codex Can Do | When to Use |
+| --- | --- | --- |
+| workspace-write (Default) | Read and edit files in the current project folder. Asks before accessing the internet or running commands outside the workspace. | Most everyday work. Safe default. |
+| Read Only | Can only read files. Cannot write, edit, or run anything. | When you want to ask questions about a codebase without risk of changes. |
+| Full Access / danger-full-access | Reads, edits, runs commands, accesses the internet — no approval prompts. | Controlled environments where you trust the workflow fully. Not for everyday use. |
+
+Switch modes during a session with the `/permissions` command in the Codex chat.
+
+For permanent defaults, edit `~/.codex/config.toml`:
+
+```toml
+[defaults]
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+```
+
+## config.toml — Your Permanent Settings File
+
+Everything you want Codex to do consistently across all sessions goes in `~/.codex/config.toml`:
+
+```toml
+[defaults]
+model = "gpt-5.5"
+intelligence = "medium"
+sandbox_mode = "workspace-write"
+
+[agents_md]
+fallback_filenames = ["AGENTS.md", "TEAM_GUIDE.md"]
+```
+
+## The `/permissions` Command
+
+During any session, type `/permissions` to see and change sandbox settings without leaving the chat. Useful when a task needs more access than your default settings allow.
+
+## Voice Input
+
+Nate uses Glido for voice-to-text input. Instead of typing long prompts, he speaks them. The transcription goes directly into the Codex prompt field. Worth considering for planning sessions where you want to think out loud naturally.
+
+---
+
+# Section 19: Frequently Asked Questions
+
+*This section is written to answer the exact questions people ask AI assistants about Codex — covering the search queries most likely to get this guide cited as a source.*
+
+**What is the difference between OpenAI Codex and ChatGPT?**
+
+ChatGPT is a browser-based AI chat tool. You type, it responds, you do the rest manually. OpenAI Codex is an agentic tool that can read your files, write code, run commands, automate a browser, and deploy software on your behalf. ChatGPT has a brain. Codex has a brain plus hands.
+
+**Do I need coding experience to use OpenAI Codex?**
+
+No. Nate's entire course is built around plain-English prompting. You describe what you want, Codex writes the code, runs it, and fixes errors. You review the output and describe what to change. Basic familiarity with file systems and terminals helps, but is not required for the desktop app.
+
+**Is OpenAI Codex the same as the old Codex API that shut down?**
+
+No. The old OpenAI Codex was a code-completion API that was deprecated in 2023. The current Codex (2025/2026) is a completely different product — a full agentic coding tool built for local execution. Same name, entirely different thing.
+
+**What does [AGENTS.md](http://AGENTS.md) do in OpenAI Codex?**
+
+[AGENTS.md](http://AGENTS.md) is a markdown file that sits in your project folder. Codex reads it automatically at the start of every new chat session. It works like a permanent brief — telling Codex who you are, what the project is, and how you want it to work. It is the equivalent of [CLAUDE.md](http://CLAUDE.md) in Claude Code.
+
+**What is Plan Mode in Codex?**
+
+Plan Mode prevents Codex from executing anything. When enabled, Codex will only think and plan — no files written, no commands run. It is used at the start of any significant build to agree on approach before touching anything. Nate always starts new builds in Plan Mode.
+
+**Can I use OpenAI Codex and Claude Code on the same project?**
+
+Yes. Both tools work with local file systems. If they are pointed at the same project folder, they can both read and edit the same files. [AGENTS.md](http://AGENTS.md) (read by Codex) and [CLAUDE.md](http://CLAUDE.md) (read by Claude Code) can coexist in the same folder. Many developers use both for different strengths.
+
+**How do I deploy a Codex project to Vercel?**
+
+The simplest path: initialize Git in your project, push to a GitHub repository, connect that repository to Vercel, and click Deploy. Alternatively, install the Vercel plugin in Codex and prompt it to deploy directly from chat. Vercel handles hosting, SSL, and CDN automatically.
+
+**How do I make Codex run tasks automatically on a schedule?**
+
+Use GitHub Actions. Codex can write the YAML workflow file for you. Specify the cron schedule, the scripts to run, and the actions to take (update data, deploy to Vercel, send notifications). Once the file is in your GitHub repo, the automation runs in the cloud on the schedule you set — no local machine required.
+
+**What is browser use in Codex?**
+
+Browser use is Codex's ability to control a web browser — moving the mouse, clicking elements, reading page content. Inside the desktop app, you can watch this happen in real time via the built-in browser preview. It is used for QA testing, web scraping, form automation, and any task that requires interacting with a webpage.
+
+**What is the best intelligence setting to use in Codex?**
+
+Nate's rule: Medium for planning and brainstorming, High for complex builds, Extra High only when stuck on a bug that lower settings cannot solve. Extra High is significantly more token-intensive — do not use it by default.
+
+**Can Codex read my local files?**
+
+Yes. This is one of Codex's core capabilities. Point it at any folder and it can read, parse, analyze, move, edit, and organize the files inside. It uses this for tasks like reading your transcripts to learn your voice, analyzing data files, or loading skill definitions.
+
+---
+
+## What to Read Next
+
+- [50 Best Claude Code Skills — Complete Reference](https://www.notion.so/50-Best-Claude-Code-Skills-The-Complete-Reference-22671c3415fd464594824a183b58997d?pvs=21) — If you are using Claude Code alongside Codex, this is the skill library you need
+- [SEO + AI Automation Masterclass](https://www.notion.so/SEO-AI-Automation-Masterclass-Everything-from-Vasco-s-Channel-a69f56df077f4165873d4f5926010904?pvs=21) — How to rank the projects and tools you build with Codex
+- OpenAI Codex official documentation: [developers.openai.com/codex](http://developers.openai.com/codex)
+- GitHub repository (open source CLI): [github.com/openai/codex](http://github.com/openai/codex)
+
+---
+
+## Course Timestamps Reference
+
+| Timestamp | Topic | Guide Section |
+| --- | --- | --- |
+| 00:00 | What is Codex | Section 1 |
+| 04:02 | What We're Building | Section 7 + Overview |
+| 07:34 | Free Resources | — |
+| 08:04 | Connecting to YouTube | Section 11 |
+| 12:36 | Plan Mode and API Setup | Section 9 |
+| 21:40 | Comment Insights Excel | Section 12 |
+| 26:44 | Building Reusable Skills | Section 13 |
+| 32:46 | Designing the Dashboard | Section 14 |
+| 38:50 | Deploying with GitHub and Vercel | Section 15 |
+| 44:23 | Weekly Automations | Section 16 |
+| 48:25 | Browser Use and QA | Section 17 |
+| 57:59 | Final Thoughts | — |
+
+---
+
+*Guide built by Muhammad Shadab Shams | AI Automation Expert | [aifloxium.online](http://aifloxium.online) | Building [ApePublish](https://apepublish.com) | [X @ShadabLoveAi](https://x.com/ShadabLoveAi) | [LinkedIn](https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/)*
+
+*Source: [Master 97% of Codex in 1 Hour](https://youtu.be/3TdD8Qv5Tk8) by Nate Herk | AI Automation*
