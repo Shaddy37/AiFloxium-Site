@@ -6,37 +6,95 @@ import { Process } from "@/components/sections/HomeSections";
 import { StickyFeatureSection } from "@/components/ui/sticky-scroll-cards-section";
 import { Contact2 } from "@/components/ui/contact-2";
 import { CheckCircle2 } from "lucide-react";
-import { PERSON_NAME, SITE_URL } from "@/lib/site";
+import { PERSON_NAME } from "@/lib/site";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: `Services | ${PERSON_NAME}`,
-  description: 'Automation systems, internal tools, voice workflows, SEO systems, and product-minded implementation support for startups and SMBs.',
-  keywords: ['AI automation services', 'n8n workflow automation', 'AI workflow automation', 'AI skills'],
-  openGraph: {
-    title: `Services | ${PERSON_NAME}`,
-    description: 'Automation systems, internal tools, voice workflows, SEO systems, and product-minded implementation support.',
-    type: 'website',
-    url: `${SITE_URL}/services`,
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AI Skills & Automation Services',
-      },
-    ],
+  description:
+    'Automation systems, internal tools, voice workflows, SEO systems, and product-minded implementation support for startups and SMBs.',
+  path: '/services',
+  keywords: [
+    'AI automation services',
+    'n8n workflow automation',
+    'AI workflow automation',
+    'AI skills'
+  ]
+});
+
+const serviceFaqs = [
+  {
+    q: "How do you handle sensitive business data?",
+    a: "I design around the tools and hosting model that fit the project. When data is sensitive, I keep the implementation explicit about where data flows and what touches third-party services."
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Services | ${PERSON_NAME}`,
-    description: 'Automation systems, internal tools, voice workflows, SEO systems, and product-minded implementation support.',
-    images: ['/og-image.jpg'],
+  {
+    q: "How long does a typical project take?",
+    a: "Smaller workflow builds can move quickly. Larger internal tools, agentic systems, or multi-step integrations take longer depending on scope, handoff needs, and number of moving parts."
   },
+  {
+    q: "Do you support what you build after launch?",
+    a: "Yes. I can stay involved for stabilization, iteration, and support, or hand the system over cleanly if your team wants to run it."
+  },
+  {
+    q: "Can you work with our existing stack?",
+    a: "Usually yes. A lot of the job is integrating what already exists so the business gets leverage without a total rebuild."
+  }
+];
+
+const servicesPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ItemList',
+      name: 'AIFLOXIUM Services',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'n8n Workflow Automation',
+          url: absoluteUrl('/services/n8n-workflow-automation')
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Autonomous Voice Agents',
+          url: absoluteUrl('/services/autonomous-voice-agents')
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Vibe Coding (Claude)',
+          url: absoluteUrl('/services/vibe-coding')
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: 'AI-Powered SEO',
+          url: absoluteUrl('/services/seo-optimization')
+        }
+      ]
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: serviceFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a
+        }
+      }))
+    }
+  ]
 };
 
 export default function ServicesPage() {
   return (
     <main className="relative bg-brand-bg min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageJsonLd) }}
+      />
       <Navbar />
       
       {/* Dark Cinematic Hero */}
@@ -65,12 +123,7 @@ export default function ServicesPage() {
              <p className="text-zinc-600 font-medium leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
-            {[
-              { q: "How do you handle sensitive business data?", a: "I design around the tools and hosting model that fit the project. When data is sensitive, I keep the implementation explicit about where data flows and what touches third-party services." },
-              { q: "How long does a typical project take?", a: "Smaller workflow builds can move quickly. Larger internal tools, agentic systems, or multi-step integrations take longer depending on scope, handoff needs, and number of moving parts." },
-              { q: "Do you support what you build after launch?", a: "Yes. I can stay involved for stabilization, iteration, and support, or hand the system over cleanly if your team wants to run it." },
-              { q: "Can you work with our existing stack?", a: "Usually yes. A lot of the job is integrating what already exists so the business gets leverage without a total rebuild." }
-            ].map((faq, i) => (
+            {serviceFaqs.map((faq, i) => (
                <div key={i} className="group p-8 bg-gray-50 border border-gray-200 hover:border-brand-plum/30 transition-all duration-300">
                   <h3 className="text-xl font-black font-heading mb-4 flex items-center gap-4 text-brand-plum group-hover:text-brand-orange transition-colors">
                      <CheckCircle2 className="text-brand-orange shrink-0 group-hover:scale-110 transition-transform" />

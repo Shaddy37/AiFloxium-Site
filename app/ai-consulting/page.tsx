@@ -4,24 +4,20 @@ import Footer from "@/components/sections/Footer";
 import { Trust, Pricing } from "@/components/sections/HomeSections";
 import { Contact2 } from "@/components/ui/contact-2";
 import { RadarScanner } from "@/components/sections/RadarScanner";
-import { PERSON_NAME, SITE_URL } from "@/lib/site";
+import { PERSON_NAME } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: `AI Consulting | ${PERSON_NAME}`,
-  description: 'Advisory for teams planning automation, internal tools, AI workflows, or product execution without guessing their next move.',
-  keywords: ['AI consulting for business automation', 'AI digital transformation consultancy', 'how to automate enterprise business processes with AI'],
-  openGraph: {
-    title: `AI Consulting | ${PERSON_NAME}`,
-    description: 'Advisory for teams planning automation, internal tools, AI workflows, or product execution.',
-    type: 'website',
-    url: `${SITE_URL}/ai-consulting`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `AI Consulting | ${PERSON_NAME}`,
-    description: 'Advisory for teams planning automation, internal tools, AI workflows, or product execution.',
-  },
-};
+  description:
+    'Advisory for teams planning automation, internal tools, AI workflows, or product execution without guessing their next move.',
+  path: '/ai-consulting',
+  keywords: [
+    'AI consulting for business automation',
+    'AI digital transformation consultancy',
+    'how to automate enterprise business processes with AI'
+  ]
+});
 
 export default function AIConsultingPage() {
   return (

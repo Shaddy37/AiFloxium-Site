@@ -1,24 +1,48 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Contact2 } from "@/components/ui/contact-2";
-import { ArrowRight, Clock, Calendar, User, Zap, ChevronRight, Search } from "lucide-react";
+import { ArrowRight, Calendar, Zap, ChevronRight } from "lucide-react";
 import { getAllPosts } from "@/lib/mdx";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: 'Blog | AIFLOXIUM - AI Automation & Advanced Infrastructure',
-  description: 'Deep-dives into AI agents, n8n workflows, LinkedIn automation, and the future of autonomous business systems.',
-  alternates: {
-    canonical: '/blog',
-  },
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Blog | AIFLOXIUM AI Automation Insights',
+  description:
+    'Deep-dives into AI agents, n8n workflows, LinkedIn automation, ecommerce automations, and the future of autonomous business systems.',
+  path: '/blog',
+  keywords: [
+    'AI automation blog',
+    'n8n workflow tutorials',
+    'AI agents guide',
+    'ecommerce automation',
+    'technical SEO automation'
+  ]
+});
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
+  const blogIndexJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'AIFLOXIUM Blog Posts',
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: absoluteUrl(`/blog/${post.slug}`),
+      name: post.frontmatter.title,
+      description: post.frontmatter.description
+    }))
+  };
 
   return (
     <main className="relative bg-brand-bg min-h-screen text-zinc-300 font-medium selection:bg-brand-orange selection:text-black overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexJsonLd) }}
+      />
       <Navbar />
       
       {/* Blog Hero */}
@@ -35,7 +59,7 @@ export default async function BlogPage() {
           </h1>
           
           <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed italic border-l-2 border-zinc-800 pl-8 animate-fade-in delay-200">
-            &quot;Decodifying the engineering behind autonomous systems and cognitive orchestration.&quot;
+            &quot;Decoding the engineering behind autonomous systems, workflow automation, and practical AI execution.&quot;
           </p>
         </div>
       </section>
@@ -47,12 +71,14 @@ export default async function BlogPage() {
             <Link href={`/blog/${posts[0].slug}`} className="group block relative overflow-hidden rounded-[3rem] border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-xl hover:bg-brand-plum/10 transition-colors">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="aspect-[16/10] lg:aspect-auto relative overflow-hidden order-1 lg:order-2 bg-brand-bg/50">
-                   <div className="absolute inset-0 bg-gradient-to-t from-brand-bg to-transparent z-10 opacity-80" />
-                   <div className="absolute inset-0 bg-brand-plum/10 animate-pulse" />
-                   {/* Placeholder for real image in the future */}
-                   <div className="absolute inset-0 flex items-center justify-center">
-                     <Zap className="w-24 h-24 text-brand-plum opacity-20" />
-                   </div>
+                   <div className="absolute inset-0 z-10 bg-gradient-to-t from-brand-bg via-brand-bg/30 to-transparent opacity-80" />
+                   <Image
+                     src={posts[0].frontmatter.image || '/brand/aifloxium-logo.png'}
+                     alt={posts[0].frontmatter.title}
+                     fill
+                     className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.03]"
+                     sizes="(max-width: 1024px) 100vw, 50vw"
+                   />
                 </div>
                 
                 <div className="p-12 md:p-16 flex flex-col justify-center order-2 lg:order-1">
@@ -92,15 +118,11 @@ export default async function BlogPage() {
                <p className="text-black font-bold">Technological explorations in neural workflows, agentic reasoning, and scalable AI architectures.</p>
              </div>
              
-             {/* Search/Filter Simulation */}
-             <div className="relative group">
-               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black/50" />
-               <input 
-                  type="text" 
-                  placeholder="SEARCH PAPERS..." 
-                  className="bg-gray-50 border border-gray-200 rounded-full pl-12 pr-6 py-4 text-[10px] font-mono tracking-widest text-black w-full md:w-64 focus:outline-none focus:border-brand-orange/40 transition-all uppercase"
-               />
-             </div>
+             <p className="max-w-sm text-sm font-medium leading-relaxed text-zinc-600">
+               Detailed breakdowns of AI workflows, SEO systems, agents, and internal
+               tooling. Each post is written to help operators make a better technical
+               decision, not just skim a trend.
+             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -110,6 +132,15 @@ export default async function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="group p-8 md:p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:border-brand-plum/30 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-20px_rgba(88,28,135,0.15)]"
               >
+                <div className="relative mb-8 aspect-[16/10] overflow-hidden rounded-[1.75rem] border border-brand-plum/10 bg-white">
+                  <Image
+                    src={post.frontmatter.image || '/brand/aifloxium-logo.png'}
+                    alt={post.frontmatter.title}
+                    fill
+                    className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="px-3 py-1 rounded-full bg-white text-[10px] font-mono text-black border border-brand-plum/10 uppercase tracking-widest">
                     {post.frontmatter.category}

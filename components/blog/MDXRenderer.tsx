@@ -2,6 +2,7 @@
 
 import React, { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
+import Image from "next/image";
 import { PremiumCTA } from "./PremiumCTA";
 import { ImpactStats } from "./ImpactStats";
 import { CodeBlock } from "./CodeBlock";
@@ -161,10 +162,13 @@ const components = {
   ),
   img: (props: ComponentPropsWithoutRef<"img">) => (
     <div className="my-10 relative rounded-[2.5rem] overflow-hidden border border-zinc-100 shadow-lg">
-      <img 
-        className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700" 
-        loading="lazy"
-        {...props} 
+      <Image
+        src={props.src || '/og-image.jpg'}
+        alt={props.alt || ''}
+        width={1600}
+        height={900}
+        className="h-auto w-full object-cover hover:scale-105 transition-transform duration-700"
+        sizes="(max-width: 768px) 100vw, 900px"
       />
     </div>
   ),

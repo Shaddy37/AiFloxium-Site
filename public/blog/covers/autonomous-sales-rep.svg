@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1017"/>
+      <stop offset="55%" stop-color="#241134"/>
+      <stop offset="100%" stop-color="#6e2419"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="540" r="230" fill="#ff7a18" fill-opacity="0.12"/>
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#090b10" fill-opacity="0.24" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="118" y="148" fill="#ffc8a5" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">AIFLOXIUM / OUTBOUND SYSTEMS</text>
+  <text x="118" y="246" fill="#ffffff" font-family="Arial, sans-serif" font-size="68" font-weight="800">The Autonomous</text>
+  <text x="118" y="324" fill="#ffffff" font-family="Arial, sans-serif" font-size="68" font-weight="800">Sales Rep</text>
+  <text x="118" y="408" fill="#f7e8ee" font-family="Arial, sans-serif" font-size="30" font-weight="600">A technical treatise on SDR obsolescence.</text>
+  <text x="118" y="464" fill="#ffffff" fill-opacity="0.8" font-family="Arial, sans-serif" font-size="24" font-weight="500">Agentic research, personalization depth, and zero-overhead outbound architecture.</text>
+</svg>

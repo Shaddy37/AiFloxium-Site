@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
+import { PERSON_NAME } from '@/lib/site';
+import { absoluteUrl, buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -19,32 +21,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    return { title: 'Post Not Found | AIFLOXIUM' };
+    return buildPageMetadata({
+      title: 'Post Not Found | AIFLOXIUM',
+      description: 'The requested blog post could not be found.',
+      noIndex: true
+    });
   }
 
-  const { title, description, image } = post.frontmatter;
+  const { title, description, image, canonicalUrl, keywords, date, updatedAt } =
+    post.frontmatter;
 
-  return {
+  return buildPageMetadata({
     title: `${title} | AIFLOXIUM`,
     description,
-    alternates: {
-      canonical: `/blog/${slug}`,
-    },
-    openGraph: {
-      title: `${title} | AIFLOXIUM`,
-      description,
-      type: 'article',
-      url: `https://aifloxium.online/blog/${slug}`,
-      images: [{ url: image || '/og-image.jpg' }],
-      authors: ['Muhammad Shadab Shams'],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} | AIFLOXIUM`,
-      description,
-      images: [image || '/og-image.jpg'],
-    },
-  };
+    path: canonicalUrl || `/blog/${slug}`,
+    type: 'article',
+    images: [image || '/brand/aifloxium-logo.png'],
+    keywords,
+    publishedTime: date,
+    modifiedTime: updatedAt || date
+  });
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -55,32 +51,54 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const { title, description, image, date, author } = post.frontmatter;
+  const {
+    title,
+    description,
+    image,
+    date,
+    author,
+    canonicalUrl,
+    updatedAt
+  } = post.frontmatter;
+
+  const postUrl = absoluteUrl(canonicalUrl || `/blog/${slug}`);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: title, path: canonicalUrl || `/blog/${slug}` }
+  ]);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": title,
     "description": description,
-    "image": image || "/og-image.jpg",
+    "image": absoluteUrl(image || "/brand/aifloxium-logo.png"),
     "datePublished": date,
+    "dateModified": updatedAt || date,
     "author": {
       "@type": "Person",
-      "name": author || "Muhammad Shadab Shams",
+      "name": author || PERSON_NAME,
     },
     "publisher": {
       "@type": "Organization",
       "name": "AIFLOXIUM",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://aifloxium.online/favicon.ico"
+        "url": absoluteUrl('/brand/aifloxium-logo.png')
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://aifloxium.online/blog/${slug}`
+      "@id": postUrl
     }
   };
 
-  return <BlogPostLayout code={post.code} frontmatter={post.frontmatter} jsonLd={jsonLd} />;
+  return (
+    <BlogPostLayout
+      code={post.code}
+      frontmatter={post.frontmatter}
+      jsonLd={[jsonLd, breadcrumbJsonLd]}
+    />
+  );
 }

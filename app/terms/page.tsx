@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms of Use | AIFLOXIUM - AI Automation by Muhammad Shadab Shams",
-  description: "Terms of Use for AIFLOXIUM AI Automation Agency - Terms and conditions governing the use of our services.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Terms of Use | AIFLOXIUM',
+  description:
+    'Terms of use for AIFLOXIUM services, deliverables, and website access.',
+  path: '/terms'
+});
 
 export default function TermsPage() {
   return (

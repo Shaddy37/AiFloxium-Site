@@ -71,6 +71,55 @@ These are allowed because they improve publishing quality without rewriting the 
 - Keep visuals clean, diagrammatic, and professional. Avoid generic stock-looking output.
 - Store new assets in `public/blog/<slug>/`.
 
+### 5A. Main Cover Image Rules
+
+- Every published post must have one main cover image referenced by frontmatter `image:`.
+- The main cover image is not optional when converting a draft unless the user explicitly tells you to skip it.
+- Save the main cover in `public/blog/<slug>/` when the post has its own asset folder, or in the current shared cover location used by the project if that pattern is already established.
+- Prefer a 1200x630 social-safe aspect ratio for the main cover so the same asset works for:
+  - blog index cards
+  - single-post hero image
+  - OpenGraph and Twitter previews
+- Do not rely on externally hosted stock images when you are expected to generate the post visual yourself.
+
+### 5B. Cover Composition Standard
+
+- Use a clean 2D editorial cover, not a photo collage.
+- The cover should communicate the topic first and branding second.
+- If founder artwork is used, keep it secondary unless the user explicitly wants a portrait-led cover.
+- Prefer:
+  - short eyebrow or category label
+  - 1-2 line headline maximum
+  - 1 short supporting line if needed
+  - strong contrast background
+  - generous safe margins on all sides
+- Avoid:
+  - paragraphs on the image
+  - tiny body text
+  - more than 3 major text blocks
+  - text touching rounded corners or outer edges
+  - visuals that depend on embedded external images inside SVGs unless you are sure the project renderer supports them
+
+### 5C. Text-Fit Constraints For Cover Images
+
+- Assume the image may be shown in cropped cards, responsive containers, and social previews.
+- Keep all important text inside a conservative safe area.
+- Use these practical constraints:
+  - headline should usually stay at or below 2 lines
+  - supporting line should usually stay at or below 1 line
+  - bottom text must not sit too close to the lower edge
+  - leave enough empty space that `object-contain` and `object-cover` both remain readable if the layout changes later
+- If the title is too long, shorten the on-image wording while keeping the article title unchanged in metadata and body content.
+- The cover image may use a tighter visual title than the full SEO title when necessary for readability.
+
+### 5D. Implementation Rules For Generated Covers
+
+- After generating a main image, update the post frontmatter `image:` path immediately.
+- Make sure the referenced path is local and actually exists.
+- If the post uses a dedicated route with custom metadata, update its OG/Twitter image references too.
+- If the shared blog layout already renders `frontmatter.image`, reuse that instead of inventing a one-off rendering path.
+- If the shared layout does not render the main cover yet, update the layout as part of the conversion task so published posts visibly show their cover image.
+
 ### 6. SEO and Schema
 
 - Apply title, description, canonical, OpenGraph, Twitter, keywords, and other metadata from the SEO package exactly when provided.
@@ -93,6 +142,8 @@ Before claiming completion:
 - check for unresolved placeholders
 - check for dead internal links you introduced
 - check that all referenced local image paths exist
+- check that the main cover image text is readable at blog-card scale and social-preview scale
+- check that the cover does not depend on a broken nested asset reference
 - check that the slug does not conflict with dynamic/static routing
 - if Node tooling is unavailable, state that verification limit explicitly
 

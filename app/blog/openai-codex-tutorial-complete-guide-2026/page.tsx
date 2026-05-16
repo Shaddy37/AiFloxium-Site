@@ -9,7 +9,7 @@ const TITLE = 'OpenAI Codex Tutorial: Zero to Deployed App in 1 Hour (2026 Compl
 const DESCRIPTION =
   'Learn OpenAI Codex from scratch. This hands-on guide covers setup, AGENTS.md, Plan Mode, reusable skills, GitHub + Vercel deployment, browser automation, and weekly task scheduling in a complete practical walkthrough.';
 const CANONICAL = 'https://aifloxium.online/blog/openai-codex-tutorial-complete-guide-2026';
-const IMAGE = 'https://aifloxium.online/blog/openai-codex/codex-desktop-interface.svg';
+const IMAGE = 'https://aifloxium.online/blog/covers/openai-codex-tutorial-complete-guide-2026.svg';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -126,7 +126,7 @@ export default async function OpenAICodexTutorialPage() {
           name: 'AIFLOXIUM',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://aifloxium.online/favicon.ico',
+            url: 'https://aifloxium.online/brand/aifloxium-logo.png',
           },
         },
         url: CANONICAL,

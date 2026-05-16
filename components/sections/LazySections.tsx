@@ -1,13 +1,6 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const Process = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Process), { ssr: false });
-const RuixenBentoCards = dynamic(() => import("@/components/ui/ruixen-bento-cards"), { ssr: false });
-const FeaturedProduct = dynamic(() => import("@/components/sections/FeaturedProduct"), { ssr: false });
-const Trust = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Trust), { ssr: false });
-const TechStack = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.TechStack), { ssr: false });
-const Pricing = dynamic(() => import("@/components/sections/HomeSections").then(mod => mod.Pricing), { ssr: false });
+import FeaturedProduct from '@/components/sections/FeaturedProduct';
+import { Pricing, Process, TechStack, Trust } from '@/components/sections/HomeSections';
+import RuixenBentoCards from '@/components/ui/ruixen-bento-cards';
 
 export function LazySections() {
   return (

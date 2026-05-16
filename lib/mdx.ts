@@ -10,9 +10,14 @@ const POSTS_PATH = path.join(process.cwd(), "lib/content/posts");
 export interface PostFrontmatter {
   title: string;
   date: string;
-  excerpt: string;
+  description: string;
   coverImage?: string;
+  image?: string;
+  author?: string;
   category?: string;
+  canonicalUrl?: string;
+  keywords?: string[];
+  updatedAt?: string;
   [key: string]: any;
 }
 

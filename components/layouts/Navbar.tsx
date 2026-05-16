@@ -1,13 +1,14 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
-import { BRAND_NAME, PERSON_NAME } from '@/lib/site';
+import { BRAND_NAME, BRAND_SIGNATURE_NAME } from '@/lib/site';
 
 const links = [
   { name: "Projects", href: "/projects" },
@@ -129,8 +130,17 @@ export default function Navbar() {
           <motion.div 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative"
+            className="relative flex items-center gap-3"
           >
+            <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+              <Image
+                src="/brand/aifloxium-logo.png"
+                alt="AIFLOXIUM founder logo"
+                fill
+                className="object-contain"
+                sizes="40px"
+              />
+            </div>
             <div className="flex flex-col leading-none">
               <span className={cn(
               "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
@@ -146,7 +156,7 @@ export default function Navbar() {
                   isLight && !open ? 'text-zinc-500' : 'text-zinc-500'
                 )}
               >
-                by {PERSON_NAME.split(' ')[0]}
+                by {BRAND_SIGNATURE_NAME}
               </span>
             </div>
           </motion.div>

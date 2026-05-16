@@ -4,37 +4,23 @@ import Footer from "@/components/sections/Footer";
 import { Contact2 } from "@/components/ui/contact-2";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Resources | Free & Premium AI Automation Tools | Aifloxium",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Resources | Free and Premium AI Automation Tools | AIFLOXIUM',
   description:
-    "Explore curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides. Free and premium resources to supercharge your AI workflow.",
+    'Explore curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides. Free and premium resources to supercharge your AI workflow.',
+  path: '/resources',
   keywords: [
-    "n8n automation workflows",
-    "Claude Code skills",
-    "Claude agents",
-    "Notion guides",
-    "AI automation resources",
-    "free automation templates",
-    "Claude Code templates",
-  ],
-  alternates: {
-    canonical: '/resources',
-  },
-  openGraph: {
-    title: "Resources | Free & Premium AI Automation Tools | Aifloxium",
-    description:
-      "Curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides, free and premium.",
-    type: "website",
-    url: "https://aifloxium.online/resources",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Resources | Free & Premium AI Automation Tools | Aifloxium",
-    description:
-      "Curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides.",
-  },
-};
+    'n8n automation workflows',
+    'Claude Code skills',
+    'Claude agents',
+    'Notion guides',
+    'AI automation resources',
+    'free automation templates',
+    'Claude Code templates'
+  ]
+});
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Data

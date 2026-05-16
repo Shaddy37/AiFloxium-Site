@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "DMCA Policy | AIFLOXIUM - AI Automation by Muhammad Shadab Shams",
-  description: "DMCA Copyright Policy for AIFLOXIUM AI Automation Agency - Information about our copyright protection and takedown procedures.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: 'DMCA Policy | AIFLOXIUM',
+  description:
+    'DMCA copyright policy for AIFLOXIUM, including takedown and counter-notification procedures.',
+  path: '/dmca'
+});
 
 export default function DmcaPage() {
   return (

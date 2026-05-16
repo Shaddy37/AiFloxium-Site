@@ -6,6 +6,7 @@ import Footer from "@/components/sections/Footer";
 import { servicesData } from "@/lib/services-data";
 import { ArrowRight, ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
 import { BRAND_NAME, PERSON_NAME, SITE_URL } from "@/lib/site";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,17 +19,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = servicesData.find((s) => s.slug === slug);
   if (!service) return {};
   return {
-    title: `${service.title} | ${PERSON_NAME}`,
-    description: service.description,
-    alternates: {
-      canonical: `/services/${slug}`,
-    },
-    openGraph: {
+    ...buildPageMetadata({
       title: `${service.title} | ${PERSON_NAME}`,
       description: service.description,
-      type: "website",
-      url: `${SITE_URL}/services/${slug}`,
-    },
+      path: `/services/${slug}`,
+      keywords: [service.title, 'AI automation services', 'workflow automation', 'AIFLOXIUM']
+    }),
+    other: {
+      'service-price-note': service.description
+    }
   };
 }
 
@@ -69,11 +68,38 @@ export default async function ServicePage({ params }: Props) {
     }
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: service.title, path: `/services/${slug}` }
+  ]);
+
   return (
     <main className="relative bg-brand-bg min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Navbar />
 

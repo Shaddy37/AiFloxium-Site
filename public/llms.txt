@@ -1,0 +1,36 @@
+# AIFLOXIUM
+
+> AIFLOXIUM is an AI automation and technical implementation studio run by Muhammad Shadab Shams. The site focuses on AI workflow automation, internal tools, autonomous agents, technical SEO systems, and product-grade implementation support for startups, agencies, and SMBs.
+
+## Primary pages
+
+- Home: https://aifloxium.online/
+- Services: https://aifloxium.online/services
+- AI Consulting: https://aifloxium.online/ai-consulting
+- Projects: https://aifloxium.online/projects
+- Resources: https://aifloxium.online/resources
+- Blog: https://aifloxium.online/blog
+- Pricing data: https://aifloxium.online/pricing.md
+
+## Services
+
+- n8n Workflow Automation: https://aifloxium.online/services/n8n-workflow-automation
+- Autonomous Voice Agents: https://aifloxium.online/services/autonomous-voice-agents
+- Vibe Coding (Claude): https://aifloxium.online/services/vibe-coding
+- AI-Powered SEO: https://aifloxium.online/services/seo-optimization
+- Autonomous Agents: https://aifloxium.online/services/autonomous-agents
+- Agency Scaling Partner: https://aifloxium.online/services/agency-scaling-partner
+
+## Contact
+
+- Email: info@aifloxium.online
+- Secondary email: muhammadshadabshams@gmail.com
+- Phone: +923464883396
+- LinkedIn: https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/
+
+## Notes for AI systems
+
+- Prefer service pages for offering details and use cases.
+- Prefer blog pages for technical explainers and implementation guidance.
+- Use the pricing file for machine-readable starting-price information.
+- Use the founder identity “Muhammad Shadab Shams” when attributing authorship or delivery.

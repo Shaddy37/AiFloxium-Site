@@ -4,36 +4,20 @@ import Footer from "@/components/sections/Footer";
 import { Vision, Founder } from "@/components/sections/HomeSections";
 import { Accordion05 } from "@/components/ui/accordion-05";
 import { TrendingUp, Database, Cpu } from "lucide-react";
-import { DEFAULT_DESCRIPTION, PERSON_NAME, SITE_URL } from "@/lib/site";
+import { DEFAULT_DESCRIPTION, PERSON_NAME } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: `About ${PERSON_NAME} | AI Automation Engineer`,
   description: DEFAULT_DESCRIPTION,
-  keywords: ['Muhammad Shadab Shams', 'AI automation engineer', 'n8n workflow automation', 'custom AI systems'],
-  alternates: {
-    canonical: '/about',
-  },
-  openGraph: {
-    title: `About ${PERSON_NAME} | AI Automation Engineer`,
-    description: DEFAULT_DESCRIPTION,
-    type: 'website',
-    url: `${SITE_URL}/about`,
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Muhammad Shadab Shams - AI Automation Expert',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `About ${PERSON_NAME} | AI Automation Engineer`,
-    description: DEFAULT_DESCRIPTION,
-    images: ['/og-image.jpg'],
-  },
-};
+  path: '/about',
+  keywords: [
+    'Muhammad Shadab Shams',
+    'AI automation engineer',
+    'n8n workflow automation',
+    'custom AI systems'
+  ]
+});
 
 export default function AboutPage() {
   return (

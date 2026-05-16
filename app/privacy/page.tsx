@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | AIFLOXIUM - AI Automation by Muhammad Shadab Shams",
-  description: "Privacy policy for AIFLOXIUM AI Automation Agency. Learn how Muhammad Shadab Shams collects, uses, and protects your information.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Privacy Policy | AIFLOXIUM',
+  description:
+    'Privacy policy for AIFLOXIUM. Learn how Muhammad Shadab Shams collects, uses, and protects your information.',
+  path: '/privacy'
+});
 
 export default function PrivacyPage() {
   return (

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081116"/>
+      <stop offset="55%" stop-color="#11303b"/>
+      <stop offset="100%" stop-color="#1b6157"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="88" r="168" fill="#ffffff" fill-opacity="0.08"/>
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#071217" fill-opacity="0.24" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="118" y="148" fill="#cbfff2" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">AIFLOXIUM / OPENAI CODEX TUTORIAL</text>
+  <text x="118" y="238" fill="#ffffff" font-family="Arial, sans-serif" font-size="58" font-weight="800">OpenAI Codex Tutorial</text>
+  <text x="118" y="308" fill="#ffffff" font-family="Arial, sans-serif" font-size="58" font-weight="800">Zero to Deployed App</text>
+  <text x="118" y="378" fill="#ffffff" font-family="Arial, sans-serif" font-size="58" font-weight="800">in 1 Hour</text>
+  <text x="118" y="444" fill="#e5fffa" font-family="Arial, sans-serif" font-size="26" font-weight="600">Setup, AGENTS.md, browser automation, GitHub, Vercel, and reusable skills.</text>
+  <text x="118" y="494" fill="#ffffff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="22" font-weight="500">Complete 2026 guide for Plan Mode, workflows, deployment, and weekly task scheduling.</text>
+</svg>

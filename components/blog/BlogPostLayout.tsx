@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Calendar, User, Zap } from 'lucide-react';
 
 import { MDXRenderer } from '@/components/blog/MDXRenderer';
@@ -10,19 +11,23 @@ import type { PostFrontmatter } from '@/lib/mdx';
 interface BlogPostLayoutProps {
   code: string;
   frontmatter: PostFrontmatter;
-  jsonLd: Record<string, unknown>;
+  jsonLd: Record<string, unknown> | Record<string, unknown>[];
 }
 
 export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProps) {
-  const { title, date, author, category, description } = frontmatter;
-  const hasMeta = Boolean(date || author || category);
+  const { title, date, author, category, description, updatedAt, image } = frontmatter;
+  const hasMeta = Boolean(date || author || category || updatedAt);
+  const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background font-medium text-zinc-300 selection:bg-white selection:text-black">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {schemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       <Navbar />
 
@@ -54,6 +59,11 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
                   <Zap className="h-3 w-3 text-brand-orange" /> {category}
                 </div>
               ) : null}
+              {updatedAt ? (
+                <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 font-bold">
+                  Updated {updatedAt}
+                </div>
+              ) : null}
             </div>
           ) : null}
 
@@ -68,6 +78,22 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
           ) : null}
         </div>
       </section>
+
+      {image ? (
+        <section className="relative -mt-8 px-6 pb-8 md:-mt-12 md:pb-12">
+          <div className="relative z-10 mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.24)]">
+            <Image
+              src={image}
+              alt={title}
+              width={1200}
+              height={630}
+              className="h-auto w-full bg-brand-bg object-contain"
+              sizes="(max-width: 1024px) 100vw, 1100px"
+              priority
+            />
+          </div>
+        </section>
+      ) : null}
 
       <article
         className="relative min-h-screen overflow-hidden bg-white py-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)] md:py-32"

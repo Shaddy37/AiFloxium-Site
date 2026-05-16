@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120915"/>
+      <stop offset="50%" stop-color="#2b1240"/>
+      <stop offset="100%" stop-color="#ff7a18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="92" r="170" fill="#ffffff" fill-opacity="0.08"/>
+  <circle cx="100" cy="560" r="210" fill="#ffffff" fill-opacity="0.05"/>
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#0c0711" fill-opacity="0.18" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="118" y="148" fill="#ffd7ba" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">AIFLOXIUM / ECOMMERCE AUTOMATION</text>
+  <text x="118" y="246" fill="#ffffff" font-family="Arial, sans-serif" font-size="68" font-weight="800">5 AI Automations</text>
+  <text x="118" y="324" fill="#ffffff" font-family="Arial, sans-serif" font-size="68" font-weight="800">for Ecommerce Brands</text>
+  <text x="118" y="408" fill="#ffe8d9" font-family="Arial, sans-serif" font-size="30" font-weight="600">Recovery, support, upsells, inventory, and SEO.</text>
+  <text x="118" y="464" fill="#ffffff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="24" font-weight="500">Practical systems that turn manual ecommerce operations into automated growth.</text>
+</svg>
