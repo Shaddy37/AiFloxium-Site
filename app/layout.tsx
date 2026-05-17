@@ -79,7 +79,8 @@ export const metadata: Metadata = {
     follow: true
   },
   other: {
-    'ai-content-declaration': 'human-led, ai-assisted'
+    'ai-content-declaration': 'human-led, ai-assisted',
+    'google-site-verification': '_-GObjvEMYXjKV675AxlbcKXlco84D31__Igcv9fM1A'
   },
   openGraph: {
     title: DEFAULT_TITLE,
