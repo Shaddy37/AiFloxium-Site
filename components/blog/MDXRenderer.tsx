@@ -163,7 +163,7 @@ const components = {
   img: (props: ComponentPropsWithoutRef<"img">) => (
     <div className="my-10 relative rounded-[2.5rem] overflow-hidden border border-zinc-100 shadow-lg">
       <Image
-        src={props.src || '/og-image.jpg'}
+        src={String(props.src) || '/og-image.jpg'}
         alt={props.alt || ''}
         width={1600}
         height={900}
