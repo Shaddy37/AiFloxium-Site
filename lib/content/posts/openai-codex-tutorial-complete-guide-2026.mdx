@@ -69,8 +69,6 @@ This is not a toy demo. It is a working production system built entirely inside 
 
 # Section 1: What OpenAI Codex Actually Is
 
-`Timestamp: 00:00`
-
 Here is the simplest way to understand Codex: it is ChatGPT that can actually do things on your computer.
 
 When you use ChatGPT in a browser tab, you type a message, it responds. That is the limit. You have to take the response and do something with it yourself.
@@ -145,8 +143,6 @@ You need a ChatGPT subscription to use Codex.
 
 # Section 5: The Interface Walkthrough
 
-`Timestamp: ~04:00`
-
 ![OpenAI Codex desktop app showing left sidebar with projects, chat history, and main chat area](/blog/openai-codex/codex-desktop-interface.svg)
 
 When you open the Codex desktop app for the first time, the layout looks almost identical to ChatGPT:
@@ -165,8 +161,6 @@ When you see **Full Access**, that means approval prompts are disabled for that 
 ---
 
 # Section 6: Models and Intelligence Settings
-
-`Timestamp: ~16:00`
 
 Codex gives you two dials to control how it thinks:
 
@@ -188,8 +182,6 @@ Codex gives you two dials to control how it thinks:
 ---
 
 # Section 7: Projects vs Chats
-
-`Timestamp: ~06:00`
 
 This distinction matters more than it looks.
 
@@ -217,8 +209,6 @@ This distinction matters more than it looks.
 ---
 
 # Section 8: [AGENTS.md](http://AGENTS.md) — The Most Important File in Any Project
-
-`Timestamp: ~14:00`
 
 Every new project should start with one file: `AGENTS.md`.
 
@@ -275,8 +265,6 @@ Codex reads all three levels and merges them. More specific files override more 
 
 # Section 9: Plan Mode — Always Start Here
 
-`Timestamp: 12:36`
-
 Before Codex touches a single file, enable **Plan Mode**.
 
 Plan Mode means Codex will think, brainstorm, and respond with a plan — but it will not execute anything. No files written. No commands run. Just thinking.
@@ -306,8 +294,6 @@ Do not be afraid to ask questions or admit you do not know something. Plan Mode 
 
 # Section 10: Plugins and MCP Servers — Giving Codex Real Hands
 
-`Timestamp: ~17:00`
-
 Out of the box, Codex can work with your local files and run local commands. But to connect to the outside world — APIs, external services, web tools — you need plugins.
 
 Codex has a built-in plugin marketplace with pre-built connectors:
@@ -333,8 +319,6 @@ For the YouTube project in this guide, you will use the YouTube Data API (not a 
 ---
 
 # Section 11: Connecting to YouTube — The Real Build Starts Here
-
-`Timestamp: 08:04`
 
 The first challenge of the YouTube Comment Intelligence project: how do you actually pull comment data from YouTube?
 
@@ -380,8 +364,6 @@ If it works, you have a live YouTube connection. If it throws an error, Codex wi
 
 # Section 12: Comment Insights to Excel
 
-`Timestamp: 21:40`
-
 With YouTube comments flowing in, the next step is structured analysis.
 
 The workflow here is to tell Codex to:
@@ -423,8 +405,6 @@ You do not write a single line of code. You review the output and iterate if nee
 ---
 
 # Section 13: Building Reusable Skills — The Multiplier
-
-`Timestamp: 26:44`
 
 This is where Codex gets genuinely powerful. Instead of prompting the same thing repeatedly, you build **skills** — reusable, named workflows that Codex can invoke on command.
 
@@ -483,8 +463,6 @@ You have an AI that knows your full workflow. Each new project takes a fraction 
 
 # Section 14: Designing the Dashboard
 
-`Timestamp: 32:46`
-
 The next step is a live web dashboard — a page you can open on your phone from anywhere that shows the YouTube channel analytics in real time.
 
 **A strong approach to design prompting:**
@@ -533,8 +511,6 @@ Codex edits the file and the preview updates. No build step. No terminal command
 ---
 
 # Section 15: Deploying with GitHub and Vercel
-
-`Timestamp: 38:50`
 
 Once the dashboard looks good locally, you deploy it to Vercel so it lives on the web. A clean two-step approach is to push to GitHub, then connect GitHub to Vercel.
 
@@ -590,8 +566,6 @@ If you want it on your own domain instead of the Vercel subdomain, connect your 
 
 # Section 16: Weekly Automations — Running While You Sleep
 
-`Timestamp: 44:23`
-
 The YouTube dashboard is live. But right now, the data only updates when you manually run the comment analyzer. This is fixed with a weekly automation.
 
 **The goal:** Every Monday at 7am, the system should automatically pull fresh comments, update the Excel file, regenerate the dashboard data, and push the updated dashboard to Vercel.
@@ -634,8 +608,6 @@ Push this file to GitHub and the automation runs in the cloud — no machine nee
 ---
 
 # Section 17: Browser Use and QA Testing
-
-`Timestamp: 48:25`
 
 The final piece of the project: making sure the deployed dashboard actually works correctly after every update.
 
@@ -785,25 +757,6 @@ Yes. This is one of Codex's core capabilities. Point it at any folder and it can
 - [The Autonomous Sales Rep](/blog/autonomous-sales-rep) — A deeper technical breakdown of autonomous outbound infrastructure
 - OpenAI Codex official documentation: [developers.openai.com/codex](https://developers.openai.com/codex)
 - GitHub repository (open source CLI): [github.com/openai/codex](https://github.com/openai/codex)
-
----
-
-## Course Timestamps Reference
-
-| Timestamp | Topic | Guide Section |
-| --- | --- | --- |
-| 00:00 | What is Codex | Section 1 |
-| 04:02 | What We're Building | Section 7 + Overview |
-| 07:34 | Free Resources | — |
-| 08:04 | Connecting to YouTube | Section 11 |
-| 12:36 | Plan Mode and API Setup | Section 9 |
-| 21:40 | Comment Insights Excel | Section 12 |
-| 26:44 | Building Reusable Skills | Section 13 |
-| 32:46 | Designing the Dashboard | Section 14 |
-| 38:50 | Deploying with GitHub and Vercel | Section 15 |
-| 44:23 | Weekly Automations | Section 16 |
-| 48:25 | Browser Use and QA | Section 17 |
-| 57:59 | Final Thoughts | — |
 
 ---
 
