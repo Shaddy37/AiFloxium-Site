@@ -54,14 +54,14 @@ const ProjectFocus = () => {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-6 mb-20 text-center relative z-10">
-        <h2 className="text-zinc-500 tracking-[0.4em] font-medium text-[10px] md:text-xs uppercase mb-8 flex items-center justify-center gap-6">
+        <h2 className="text-zinc-400 tracking-[0.4em] font-medium text-[10px] md:text-xs uppercase mb-8 flex items-center justify-center gap-6">
           <span className="w-12 h-[1px] bg-zinc-800" /> Operational Excellence
           <span className="w-12 h-[1px] bg-zinc-800" />
         </h2>
         <h3 className="text-5xl md:text-8xl font-heading font-black text-white tracking-tighter leading-[0.85] mb-8">
           SYSTEMS WE <br /> <span className="text-gradient">HAVE DEPLOYED.</span>
         </h3>
-        <p className="text-zinc-500 font-medium max-w-2xl mx-auto text-sm md:text-lg opacity-80 leading-relaxed">
+        <p className="text-zinc-400 font-medium max-w-2xl mx-auto text-sm md:text-lg opacity-80 leading-relaxed">
           Proprietary architectures and agentic workflows designed to eradicate 
           bottlenecks and scale intelligence across your entire operational stack.
         </p>

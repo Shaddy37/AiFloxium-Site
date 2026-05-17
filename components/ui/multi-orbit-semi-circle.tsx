@@ -114,7 +114,7 @@ export default function MultiOrbitSemiCircle() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_50%)]" />
       
       <div className="relative flex flex-col items-center text-center z-10 container mx-auto px-6">
-        <span className="text-zinc-500 font-mono text-sm tracking-[0.3em] uppercase mb-6 block">INFRASTRUCTURE // SYNC</span>
+        <span className="text-zinc-400 font-mono text-sm tracking-[0.3em] uppercase mb-6 block">INFRASTRUCTURE // SYNC</span>
         <h2 className="mb-8 text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-none">
           UNIVERSAL <br /> <span className="text-zinc-600">SYNERGY.</span>
         </h2>

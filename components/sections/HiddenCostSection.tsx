@@ -133,7 +133,7 @@ export default function HiddenCostSection() {
             STOP THE <span className="text-brush text-4xl md:text-6xl lg:text-8xl ml-4">CHAOS</span>. <br />
             <span className="text-brand-orange">START AUTOMATING.</span>
           </h2>
-          <p className="text-zinc-500 text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
+          <p className="text-zinc-400 text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
             Every business has bottlenecks. The difference is who fixes them.
           </p>
         </motion.div>

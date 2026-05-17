@@ -82,7 +82,7 @@ export default async function BlogPage() {
                 </div>
                 
                 <div className="p-12 md:p-16 flex flex-col justify-center order-2 lg:order-1">
-                  <div className="flex items-center gap-6 mb-8 text-[10px] font-mono uppercase tracking-widest text-zinc-500">
+                  <div className="flex items-center gap-6 mb-8 text-[10px] font-mono uppercase tracking-widest text-zinc-400">
                     <span className="flex items-center gap-2 text-brand-orange"><Zap className="w-3 h-3 fill-brand-orange" /> {posts[0].frontmatter.category}</span>
                     <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {posts[0].frontmatter.date}</span>
                   </div>

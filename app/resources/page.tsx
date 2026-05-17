@@ -272,7 +272,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
 
 function TagPill({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest border border-white/10 text-zinc-500">
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest border border-white/10 text-zinc-400">
       {label}
     </span>
   );

@@ -259,7 +259,7 @@ export function Trust() {
 
         {/* Case Studies */}
         <div className="mb-6">
-          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-500 mb-8">Proven Results</h4>
+          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-400 mb-8">Proven Results</h4>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
@@ -365,7 +365,7 @@ export function Pricing() {
         <CornerPlusIcons />
         
         <div className="w-full lg:w-3/5">
-          <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+          <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
             <span className="w-8 h-[1px] bg-brand-plum/30" /> Investment
           </h2>
           <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white uppercase leading-[0.9]">
@@ -375,7 +375,7 @@ export function Pricing() {
             Every business has vastly unique operational needs. Rather than rigid software, I structure bespoke quotes based entirely on the automation complexity and whether I am building internal tools via Claude Code or wiring webhooks in n8n.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-brand-plum/30 rounded-2xl bg-brand-plum/10 w-fit relative overflow-hidden">
-             <div className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Typical Deployment Range</div>
+             <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
              <div className="text-2xl md:text-3xl font-black font-heading text-brand-orange">$800 to $5,000+</div>
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-brand-orange/20 bg-brand-orange/5 w-fit">
@@ -430,7 +430,7 @@ export function Founder() {
             </div>
             
             <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
-              <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+<h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-brand-plum/30" /> Direct Architect Access
               </h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9] uppercase">
@@ -475,7 +475,7 @@ export function TechStack() {
   return (
     <section className="py-24 px-6 relative bg-brand-bg border-y border-brand-plum/10 overflow-hidden">
       <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
-        <h2 className="text-zinc-500 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
+        <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
           <span className="w-8 h-[1px] bg-brand-plum/30" /> Arsenal & Tooling
         </h2>
         
