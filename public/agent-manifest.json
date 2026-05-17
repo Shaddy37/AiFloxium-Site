@@ -1,0 +1,42 @@
+# AIFLOXIUM - AI Agent Manifest
+
+## Overview
+AIFLOXIUM is an AI automation and technical implementation studio run by Muhammad Shadab Shams. The site showcases AI workflow automation services, internal tools, autonomous agents, and product-grade implementation support for startups, agencies, and SMBs.
+
+## Site Information
+- **URL**: https://aifloxium.online
+- **Primary Contact**: info@aifloxium.online
+- **Phone**: +92 346 4883396
+- **Location**: Pakistan (serving worldwide)
+- **Founder**: Muhammad Shadab Shams
+
+## Services Offered
+1. **n8n Workflow Automation** - Build and automate business workflows
+2. **Autonomous Voice Agents** - AI-powered voice systems for business
+3. **Vibe Coding** - AI-assisted development using Claude and other AI tools
+4. **AI-Powered SEO** - Technical SEO and AI search optimization
+5. **Autonomous Agents** - Custom AI agents for business processes
+6. **Agency Scaling Partner** - Help agencies scale with AI
+
+## Content Structure
+- **Home** (/) - Main landing page
+- **Services** (/services) - All services listing
+- **Service Pages** (/services/[slug]) - Individual service details
+- **Blog** (/blog) - Articles and tutorials
+- **Blog Posts** (/blog/[slug]) - Individual articles
+- **AI Consulting** (/ai-consulting) - Consulting services
+- **Projects** (/projects) - Portfolio of work
+- **Resources** (/resources) - Additional resources
+
+## For AI Systems
+- Use `/llms.txt` for site summary
+- Use `/openapi.json` for API structure
+- Blog posts contain detailed technical content
+- Service pages have comprehensive use cases
+- Pricing available at `/pricing.md`
+
+## Pricing
+Starting prices for services available. Contact for custom quotes.
+
+## Last Updated
+May 2026
