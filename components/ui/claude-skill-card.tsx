@@ -22,9 +22,9 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
         <motion.div
           whileHover={{ y: -2 }}
           className={cn(
-            "group relative overflow-hidden p-6 h-full min-h-[320px]",
-            "glass-card border border-brand-plum/20 cursor-pointer",
-            "hover:border-brand-plum/40 transition-all duration-500"
+            "group relative overflow-hidden p-6 h-full min-h-[320px] rounded-2xl",
+            "bg-white border border-zinc-200 cursor-pointer shadow-sm",
+            "hover:border-zinc-300 hover:shadow-md transition-all duration-500"
           )}
         >
           {/* Hover Glow */}
@@ -43,20 +43,20 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
             </div>
 
             {/* Description */}
-            <p className="text-white text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+            <p className="text-zinc-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
               {skill.description}
             </p>
 
             {/* Results Preview */}
-            <div className="space-y-2 mb-4 pb-4 border-b border-brand-plum/10">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white">Key Results</p>
+            <div className="space-y-2 mb-4 pb-4 border-b border-zinc-100">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Key Results</p>
               <ul className="space-y-1">
-                <li className="text-sm text-white flex items-start gap-2">
+                <li className="text-sm text-zinc-700 flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange mt-0.5 flex-shrink-0" />
                   <span className="line-clamp-1">{skill.results.metric1}</span>
                 </li>
                 {skill.results.metric2 && (
-                  <li className="text-sm text-white flex items-start gap-2">
+                  <li className="text-sm text-zinc-700 flex items-start gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange mt-0.5 flex-shrink-0" />
                     <span className="line-clamp-1">{skill.results.metric2}</span>
                   </li>
@@ -66,18 +66,18 @@ export function ClaudeSkillCard({ skill, index = 0 }: ClaudeSkillCardProps) {
 
             {/* Tech Stack */}
             <div className="mb-4">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-2">Built with</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2">Built with</p>
               <div className="flex flex-wrap gap-1">
                 {skill.techStack.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-brand-plum/10 text-white border border-brand-plum/20"
+                    className="px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-zinc-100 text-zinc-700 border border-transparent"
                   >
                     {tech}
                   </span>
                 ))}
                 {skill.techStack.length > 3 && (
-                  <span className="px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-white">
+                  <span className="px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-zinc-500">
                     +{skill.techStack.length - 3}
                   </span>
                 )}

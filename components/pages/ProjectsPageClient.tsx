@@ -42,7 +42,7 @@ export default function ProjectsPageClient() {
   const allWorkflows = filteredProjects.filter((project) => !project.featured);
 
   return (
-    <main className="relative bg-brand-bg min-h-screen">
+    <main className="relative bg-white min-h-screen">
       <Navbar />
       <div className="pt-32 pb-20 px-6 container mx-auto">
         <motion.div
@@ -74,7 +74,7 @@ export default function ProjectsPageClient() {
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-brand-plum/10 border border-brand-plum/20 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-white focus:outline-none focus:border-brand-orange/40 focus:bg-brand-plum/20 transition-all backdrop-blur-sm"
+                className="w-full bg-white border border-zinc-200 rounded-full py-3 pl-12 pr-4 text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-brand-orange/40 focus:ring-2 focus:ring-brand-orange/20 transition-all shadow-sm"
               />
             </div>
 
@@ -86,8 +86,8 @@ export default function ProjectsPageClient() {
                   className={cn(
                     'px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all',
                     activeCategory === category.id
-                      ? 'bg-brand-orange text-white shadow-[0_0_20px_rgba(255,107,0,0.4)]'
-                      : 'bg-brand-plum/10 text-white hover:text-white hover:bg-brand-plum/30 border border-brand-plum/20'
+                      ? 'bg-brand-orange text-white shadow-md'
+                      : 'bg-zinc-100 text-zinc-600 hover:text-brand-plum hover:bg-zinc-200 border border-transparent'
                   )}
                 >
                   {category.name}
@@ -112,7 +112,7 @@ export default function ProjectsPageClient() {
             <span className="w-12 h-[1px] bg-brand-plum/30" />
           </div>
 
-          <p className="text-white mb-8 max-w-3xl font-medium leading-relaxed">
+          <p className="text-zinc-600 mb-8 max-w-3xl font-medium leading-relaxed">
             Reusable skills and system patterns that support the delivery work on this
             portfolio. These are part of how I build faster without lowering the bar.
           </p>
@@ -143,7 +143,7 @@ export default function ProjectsPageClient() {
             </div>
           </div>
 
-          <p className="text-white mb-8 max-w-3xl">
+          <p className="text-zinc-600 mb-8 max-w-3xl">
             A mix of automation systems, AI workflows, and product work that show how I
             approach real business problems.
           </p>
@@ -172,7 +172,7 @@ export default function ProjectsPageClient() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowAllWorkflows(true)}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-brand-plum/10 border border-brand-plum/30 text-white font-bold uppercase tracking-widest text-sm hover:bg-brand-plum/20 hover:border-brand-plum/50 transition-all shadow-[0_0_20px_rgba(0,0,0,0.3)]"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white border border-zinc-200 text-brand-plum font-bold uppercase tracking-widest text-sm hover:bg-zinc-50 hover:border-zinc-300 transition-all shadow-sm"
               >
                 View All {allWorkflows.length} Projects
                 <ArrowRight className="w-4 h-4 text-brand-orange" />
@@ -187,13 +187,13 @@ export default function ProjectsPageClient() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center"
         >
-          <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[3rem] bg-brand-plum/5 border border-brand-plum/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-brand-plum/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            <h3 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tight uppercase leading-tight">
+          <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[3rem] bg-zinc-50 border border-zinc-200 relative overflow-hidden group w-full max-w-4xl mx-auto">
+            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            <h3 className="text-3xl md:text-5xl font-heading font-black text-brand-plum tracking-tight uppercase leading-tight relative z-10">
               READY TO BUILD <br />{' '}
-              <span className="text-brush text-2xl md:text-4xl mt-2">SOMETHING USEFUL?</span>
+              <span className="text-brand-orange text-2xl md:text-4xl mt-2">SOMETHING USEFUL?</span>
             </h3>
-            <p className="text-white max-w-md font-medium leading-relaxed">
+            <p className="text-zinc-600 max-w-md font-medium leading-relaxed relative z-10">
               If you need a workflow, internal tool, or product-minded technical build,
               let&apos;s talk through the fastest credible path.
             </p>

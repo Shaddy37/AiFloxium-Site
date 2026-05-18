@@ -153,7 +153,7 @@ export default function Navbar() {
               <span
                 className={cn(
                   'mt-1 text-[9px] font-bold uppercase tracking-[0.25em] transition-colors',
-                  isLight && !open ? 'text-white' : 'text-white'
+                  isLight && !open ? 'text-zinc-500' : 'text-white/70'
                 )}
               >
                 by {BRAND_SIGNATURE_NAME}

@@ -263,7 +263,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
   return (
     <a
       href={`#${id}`}
-      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
+      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-white/20 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all duration-300"
     >
       {label}
     </a>
@@ -272,7 +272,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
 
 function TagPill({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest border border-white/10 text-white">
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-zinc-100 text-zinc-600">
       {label}
     </span>
   );
@@ -302,10 +302,10 @@ function ResourceCard({
   blogSlug,
 }: ResourceCardProps) {
   return (
-    <div className="glass-card border border-white/10 p-6 flex flex-col gap-4 group hover:border-white/20 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+    <div className="bg-white rounded-2xl border border-zinc-200 p-6 flex flex-col gap-4 group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
-        <h3 className="text-base font-bold text-brand-orange font-heading tracking-tight leading-snug group-hover:text-zinc-200 transition-colors flex-1">
+        <h3 className="text-lg font-bold text-brand-plum font-heading tracking-tight leading-snug group-hover:text-brand-orange transition-colors flex-1">
           {title}
         </h3>
         <span
@@ -319,7 +319,7 @@ function ResourceCard({
       </div>
 
       {/* Description */}
-      <p className="text-sm text-white leading-relaxed flex-1">{description}</p>
+      <p className="text-sm text-zinc-600 font-medium leading-relaxed flex-1">{description}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
@@ -330,7 +330,7 @@ function ResourceCard({
 
       {/* Install Snippet */}
       {copyText && (
-        <div className="bg-black/50 px-4 py-3 font-mono text-[11px] text-white border border-white/5 truncate select-all">
+        <div className="bg-zinc-50 px-4 py-3 font-mono text-[11px] text-zinc-800 border border-zinc-200 truncate select-all rounded-md">
           {copyText}
         </div>
       )}
@@ -341,14 +341,14 @@ function ResourceCard({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 text-center py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white transition-all duration-300"
+          className="flex-1 text-center py-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-md text-xs font-bold uppercase tracking-widest text-brand-plum transition-all duration-300"
         >
           View Resource →
         </a>
         {blogSlug && (
           <Link
             href={`/blog/${blogSlug}`}
-            className="px-4 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300"
+            className="px-4 py-2.5 bg-brand-plum text-white rounded-md text-xs font-bold uppercase tracking-widest hover:bg-brand-plum-light transition-all duration-300"
           >
             Read Guide
           </Link>
@@ -356,7 +356,7 @@ function ResourceCard({
       </div>
 
       {meta && (
-        <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest text-right -mt-1">
+        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest text-right -mt-1">
           {meta}
         </p>
       )}
@@ -380,17 +380,17 @@ function SectionHeader({
   return (
     <div id={id} className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 scroll-mt-32">
       <div>
-        <p className="text-xs font-mono text-zinc-600 uppercase tracking-[0.25em] mb-3 flex items-center gap-2">
-          <span className="w-4 h-[1px] bg-zinc-700 inline-block" />
+        <p className="text-xs font-mono text-brand-orange uppercase tracking-[0.25em] mb-3 flex items-center gap-2">
+          <span className="w-4 h-[1px] bg-brand-orange inline-block" />
           {eyebrow}
         </p>
-        <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-orange tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-plum tracking-tight">
           {title}
         </h2>
-        <p className="text-white mt-2 text-sm max-w-xl">{subtitle}</p>
+        <p className="text-zinc-600 font-medium mt-2 text-sm max-w-xl">{subtitle}</p>
       </div>
       {count !== undefined && (
-        <span className="text-5xl font-heading font-black text-zinc-800 tabular-nums shrink-0">
+        <span className="text-5xl font-heading font-black text-zinc-200 tabular-nums shrink-0">
           {String(count).padStart(2, "0")}
         </span>
       )}
@@ -404,32 +404,32 @@ function SectionHeader({
 
 export default function ResourcesPage() {
   return (
-    <main className="relative bg-background min-h-screen">
+    <main className="relative bg-white min-h-screen">
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+      <section className="relative pt-40 pb-24 px-6 overflow-hidden bg-brand-bg rounded-b-[3rem]">
         {/* Ambient glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] rounded-full bg-zinc-800/10 blur-[120px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] rounded-full bg-brand-plum-glow/30 blur-[120px]" />
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs font-mono text-white uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-zinc-700 inline-block" />
+            <p className="text-xs font-mono text-white/70 uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
+              <span className="w-6 h-[1px] bg-white/20 inline-block" />
               Aifloxium Resources
-              <span className="w-6 h-[1px] bg-zinc-700 inline-block" />
+              <span className="w-6 h-[1px] bg-white/20 inline-block" />
             </p>
 
             <h1 className="text-6xl md:text-[6.5rem] font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
-              <span className="text-gradient">FREE &amp;</span>
+              <span className="text-brand-orange">FREE &amp;</span>
               <br />
               PREMIUM
               <br />
-              <span className="text-zinc-700">RESOURCES.</span>
+              <span className="text-white/40">RESOURCES.</span>
             </h1>
 
-            <p className="text-xl text-white max-w-2xl leading-relaxed mb-12">
+            <p className="text-xl text-white max-w-2xl leading-relaxed mb-12 font-medium">
               Battle-tested n8n automations, Claude Code skills, AI agents, and
               step-by-step Notion guides, curated by the Aifloxium team to help
               you build smarter, faster.
@@ -445,7 +445,7 @@ export default function ResourcesPage() {
               ].map((s) => (
                 <div key={s.label} className="text-center">
                   <p className="text-3xl font-heading font-black text-white">{s.value}</p>
-                  <p className="text-[11px] font-mono uppercase tracking-widest text-zinc-600 mt-1">
+                  <p className="text-[11px] font-mono uppercase tracking-widest text-white/50 mt-1">
                     {s.label}
                   </p>
                 </div>
@@ -463,7 +463,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* ── Divider ─────────────────────────────────────────────────── */}
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
 
       <div className="container mx-auto max-w-6xl px-6 space-y-28 py-24">
 
@@ -495,7 +495,7 @@ export default function ResourcesPage() {
               href="https://n8n.io/workflows/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-zinc-200 text-xs font-bold uppercase tracking-widest text-brand-plum hover:bg-zinc-50 transition-all duration-300"
             >
               Browse All 8,000+ n8n Workflows →
             </a>
@@ -530,7 +530,7 @@ export default function ResourcesPage() {
               href="https://www.aitmpl.com/skills/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-zinc-200 text-xs font-bold uppercase tracking-widest text-brand-plum hover:bg-zinc-50 transition-all duration-300"
             >
               Explore All Claude Skills →
             </a>
@@ -565,7 +565,7 @@ export default function ResourcesPage() {
               href="https://www.aitmpl.com/agents"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-zinc-200 text-xs font-bold uppercase tracking-widest text-brand-plum hover:bg-zinc-50 transition-all duration-300"
             >
               Explore All 600+ Claude Agents →
             </a>
@@ -600,16 +600,16 @@ export default function ResourcesPage() {
       </div>
 
       {/* ── Blog CTA Band ─────────────────────────────────────────────── */}
-      <section className="py-24 bg-white text-black border-y border-zinc-200 my-8">
+      <section className="py-24 bg-brand-bg text-white border-y border-brand-plum/20 my-8">
         <div className="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl">
-            <p className="text-xs font-mono uppercase tracking-[0.25em] text-zinc-500 mb-4">
+            <p className="text-xs font-mono uppercase tracking-[0.25em] text-white/50 mb-4">
               Internal Guides
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-4 text-brand-orange">
               DEEP-DIVE BLOGS.
             </h2>
-            <p className="text-zinc-600 text-lg leading-relaxed">
+            <p className="text-white/80 text-lg leading-relaxed font-medium">
               We write detailed technical breakdowns on every tool and workflow
               we use, n8n architectures, Claude Code patterns, and autonomous
               agent design. Free, always.
@@ -618,13 +618,13 @@ export default function ResourcesPage() {
           <div className="shrink-0 flex flex-col gap-4">
             <Link
               href="/blog"
-              className="px-10 py-4 rounded-full bg-black text-white font-bold text-sm uppercase tracking-widest hover:opacity-80 transition-opacity"
+              className="px-10 py-4 rounded-full bg-white text-brand-plum font-bold text-sm uppercase tracking-widest hover:bg-zinc-200 transition-colors"
             >
               Read the Blog →
             </Link>
             <Link
               href="/blog/autonomous-sales-rep"
-              className="px-10 py-4 rounded-full border border-black text-black font-bold text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-all"
+              className="px-10 py-4 rounded-full border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
               AI Sales Rep Deep-Dive →
             </Link>
@@ -633,7 +633,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* ── Contact CTA ──────────────────────────────────────────────── */}
-      <section className="bg-zinc-950/20 border-t border-white/5 py-24">
+      <section className="bg-zinc-50 border-t border-zinc-200 py-24">
         <Contact2
           title="Need a Custom Workflow?"
           description="Tell us what you're trying to automate. We'll build the exact n8n workflow, Claude agent, or full automation system you need."

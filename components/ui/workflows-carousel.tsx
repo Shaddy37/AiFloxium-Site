@@ -53,23 +53,23 @@ export function WorkflowsCarousel({ workflows, isOpen, onClose }: WorkflowsCarou
             className="fixed inset-0 z-50 overflow-y-auto"
           >
             <div className="min-h-screen py-8 px-4">
-              <div className="max-w-6xl mx-auto bg-zinc-950 border border-white/10 shadow-2xl">
+              <div className="max-w-6xl mx-auto bg-white border border-zinc-200 rounded-3xl shadow-2xl overflow-hidden">
                 {/* Header */}
-                <div className="border-b border-white/10 p-6 sm:p-8 flex items-start justify-between gap-4">
+                <div className="border-b border-zinc-100 p-6 sm:p-8 flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-orange tracking-tight mb-2">
                       All n8n Workflows
                     </h2>
-                    <p className="text-white text-sm">
+                    <p className="text-zinc-600 text-sm">
                       {workflows.length} automations built for businesses like yours
                     </p>
                   </div>
                   <button
                     onClick={onClose}
-                    className="flex-shrink-0 p-2 hover:bg-white/10 transition-colors"
+                    className="flex-shrink-0 p-2 hover:bg-zinc-100 rounded-full transition-colors"
                     aria-label="Close"
                   >
-                    <X className="w-6 h-6 text-white hover:text-white" />
+                    <X className="w-6 h-6 text-zinc-400 hover:text-zinc-900" />
                   </button>
                 </div>
 
@@ -90,10 +90,10 @@ export function WorkflowsCarousel({ workflows, isOpen, onClose }: WorkflowsCarou
                   </div>
 
                   {/* Pagination */}
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10">
-                    <div className="text-sm text-white text-center sm:text-left">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-100">
+                    <div className="text-sm text-zinc-500 text-center sm:text-left">
                       <div>Page {currentIndex + 1} of {totalPages}</div>
-                      <div className="font-medium text-white mt-1">
+                      <div className="font-medium text-zinc-900 mt-1">
                         {currentIndex * itemsPerPage + 1}-{Math.min((currentIndex + 1) * itemsPerPage, workflows.length)} of {workflows.length}
                       </div>
                     </div>
@@ -104,10 +104,10 @@ export function WorkflowsCarousel({ workflows, isOpen, onClose }: WorkflowsCarou
                         whileTap={{ scale: 0.95 }}
                         onClick={goToPrevious}
                         className={cn(
-                          "p-2 transition-colors",
+                          "p-2 rounded-full transition-colors",
                           currentIndex === 0
                             ? "opacity-50 cursor-not-allowed"
-                            : "hover:bg-white/10 text-white hover:text-white"
+                            : "hover:bg-zinc-100 text-zinc-600 hover:text-zinc-900"
                         )}
                         disabled={currentIndex === 0 && totalPages <= 1}
                       >
@@ -120,10 +120,10 @@ export function WorkflowsCarousel({ workflows, isOpen, onClose }: WorkflowsCarou
                             key={i}
                             onClick={() => setCurrentIndex(i)}
                             className={cn(
-                              "transition-all",
+                              "transition-all rounded-full",
                               i === currentIndex
-                                ? "w-8 h-2 bg-white"
-                                : "w-2 h-2 bg-zinc-600 hover:bg-zinc-400"
+                                ? "w-8 h-2 bg-brand-plum"
+                                : "w-2 h-2 bg-zinc-300 hover:bg-zinc-400"
                             )}
                             whileHover={{ scale: 1.1 }}
                           />
@@ -135,10 +135,10 @@ export function WorkflowsCarousel({ workflows, isOpen, onClose }: WorkflowsCarou
                         whileTap={{ scale: 0.95 }}
                         onClick={goToNext}
                         className={cn(
-                          "p-2 transition-colors",
+                          "p-2 rounded-full transition-colors",
                           currentIndex === totalPages - 1
                             ? "opacity-50 cursor-not-allowed"
-                            : "hover:bg-white/10 text-white hover:text-white"
+                            : "hover:bg-zinc-100 text-zinc-600 hover:text-zinc-900"
                         )}
                         disabled={currentIndex === totalPages - 1 && totalPages <= 1}
                       >

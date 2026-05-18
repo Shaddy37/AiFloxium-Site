@@ -90,7 +90,7 @@ const servicesPageJsonLd = {
 
 export default function ServicesPage() {
   return (
-    <main className="relative bg-brand-bg min-h-screen">
+    <main className="relative bg-white min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageJsonLd) }}
@@ -124,7 +124,7 @@ export default function ServicesPage() {
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
             {serviceFaqs.map((faq, i) => (
-               <div key={i} className="group p-8 bg-gray-50 border border-gray-200 hover:border-brand-plum/30 transition-all duration-300">
+               <div key={i} className="group p-8 bg-zinc-50 border border-zinc-200 hover:border-brand-plum/30 transition-all duration-300 rounded-xl">
                   <h3 className="text-xl font-black font-heading mb-4 flex items-center gap-4 text-brand-plum group-hover:text-brand-orange transition-colors">
                      <CheckCircle2 className="text-brand-orange shrink-0 group-hover:scale-110 transition-transform" />
                      {faq.q}
@@ -136,7 +136,7 @@ export default function ServicesPage() {
         </div>
       </section>
       
-      <section className="bg-brand-bg/20 border-t border-brand-plum/10">
+      <section className="bg-zinc-50 border-t border-zinc-200">
         <Contact2 
           title="Book a Discovery Call."
           description="Tell me what you need built, automated, fixed, or shipped."
