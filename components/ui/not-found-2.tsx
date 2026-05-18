@@ -42,7 +42,7 @@ export function NotFound() {
           >
             404
           </EmptyTitle>
-          <EmptyDescription className="-mt-8 text-nowrap text-zinc-400 text-base font-medium">
+          <EmptyDescription className="-mt-8 text-nowrap text-white text-base font-medium">
             The page you&apos;re looking for might have been <br />
             moved or doesn&apos;t exist.
           </EmptyDescription>

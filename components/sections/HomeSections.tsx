@@ -46,7 +46,7 @@ export function Vision() {
               <h2 className="text-brand-orange tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-brand-plum" /> My Vision
               </h2>
-              <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white leading-[0.9] tracking-tighter">
+              <h3 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-brand-orange leading-[0.9] tracking-tighter">
                 THE CATALYST <br /> FOR <span className="text-brush text-3xl md:text-6xl lg:text-7xl ml-2">TRANSFORMATION.</span>
               </h3>
             </motion.div>
@@ -56,7 +56,7 @@ export function Vision() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-zinc-300 font-medium leading-relaxed"
+              className="text-xl md:text-2xl text-white font-medium leading-relaxed"
             >
               I build automation systems, internal tools, and practical AI
               workflows that help founders move faster without adding more
@@ -71,12 +71,12 @@ export function Vision() {
               className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-white/10"
             >
               <div>
-                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">My Directive</h4>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Find the bottleneck, build the fix, and leave behind a system your team can actually use.</p>
+                <h4 className="text-brand-orange font-bold mb-3 font-heading text-lg md:text-xl">My Directive</h4>
+                <p className="text-white text-sm md:text-base leading-relaxed">Find the bottleneck, build the fix, and leave behind a system your team can actually use.</p>
               </div>
               <div>
-                <h4 className="text-white font-bold mb-3 font-heading text-lg md:text-xl">My Ambition</h4>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Be the technical partner startups and growing businesses call when they need something shipped properly.</p>
+                <h4 className="text-brand-orange font-bold mb-3 font-heading text-lg md:text-xl">My Ambition</h4>
+                <p className="text-white text-sm md:text-base leading-relaxed">Be the technical partner startups and growing businesses call when they need something shipped properly.</p>
               </div>
             </motion.div>
           </div>
@@ -99,14 +99,14 @@ export function Process() {
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="w-full text-center md:text-left">
-               <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4 md:justify-start justify-center">
+               <h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-4 flex items-center gap-4 md:justify-start justify-center">
                  <span className="w-8 h-[1px] bg-zinc-700" /> Methodology
                </h2>
-               <h3 className="text-3xl sm:text-4xl md:text-6xl font-heading font-black text-white tracking-tighter">
+               <h3 className="text-3xl sm:text-4xl md:text-6xl font-heading font-black text-brand-orange tracking-tighter">
                  PROTOCOLS OF <br/><span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">EXECUTION.</span>
                </h3>
             </div>
-            <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors group">
+            <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-white hover:text-white transition-colors group">
                View Full Documentation
                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
@@ -126,9 +126,9 @@ export function Process() {
               <div className="absolute top-0 right-0 p-8 opacity-5 transition-opacity">
                 <Workflow className="w-24 h-24 text-white" />
               </div>
-              <span className="text-sm font-mono text-zinc-600 mb-12 group-hover:text-zinc-300 transition-colors">[{step.num}]</span>
-              <h3 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4 relative z-10">{step.title}</h3>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed relative z-10">{step.desc}</p>
+              <span className="text-sm font-mono text-zinc-600 mb-12 group-hover:text-white transition-colors">[{step.num}]</span>
+              <h3 className="text-2xl md:text-3xl font-bold font-heading text-brand-orange mb-4 relative z-10">{step.title}</h3>
+              <p className="text-white text-sm md:text-base leading-relaxed relative z-10">{step.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -218,10 +218,10 @@ export function Trust() {
             viewport={{ once: true, amount: 0.3 }}
             className="max-w-2xl"
           >
-            <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+            <h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
               <span className="w-8 h-[1px] bg-brand-plum" /> Proof of Impact
             </h2>
-            <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-white">
+            <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-brand-orange">
               WHY FOUNDERS <br /> <span className="text-brush text-4xl md:text-6xl lg:text-8xl ml-2">TRUST ME.</span>
             </h3>
           </motion.div>
@@ -230,7 +230,7 @@ export function Trust() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl font-medium max-w-md text-zinc-400 leading-relaxed pb-4"
+            className="text-lg md:text-xl font-medium max-w-md text-white leading-relaxed pb-4"
           >
              I build practical systems with clear handoff, visible logic, and
              proof of what was shipped.
@@ -250,16 +250,16 @@ export function Trust() {
             >
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-2 h-2 bg-primary mt-2 shrink-0" />
-                <h4 className="text-lg font-bold font-heading text-white">{pillar.title}</h4>
+                <h4 className="text-lg font-bold font-heading text-brand-orange">{pillar.title}</h4>
               </div>
-              <p className="text-zinc-400 text-sm leading-relaxed">{pillar.description}</p>
+              <p className="text-white text-sm leading-relaxed">{pillar.description}</p>
             </motion.div>
           ))}
         </div>
 
         {/* Case Studies */}
         <div className="mb-6">
-          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-400 mb-8">Proven Results</h4>
+          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-8">Proven Results</h4>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
@@ -282,16 +282,16 @@ export function Trust() {
                   <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center">
                     {study.icon}
                   </div>
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">{study.category}</span>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-white">{study.category}</span>
                 </div>
-                <h4 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 tracking-tight">{study.title}</h4>
-                <p className="text-zinc-400 text-lg leading-relaxed max-w-md mb-8">{study.desc}</p>
+                <h4 className="text-3xl md:text-4xl font-bold font-heading text-brand-orange mb-4 tracking-tight">{study.title}</h4>
+                <p className="text-white text-lg leading-relaxed max-w-md mb-8">{study.desc}</p>
                 
                 {/* Metrics */}
                 {study.metrics && (
                   <div className="flex flex-wrap gap-3 mb-8">
                     {study.metrics.map((metric, j) => (
-                      <span key={j} className="text-xs bg-zinc-800/50 border border-white/10 px-3 py-1.5 text-zinc-300">
+                      <span key={j} className="text-xs bg-zinc-800/50 border border-white/10 px-3 py-1.5 text-white">
                         {metric}
                       </span>
                     ))}
@@ -316,36 +316,36 @@ export function Trust() {
         >
           <div className="flex flex-col md:flex-row gap-8 md:gap-12">
             <div className="flex-1">
-              <h4 className="text-2xl font-bold font-heading text-white mb-4">What You Can Expect</h4>
+              <h4 className="text-2xl font-bold font-heading text-brand-orange mb-4">What You Can Expect</h4>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-zinc-400">Detailed documentation & knowledge transfer (no black box)</p>
+                  <p className="text-white">Detailed documentation & knowledge transfer (no black box)</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-zinc-400">30+ day optimization period with live monitoring</p>
+                  <p className="text-white">30+ day optimization period with live monitoring</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-zinc-400">Full stack ownership—architecture, deployment, and support</p>
+                  <p className="text-white">Full stack ownership—architecture, deployment, and support</p>
                 </div>
               </div>
             </div>
             <div className="flex-1">
-              <h4 className="text-2xl font-bold font-heading text-white mb-4">My Commitment</h4>
+              <h4 className="text-2xl font-bold font-heading text-brand-orange mb-4">My Commitment</h4>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-zinc-400">Deterministic ROI metrics defined before work begins</p>
+                  <p className="text-white">Deterministic ROI metrics defined before work begins</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-zinc-400">99%+ uptime SLA on all production systems</p>
+                  <p className="text-white">99%+ uptime SLA on all production systems</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-zinc-400">Weekly performance reports and optimization recommendations</p>
+                  <p className="text-white">Weekly performance reports and optimization recommendations</p>
                 </div>
               </div>
             </div>
@@ -365,17 +365,17 @@ export function Pricing() {
         <CornerPlusIcons />
         
         <div className="w-full lg:w-3/5">
-          <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+          <h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
             <span className="w-8 h-[1px] bg-brand-plum/30" /> Investment
           </h2>
-          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-white uppercase leading-[0.9]">
+          <h3 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-8 text-brand-orange uppercase leading-[0.9]">
             PRICING <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2">PHILOSOPHY.</span>
           </h3>
-            <p className="text-zinc-400 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+            <p className="text-white font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
             Every business has vastly unique operational needs. Rather than rigid software, I structure bespoke quotes based entirely on the automation complexity and whether I am building internal tools via Claude Code or wiring webhooks in n8n.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-brand-plum/30 rounded-2xl bg-brand-plum/10 w-fit relative overflow-hidden">
-             <div className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Typical Deployment Range</div>
+             <div className="text-sm font-mono text-white uppercase tracking-widest">Typical Deployment Range</div>
              <div className="text-2xl md:text-3xl font-black font-heading text-brand-orange">$800 to $5,000+</div>
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-brand-orange/20 bg-brand-orange/5 w-fit">
@@ -387,7 +387,7 @@ export function Pricing() {
         <div className="w-full lg:w-1/3 flex flex-col justify-center">
           <ul className="space-y-6 mb-12">
             {[ "Deep Tool Stack Audit", "Custom n8n Pipeline Logic", "Claude Code Built Micro-SaaS", "Autonomous Voice Deployment" ].map((feature, i) => (
-               <li key={i} className="flex items-center gap-4 text-zinc-300 font-medium">
+               <li key={i} className="flex items-center gap-4 text-white font-medium">
                  <CheckCircle2 className="w-5 h-5 text-brand-orange" />
                  {feature}
                </li>
@@ -430,13 +430,13 @@ export function Founder() {
             </div>
             
             <div className="w-full lg:w-2/3 flex flex-col justify-center relative z-10">
-<h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
+<h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-brand-plum/30" /> Direct Architect Access
               </h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9] uppercase">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-brand-orange tracking-tighter mb-6 md:mb-8 leading-[0.9] uppercase">
                 BUILT FOR <span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2">REAL </span> OPERATIONS.
               </h3>
-               <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 font-medium">
+               <p className="text-white text-lg md:text-xl leading-relaxed mb-8 font-medium">
                  I built AIFLOXIUM as the container for my work: a personal
                  studio focused on automation, internal tools, and product-grade
                  AI systems. The goal is simple: build software and workflows
@@ -475,14 +475,14 @@ export function TechStack() {
   return (
     <section className="py-24 px-6 relative bg-brand-bg border-y border-brand-plum/10 overflow-hidden">
       <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
-        <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
+        <h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
           <span className="w-8 h-[1px] bg-brand-plum/30" /> Arsenal & Tooling
         </h2>
         
         <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-6 whitespace-nowrap animate-marquee w-max">
             {[...tools, ...tools, ...tools].map((tool, i) => (
-              <div key={i} className="px-8 py-4 border border-dashed border-brand-plum/30 rounded-xl bg-brand-plum/5 hover:border-brand-plum/50 hover:bg-brand-plum/10 transition-all cursor-pointer text-lg font-bold text-zinc-300 flex items-center gap-3 relative overflow-hidden group">
+              <div key={i} className="px-8 py-4 border border-dashed border-brand-plum/30 rounded-xl bg-brand-plum/5 hover:border-brand-plum/50 hover:bg-brand-plum/10 transition-all cursor-pointer text-lg font-bold text-white flex items-center gap-3 relative overflow-hidden group">
                 <CornerPlusIcons className="opacity-20 group-hover:opacity-100 transition-opacity" />
                 <div className="w-2 h-2 rounded-full bg-brand-orange animate-pulse shadow-[0_0_8px_rgba(255,107,0,0.5)]" />
                 {tool}

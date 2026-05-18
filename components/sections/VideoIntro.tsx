@@ -6,7 +6,7 @@ const HeroVideo = dynamic(() => import("@/remotion/HeroVideo"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full bg-zinc-900 animate-pulse flex items-center justify-center">
-      <span className="text-zinc-500 text-sm">Loading video...</span>
+      <span className="text-white text-sm">Loading video...</span>
     </div>
   ),
 });

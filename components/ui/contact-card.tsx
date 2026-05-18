@@ -36,10 +36,10 @@ export function ContactCard({
 			)}
 			{...props}
 		>
-			<PlusIcon className="absolute -top-3 -left-3 h-6 w-6 text-zinc-500" />
-			<PlusIcon className="absolute -top-3 -right-3 h-6 w-6 text-zinc-500" />
-			<PlusIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-zinc-500" />
-			<PlusIcon className="absolute -right-3 -bottom-3 h-6 w-6 text-zinc-500" />
+			<PlusIcon className="absolute -top-3 -left-3 h-6 w-6 text-white" />
+			<PlusIcon className="absolute -top-3 -right-3 h-6 w-6 text-white" />
+			<PlusIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-white" />
+			<PlusIcon className="absolute -right-3 -bottom-3 h-6 w-6 text-white" />
 			<div className="flex flex-col justify-between lg:col-span-2">
 				<div className="relative h-full space-y-4 px-4 py-8 md:p-8">
 					<h1 className="text-3xl font-bold md:text-4xl lg:text-5xl tracking-tighter uppercase font-heading">
@@ -77,10 +77,10 @@ function ContactInfo({
 	return (
 		<div className={cn('flex items-start gap-3 py-3', className)} {...props}>
 			<div className="bg-muted/40 rounded-lg p-3 border border-white/5 shrink-0">
-				<Icon className="h-5 w-5 text-zinc-400" />
+				<Icon className="h-5 w-5 text-white" />
 			</div>
 			<div className="min-w-0">
-				<p className="font-bold text-xs uppercase tracking-widest text-zinc-500">{label}</p>
+				<p className="font-bold text-xs uppercase tracking-widest text-white">{label}</p>
 				<p className="text-white font-medium break-all text-sm md:text-base">{value}</p>
 			</div>
 		</div>

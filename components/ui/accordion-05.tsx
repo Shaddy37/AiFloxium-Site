@@ -71,7 +71,7 @@ export function Accordion05() {
                 <h1
                   className={cn(
                     "uppercase relative text-center text-3xl md:text-5xl font-heading font-black tracking-tighter transition-colors duration-300",
-                    "hover:text-zinc-300"
+                    "hover:text-white"
                   )}
                 >
                   {item.title}
@@ -79,7 +79,7 @@ export function Accordion05() {
               </div>
             </AccordionTrigger>
 
-            <AccordionContent className="text-zinc-400 pb-6 pl-6 md:px-20 font-medium leading-relaxed">
+            <AccordionContent className="text-white pb-6 pl-6 md:px-20 font-medium leading-relaxed">
               {item.content}
             </AccordionContent>
           </AccordionItem>

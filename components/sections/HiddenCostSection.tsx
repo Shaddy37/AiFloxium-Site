@@ -81,10 +81,10 @@ function ProblemCard({
           </div>
           
           <div className="space-y-4 pt-1">
-            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none border-l-4 border-brand-plum/50 pl-6">
+            <h3 className="text-2xl md:text-3xl font-black text-brand-orange tracking-tighter uppercase leading-none border-l-4 border-brand-plum/50 pl-6">
               {problem.title}
             </h3>
-            <p className="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
+            <p className="text-base md:text-lg text-white font-medium leading-relaxed">
               {problem.description}
             </p>
           </div>
@@ -129,11 +129,11 @@ export default function HiddenCostSection() {
             SOUNDS FAMILIAR?
             <span className="w-10 h-[1px] bg-brand-plum/30" />
           </span>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white leading-[0.8] mb-12">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-brand-orange leading-[0.8] mb-12">
             STOP THE <span className="text-brush text-4xl md:text-6xl lg:text-8xl ml-4">CHAOS</span>. <br />
             <span className="text-brand-orange">START AUTOMATING.</span>
           </h2>
-          <p className="text-zinc-400 text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
+          <p className="text-white text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
             Every business has bottlenecks. The difference is who fixes them.
           </p>
         </motion.div>

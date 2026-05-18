@@ -10,37 +10,37 @@ export const capabilities = [
     slug: "n8n-workflow-automation",
     title: "n8n Workflow Automation",
     description: "I connect the tools your team already uses and remove repetitive manual work with reliable n8n workflows.",
-    icon: <Cpu className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
+    icon: <Cpu className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "autonomous-voice-agents",
     title: "Autonomous Voice Agents",
     description: "I build voice agents for inbound qualification, support, and booking so every lead gets a fast response.",
-    icon: <Phone className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
+    icon: <Phone className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "vibe-coding",
     title: "Vibe Coding (Claude)",
     description: "I ship internal tools, client portals, and product MVPs quickly without cutting corners on architecture.",
-    icon: <Bot className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
+    icon: <Bot className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "seo-optimization",
     title: "AI-Powered SEO",
     description: "I combine technical SEO and content systems so your site is easier to rank and easier to trust.",
-    icon: <Search className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
+    icon: <Search className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "autonomous-agents",
     title: "Autonomous Agents",
     description: "I design agentic systems that research, enrich, route, and act inside your workflows with guardrails.",
-    icon: <Fingerprint className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
+    icon: <Fingerprint className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1.5} />,
   },
   {
     slug: "agency-scaling-partner",
     title: "Expert Implementation Partner",
     description: "I plug in as your technical execution layer when you need shipping velocity without hiring a full internal team.",
-    icon: <Database className="w-8 h-8 text-white group-hover:text-zinc-300 transition-colors" strokeWidth={1.5} />,
+    icon: <Database className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1.5} />,
   },
 ];
 
@@ -87,12 +87,12 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
           <div className="w-16 h-16 bg-brand-plum/10 border border-brand-plum/20 flex items-center justify-center mb-8 rounded-xl group-hover:bg-brand-plum/20 transition-colors">
             {cap.icon}
           </div>
-          <h3 className="text-2xl font-bold font-heading mb-4 text-white tracking-tight group-hover:text-brand-orange transition-colors">{cap.title}</h3>
-          <p className="text-zinc-400 font-medium leading-relaxed flex-grow">{cap.description}</p>
+          <h3 className="text-2xl font-bold font-heading mb-4 text-brand-orange tracking-tight group-hover:text-brand-orange transition-colors">{cap.title}</h3>
+          <p className="text-white font-medium leading-relaxed flex-grow">{cap.description}</p>
 
           <Link
             href={`/services/${cap.slug}`}
-            className="mt-10 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-brand-orange transition-colors"
+            className="mt-10 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white group-hover:text-brand-orange transition-colors"
           >
             <span>Explore Service</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -118,9 +118,9 @@ export default function Services() {
           >
             <div className="flex items-center gap-4 border border-brand-plum/20 bg-brand-plum/5 px-4 py-1.5 rounded-md w-max">
               <div className="w-1.5 h-1.5 bg-brand-orange animate-pulse" />
-              <h2 className="text-zinc-400 tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
+              <h2 className="text-white tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
             </div>
-            <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.9]">
+            <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-brand-orange tracking-tighter leading-[0.9]">
               WHAT I <br /> <span className="text-brush text-3xl md:text-6xl lg:text-7xl mt-2">BUILD.</span>
             </h3>
           </motion.div>
@@ -130,7 +130,7 @@ export default function Services() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-zinc-400 font-medium max-w-md md:text-right leading-relaxed"
+            className="text-xl text-white font-medium max-w-md md:text-right leading-relaxed"
           >
             Practical AI systems for startups and growing businesses: automation,
             internal software, product builds, and workflows that save real time.

@@ -263,7 +263,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
   return (
     <a
       href={`#${id}`}
-      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all duration-300"
+      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
     >
       {label}
     </a>
@@ -272,7 +272,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
 
 function TagPill({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest border border-white/10 text-zinc-400">
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest border border-white/10 text-white">
       {label}
     </span>
   );
@@ -305,7 +305,7 @@ function ResourceCard({
     <div className="glass-card border border-white/10 p-6 flex flex-col gap-4 group hover:border-white/20 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
-        <h3 className="text-base font-bold text-white font-heading tracking-tight leading-snug group-hover:text-zinc-200 transition-colors flex-1">
+        <h3 className="text-base font-bold text-brand-orange font-heading tracking-tight leading-snug group-hover:text-zinc-200 transition-colors flex-1">
           {title}
         </h3>
         <span
@@ -319,7 +319,7 @@ function ResourceCard({
       </div>
 
       {/* Description */}
-      <p className="text-sm text-zinc-400 leading-relaxed flex-1">{description}</p>
+      <p className="text-sm text-white leading-relaxed flex-1">{description}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
@@ -330,7 +330,7 @@ function ResourceCard({
 
       {/* Install Snippet */}
       {copyText && (
-        <div className="bg-black/50 px-4 py-3 font-mono text-[11px] text-zinc-500 border border-white/5 truncate select-all">
+        <div className="bg-black/50 px-4 py-3 font-mono text-[11px] text-white border border-white/5 truncate select-all">
           {copyText}
         </div>
       )}
@@ -341,7 +341,7 @@ function ResourceCard({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 text-center py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-all duration-300"
+          className="flex-1 text-center py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white transition-all duration-300"
         >
           View Resource →
         </a>
@@ -384,10 +384,10 @@ function SectionHeader({
           <span className="w-4 h-[1px] bg-zinc-700 inline-block" />
           {eyebrow}
         </p>
-        <h2 className="text-3xl md:text-4xl font-heading font-black text-white tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-orange tracking-tight">
           {title}
         </h2>
-        <p className="text-zinc-500 mt-2 text-sm max-w-xl">{subtitle}</p>
+        <p className="text-white mt-2 text-sm max-w-xl">{subtitle}</p>
       </div>
       {count !== undefined && (
         <span className="text-5xl font-heading font-black text-zinc-800 tabular-nums shrink-0">
@@ -415,7 +415,7 @@ export default function ResourcesPage() {
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
+            <p className="text-xs font-mono text-white uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-zinc-700 inline-block" />
               Aifloxium Resources
               <span className="w-6 h-[1px] bg-zinc-700 inline-block" />
@@ -429,7 +429,7 @@ export default function ResourcesPage() {
               <span className="text-zinc-700">RESOURCES.</span>
             </h1>
 
-            <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed mb-12">
+            <p className="text-xl text-white max-w-2xl leading-relaxed mb-12">
               Battle-tested n8n automations, Claude Code skills, AI agents, and
               step-by-step Notion guides, curated by the Aifloxium team to help
               you build smarter, faster.
@@ -495,7 +495,7 @@ export default function ResourcesPage() {
               href="https://n8n.io/workflows/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
             >
               Browse All 8,000+ n8n Workflows →
             </a>
@@ -530,7 +530,7 @@ export default function ResourcesPage() {
               href="https://www.aitmpl.com/skills/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
             >
               Explore All Claude Skills →
             </a>
@@ -565,7 +565,7 @@ export default function ResourcesPage() {
               href="https://www.aitmpl.com/agents"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:text-white hover:border-white/30 transition-all duration-300"
             >
               Explore All 600+ Claude Agents →
             </a>

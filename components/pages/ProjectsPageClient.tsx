@@ -55,7 +55,7 @@ export default function ProjectsPageClient() {
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-heading font-black text-white tracking-tighter mb-4 uppercase leading-[0.8]">
             SHIPPED <span className="text-brush text-4xl md:text-7xl lg:text-9xl ml-4">WORK.</span>
           </h1>
-          <p className="text-xl text-zinc-400 font-medium max-w-2xl mx-auto">
+          <p className="text-xl text-white font-medium max-w-2xl mx-auto">
             Real workflow builds, AI systems, and product proof including ApePublish.
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ export default function ProjectsPageClient() {
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-brand-plum/10 border border-brand-plum/20 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-orange/40 focus:bg-brand-plum/20 transition-all backdrop-blur-sm"
+                className="w-full bg-brand-plum/10 border border-brand-plum/20 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-white focus:outline-none focus:border-brand-orange/40 focus:bg-brand-plum/20 transition-all backdrop-blur-sm"
               />
             </div>
 
@@ -87,7 +87,7 @@ export default function ProjectsPageClient() {
                     'px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all',
                     activeCategory === category.id
                       ? 'bg-brand-orange text-white shadow-[0_0_20px_rgba(255,107,0,0.4)]'
-                      : 'bg-brand-plum/10 text-zinc-400 hover:text-white hover:bg-brand-plum/30 border border-brand-plum/20'
+                      : 'bg-brand-plum/10 text-white hover:text-white hover:bg-brand-plum/30 border border-brand-plum/20'
                   )}
                 >
                   {category.name}
@@ -112,7 +112,7 @@ export default function ProjectsPageClient() {
             <span className="w-12 h-[1px] bg-brand-plum/30" />
           </div>
 
-          <p className="text-zinc-400 mb-8 max-w-3xl font-medium leading-relaxed">
+          <p className="text-white mb-8 max-w-3xl font-medium leading-relaxed">
             Reusable skills and system patterns that support the delivery work on this
             portfolio. These are part of how I build faster without lowering the bar.
           </p>
@@ -143,7 +143,7 @@ export default function ProjectsPageClient() {
             </div>
           </div>
 
-          <p className="text-zinc-400 mb-8 max-w-3xl">
+          <p className="text-white mb-8 max-w-3xl">
             A mix of automation systems, AI workflows, and product work that show how I
             approach real business problems.
           </p>
@@ -189,11 +189,11 @@ export default function ProjectsPageClient() {
         >
           <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[3rem] bg-brand-plum/5 border border-brand-plum/10 relative overflow-hidden group">
             <div className="absolute inset-0 bg-brand-plum/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            <h3 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tight uppercase leading-tight">
+            <h3 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tight uppercase leading-tight">
               READY TO BUILD <br />{' '}
               <span className="text-brush text-2xl md:text-4xl mt-2">SOMETHING USEFUL?</span>
             </h3>
-            <p className="text-zinc-400 max-w-md font-medium leading-relaxed">
+            <p className="text-white max-w-md font-medium leading-relaxed">
               If you need a workflow, internal tool, or product-minded technical build,
               let&apos;s talk through the fastest credible path.
             </p>

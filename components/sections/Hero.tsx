@@ -59,7 +59,7 @@ export default function Hero() {
               Your team deserves to work on <span className="text-white font-bold">high-level strategy</span>, not spreadsheets. I build AI systems that reclaim 40+ hours every week.
             </p>
             <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-brand-plum/30 bg-brand-plum/10 backdrop-blur-md">
-               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">AI Automation Agency Protocol // v4.0</span>
+               <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-white">AI Automation Agency Protocol // v4.0</span>
             </div>
           </motion.div>
         </motion.div>

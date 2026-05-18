@@ -125,7 +125,7 @@ export const Contact2 = ({
               />
             </div>
 
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-white leading-relaxed">
               You will be speaking directly with <span className="text-white font-bold">{PERSON_NAME}</span>.
               Best fit: startups, SMBs, and teams that need automation, internal tools,
               or a product-minded technical partner.

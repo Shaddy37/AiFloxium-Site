@@ -73,14 +73,14 @@ const AnimatedHeader = () => {
         <div className="text-center max-w-4xl mx-auto mb-20 px-6">
             <h2 
                 ref={headerRef}
-                className={`text-5xl md:text-7xl font-black transition-all duration-1000 ease-out text-white tracking-tighter uppercase ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
+                className={`text-5xl md:text-7xl font-black transition-all duration-1000 ease-out text-brand-orange tracking-tighter uppercase ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 CAPABILITIES. <span className="text-brush text-4xl md:text-6xl ml-4">ENGINEERED.</span>
             </h2>
             <p 
                 ref={pRef}
-                className={`text-xl md:text-2xl text-zinc-400 mt-6 transition-all duration-1000 ease-out delay-300 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`text-xl md:text-2xl text-white mt-6 transition-all duration-1000 ease-out delay-300 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 I transition your business from static processes to dynamic, autonomous agentic systems.
@@ -113,7 +113,7 @@ export function StickyFeatureSection() {
                   {/* Card Content */}
                   <div className="flex flex-col justify-center relative z-10">
                      <span className="text-brand-orange font-bold text-sm mb-4 tracking-[0.3em] uppercase">{`0${index + 1} // CAPACITY`}</span>
-                    <h3 className="text-3xl md:text-5xl font-black mb-6 text-white tracking-tighter uppercase font-heading group-hover:text-brand-orange transition-colors duration-500">{feature.title}</h3>
+                    <h3 className="text-3xl md:text-5xl font-black mb-6 text-brand-orange tracking-tighter uppercase font-heading group-hover:text-brand-orange transition-colors duration-500">{feature.title}</h3>
                     <p className={`${feature.textColor} text-lg md:text-xl leading-relaxed font-medium`}>{feature.description}</p>
                     
                     <div className="mt-8">

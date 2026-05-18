@@ -47,23 +47,23 @@ export function SkillDetailModal() {
                   onClick={handleClose}
                   className="absolute top-6 right-6 p-2 hover:bg-white/10 transition-colors z-50"
                 >
-                  <X className="w-6 h-6 text-zinc-400 hover:text-white" />
+                  <X className="w-6 h-6 text-white hover:text-white" />
                 </button>
 
                 {/* Content */}
                 <div className="p-6 sm:p-8 md:p-12">
                   {/* Category Badge */}
-                  <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-zinc-800 text-zinc-300 inline-block mb-6">
+                  <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-zinc-800 text-white inline-block mb-6">
                     {skill.category}
                   </span>
 
                   {/* Title */}
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-orange tracking-tight mb-4">
                     {skill.title}
                   </h2>
 
                   {/* Description */}
-                  <p className="text-base sm:text-lg text-zinc-300 leading-relaxed mb-8">
+                  <p className="text-base sm:text-lg text-white leading-relaxed mb-8">
                     {skill.description}
                   </p>
 
@@ -73,15 +73,15 @@ export function SkillDetailModal() {
                   {/* Challenge & Solution */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div className="glass-card border border-white/10 p-6">
-                      <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-400 mb-4">Challenge</h3>
-                      <p className="text-sm text-zinc-300 leading-relaxed">
+                      <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white mb-4">Challenge</h3>
+                      <p className="text-sm text-white leading-relaxed">
                         {skill.challenge}
                       </p>
                     </div>
 
                     <div className="glass-card border border-white/10 p-6">
-                      <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-400 mb-4">Solution</h3>
-                      <p className="text-sm text-zinc-300 leading-relaxed">
+                      <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white mb-4">Solution</h3>
+                      <p className="text-sm text-white leading-relaxed">
                         {skill.solution}
                       </p>
                     </div>
@@ -90,18 +90,18 @@ export function SkillDetailModal() {
                   {/* Results */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                     <div className="glass-card border border-white/10 p-4 sm:p-6 text-center">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 sm:mb-3">Result 1</p>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-2 sm:mb-3">Result 1</p>
                       <p className="text-base sm:text-lg font-bold text-white">{skill.results.metric1}</p>
                     </div>
                     {skill.results.metric2 && (
                       <div className="glass-card border border-white/10 p-4 sm:p-6 text-center">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 sm:mb-3">Result 2</p>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-2 sm:mb-3">Result 2</p>
                         <p className="text-base sm:text-lg font-bold text-white">{skill.results.metric2}</p>
                       </div>
                     )}
                     {skill.results.metric3 && (
                       <div className="glass-card border border-white/10 p-4 sm:p-6 text-center">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2 sm:mb-3">Result 3</p>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-2 sm:mb-3">Result 3</p>
                         <p className="text-base sm:text-lg font-bold text-white">{skill.results.metric3}</p>
                       </div>
                     )}
@@ -109,12 +109,12 @@ export function SkillDetailModal() {
 
                   {/* Tech Stack */}
                   <div className="mb-8">
-                    <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-400 mb-4">Built With</h3>
+                    <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white mb-4">Built With</h3>
                     <div className="flex flex-wrap gap-2">
                       {skill.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 sm:px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-zinc-400"
+                          className="px-2 sm:px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-white"
                         >
                           {tech}
                         </span>

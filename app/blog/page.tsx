@@ -38,7 +38,7 @@ export default async function BlogPage() {
   };
 
   return (
-    <main className="relative bg-brand-bg min-h-screen text-zinc-300 font-medium selection:bg-brand-orange selection:text-black overflow-x-hidden">
+    <main className="relative bg-brand-bg min-h-screen text-white font-medium selection:bg-brand-orange selection:text-black overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexJsonLd) }}
@@ -51,14 +51,14 @@ export default async function BlogPage() {
         <div className="container mx-auto max-w-6xl text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-white/5 mb-8 animate-fade-in-up">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-400">Research & Intelligence</span>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-white">Research & Intelligence</span>
           </div>
           
           <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white tracking-tighter mb-12 leading-[0.8] uppercase animate-fade-in-up delay-100">
             INSIGHTS <br /><span className="text-brush text-5xl md:text-7xl lg:text-9xl ml-4">HUB.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed italic border-l-2 border-zinc-800 pl-8 animate-fade-in delay-200">
+          <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed italic border-l-2 border-zinc-800 pl-8 animate-fade-in delay-200">
             &quot;Decoding the engineering behind autonomous systems, workflow automation, and practical AI execution.&quot;
           </p>
         </div>
@@ -82,16 +82,16 @@ export default async function BlogPage() {
                 </div>
                 
                 <div className="p-12 md:p-16 flex flex-col justify-center order-2 lg:order-1">
-                  <div className="flex items-center gap-6 mb-8 text-[10px] font-mono uppercase tracking-widest text-zinc-400">
+                  <div className="flex items-center gap-6 mb-8 text-[10px] font-mono uppercase tracking-widest text-white">
                     <span className="flex items-center gap-2 text-brand-orange"><Zap className="w-3 h-3 fill-brand-orange" /> {posts[0].frontmatter.category}</span>
                     <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {posts[0].frontmatter.date}</span>
                   </div>
                   
-                  <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] mb-8 group-hover:text-brand-orange transition-all duration-500">
+                  <h2 className="text-4xl md:text-6xl font-black text-brand-orange tracking-tighter leading-[0.9] mb-8 group-hover:text-brand-orange transition-all duration-500">
                     {posts[0].frontmatter.title}
                   </h2>
                   
-                  <p className="text-lg text-zinc-400 mb-12 leading-relaxed max-w-lg">
+                  <p className="text-lg text-white mb-12 leading-relaxed max-w-lg">
                     {posts[0].frontmatter.description}
                   </p>
                   

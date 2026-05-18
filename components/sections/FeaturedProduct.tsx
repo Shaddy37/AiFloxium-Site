@@ -25,12 +25,12 @@ export default function FeaturedProduct() {
             <p className="text-brand-orange text-xs font-black uppercase tracking-[0.3em] mb-6">
               Featured product
             </p>
-            <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tighter leading-[0.9] mb-6">
+            <h2 className="text-4xl md:text-6xl font-heading font-black text-brand-orange tracking-tighter leading-[0.9] mb-6">
               APEPUBLISH
               <br />
               <span className="text-brush text-3xl md:text-5xl">SHIPPED.</span>
             </h2>
-            <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl mb-8">
+            <p className="text-white text-lg leading-relaxed max-w-2xl mb-8">
               ApePublish is a live SaaS product I recently built. It turns long-form
               content into ready-to-publish social content, which gives this portfolio
               real product proof, not just service claims.
@@ -55,22 +55,22 @@ export default function FeaturedProduct() {
           </div>
 
           <div className="border border-brand-plum/20 bg-brand-bg rounded-[2rem] p-10 md:p-12">
-            <p className="text-zinc-500 text-xs font-black uppercase tracking-[0.3em] mb-6">
+            <p className="text-white text-xs font-black uppercase tracking-[0.3em] mb-6">
               Why it matters here
             </p>
             <div className="space-y-5 mb-8">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
-                  <p className="text-zinc-300 leading-relaxed">{item}</p>
+                  <p className="text-white leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
             <div className="border border-brand-plum/20 bg-brand-plum/5 rounded-2xl p-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 mb-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-3">
                 My role
               </p>
-              <p className="text-zinc-300 leading-relaxed">
+              <p className="text-white leading-relaxed">
                 Positioning, landing page strategy, product UI, application build,
                 metadata, and launch execution.
               </p>

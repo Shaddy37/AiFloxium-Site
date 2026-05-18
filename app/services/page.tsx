@@ -103,7 +103,7 @@ export default function ServicesPage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-tight uppercase">
           WHAT I <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">BUILD.</span>
         </h1>
-        <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium">
+        <p className="text-xl md:text-2xl text-white max-w-2xl font-medium">
           Services for teams that need automation, internal software, AI workflows,
           or a technical partner who can actually ship.
         </p>

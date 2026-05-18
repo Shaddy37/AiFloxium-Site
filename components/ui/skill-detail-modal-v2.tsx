@@ -49,7 +49,7 @@ export function SkillDetailModal() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleBack}
-                    className="flex items-center gap-2 px-4 py-2 rounded-md bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:bg-white/10 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 rounded-md bg-white/5 border border-white/10 text-white hover:text-white hover:bg-white/10 transition-all"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span className="text-sm font-bold uppercase tracking-wider">Back</span>
@@ -59,7 +59,7 @@ export function SkillDetailModal() {
                     onClick={handleClose}
                     className="p-2 hover:bg-white/10 transition-colors"
                   >
-                    <X className="w-6 h-6 text-zinc-400 hover:text-white" />
+                    <X className="w-6 h-6 text-white hover:text-white" />
                   </button>
                 </div>
 
@@ -75,11 +75,11 @@ export function SkillDetailModal() {
                     >
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-zinc-800 text-zinc-300">
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-zinc-800 text-white">
                             {skill.category}
                           </span>
                           {skill.industry && (
-                            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-400">
+                            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md bg-white/5 border border-white/10 text-white">
                               {skill.industry}
                             </span>
                           )}
@@ -89,14 +89,14 @@ export function SkillDetailModal() {
                         </h1>
                       </div>
 
-                      <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed max-w-2xl">
+                      <p className="text-lg sm:text-xl text-white leading-relaxed max-w-2xl">
                         {skill.description}
                       </p>
 
                       {skill.timeline && (
                         <div className="flex items-center gap-2 text-sm">
-                          <span className="text-zinc-500 font-medium">Implementation Timeline:</span>
-                          <span className="text-zinc-300 font-bold">{skill.timeline}</span>
+                          <span className="text-white font-medium">Implementation Timeline:</span>
+                          <span className="text-white font-bold">{skill.timeline}</span>
                         </div>
                       )}
                     </motion.div>
@@ -112,20 +112,20 @@ export function SkillDetailModal() {
                       className="space-y-6"
                     >
                       <div>
-                        <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                        <h2 className="text-2xl font-bold text-brand-orange mb-2 flex items-center gap-2">
                           <span className="w-8 h-8 rounded-md bg-red-500/20 border border-red-500/30 flex items-center justify-center text-red-400 text-xs font-bold">
                             ⚠
                           </span>
                           The Challenge
                         </h2>
-                        <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                        <p className="text-xs font-bold uppercase tracking-widest text-white">
                           What Our Clients Face
                         </p>
                       </div>
 
                       <div className="space-y-3">
                         <div className="glass-card border border-white/10 p-6">
-                          <p className="text-base text-zinc-300 leading-relaxed">
+                          <p className="text-base text-white leading-relaxed">
                             {skill.challenge}
                           </p>
                         </div>
@@ -143,19 +143,19 @@ export function SkillDetailModal() {
                       className="space-y-6"
                     >
                       <div>
-                        <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                        <h2 className="text-2xl font-bold text-brand-orange mb-2 flex items-center gap-2">
                           <span className="w-8 h-8 rounded-md bg-green-500/20 border border-green-500/30 flex items-center justify-center text-green-400 text-xs font-bold">
                             ✓
                           </span>
                           Our Solution
                         </h2>
-                        <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                        <p className="text-xs font-bold uppercase tracking-widest text-white">
                           How It Works
                         </p>
                       </div>
 
                       <div className="glass-card border border-white/10 p-6 mb-6">
-                        <p className="text-base text-zinc-300 leading-relaxed">
+                        <p className="text-base text-white leading-relaxed">
                           {skill.solution}
                         </p>
                       </div>
@@ -163,7 +163,7 @@ export function SkillDetailModal() {
                       {/* Key Features */}
                       {skill.features && skill.features.length > 0 && (
                         <div>
-                          <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400 mb-4">
+                          <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
                             Key Features
                           </h3>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -172,7 +172,7 @@ export function SkillDetailModal() {
                                 <div className="w-5 h-5 rounded-md bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                                   <span className="text-xs text-white font-bold">✓</span>
                                 </div>
-                                <span className="text-sm text-zinc-300">{feature}</span>
+                                <span className="text-sm text-white">{feature}</span>
                               </div>
                             ))}
                           </div>
@@ -191,20 +191,20 @@ export function SkillDetailModal() {
                       className="space-y-6"
                     >
                       <div>
-                        <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                        <h2 className="text-2xl font-bold text-brand-orange mb-2 flex items-center gap-2">
                           <span className="w-8 h-8 rounded-md bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold">
                             📊
                           </span>
                           Proven Results
                         </h2>
-                        <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                        <p className="text-xs font-bold uppercase tracking-widest text-white">
                           Impact & Outcomes
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div className="glass-card border border-white/10 p-6 text-center">
-                          <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">
+                          <p className="text-xs font-bold uppercase tracking-widest text-white mb-3">
                             Result 1
                           </p>
                           <p className="text-2xl sm:text-3xl font-bold text-white">
@@ -213,7 +213,7 @@ export function SkillDetailModal() {
                         </div>
                         {skill.results.metric2 && (
                           <div className="glass-card border border-white/10 p-6 text-center">
-                            <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">
+                            <p className="text-xs font-bold uppercase tracking-widest text-white mb-3">
                               Result 2
                             </p>
                             <p className="text-2xl sm:text-3xl font-bold text-white">
@@ -223,7 +223,7 @@ export function SkillDetailModal() {
                         )}
                         {skill.results.metric3 && (
                           <div className="glass-card border border-white/10 p-6 text-center">
-                            <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">
+                            <p className="text-xs font-bold uppercase tracking-widest text-white mb-3">
                               Result 3
                             </p>
                             <p className="text-2xl sm:text-3xl font-bold text-white">
@@ -247,22 +247,22 @@ export function SkillDetailModal() {
                           className="space-y-6"
                         >
                           <div>
-                            <h2 className="text-2xl font-bold text-white mb-2">Client Testimonial</h2>
-                            <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                            <h2 className="text-2xl font-bold text-brand-orange mb-2">Client Testimonial</h2>
+                            <p className="text-xs font-bold uppercase tracking-widest text-white">
                               What Our Clients Say
                             </p>
                           </div>
 
                           <div className="glass-card border border-white/10 p-6 sm:p-8">
                             <div className="space-y-4">
-                              <p className="text-lg text-zinc-300 italic leading-relaxed">
+                              <p className="text-lg text-white italic leading-relaxed">
                                 &quot;{skill.clientTestimonial.quote}&quot;
                               </p>
                               <div className="pt-4 border-t border-white/10">
                                 <p className="font-bold text-white">
                                   {skill.clientTestimonial.author}
                                 </p>
-                                <p className="text-sm text-zinc-500 font-medium">
+                                <p className="text-sm text-white font-medium">
                                   {skill.clientTestimonial.role}
                                 </p>
                               </div>
@@ -283,7 +283,7 @@ export function SkillDetailModal() {
                       className="space-y-4"
                     >
                       <div>
-                        <h3 className="text-sm font-bold uppercase tracking-widest text-zinc-400">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-white">
                           Built With
                         </h3>
                       </div>
@@ -291,7 +291,7 @@ export function SkillDetailModal() {
                         {skill.techStack.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-zinc-400 hover:bg-white/10 hover:text-zinc-300 transition-colors cursor-default"
+                            className="px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:text-white transition-colors cursor-default"
                           >
                             {tech}
                           </span>
@@ -310,10 +310,10 @@ export function SkillDetailModal() {
                       className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between"
                     >
                       <div>
-                        <p className="text-sm text-zinc-400 mb-2">
+                        <p className="text-sm text-white mb-2">
                           Interested in this skill for your business?
                         </p>
-                        <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                        <p className="text-xs font-bold uppercase tracking-widest text-white">
                           Let&apos;s discuss your needs
                         </p>
                       </div>

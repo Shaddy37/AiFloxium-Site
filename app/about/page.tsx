@@ -30,7 +30,7 @@ export default function AboutPage() {
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-6 md:mb-8 leading-[0.9]">
           THE PERSON <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">BUILDING</span> <br /><span className="text-gradient">AIFLOXIUM.</span>
         </h1>
-        <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium leading-relaxed">
+        <p className="text-xl md:text-2xl text-white max-w-2xl font-medium leading-relaxed">
           I am <span className="text-white font-bold">{PERSON_NAME}</span>. I build
           automation systems, internal tools, and practical AI products for teams
           that need real execution, not just ideas.
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
             <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4 uppercase">HOW THE WORK EVOLVED</h2>
-            <p className="text-zinc-400 font-medium">From single automations to full systems and shipped products.</p>
+            <p className="text-white font-medium">From single automations to full systems and shipped products.</p>
           </div>
           
           <div className="space-y-16 pl-4 md:pl-0 border-l-2 md:border-l-0 border-brand-plum/10">
@@ -63,8 +63,8 @@ export default function AboutPage() {
                 
                 <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:ml-auto'}`}>
                   <span className="text-sm font-bold text-brand-orange uppercase tracking-widest block mb-2">{item.year}</span>
-                  <h3 className="text-2xl font-bold font-heading mb-4 text-white">{item.title}</h3>
-                  <p className="text-zinc-400 font-medium leading-relaxed bg-brand-plum/10 p-6 rounded-2xl border border-brand-plum/20">{item.desc}</p>
+                  <h3 className="text-2xl font-bold font-heading mb-4 text-brand-orange">{item.title}</h3>
+                  <p className="text-white font-medium leading-relaxed bg-brand-plum/10 p-6 rounded-2xl border border-brand-plum/20">{item.desc}</p>
                 </div>
                 
                 {/* Mobile icon dot */}
@@ -81,7 +81,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4">WORKING STYLE</h2>
-            <p className="text-zinc-400 font-medium">How I approach projects, delivery, and technical execution.</p>
+            <p className="text-white font-medium">How I approach projects, delivery, and technical execution.</p>
           </div>
           <Accordion05 />
         </div>

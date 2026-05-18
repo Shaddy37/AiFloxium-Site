@@ -30,7 +30,7 @@ export default function AIConsultingPage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-[0.9] uppercase">
           STRATEGIC <br/><span className="text-brush text-3xl md:text-6xl lg:text-8xl mt-4">CONSULTING.</span>
         </h1>
-        <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium">
+        <p className="text-xl md:text-2xl text-white max-w-2xl font-medium">
           For teams that know they need better systems but want a clear plan
           before they invest in the build.
         </p>

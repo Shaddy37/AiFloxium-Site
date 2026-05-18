@@ -59,7 +59,7 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
           <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
         </div>
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-400">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white">
           {normalizedLanguage}
         </span>
       </div>

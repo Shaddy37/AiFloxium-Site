@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Services</h3>
+            <h3 className="text-brand-orange font-bold mb-6 font-heading tracking-wider uppercase text-sm">Services</h3>
             <ul className="flex flex-col gap-4">
               <li><Link href="/services/n8n-workflow-automation" className="text-muted-foreground hover:text-white transition-colors">n8n Workflow Automation</Link></li>
               <li><Link href="/services/vibe-coding" className="text-muted-foreground hover:text-white transition-colors">Product & Tool Builds</Link></li>
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold mb-6 font-heading tracking-wider uppercase text-sm">Pages</h3>
+            <h3 className="text-brand-orange font-bold mb-6 font-heading tracking-wider uppercase text-sm">Pages</h3>
             <ul className="flex flex-col gap-4">
               <li><Link href="/about" className="text-muted-foreground hover:text-white transition-colors">About</Link></li>
               <li><Link href="/resources" className="text-muted-foreground hover:text-white transition-colors">Resources</Link></li>

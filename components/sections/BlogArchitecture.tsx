@@ -18,7 +18,7 @@ export function BlogArchitecture() {
          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
             <Cpu className="w-6 h-6" />
          </div>
-         <h3 className="text-xl font-bold text-white tracking-widest uppercase italic">SIGNAL ARCHITECTURE</h3>
+         <h3 className="text-xl font-bold text-brand-orange tracking-widest uppercase italic">SIGNAL ARCHITECTURE</h3>
       </div>
       
       <div className="flex flex-col gap-6 py-8 relative">
@@ -46,9 +46,9 @@ export function BlogArchitecture() {
                  <div className="flex items-center gap-3 mb-1">
                     <span className="text-white font-bold tracking-tight uppercase">{item.tech}</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
-                    <span className="text-xs font-mono text-zinc-500 uppercase">{item.step.split('// ')[1]}</span>
+                    <span className="text-xs font-mono text-white uppercase">{item.step.split('// ')[1]}</span>
                  </div>
-                 <p className="text-sm text-zinc-400">{item.desc}</p>
+                 <p className="text-sm text-white">{item.desc}</p>
               </div>
            </motion.div>
          ))}

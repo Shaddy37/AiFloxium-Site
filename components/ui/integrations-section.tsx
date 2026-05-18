@@ -30,13 +30,13 @@ export default function IntegrationsSection() {
     <section className="max-w-7xl mx-auto my-20 px-6 grid md:grid-cols-2 gap-10 items-center border border-zinc-200 dark:border-zinc-800 p-8 rounded-[2rem] bg-zinc-50/50 dark:bg-zinc-900/50 backdrop-blur-sm">
       {/* Left Side */}
       <div>
-        <p className="uppercase text-sm font-bold tracking-[0.2em] text-zinc-400 dark:text-zinc-400 mb-4">
+        <p className="uppercase text-sm font-bold tracking-[0.2em] text-white dark:text-white mb-4">
           Ecosystem
         </p>
         <h2 className="text-5xl md:text-6xl font-black mt-2 mb-6 leading-tight tracking-tighter">
           Supercharge your <span className="bg-gradient-to-r from-zinc-400 to-zinc-100 bg-clip-text text-transparent">workflow</span>
         </h2>
-        <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-lg font-medium leading-relaxed">
+        <p className="text-zinc-600 dark:text-white mb-8 text-lg font-medium leading-relaxed">
            Scale your operations with autonomous agentic workflows. We integrate the world&apos;s most powerful AI models directly into your tech stack.
         </p>
         <div className="flex flex-wrap gap-4">

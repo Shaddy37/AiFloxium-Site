@@ -45,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             >
               {categoryLabels[project.category]}
             </span>
-            <h3 className="text-xl font-bold text-white group-hover:text-brand-orange transition-colors font-heading tracking-tight">
+            <h3 className="text-xl font-bold text-brand-orange group-hover:text-brand-orange transition-colors font-heading tracking-tight">
               {project.title}
             </h3>
           </div>
@@ -58,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </motion.div>
         </div>
 
-        <p className="text-zinc-400 text-sm font-medium leading-relaxed line-clamp-2">
+        <p className="text-white text-sm font-medium leading-relaxed line-clamp-2">
           {project.problem}
         </p>
 
@@ -77,7 +77,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <h4 className="text-[10px] font-bold uppercase tracking-widest text-brand-orange mb-2">
                   Solution
                 </h4>
-                <p className="text-zinc-300 text-sm font-medium leading-relaxed">
+                <p className="text-white text-sm font-medium leading-relaxed">
                   {project.solution}
                 </p>
               </div>
@@ -86,7 +86,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-brand-plum/10 text-zinc-400 border border-brand-plum/20"
+                    className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md bg-brand-plum/10 text-white border border-brand-plum/20"
                   >
                     {tech}
                   </span>
@@ -95,7 +95,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
               <div className="flex items-center gap-2 p-3 bg-brand-plum/10 border border-brand-plum/20">
                 <CheckCircle2 className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                <span className="text-sm font-medium text-zinc-300">
+                <span className="text-sm font-medium text-white">
                   {project.result}
                 </span>
               </div>

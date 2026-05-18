@@ -60,7 +60,7 @@ export default function VideoPopup() {
                 </motion.div>
               </div>
             </div>
-            <span className="absolute -bottom-6 sm:-bottom-7 left-1/2 -translate-x-1/2 text-[8px] sm:text-[9px] font-bold tracking-[0.15em] uppercase text-zinc-500 whitespace-nowrap">
+            <span className="absolute -bottom-6 sm:-bottom-7 left-1/2 -translate-x-1/2 text-[8px] sm:text-[9px] font-bold tracking-[0.15em] uppercase text-white whitespace-nowrap">
               Watch
             </span>
           </motion.button>
@@ -106,7 +106,7 @@ export default function VideoPopup() {
               transition={{ delay: 0.3 }}
               className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 text-center px-4"
             >
-              <p className="text-xs sm:text-sm text-zinc-400 font-medium">16 seconds that could change your business</p>
+              <p className="text-xs sm:text-sm text-white font-medium">16 seconds that could change your business</p>
             </motion.div>
           </motion.div>
         )}

@@ -11,7 +11,7 @@ export function PostFigurePlaceholder({ alt }: PostFigurePlaceholderProps) {
         role="img"
       >
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-zinc-400">
+          <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-white">
             Image Placeholder
           </p>
           <p className="mt-4 font-serif text-xl leading-relaxed text-white md:text-2xl">{alt}</p>

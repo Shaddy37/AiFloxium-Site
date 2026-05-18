@@ -33,11 +33,11 @@ export default function ChaosToClarity() {
       <div className="absolute inset-0 bg-radial-glow opacity-30 pointer-events-none" />
 
       <div className="container mx-auto px-6 mb-16 text-center md:text-left relative z-10">
-        <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-white mb-6 uppercase">
+        <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-brand-orange mb-6 uppercase">
           From Operational Chaos <br />
-          <span className="text-zinc-400">To Deterministic Clarity.</span>
+          <span className="text-white">To Deterministic Clarity.</span>
         </h2>
-        <p className="text-xl text-zinc-400 font-medium max-w-2xl">
+        <p className="text-xl text-white font-medium max-w-2xl">
           Legacy systems are fragmented, costly, and unpredictable. I ingest chaotic workflows and output mathematically perfect, automated data structures.
         </p>
       </div>
@@ -160,8 +160,8 @@ export default function ChaosToClarity() {
 
         {/* Label Overlays */}
         <div className="absolute left-[10%] top-1/2 -translate-y-1/2 glass-card p-4 hidden md:block border-white/5 opacity-80 pointer-events-none">
-           <LayoutGrid className="w-6 h-6 text-zinc-400 mb-2" />
-           <div className="text-xs font-mono text-zinc-400 tracking-widest uppercase">Input: Legacy Noise</div>
+           <LayoutGrid className="w-6 h-6 text-white mb-2" />
+           <div className="text-xs font-mono text-white tracking-widest uppercase">Input: Legacy Noise</div>
         </div>
 
         <div className="absolute right-[10%] top-1/2 -translate-y-1/2 glass-card bg-white text-black p-4 hidden md:block rounded-xl border border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.2)] pointer-events-none">

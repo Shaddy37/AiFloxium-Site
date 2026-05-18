@@ -1,0 +1,294 @@
+const fs = require('fs');
+const path = require('path');
+
+const content = `---
+title: "50 Best Claude Code Skills (2026 Complete Guide)"
+date: "2026-05-17"
+author: "Muhammad Shadab Shams"
+category: "AI Engineering"
+image: "/blog/covers/50-best-claude-code-skills.svg"
+description: "The complete 2026 reference guide to the 50 best Claude Code skills for autonomous workflows, SEO optimization, design, and engineering. Discover the best long-tail semantic keywords and agentic tools."
+keywords: ["claude code skills", "best claude skills", "ai engineering", "agentic workflows", "claude code plugins", "seo optimized keywords", "long tail keywords", "semantic keywords", "claude code seo", "claude ai developer tools", "claude coding assistant skills", "how to use claude code", "best ai development tools 2026"]
+canonicalUrl: "https://aifloxium.online/blog/50-best-claude-code-skills"
+---
+
+## TL;DR: The Top 5 Skills You Need Right Now
+- **[Superpowers](https://github.com/obra/superpowers):** The #1 most installed skill (725K+). Forces Claude to act like a senior engineer.
+- **[Repomix](https://github.com/yamadashy/repomix):** Packs your entire codebase into one file for instant LLM context.
+- **[frontend-design](https://github.com/anthropics/skills):** Official Anthropics skill that enforces high-end UI aesthetics.
+- **[GEO/SEO Claude](https://github.com/AgriciDaniel/claude-seo):** LLM-first SEO tool for modern answer engine optimization.
+- **[JTBD Interview Tool](https://github.com/glebis/claude-skills):** Runs live Jobs-To-Be-Done interviews for product discovery.
+
+> [!IMPORTANT]
+> **What is Claude Code?**
+> Claude Code is Anthropic's CLI tool that allows Claude to act as an autonomous agent in your local environment. "Skills" are plugins (often installed via \`/plugin marketplace add\`) that extend its capabilities with custom prompts, tools, and workflows.
+
+<PremiumCTA 
+  title="Build Autonomous Agents" 
+  description="Need custom AI skills or agentic workflows developed for your enterprise?" 
+  buttonText="View Our Services" 
+  buttonLink="/services" 
+/>
+
+## 🎨 Frontend & Design
+
+These skills focus on generating beautiful, accessible, and high-fidelity user interfaces.
+
+### 1. frontend-design (by anthropics)
+**Installs:** 277K+ | **Why you need it:** Bans Inter font and purple gradients by default. Forces Claude to commit to a bold aesthetic decision before writing a single line of code.
+*Command: \`/plugin marketplace add anthropics/skills\`*
+
+### 16. Color Expert (by meodai)
+**Why you need it:** 286,000 words of color science packed into one skill. Covers OKLCH and OKLAB color spaces, palette generation, contrast ratios and WCAG accessibility.
+*Command: \`/plugin marketplace add meodai/skill.color-expert\`*
+
+### 17. Hand-Drawn Diagrams (by muthuishere)
+**Why you need it:** Generates hand-drawn Excalidraw diagrams from a text prompt. Returns animated SVG output, a hosted edit link, and PNG export.
+*Command: \`/plugin marketplace add muthuishere/hand-drawn-diagrams\`*
+
+### 18. claudedesignskills — 3D and Motion (by freshtechbro)
+**Why you need it:** 27 plugins in one repo including Three.js, GSAP, React Three Fiber, Framer Motion, Babylon.js, A-Frame, and more.
+*Command: \`/plugin marketplace add freshtechbro/claudedesignskills\`*
+
+### 19. Nothing Design Skill (by community)
+**Why you need it:** Generates UI in the Nothing Phone design language. Monochrome, heavily typographic, industrial.
+*Command: \`/plugin marketplace add jqueryscript/awesome-claude-code\`*
+
+### 20. GPT Image 2 Skill (by glebis)
+**Why you need it:** Supports thinking modes (off/low/medium/high), 14 style presets, 8 platform presets. Covers the full image generation workflow.
+*Command: \`/plugin marketplace add glebis/claude-skills\`*
+
+### 21. canvas-design (by anthropics)
+**Why you need it:** Beautiful visual art output in PNG and PDF. Designed for posters, static visual pieces, and graphic design with proper aesthetic principles enforced.
+*Command: \`/plugin marketplace add anthropics/skills\`*
+
+### 22. algorithmic-art (by anthropics)
+**Why you need it:** Generative art using p5.js with seeded randomness, flow fields, and particle systems.
+*Command: \`/plugin marketplace add anthropics/skills\`*
+
+### 23. Design Auditor (by BehiSecc)
+**Why you need it:** Audits any design against 17 professional rules: typography, WCAG accessibility, spacing systems, iconography, and design tokens.
+*Command: \`/plugin marketplace add BehiSecc/awesome-claude-skills\`*
+
+## 📱 Social Media & Content
+
+Scale your organic reach with autonomous social systems and smart automation.
+
+### 2. Charlie Hills Social Media OS (by charlie947)
+**Why you need it:** The actual content system behind 350K followers. 17 skills covering voice, posts, reels, thumbnails, carousels, scoring, and analytics.
+*Command: \`/plugin marketplace add charlie947/social-media-skills\`*
+
+### 6. voice-builder (by charlie947)
+**Why you need it:** Interviews you, analyzes your content samples, then writes your personal \`about-me.md\` and \`voice.md\`. Install this first.
+*Command: \`/plugin marketplace add charlie947/social-media-skills\`*
+
+### 7. reels-scripting (by charlie947)
+**Why you need it:** Reverse-engineers an outlier Reel using Apify and Gemini 2.5 Flash, then writes a new script in your voice.
+*Command: \`/plugin marketplace add charlie947/social-media-skills\`*
+
+### 8. post-scorer (by charlie947)
+**Why you need it:** Pulls your post history via Apify and builds a performance baseline. Scores any new draft against that baseline before you publish.
+*Command: \`/plugin marketplace add charlie947/social-media-skills\`*
+
+### 9. youtube-thumbnail (by charlie947)
+**Why you need it:** Turns a video title into a branded YouTube thumbnail prompt optimized for Gemini image generation.
+*Command: \`/plugin marketplace add charlie947/social-media-skills\`*
+
+### 10. hook-generator (by charlie947)
+**Why you need it:** Generates hooks across five proven frameworks: PAS, AIDA, BAB, STAR, and SLAY. Solves the 3-second stop-the-scroll problem.
+*Command: \`/plugin marketplace add charlie947/social-media-skills\`*
+
+### 14. tweetclaw (by Xquik-dev)
+**Why you need it:** 40+ X/Twitter actions: post, extract, monitor, compose, schedule. Covers the full X workflow.
+*Command: \`/plugin marketplace add Xquik-dev/tweetclaw\`*
+
+### 15. X Article Publisher (by wshuyi)
+**Why you need it:** Publishes full long-form articles to X directly from Claude Code, handling formatting and threading.
+*Command: \`/plugin marketplace add wshuyi/x-article-publisher-skill\`*
+
+### 29. Twitter Algorithm Optimizer (by ComposioHQ)
+**Why you need it:** Analyzes and rewrites tweets using insights directly from Twitter's open-source algorithm.
+*Command: \`/plugin marketplace add ComposioHQ/awesome-claude-skills\`*
+
+### 30. Competitive Ads Extractor (by ComposioHQ)
+**Why you need it:** Pulls competitors' active ads from ad libraries and analyzes messaging patterns.
+*Command: \`/plugin marketplace add ComposioHQ/awesome-claude-skills\`*
+
+## ✍️ Writing & Humanization
+
+Remove AI clichés and enforce high-quality, evidence-based dialogue.
+
+### 11. Humanizer (by blader)
+**Installs:** 2.9K+ | **Why you need it:** Removes AI writing tells through multi-pass editing, specifically targeting em-dash overuse and uniform paragraph lengths.
+*Command: \`/plugin marketplace add blader/humanizer\`*
+
+### 13. Beautiful Prose (by SHADOWPR0)
+**Why you need it:** A hard-edged writing style contract for timeless, forceful English prose. Closer to Hemingway than to ChatGPT defaults.
+*Command: \`/plugin marketplace add SHADOWPR0/beautiful_prose\`*
+
+### 33. Evidence-Based Dialogue (by glebis)
+**Why you need it:** Replaces sycophantic AI behavior with structured critical analysis through five thinking modes.
+*Command: \`/plugin marketplace add glebis/claude-skills\`*
+
+## 🔬 Research & Analysis
+
+Perform deep research, competitive intelligence, and data synthesis automatically.
+
+### 3. Daydream (by glebis)
+**Why you need it:** Runs autonomously through your knowledge base while you are away, surfacing non-obvious connections between concepts.
+*Command: \`/plugin marketplace add glebis/claude-skills\`*
+
+### 5. Autoresearch Skill (by uditgoenka)
+**Why you need it:** A self-improving research engine that gets better the longer it runs using a modify-verify-keep loop.
+*Command: \`/plugin marketplace add uditgoenka/autoresearch\`*
+
+### 31. Deep Research Engine (by 199-biotechnologies)
+**Why you need it:** Eight-phase research pipeline with source credibility scoring across Brave, Serper, Exa, and Firecrawl.
+*Command: \`/plugin marketplace add 199-biotechnologies/claude-deep-research-skill\`*
+
+### 32. Academic Research Skills (by Imbad0202)
+**Installs:** 3.4K+ | **Why you need it:** Full academic pipeline: research → write → review → revise → finalize.
+*Command: \`/plugin marketplace add Imbad0202/academic-research-skills\`*
+
+### 34. Social Media Research (by skainguyen1412)
+**Why you need it:** Analyzes live public opinion and emerging trends on Reddit and X using real discussions and direct quotes.
+*Command: \`/plugin marketplace add skainguyen1412/social-media-research-skill\`*
+
+<PremiumCTA 
+  title="Need Custom AI Research Agents?" 
+  description="We build advanced extraction and reasoning pipelines to give your business an edge." 
+  buttonText="Contact Us" 
+  buttonLink="/services" 
+/>
+
+## 📈 Marketing & SEO
+
+Optimize for Semantic Keywords, Long-tail queries, and Answer Engine algorithms.
+
+### 24. Kim Barrett Direct-Response Suite (by VoltAgent)
+**Why you need it:** Seven direct-response skills including avatar extraction, Schwartz awareness mapping, and headline matrices.
+*Command: \`/plugin marketplace add VoltAgent/awesome-agent-skills\`*
+
+### 25. wondelai/skills (by wondelai)
+**Why you need it:** 25 skills grounded in real published frameworks (Don Norman, Cialdini, Eric Ries, Alex Hormozi).
+*Command: \`/plugin marketplace add wondelai/skills\`*
+
+### 26. Marketing Module (by alirezarezvani)
+**Installs:** 5.2K+ | **Why you need it:** 43 marketing skills covering Content, SEO, CRO, Channels, Growth, Intelligence, and Sales.
+*Command: \`/plugin marketplace add alirezarezvani/claude-skills\`*
+
+### 27. Marketing Skills (by coreyhaines31)
+**Why you need it:** Covers CRO, copywriting, SEO, analytics, and growth engineering. Excellent for short-form video optimization.
+*Command: \`/plugin marketplace add coreyhaines31/marketingskills\`*
+
+### 28. Email Marketing Bible (by CosmoBlk)
+**Why you need it:** 55,000 words of email marketing knowledge encoded as a single skill. Covers lifecycles and deliverability.
+*Command: \`/plugin marketplace add CosmoBlk/email-marketing-bible\`*
+
+### 44. GEO/SEO Claude (by AgriciDaniel)
+**Installs:** 3.5K+ | **Why you need it:** GEO-first SEO skill covering AI search optimization, citability scoring, schema markup, and long-tail semantic keywords.
+*Command: \`/plugin marketplace add AgriciDaniel/claude-seo\`*
+
+## 🧩 Product & Strategy
+
+Drive better alignment and product/market fit.
+
+### 35. PM Skills Marketplace (by phuryn)
+**Why you need it:** 100+ product management skills across 8 plugins (Lean Canvas, JTBD, OKRs, PRDs).
+*Command: \`/plugin marketplace add phuryn/pm-skills\`*
+
+### 36. JTBD Interview Tool (by glebis)
+**Why you need it:** Runs a live Jobs-To-Be-Done interview over text or voice to uncover true customer motivations.
+*Command: \`/plugin marketplace add glebis/claude-skills\`*
+
+### 37. AI Transformation Discovery (by glebis)
+**Why you need it:** Structured consulting discovery interviews using BCG and Deloitte frameworks for AI maturity.
+*Command: \`/plugin marketplace add glebis/claude-skills\`*
+
+## 🎬 Video & Media
+
+Generate programmatic multi-modal assets.
+
+### 4. Remotion Best Practices (by remotion-dev)
+**Why you need it:** Official skill from the Remotion team to make videos programmatically in React.
+*Command: \`/plugin marketplace add remotion-dev/skills\`*
+
+### 38. AI Video Toolkit (by digitalsamba)
+**Why you need it:** End-to-end AI-native video production pipeline. Voiceover, Remotion Studio review, and final MP4 render.
+*Command: \`/plugin marketplace add digitalsamba/claude-code-video-toolkit\`*
+
+### 39. AI Music Album Production (by bitwize-music-studio)
+**Why you need it:** Full-lifecycle AI music production, from concept and lyrics to stem mixing notes.
+*Command: \`/plugin marketplace add bitwize-music-studio/claude-ai-music-skills\`*
+
+### 40. Generative Media Skills (by community)
+**Installs:** 3.0K+ | **Why you need it:** Multi-modal generative media for AI agents spanning image, video, and audio across multiple providers.
+*Command: \`/plugin marketplace add jqueryscript/awesome-claude-code\`*
+
+### 12. Anything to NotebookLM (by joeseesun)
+**Why you need it:** Converts 15+ source types into podcasts, presentations, and mind maps via NotebookLM.
+*Command: \`/plugin marketplace add joeseesun/anything-to-notebooklm\`*
+
+## 🛠️ Engineering & Dev
+
+Level up your Claude instance into a true software engineer.
+
+### 41. Superpowers (by obra)
+**Installs:** 725K+ | **Why you need it:** Forces Claude to operate like a senior engineer. The single highest-impact engineering skill available.
+*Command: \`/plugin marketplace add obra/superpowers\`*
+
+### 42. Repomix (by yamadashy)
+**Why you need it:** Packs an entire codebase into one AI-friendly file. The fastest way to feed a full repository to Claude.
+*Command: \`/plugin marketplace add yamadashy/repomix\`*
+
+### 43. antfu's skills (by antfu)
+**Installs:** 3.5K+ | **Why you need it:** Curated agent skills from Anthony Fu, embedding production-grade Vue/Vite engineering judgment.
+*Command: \`/plugin marketplace add antfu/skills\`*
+
+### 45. Dev Browser (by community)
+**Installs:** 3.3K+ | **Why you need it:** Gives the agent the ability to use a real web browser for end-to-end QA testing.
+*Command: \`/plugin marketplace add jqueryscript/awesome-claude-code\`*
+
+### 46. Vexor Semantic Search (by scarletkc)
+**Why you need it:** Vector-powered semantic search across your local files. Solves the 'where did I save that thing' problem permanently.
+*Command: \`/plugin marketplace add scarletkc/vexor\`*
+
+### 47. Skill Seekers (by yusufkaraaslan)
+**Why you need it:** Converts any documentation site, GitHub repository, or PDF into a Claude skill in minutes.
+*Command: \`/plugin marketplace add yusufkaraaslan/Skill_Seekers\`*
+
+### 48. Web Scraper (by yfe404)
+**Why you need it:** Intelligent scraper with automatic strategy selection, starting with cURL and only escalating to stealth browsers if needed.
+*Command: \`/plugin marketplace add yfe404/web-scraper\`*
+
+## 🧬 Health & Science
+
+Personal diagnostics and tracking in the terminal.
+
+### 49. Personal Health Assistant (by BehiSecc)
+**Why you need it:** Analyzes medical reports and gives personalized wellness suggestions based on your actual data.
+*Command: \`/plugin marketplace add BehiSecc/awesome-claude-skills\`*
+
+### 50. DNA Analysis (by BehiSecc)
+**Why you need it:** Personal genome analysis from raw 23andMe or AncestryDNA export files with a full HTML dashboard output.
+*Command: \`/plugin marketplace add BehiSecc/awesome-claude-skills\`*
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### What is the best Claude Code skill for beginners?
+The **Superpowers** skill by \`obra\` is universally recommended. It forces the LLM to plan, brainstorm, and test its code, drastically reducing errors in autonomous coding sessions.
+
+### Are Claude skills safe to run locally?
+Skills execute code directly in your local environment. You should **only install plugins from trusted sources or verified repositories**, as they have the same system access as your terminal.
+
+### How do Semantic Keywords help with GEO?
+Generative Engine Optimization (GEO) relies on semantic relationships rather than exact-match keyword stuffing. Semantic keywords provide the nuanced context that LLMs like Claude or Perplexity look for when structuring answers for searchers. Incorporating long-tail, semantic keywords guarantees you are providing value beyond a basic SERP listing.
+
+### Can I create my own Claude Code skills?
+Yes. The **Skill Seekers** plugin allows you to convert any documentation site or GitHub repository into a custom Claude skill in minutes.
+`;
+
+fs.writeFileSync(path.join('e:\\\\Antigravity\\\\Redesign\\\\lib\\\\content\\\\posts', '50-best-claude-code-skills.mdx'), content, 'utf8');
+console.log('Done writing full 50 skills');

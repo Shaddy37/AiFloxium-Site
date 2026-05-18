@@ -241,12 +241,12 @@ export function FocusRail({
                 {activeItem.meta && (
                   <div className="flex items-center gap-2">
                     <span className="h-[1px] w-4 bg-zinc-700" />
-                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-white">
                       {activeItem.meta}
                     </span>
                   </div>
                 )}
-                <h2 className="text-4xl font-bold font-heading tracking-tight md:text-6xl text-white">
+                <h2 className="text-4xl font-bold font-heading tracking-tight md:text-6xl text-brand-orange">
                   {activeItem.title.split(' ').map((word, i) => (
                     <span key={i} className={i === activeItem.title.split(' ').length - 1 ? "text-gradient" : ""}>
                       {word}{' '}
@@ -254,7 +254,7 @@ export function FocusRail({
                   ))}
                 </h2>
                 {activeItem.description && (
-                  <p className="max-w-lg text-zinc-400 font-medium leading-relaxed text-sm md:text-base opacity-70">
+                  <p className="max-w-lg text-white font-medium leading-relaxed text-sm md:text-base opacity-70">
                     {activeItem.description}
                   </p>
                 )}
@@ -266,7 +266,7 @@ export function FocusRail({
             <div className="flex items-center gap-2 p-1.5 rounded-full bg-zinc-900/40 border border-white/5 backdrop-blur-xl">
               <button
                 onClick={handlePrev}
-                className="group p-3 text-zinc-500 transition-all hover:text-white hover:bg-white/5 rounded-full"
+                className="group p-3 text-white transition-all hover:text-white hover:bg-white/5 rounded-full"
                 aria-label="Previous"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -278,7 +278,7 @@ export function FocusRail({
               </div>
               <button
                 onClick={handleNext}
-                className="group p-3 text-zinc-500 transition-all hover:text-white hover:bg-white/5 rounded-full"
+                className="group p-3 text-white transition-all hover:text-white hover:bg-white/5 rounded-full"
                 aria-label="Next"
               >
                 <ChevronRight className="h-5 w-5" />
