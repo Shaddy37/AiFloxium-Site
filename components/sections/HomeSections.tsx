@@ -238,7 +238,7 @@ export function Trust() {
         </div>
 
         {/* Trust Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {trustPillars.map((pillar, i) => (
             <motion.div
               key={i}
@@ -246,13 +246,13 @@ export function Trust() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.08 }}
-              className="border border-brand-plum/20 bg-brand-bg p-6 group hover:border-brand-plum/40 hover:bg-brand-plum/10 transition-all"
+              className="border border-brand-plum/20 bg-brand-bg p-4 md:p-6 group hover:border-brand-plum/40 hover:bg-brand-plum/10 transition-all"
             >
-              <div className="flex items-start gap-3 mb-4">
-                <div className="w-2 h-2 bg-primary mt-2 shrink-0" />
-                <h4 className="text-lg font-bold font-heading text-brand-orange">{pillar.title}</h4>
+              <div className="flex items-start gap-3 mb-2 md:mb-4">
+                <div className="w-1.5 h-1.5 bg-primary mt-2 shrink-0" />
+                <h4 className="text-base md:text-lg font-bold font-heading text-brand-orange">{pillar.title}</h4>
               </div>
-              <p className="text-white text-sm leading-relaxed">{pillar.description}</p>
+              <p className="text-white text-xs md:text-sm leading-relaxed">{pillar.description}</p>
             </motion.div>
           ))}
         </div>
@@ -262,7 +262,7 @@ export function Trust() {
           <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-8">Proven Results</h4>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
           {caseStudies.map((study, i) => (
             <motion.div 
               key={i}
@@ -271,27 +271,27 @@ export function Trust() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.12 }}
               className={cn(
-                "relative border border-brand-plum/20 bg-brand-bg p-10 flex flex-col justify-between group overflow-hidden hover:border-brand-plum/40 transition-all",
+                "relative border border-brand-plum/20 bg-brand-bg p-6 flex flex-col justify-between group overflow-hidden hover:border-brand-plum/40 transition-all",
                 study.size === "large" ? "md:col-span-2" : "md:col-span-1"
               )}
             >
               <CornerPlusIcons />
               
               <div>
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-white/5 border border-white/10 flex items-center justify-center">
                     {study.icon}
                   </div>
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-white">{study.category}</span>
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white">{study.category}</span>
                 </div>
-                <h4 className="text-3xl md:text-4xl font-bold font-heading text-brand-orange mb-4 tracking-tight">{study.title}</h4>
-                <p className="text-white text-lg leading-relaxed max-w-md mb-8">{study.desc}</p>
+                <h4 className="text-2xl md:text-3xl font-bold font-heading text-brand-orange mb-3 tracking-tight">{study.title}</h4>
+                <p className="text-white text-sm md:text-base leading-relaxed max-w-md mb-6">{study.desc}</p>
                 
                 {/* Metrics */}
                 {study.metrics && (
-                  <div className="flex flex-wrap gap-3 mb-8">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {study.metrics.map((metric, j) => (
-                      <span key={j} className="text-xs bg-zinc-800/50 border border-white/10 px-3 py-1.5 text-white">
+                      <span key={j} className="text-[10px] bg-zinc-800/50 border border-white/10 px-2 py-1 text-white">
                         {metric}
                       </span>
                     ))}
@@ -299,8 +299,8 @@ export function Trust() {
                 )}
               </div>
 
-              <div className="pt-8 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xl font-bold text-primary font-heading tracking-tight">{study.impact}</span>
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-lg font-bold text-primary font-heading tracking-tight">{study.impact}</span>
                 <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
               </div>
             </motion.div>

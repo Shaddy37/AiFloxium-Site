@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
 import CapabilitiesEngineered from '@/components/sections/CapabilitiesEngineered';
-import Hero3D from '@/components/sections/Hero3D';
-import HiddenCostSection from '@/components/sections/HiddenCostSection';
+import { PrismaHero } from '@/components/ui/prisma-hero';
+import StoryNarrative from '@/components/sections/StoryNarrative';
 import { LazySections } from '@/components/sections/LazySections';
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo';
 import { PERSON_NAME } from '@/lib/site';
@@ -92,48 +92,10 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeItemListJsonLd) }}
       />
       <Navbar />
-      <Hero3D />
-      <HiddenCostSection />
+      <PrismaHero />
       <CapabilitiesEngineered />
+      <StoryNarrative />
       <LazySections />
-
-      <section className="bg-white border-t border-zinc-100 px-6 py-24" data-theme="light">
-        <div className="container mx-auto max-w-6xl grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-brand-plum">
-              Why Teams Hire {PERSON_NAME.split(' ')[0]}
-            </p>
-            <h2 className="mb-6 text-4xl font-heading font-black tracking-tight text-black md:text-5xl">
-              AI systems that reduce manual work and ship without agency bloat.
-            </h2>
-            <p className="mb-6 text-lg font-medium leading-relaxed text-zinc-700">
-              AIFLOXIUM is built for founders and operators who need execution, not
-              generic strategy. The work typically falls into four buckets: workflow
-              automation, internal tools, autonomous agents, and SEO systems that turn
-              technical fixes into qualified traffic.
-            </p>
-            <p className="text-lg font-medium leading-relaxed text-zinc-700">
-              Most projects start with one bottleneck: slow lead follow-up, reporting
-              chaos, support overload, content operations, or disconnected software.
-              The goal is to replace fragile manual handoffs with a system that is
-              easier to run, easier to measure, and easier to scale.
-            </p>
-          </div>
-          <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8">
-            <h3 className="mb-6 text-2xl font-heading font-black tracking-tight text-black">
-              Common outcomes
-            </h3>
-            <ul className="space-y-4 text-base font-medium leading-relaxed text-zinc-700">
-              <li>Faster lead response and cleaner CRM pipelines</li>
-              <li>Less manual reporting across sales, finance, and operations</li>
-              <li>Internal tools that replace spreadsheet-driven workflows</li>
-              <li>AI-assisted SEO systems that support organic growth</li>
-              <li>Agentic workflows with clear guardrails and human oversight</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </main>
   );
