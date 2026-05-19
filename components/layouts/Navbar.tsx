@@ -8,7 +8,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
-import { BRAND_NAME, BRAND_SIGNATURE_NAME } from '@/lib/site';
+import { BRAND_NAME, BRAND_SIGNATURE_NAME, CALENDLY_URL } from '@/lib/site';
 
 const links = [
   { name: "Projects", href: "/projects" },
@@ -192,7 +192,9 @@ export default function Navbar() {
             className="ml-4 flex items-center gap-3"
           >
             <Link 
-              href="#initiate" 
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: "default" }), 
                 "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-lg border-none"
@@ -252,7 +254,9 @@ export default function Navbar() {
                 className="flex flex-col gap-4 mb-8"
               >
                 <Link 
-                  href="#initiate" 
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="w-full h-16 rounded-3xl bg-brand-orange text-white flex items-center justify-center font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-xl shadow-brand-orange/10"
                 >

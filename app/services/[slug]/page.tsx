@@ -5,7 +5,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { servicesData } from "@/lib/services-data";
 import { ArrowRight, ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
-import { BRAND_NAME, PERSON_NAME, SITE_URL } from "@/lib/site";
+import { BRAND_NAME, CALENDLY_URL, PERSON_NAME, SITE_URL } from "@/lib/site";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -145,7 +145,9 @@ export default async function ServicePage({ params }: Props) {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/#initiate"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-brand-orange text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-brand-orange/90 transition-all shadow-[0_0_20px_rgba(255,107,0,0.3)] border-none"
             >
               Book a Discovery Call <ArrowRight className="w-4 h-4" />
@@ -335,7 +337,9 @@ export default async function ServicePage({ params }: Props) {
           </p>
 
           <Link
-            href="/#initiate"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-brand-orange text-white font-bold text-sm uppercase tracking-widest px-10 py-5 rounded-full hover:bg-brand-orange/90 transition-all shadow-[0_0_30px_rgba(255,107,0,0.3)] border-none"
           >
             Book a Discovery Call <ArrowRight className="w-4 h-4" />

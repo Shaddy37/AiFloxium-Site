@@ -1,4 +1,5 @@
 import FlowArt, { FlowSection } from '@/components/ui/story-scroll';
+import { CALENDLY_URL } from '@/lib/site';
 
 export default function StoryNarrative() {
   return (
@@ -130,7 +131,7 @@ export default function StoryNarrative() {
         </div>
         <hr className="my-[2vw] border-none border-t border-white/30" />
         <div className="mt-auto ml-auto">
-          <a href="/#initiate" className="inline-flex items-center gap-2 rounded-full bg-black py-3 px-8 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-zinc-900">
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-black py-3 px-8 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-zinc-900">
             Book Discovery Call
           </a>
         </div>

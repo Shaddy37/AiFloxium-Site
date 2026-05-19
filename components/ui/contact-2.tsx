@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  CALENDLY_URL,
   PERSON_NAME,
   PHONE_NUMBER,
   PRIMARY_EMAIL,
@@ -114,6 +115,15 @@ export const Contact2 = ({
           ]}
         >
           <form onSubmit={handleSubmit} className="w-full space-y-6">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-14 w-full items-center justify-center rounded-xl bg-brand-orange text-center font-bold uppercase tracking-[0.1em] text-white shadow-xl shadow-brand-orange/10 transition-all hover:bg-brand-orange/90"
+            >
+              Open Calendly booking
+            </a>
+
             <div className="hidden">
               <Input
                 type="text"
@@ -157,8 +167,8 @@ export const Contact2 = ({
               <Textarea id="message" value={formData.message} onChange={handleChange} required placeholder="Describe the workflow, product, bottleneck, or business problem..." className="bg-brand-bg/50 border-brand-plum/20 min-h-[120px] rounded-xl focus:ring-brand-orange/20 transition-all resize-none text-white placeholder:text-zinc-700 p-4" />
             </div>
 
-            <Button type="submit" disabled={status === "loading" || status === "success"} size="lg" className="w-full h-14 rounded-xl bg-brand-orange text-white hover:bg-brand-orange/90 transition-all font-bold tracking-[0.1em] uppercase shadow-xl shadow-brand-orange/10 active:scale-[0.98] border-none">
-              {status === "loading" ? "Sending..." : status === "success" ? "Message sent" : "Book a discovery call ->"}
+            <Button type="submit" disabled={status === "loading" || status === "success"} size="lg" className="w-full h-14 rounded-xl border-none bg-white text-brand-bg shadow-xl transition-all active:scale-[0.98] hover:bg-zinc-100">
+              {status === "loading" ? "Sending..." : status === "success" ? "Message sent" : "Send project details"}
             </Button>
 
             {status === "error" && (

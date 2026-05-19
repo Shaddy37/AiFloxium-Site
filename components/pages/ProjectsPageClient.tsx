@@ -14,6 +14,7 @@ import { SkillDetailModal } from '@/components/ui/skill-detail-modal';
 import { WorkflowsCarousel } from '@/components/ui/workflows-carousel';
 import { claudeSkills } from '@/lib/claude-skills-data';
 import { categories, projects } from '@/lib/projects-data';
+import { CALENDLY_URL } from '@/lib/site';
 import { cn } from '@/lib/utils';
 
 export default function ProjectsPageClient() {
@@ -49,14 +50,15 @@ export default function ProjectsPageClient() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 relative overflow-hidden bg-hero-gradient py-20 rounded-[3rem]"
+          className="mb-16 relative overflow-hidden rounded-b-[3rem] bg-hero-gradient px-4 py-20 text-left md:px-6"
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-heading font-black text-white tracking-tighter mb-4 uppercase leading-[0.8]">
-            SHIPPED <span className="text-brush text-4xl md:text-7xl lg:text-9xl ml-4">WORK.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-tight uppercase">
+            SHIPPED <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">WORK.</span>
           </h1>
-          <p className="text-xl text-white font-medium max-w-2xl mx-auto">
-            Real workflow builds, AI systems, and product proof including ApePublish.
+          <p className="max-w-2xl text-xl font-medium text-white md:text-2xl">
+            Practical AI systems for startups and growing businesses: automation,
+            internal software, product builds, and workflows that save real time.
           </p>
         </motion.div>
 
@@ -198,7 +200,9 @@ export default function ProjectsPageClient() {
               let&apos;s talk through the fastest credible path.
             </p>
             <Link
-              href="/#initiate"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-[0_0_30px_rgba(255,107,0,0.3)]"
             >
               Book a Discovery Call

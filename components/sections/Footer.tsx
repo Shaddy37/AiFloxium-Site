@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import FancyTextHover from "@/components/ui/fancy-text-hover";
 import {
   BRAND_NAME,
+  CALENDLY_URL,
   LINKEDIN_URL,
   PERSON_NAME,
   X_URL
@@ -84,7 +85,7 @@ export default function Footer() {
               <li><Link href="/resources" className="text-muted-foreground hover:text-white transition-colors">Resources</Link></li>
               <li><Link href="/blog" className="text-muted-foreground hover:text-white transition-colors">Blog</Link></li>
               <li><Link href="/projects" className="text-muted-foreground hover:text-white transition-colors">Projects</Link></li>
-              <li><Link href="#initiate" className="text-muted-foreground hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
@@ -95,7 +96,9 @@ export default function Footer() {
             <span className="text-brand-orange">BUILD?</span>
           </h2>
           <Link
-            href="#initiate"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="h-40 w-40 rounded-full bg-brand-orange text-white font-bold text-lg flex flex-col items-center justify-center gap-2 group hover:bg-brand-orange/80 transition-colors shadow-[0_0_50px_rgba(255,107,0,0.2)]"
           >
             Book a Call

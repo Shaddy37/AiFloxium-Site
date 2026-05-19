@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import { claudeSkills } from "@/lib/claude-skills-data";
+import { CALENDLY_URL } from "@/lib/site";
 import { ClaudeSkillCard } from "./claude-skill-card";
 
 export function SkillDetailModal() {
@@ -127,7 +128,9 @@ export function SkillDetailModal() {
 
                   {/* CTA */}
                   <Link
-                    href="/#initiate"
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={handleClose}
                     className="inline-flex items-center gap-3 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-zinc-200 transition-colors"
                   >

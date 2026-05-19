@@ -104,8 +104,8 @@ export default function ServicesPage() {
           WHAT I <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">BUILD.</span>
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl font-medium">
-          Services for teams that need automation, internal software, AI workflows,
-          or a technical partner who can actually ship.
+          Practical AI systems for startups and growing businesses: automation,
+          internal software, product builds, and workflows that save real time.
         </p>
       </div>
 

@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CALENDLY_URL } from "@/lib/site";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -65,7 +66,9 @@ export default function HeroContent() {
               className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
             >
               <Link
-                href="/#initiate"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-lg"
               >
                 Book a discovery call

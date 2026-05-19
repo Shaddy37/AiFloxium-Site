@@ -421,12 +421,12 @@ export default function ResourcesPage() {
               <span className="w-6 h-[1px] bg-white/20 inline-block" />
             </p>
 
-            <h1 className="text-6xl md:text-[6.5rem] font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
+            <h1 className="text-[2.9rem] sm:text-6xl md:text-[6.5rem] font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
               <span className="text-brand-orange">FREE &amp;</span>
               <br />
               PREMIUM
               <br />
-              <span className="text-white/40">RESOURCES.</span>
+              <span className="text-brand-plum sm:text-white/40">RESOURCES.</span>
             </h1>
 
             <p className="text-xl text-white max-w-2xl leading-relaxed mb-12 font-medium">

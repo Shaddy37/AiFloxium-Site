@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Zap, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { CALENDLY_URL } from "@/lib/site";
 
 interface PremiumCTAProps {
   title?: string;
@@ -18,7 +19,7 @@ export const PremiumCTA = ({
   title = "Ready to Automate?",
   description = "Connect with our core team to audit your existing workflows. We deploy custom agentic solutions in 14 days or less.",
   buttonText = "Initiate Audit",
-  href = "/#initiate",
+  href = CALENDLY_URL,
   className,
 }: PremiumCTAProps) => {
   return (

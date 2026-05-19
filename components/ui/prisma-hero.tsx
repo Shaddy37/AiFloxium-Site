@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import Link from "next/link";
+import { CALENDLY_URL } from "@/lib/site";
 
 /* ---------------- WordsPullUp ---------------- */
 interface WordsPullUpProps {
@@ -156,7 +157,7 @@ const PrismaHero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Link href="/#initiate" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-3 sm:text-base">
+                <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-3 sm:text-base">
                   Book a discovery call
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
                     <ArrowRight className="h-4 w-4 text-brand-orange" />

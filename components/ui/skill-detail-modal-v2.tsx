@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, X } from "lucide-react";
 import { claudeSkills } from "@/lib/claude-skills-data";
+import { CALENDLY_URL } from "@/lib/site";
 
 export function SkillDetailModal() {
   const searchParams = useSearchParams();
@@ -320,7 +321,9 @@ export function SkillDetailModal() {
                       <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        href="/#initiate"
+                        href={CALENDLY_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={handleClose}
                         className="inline-flex items-center gap-3 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 font-bold uppercase tracking-widest text-xs sm:text-sm hover:bg-zinc-200 transition-colors flex-shrink-0"
                       >

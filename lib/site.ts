@@ -17,6 +17,7 @@ export const LINKEDIN_URL =
 export const X_URL = 'https://x.com/ShadabLoveAi';
 export const X_HANDLE = '@ShadabLoveAi';
 export const APEPUBLISH_URL = 'https://www.apepublish.com/';
+export const CALENDLY_URL = 'https://calendly.com/shadabshamsaiautomation/30min';
 
 export const DEFAULT_TITLE =
   'Muhammad Shadab Shams | AI Automation Engineer for Startups and SMBs';

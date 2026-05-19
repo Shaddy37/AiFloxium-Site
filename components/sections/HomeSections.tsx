@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Workflow, Shield, Cpu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { CALENDLY_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { CornerPlusIcons } from "@/components/ui/geometric-elements";
 
@@ -393,7 +394,7 @@ export function Pricing() {
                </li>
             ))}
           </ul>
-          <Link href="#initiate" className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
+          <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
             Book a Discovery Call
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>

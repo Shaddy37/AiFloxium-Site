@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/site";
 
 const DotGlobeHero = dynamic(() => import("@/components/ui/globe-hero").then(mod => mod.DotGlobeHero), {
   ssr: false,
@@ -73,7 +74,9 @@ export default function Hero() {
         className="fixed bottom-10 right-6 md:right-12 z-50 group"
       >
         <motion.a
-          href="/#initiate"
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="relative flex items-center justify-center"
