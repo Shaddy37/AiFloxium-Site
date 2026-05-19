@@ -7,6 +7,8 @@ export type ToolHubCard = {
   audience: string;
   primaryKeyword: string;
   href: string;
+  shortValue: string;
+  relatedKeywords: string[];
 };
 
 export type AutomationType = {
@@ -59,10 +61,16 @@ export const toolsHubCards: ToolHubCard[] = [
     status: 'live',
     eyebrow: 'Flagship tool',
     description:
-      'Estimate the time, payroll, and revenue leakage tied up in repetitive work and get the top workflows to automate first.',
+      'See how much manual work is costing your team, estimate the savings from automation, and get the first workflows worth fixing.',
     audience: 'Startup and SMB operators with workflow bottlenecks',
     primaryKeyword: 'automation roi calculator',
-    href: '/tools/automation-roi-calculator'
+    href: '/tools/automation-roi-calculator',
+    shortValue: 'Estimate time saved, money saved, and payback before you scope automation work.',
+    relatedKeywords: [
+      'workflow automation calculator',
+      'business automation cost savings',
+      'manual process cost calculator'
+    ]
   },
   {
     slug: 'lead-response-time-loss-calculator',
@@ -70,10 +78,16 @@ export const toolsHubCards: ToolHubCard[] = [
     status: 'planned',
     eyebrow: 'Next in queue',
     description:
-      'Model how much revenue slow lead follow-up is burning and where response-time automation will pay back first.',
+      'Estimate how much slow follow-up is costing in missed leads, missed demos, and delayed revenue.',
     audience: 'Sales and inbound teams',
     primaryKeyword: 'lead response time calculator',
-    href: '/tools'
+    href: '/tools',
+    shortValue: 'Quantify the cost of waiting too long to respond to inbound demand.',
+    relatedKeywords: [
+      'lead response time calculator',
+      'sales response time cost',
+      'missed leads calculator'
+    ]
   },
   {
     slug: 'internal-tool-vs-manual-ops-calculator',
@@ -81,10 +95,16 @@ export const toolsHubCards: ToolHubCard[] = [
     status: 'planned',
     eyebrow: 'Pipeline',
     description:
-      'Compare spreadsheet-heavy operations against the cost of a custom internal tool to identify the better investment.',
+      'Compare the cost of repetitive spreadsheet work against the cost of building a focused internal tool.',
     audience: 'Ops leaders managing multi-step internal workflows',
     primaryKeyword: 'internal tool cost calculator',
-    href: '/tools'
+    href: '/tools',
+    shortValue: 'Decide when a custom tool is cheaper than staying stuck in manual operations.',
+    relatedKeywords: [
+      'internal tool cost calculator',
+      'manual ops cost',
+      'spreadsheet vs software cost'
+    ]
   },
   {
     slug: 'seo-content-velocity-roi-calculator',
@@ -92,11 +112,34 @@ export const toolsHubCards: ToolHubCard[] = [
     status: 'planned',
     eyebrow: 'Pipeline',
     description:
-      'Estimate the output and organic upside from moving content production into an AI-assisted SEO system.',
+      'Estimate whether a faster AI-assisted content workflow could grow search traffic without bloating your process.',
     audience: 'Teams scaling organic acquisition',
     primaryKeyword: 'seo roi calculator',
-    href: '/tools'
+    href: '/tools',
+    shortValue: 'Model the traffic and production upside of a better SEO content system.',
+    relatedKeywords: [
+      'seo roi calculator',
+      'content marketing roi calculator',
+      'seo content production calculator'
+    ]
   }
+];
+
+export const toolsTopicClusters = [
+  'how to calculate automation roi',
+  'is automation worth it for small business',
+  'how much time is manual work costing my business',
+  'best workflows to automate first',
+  'manual process cost calculator',
+  'workflow automation savings calculator'
+];
+
+export const calculatorUseCases = [
+  'Lead routing and follow-up',
+  'Client onboarding and approvals',
+  'Reporting, dashboards, and weekly updates',
+  'Back-office admin and finance operations',
+  'Support queues, requests, and internal handoffs'
 ];
 
 export const automationTypes: AutomationType[] = [

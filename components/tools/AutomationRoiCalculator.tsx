@@ -4,11 +4,12 @@ import { FormEvent, startTransition, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
-  BarChart3,
   BriefcaseBusiness,
   CheckCircle2,
   Clock3,
+  Coins,
   Download,
+  FileText,
   Gauge,
   Mail,
   ShieldCheck
@@ -34,6 +35,19 @@ type LeadFormState = {
   teamSize: string;
 };
 
+type InputSection = {
+  title: string;
+  description: string;
+  fields: Array<{
+    key: keyof CalculatorInputs;
+    label: string;
+    helper: string;
+    min: number;
+    max: number;
+    step: number;
+  }>;
+};
+
 const defaultInputs: CalculatorInputs = {
   teamSize: 8,
   hourlyCost: 35,
@@ -43,61 +57,72 @@ const defaultInputs: CalculatorInputs = {
   averageValue: 120
 };
 
-const inputConfig: Array<{
-  key: keyof CalculatorInputs;
-  label: string;
-  helper: string;
-  min: number;
-  max: number;
-  step: number;
-}> = [
+const inputSections: InputSection[] = [
   {
-    key: 'teamSize',
-    label: 'Team size',
-    helper: 'How many people touch the process?',
-    min: 1,
-    max: 100,
-    step: 1
+    title: 'Your team',
+    description: 'Start with the people and labor cost behind the workflow.',
+    fields: [
+      {
+        key: 'teamSize',
+        label: 'How many people touch this process?',
+        helper: 'Count everyone involved, even if they only handle one step.',
+        min: 1,
+        max: 100,
+        step: 1
+      },
+      {
+        key: 'hourlyCost',
+        label: 'Average hourly labor cost',
+        helper: 'Use a rough loaded hourly cost in USD.',
+        min: 10,
+        max: 250,
+        step: 1
+      }
+    ]
   },
   {
-    key: 'hourlyCost',
-    label: 'Average hourly labor cost',
-    helper: 'Loaded hourly cost in USD.',
-    min: 10,
-    max: 250,
-    step: 1
+    title: 'Manual workload',
+    description: 'Estimate how much repetitive work and process complexity exists today.',
+    fields: [
+      {
+        key: 'hoursLostPerWeek',
+        label: 'Hours lost to repetitive work each week',
+        helper: 'Estimate the total across the team, not per person.',
+        min: 1,
+        max: 200,
+        step: 1
+      },
+      {
+        key: 'workflowsCount',
+        label: 'Manual workflows or handoffs involved',
+        helper: 'Examples: approvals, routing, reporting, onboarding, data entry.',
+        min: 1,
+        max: 20,
+        step: 1
+      }
+    ]
   },
   {
-    key: 'hoursLostPerWeek',
-    label: 'Hours lost to repetitive work per week',
-    helper: 'Across the team, not per person.',
-    min: 1,
-    max: 200,
-    step: 1
-  },
-  {
-    key: 'workflowsCount',
-    label: 'Manual workflows or handoffs involved',
-    helper: 'Approval chains, routing, syncs, reporting, onboarding.',
-    min: 1,
-    max: 20,
-    step: 1
-  },
-  {
-    key: 'operationsVolume',
-    label: 'Lead, order, ticket, or task volume per month',
-    helper: 'Use the operational unit that best matches your process.',
-    min: 0,
-    max: 10000,
-    step: 10
-  },
-  {
-    key: 'averageValue',
-    label: 'Average value per lead, client, order, or task',
-    helper: 'Optional, but useful for leakage estimates.',
-    min: 0,
-    max: 10000,
-    step: 10
+    title: 'Business value',
+    description: 'These inputs help estimate missed value beyond labor savings.',
+    fields: [
+      {
+        key: 'operationsVolume',
+        label: 'Leads, orders, tickets, or tasks per month',
+        helper: 'Use the monthly volume that best matches this workflow.',
+        min: 0,
+        max: 10000,
+        step: 10
+      },
+      {
+        key: 'averageValue',
+        label: 'Average value per lead, order, client, or task',
+        helper: 'Optional. Leave at zero if you only want a labor estimate.',
+        min: 0,
+        max: 10000,
+        step: 10
+      }
+    ]
   }
 ];
 
@@ -113,6 +138,61 @@ function formatNumber(value: number) {
   return new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 0
   }).format(value);
+}
+
+function buildReportContent(inputs: CalculatorInputs) {
+  const result = calculateAutomationRoi(inputs);
+
+  return [
+    '# Automation ROI Report',
+    '',
+    'This report was generated from the AIFLOXIUM Automation ROI Calculator.',
+    '',
+    '## Inputs',
+    `- Team size: ${inputs.teamSize}`,
+    `- Average hourly labor cost: ${formatCurrency(inputs.hourlyCost)}`,
+    `- Hours lost per week: ${formatNumber(inputs.hoursLostPerWeek)}`,
+    `- Manual workflows involved: ${formatNumber(inputs.workflowsCount)}`,
+    `- Monthly operating volume: ${formatNumber(inputs.operationsVolume)}`,
+    `- Average value per unit: ${formatCurrency(inputs.averageValue)}`,
+    '',
+    '## Summary',
+    `- Time recovered per month: ${formatNumber(result.hoursSavedPerMonth)} hours`,
+    `- Payroll savings per month: ${formatCurrency(result.payrollSavingsPerMonth)}`,
+    `- Recovered value per month: ${formatCurrency(result.totalValuePerMonth)}`,
+    `- Annual upside: ${formatCurrency(result.annualValue)}`,
+    `- Estimated implementation cost: ${formatCurrency(result.implementationCost)}`,
+    `- Estimated payback window: ${result.paybackMonths > 0 ? `${result.paybackMonths} months` : 'N/A'}`,
+    `- Opportunity level: ${getOpportunityLabel(result.opportunityScore)} (${result.opportunityScore}/100)`,
+    '',
+    '## Top workflows to automate first',
+    ...result.recommendations.flatMap((recommendation, index) => [
+      `${index + 1}. ${recommendation.title}`,
+      `   - Why it matters: ${recommendation.summary}`,
+      `   - Why it ranked here: ${recommendation.reason}`,
+      `   - Best fit service: ${recommendation.serviceLabel}`
+    ]),
+    '',
+    '## Notes',
+    '- This is a directional estimate, not a contractual forecast.',
+    '- Use it to decide whether the workflow deserves scoping, not as a final budget.',
+    '',
+    'Generated at: ' + new Date().toISOString()
+  ].join('\n');
+}
+
+function downloadReport(inputs: CalculatorInputs) {
+  const content = buildReportContent(inputs);
+  const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+
+  link.href = url;
+  link.download = 'automation-roi-report.md';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }
 
 export default function AutomationRoiCalculator() {
@@ -156,7 +236,7 @@ export default function AutomationRoiCalculator() {
         },
         body: JSON.stringify({
           tag: TOOL_LEAD_TAG,
-          tool: 'AI Automation ROI Calculator',
+          tool: 'Automation ROI Calculator',
           email: leadForm.email,
           company: leadForm.company,
           teamSize: leadForm.teamSize,
@@ -172,80 +252,107 @@ export default function AutomationRoiCalculator() {
 
       setReportUnlocked(true);
       setGateState('success');
-      setGateMessage('Full report unlocked. Check the roadmap and next-step recommendations below.');
+      setGateMessage('Your report is ready to download below, and the roadmap has been unlocked.');
     } catch (error) {
       console.error(error);
       setReportUnlocked(true);
       setGateState('error');
       setGateMessage(
-        'Full report unlocked, but lead capture is unavailable right now. Use the discovery call link if you want the roadmap reviewed live.'
+        'The report is ready below, but lead capture had an issue. If you want a live review, use the discovery call link.'
       );
     }
   };
 
+  const handleDownload = () => {
+    downloadReport(inputs);
+  };
+
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-      <section className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl md:p-8">
-        <div className="mb-8 flex items-start justify-between gap-6">
-          <div>
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]">
+      <section className="rounded-[2.2rem] border border-black/8 bg-[#fffaf5] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.12)] md:p-8">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-2xl">
             <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
               <Gauge className="h-4 w-4" />
               Live calculator
             </p>
-            <h2 className="text-3xl font-heading font-black tracking-tight text-white md:text-4xl">
-              Model the operational drag before you automate it.
+            <h2 className="text-3xl font-heading font-black tracking-tight text-brand-plum md:text-4xl">
+              Estimate the cost of repetitive work before you try to automate it.
             </h2>
+            <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
+              Fill in a few rough numbers. The calculator will estimate time saved, money saved,
+              and which workflows are most likely worth fixing first.
+            </p>
           </div>
-          <div className="hidden rounded-2xl border border-brand-plum/20 bg-brand-plum/10 px-4 py-3 text-right md:block">
-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/55">
-              Opportunity score
+
+          <div className="rounded-[1.6rem] border border-brand-plum/10 bg-white px-5 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)] md:min-w-[180px] md:text-right">
+            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
+              Opportunity level
             </p>
-            <p className="mt-1 text-3xl font-heading font-black text-brand-orange">
-              {result.opportunityScore}
+            <p className="mt-2 text-3xl font-heading font-black text-brand-orange">
+              {getOpportunityLabel(result.opportunityScore)}
             </p>
+            <p className="mt-1 text-sm text-zinc-600">{result.opportunityScore}/100</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {inputConfig.map((field) => (
-            <div key={field.key} className="space-y-2">
-              <Label
-                htmlFor={field.key}
-                className="text-[11px] font-black uppercase tracking-[0.2em] text-white"
-              >
-                {field.label}
-              </Label>
-              <Input
-                id={field.key}
-                type="number"
-                min={field.min}
-                max={field.max}
-                step={field.step}
-                value={inputs[field.key]}
-                onChange={(event) => handleInputChange(field.key, event.target.value)}
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-base text-white placeholder:text-white/35"
-              />
-              <p className="text-sm leading-relaxed text-white/55">{field.helper}</p>
+        <div className="space-y-6">
+          {inputSections.map((section) => (
+            <div
+              key={section.title}
+              className="rounded-[1.8rem] border border-black/8 bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.04)] md:p-6"
+            >
+              <div className="mb-5">
+                <h3 className="text-xl font-heading font-black tracking-tight text-brand-plum">
+                  {section.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-zinc-600">{section.description}</p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {section.fields.map((field) => (
+                  <div key={field.key} className="space-y-2">
+                    <Label
+                      htmlFor={field.key}
+                      className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800"
+                    >
+                      {field.label}
+                    </Label>
+                    <Input
+                      id={field.key}
+                      type="number"
+                      min={field.min}
+                      max={field.max}
+                      step={field.step}
+                      value={inputs[field.key]}
+                      onChange={(event) => handleInputChange(field.key, event.target.value)}
+                      className="h-14 rounded-2xl border-black/10 bg-[#fbf7f3] text-base text-zinc-900 placeholder:text-zinc-400"
+                    />
+                    <p className="text-sm leading-6 text-zinc-500">{field.helper}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 rounded-[1.75rem] border border-brand-orange/15 bg-black/20 p-5">
-          <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-8 rounded-[1.8rem] border border-brand-orange/15 bg-[linear-gradient(135deg,rgba(255,107,0,0.08),rgba(88,28,135,0.04))] p-5">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
                 What this estimate assumes
               </p>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/75">
-                The model combines recoverable labor time, process leakage, and a conservative
-                implementation cost range for startup and SMB automation projects.
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-700">
+                This is a directional model. It combines recoverable labor time, process leakage,
+                and a conservative implementation cost range for startup and small business
+                automation projects.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-center">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">
+            <div className="rounded-2xl border border-black/8 bg-white px-4 py-3 text-center">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
                 Automation recovery rate
               </p>
-              <p className="mt-1 text-2xl font-heading font-black text-white">
+              <p className="mt-1 text-2xl font-heading font-black text-brand-plum">
                 {Math.round(result.recoveryRate * 100)}%
               </p>
             </div>
@@ -254,20 +361,26 @@ export default function AutomationRoiCalculator() {
       </section>
 
       <section className="space-y-6">
-        <div className="rounded-[2rem] border border-white/10 bg-[#f6efe8] p-6 text-black shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:p-8">
+        <div className="rounded-[2.2rem] border border-black/8 bg-white p-6 text-black shadow-[0_30px_80px_rgba(0,0,0,0.12)] md:p-8">
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-            <div>
+            <div className="max-w-2xl">
               <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-plum">
-                <BarChart3 className="h-4 w-4" />
+                <Clock3 className="h-4 w-4" />
                 Immediate summary
               </p>
               <h3 className="text-3xl font-heading font-black tracking-tight text-brand-plum">
-                You are likely losing {formatNumber(result.hoursSavedPerMonth)} recoverable hours each month.
+                Your team could recover about {formatNumber(result.hoursSavedPerMonth)} hours a
+                month.
               </h3>
+              <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
+                That is the core question this tool answers first. The rest of the numbers help
+                translate that lost time into money, payback, and next-step priority.
+              </p>
             </div>
-            <div className="rounded-2xl border border-brand-plum/10 bg-white/70 px-4 py-3 text-right">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
-                Opportunity
+
+            <div className="rounded-[1.4rem] border border-brand-orange/20 bg-brand-orange/10 px-4 py-3 text-right">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-600">
+                Best read
               </p>
               <p className="mt-1 text-2xl font-heading font-black text-brand-orange">
                 {getOpportunityLabel(result.opportunityScore)}
@@ -278,27 +391,30 @@ export default function AutomationRoiCalculator() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[
               {
-                label: 'Recovered value / month',
+                label: 'Recovered value each month',
                 value: formatCurrency(result.totalValuePerMonth),
                 icon: BriefcaseBusiness
               },
               {
-                label: 'Payroll savings / month',
+                label: 'Payroll savings each month',
                 value: formatCurrency(result.payrollSavingsPerMonth),
-                icon: Clock3
+                icon: Coins
               },
               {
-                label: 'Annual upside',
+                label: 'Possible annual upside',
                 value: formatCurrency(result.annualValue),
                 icon: Gauge
               },
               {
-                label: 'Estimated payback window',
+                label: 'Estimated payback period',
                 value: result.paybackMonths > 0 ? `${result.paybackMonths} months` : 'N/A',
                 icon: ShieldCheck
               }
             ].map((card) => (
-              <div key={card.label} className="rounded-[1.5rem] border border-black/5 bg-white/80 p-4">
+              <div
+                key={card.label}
+                className="rounded-[1.5rem] border border-black/6 bg-[#fbf7f3] p-4"
+              >
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-plum/8 text-brand-plum">
                   <card.icon className="h-5 w-5" />
                 </div>
@@ -314,12 +430,12 @@ export default function AutomationRoiCalculator() {
 
           <div className="mt-6 rounded-[1.5rem] border border-brand-orange/20 bg-brand-orange/8 p-4">
             <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
-              Live recommendation preview
+              First workflows to look at
             </p>
-            <ul className="mt-3 space-y-2 text-sm font-medium leading-relaxed text-zinc-700">
+            <ul className="mt-3 space-y-2 text-sm font-medium leading-7 text-zinc-700">
               {result.recommendations.map((recommendation) => (
                 <li key={recommendation.id} className="flex gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" />
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-brand-orange" />
                   <span>{recommendation.title}</span>
                 </li>
               ))}
@@ -327,18 +443,18 @@ export default function AutomationRoiCalculator() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl md:p-8">
+        <div className="rounded-[2.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(17,7,20,0.94),rgba(11,4,13,0.98))] p-6 text-white shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:p-8">
           <div className="mb-6">
             <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
-              <Download className="h-4 w-4" />
-              Partial gate
+              <FileText className="h-4 w-4" />
+              Downloadable report
             </p>
             <h3 className="text-2xl font-heading font-black tracking-tight text-white">
-              Unlock the full roadmap and the top 3 workflows to automate first.
+              Get the report by email, then download it and keep the roadmap.
             </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/65">
-              The basic estimate stays visible. Submit your email to reveal the fuller operator
-              report, implementation cost range, and service-fit recommendations.
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-white/66">
+              The on-page summary stays visible. Email is only required if you want the report
+              download and the fuller recommendation view.
             </p>
           </div>
 
@@ -348,7 +464,7 @@ export default function AutomationRoiCalculator() {
                 htmlFor="tool-email"
                 className="text-[11px] font-black uppercase tracking-[0.2em] text-white"
               >
-                Email
+                Work email
               </Label>
               <Input
                 id="tool-email"
@@ -405,7 +521,7 @@ export default function AutomationRoiCalculator() {
                 disabled={gateState === 'submitting'}
                 className="h-14 w-full rounded-2xl border-none bg-brand-orange text-sm font-black uppercase tracking-[0.2em] text-white hover:bg-brand-orange/90"
               >
-                {gateState === 'submitting' ? 'Unlocking report...' : 'Unlock full report'}
+                {gateState === 'submitting' ? 'Preparing report...' : 'Get the report'}
               </Button>
             </div>
           </form>
@@ -413,7 +529,7 @@ export default function AutomationRoiCalculator() {
           {gateMessage ? (
             <p
               className={cn(
-                'mt-4 text-sm leading-relaxed',
+                'mt-4 text-sm leading-7',
                 gateState === 'error' ? 'text-amber-300' : 'text-emerald-300'
               )}
             >
@@ -425,17 +541,17 @@ export default function AutomationRoiCalculator() {
             {!reportUnlocked ? (
               <div className="space-y-3">
                 <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
-                  Locked report preview
+                  What the report includes
                 </p>
                 <div className="grid gap-3 md:grid-cols-3">
                   {[
-                    'Top 3 workflows to automate first',
-                    'Implementation cost range and payback context',
-                    'Service-fit path into n8n, Vibe Coding, or Agents'
+                    'A downloadable summary of your result',
+                    'Estimated implementation range and payback context',
+                    'Top workflows to automate first and the best-fit service path'
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-dashed border-white/10 bg-white/[0.03] p-4 text-sm text-white/50"
+                      className="rounded-2xl border border-dashed border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/55"
                     >
                       {item}
                     </div>
@@ -444,6 +560,27 @@ export default function AutomationRoiCalculator() {
               </div>
             ) : (
               <div className="space-y-6">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-orange">
+                      Report ready
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-white/72">
+                      Download the report, then use the roadmap below to decide what deserves
+                      scoping first.
+                    </p>
+                  </div>
+                  <Button
+                    type="button"
+                    size="lg"
+                    onClick={handleDownload}
+                    className="h-12 rounded-full border-none bg-white text-brand-bg hover:bg-zinc-100"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download report
+                  </Button>
+                </div>
+
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                     <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
@@ -452,19 +589,20 @@ export default function AutomationRoiCalculator() {
                     <p className="mt-2 text-2xl font-heading font-black text-white">
                       {formatCurrency(result.implementationCost)}
                     </p>
-                    <p className="mt-2 text-sm leading-relaxed text-white/60">
-                      Based on workflow count, team complexity, and monthly operational volume.
+                    <p className="mt-2 text-sm leading-6 text-white/60">
+                      Based on workflow count, team complexity, and monthly operating volume.
                     </p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                     <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
-                      Revenue leakage recovered
+                      Revenue recovered
                     </p>
                     <p className="mt-2 text-2xl font-heading font-black text-white">
                       {formatCurrency(result.revenueLeakageRecoveredPerMonth)}/mo
                     </p>
-                    <p className="mt-2 text-sm leading-relaxed text-white/60">
-                      Only counted when your volume and unit value suggest meaningful downstream loss.
+                    <p className="mt-2 text-sm leading-6 text-white/60">
+                      This is only included when your volume and unit value suggest real downstream
+                      loss.
                     </p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -474,8 +612,8 @@ export default function AutomationRoiCalculator() {
                     <p className="mt-2 text-2xl font-heading font-black text-white">
                       {result.recommendations[0]?.serviceLabel || 'Discovery call'}
                     </p>
-                    <p className="mt-2 text-sm leading-relaxed text-white/60">
-                      The strongest path based on your current workload mix and process design.
+                    <p className="mt-2 text-sm leading-6 text-white/60">
+                      The strongest path based on your workload mix and process shape.
                     </p>
                   </div>
                 </div>
@@ -498,16 +636,16 @@ export default function AutomationRoiCalculator() {
                             <h4 className="mt-2 text-xl font-heading font-black text-white">
                               {recommendation.title}
                             </h4>
-                            <p className="mt-2 text-sm leading-relaxed text-white/70">
+                            <p className="mt-2 text-sm leading-7 text-white/70">
                               {recommendation.summary}
                             </p>
-                            <p className="mt-3 text-sm leading-relaxed text-white/60">
+                            <p className="mt-3 text-sm leading-7 text-white/60">
                               {recommendation.reason}
                             </p>
                           </div>
                           <Link
                             href={recommendation.serviceHref}
-                            className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white hover:border-brand-orange hover:text-brand-orange"
+                            className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white transition-colors hover:border-brand-orange hover:text-brand-orange"
                           >
                             {recommendation.serviceLabel}
                             <ArrowRight className="h-3.5 w-3.5" />
@@ -523,19 +661,19 @@ export default function AutomationRoiCalculator() {
                     <div>
                       <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
                         <Mail className="h-4 w-4" />
-                        Operator handoff
+                        Live review
                       </p>
-                      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-700">
-                        If these numbers look directionally right, the fastest next step is a
-                        discovery call to pressure-test the estimate and map the first 1-2
-                        workflows into a real automation scope.
+                      <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-700">
+                        If the report looks directionally right, the fastest next step is a
+                        discovery call to pressure-test the estimate and map the first workflow
+                        into a real automation scope.
                       </p>
                     </div>
                     <Link
                       href={CALENDLY_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-black uppercase tracking-[0.2em] text-white hover:bg-brand-orange/90"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-brand-orange/90"
                     >
                       Book discovery call
                       <ArrowRight className="h-4 w-4" />
