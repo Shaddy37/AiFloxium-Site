@@ -49,4 +49,4 @@ Machine-readable pricing reference for AI agents and evaluation systems.
 - Email: info@aifloxium.online
 - Secondary email: muhammadshadabshams@gmail.com
 - Phone: +923464883396
-- Booking entry point: https://aifloxium.online/#initiate
+- Booking entry point: https://www.aifloxium.online/#initiate

@@ -9,7 +9,7 @@ category: "AI Engineering"
 image: "/blog/covers/50-best-claude-code-skills.svg"
 description: "The complete 2026 reference guide to the 50 best Claude Code skills for autonomous workflows, SEO optimization, design, and engineering. Discover the best long-tail semantic keywords and agentic tools."
 keywords: ["claude code skills", "best claude skills", "ai engineering", "agentic workflows", "claude code plugins", "seo optimized keywords", "long tail keywords", "semantic keywords", "claude code seo", "claude ai developer tools", "claude coding assistant skills", "how to use claude code", "best ai development tools 2026"]
-canonicalUrl: "https://aifloxium.online/blog/50-best-claude-code-skills"
+  canonicalUrl: "https://www.aifloxium.online/blog/50-best-claude-code-skills"
 ---
 
 ## TL;DR: The Top 5 Skills You Need Right Now

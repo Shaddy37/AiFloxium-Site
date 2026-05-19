@@ -4,11 +4,11 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import {
   DEFAULT_DESCRIPTION,
-  DEFAULT_OG_IMAGE,
   DEFAULT_TITLE,
   SITE_URL
 } from "@/lib/site";
 import {
+  buildOgImageUrl,
   organizationJsonLd,
   personJsonLd,
   professionalServiceJsonLd,
@@ -46,11 +46,14 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: 'AIFLOXIUM',
+  referrer: 'origin-when-cross-origin',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png'
   },
+  manifest: '/manifest.webmanifest',
   title: {
     default: DEFAULT_TITLE,
     template: '%s'
@@ -76,11 +79,20 @@ export const metadata: Metadata = {
   },
   robots: {
     index: true,
-    follow: true
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1
+    }
+  },
+  verification: {
+    google: '_-GObjvEMYXjKV675AxlbcKXlco84D31__Igcv9fM1A'
   },
   other: {
-    'ai-content-declaration': 'human-led, ai-assisted',
-    'google-site-verification': '_-GObjvEMYXjKV675AxlbcKXlco84D31__Igcv9fM1A'
+    'ai-content-declaration': 'human-led, ai-assisted'
   },
   openGraph: {
     title: DEFAULT_TITLE,
@@ -89,10 +101,15 @@ export const metadata: Metadata = {
     siteName: 'AIFLOXIUM',
     images: [
       {
-        url: DEFAULT_OG_IMAGE,
+        url: buildOgImageUrl({
+          title: DEFAULT_TITLE,
+          description: DEFAULT_DESCRIPTION,
+          path: '/',
+          eyebrow: 'AI Automation Engineer'
+        }),
         width: 1200,
         height: 630,
-        alt: DEFAULT_TITLE
+        alt: 'AIFLOXIUM branded Open Graph preview'
       }
     ],
     locale: 'en_US',
@@ -102,7 +119,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: [DEFAULT_OG_IMAGE]
+    images: [
+      buildOgImageUrl({
+        title: DEFAULT_TITLE,
+        description: DEFAULT_DESCRIPTION,
+        path: '/',
+        eyebrow: 'AI Automation Engineer'
+      })
+    ]
   },
   category: 'technology'
 };

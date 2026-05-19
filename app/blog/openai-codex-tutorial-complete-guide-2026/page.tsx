@@ -8,13 +8,13 @@ const SLUG = 'openai-codex-tutorial-complete-guide-2026';
 const TITLE = 'OpenAI Codex Tutorial: Zero to Deployed App in 1 Hour (2026 Complete Guide)';
 const DESCRIPTION =
   'Learn OpenAI Codex from scratch. This hands-on guide covers setup, AGENTS.md, Plan Mode, reusable skills, GitHub + Vercel deployment, browser automation, and weekly task scheduling in a complete practical walkthrough.';
-const CANONICAL = 'https://aifloxium.online/blog/openai-codex-tutorial-complete-guide-2026';
-const IMAGE = 'https://aifloxium.online/blog/covers/openai-codex-tutorial-complete-guide-2026.svg';
+const CANONICAL = 'https://www.aifloxium.online/blog/openai-codex-tutorial-complete-guide-2026';
+const IMAGE = 'https://www.aifloxium.online/blog/covers/openai-codex-tutorial-complete-guide-2026.svg';
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL('https://aifloxium.online'),
+  metadataBase: new URL('https://www.aifloxium.online'),
   keywords: [
     'OpenAI Codex tutorial',
     'Codex app setup',
@@ -126,7 +126,7 @@ export default async function OpenAICodexTutorialPage() {
           name: 'AIFLOXIUM',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://aifloxium.online/brand/aifloxium-logo.png',
+            url: 'https://www.aifloxium.online/brand/aifloxium-logo.png',
           },
         },
         url: CANONICAL,
@@ -223,7 +223,7 @@ export default async function OpenAICodexTutorialPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://aifloxium.online/blog',
+            item: 'https://www.aifloxium.online/blog',
           },
           {
             '@type': 'ListItem',

@@ -633,6 +633,40 @@ export default function ResourcesPage() {
       </section>
 
       {/* ── Contact CTA ──────────────────────────────────────────────── */}
+      <section className="bg-white py-24 border-y border-zinc-200">
+        <div className="container mx-auto max-w-6xl px-6">
+          <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8 md:p-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange mb-4">
+                New Tools Hub
+              </p>
+              <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight text-brand-plum">
+                START WITH THE ROI CALCULATOR.
+              </h2>
+              <p className="mt-4 text-zinc-600 text-base leading-relaxed font-medium">
+                If you want a faster way to qualify automation opportunities, use the new AI
+                Automation ROI Calculator to estimate hours saved, payroll drag, and the best
+                workflows to automate first.
+              </p>
+            </div>
+            <div className="shrink-0 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/tools/automation-roi-calculator"
+                className="px-8 py-4 rounded-full bg-brand-orange text-white font-bold text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-colors text-center"
+              >
+                Open Calculator →
+              </Link>
+              <Link
+                href="/tools"
+                className="px-8 py-4 rounded-full border border-zinc-200 text-brand-plum font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors text-center"
+              >
+                Browse Tools →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-zinc-50 border-t border-zinc-200 py-24">
         <Contact2
           title="Need a Custom Workflow?"

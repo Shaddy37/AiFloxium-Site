@@ -4,22 +4,22 @@
 
 ## Primary pages
 
-- Home: https://aifloxium.online/
-- Services: https://aifloxium.online/services
-- AI Consulting: https://aifloxium.online/ai-consulting
-- Projects: https://aifloxium.online/projects
-- Resources: https://aifloxium.online/resources
-- Blog: https://aifloxium.online/blog
-- Pricing data: https://aifloxium.online/pricing.md
+- Home: https://www.aifloxium.online/
+- Services: https://www.aifloxium.online/services
+- AI Consulting: https://www.aifloxium.online/ai-consulting
+- Projects: https://www.aifloxium.online/projects
+- Resources: https://www.aifloxium.online/resources
+- Blog: https://www.aifloxium.online/blog
+- Pricing data: https://www.aifloxium.online/pricing.md
 
 ## Services
 
-- n8n Workflow Automation: https://aifloxium.online/services/n8n-workflow-automation
-- Autonomous Voice Agents: https://aifloxium.online/services/autonomous-voice-agents
-- Vibe Coding (Claude): https://aifloxium.online/services/vibe-coding
-- AI-Powered SEO: https://aifloxium.online/services/seo-optimization
-- Autonomous Agents: https://aifloxium.online/services/autonomous-agents
-- Agency Scaling Partner: https://aifloxium.online/services/agency-scaling-partner
+- n8n Workflow Automation: https://www.aifloxium.online/services/n8n-workflow-automation
+- Autonomous Voice Agents: https://www.aifloxium.online/services/autonomous-voice-agents
+- Vibe Coding (Claude): https://www.aifloxium.online/services/vibe-coding
+- AI-Powered SEO: https://www.aifloxium.online/services/seo-optimization
+- Autonomous Agents: https://www.aifloxium.online/services/autonomous-agents
+- Agency Scaling Partner: https://www.aifloxium.online/services/agency-scaling-partner
 
 ## Contact
 

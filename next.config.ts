@@ -2,6 +2,21 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'aifloxium.online'
+          }
+        ],
+        destination: 'https://www.aifloxium.online/:path*',
+        permanent: true
+      }
+    ];
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },

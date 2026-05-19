@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           
           <div className="prose prose-invert prose-zinc max-w-none">
             <p className="text-white text-lg mb-8">
-              Welcome to <span className="text-white">https://aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> as AIFLOXIUM. We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies concerning those users of the Site (&quot;Visitors&quot;) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by AIFLOXIUM (collectively, &quot;Services&quot;) (&quot;Authorized Customers&quot;).
+              Welcome to <span className="text-white">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> as AIFLOXIUM. We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies concerning those users of the Site (&quot;Visitors&quot;) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by AIFLOXIUM (collectively, &quot;Services&quot;) (&quot;Authorized Customers&quot;).
             </p>
 
             <section className="mb-8">

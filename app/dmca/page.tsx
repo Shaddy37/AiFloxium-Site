@@ -20,7 +20,7 @@ export default function DmcaPage() {
           
           <div className="prose prose-invert prose-zinc max-w-none">
             <p className="text-white text-lg mb-8">
-              Welcome to <span className="text-white">https://aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> trading as AIFLOXIUM. We respect the intellectual property rights of others just as we expect others to respect our rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to us via our DMCA Agent listed below.
+              Welcome to <span className="text-white">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> trading as AIFLOXIUM. We respect the intellectual property rights of others just as we expect others to respect our rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to us via our DMCA Agent listed below.
             </p>
 
             <section className="mb-8">

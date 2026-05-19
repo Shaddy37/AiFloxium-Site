@@ -20,7 +20,7 @@ export default function TermsPage() {
           
           <div className="prose prose-invert prose-zinc max-w-none">
             <p className="text-white text-lg mb-8">
-              These Terms govern your access to, and usage of all content, Products, and Services available at <span className="text-white">https://aifloxium.online</span> website (the &quot;Service&quot;) operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> trading as AIFLOXIUM (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;).
+              These Terms govern your access to, and usage of all content, Products, and Services available at <span className="text-white">https://www.aifloxium.online</span> website (the &quot;Service&quot;) operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> trading as AIFLOXIUM (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;).
             </p>
             <p className="text-white text-lg mb-8">
               Your access to our services is subject to your acceptance, without modification, of all of the terms and conditions contained herein and all other operating rules and policies published and that may be published from time to time by us.

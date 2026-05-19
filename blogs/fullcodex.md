@@ -23,7 +23,7 @@
 
 **Internal Link Targets:** Link to Claude Code guide, 50 Claude Code Skills guide, SEO + AI Automation guide
 
-**Canonical:** https://aifloxium.online/blog/openai-codex-tutorial-complete-guide-2026
+**Canonical:** https://www.aifloxium.online/blog/openai-codex-tutorial-complete-guide-2026
 
 **<!-- END SEO PACKAGE -->**
 

@@ -29,9 +29,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/', file: 'app/page.tsx', changeFrequency: 'weekly', priority: 1 },
     { path: '/about', file: 'app/about/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/blog', file: 'app/blog/page.tsx', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/contact', file: 'app/contact/page.tsx', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/projects', file: 'app/projects/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/resources', file: 'app/resources/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/services', file: 'app/services/page.tsx', changeFrequency: 'monthly', priority: 0.9 },
+    { path: '/tools', file: 'app/tools/page.tsx', changeFrequency: 'weekly', priority: 0.9 },
+    {
+      path: '/tools/automation-roi-calculator',
+      file: 'app/tools/automation-roi-calculator/page.tsx',
+      changeFrequency: 'weekly',
+      priority: 0.9
+    },
     { path: '/ai-consulting', file: 'app/ai-consulting/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/privacy', file: 'app/privacy/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
     { path: '/terms', file: 'app/terms/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
