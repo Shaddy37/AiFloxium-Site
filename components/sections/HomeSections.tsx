@@ -474,19 +474,19 @@ export function TechStack() {
     "Antigravity", "Gemini Pro", "OpenCode", "Vibe Coding"
   ];
   return (
-    <section className="py-24 px-6 relative bg-brand-bg border-y border-brand-plum/10 overflow-hidden">
+    <section className="py-24 px-6 relative bg-white border-y border-gray-100 overflow-hidden" data-theme="light">
       <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 justify-between">
-        <h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
+        <h2 className="text-brand-plum tracking-[0.2em] font-medium text-xs md:text-sm uppercase shrink-0 flex items-center gap-4">
           <span className="w-8 h-[1px] bg-brand-plum/30" /> Arsenal & Tooling
         </h2>
         
-        <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex gap-6 whitespace-nowrap animate-marquee w-max">
+        <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+          <div className="flex gap-6 whitespace-nowrap animate-marquee w-max hover:[animation-play-state:paused]">
             {[...tools, ...tools, ...tools].map((tool, i) => (
-              <div key={i} className="px-8 py-4 border border-dashed border-brand-plum/30 rounded-xl bg-brand-plum/5 hover:border-brand-plum/50 hover:bg-brand-plum/10 transition-all cursor-pointer text-lg font-bold text-white flex items-center gap-3 relative overflow-hidden group">
-                <CornerPlusIcons className="opacity-20 group-hover:opacity-100 transition-opacity" />
+              <div key={i} className="px-8 py-4 border border-dashed border-gray-200 rounded-xl bg-gray-50 hover:border-brand-plum/30 hover:bg-white transition-all cursor-pointer text-lg font-bold text-zinc-600 flex items-center gap-3 relative overflow-hidden group shadow-[0_0_0_1px_rgba(0,0,0,0.02)]">
+                <CornerPlusIcons className="opacity-20 group-hover:opacity-100 transition-opacity text-brand-plum" />
                 <div className="w-2 h-2 rounded-full bg-brand-orange animate-pulse shadow-[0_0_8px_rgba(255,107,0,0.5)]" />
-                {tool}
+                <span className="group-hover:text-brand-plum transition-colors">{tool}</span>
               </div>
             ))}
           </div>

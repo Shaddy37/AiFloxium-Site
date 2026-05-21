@@ -84,15 +84,16 @@ const FlowArt: React.FC<FlowArtProps> = ({
         if (!inner) return;
 
         if (i > 0) {
-          gsap.set(inner, { rotation: 30, transformOrigin: 'bottom left' });
+          gsap.set(inner, { rotation: 30, transformOrigin: 'bottom left', force3D: true });
           const tween = gsap.to(inner, {
             rotation: 0,
             ease: 'none',
+            force3D: true,
             scrollTrigger: {
               trigger: section,
               start: 'top bottom',
               end: 'top 25%',
-              scrub: true,
+              scrub: 1,
             },
           });
           if (tween.scrollTrigger) triggers.push(tween.scrollTrigger);
