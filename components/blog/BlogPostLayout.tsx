@@ -35,16 +35,22 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
       <section className="relative px-6 pb-20 pt-32 md:pt-40">
         <div className="pointer-events-none absolute left-1/2 top-0 h-[1000px] w-full -translate-x-1/2 bg-radial-glow opacity-30" />
         <div className="container relative z-10 mx-auto max-w-5xl text-center">
-          <Link
-            href="/blog"
-            className="group mb-8 inline-flex items-center gap-2 text-zinc-400 transition-colors hover:text-brand-orange md:mb-12"
-          >
-            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            <span className="font-mono text-xs uppercase tracking-widest text-zinc-300 font-bold">Back to Insights</span>
-          </Link>
+          <div className="mb-8 md:mb-12 flex items-center justify-start">
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-2 text-zinc-400 transition-colors hover:text-brand-orange"
+            >
+              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              <span className="font-mono text-xs uppercase tracking-widest text-zinc-300 font-bold hidden sm:inline">Back to Insights</span>
+            </Link>
+          </div>
+
+          <h1 className="mb-8 text-3xl font-black leading-[0.95] tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] md:text-5xl lg:text-6xl">
+            {title}
+          </h1>
 
           {hasMeta ? (
-            <div className="mb-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-300">
+            <div className="mb-12 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-300">
               {date ? (
                 <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 font-bold shadow-sm">
                   <Calendar className="h-3 w-3 text-brand-orange" /> {date}
@@ -67,10 +73,6 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
               ) : null}
             </div>
           ) : null}
-
-          <h1 className="mb-12 text-3xl font-black leading-[0.95] tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] md:text-5xl lg:text-6xl">
-            {title}
-          </h1>
 
           {description ? (
             <p className="mx-auto mb-16 max-w-3xl border-l-2 border-brand-orange/50 pl-8 text-xl italic leading-relaxed text-zinc-300 md:text-2xl">
@@ -97,7 +99,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
       ) : null}
 
       <article
-        className="relative min-h-screen overflow-hidden bg-white py-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)] md:py-32"
+        className="relative min-h-screen overflow-x-clip bg-white py-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)] md:py-32"
         data-theme="light"
       >
         <div
@@ -109,8 +111,20 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
         />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-zinc-800">
-          <aside className="lg:col-span-3 lg:sticky lg:top-32 hidden lg:block">
+          <aside className="lg:col-span-3 lg:sticky lg:top-32 hidden lg:flex lg:flex-col lg:gap-8">
             <TableOfContents />
+            <div className="rounded-3xl border border-brand-plum/10 bg-brand-plum/5 p-6 shadow-sm">
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-plum font-black mb-4">Expert Support</h3>
+              <p className="text-sm text-zinc-700 mb-6 font-bold leading-relaxed">
+                Ready to scale your autonomous systems? Let's talk strategy.
+              </p>
+              <Link 
+                href="/contact" 
+                className="block text-center w-full rounded-full bg-brand-plum px-4 py-3 text-xs font-bold text-white shadow-md transition-transform hover:scale-105"
+              >
+                BOOK A CONSULTATION
+              </Link>
+            </div>
           </aside>
           
           <div className="lg:col-span-9 max-w-3xl prose prose-zinc prose-headings:text-brand-plum">

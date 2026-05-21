@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#18181b"/>
+  <rect width="1160" height="590" x="20" y="20" fill="none" stroke="#27272a" stroke-width="2" rx="16"/>
+  
+  <text x="60" y="100" font-family="system-ui, sans-serif" font-size="24" fill="#ea580c" font-weight="600" letter-spacing="2">AI AUTOMATION GUIDE</text>
+  
+  <text x="60" y="190" font-family="system-ui, sans-serif" font-size="64" fill="#ffffff" font-weight="800" letter-spacing="-1">HOW TO RUN AI AGENTS</text>
+  <text x="60" y="260" font-family="system-ui, sans-serif" font-size="64" fill="#ffffff" font-weight="800" letter-spacing="-1">OVERNIGHT FOR NOTHING</text>
+  
+  <text x="60" y="340" font-family="system-ui, sans-serif" font-size="36" fill="#a1a1aa" font-weight="500">Hermes Agent + DeepSeek V4 + OpenRouter</text>
+  
+  <g transform="translate(850, 250)">
+    <!-- Diagram -->
+    <circle cx="150" cy="50" r="40" fill="none" stroke="#ea580c" stroke-width="4"/>
+    <text x="150" y="55" font-family="system-ui" font-size="14" fill="#fff" text-anchor="middle">PLANNER</text>
+    
+    <circle cx="50" cy="200" r="40" fill="none" stroke="#a21caf" stroke-width="4"/>
+    <text x="50" y="205" font-family="system-ui" font-size="14" fill="#fff" text-anchor="middle">WORKER</text>
+    
+    <circle cx="250" cy="200" r="40" fill="none" stroke="#3b82f6" stroke-width="4"/>
+    <text x="250" y="205" font-family="system-ui" font-size="14" fill="#fff" text-anchor="middle">CRITIC</text>
+    
+    <path d="M 120 80 L 70 160" stroke="#52525b" stroke-width="2" stroke-dasharray="4"/>
+    <path d="M 90 200 L 210 200" stroke="#52525b" stroke-width="2" stroke-dasharray="4"/>
+    <path d="M 230 160 L 180 80" stroke="#52525b" stroke-width="2" stroke-dasharray="4"/>
+  </g>
+</svg>

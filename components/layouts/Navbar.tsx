@@ -108,9 +108,9 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-500',
         {
-          'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
+          'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-6xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
             !open && !isLight,
-          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
+          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-6xl md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
             scrolled && !open && isLight,
           'bg-brand-bg': open,
         },
@@ -118,7 +118,7 @@ export default function Navbar() {
     >
       <motion.nav
         className={cn(
-          'container mx-auto flex h-20 w-full items-center justify-between px-6',
+          'container mx-auto flex h-20 w-full items-center justify-between px-6 md:px-10',
         )}
         animate={{
           height: 64,
@@ -127,43 +127,45 @@ export default function Navbar() {
         }}
         transition={headerTransition}
       >
-        <Link href="/" className="relative group z-[110]" onClick={() => setOpen(false)}>
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative flex items-center gap-3"
-          >
-            <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
-              <Image
-                src="/brand/aifloxium-logo.png"
-                alt="AIFLOXIUM founder logo"
-                fill
-                className="object-contain"
-                sizes="40px"
-              />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className={cn(
-              "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
-              isLight && !open 
-                ? "text-brand-plum" 
-                : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
-            )}>
-                {BRAND_NAME}
-              </span>
-              <span
-                className={cn(
-                  'mt-1 text-[9px] font-bold uppercase tracking-[0.25em] transition-colors',
-                  isLight && !open ? 'text-zinc-500' : 'text-white/70'
-                )}
-              >
-                by {BRAND_SIGNATURE_NAME}
-              </span>
-            </div>
-          </motion.div>
-        </Link>
+        <div className="flex lg:flex-1 justify-start">
+          <Link href="/" className="relative group z-[110]" onClick={() => setOpen(false)}>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative flex items-center gap-3"
+            >
+              <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+                <Image
+                  src="/brand/aifloxium-logo.png"
+                  alt="AIFLOXIUM founder logo"
+                  fill
+                  className="object-contain"
+                  sizes="40px"
+                />
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className={cn(
+                "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
+                isLight && !open 
+                  ? "text-brand-plum" 
+                  : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
+              )}>
+                  {BRAND_NAME}
+                </span>
+                <span
+                  className={cn(
+                    'mt-1 text-[9px] font-bold uppercase tracking-[0.25em] transition-colors',
+                    isLight && !open ? 'text-zinc-500' : 'text-white/70'
+                  )}
+                >
+                  by {BRAND_SIGNATURE_NAME}
+                </span>
+              </div>
+            </motion.div>
+          </Link>
+        </div>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden lg:flex flex-auto items-center justify-center gap-1">
           {links.map((link, i) => (
             <motion.div
               key={i}
@@ -186,11 +188,14 @@ export default function Navbar() {
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        <div className="flex lg:flex-1 justify-end items-center gap-4">
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="ml-4 flex items-center gap-3"
+            className="hidden lg:block z-[110]"
           >
             <Link 
               href={CALENDLY_URL}
@@ -204,20 +209,20 @@ export default function Navbar() {
               Book a Call
             </Link>
           </motion.div>
-        </div>
 
-        <Button 
-          size="icon" 
-          variant="ghost" 
-          onClick={() => setOpen(!open)} 
-          className={cn(
-            "lg:hidden z-[110] transition-colors",
-            isLight && !open ? "text-brand-plum" : "text-white"
-          )}
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          <MenuToggleIcon open={open} className="size-6" duration={300} />
-        </Button>
+          <Button 
+            size="icon" 
+            variant="ghost" 
+            onClick={() => setOpen(!open)} 
+            className={cn(
+              "lg:hidden z-[110] transition-colors",
+              isLight && !open ? "text-brand-plum" : "text-white"
+            )}
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            <MenuToggleIcon open={open} className="size-6" duration={300} />
+          </Button>
+        </div>
       </motion.nav>
 
       <AnimatePresence mode="wait">
