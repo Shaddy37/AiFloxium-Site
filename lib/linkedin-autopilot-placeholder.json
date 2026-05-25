@@ -1,0 +1,79 @@
+{
+  "name": "LinkedIn Autopilot - AiFloxium Blueprint",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        }
+      },
+      "id": "18029d28-7650-482a-adcc-e89bd4851214",
+      "name": "Hourly Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-latest",
+        "prompt": "Analyze client's recent Notion updates and generate a highly engaging, structured LinkedIn post. Tone: Bold, technical, modern, uppercase titles."
+      },
+      "id": "e93f7da9-cd47-4952-ba78-2c25a07ff27d",
+      "name": "Claude 3.5 Sonnet",
+      "type": "n8n-nodes-base.anthropicChat",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "text": "={{$json.text}}",
+        "shareOnLinkedIn": true
+      },
+      "id": "3b29c9ef-b31c-43f1-b962-a5e27a7cde12",
+      "name": "LinkedIn Dispatcher",
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        650,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Hourly Trigger": {
+      "main": [
+        [
+          {
+            "node": "Claude 3.5 Sonnet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude 3.5 Sonnet": {
+      "main": [
+        [
+          {
+            "node": "LinkedIn Dispatcher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "12c8a74e-5e58-48b4-b816-ae984cd1235b"
+}
