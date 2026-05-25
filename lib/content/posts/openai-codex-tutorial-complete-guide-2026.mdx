@@ -254,8 +254,8 @@ Step 5: The file now lives in your project folder — every new session starts w
 Codex supports a three-level instruction system:
 
 - **Global** (`~/.codex/AGENTS.md`) — applies across all projects. Put your personal preferences here: your name, your working style, your tech preferences.
-- **Project** (`/your-project/AGENTS.md`) — applies to everything in this project folder.
-- **Folder-level** (`/your-project/subfolder/AGENTS.md`) — applies only to tasks in that specific subfolder. Useful for monorepos where different folders have different rules.
+- **Project** (`<project-root>/AGENTS.md`) — applies to everything in this project folder.
+- **Folder-level** (`<project-root>/subfolder/AGENTS.md`) — applies only to tasks in that specific subfolder. Useful for monorepos where different folders have different rules.
 
 Codex reads all three levels and merges them. More specific files override more general ones.
 

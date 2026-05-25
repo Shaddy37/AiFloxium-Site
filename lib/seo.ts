@@ -67,7 +67,6 @@ export function buildPageMetadata({
   publishedTime,
   modifiedTime
 }: PageMetadataOptions): Metadata {
-  const canonical = absoluteUrl(path);
   const metadataImages =
     images && images.length > 0
       ? images
@@ -96,7 +95,7 @@ export function buildPageMetadata({
     creator: PERSON_NAME,
     publisher: ORGANIZATION_NAME,
     alternates: {
-      canonical
+      canonical: path
     },
     robots: noIndex
       ? {
@@ -124,7 +123,7 @@ export function buildPageMetadata({
     openGraph: {
       title,
       description,
-      url: canonical,
+      url: path,
       siteName: ORGANIZATION_NAME,
       locale: SITE_LOCALE,
       type,
