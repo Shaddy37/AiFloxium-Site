@@ -5,6 +5,7 @@ import { MetadataRoute } from 'next';
 
 import { getAllPosts } from '@/lib/mdx';
 import { servicesData } from '@/lib/services-data';
+import { vsData } from '@/lib/vs-data';
 import { SITE_URL } from '@/lib/site';
 
 function getFileLastModified(relativePath: string) {
@@ -68,5 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
-  return [...pages, ...serviceRoutes, ...blogRoutes];
+  const vsLastModified = getFileLastModified('lib/vs-data.ts');
+  const vsRoutes = Object.keys(vsData).map((slug) => ({
+    url: `${SITE_URL}/vs/${slug}`,
+    lastModified: vsLastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8
+  }));
+
+  return [...pages, ...serviceRoutes, ...blogRoutes, ...vsRoutes];
 }

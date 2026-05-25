@@ -57,7 +57,7 @@ export default function HeroContent() {
             className="max-w-2xl mx-auto space-y-8"
           >
             <p className="text-lg md:text-xl text-zinc-600 leading-relaxed font-medium">
-              I build custom automation, internal tools, and AI agents that remove bottlenecks and accelerate your team's workflow.
+              I build custom automation, internal tools, and AI agents that remove bottlenecks and accelerate your team&apos;s workflow.
             </p>
             
             <motion.div

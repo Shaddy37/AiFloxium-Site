@@ -3,7 +3,9 @@ import { Resend } from 'resend';
 
 import { PRIMARY_EMAIL } from '@/lib/site';
 
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const resendKey = process.env.RESEND_API_KEY;
+const isPlaceholderKey = !resendKey || resendKey.includes('your_resend_key');
+const resend = resendKey && !isPlaceholderKey ? new Resend(resendKey) : null;
 
 export async function POST(request: Request) {
   try {
@@ -15,11 +17,26 @@ export async function POST(request: Request) {
     }
 
     if (!resend) {
-      return NextResponse.json({ error: 'Email service not configured' }, { status: 503 });
+      console.warn(`[API Tool Lead - Demo Mode] Lead captured for ${email} (Tool: ${tool}, Tag: ${tag}). Bypassing Resend because no valid API key is configured in .env.local.`);
+      return NextResponse.json({ success: true, demoMode: true });
     }
 
     const recipient = process.env.CONTACT_EMAIL_TO || PRIMARY_EMAIL;
     const fromAddress = process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev';
+
+    // Add to Resend Audiences database if configured
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (resend && audienceId) {
+      try {
+        await resend.contacts.create({
+          email: email.trim(),
+          audienceId: audienceId,
+        });
+      } catch (contactError) {
+        console.error('Error saving lead to Resend Audiences:', contactError);
+        // Continue execution so the admin notification email is still sent
+      }
+    }
 
     const emailHtml = `
       <h2>New tool lead: ${tool}</h2>

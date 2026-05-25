@@ -475,7 +475,7 @@ export default function AutomationRoiCalculator() {
                   setLeadForm((current) => ({ ...current, email: event.target.value }))
                 }
                 placeholder="ops@company.com"
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/35"
+                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/50"
               />
             </div>
             <div className="space-y-2">
@@ -491,8 +491,8 @@ export default function AutomationRoiCalculator() {
                 onChange={(event) =>
                   setLeadForm((current) => ({ ...current, company: event.target.value }))
                 }
-                placeholder="Optional"
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/35"
+                placeholder="Acme Corp (Optional)"
+                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/50"
               />
             </div>
             <div className="space-y-2">
@@ -507,11 +507,12 @@ export default function AutomationRoiCalculator() {
                 type="number"
                 min={1}
                 max={200}
+                placeholder="8"
                 value={leadForm.teamSize}
                 onChange={(event) =>
                   setLeadForm((current) => ({ ...current, teamSize: event.target.value }))
                 }
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/35"
+                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/50"
               />
             </div>
             <div className="md:col-span-3">
@@ -519,10 +520,14 @@ export default function AutomationRoiCalculator() {
                 type="submit"
                 size="lg"
                 disabled={gateState === 'submitting'}
-                className="h-14 w-full rounded-2xl border-none bg-brand-orange text-sm font-black uppercase tracking-[0.2em] text-white hover:bg-brand-orange/90"
+                className="h-14 w-full rounded-2xl border-none bg-brand-orange text-sm font-black uppercase tracking-[0.2em] text-white hover:bg-brand-orange/90 transition-all active:scale-[0.98]"
               >
-                {gateState === 'submitting' ? 'Preparing report...' : 'Get the report'}
+                {gateState === 'submitting' ? 'Preparing report...' : 'Get the report & roadmap'}
               </Button>
+              <div className="mt-3 flex items-center justify-center gap-1.5 text-white/40 text-[9px] font-bold uppercase tracking-widest">
+                <ShieldCheck className="h-3.5 w-3.5 text-white/50" />
+                <span>Free report. No credit card required.</span>
+              </div>
             </div>
           </form>
 

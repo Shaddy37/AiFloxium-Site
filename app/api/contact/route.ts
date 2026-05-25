@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = process.env.RESEND_API_KEY 
-  ? new Resend(process.env.RESEND_API_KEY) 
-  : null;
+const resendKey = process.env.RESEND_API_KEY;
+const isPlaceholderKey = !resendKey || resendKey.includes('your_resend_key');
+const resend = resendKey && !isPlaceholderKey ? new Resend(resendKey) : null;
 
 export async function POST(request: Request) {
-  if (!resend) {
-    return NextResponse.json({ error: 'Email service not configured' }, { status: 503 });
-  }
   try {
     const body = await request.json();
     const { firstname, lastname, email, subject, message } = body;
@@ -16,6 +13,27 @@ export async function POST(request: Request) {
     // Validate required fields
     if (!firstname || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    if (!resend) {
+      console.warn(`[API Contact - Demo Mode] Message captured from ${firstname} <${email}>. Subject: ${subject || 'New Lead'}. Message: ${message}. Bypassing Resend because no valid API key is configured in .env.local.`);
+      return NextResponse.json({ success: true, demoMode: true });
+    }
+
+    // Add to Resend Audiences database if configured
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (resend && audienceId) {
+      try {
+        await resend.contacts.create({
+          email: email.trim(),
+          firstName: firstname,
+          lastName: lastname || undefined,
+          audienceId: audienceId,
+        });
+      } catch (contactError) {
+        console.error('Error saving contact to Resend Audiences:', contactError);
+        // Continue execution so the email is still sent
+      }
     }
 
     // Send the email via Resend

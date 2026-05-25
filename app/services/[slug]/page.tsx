@@ -5,7 +5,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { servicesData } from "@/lib/services-data";
 import { ArrowRight, ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
-import { BRAND_NAME, CALENDLY_URL, PERSON_NAME, SITE_URL } from "@/lib/site";
+import { CALENDLY_URL, PERSON_NAME, SITE_URL } from "@/lib/site";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -42,19 +42,36 @@ export default async function ServicePage({ params }: Props) {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${SITE_URL}/services/${slug}#service`,
     "name": service.title,
     "description": service.description,
     "provider": {
-      "@type": "Person",
-      "name": PERSON_NAME,
-      "url": SITE_URL,
-      "worksFor": {
-        "@type": "Organization",
-        "name": BRAND_NAME
-      }
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}#service`
     },
     "serviceType": "AI Automation",
     "areaServed": "Worldwide",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": service.slug === "n8n-workflow-automation" ? "2000.00" :
+               service.slug === "autonomous-voice-agents" ? "2500.00" :
+               service.slug === "vibe-coding" ? "1500.00" :
+               service.slug === "seo-optimization" ? "1800.00" :
+               service.slug === "autonomous-agents" ? "3000.00" :
+               "5000.00",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": service.slug === "n8n-workflow-automation" ? "2000.00" :
+                 service.slug === "autonomous-voice-agents" ? "2500.00" :
+                 service.slug === "vibe-coding" ? "1500.00" :
+                 service.slug === "seo-optimization" ? "1800.00" :
+                 service.slug === "autonomous-agents" ? "3000.00" :
+                 "5000.00",
+        "priceCurrency": "USD"
+      },
+      "url": `${SITE_URL}/services/${slug}`
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "AI Services",

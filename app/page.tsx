@@ -7,7 +7,6 @@ import { PrismaHero } from '@/components/ui/prisma-hero';
 import StoryNarrative from '@/components/sections/StoryNarrative';
 import { LazySections } from '@/components/sections/LazySections';
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo';
-import { PERSON_NAME } from '@/lib/site';
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'AI Automation Engineer for Startups and SMBs | AIFLOXIUM',
@@ -68,14 +67,32 @@ const homeItemListJsonLd = {
     {
       '@type': 'ListItem',
       position: 2,
-      url: absoluteUrl('/services/autonomous-agents'),
-      name: 'Autonomous Agents'
+      url: absoluteUrl('/services/autonomous-voice-agents'),
+      name: 'Autonomous Voice Agents'
     },
     {
       '@type': 'ListItem',
       position: 3,
       url: absoluteUrl('/services/vibe-coding'),
       name: 'Vibe Coding (Claude)'
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      url: absoluteUrl('/services/seo-optimization'),
+      name: 'AI-Powered SEO'
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      url: absoluteUrl('/services/autonomous-agents'),
+      name: 'Autonomous Agents'
+    },
+    {
+      '@type': 'ListItem',
+      position: 6,
+      url: absoluteUrl('/services/agency-scaling-partner'),
+      name: 'Agency Scaling Partner'
     }
   ]
 };

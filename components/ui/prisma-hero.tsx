@@ -149,20 +149,24 @@ const PrismaHero = () => {
                 className="text-sm text-zinc-300 sm:text-base md:text-lg font-medium"
                 style={{ lineHeight: 1.4 }}
               >
-                Custom automation, internal tools, and AI agents that remove bottlenecks and accelerate your team's workflow.
+                Custom automation, internal tools, and AI agents that remove bottlenecks and accelerate your team&apos;s workflow.
               </motion.p>
 
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col items-start"
               >
                 <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-3 sm:text-base">
-                  Book a discovery call
+                  Map My System (Free)
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
                     <ArrowRight className="h-4 w-4 text-brand-orange" />
                   </span>
                 </Link>
+                <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-3 pl-2">
+                  ✓ Get a custom roadmap ($0 cost) • 15 mins
+                </span>
               </motion.div>
 
             </div>

@@ -38,7 +38,7 @@ export default function ChaosToClarity() {
           <span className="text-white">To Deterministic Clarity.</span>
         </h2>
         <p className="text-xl text-white font-medium max-w-2xl">
-          Legacy systems are fragmented, costly, and unpredictable. I ingest chaotic workflows and output mathematically perfect, automated data structures.
+          Fragmented spreadsheets and brittle Zapier bills leak margins daily. We replace manual workflows with self-hosted n8n pipelines and low-latency custom tools, saving 20+ hours weekly with complete data privacy.
         </p>
       </div>
 
@@ -161,12 +161,12 @@ export default function ChaosToClarity() {
         {/* Label Overlays */}
         <div className="absolute left-[10%] top-1/2 -translate-y-1/2 glass-card p-4 hidden md:block border-white/5 opacity-80 pointer-events-none">
            <LayoutGrid className="w-6 h-6 text-white mb-2" />
-           <div className="text-xs font-mono text-white tracking-widest uppercase">Input: Legacy Noise</div>
+           <div className="text-xs font-mono text-white tracking-widest uppercase">Input: 20+ Hours Manual Waste</div>
         </div>
 
         <div className="absolute right-[10%] top-1/2 -translate-y-1/2 glass-card bg-white text-black p-4 hidden md:block rounded-xl border border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.2)] pointer-events-none">
            <ShieldCheck className="w-6 h-6 text-black mb-2" />
-           <div className="text-xs font-mono font-bold tracking-widest uppercase">Output: Validated Data</div>
+           <div className="text-xs font-mono font-bold tracking-widest uppercase">Output: 24/7 Self-Hosted Uptime</div>
         </div>
 
       </div>

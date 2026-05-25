@@ -23,27 +23,27 @@ export default function StoryNarrative() {
         <hr className="my-[2vw] border-none border-t border-brand-plum/30 opacity-100" />
         <div className="flex flex-wrap gap-[3vw]">
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-orange">Hours Lost</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-orange">Hours Wasted</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-75">
-              Your team spends 20+ hours weekly on tasks that a configured workflow handles in minutes.
+              Your team wastes 20+ hours weekly on manual data copy-pasting across scattered tools and spreadsheets.
             </p>
           </div>
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-orange">Dead Leads</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-orange">Lead Leakage</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-75">
-              Prospects go cold because follow-up is manual. Automate so every lead is contacted in 5 minutes.
+              Prospects go cold because follow-up is manual. Leads sitting for over 5 minutes decrease conversion rates by 80%.
             </p>
           </div>
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-orange">Scattered Data</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-orange">Payroll Bloat</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-75">
-              Customer info lives in 5 different tools. Connect the dots and see your business clearly.
+              Hiring administrative staff for repetitive &quot;robot work&quot; kills margins and limits scaling capacity.
             </p>
           </div>
         </div>
         <hr className="my-[2vw] border-none border-t border-brand-plum/30 opacity-100" />
         <p className="mt-auto ml-auto max-w-[50ch] text-right text-[clamp(1rem,2.5vw,2rem)] font-medium leading-relaxed italic text-zinc-400">
-          Every business has bottlenecks. The difference is who fixes them.
+          Every business has operational friction. The elite ones automate it.
         </p>
       </FlowSection>
 
@@ -64,26 +64,26 @@ export default function StoryNarrative() {
         </div>
         <hr className="my-[2vw] border-none border-t border-zinc-200" />
         <p className="max-w-[50ch] text-[clamp(1rem,2.5vw,2rem)] font-medium leading-relaxed text-zinc-700">
-          AIFLOXIUM is built for founders and operators who need execution, not generic strategy. We replace fragile manual handoffs with systems that are easier to run, measure, and scale.
+          Founded by AI Automation Engineer Muhammad Shadab Shams, AIFLOXIUM builds deterministic, secure, self-hosted operational infrastructure. We replace fragile manual handoffs with systems that scale capacity 24/7.
         </p>
         <hr className="my-[2vw] border-none border-t border-zinc-200" />
         <div className="flex flex-wrap gap-[3vw]">
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-plum">Automations</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-plum">Self-Hosted n8n</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-zinc-600">
-              End-to-end n8n pipelines that run your business 24/7 without breaking.
+              Visual automation pipelines running on your own VPS with zero data leaks and zero third-party transaction fees.
             </p>
           </div>
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-plum">Agents</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-plum">Low-Latency Voice</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-zinc-600">
-              Agentic workflows with clear guardrails, human oversight, and absolute reliability.
+              Vapi & Retell AI agents with under 500ms latency that answer, qualify, and book inbound leads in real-time.
             </p>
           </div>
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-plum">Tools</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-plum">Bespoke Portals</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-zinc-600">
-              Internal tools and micro-SaaS that replace spreadsheet-driven chaos.
+              Next.js and Supabase internal tools vibe-coded and shipped in weeks, replacing bloated spreadsheets.
             </p>
           </div>
         </div>
@@ -99,33 +99,33 @@ export default function StoryNarrative() {
           >
             Scale
             <br />
-            Revenue
+            Capacity
             <br />
             Not Headcount
           </h2>
         </div>
         <hr className="my-[2vw] border-none border-t border-white/30" />
         <p className="max-w-[50ch] text-[clamp(1rem,2.5vw,2rem)] font-medium leading-relaxed">
-          Smart automation means you grow without bloating your payroll. Same team, double the output.
+          Smart custom automation allows B2B agencies and SMBs to scale operational capacity 24/7 without growing headcount.
         </p>
         <hr className="my-[2vw] border-none border-t border-white/30" />
         <div className="flex flex-wrap gap-[3vw]">
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider">Fast Response</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider">Speed-To-Lead</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-90">
-              Cleaner CRM pipelines and instant prospect follow-ups that close deals.
+              Qualifications and automatic follow-ups in under 5 minutes, capturing hot leads before they go cold.
             </p>
           </div>
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider">Automated Reporting</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider">85% Invoicing Speedup</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-90">
-              Less manual data entry across sales, finance, and operational channels.
+              AI-powered OCR extracts PDF invoice data and updates accounting systems with zero manual entry errors.
             </p>
           </div>
           <div className="min-w-[180px] flex-1">
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider">SEO Growth</p>
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider">Outbound Lead Gen</p>
             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-90">
-              AI-assisted workflows that drive qualified organic traffic at scale.
+              Extract 500+ qualified leads weekly, automatically enriched and synced to CRM with 80% less research time.
             </p>
           </div>
         </div>

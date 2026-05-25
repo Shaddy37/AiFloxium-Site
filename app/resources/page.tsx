@@ -31,6 +31,7 @@ const categories = [
   { id: "claude-skills", label: "Claude Skills" },
   { id: "claude-agents", label: "Claude Agents" },
   { id: "notion-guides", label: "Notion Guides" },
+  { id: "comparisons", label: "Comparisons" },
 ];
 
 const n8nWorkflows = [
@@ -593,6 +594,76 @@ export default function ResourcesPage() {
                 link={g.link}
                 meta={g.readTime}
               />
+            ))}
+          </div>
+        </section>
+
+        {/* ── Platform Comparisons ───────────────────────────────────── */}
+        <section>
+          <SectionHeader
+            id="comparisons"
+            eyebrow="Tool Intelligence"
+            title="Platform Comparisons"
+            subtitle="Side-by-side breakdowns of the tools operators use most. Make smarter buying decisions before spending another dollar."
+            count={3}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                title: "n8n vs Zapier",
+                description: "Self-hosted automation vs cloud billing traps. Full breakdown of pricing, data privacy, developer control, and reliability — plus a live cost calculator.",
+                tags: ["Automation", "n8n", "Zapier"],
+                href: "/vs/n8n-vs-zapier",
+                saving: "Save $600–$1,400/mo",
+              },
+              {
+                title: "n8n vs Make",
+                description: "Two workflow tools, two very different philosophies. Compare operation costs, scenario limits, and which one scales without punishing you for volume.",
+                tags: ["Automation", "n8n", "Make"],
+                href: "/vs/n8n-vs-make",
+                saving: "No per-operation fees",
+              },
+              {
+                title: "Voice AI vs Twilio Autodialer",
+                description: "AI voice agents vs legacy per-minute Twilio billing. See the latency gap, cost gap, and why the first respondent wins 78% of inbound leads.",
+                tags: ["Voice AI", "Twilio", "Lead Qualification"],
+                href: "/vs/voice-ai-vs-twilio-autodialer",
+                saving: "Sub-90s response time",
+              },
+            ].map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group relative bg-brand-bg rounded-2xl border border-brand-plum/30 p-6 flex flex-col gap-4 hover:border-brand-plum/60 hover:shadow-[0_20px_50px_rgba(88,28,135,0.15)] transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-brand-plum/0 group-hover:bg-brand-plum/5 transition-colors duration-500 rounded-2xl pointer-events-none" />
+                <div className="flex items-start justify-between gap-3 relative z-10">
+                  <h3 className="text-lg font-bold text-white font-heading tracking-tight leading-snug group-hover:text-brand-orange transition-colors flex-1">
+                    {card.title}
+                  </h3>
+                  <span className="shrink-0 text-[10px] font-black uppercase tracking-widest border border-brand-orange/30 bg-brand-orange/10 text-brand-orange px-2 py-1 rounded-md">
+                    FREE
+                  </span>
+                </div>
+                <p className="text-sm text-white/70 font-medium leading-relaxed flex-1 relative z-10">
+                  {card.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 relative z-10">
+                  {card.tags.map((t) => (
+                    <span key={t} className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-white/5 text-white/50 border border-white/10">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-white/10 relative z-10">
+                  <span className="text-xs font-black text-brand-orange uppercase tracking-widest">
+                    {card.saving}
+                  </span>
+                  <span className="text-xs font-bold text-white/40 group-hover:text-white/70 transition-colors uppercase tracking-widest">
+                    Read comparison →
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </section>

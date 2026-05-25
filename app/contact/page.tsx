@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
 import { Contact2 } from '@/components/ui/contact-2';
-import { CALENDLY_URL, PERSON_NAME } from '@/lib/site';
-import { buildPageMetadata } from '@/lib/seo';
+import { CALENDLY_URL, PERSON_NAME, SITE_URL } from '@/lib/site';
+import { buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Contact | ${PERSON_NAME}`,
@@ -14,9 +14,35 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: ['contact', 'book discovery call', 'Calendly', 'AI automation consultation']
 });
 
+const contactBreadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Home', path: '/' },
+  { name: 'Contact', path: '/contact' }
+]);
+
+const contactPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": `${SITE_URL}/contact#webpage`,
+  "url": `${SITE_URL}/contact`,
+  "name": `Contact | ${PERSON_NAME}`,
+  "description": "Book a discovery call or send project details for automation, internal tools, and AI workflow work.",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "@id": `${SITE_URL}#service`
+  }
+};
+
 export default function ContactPage() {
   return (
     <main className="relative min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+      />
       <Navbar />
 
       <section className="container mx-auto px-6 pb-16 pt-36 md:pb-20 md:pt-44">
@@ -30,8 +56,7 @@ export default function ContactPage() {
               BOOK THE CALL OR SEND THE BRIEF.
             </h1>
             <p className="max-w-2xl text-lg font-medium leading-relaxed text-zinc-200 md:text-xl">
-              Use Calendly if you want time on the calendar immediately. Use the form below if
-              you want to send context first.
+              Claim your free 15-minute system map session or send project context below. Scoping response guaranteed within 24 hours.
             </p>
             <a
               href={CALENDLY_URL}
@@ -39,7 +64,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="mt-8 inline-flex rounded-full bg-brand-orange px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-brand-orange/90"
             >
-              Open Calendly
+              Schedule Free Scoping Call ($0)
             </a>
           </div>
         </div>
@@ -48,7 +73,7 @@ export default function ContactPage() {
       <section className="bg-zinc-50 border-t border-zinc-200">
         <Contact2
           title="Start With The Right Next Step."
-          description="Book directly on Calendly or send the project brief and I will reply with the best path."
+          description="Claim your free 15-minute system map session below or share your project details to get a direct scoping response."
         />
       </section>
 

@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react-hooks/static-components */
 
 import React, { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -8,6 +9,7 @@ import { ImpactStats } from "./ImpactStats";
 import { CodeBlock } from "./CodeBlock";
 import { PostFigurePlaceholder } from "./PostFigurePlaceholder";
 import { BlogArchitecture } from "../sections/BlogArchitecture";
+import { LeadMagnetCTA } from "./LeadMagnetCTA";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
@@ -204,6 +206,7 @@ const components = {
   ImpactStats,
   BlogArchitecture,
   PostFigurePlaceholder,
+  LeadMagnetCTA,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {
@@ -211,6 +214,7 @@ export function MDXRenderer({ code }: MDXRendererProps) {
   
   return (
     <div className="mdx-content">
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <Component components={components as any} />
     </div>
   );

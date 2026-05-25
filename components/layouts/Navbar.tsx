@@ -13,6 +13,7 @@ import { BRAND_NAME, BRAND_SIGNATURE_NAME, CALENDLY_URL } from '@/lib/site';
 const links = [
   { name: "Projects", href: "/projects" },
   { name: "Services", href: "/services" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Tools", href: "/tools" },
   { name: "Consulting", href: "/ai-consulting" },
   { name: "Resources", href: "/resources" },

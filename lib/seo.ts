@@ -170,6 +170,7 @@ export function buildBreadcrumbJsonLd(
 export const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${SITE_URL}#person`,
   name: PERSON_NAME,
   url: SITE_URL,
   image: absoluteUrl('/brand/aifloxium-logo.png'),
@@ -179,6 +180,7 @@ export const personJsonLd = {
   jobTitle: PERSON_ROLE,
   worksFor: {
     '@type': 'Organization',
+    '@id': `${SITE_URL}#organization`,
     name: ORGANIZATION_NAME
   },
   address: {
@@ -201,6 +203,7 @@ export const organizationJsonLd = {
   foundingDate: '2025',
   founder: {
     '@type': 'Person',
+    '@id': `${SITE_URL}#person`,
     name: PERSON_NAME
   },
   sameAs: [LINKEDIN_URL, X_URL]
@@ -235,6 +238,7 @@ export const professionalServiceJsonLd = {
   areaServed: 'Worldwide',
   founder: {
     '@type': 'Person',
+    '@id': `${SITE_URL}#person`,
     name: PERSON_NAME
   },
   address: {

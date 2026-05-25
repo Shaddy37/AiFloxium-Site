@@ -59,9 +59,9 @@ export function Vision() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-white font-medium leading-relaxed"
             >
-              I build automation systems, internal tools, and practical AI
-              workflows that help founders move faster without adding more
-              manual overhead.
+              Scale operations and reclaim 20+ hours a week. I design custom AI
+              pipelines and internal tools that eliminate repetitive admin work,
+              so your team focuses on growth.
             </motion.p>
             
             <motion.div 
@@ -73,11 +73,11 @@ export function Vision() {
             >
               <div>
                 <h4 className="text-brand-orange font-bold mb-3 font-heading text-lg md:text-xl">My Directive</h4>
-                <p className="text-white text-sm md:text-base leading-relaxed">Find the bottleneck, build the fix, and leave behind a system your team can actually use.</p>
+                <p className="text-white text-sm md:text-base leading-relaxed">Find the bottleneck, build the fix, and release 20 to 40 hours of manual labor back to your team.</p>
               </div>
               <div>
                 <h4 className="text-brand-orange font-bold mb-3 font-heading text-lg md:text-xl">My Ambition</h4>
-                <p className="text-white text-sm md:text-base leading-relaxed">Be the technical partner startups and growing businesses call when they need something shipped properly.</p>
+                <p className="text-white text-sm md:text-base leading-relaxed">Be the partner that builds robust, self-sustaining operations, guaranteeing positive ROI in weeks.</p>
               </div>
             </motion.div>
           </div>
@@ -89,10 +89,10 @@ export function Vision() {
 
 export function Process() {
   const steps = [
-    { num: "01", title: "Discovery", desc: "We identify the bottleneck, map the workflow, and define what success should look like before building." },
-    { num: "02", title: "Architecture", desc: "I design the automation, tool integrations, or product flow so the build is clear before implementation starts." },
-    { num: "03", title: "Build & Test", desc: "The system is implemented, tested against real edge cases, and refined until it is reliable enough to hand over." },
-    { num: "04", title: "Launch & Improve", desc: "I deploy, document, and tune the system so your team can run it confidently after launch." }
+    { num: "01", title: "Bottleneck Analysis", desc: "We audit your manual workflows, track where time is being lost, and define hard metrics for success before writing code." },
+    { num: "02", title: "System Blueprint", desc: "I map the automation pathways and tool integrations in a visual flowchart, so the execution plan is crystal clear." },
+    { num: "03", title: "Core Implementation", desc: "The system is engineered, stress-tested against real edge cases, and hardened with robust error handling." },
+    { num: "04", title: "Seamless Handoff", desc: "I deploy the systems to your infrastructure, record walkthroughs, and train your team to run them independently." }
   ];
 
   return (
@@ -152,7 +152,7 @@ export function Trust() {
     {
       category: "SaaS Startup",
       title: "24/7 Voice SDR",
-      impact: "$4k/mo Saved",
+      impact: "$2k+/mo Saved",
       desc: "Deployed voice qualification logic that handled lead intake and booking without relying on manual first response.",
       icon: <Cpu className="w-5 h-5 text-primary" />,
       size: "small",
@@ -161,11 +161,11 @@ export function Trust() {
     {
       category: "Operations",
       title: "Dynamic CRM Logic",
-      impact: "85% Less Manual Entry",
+      impact: "10+ Hours/wk Saved",
       desc: "Architected custom n8n plus LLM logic to automate routing, enrichment, and next-step assignment.",
       icon: <Shield className="w-5 h-5 text-primary" />,
       size: "small",
-      metrics: ["2M+ monthly transactions", "99.8% uptime"]
+      metrics: ["200+ workflows deployed", "99.8% uptime"]
     },
     {
       category: "LinkedIn Growth",
@@ -256,6 +256,23 @@ export function Trust() {
               <p className="text-white text-xs md:text-sm leading-relaxed">{pillar.description}</p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Global Statistics Banner */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 border-y border-brand-plum/20 bg-brand-plum/5 py-8 px-6 rounded-2xl relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+          <div className="text-center sm:text-left flex flex-col justify-center">
+            <span className="text-4xl md:text-5xl font-heading font-black text-brand-orange">200+</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mt-2">Workflows Deployed</span>
+          </div>
+          <div className="text-center sm:text-left flex flex-col justify-center border-t sm:border-t-0 sm:border-x border-brand-plum/20 py-6 sm:py-0 sm:px-6">
+            <span className="text-4xl md:text-5xl font-heading font-black text-brand-orange">10+ Hours</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mt-2">Saved / Wk Per Client</span>
+          </div>
+          <div className="text-center sm:text-left flex flex-col justify-center border-t sm:border-t-0 border-brand-plum/20 pt-6 sm:pt-0 sm:pl-6">
+            <span className="text-4xl md:text-5xl font-heading font-black text-brand-orange">$2,000+</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mt-2">Monthly Labor Savings</span>
+          </div>
         </div>
 
         {/* Case Studies */}
@@ -373,10 +390,13 @@ export function Pricing() {
             PRICING <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2">PHILOSOPHY.</span>
           </h3>
             <p className="text-white font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-            Every business has vastly unique operational needs. Rather than rigid software, I structure bespoke quotes based entirely on the automation complexity and whether I am building internal tools via Claude Code or wiring webhooks in n8n.
+            Every business has unique operational needs. Rather than locking you into rigid subscriptions, I provide custom scoping. Most systems recoup their entire investment in under 30 days by reclaiming hundreds of hours of team labor.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-dashed border-brand-plum/30 rounded-2xl bg-brand-plum/10 w-fit relative overflow-hidden">
-             <div className="text-sm font-mono text-white uppercase tracking-widest">Typical Deployment Range</div>
+             <div className="flex flex-col">
+               <div className="text-sm font-mono text-white uppercase tracking-widest">Typical Investment Range</div>
+               <div className="text-[10px] text-zinc-400 mt-1 uppercase font-bold tracking-wider">Typically reclaiming 80+ hours of manual work monthly</div>
+             </div>
              <div className="text-2xl md:text-3xl font-black font-heading text-brand-orange">$800 to $5,000+</div>
           </div>
           <div className="mt-8 flex items-center gap-3 px-4 py-2 rounded-full border border-brand-orange/20 bg-brand-orange/5 w-fit">
@@ -395,9 +415,10 @@ export function Pricing() {
             ))}
           </ul>
           <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
-            Book a Discovery Call
+            Get My Free System Blueprint
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
+          <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mt-3 text-center w-full block">✓ Includes a free 15-minute scoping audit. No obligation.</span>
         </div>
       </div>
     </section>

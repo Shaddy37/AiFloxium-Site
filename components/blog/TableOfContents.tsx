@@ -29,6 +29,7 @@ export function TableOfContents() {
       };
     }).filter(h => h.id); // ensure it has an id
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHeadings(headingData);
 
     const callback = (entries: IntersectionObserverEntry[]) => {

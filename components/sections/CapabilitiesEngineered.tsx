@@ -19,13 +19,13 @@ import { useRef, useEffect, useState } from "react";
  */
 
 const words = [
-  { label: "automate.",    sublabel: "End-to-end n8n pipelines running 24/7." },
-  { label: "orchestrate.", sublabel: "Multi-agent Claude workflows at scale." },
-  { label: "build.",       sublabel: "Internal tools & micro-SaaS via Claude Code." },
-  { label: "deploy.",      sublabel: "Production-ready systems shipped fast." },
-  { label: "integrate.",   sublabel: "APIs, webhooks & third-party ecosystems." },
-  { label: "optimize.",    sublabel: "Continuous auditing & performance tuning." },
-  { label: "ship.",        sublabel: "From spec to live, on time, every time." },
+  { label: "automate.",    sublabel: "Self-hosted n8n pipelines saving 20+ hours weekly with zero scaling fees." },
+  { label: "orchestrate.", sublabel: "Voice AI agents with under 500ms latency to qualify and book leads 24/7." },
+  { label: "build.",       sublabel: "Bespoke internal dashboards replacing fragile spreadsheets in under 14 days." },
+  { label: "deploy.",      sublabel: "Automated OCR systems reducing invoice processing time by 85%." },
+  { label: "integrate.",   sublabel: "Sync HubSpot, email, and Slack to follow up with inbound leads in under 5 minutes." },
+  { label: "optimize.",    sublabel: "Deterministic validation checkpoints to eliminate manual entry errors entirely." },
+  { label: "ship.",        sublabel: "White-label operational workflows to double capacity without payroll bloat." },
 ];
 
 const COUNT = words.length;

@@ -4,8 +4,8 @@ import Footer from "@/components/sections/Footer";
 import { Vision, Founder } from "@/components/sections/HomeSections";
 import { Accordion05 } from "@/components/ui/accordion-05";
 import { TrendingUp, Database, Cpu } from "lucide-react";
-import { DEFAULT_DESCRIPTION, PERSON_NAME } from "@/lib/site";
-import { buildPageMetadata } from "@/lib/seo";
+import { DEFAULT_DESCRIPTION, PERSON_NAME, SITE_URL } from "@/lib/site";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `About ${PERSON_NAME} | AI Automation Engineer`,
@@ -19,9 +19,39 @@ export const metadata: Metadata = buildPageMetadata({
   ]
 });
 
+const aboutBreadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' }
+]);
+
+const aboutPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${SITE_URL}/about#webpage`,
+  "url": `${SITE_URL}/about`,
+  "name": `About ${PERSON_NAME} | AI Automation Engineer`,
+  "description": DEFAULT_DESCRIPTION,
+  "mainEntity": {
+    "@type": "Person",
+    "@id": `${SITE_URL}#person`
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": `${SITE_URL}#organization`
+  }
+};
+
 export default function AboutPage() {
   return (
     <main className="relative bg-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+      />
       <Navbar />
       
       {/* Dark Cinematic Hero */}
@@ -31,9 +61,7 @@ export default function AboutPage() {
           THE PERSON <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">BUILDING</span> <br /><span className="text-gradient">AIFLOXIUM.</span>
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl font-medium leading-relaxed">
-          I am <span className="text-white font-bold">{PERSON_NAME}</span>. I build
-          automation systems, internal tools, and practical AI products for teams
-          that need real execution, not just ideas.
+          I am <span className="text-white font-bold">{PERSON_NAME}</span>, a senior AI Automation Engineer. I design, build, and deploy custom operational infrastructure—from self-hosted n8n pipelines saving 20+ hours weekly to low-latency voice AI agents with under 500ms response speeds.
         </p>
       </div>
 
@@ -49,9 +77,9 @@ export default function AboutPage() {
           
           <div className="space-y-16 pl-4 md:pl-0 border-l-2 md:border-l-0 border-zinc-200">
             {[
-              { year: "Phase 1", title: "Automation Foundations", desc: "Started with workflow fixes, scraping, and repetitive task automation for businesses that were spending too much time on manual work.", icon: <Cpu /> },
-              { year: "Phase 2", title: "Integrations & Internal Systems", desc: "Moved into deeper tool integration, data flows, and business systems that connected CRMs, operations, and reporting.", icon: <Database /> },
-              { year: "Phase 3", title: "AI Products & Agentic Workflows", desc: "Current focus: product-grade builds, AI agents, content systems, and software that can be shipped as real business infrastructure.", icon: <TrendingUp /> }
+              { year: "Phase 1", title: "Automation Foundations", desc: "Engineered high-volume data scraping and task automation, helping local services reduce manual lead research time by 80%.", icon: <Cpu /> },
+              { year: "Phase 2", title: "Bespoke Operational Pipelines", desc: "Developed self-hosted n8n systems and Next.js/Supabase internal portals, eliminating fragile spreadsheet dependencies and saving operations teams 20+ hours weekly.", icon: <Database /> },
+              { year: "Phase 3", title: "Enterprise-Grade Agentic Workflows", desc: "Building low-latency voice AI agents (<500ms latency), AI-powered invoice OCR (85% processing speedup), and white-label engineering backends for high-growth B2B agencies.", icon: <TrendingUp /> }
             ].map((item, i) => (
               <div key={i} className="relative flex flex-col md:flex-row gap-8 md:items-center">
                 <div className="hidden md:flex flex-col items-center absolute left-1/2 -translate-x-1/2 w-full h-full">

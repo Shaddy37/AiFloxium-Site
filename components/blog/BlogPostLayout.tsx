@@ -116,7 +116,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
             <div className="rounded-3xl border border-brand-plum/10 bg-brand-plum/5 p-6 shadow-sm">
               <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-plum font-black mb-4">Expert Support</h3>
               <p className="text-sm text-zinc-700 mb-6 font-bold leading-relaxed">
-                Ready to scale your autonomous systems? Let's talk strategy.
+                Ready to scale your autonomous systems? Let&apos;s talk strategy.
               </p>
               <Link 
                 href="/contact" 
