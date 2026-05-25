@@ -1,250 +1,196 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/site";
 
-// Psychology-driven copy: each card names a real business problem this founder solves.
-// Loss aversion frame: what they're losing RIGHT NOW by not having AI in their corner.
 const problems = [
   {
-    eyebrow: "LEAD GENERATION",
-    title: "YOU'RE PAYING PEOPLE TO DO WHAT AI CAN DO IN SECONDS",
-    stat: "Manual lead outreach takes 3–5 hrs/day. AI does it in the background, 24/7.",
+    eyebrow: "SLOW RESPONSE",
+    title: "YOU'RE LOSING 78% OF YOUR LEADS TO WHOEVER REPLIES FIRST",
+    stat: "The first business to respond wins the sale 78% of the time.",
     description:
-      "Finding leads, qualifying them, sending the first message, booking the call — every step of that can run on autopilot. I build automated lead gen systems that fill your pipeline without you lifting a finger.",
-    proof: "Clients go from 6-hour response times to under 90 seconds.",
-    accent: "orange",
+      "Every lead that waits more than 5 minutes has a 400% lower chance of converting. While your team is busy, a competitor is already on the phone with your prospect.",
+    proof: "AI follow-up systems respond in under 90 seconds, 24/7.",
+    col: "lg:col-span-2",
   },
   {
-    eyebrow: "WEBSITE & 3D BUILDS",
-    title: "A PREMIUM WEBSITE USED TO COST $10,000 AND TAKE 3 MONTHS",
-    stat: "With Claude Code and Codex, I ship the same quality in days — not months.",
+    eyebrow: "AGENCY TRAP",
+    title: "YOU PAID $8,000+ FOR A WEBSITE THAT TOOK 4 MONTHS",
+    stat: "Traditional agencies charge $5K–$30K and deliver in months.",
     description:
-      "Want a cinematic 3D landing page, a custom SaaS dashboard, or a bespoke client portal? I build it using AI-native tools — Claude Code, OpenAI Codex — faster and cheaper than any traditional agency, with better results.",
-    proof: "Full 3D Next.js sites shipped in under 2 weeks.",
-    accent: "violet",
+      "Then you need updates — which cost more, take weeks, and require another agency brief. The whole model is broken. AI-native development changes the timeline and the price completely.",
+    proof: "Same quality shipped in days, not months.",
+    col: "lg:col-span-1",
   },
   {
-    eyebrow: "SOCIAL CONTENT",
-    title: "POSTING CONSISTENTLY IS A FULL-TIME JOB YOU CAN'T AFFORD",
-    stat: "Businesses that post 4–5x/week get 3× more inbound leads than those that don't.",
+    eyebrow: "INVISIBLE BRAND",
+    title: "YOU HAVEN'T POSTED IN 2 WEEKS AND YOUR REACH IS DYING",
+    stat: "Accounts that post consistently get 3× more inbound than those that don't.",
     description:
-      "I build AI content pipelines that research, write, format, and schedule your posts across LinkedIn, Instagram, and X — so your brand stays visible while you focus on actually running the business.",
-    proof: "One client automated 300+ posts/month at near-zero cost.",
-    accent: "orange",
+      "Every day you don't post, your competitors are showing up where your audience scrolls. Algorithms punish inconsistency — and you can't afford a full-time content person.",
+    proof: "AI content pipelines post daily without you touching anything.",
+    col: "lg:col-span-1",
   },
   {
-    eyebrow: "CAROUSELS & CREATIVES",
-    title: "YOUR COMPETITORS ARE POSTING SCROLL-STOPPING CONTENT DAILY",
+    eyebrow: "TIME DRAIN",
+    title: "YOUR TEAM BURNS 20+ HOURS A WEEK ON WORK THAT SHOULDN'T EXIST",
+    stat: "20 hrs × $40/hr = $800 gone. Every single week. That's $41,600/year.",
+    description:
+      "Copy-pasting data, chasing approvals, manually updating CRMs, re-entering the same information across five tools. That's not operations — that's expensive admin that AI eliminates entirely.",
+    proof: "Most clients reclaim 20–40 hrs/week within the first month.",
+    col: "lg:col-span-2",
+  },
+  {
+    eyebrow: "CONTENT GAP",
+    title: "YOUR COMPETITORS HAVE A DESIGN TEAM. YOU HAVE A CANVA ACCOUNT.",
     stat: "Carousels get 3× more reach than static posts on LinkedIn and Instagram.",
     description:
-      "I use AI to generate, design, and produce branded carousel content at scale — hooks, slides, captions, and cover images — so your content looks premium and lands consistently without a design team.",
-    proof: "Carousel systems producing 20–40 posts/week fully on autopilot.",
-    accent: "violet",
+      "Scroll-stopping content requires hooks, designed slides, and consistent publishing. Without it, your posts get buried. A design team costs $5K+/month. AI does it for a fraction.",
+    proof: "AI carousel systems produce 20–40 branded posts/week.",
+    col: "lg:col-span-1",
   },
   {
-    eyebrow: "BUSINESS AUTOMATION",
-    title: "YOUR TEAM IS STILL DOING WORK THAT SHOULD HAVE BEEN AUTOMATED YEARS AGO",
-    stat: "The average business wastes 20+ hours/week on tasks AI handles in minutes.",
-    description:
-      "Invoicing, CRM updates, client onboarding, internal reports, follow-up sequences — whatever the repetitive task is, I map it, automate it, and hand you back hours every week using the right AI tool for the job.",
-    proof: "200+ automated workflows built across 10+ industries.",
-    accent: "orange",
-  },
-  {
-    eyebrow: "AI STRATEGY",
-    title: "YOUR COMPETITORS ARE MOVING FASTER BECAUSE THEY HAVE AI ON THEIR TEAM",
+    eyebrow: "FALLING BEHIND",
+    title: "YOUR COMPETITORS ALREADY HAVE AI WORKING FOR THEM. YOU DON'T.",
     stat: "Early AI adopters are outpacing competitors by 40% in output per employee.",
     description:
-      "You don't need to understand AI — you need someone who does and can implement it inside your actual business. I find the bottlenecks, pick the right tools (Claude Code, Codex, n8n, Make, custom GPTs — whatever fits), and ship the solution.",
-    proof: "Most clients see ROI within the first 30 days.",
-    accent: "violet",
+      "While you're still doing things manually, other businesses are running leaner, responding faster, and producing more output with smaller teams. Every month without AI is a month of compounding disadvantage.",
+    proof: "Most clients see measurable ROI within the first 30 days.",
+    col: "lg:col-span-1",
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
 
-function ProblemCard({
-  problem,
-  index,
-  smoothProgress,
-}: {
-  problem: typeof problems[0];
-  index: number;
-  smoothProgress: ReturnType<typeof useSpring>;
-}) {
-  const total = problems.length;
-  const step = 0.7 / total;
-  const start = 0.15 + index * step;
-  const end = start + step;
-  const mid = (start + end) / 2;
-
-  const y = useTransform(smoothProgress, [start, mid, end], ["120%", "0%", "-120%"]);
-  const opacity = useTransform(smoothProgress, [start, mid, end], [0, 1, 0]);
-  const scale = useTransform(smoothProgress, [start, mid, end], [0.9, 1, 0.9]);
-  const rotateX = useTransform(smoothProgress, [start, mid, end], [10, 0, -10]);
-
-  return (
-    <motion.div
-      style={{ y, opacity, scale, rotateX }}
-      className="absolute inset-x-6 md:inset-x-0 mx-auto"
-    >
-      <div
-        className="relative group p-8 md:p-12 bg-brand-bg/80 backdrop-blur-2xl border border-brand-plum/30 shadow-[0_0_80px_rgba(0,0,0,0.5)] overflow-hidden"
-        style={{ clipPath: "polygon(0% 0%, 88% 0%, 100% 12%, 100% 100%, 0% 100%)" }}
-      >
-        {/* Dot grid texture */}
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
-
-        {/* Shimmer sweep */}
-        <motion.div
-          animate={{ left: ["-100%", "200%"] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-20deg]"
-        />
-
-        <div className="relative z-10 flex flex-col md:flex-row items-start gap-8">
-          {/* Index number */}
-          <div className="flex flex-col items-center gap-6 shrink-0">
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-brand-plum/10 border border-brand-plum/40 flex items-center justify-center text-xl md:text-2xl font-black text-brand-orange transform rotate-45">
-              <span className="-rotate-45">{String(index + 1).padStart(2, "0")}</span>
-            </div>
-            <div className="w-[1px] h-24 bg-gradient-to-b from-brand-plum/30 to-transparent hidden md:block" />
-          </div>
-
-          <div className="space-y-5 pt-1 w-full">
-            {/* Eyebrow */}
-            <span className="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.35em] text-brand-orange">
-              <span className="w-4 h-[1px] bg-brand-orange/40" />
-              {problem.eyebrow}
-            </span>
-
-            {/* Pattern-interrupt headline */}
-            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-[1.1] border-l-4 border-brand-plum/50 pl-6">
-              {problem.title}
-            </h3>
-
-            {/* Anchoring stat — makes the problem feel REAL and quantified */}
-            <p className="text-brand-orange font-mono text-sm font-bold pl-6">
-              {problem.stat}
-            </p>
-
-            {/* Body copy */}
-            <p className="text-base md:text-lg text-white/80 font-medium leading-relaxed pl-6">
-              {problem.description}
-            </p>
-
-            {/* Social proof micro-line */}
-            <div className="flex items-center gap-3 pl-6 pt-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.5)]" />
-              <span className="text-xs text-emerald-400 font-bold uppercase tracking-widest">
-                {problem.proof}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-brand-plum/30 opacity-50" />
-      </div>
-    </motion.div>
-  );
-}
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 export default function HiddenCostSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    restDelta: 0.001,
-  });
-
-  const headerOpacity = useTransform(smoothProgress, [0, 0.1, 0.15, 0.85, 0.95], [0, 1, 0.08, 0.08, 0]);
-  const headerScale = useTransform(smoothProgress, [0, 0.1, 0.15], [0.95, 1, 0.98]);
-
   return (
-    <section
-      ref={containerRef}
-      className="relative z-10 perspective-1000"
-      style={{ height: "800vh" }}
-    >
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-brand-bg">
+    <section className="relative z-10 bg-brand-bg overflow-hidden py-32 px-6">
 
-        {/* Background ghost headline */}
+      {/* Ambient background glows */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-brand-plum/20 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-brand-orange/10 blur-[120px] pointer-events-none" />
+
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+
+        {/* Section Header */}
         <motion.div
-          style={{ opacity: headerOpacity, scale: headerScale }}
-          className="absolute z-0 text-center px-6 w-full max-w-5xl flex flex-col items-center justify-center translate-y-[-10%] pointer-events-none"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-20 max-w-4xl"
         >
-          <span className="flex items-center gap-4 text-xs md:text-sm font-bold text-brand-plum tracking-[0.4em] uppercase mb-10">
-            <span className="w-10 h-[1px] bg-brand-plum/30" />
+          <span className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-brand-plum mb-8">
+            <span className="w-8 h-[1px] bg-brand-plum/40" />
             YOUR SYSTEM HAS FRICTION
-            <span className="w-10 h-[1px] bg-brand-plum/30" />
           </span>
-          {/* High-stakes headline — loss aversion framing */}
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-brand-orange leading-[0.8] mb-12">
+
+          <h2 className="text-[3.5rem] sm:text-[5rem] md:text-[7rem] font-heading font-black tracking-tighter leading-[0.85] text-brand-orange uppercase mb-6">
             BLEEDING REVENUE<br />
             <span className="text-white">EVERY HOUR YOU WAIT.</span>
           </h2>
-          <p className="text-white text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto italic opacity-60">
+
+          <p className="text-white/60 text-lg md:text-xl font-medium max-w-2xl italic">
             These aren&apos;t hypothetical savings. This is money leaving your business right now.
           </p>
         </motion.div>
 
-        {/* Ambient glow */}
+        {/* Cards Grid */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.8 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-brand-plum-glow opacity-30 blur-[140px] rounded-full pointer-events-none"
-        />
-
-        {/* Problem cards */}
-        <div className="relative z-20 w-full max-w-2xl px-6">
-          {problems.map((problem, index) => (
-            <ProblemCard
-              key={index}
-              problem={problem}
-              index={index}
-              smoothProgress={smoothProgress}
-            />
-          ))}
-        </div>
-
-        {/* Scroll prompt */}
-        <motion.div
-          style={{
-            opacity: useTransform(smoothProgress, [0, 0.05], [1, 0]),
-            y: useTransform(smoothProgress, [0, 0.05], [0, 20]),
-          }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          <span className="text-[10px] text-brand-plum tracking-[0.4em] uppercase font-bold text-center">
-            Scroll to see what&apos;s costing you
-          </span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-brand-orange via-brand-plum to-transparent" />
+          {problems.map((problem, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="group relative bg-white/[0.03] border border-white/10 rounded-2xl p-7 flex flex-col gap-5 hover:border-brand-plum/40 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden"
+            >
+              {/* Corner accent */}
+              <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-brand-plum/20 rounded-tr-2xl pointer-events-none" />
+
+              {/* Shimmer on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-plum/0 via-brand-plum/0 to-brand-orange/0 group-hover:from-brand-plum/5 group-hover:to-brand-orange/5 transition-all duration-700 rounded-2xl pointer-events-none" />
+
+              {/* Eyebrow */}
+              <span className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.35em] text-brand-orange">
+                <span className="w-3 h-[1px] bg-brand-orange/60" />
+                {problem.eyebrow}
+              </span>
+
+              {/* Title */}
+              <h3 className="text-lg md:text-xl font-black text-white tracking-tight leading-[1.15] group-hover:text-brand-orange transition-colors duration-300">
+                {problem.title}
+              </h3>
+
+              {/* Stat */}
+              <p className="text-brand-orange font-mono text-xs font-bold leading-relaxed">
+                {problem.stat}
+              </p>
+
+              {/* Description */}
+              <p className="text-sm text-white/65 font-medium leading-relaxed flex-1">
+                {problem.description}
+              </p>
+
+              {/* Social proof */}
+              <div className="flex items-center gap-2 pt-3 border-t border-white/8">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0 shadow-[0_0_6px_rgba(74,222,128,0.6)]" />
+                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
+                  {problem.proof}
+                </span>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Bottom CTA — appears near end of scroll */}
+        {/* Bottom CTA */}
         <motion.div
-          style={{
-            opacity: useTransform(smoothProgress, [0.88, 0.96], [0, 1]),
-            y: useTransform(smoothProgress, [0.88, 0.96], [30, 0]),
-          }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-full bg-brand-orange text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-brand-orange/90 transition-all shadow-[0_10px_30px_rgba(255,107,0,0.3)] flex items-center gap-3"
+            className="px-8 py-4 rounded-full bg-brand-orange text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-brand-orange/90 transition-all shadow-[0_10px_30px_rgba(255,107,0,0.25)] hover:shadow-[0_14px_40px_rgba(255,107,0,0.4)] hover:-translate-y-0.5"
           >
             Stop the Bleed — Book a Free Audit
           </Link>
-          <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+          <span className="text-[10px] text-white/30 font-bold uppercase tracking-widest">
             Free 15-min audit · No obligation
           </span>
         </motion.div>
