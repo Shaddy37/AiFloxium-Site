@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">The Hybrid AI Coding Workflow</title>
+  <desc id="desc">Workflow diagram showing Claude Code handling local interactive development tasks, while OpenAI Codex runs parallel background cloud tasks, both feeding into the same project codebase.</desc>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#faf8f5"/>
+  <rect x="30" y="30" width="1540" height="840" rx="36" fill="#ffffff" stroke="#e6e1da" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="80" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#1f2937">THE HYBRID AI DEVELOPER WORKFLOW</text>
+  <text x="80" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6b7280">How top developers combine local interactive reasoning with autonomous cloud task agents.</text>
+  
+  <!-- Main Unified Workspace Center Base -->
+  <rect x="520" y="580" width="560" height="230" rx="28" fill="#f8fafc" stroke="#38bdf8" stroke-width="3" filter="drop-shadow(0 10px 35px rgba(56,189,248,0.06))"/>
+  <text x="800" y="630" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="900" fill="#0f172a">Unified Local Project Root</text>
+  <text x="800" y="660" text-anchor="middle" font-family="monospace" font-size="16" fill="#64748b">/home/user/workspace/project-root</text>
+  
+  <!-- Shared Context Files inside center base -->
+  <g transform="translate(570, 690)">
+    <!-- CLAUDE.md -->
+    <rect width="210" height="85" rx="14" fill="#ffffff" stroke="#581c87" stroke-width="2"/>
+    <text x="105" y="38" text-anchor="middle" font-family="monospace" font-size="16" font-weight="900" fill="#581c87">CLAUDE.md</text>
+    <text x="105" y="63" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6b7280">Local Code Conventions</text>
+
+    <!-- AGENTS.md -->
+    <rect x="250" width="210" height="85" rx="14" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+    <text x="355" y="38" text-anchor="middle" font-family="monospace" font-size="16" font-weight="900" fill="#0f766e">AGENTS.md</text>
+    <text x="355" y="63" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6b7280">Portable Agent Brief</text>
+  </g>
+  
+  <!-- LEFT STREAM: CLAUDE CODE (Local Loop) -->
+  <g transform="translate(100, 200)">
+    <rect width="450" height="310" rx="24" fill="#581c87" fill-opacity="0.03" stroke="#581c87" stroke-width="2" stroke-dasharray="6 6"/>
+    <rect x="30" y="30" width="390" height="60" rx="14" fill="#581c87"/>
+    <text x="225" y="68" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="900" fill="#ffffff">Claude Code (Local Interactive)</text>
+    
+    <!-- Tasks list -->
+    <g font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#374151" transform="translate(50, 140)">
+      <text x="0" y="0" fill="#581c87">✦ Real-time pair programming</text>
+      <text x="0" y="35">✦ Complex architectural decisions</text>
+      <text x="0" y="70">✦ Interactively debug compile errors</text>
+      <text x="0" y="105">✦ Monorepo refactoring &amp; code reviews</text>
+    </g>
+    
+    <!-- Arrow from Left stream down to center workspace -->
+    <g transform="translate(225, 310)">
+      <path d="M 0 0 L 0 50 L 300 50 L 300 70" fill="none" stroke="#581c87" stroke-width="4"/>
+      <polygon points="300,70 292,58 308,58" fill="#581c87"/>
+      <text x="60" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#581c87">Direct file edits on disk</text>
+    </g>
+  </g>
+  
+  <!-- RIGHT STREAM: OPENAI CODEX (Cloud Loop) -->
+  <g transform="translate(1050, 200)">
+    <rect width="450" height="310" rx="24" fill="#0f766e" fill-opacity="0.03" stroke="#0f766e" stroke-width="2" stroke-dasharray="6 6"/>
+    <rect x="30" y="30" width="390" height="60" rx="14" fill="#0f766e"/>
+    <text x="225" y="68" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="900" fill="#ffffff">OpenAI Codex (Cloud Autonomous)</text>
+    
+    <!-- Tasks list -->
+    <g font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#374151" transform="translate(50, 140)">
+      <text x="0" y="0" fill="#0f766e">✦ Background task execution</text>
+      <text x="0" y="35">✦ Automated PR generation sweeps</text>
+      <text x="0" y="70">✦ Standardized documentation builds</text>
+      <text x="0" y="105">✦ Full test suite expansion</text>
+    </g>
+    
+    <!-- Arrow from Right stream down to center workspace -->
+    <g transform="translate(225, 310)">
+      <path d="M 0 0 L 0 50 L -300 50 L -300 70" fill="none" stroke="#0f766e" stroke-width="4"/>
+      <polygon points="-300,70 -308,58 -292,58" fill="#0f766e"/>
+      <text x="-260" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#0f766e">Syncs via Git Pull Request</text>
+    </g>
+  </g>
+  
+  <!-- Synchronization Flow line at very bottom -->
+  <path d="M 225 510 L 225 560 L 520 560" fill="none" stroke="#94a3b8" stroke-dasharray="4 4" stroke-width="2"/>
+  <path d="M 1375 510 L 1375 560 L 1080 560" fill="none" stroke="#94a3b8" stroke-dasharray="4 4" stroke-width="2"/>
+</svg>

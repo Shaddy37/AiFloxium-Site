@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code vs Codex Architecture Diagram</title>
+  <desc id="desc">A side-by-side architectural diagram comparing Claude Code's local execution model with OpenAI Codex's cloud sandbox model.</desc>
+  
+  <!-- Outer Editorial Background -->
+  <rect width="1600" height="900" fill="#faf8f5"/>
+  <rect x="30" y="30" width="1540" height="840" rx="36" fill="#ffffff" stroke="#e6e1da" stroke-width="2"/>
+  
+  <!-- Section Divider (Vertical Line) -->
+  <line x1="800" y1="120" x2="800" y2="800" stroke="#e6e1da" stroke-width="2" stroke-dasharray="8 8"/>
+  
+  <!-- Left Side: Claude Code (Local Model) -->
+  <g transform="translate(0, 0)">
+    <!-- Header -->
+    <rect x="80" y="80" width="640" height="80" rx="16" fill="#581c87" fill-opacity="0.05"/>
+    <text x="120" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#581c87">CLAUDE CODE</text>
+    <text x="320" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#6b7280">// Local Execution Model</text>
+    
+    <!-- Local Dev Machine Box -->
+    <rect x="120" y="240" width="400" height="420" rx="24" fill="#ffffff" stroke="#581c87" stroke-width="3" filter="drop-shadow(0 10px 20px rgba(88, 28, 135, 0.05))"/>
+    <text x="150" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#1f2937">Your Local Machine</text>
+    
+    <!-- Files inside Local Machine -->
+    <rect x="150" y="330" width="340" height="200" rx="16" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="180" y="375" font-family="monospace" font-size="18" font-weight="bold" fill="#4b5563">📂 project-root/</text>
+    <text x="210" y="415" font-family="monospace" font-size="18" fill="#10b981">📄 app/page.tsx (Edited locally)</text>
+    <text x="210" y="455" font-family="monospace" font-size="18" fill="#6b7280">📄 package.json</text>
+    <text x="210" y="495" font-family="monospace" font-size="18" fill="#581c87">📄 CLAUDE.md</text>
+    
+    <rect x="150" y="560" width="340" height="70" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+    <text x="180" y="602" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#047857">✓ Agent reads &amp; edits files directly on disk</text>
+
+    <!-- API Connection -->
+    <g transform="translate(520, 380)">
+      <path d="M 0 0 L 100 0" fill="none" stroke="#581c87" stroke-width="4" stroke-dasharray="5 5"/>
+      <polygon points="100,-8 116,0 100,8" fill="#581c87"/>
+      <text x="-10" y="-20" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#6b7280">Sends only prompts</text>
+      <text x="-15" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#6b7280">&amp; small snippets</text>
+    </g>
+
+    <!-- Cloud LLM -->
+    <rect x="640" y="320" width="120" height="180" rx="20" fill="#581c87" stroke="#ffffff" stroke-width="2"/>
+    <text x="700" y="390" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#ffffff">Anthropic</text>
+    <text x="700" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#c084fc">API</text>
+
+    <!-- Security Check label -->
+    <rect x="120" y="700" width="560" height="80" rx="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="150" y="746" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#92400e">PRIVACY FOCUS:</text>
+    <text x="310" y="746" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#78350f">Your code files never leave your computer.</text>
+  </g>
+
+  <!-- Right Side: OpenAI Codex (Cloud Sandbox Model) -->
+  <g transform="translate(800, 0)">
+    <!-- Header -->
+    <rect x="80" y="80" width="640" height="80" rx="16" fill="#0f766e" fill-opacity="0.05"/>
+    <text x="120" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#0f766e">OPENAI CODEX</text>
+    <text x="325" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#6b7280">// Cloud Sandbox Model</text>
+    
+    <!-- Local Dev Machine Box -->
+    <rect x="80" y="240" width="230" height="240" rx="20" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+    <text x="110" y="285" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#374151">Your Machine</text>
+    <rect x="100" y="320" width="190" height="120" rx="10" fill="#f3f4f6"/>
+    <text x="120" y="365" font-family="monospace" font-size="14" fill="#4b5563">📂 git-repo/</text>
+    <text x="120" y="405" font-family="monospace" font-size="14" fill="#9ca3af">📄 app/page.tsx</text>
+
+    <!-- Clone Repo Arrow -->
+    <g transform="translate(325, 340)">
+      <path d="M 0 0 L 80 0" fill="none" stroke="#0f766e" stroke-width="3"/>
+      <polygon points="80,-6 92,0 80,6" fill="#0f766e"/>
+      <text x="-5" y="-15" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#6b7280">Clones entire repo</text>
+    </g>
+
+    <!-- Cloud Sandbox Box -->
+    <rect x="430" y="240" width="290" height="420" rx="24" fill="#f0fdfa" stroke="#0f766e" stroke-width="3" filter="drop-shadow(0 10px 20px rgba(15, 118, 110, 0.05))"/>
+    <text x="460" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#115e59">OpenAI Infrastructure</text>
+    
+    <rect x="460" y="330" width="230" height="150" rx="14" fill="#ffffff" stroke="#0f766e" stroke-dasharray="4 4" stroke-width="1.5"/>
+    <text x="480" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#0f766e">[Cloud Sandbox]</text>
+    <text x="480" y="405" font-family="monospace" font-size="14" fill="#374151">📄 Cloned Files</text>
+    <text x="480" y="435" font-family="monospace" font-size="14" fill="#e11d48">⚡ Executing script...</text>
+
+    <rect x="460" y="500" width="230" height="130" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="480" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" fill="#374151">GPT-5.5 Agent Engine</text>
+    <text x="480" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6b7280">Runs shell commands,</text>
+    <text x="480" y="595" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6b7280">compiles code &amp; tests</text>
+
+    <!-- PR Return Arrow -->
+    <g transform="translate(80, 560)">
+      <path d="M 330 0 L 0 0" fill="none" stroke="#0f766e" stroke-width="3"/>
+      <polygon points="0,-6 -12,0 0,6" fill="#0f766e"/>
+      <text x="90" y="-15" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#6b7280">Returns Pull Request or Patch</text>
+    </g>
+
+    <!-- Sandbox Protection label -->
+    <rect x="80" y="700" width="640" height="80" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="110" y="746" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#1e40af">SANDBOX ISOLATION:</text>
+    <text x="335" y="746" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#1e3a8a">Rogue scripts cannot touch your local system.</text>
+  </g>
+</svg>

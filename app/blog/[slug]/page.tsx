@@ -11,7 +11,9 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs().filter(
-    (slug) => slug !== 'openai-codex-tutorial-complete-guide-2026'
+    (slug) =>
+      slug !== 'openai-codex-tutorial-complete-guide-2026' &&
+      slug !== 'claude-code-vs-codex-comparison'
   );
   return slugs.map((slug) => ({ slug }));
 }

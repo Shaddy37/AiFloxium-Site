@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Context Window Size Comparison</title>
+  <desc id="desc">Visual scale representation showing Claude Opus 4.7's 1 million token context window compared to GPT-5.5 Codex's 400,000 tokens and GPT-5.4 Codex CLI's 272,000 tokens.</desc>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#faf8f5"/>
+  <rect x="30" y="30" width="1540" height="840" rx="36" fill="#ffffff" stroke="#e6e1da" stroke-width="2"/>
+  
+  <!-- Title and Description -->
+  <text x="80" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#1f2937">CONTEXT WINDOW CAPACITY</text>
+  <text x="80" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6b7280">Larger context windows allow processing entire codebases and monorepos in a single session.</text>
+  
+  <!-- Three Column Comparison Blocks -->
+  
+  <!-- Block 1: Claude Opus 4.6/4.7 -->
+  <g transform="translate(100, 220)">
+    <!-- Base block. Height of 1M = 450px. Width = 380px -->
+    <rect width="380" height="450" rx="24" fill="#581c87" fill-opacity="0.05" stroke="#581c87" stroke-width="4"/>
+    <rect y="330" width="380" height="120" rx="24" fill="#581c87"/>
+    <!-- Remove rounded top from the label cover -->
+    <rect y="330" width="380" height="24" fill="#581c87"/>
+    
+    <!-- Content inside -->
+    <text x="190" y="120" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="#581c87">1.0M</text>
+    <text x="190" y="170" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#6b7280">TOKENS CAPACITY</text>
+    
+    <!-- Details in base -->
+    <text x="190" y="380" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#ffffff">Claude Opus 4.7</text>
+    <text x="190" y="415" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#c084fc">Holds ~750,000 Words</text>
+  </g>
+  
+  <!-- Block 2: GPT-5.5 Codex -->
+  <g transform="translate(610, 220)">
+    <!-- Base block. Height of 400k = 180px. Positioned to line up at bottom. Y displacement: 450 - 180 = 270px -->
+    <!-- Frame -->
+    <rect y="270" width="380" height="180" rx="24" fill="#0f766e" fill-opacity="0.05" stroke="#0f766e" stroke-width="3"/>
+    <rect y="370" width="380" height="80" rx="24" fill="#0f766e"/>
+    <rect y="370" width="380" height="24" fill="#0f766e"/>
+    
+    <!-- Content inside -->
+    <text x="190" y="335" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#0f766e">400K</text>
+    
+    <!-- Details in base -->
+    <text x="190" y="408" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#ffffff">GPT-5.5 Codex</text>
+  </g>
+  
+  <!-- Block 3: GPT-5.4 Codex CLI -->
+  <g transform="translate(1120, 220)">
+    <!-- Base block. Height of 272k = 122px. Positioned to line up at bottom. Y displacement: 450 - 122 = 328px -->
+    <!-- Frame -->
+    <rect y="328" width="380" height="122" rx="24" fill="#10b981" fill-opacity="0.05" stroke="#10b981" stroke-width="2"/>
+    <rect y="398" width="380" height="52" rx="24" fill="#10b981"/>
+    <rect y="398" width="380" height="24" fill="#10b981"/>
+    
+    <!-- Content inside -->
+    <text x="190" y="375" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#10b981">272K</text>
+    
+    <!-- Details in base -->
+    <text x="190" y="430" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#ffffff">GPT-5.4 Codex CLI</text>
+  </g>
+  
+  <!-- Detailed Comparison Table/Notes below blocks -->
+  <g transform="translate(100, 710)">
+    <rect width="1400" height="110" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="40" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#1e2937">MRCR v2 Accuracy Benchmark at 1M length (Memory Retrieval &amp; Context Recall):</text>
+    
+    <!-- Claude score -->
+    <circle cx="50" cy="80" r="8" fill="#581c87"/>
+    <text x="70" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#581c87">Claude Opus: 78.3% success</text>
+    
+    <!-- Codex score -->
+    <circle cx="650" cy="80" r="8" fill="#0f766e"/>
+    <text x="670" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#0f766e">GPT-5.4: 36.6% success</text>
+    
+    <text x="1100" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#6b7280" font-style="italic">Source: Anthropic official disclosures</text>
+    <text x="1100" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#6b7280" font-style="italic">&amp; Chroma memory research (2026).</text>
+  </g>
+</svg>

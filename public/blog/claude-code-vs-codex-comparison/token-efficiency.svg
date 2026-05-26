@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Token Efficiency Comparison Chart</title>
+  <desc id="desc">Horizontal bar meter chart comparing token consumption on identical tasks between Claude Code and Codex CLI, showing Codex's 3x to 4x efficiency advantage.</desc>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#faf8f5"/>
+  <rect x="30" y="30" width="1540" height="840" rx="36" fill="#ffffff" stroke="#e6e1da" stroke-width="2"/>
+  
+  <!-- Title and Description -->
+  <text x="80" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#1f2937">TOKEN CONSUMPTION COMPARISON</text>
+  <text x="80" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6b7280">Identical prompts tested on both platforms. Fewer tokens means lower costs and longer sessions.</text>
+  
+  <!-- Legend -->
+  <g transform="translate(1050, 95)">
+    <!-- Claude Code -->
+    <rect x="0" y="0" width="30" height="30" rx="6" fill="#581c87"/>
+    <text x="45" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#1f2937">Claude Code (Sonnet/Opus)</text>
+    
+    <!-- Codex CLI -->
+    <rect x="0" y="50" width="30" height="30" rx="6" fill="#0f766e"/>
+    <text x="45" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#1f2937">Codex CLI (GPT-5.5)</text>
+  </g>
+  
+  <!-- Main Grid Cards -->
+  
+  <!-- Card 1: Figma-to-code clone (Complex UI Task) -->
+  <g transform="translate(80, 220)">
+    <!-- Card Frame -->
+    <rect width="680" height="500" rx="28" fill="#fcfcfc" stroke="#f3f4f6" stroke-width="2"/>
+    <text x="50" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#111827">Task 1: Figma-to-Code Clone</text>
+    <text x="50" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#6b7280">Generates pixel-perfect React frontend code from design specs</text>
+    
+    <!-- Claude Bar Group -->
+    <g transform="translate(50, 160)">
+      <text x="0" y="-15" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#581c87">Claude Code</text>
+      <!-- Base channel -->
+      <rect x="0" y="0" width="580" height="48" rx="24" fill="#f3f4f6"/>
+      <!-- Active bar (100%) -->
+      <rect x="0" y="0" width="580" height="48" rx="24" fill="#581c87"/>
+      <text x="560" y="30" text-anchor="end" font-family="monospace" font-size="18" font-weight="900" fill="#ffffff">6,200,000 tokens</text>
+    </g>
+    
+    <!-- Codex Bar Group -->
+    <g transform="translate(50, 280)">
+      <text x="0" y="-15" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#0f766e">Codex CLI</text>
+      <!-- Base channel -->
+      <rect x="0" y="0" width="580" height="48" rx="24" fill="#f3f4f6"/>
+      <!-- Active bar (1.5M / 6.2M = 24.19% of 580 = 140px) -->
+      <rect x="0" y="0" width="140" height="48" rx="24" fill="#0f766e"/>
+      <text x="160" y="30" font-family="monospace" font-size="18" font-weight="900" fill="#0f766e">1,500,000 tokens (4.1x fewer)</text>
+    </g>
+    
+    <!-- Insights -->
+    <rect x="50" y="380" width="580" height="80" rx="16" fill="#eff6ff" stroke="#dbeafe" stroke-width="1.5"/>
+    <text x="75" y="425" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1e40af">Outcome:</text>
+    <text x="165" y="425" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#1e3a8a">Claude: pixel-accurate; Codex: functional but visual variance.</text>
+  </g>
+  
+  <!-- Card 2: Job scheduler build (Logic/CLI Task) -->
+  <g transform="translate(840, 220)">
+    <!-- Card Frame -->
+    <rect width="680" height="500" rx="28" fill="#fcfcfc" stroke="#f3f4f6" stroke-width="2"/>
+    <text x="50" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#111827">Task 2: Job Scheduler Backend</text>
+    <text x="50" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#6b7280">Builds a Node.js daemon with Cron tasks and queue logic</text>
+    
+    <!-- Claude Bar Group -->
+    <g transform="translate(50, 160)">
+      <text x="0" y="-15" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#581c87">Claude Code</text>
+      <!-- Base channel -->
+      <rect x="0" y="0" width="580" height="48" rx="24" fill="#f3f4f6"/>
+      <!-- Active bar (100%) -->
+      <rect x="0" y="0" width="580" height="48" rx="24" fill="#581c87"/>
+      <text x="560" y="30" text-anchor="end" font-family="monospace" font-size="18" font-weight="900" fill="#ffffff">234,772 tokens</text>
+    </g>
+    
+    <!-- Codex Bar Group -->
+    <g transform="translate(50, 280)">
+      <text x="0" y="-15" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#0f766e">Codex CLI</text>
+      <!-- Base channel -->
+      <rect x="0" y="0" width="580" height="48" rx="24" fill="#f3f4f6"/>
+      <!-- Active bar (72.5k / 234.7k = 30.88% of 580 = 179px) -->
+      <rect x="0" y="0" width="179" height="48" rx="24" fill="#0f766e"/>
+      <text x="199" y="30" font-family="monospace" font-size="18" font-weight="900" fill="#0f766e">72,579 tokens (3.2x fewer)</text>
+    </g>
+    
+    <!-- Insights -->
+    <rect x="50" y="380" width="580" height="80" rx="16" fill="#fdf2f8" stroke="#fce7f3" stroke-width="1.5"/>
+    <text x="75" y="425" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#9d174d">Outcome:</text>
+    <text x="165" y="425" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#831843">Both achieved 100% logic coverage, Codex used 3.2x less.</text>
+  </g>
+  
+  <!-- Explanation Banner -->
+  <rect x="80" y="770" width="1440" height="80" rx="20" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="110" y="817" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#334155">Why the difference?</text>
+  <text x="270" y="817" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#475569">Claude Code streams agent logic step-by-step and lists all workspace files in prompts. Codex is optimized for condensed cloud payloads.</text>
+</svg>
