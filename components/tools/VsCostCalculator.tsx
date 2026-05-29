@@ -118,7 +118,7 @@ export default function VsCostCalculator({
 
             <div className="p-5 rounded-2xl border border-primary/20 bg-primary/5">
               <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
-                AIFLOXIUM {ourName} Cost
+                {fixedCost > 0 ? 'Estimated VPS Hosting Cost' : `${ourName} API Cost`}
               </p>
               <p className="mt-2 text-3xl font-heading font-black text-white">
                 {formatCurrency(ourCost)}
@@ -163,7 +163,7 @@ export default function VsCostCalculator({
           </h4>
 
           <p className="text-xs text-muted-foreground leading-relaxed mt-4">
-            *Estimates represent direct software and API savings. Actual performance yields additional business value from instant lead captures and zero manual administration.
+            *Estimates represent direct third-party infrastructure and API savings. VPS hosting and Voice API costs are paid directly to hosting providers (AWS, DigitalOcean, Hetzner) and API providers (Retell, Vapi) — AIFLOXIUM does not charge any monthly markup or hosting fee.
           </p>
         </div>
 

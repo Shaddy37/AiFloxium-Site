@@ -8,13 +8,13 @@ const SLUG = 'claude-code-vs-codex-comparison';
 const TITLE = 'Claude Code vs Codex (2026): Which AI Coding Agent Should You Actually Use?';
 const DESCRIPTION =
   'I tested Claude Code and Codex side by side for months. Here is a full 2026 comparison covering benchmarks, pricing, token efficiency, privacy, multi-agent, and the exact decision framework for solo devs, teams, and non-coders.';
-const CANONICAL = 'https://aifloxium.online/blog/claude-code-vs-codex-comparison';
-const IMAGE = 'https://aifloxium.online/blog/covers/claude-code-vs-codex-comparison.svg';
+const CANONICAL = 'https://www.aifloxium.online/blog/claude-code-vs-codex-comparison';
+const IMAGE = 'https://www.aifloxium.online/blog/covers/claude-code-vs-codex-comparison.svg';
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL('https://aifloxium.online'),
+  metadataBase: new URL('https://www.aifloxium.online'),
   keywords: [
     'Claude Code vs Codex',
     'Claude Code vs Codex 2026',
@@ -121,7 +121,7 @@ export default async function ClaudeCodeVsCodexComparisonPage() {
           name: 'AIFLOXIUM',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://aifloxium.online/brand/aifloxium-logo.png',
+            url: 'https://www.aifloxium.online/brand/aifloxium-logo.png',
           },
         },
         url: CANONICAL,
@@ -203,7 +203,7 @@ export default async function ClaudeCodeVsCodexComparisonPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://aifloxium.online/blog',
+            item: 'https://www.aifloxium.online/blog',
           },
           {
             '@type': 'ListItem',

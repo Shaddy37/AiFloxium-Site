@@ -93,32 +93,44 @@ const faqJsonLd = {
 
 const valuePoints = [
   {
-    label: 'Time saved',
+    label: 'Time Saved',
     copy: 'Estimate how many hours your team could get back each month.',
     icon: Clock3
   },
   {
-    label: 'Money saved',
+    label: 'Money Recovered',
     copy: 'Translate repetitive work into payroll drag and potential savings.',
     icon: Coins
   },
   {
-    label: 'What to automate first',
-    copy: 'See the workflows most likely to pay back before you overbuild.',
+    label: 'High-Leverage Focus',
+    copy: 'See the workflows most likely to pay back before you build.',
     icon: ListChecks
   },
   {
-    label: 'Report download',
+    label: 'Markdown Report',
     copy: 'Capture the result in a shareable report after email submission.',
     icon: FileDown
   }
 ];
 
 const interpretationPoints = [
-  'If the calculator shows meaningful time loss every month, you likely have a real operations problem rather than a minor cleanup issue.',
-  'If the payback window is short, the business case for workflow automation is usually already strong enough to scope.',
-  'If the recommended workflows involve routing, reporting, or repetitive handoffs, start there before chasing more advanced AI use cases.',
-  'If your result still feels uncertain, use the number as a conversation starter, not a final budget or guaranteed projection.'
+  {
+    title: 'Audit operational bottlenecks',
+    text: 'If the calculator shows meaningful monthly time loss, you have a systemic operational drag rather than a simple optimization task.'
+  },
+  {
+    title: 'Review the payback window',
+    text: 'If the payback timeline is under 3 months, the business case for custom-engineered workflows is extremely strong.'
+  },
+  {
+    title: 'Start with simple routing & handoffs',
+    text: 'Before chasing complex AI model setups, automate simple manual routing, reporting syncs, and client onboarding handoffs.'
+  },
+  {
+    title: 'Use as a framework, not a contract',
+    text: 'Treat these numbers as a directional framework to prioritize operational development, not as a guaranteed financial projection.'
+  }
 ];
 
 export default function AutomationRoiCalculatorPage() {
@@ -138,6 +150,7 @@ export default function AutomationRoiCalculatorPage() {
       />
       <Navbar />
 
+      {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-white/8 bg-[radial-gradient(circle_at_top,_rgba(255,107,0,0.12),_transparent_28%),radial-gradient(circle_at_75%_15%,_rgba(88,28,135,0.24),_transparent_32%),linear-gradient(180deg,#180a1f_0%,#120716_52%,#0c040f_100%)] px-6 pb-20 pt-36 md:pb-24 md:pt-40">
         <div className="pointer-events-none absolute inset-0">
           <div
@@ -151,40 +164,38 @@ export default function AutomationRoiCalculatorPage() {
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm font-medium text-white/55">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest">
             <Link href="/" className="transition-colors hover:text-white">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
             <Link href="/tools" className="transition-colors hover:text-white">
               Tools
             </Link>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-white">Automation ROI Calculator</span>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <span className="text-white font-black">Automation ROI Calculator</span>
           </nav>
 
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center">
             <div>
               <p className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.32em] text-brand-orange">
                 <span className="h-px w-10 bg-brand-orange/45" />
-                Free automation calculator
+                Interactive Operations Tool
               </p>
               <h1 className="max-w-4xl text-[3rem] font-heading font-black leading-[0.9] tracking-[-0.04em] text-white md:text-[5.8rem]">
-                See how much
-                <span className="block text-brand-orange">manual work is costing your team.</span>
+                Quantify your team{"'"}s
+                <span className="block text-brand-orange">manual workload drag.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/76 md:text-xl">
-                This free automation ROI calculator helps you estimate time saved, payroll saved,
-                and which workflows are worth automating first, without forcing you to decode
-                jargon before you start.
+                Translate repetitive spreadsheet tasks, slow handoffs, and manual entries into clear time, payroll, and payback metrics.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a
                   href="#calculator"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-brand-orange/90"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-brand-orange/90 shadow-[0_10px_30px_rgba(255,107,0,0.2)]"
                 >
-                  Run the calculator
+                  Configure Calculator
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <Link
@@ -193,7 +204,7 @@ export default function AutomationRoiCalculatorPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:border-white/25 hover:bg-white/[0.08]"
                 >
-                  Book discovery call
+                  Book 1-on-1 Audit
                 </Link>
               </div>
             </div>
@@ -202,13 +213,15 @@ export default function AutomationRoiCalculatorPage() {
               {valuePoints.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] p-5 shadow-[0_22px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl"
+                  className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-5 shadow-[0_22px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl"
                 >
-                  <item.icon className="h-5 w-5 text-brand-orange" />
-                  <p className="mt-4 text-xl font-heading font-black tracking-tight text-white">
+                  <div className="h-9 w-9 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange">
+                    <item.icon className="h-4.5 w-4.5" />
+                  </div>
+                  <p className="mt-4 text-lg font-heading font-black tracking-tight text-white">
                     {item.label}
                   </p>
-                  <p className="mt-2 text-sm leading-7 text-white/66">{item.copy}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-400">{item.copy}</p>
                 </div>
               ))}
             </div>
@@ -216,82 +229,93 @@ export default function AutomationRoiCalculatorPage() {
         </div>
       </section>
 
-      <section className="bg-[#100612] px-6 py-16 md:py-20">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+      {/* What It Measures Section */}
+      <section className="bg-[#100612] px-6 py-16 md:py-20 border-b border-white/5">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
           <div>
             <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
-              What this tool measures
+              Calculation Logic
             </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl">
-              It is a quick way to estimate whether automation is worth attention right now.
+            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
+              An objective baseline to evaluate process changes.
             </h2>
           </div>
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-6 md:p-8">
-            <p className="text-base leading-8 text-white/72">
-              The calculator combines team size, repetitive work, workflow count, and operating
-              volume to estimate how many hours you may be losing, what that drag costs per month,
-              and where automation is most likely to pay back first.
+          <div className="rounded-[2rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-6 md:p-8">
+            <p className="text-sm sm:text-base leading-relaxed text-zinc-300">
+              The calculator factors in team participation, hourly labor rates, weekly friction hours, and monthly volume to estimate:
             </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                'automation roi calculator',
-                'manual process cost calculator',
-                'small business automation calculator'
-              ].map((term) => (
-                <span
-                  key={term}
-                  className="rounded-full border border-white/10 bg-black/20 px-3 py-2 text-xs font-semibold text-white/76"
-                >
-                  {term}
-                </span>
-              ))}
-            </div>
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-400">
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                Monthly hours lost and payroll drag.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                Downstream value leaks in high-frequency queues.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                Estimated project development cost range.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                Investment payback timeline in months.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
+      {/* The Calculator Component */}
       <section id="calculator" className="bg-[#f6efe8] px-6 py-20 text-black md:py-24">
         <div className="mx-auto max-w-6xl">
           <AutomationRoiCalculator />
         </div>
       </section>
 
-      <section className="bg-[#0e0611] px-6 py-20 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+      {/* Interpretation Section */}
+      <section className="bg-[#0e0611] px-6 py-20 md:py-24 border-t border-white/5">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
           <div>
             <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
-              How to read the result
+              How to Read Output
             </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl">
-              Use the number to prioritize action, not to pretend a rough estimate is a contract.
+            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
+              Prioritize workflows that show rapid payback.
             </h2>
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-400">
+              Use these directional projections to spot the most expensive bottlenecks in your company, and address high-leverage steps first.
+            </p>
           </div>
 
-          <div className="grid gap-4">
-            {interpretationPoints.map((item) => (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {interpretationPoints.map((item, idx) => (
               <article
-                key={item}
-                className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-5"
+                key={idx}
+                className="rounded-[1.6rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-5 flex flex-col justify-between"
               >
-                <p className="text-sm leading-7 text-white/74">{item}</p>
+                <div>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-xs leading-relaxed text-zinc-400">{item.text}</p>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Best Fit Workflows Section */}
       <section className="border-y border-black/10 bg-[#f3ece4] px-6 py-20 text-black md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
           <div>
             <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-plum">
-              Best fit workflows
+              Best-Fit Use Cases
             </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-brand-plum md:text-5xl">
-              The biggest gains usually come from repeatable workflows, not one-off tasks.
+            <h2 className="text-4xl font-heading font-black tracking-tight text-brand-plum md:text-5xl leading-tight">
+              Focus on highly repeatable workflows.
             </h2>
-            <p className="mt-5 text-base leading-8 text-zinc-700">
-              If your process looks like one of these patterns, the calculator output tends to be
-              especially useful.
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-700">
+              Automation yields the highest ROI in pipelines where data is repeatedly transcribed, checked, or routed across systems.
             </p>
           </div>
 
@@ -299,23 +323,25 @@ export default function AutomationRoiCalculatorPage() {
             {calculatorUseCases.map((useCase) => (
               <div
                 key={useCase}
-                className="rounded-[1.4rem] border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-zinc-800 shadow-[0_14px_35px_rgba(0,0,0,0.05)]"
+                className="rounded-[1.4rem] border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.04)] flex items-center gap-3"
               >
-                {useCase}
+                <span className="h-2 w-2 rounded-full bg-brand-plum shrink-0" />
+                <span>{useCase}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,#130716_0%,#0d050f_100%)] px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-10 max-w-3xl">
+      {/* FAQs Section */}
+      <section className="bg-[#0e0611] px-6 py-20 md:py-24 border-t border-white/5">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-12 text-center">
             <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
-              FAQ
+              Common Questions
             </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl">
-              Questions people ask before they trust an automation ROI estimate.
+            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
+              Understanding ROI Estimates
             </h2>
           </div>
 
@@ -323,17 +349,17 @@ export default function AutomationRoiCalculatorPage() {
             {faqItems.map((item, index) => (
               <article
                 key={item.question}
-                className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-6"
+                className="rounded-[1.7rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-6"
               >
                 <div className="flex gap-4">
-                  <span className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-brand-orange">
+                  <span className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-brand-orange shrink-0">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <h3 className="text-xl font-heading font-black tracking-tight text-white">
+                    <h3 className="text-lg font-bold tracking-tight text-white">
                       {item.question}
                     </h3>
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-white/68 md:text-base">
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                       {item.answer}
                     </p>
                   </div>
@@ -344,29 +370,29 @@ export default function AutomationRoiCalculatorPage() {
         </div>
       </section>
 
-      <section className="bg-[#09040b] px-6 py-20">
-        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8 shadow-[0_32px_90px_rgba(0,0,0,0.24)] backdrop-blur-xl md:p-10">
+      {/* Call to Action Section */}
+      <section className="bg-[#09040b] px-6 py-20 border-t border-white/5">
+        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-8 shadow-[0_32px_90px_rgba(0,0,0,0.24)] backdrop-blur-xl md:p-10">
           <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
             <Sparkles className="h-4 w-4" />
-            Next step
+            Next Step
           </p>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
-              <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl">
-                If the result looks serious, scope the first workflow instead of debating the idea forever.
+              <h2 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white leading-tight">
+                Pressure-test your calculations with a real workflow audit.
               </h2>
-              <p className="mt-5 text-base leading-8 text-white/68">
-                The calculator gives a directional answer. The discovery call is where the rough
-                estimate gets pressure-tested against your actual workflow, tools, and constraints.
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                A calculator yields a directional estimate. In our free 30-minute scoping call, we review your current tools, mapping errors, and operational dependencies to design a precise, fixed-bid implementation plan.
               </p>
             </div>
             <Link
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-brand-orange/90"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-8 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-brand-orange/90 shadow-[0_10px_30px_rgba(255,107,0,0.2)] shrink-0"
             >
-              Book discovery call
+              Book Discovery Call
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

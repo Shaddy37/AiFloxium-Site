@@ -15,7 +15,7 @@ date: "2026-05-17"
 author: "Muhammad Shadab Shams"
 category: "Claude Code"
 image: "/blog/covers/50-best-claude-code-skills.png"
-canonicalUrl: "https://aifloxium.online/blog/50-best-claude-code-skills"
+canonicalUrl: "https://www.aifloxium.online/blog/50-best-claude-code-skills"
 updatedAt: "2026-05-17"
 keywords:
   - "best claude code skills"
@@ -31,7 +31,7 @@ keywords:
 
 This guide curates the 50 best Claude Code skills across all categories. Follow the direct install links to supercharge your AI agent.
 
-*Written by:* [Muhammad Shadab Shams](https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/) · Founder at [AIFLOXIUM](https://aifloxium.online)
+*Written by:* [Muhammad Shadab Shams](https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/) · Founder at [AIFLOXIUM](https://www.aifloxium.online)
 
 </aside>
 

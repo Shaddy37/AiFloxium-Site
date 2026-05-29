@@ -41,6 +41,19 @@ const iconMap = {
   Zap
 };
 
+// Simple bold tag formatter helper
+function renderFormattedText(text: string) {
+  if (!text) return null;
+  const parts = text.split('**');
+  return (
+    <>
+      {parts.map((part, i) => (
+        i % 2 === 1 ? <strong key={i} className="text-white font-black">{part}</strong> : part
+      ))}
+    </>
+  );
+}
+
 export async function generateStaticParams() {
   return [
     { slug: 'n8n-vs-zapier' },
@@ -169,9 +182,9 @@ export default async function VsComparisonPage({ params }: PageProps) {
           {/* Breadcrumbs & Back */}
           <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-widest mb-8">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <ChevronRight className="h-3 w-3" />
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
             <span className="text-zinc-600">Comparisons</span>
-            <ChevronRight className="h-3 w-3" />
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
             <span className="text-white font-black">{data.title}</span>
           </div>
 
@@ -184,20 +197,33 @@ export default async function VsComparisonPage({ params }: PageProps) {
               {data.h1}
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-              {data.overview}
+              {renderFormattedText(data.overview)}
             </p>
           </div>
 
-          {/* TL;DR Summary Block */}
+          {/* TL;DR Summary Block (Restructured) */}
           <div className="glass-card rounded-[2rem] border border-white/5 bg-zinc-950/40 p-6 md:p-8 mb-16 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
             <h2 className="text-lg font-heading font-black text-white uppercase tracking-wider mb-3 flex items-center gap-2">
               <Info className="h-5 w-5 text-primary" />
-              The Summary
+              The Verdict
             </h2>
-            <p className="text-sm leading-relaxed text-zinc-300">
-              {data.whyAlternative}
-            </p>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 mt-4">
+              <div>
+                <p className="text-sm leading-relaxed text-zinc-300">
+                  {renderFormattedText(data.whyAlternative)}
+                </p>
+              </div>
+              <div className="rounded-[1.5rem] border border-white/5 bg-white/[0.01] p-5 flex flex-col justify-center">
+                <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">Architectural Verdict</p>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  {data.slug.includes('voice-ai') 
+                    ? 'Voice AI operates with sub-500ms response times and direct CRM pipeline writes. Traditional IVRs and manual calling are a major drain on conversion speed.'
+                    : 'Self-hosted n8n removes execution licensing taxes completely. Your operations scale on a flat VPS fee with complete developer control.'}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Cost Savings Calculator Section */}
@@ -315,7 +341,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
                             AIFLOXIUM Setup
                           </p>
                           <p className="text-sm leading-relaxed text-zinc-300">
-                            {section.ourText}
+                            {renderFormattedText(section.ourText)}
                           </p>
                         </div>
                         
@@ -324,17 +350,17 @@ export default async function VsComparisonPage({ params }: PageProps) {
                             Standard {data.competitorName} Setup
                           </p>
                           <p className="text-sm leading-relaxed text-zinc-400">
-                            {section.competitorText}
+                            {renderFormattedText(section.competitorText)}
                           </p>
                         </div>
                       </div>
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-white/5">
-                      <p className="text-xs italic text-muted-foreground">
+                      <div className="text-xs italic text-muted-foreground">
                         <strong className="text-white not-italic uppercase tracking-wider text-[10px] block mb-1">{"Architect's Summary"}</strong>
                         {section.summary}
-                      </p>
+                      </div>
                     </div>
                   </div>
                 );
@@ -395,11 +421,11 @@ export default async function VsComparisonPage({ params }: PageProps) {
             <span className="px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.25em] mb-6 inline-block">
               Free Process Audit
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black tracking-tight text-white mb-6">
-              Stop Paying the Scaling Tax.<br className="hidden sm:inline" /> Deploy Deterministic Workflows.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black tracking-tight text-white mb-6 font-black leading-tight">
+              Stop Paying the Scaling Tax.<br className="hidden sm:inline" /> Deploy Engineered Workflows.
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-              Skip brittle templates, unpredictable operations counts, and high-maintenance cloud configurations. {"Let's"} design a custom self-hosted environment that scales autonomously.
+              Skip brittle templates, unpredictable operations counts, and high-maintenance cloud configurations. Let{"'"}s design a custom self-hosted environment that scales autonomously.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

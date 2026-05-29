@@ -33,6 +33,15 @@ type PageMetadataOptions = {
 };
 
 export function absoluteUrl(path = '/') {
+  if (path.startsWith('/')) {
+    return new URL(path, SITE_URL).toString();
+  }
+
+  if (path.includes('aifloxium.online')) {
+    const relativePart = path.split('aifloxium.online').pop() || '';
+    return new URL(relativePart, SITE_URL).toString();
+  }
+
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
   }
@@ -95,7 +104,7 @@ export function buildPageMetadata({
     creator: PERSON_NAME,
     publisher: ORGANIZATION_NAME,
     alternates: {
-      canonical: path
+      canonical: absoluteUrl(path)
     },
     robots: noIndex
       ? {
@@ -123,7 +132,7 @@ export function buildPageMetadata({
     openGraph: {
       title,
       description,
-      url: path,
+      url: absoluteUrl(path),
       siteName: ORGANIZATION_NAME,
       locale: SITE_LOCALE,
       type,
