@@ -163,16 +163,16 @@ export function Process() {
 
 export function Trust() {
   return (
-    <section className="relative min-h-screen lg:h-screen bg-[#0a0a0a] text-white font-sans antialiased flex flex-col justify-between py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-white/10 z-10">
+    <section className="relative bg-[#0a0a0a] text-white font-sans antialiased py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-white/10 z-10">
       
       {/* Top Header Row */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8 max-w-7xl mx-auto w-full shrink-0">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 max-w-7xl mx-auto w-full shrink-0">
         <div className="max-w-3xl">
-          <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] leading-[1.15] font-normal tracking-tight text-white mb-3">
-            Hi, I'm {PERSON_NAME}!
+          <h2 className="font-heading font-black text-white text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] leading-[1.15] tracking-tight uppercase mb-3">
+            Operational Excellence
           </h2>
           <p className="text-sm md:text-[15px] leading-[1.6] text-white/60">
-            A Sargodha-based AI automation engineer building intelligent agent systems, n8n workflow pipelines, and custom software tools. I help startups and SMBs reclaim thousands of hours and scale their operations.
+            A live roadmap of workflow integrations, high-volume operational metrics, and custom automation tools engineered to power the AIFLOXIUM infrastructure.
           </p>
         </div>
         <div className="flex items-center shrink-0">
@@ -182,25 +182,25 @@ export function Trust() {
             rel="noopener noreferrer"
             className="liquid-glass rounded-full px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors border border-white/10"
           >
-            Let's Team Up Today
+            Let&apos;s Team Up Today
           </a>
         </div>
       </div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-7xl mx-auto w-full flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-7xl mx-auto w-full lg:h-[720px]">
         
         {/* Column 1 - Background Card */}
-        <div className="relative rounded-2xl bg-black overflow-hidden p-5 md:p-6 flex flex-col justify-between min-h-[360px] md:min-h-[400px] lg:min-h-0 lg:h-full border border-white/5">
+        <div className="relative rounded-2xl bg-black overflow-hidden p-6 md:p-8 flex flex-col justify-between min-h-[440px] md:min-h-[380px] lg:min-h-[460px] lg:h-full border border-white/5">
           <video
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_150203_44a5bd32-516a-47ce-a077-8acbf9aa8991.mp4"
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/80 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/45 z-10" />
 
           {/* Top Section */}
           <div className="relative z-20 flex items-center justify-center gap-2">
@@ -211,24 +211,30 @@ export function Trust() {
 
           {/* Bottom Section */}
           <div className="relative z-20">
-            <div className="grid grid-cols-[auto_auto_1fr_auto] gap-x-3 gap-y-4 items-center">
+            <div className="grid grid-cols-[auto_auto_1fr] md:grid-cols-[auto_auto_1fr_auto] gap-x-2.5 md:gap-x-3 gap-y-4 items-center">
               {/* Row 1 */}
-              <span className="text-xs font-mono text-white/50">2023-Now</span>
-              <Sparkle className="h-3 w-3 text-white/60" strokeWidth={1.5} />
-              <span className="text-[13px] md:text-sm text-white font-medium">Lead Automation Architect</span>
-              <span className="text-xs text-white/50 font-mono justify-self-end">AIFLOXIUM Studio</span>
+              <span className="text-xs font-mono text-white/50">2024-Now</span>
+              <Sparkle className="h-3 w-3 text-white/60 shrink-0" strokeWidth={1.5} />
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-0.5 md:gap-4 md:col-span-2 w-full">
+                <span className="text-[13px] md:text-sm text-white font-medium">Lead Automation Architect</span>
+                <span className="text-[11px] md:text-xs text-white/50 font-mono md:text-right">AIFLOXIUM Studio</span>
+              </div>
 
               {/* Row 2 */}
-              <span className="text-xs font-mono text-white/50">2020-2023</span>
-              <Sparkle className="h-3 w-3 text-white/60" strokeWidth={1.5} />
-              <span className="text-[13px] md:text-sm text-white font-medium">Sr. Systems Engineer</span>
-              <span className="text-xs text-white/50 font-mono justify-self-end">Rove Studio</span>
+              <span className="text-xs font-mono text-white/50">2023-2024</span>
+              <Sparkle className="h-3 w-3 text-white/60 shrink-0" strokeWidth={1.5} />
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-0.5 md:gap-4 md:col-span-2 w-full">
+                <span className="text-[13px] md:text-sm text-white font-medium">Automation Engineer</span>
+                <span className="text-[11px] md:text-xs text-white/50 font-mono md:text-right">Rove Studio</span>
+              </div>
 
               {/* Row 3 */}
-              <span className="text-xs font-mono text-white/50">2017-2020</span>
-              <Sparkle className="h-3 w-3 text-white/60" strokeWidth={1.5} />
-              <span className="text-[13px] md:text-sm text-white font-medium">Automation Developer</span>
-              <span className="text-xs text-white/50 font-mono justify-self-end">Ember Works</span>
+              <span className="text-xs font-mono text-white/50">2022-2023</span>
+              <Sparkle className="h-3 w-3 text-white/60 shrink-0" strokeWidth={1.5} />
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-0.5 md:gap-4 md:col-span-2 w-full">
+                <span className="text-[13px] md:text-sm text-white font-medium">Workflow Developer</span>
+                <span className="text-[11px] md:text-xs text-white/50 font-mono md:text-right">Freelance</span>
+              </div>
             </div>
           </div>
         </div>
@@ -236,7 +242,7 @@ export function Trust() {
         {/* Column 2 - Stacked rows */}
         <div className="grid grid-rows-[auto_1fr] gap-4 md:gap-5 lg:h-full">
           {/* Top Client Voice card */}
-          <div className="relative rounded-2xl bg-[#324444] p-5 md:p-6 overflow-hidden noise-overlay flex flex-col gap-5 border border-white/5">
+          <div className="relative rounded-2xl bg-[#324444] p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-white/5">
             <div className="flex items-center gap-2 justify-start relative z-10">
               <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
               <span className="uppercase tracking-[0.22em] text-[11px] text-white/70 font-semibold">CLIENT VOICE</span>
@@ -244,7 +250,7 @@ export function Trust() {
             </div>
             
             <p className="text-[13px] sm:text-[13.5px] leading-[1.6] text-white/85 italic relative z-10">
-              "{BRAND_SIGNATURE_NAME} automated our entire lead qualification and booking process. We saw a 3x increase in response times and reclaimed over 40 hours a week."
+              &quot;{BRAND_SIGNATURE_NAME} automated our entire lead qualification and booking process. We saw a 3x increase in response times and reclaimed over 40 hours a week.&quot;
             </p>
             
             <div className="text-xs text-white/80 relative z-10">
@@ -253,16 +259,16 @@ export function Trust() {
           </div>
 
           {/* Bottom 10M+ card */}
-          <div className="relative rounded-2xl bg-black p-5 md:p-6 overflow-hidden flex flex-col justify-between min-h-[220px] md:min-h-0 border border-white/5">
+          <div className="relative rounded-2xl bg-black p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-white/5">
             <video
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_154543_d5b83fc1-9cea-44f3-b5e8-8f325935211a.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+              className="absolute inset-0 w-full h-full object-cover z-0 opacity-85"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/70 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
 
             {/* Top spacing */}
             <div />
@@ -284,16 +290,16 @@ export function Trust() {
         {/* Column 3 - Stacked */}
         <div className="grid grid-rows-[1fr_auto] gap-4 md:gap-5 lg:h-full">
           {/* Top Daily Software card */}
-          <div className="relative rounded-2xl bg-black p-5 md:p-6 overflow-hidden flex flex-col justify-between min-h-[260px] md:min-h-0 border border-white/5">
+          <div className="relative rounded-2xl bg-black p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-white/5">
             <video
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_153148_d7a3e1dd-e5d0-4ce6-8306-00d7522ecc44.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+              className="absolute inset-0 w-full h-full object-cover z-0 opacity-85"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
 
             {/* Section label */}
             <div className="relative z-20 flex items-center justify-center gap-2">
@@ -333,7 +339,7 @@ export function Trust() {
           </div>
 
           {/* Bottom Reach Me card */}
-          <div className="relative rounded-2xl bg-[#324444] p-5 md:p-6 overflow-hidden noise-overlay flex flex-col justify-between border border-white/5">
+          <div className="relative rounded-2xl bg-[#324444] p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-white/5">
             <div className="flex items-center justify-between w-full relative z-10">
               <div className="flex items-center gap-2">
                 <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />

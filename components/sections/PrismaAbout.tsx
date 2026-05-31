@@ -37,7 +37,7 @@ export default function PrismaAbout() {
   ];
 
   const bodyText =
-    "Over the last seven years, I have worked with startups, agencies, and SMBs to craft robust backend logic, custom APIs, and autonomous agent systems under AIFLOXIUM. Together, we have created work that has earned high client trust and operational scale.";
+    "Over the last three years, I have worked with startups, agencies, and SMBs to craft robust backend logic, custom APIs, and autonomous agent systems under AIFLOXIUM. Together, we have created work that has earned high client trust and operational scale.";
 
   const chars = bodyText.split("");
   const totalChars = chars.length;

@@ -155,7 +155,7 @@ export default function ProductionEvolved() {
           <span className="block text-sm font-sans tracking-[0.2em] uppercase text-white/80 mb-4">
             {"// Capabilities"}
           </span>
-          <h2 className="font-heading italic text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-[-3px] uppercase mb-6">
+          <h2 className="font-heading font-black text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-[-3px] uppercase mb-6">
             OUR BUSINESS<br />RUNS ON AI.
           </h2>
           <p className="text-lg md:text-xl text-white/70 font-sans font-light leading-relaxed max-w-2xl">
@@ -202,7 +202,7 @@ export default function ProductionEvolved() {
                 {/* Card Bottom Content */}
                 <div className="mt-8 flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className="font-heading italic text-white text-2xl sm:text-3xl tracking-[-0.5px] leading-tight mb-3">
+                    <h3 className="font-heading font-black text-white text-2xl sm:text-3xl tracking-[-0.5px] leading-tight mb-3">
                       {card.title}
                     </h3>
                     <p className="text-sm text-white/80 font-sans font-light leading-snug max-w-[32ch] mb-6">
