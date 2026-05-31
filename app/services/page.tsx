@@ -94,6 +94,7 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageJsonLd) }}
+        suppressHydrationWarning
       />
       <Navbar />
       

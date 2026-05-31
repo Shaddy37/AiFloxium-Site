@@ -61,9 +61,10 @@ const PlusCard: React.FC<{
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        "relative border border-white/10 rounded-2xl p-8 bg-black/20 backdrop-blur-[4px] min-h-[240px]",
-        "flex flex-col justify-between group hover:border-brand-orange/30 hover:bg-black/40 transition-all duration-500",
-        "shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_32px_rgba(0,0,0,0.4)]",
+        "liquid-glass rounded-2xl p-8 min-h-[240px] flex flex-col justify-between group transition-all duration-500 hover:shadow-[0_12px_40px_rgba(255,255,255,0.05)]",
+        index === 4
+          ? "border-brand-orange/30 bg-brand-orange/[0.02] hover:border-brand-orange/60 hover:bg-brand-orange/[0.05]"
+          : "hover:border-brand-orange/30",
         className
       )}
     >
@@ -72,7 +73,7 @@ const PlusCard: React.FC<{
 
         {/* Icon and Title */}
         <div className="relative z-10 space-y-4">
-          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white group-hover:bg-brand-orange group-hover:text-white transition-all duration-500 drop-shadow-md border border-white/10">
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white liquid-glass border border-white/10 group-hover:bg-brand-orange/20 transition-all duration-500 drop-shadow-md">
             {icon}
           </div>
           <h3
@@ -100,7 +101,7 @@ const PlusCard: React.FC<{
 
 export default function RuixenBentoCards() {
   return (
-    <section id="bottlenecks" data-theme="dark" className="bg-brand-bg relative overflow-hidden">
+    <section id="bottlenecks" data-theme="dark" className="bg-black relative overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -111,7 +112,7 @@ export default function RuixenBentoCards() {
           playsInline
           className="object-cover w-full h-full opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-transparent to-brand-bg opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90" />
       </div>
 
       <div className="mx-auto container py-32 px-6 relative z-10">

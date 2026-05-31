@@ -34,7 +34,7 @@ export const WordsPullUp = ({ text, className = "", showAsterisk = false, style 
           >
             {word}
             {showAsterisk && isLast && (
-              <span className="absolute top-[0.65em] -right-[0.3em] text-[0.31em] text-brand-orange">*</span>
+              <span className="absolute top-[0.65em] -right-[0.3em] text-[0.31em]">*</span>
             )}
           </motion.span>
         );
@@ -94,7 +94,7 @@ const navItems = [
 
 const PrismaHero = () => {
   return (
-    <section className="h-screen w-full p-2 sm:p-4 bg-brand-bg">
+    <section className="h-screen w-full p-2 sm:p-4 bg-black">
       <div className="relative h-full w-full overflow-hidden rounded-2xl md:rounded-[2rem]">
         
         {/* Background video */}
@@ -111,7 +111,7 @@ const PrismaHero = () => {
         <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.7] mix-blend-overlay" />
 
         {/* Gradient overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-bg/60 via-brand-bg/40 to-brand-bg/90" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
 
         {/* Navbar inside hero */}
         <nav className="absolute left-1/2 top-0 z-20 -translate-x-1/2">

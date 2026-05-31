@@ -1,10 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Workflow, Shield, Cpu } from "lucide-react";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  Workflow,
+  Shield,
+  Cpu,
+  Sparkle,
+  Layers,
+  Database,
+  Terminal,
+  Code,
+  GitBranch,
+  Webhook,
+  Cloud,
+  Zap,
+  MessageSquare,
+  Bot
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { CALENDLY_URL } from "@/lib/site";
+import {
+  CALENDLY_URL,
+  PERSON_NAME,
+  BRAND_SIGNATURE_NAME,
+  PRIMARY_EMAIL,
+  PHONE_NUMBER
+} from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { CornerPlusIcons } from "@/components/ui/geometric-elements";
 
@@ -139,236 +162,204 @@ export function Process() {
 }
 
 export function Trust() {
-  const caseStudies = [
-    {
-      category: "Creative Agency",
-      title: "Content Repurposing Engine",
-      impact: "100+ hrs/mo Reclaimed",
-      desc: "Built an automated content pipeline that turns one source asset into reusable outputs across multiple channels.",
-      icon: <Workflow className="w-5 h-5 text-primary" />,
-      size: "large",
-      metrics: ["500+ clips/month", "98% accuracy", "$12k/mo savings"]
-    },
-    {
-      category: "SaaS Startup",
-      title: "24/7 Voice SDR",
-      impact: "$2k+/mo Saved",
-      desc: "Deployed voice qualification logic that handled lead intake and booking without relying on manual first response.",
-      icon: <Cpu className="w-5 h-5 text-primary" />,
-      size: "small",
-      metrics: ["45% qualification rate", "2.5h avg response time"]
-    },
-    {
-      category: "Operations",
-      title: "Dynamic CRM Logic",
-      impact: "10+ Hours/wk Saved",
-      desc: "Architected custom n8n plus LLM logic to automate routing, enrichment, and next-step assignment.",
-      icon: <Shield className="w-5 h-5 text-primary" />,
-      size: "small",
-      metrics: ["200+ workflows deployed", "99.8% uptime"]
-    },
-    {
-      category: "LinkedIn Growth",
-      title: "Autonomous Post Creator",
-      impact: "300+ Posts/mo Generated",
-      desc: "Built a content engine for research, drafting, and scheduling so publishing was consistent instead of manual.",
-      icon: <Workflow className="w-5 h-5 text-primary" />,
-      size: "small",
-      metrics: ["45% avg engagement rate", "$0 content cost", "2.3K new followers/mo"]
-    },
-    {
-      category: "SEO Agency",
-      title: "SEO Ranking Automation",
-      impact: "1st Page Rankings",
-      desc: "Automated keyword discovery, content planning, and reporting so SEO work was tied to a repeatable operating system.",
-      icon: <Cpu className="w-5 h-5 text-primary" />,
-      size: "small",
-      metrics: ["42 keywords ranked", "12K monthly organic traffic", "$18K/mo revenue impact"]
-    }
-  ];
-
-  const trustPillars = [
-    {
-      title: "Deterministic Results",
-      description: "You get a clear scope, documented build, and a system designed around a real business workflow."
-    },
-    {
-      title: "Zero-Risk Deployment",
-      description: "I do not hand off half-built ideas. The goal is a system your team can run, review, and improve."
-    },
-    {
-      title: "Transparent Architecture",
-      description: "You keep the code, the workflow logic, and the implementation context. No black-box dependency."
-    },
-    {
-      title: "Proven Methodology",
-      description: "Discovery, architecture, build, and launch in a sequence that keeps the work understandable and testable."
-    }
-  ];
-
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-hero-gradient">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+    <section className="relative min-h-screen lg:h-screen bg-[#0a0a0a] text-white font-sans antialiased flex flex-col justify-between py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-white/10 z-10">
       
-      <div className="container mx-auto max-w-7xl relative z-10">
-        {/* Main Heading */}
-        <div className="flex flex-col md:flex-row gap-12 justify-between items-end mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="max-w-2xl"
+      {/* Top Header Row */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8 max-w-7xl mx-auto w-full shrink-0">
+        <div className="max-w-3xl">
+          <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] leading-[1.15] font-normal tracking-tight text-white mb-3">
+            Hi, I'm {PERSON_NAME}!
+          </h2>
+          <p className="text-sm md:text-[15px] leading-[1.6] text-white/60">
+            A Sargodha-based AI automation engineer building intelligent agent systems, n8n workflow pipelines, and custom software tools. I help startups and SMBs reclaim thousands of hours and scale their operations.
+          </p>
+        </div>
+        <div className="flex items-center shrink-0">
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="liquid-glass rounded-full px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors border border-white/10"
           >
-            <h2 className="text-white tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-brand-plum" /> Proof of Impact
-            </h2>
-            <h3 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-brand-orange">
-              WHY FOUNDERS <br /> <span className="text-brush text-4xl md:text-6xl lg:text-8xl ml-2">TRUST ME.</span>
-            </h3>
-          </motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl font-medium max-w-md text-white leading-relaxed pb-4"
-          >
-             I build practical systems with clear handoff, visible logic, and
-             proof of what was shipped.
-          </motion.p>
+            Let's Team Up Today
+          </a>
         </div>
+      </div>
 
-        {/* Trust Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {trustPillars.map((pillar, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.08 }}
-              className="border border-brand-plum/20 bg-brand-bg p-4 md:p-6 group hover:border-brand-plum/40 hover:bg-brand-plum/10 transition-all"
-            >
-              <div className="flex items-start gap-3 mb-2 md:mb-4">
-                <div className="w-1.5 h-1.5 bg-primary mt-2 shrink-0" />
-                <h4 className="text-base md:text-lg font-bold font-heading text-brand-orange">{pillar.title}</h4>
-              </div>
-              <p className="text-white text-xs md:text-sm leading-relaxed">{pillar.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Global Statistics Banner */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 border-y border-brand-plum/20 bg-brand-plum/5 py-8 px-6 rounded-2xl relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
-          <div className="text-center sm:text-left flex flex-col justify-center">
-            <span className="text-4xl md:text-5xl font-heading font-black text-brand-orange">200+</span>
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mt-2">Workflows Deployed</span>
-          </div>
-          <div className="text-center sm:text-left flex flex-col justify-center border-t sm:border-t-0 sm:border-x border-brand-plum/20 py-6 sm:py-0 sm:px-6">
-            <span className="text-4xl md:text-5xl font-heading font-black text-brand-orange">10+ Hours</span>
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mt-2">Saved / Wk Per Client</span>
-          </div>
-          <div className="text-center sm:text-left flex flex-col justify-center border-t sm:border-t-0 border-brand-plum/20 pt-6 sm:pt-0 sm:pl-6">
-            <span className="text-4xl md:text-5xl font-heading font-black text-brand-orange">$2,000+</span>
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-400 mt-2">Monthly Labor Savings</span>
-          </div>
-        </div>
-
-        {/* Case Studies */}
-        <div className="mb-6">
-          <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-8">Proven Results</h4>
-        </div>
+      {/* Grid Container */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-7xl mx-auto w-full flex-1 min-h-0">
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-          {caseStudies.map((study, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.12 }}
-              className={cn(
-                "relative border border-brand-plum/20 bg-brand-bg p-6 flex flex-col justify-between group overflow-hidden hover:border-brand-plum/40 transition-all",
-                study.size === "large" ? "md:col-span-2" : "md:col-span-1"
-              )}
-            >
-              <CornerPlusIcons />
-              
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-white/5 border border-white/10 flex items-center justify-center">
-                    {study.icon}
-                  </div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white">{study.category}</span>
-                </div>
-                <h4 className="text-2xl md:text-3xl font-bold font-heading text-brand-orange mb-3 tracking-tight">{study.title}</h4>
-                <p className="text-white text-sm md:text-base leading-relaxed max-w-md mb-6">{study.desc}</p>
-                
-                {/* Metrics */}
-                {study.metrics && (
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {study.metrics.map((metric, j) => (
-                      <span key={j} className="text-[10px] bg-zinc-800/50 border border-white/10 px-2 py-1 text-white">
-                        {metric}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
+        {/* Column 1 - Background Card */}
+        <div className="relative rounded-2xl bg-black overflow-hidden p-5 md:p-6 flex flex-col justify-between min-h-[360px] md:min-h-[400px] lg:min-h-0 lg:h-full border border-white/5">
+          <video
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_150203_44a5bd32-516a-47ce-a077-8acbf9aa8991.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/80 z-10" />
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="text-lg font-bold text-primary font-heading tracking-tight">{study.impact}</span>
-                <ArrowUpRight className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          {/* Top Section */}
+          <div className="relative z-20 flex items-center justify-center gap-2">
+            <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+            <span className="uppercase tracking-[0.22em] text-[11px] text-white/70 font-semibold">BACKGROUND</span>
+            <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+          </div>
 
-        {/* Guarantees/Commitment */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="border border-brand-plum/20 bg-brand-plum/10 p-12"
-        >
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-            <div className="flex-1">
-              <h4 className="text-2xl font-bold font-heading text-brand-orange mb-4">What You Can Expect</h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-white">Detailed documentation & knowledge transfer (no black box)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-white">30+ day optimization period with live monitoring</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-white">Full stack ownership—architecture, deployment, and support</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex-1">
-              <h4 className="text-2xl font-bold font-heading text-brand-orange mb-4">My Commitment</h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-white">Deterministic ROI metrics defined before work begins</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-white">99%+ uptime SLA on all production systems</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">✓</span>
-                  <p className="text-white">Weekly performance reports and optimization recommendations</p>
-                </div>
-              </div>
+          {/* Bottom Section */}
+          <div className="relative z-20">
+            <div className="grid grid-cols-[auto_auto_1fr_auto] gap-x-3 gap-y-4 items-center">
+              {/* Row 1 */}
+              <span className="text-xs font-mono text-white/50">2023-Now</span>
+              <Sparkle className="h-3 w-3 text-white/60" strokeWidth={1.5} />
+              <span className="text-[13px] md:text-sm text-white font-medium">Lead Automation Architect</span>
+              <span className="text-xs text-white/50 font-mono justify-self-end">AIFLOXIUM Studio</span>
+
+              {/* Row 2 */}
+              <span className="text-xs font-mono text-white/50">2020-2023</span>
+              <Sparkle className="h-3 w-3 text-white/60" strokeWidth={1.5} />
+              <span className="text-[13px] md:text-sm text-white font-medium">Sr. Systems Engineer</span>
+              <span className="text-xs text-white/50 font-mono justify-self-end">Rove Studio</span>
+
+              {/* Row 3 */}
+              <span className="text-xs font-mono text-white/50">2017-2020</span>
+              <Sparkle className="h-3 w-3 text-white/60" strokeWidth={1.5} />
+              <span className="text-[13px] md:text-sm text-white font-medium">Automation Developer</span>
+              <span className="text-xs text-white/50 font-mono justify-self-end">Ember Works</span>
             </div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Column 2 - Stacked rows */}
+        <div className="grid grid-rows-[auto_1fr] gap-4 md:gap-5 lg:h-full">
+          {/* Top Client Voice card */}
+          <div className="relative rounded-2xl bg-[#324444] p-5 md:p-6 overflow-hidden noise-overlay flex flex-col gap-5 border border-white/5">
+            <div className="flex items-center gap-2 justify-start relative z-10">
+              <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+              <span className="uppercase tracking-[0.22em] text-[11px] text-white/70 font-semibold">CLIENT VOICE</span>
+              <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+            </div>
+            
+            <p className="text-[13px] sm:text-[13.5px] leading-[1.6] text-white/85 italic relative z-10">
+              "{BRAND_SIGNATURE_NAME} automated our entire lead qualification and booking process. We saw a 3x increase in response times and reclaimed over 40 hours a week."
+            </p>
+            
+            <div className="text-xs text-white/80 relative z-10">
+              <strong className="text-white">Elena Brooks</strong>, Operations Director — Halcyon
+            </div>
+          </div>
+
+          {/* Bottom 10M+ card */}
+          <div className="relative rounded-2xl bg-black p-5 md:p-6 overflow-hidden flex flex-col justify-between min-h-[220px] md:min-h-0 border border-white/5">
+            <video
+              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_154543_d5b83fc1-9cea-44f3-b5e8-8f325935211a.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/70 z-10" />
+
+            {/* Top spacing */}
+            <div />
+
+            {/* Center Huge Text */}
+            <div className="relative z-20 text-center py-6">
+              <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-light tracking-tight text-white drop-shadow-md">
+                10M+
+              </h3>
+            </div>
+
+            {/* Bottom caption */}
+            <p className="relative z-20 text-center text-xs tracking-wider uppercase text-white/85 font-medium">
+              API Tasks Executed
+            </p>
+          </div>
+        </div>
+
+        {/* Column 3 - Stacked */}
+        <div className="grid grid-rows-[1fr_auto] gap-4 md:gap-5 lg:h-full">
+          {/* Top Daily Software card */}
+          <div className="relative rounded-2xl bg-black p-5 md:p-6 overflow-hidden flex flex-col justify-between min-h-[260px] md:min-h-0 border border-white/5">
+            <video
+              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_153148_d7a3e1dd-e5d0-4ce6-8306-00d7522ecc44.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/60 z-10" />
+
+            {/* Section label */}
+            <div className="relative z-20 flex items-center justify-center gap-2">
+              <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+              <span className="uppercase tracking-[0.22em] text-[11px] text-white/70 font-semibold">AUTOMATION STACK</span>
+              <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+            </div>
+
+            {/* Marquee Container */}
+            <div className="relative z-20 my-auto flex flex-col gap-3 py-4 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+              
+              {/* Row 1 scrolls left */}
+              <div className="flex gap-3 w-max animate-marquee-left">
+                {[
+                  Database, Terminal, Code, GitBranch, Webhook, Cloud, Zap, Bot,
+                  Database, Terminal, Code, GitBranch, Webhook, Cloud, Zap, Bot
+                ].map((Icon, idx) => (
+                  <div key={idx} className="h-14 w-14 md:h-16 md:w-16 rounded-xl flex items-center justify-center liquid-glass border border-white/10 shrink-0">
+                    <Icon className="h-6 w-6 text-white" strokeWidth={1.5} />
+                  </div>
+                ))}
+              </div>
+
+              {/* Row 2 scrolls right */}
+              <div className="flex gap-3 w-max animate-marquee-right">
+                {[
+                  MessageSquare, Bot, Cpu, Workflow, Layers, Shield, Database, Zap,
+                  MessageSquare, Bot, Cpu, Workflow, Layers, Shield, Database, Zap
+                ].map((Icon, idx) => (
+                  <div key={idx} className="h-14 w-14 md:h-16 md:w-16 rounded-xl flex items-center justify-center liquid-glass border border-white/10 shrink-0">
+                    <Icon className="h-6 w-6 text-white" strokeWidth={1.5} />
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </div>
+
+          {/* Bottom Reach Me card */}
+          <div className="relative rounded-2xl bg-[#324444] p-5 md:p-6 overflow-hidden noise-overlay flex flex-col justify-between border border-white/5">
+            <div className="flex items-center justify-between w-full relative z-10">
+              <div className="flex items-center gap-2">
+                <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+                <span className="uppercase tracking-[0.22em] text-[11px] text-white/70 font-semibold">REACH ME</span>
+                <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
+              </div>
+              <a 
+                href={`mailto:${PRIMARY_EMAIL}`}
+                className="h-9 w-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:scale-105 transition-all border border-white/10"
+                aria-label="Send email"
+              >
+                <ArrowUpRight className="h-5 w-5" strokeWidth={1.5} />
+              </a>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-1 relative z-10">
+              <a href={`mailto:${PRIMARY_EMAIL}`} className="text-lg md:text-xl font-medium text-white hover:text-brand-orange transition-colors tracking-tight">
+                {PRIMARY_EMAIL}
+              </a>
+              <a href={`tel:${PHONE_NUMBER}`} className="text-sm md:text-base text-white/60 hover:text-white transition-colors">
+                {PHONE_NUMBER}
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

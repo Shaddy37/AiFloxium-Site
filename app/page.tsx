@@ -2,9 +2,12 @@ import type { Metadata } from 'next';
 
 import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
-import CapabilitiesEngineered from '@/components/sections/CapabilitiesEngineered';
+
 import { PrismaHero } from '@/components/ui/prisma-hero';
+import PrismaAbout from '@/components/sections/PrismaAbout';
+import PrismaFeatures from '@/components/sections/PrismaFeatures';
 import StoryNarrative from '@/components/sections/StoryNarrative';
+import ProductionEvolved from '@/components/sections/ProductionEvolved';
 import { LazySections } from '@/components/sections/LazySections';
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo';
 
@@ -103,15 +106,20 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
+        suppressHydrationWarning
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeItemListJsonLd) }}
+        suppressHydrationWarning
       />
       <Navbar />
       <PrismaHero />
-      <CapabilitiesEngineered />
+      <PrismaAbout />
+      <PrismaFeatures />
+
       <StoryNarrative />
+      <ProductionEvolved />
       <LazySections />
       <Footer />
     </main>

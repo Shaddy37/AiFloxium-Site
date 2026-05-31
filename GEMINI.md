@@ -47,4 +47,4 @@ This project is a high-end, cinematic redesign of the Aifloxium AI agency websit
 ⚠️ **Important:** This version of Next.js contains breaking changes and new APIs compared to earlier versions (e.g., v13-v15). 
 *   Always refer to the internal documentation in `node_modules/next/dist/docs/` when unsure of API usage.
 *   Heed deprecation notices in the terminal and editor.
-*   See `AGENTS.md` and `CLAUDE.md` for supplementary AI-specific instructions and architecture details.
+*   See `AGENTS.md` for supplementary AI-specific instructions and architecture details.

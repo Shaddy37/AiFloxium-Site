@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Vision, Founder } from "@/components/sections/HomeSections";
+import CapabilitiesEngineered from '@/components/sections/CapabilitiesEngineered';
 import { Accordion05 } from "@/components/ui/accordion-05";
 import { TrendingUp, Database, Cpu } from "lucide-react";
 import { DEFAULT_DESCRIPTION, PERSON_NAME, SITE_URL } from "@/lib/site";
@@ -47,10 +48,12 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbJsonLd) }}
+        suppressHydrationWarning
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+        suppressHydrationWarning
       />
       <Navbar />
       
@@ -66,6 +69,7 @@ export default function AboutPage() {
       </div>
 
       <Vision />
+      <CapabilitiesEngineered />
 
       {/* Cinematic Timeline Section */}
       <section className="py-24 md:py-32 bg-zinc-50 text-brand-plum relative z-20 border-y border-zinc-200">
