@@ -163,10 +163,13 @@ export function Process() {
 
 export function Trust() {
   return (
-    <section className="relative bg-[#0a0a0a] text-white font-sans antialiased py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-white/10 z-10">
+    <section className="relative bg-brand-bg text-white font-sans antialiased py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-brand-plum/20 z-10">
+      
+      {/* Background Plum Glow */}
+      <div className="absolute inset-0 bg-brand-plum-glow opacity-25 pointer-events-none z-0" />
       
       {/* Top Header Row */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 max-w-7xl mx-auto w-full shrink-0">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 max-w-7xl mx-auto w-full shrink-0 relative z-10">
         <div className="max-w-3xl">
           <h2 className="font-heading font-black text-white text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] leading-[1.15] tracking-tight uppercase mb-3">
             Operational Excellence
@@ -188,10 +191,10 @@ export function Trust() {
       </div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-7xl mx-auto w-full lg:h-[720px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-7xl mx-auto w-full lg:h-[720px] relative z-10">
         
         {/* Column 1 - Background Card */}
-        <div className="relative rounded-2xl bg-black overflow-hidden p-6 md:p-8 flex flex-col justify-between min-h-[440px] md:min-h-[380px] lg:min-h-[460px] lg:h-full border border-white/5">
+        <div className="relative rounded-2xl bg-black/60 overflow-hidden p-6 md:p-8 flex flex-col justify-between min-h-[440px] md:min-h-[380px] lg:min-h-[460px] lg:h-full border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
           <video
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_150203_44a5bd32-516a-47ce-a077-8acbf9aa8991.mp4"
             autoPlay
@@ -200,6 +203,8 @@ export function Trust() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
           />
+          {/* Plum Tint Overlay */}
+          <div className="absolute inset-0 bg-brand-plum/15 mix-blend-color z-10 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/45 z-10" />
 
           {/* Top Section */}
@@ -242,7 +247,7 @@ export function Trust() {
         {/* Column 2 - Stacked rows */}
         <div className="grid grid-rows-[auto_1fr] gap-4 md:gap-5 lg:h-full">
           {/* Top Client Voice card */}
-          <div className="relative rounded-2xl bg-[#324444] p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-white/5">
+          <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
             <div className="flex items-center gap-2 justify-start relative z-10">
               <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
               <span className="uppercase tracking-[0.22em] text-[11px] text-white/70 font-semibold">CLIENT VOICE</span>
@@ -259,7 +264,7 @@ export function Trust() {
           </div>
 
           {/* Bottom 10M+ card */}
-          <div className="relative rounded-2xl bg-black p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-white/5">
+          <div className="relative rounded-2xl bg-black/60 p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
             <video
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_154543_d5b83fc1-9cea-44f3-b5e8-8f325935211a.mp4"
               autoPlay
@@ -268,6 +273,8 @@ export function Trust() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0 opacity-85"
             />
+            {/* Plum Tint Overlay */}
+            <div className="absolute inset-0 bg-brand-plum/15 mix-blend-color z-10 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
 
             {/* Top spacing */}
@@ -290,7 +297,7 @@ export function Trust() {
         {/* Column 3 - Stacked */}
         <div className="grid grid-rows-[1fr_auto] gap-4 md:gap-5 lg:h-full">
           {/* Top Daily Software card */}
-          <div className="relative rounded-2xl bg-black p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-white/5">
+          <div className="relative rounded-2xl bg-black/60 p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
             <video
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_153148_d7a3e1dd-e5d0-4ce6-8306-00d7522ecc44.mp4"
               autoPlay
@@ -299,6 +306,8 @@ export function Trust() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0 opacity-85"
             />
+            {/* Plum Tint Overlay */}
+            <div className="absolute inset-0 bg-brand-plum/15 mix-blend-color z-10 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
 
             {/* Section label */}
@@ -339,7 +348,7 @@ export function Trust() {
           </div>
 
           {/* Bottom Reach Me card */}
-          <div className="relative rounded-2xl bg-[#324444] p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-white/5">
+          <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
             <div className="flex items-center justify-between w-full relative z-10">
               <div className="flex items-center gap-2">
                 <Sparkle className="h-3 w-3 text-white/70" strokeWidth={1.5} />
