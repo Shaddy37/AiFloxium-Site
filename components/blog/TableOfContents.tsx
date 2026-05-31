@@ -36,15 +36,15 @@ export function TableOfContents() {
       // Find all intersecting headings
       const visibleEntries = entries.filter(entry => entry.isIntersecting);
       if (visibleEntries.length > 0) {
-        // Sort by DOM position (closest to top)
-        visibleEntries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        // Sort by closest to top of viewport
+        visibleEntries.sort((a, b) => Math.abs(a.boundingClientRect.top - 100) - Math.abs(b.boundingClientRect.top - 100));
         setActiveId(visibleEntries[0].target.id);
       }
     };
 
     const observer = new IntersectionObserver(callback, {
-      rootMargin: '0px 0px -60% 0px',
-      threshold: 1.0
+      rootMargin: '-100px 0px -70% 0px',
+      threshold: 0
     });
 
     elements.forEach(elem => observer.observe(elem));
@@ -55,7 +55,7 @@ export function TableOfContents() {
   if (headings.length === 0) return null;
 
   return (
-    <nav className="sticky top-32 max-h-[calc(100vh-8rem)] overflow-y-auto hidden lg:block pr-6">
+    <nav className="hidden lg:block pr-4">
       <h4 className="text-sm font-bold uppercase tracking-widest text-brand-plum mb-6">On this page</h4>
       <div className="relative border-l border-zinc-200">
         <ul className="flex flex-col gap-3 relative">

@@ -137,12 +137,12 @@ const components = {
     </div>
   ),
   SectionHeading: ({ title, subtitle, number, id }: { title: string, subtitle?: string, number?: string, id?: string }) => (
-    <div className="mt-16 md:mt-20 mb-8 group" id={id}>
+    <div className="mt-16 md:mt-20 mb-8 group">
       <div className="flex items-center gap-4 mb-4">
         {number && <span className="text-sm font-mono text-brand-plum/40 tracking-tighter font-black">{number}</span>}
         <span className="h-[1px] flex-1 bg-brand-plum/10 group-hover:bg-brand-plum/30 transition-colors" />
       </div>
-      <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-brand-plum">
+      <h2 id={id} className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-brand-plum">
         {title}
       </h2>
       {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-brand-plum/60 font-black">{subtitle}</p>}

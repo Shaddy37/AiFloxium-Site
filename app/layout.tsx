@@ -142,16 +142,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${permanentMarker.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
-      <head>
+      <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
         {rootJsonLd.map((schema, index) => (
           <script
             key={index}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            suppressHydrationWarning
           />
         ))}
-      </head>
-      <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
         <div className="grainy-overlay" />
         {children}
         <SpeedInsights />

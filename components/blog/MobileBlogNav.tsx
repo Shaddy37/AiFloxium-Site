@@ -42,7 +42,7 @@ export function MobileBlogNav() {
       const callback = (entries: IntersectionObserverEntry[]) => {
         const visibleEntries = entries.filter(entry => entry.isIntersecting);
         if (visibleEntries.length > 0) {
-          visibleEntries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+          visibleEntries.sort((a, b) => Math.abs(a.boundingClientRect.top - 100) - Math.abs(b.boundingClientRect.top - 100));
           const currentId = visibleEntries[0].target.id;
           setActiveId(currentId);
           const matched = headingData.find(h => h.id === currentId);
@@ -53,8 +53,8 @@ export function MobileBlogNav() {
       };
 
       const observer = new IntersectionObserver(callback, {
-        rootMargin: '0px 0px -70% 0px',
-        threshold: 0.5
+        rootMargin: '-100px 0px -70% 0px',
+        threshold: 0
       });
 
       elements.forEach(elem => observer.observe(elem));

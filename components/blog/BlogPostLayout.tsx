@@ -33,6 +33,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
           key={index}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          suppressHydrationWarning
         />
       ))}
 
@@ -117,7 +118,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
         />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-zinc-800">
-          <aside className="lg:col-span-3 lg:sticky lg:top-32 hidden lg:flex lg:flex-col lg:gap-8">
+          <aside className="lg:col-span-3 lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 hidden lg:flex lg:flex-col lg:gap-8 scrollbar-thin scrollbar-thumb-zinc-200 scrollbar-track-transparent">
             <TableOfContents />
             <div className="rounded-3xl border border-brand-plum/10 bg-brand-plum/5 p-6 shadow-sm">
               <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-plum font-black mb-4">Expert Support</h3>
@@ -147,7 +148,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
         </div>
       </article>
 
-      {currentSlug === 'google-antigravity-2-0-review-2026' && <MobileBlogNav />}
+      <MobileBlogNav />
 
       <Footer />
     </main>

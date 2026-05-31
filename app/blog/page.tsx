@@ -42,6 +42,7 @@ export default async function BlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexJsonLd) }}
+        suppressHydrationWarning
       />
       <Navbar />
       
