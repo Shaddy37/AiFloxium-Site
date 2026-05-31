@@ -85,7 +85,9 @@ export function TableOfContents() {
                     e.preventDefault();
                     const element = document.getElementById(heading.id);
                     if (element) {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       if ((window as any).lenis) {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         (window as any).lenis.scrollTo(element, { offset: -100 });
                       } else {
                         element.scrollIntoView({ behavior: 'smooth' });

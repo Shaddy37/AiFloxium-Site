@@ -13,7 +13,8 @@ export async function generateStaticParams() {
   const slugs = getAllPostSlugs().filter(
     (slug) =>
       slug !== 'openai-codex-tutorial-complete-guide-2026' &&
-      slug !== 'claude-code-vs-codex-comparison'
+      slug !== 'claude-code-vs-codex-comparison' &&
+      slug !== 'google-antigravity-2-0-review-2026'
   );
   return slugs.map((slug) => ({ slug }));
 }

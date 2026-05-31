@@ -85,7 +85,9 @@ export function MobileBlogNav() {
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if ((window as any).lenis) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).lenis.scrollTo(element, { offset: -100 });
       } else {
         const offset = 80; // header height offset

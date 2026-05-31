@@ -23,9 +23,9 @@ keywords:
 </TLDR>
 
 <aside>
-**What this guide is:** A real hands-on review of Google Antigravity 2.0 built on verified product data from I/O 2026, official pricing pages, and daily usage of both the original Antigravity IDE and the new 2.0 standalone app. No filler. No hedging. Just the data and the honest take you need.
+**What this guide is:** A real hands-on review of [Google Antigravity 2.0](https://antigravity.google) built on verified product data from [Google I/O 2026](https://io.google/2026), official pricing pages, and daily usage of both the original Antigravity IDE and the new 2.0 standalone app. No filler. No hedging. Just the data and the honest take you need.
 
-**Who wrote it:** Muhammad Shadab Shams, AI automation consultant at aifloxium.online. I build client acquisition systems using Claude Code, Codex, Hermes, OpenRouter, and now Antigravity 2.0 daily. Everything in this article comes from real usage.
+**Who wrote it:** Muhammad Shadab Shams, AI automation consultant at [aifloxium.online](https://www.aifloxium.online). I build client acquisition systems using Claude Code, Codex, Hermes, OpenRouter, and now Antigravity 2.0 daily. Everything in this article comes from real usage.
 </aside>
 
 ---
@@ -65,9 +65,9 @@ keywords:
 
 ![Screenshot of the Google Antigravity 2.0 standalone desktop app interface showing the clean dark-theme UI with model selector and project panel](/blog/google-antigravity-2-0-review-2026/google-antigravity-interface.png)
 
-Google Antigravity 2.0 launched at I/O 2026 on May 19 as a complete rebuild of Google's AI coding assistant. The headline change is this: **it is no longer an IDE.**
+Google Antigravity 2.0 launched at [Google I/O 2026](https://io.google/2026) on May 19 as a complete rebuild of Google's AI coding assistant. The headline change is this: **it is no longer an IDE.**
 
-The original Antigravity was a full IDE built on VS Code. It gave you an editor, terminal, browser preview, and agent workspace all in one window. Antigravity 2.0 strips all of that out. It is now a standalone desktop application for macOS, Linux, and Windows that connects to your existing code editor or file system.
+The original Antigravity was a full IDE built on VS Code. It gave you an editor, terminal, browser preview, and agent workspace all in one window. Antigravity 2.0 strips all of that out. It is now a standalone desktop application for macOS, Linux, and Windows that connects to your existing code editor or file system, and you can learn more on the official [Antigravity product pages](https://antigravity.google).
 
 This is not a minor redesign. It is a product category change. Google rebuilt the agent architecture from the ground up, added a new model lineup, tripled the Gemini usage limits, introduced multi-agent orchestration, and shipped a native CLI.
 
@@ -95,7 +95,7 @@ Antigravity 2.0 removes the editor, terminal, and browser entirely. It is now a 
 - **Auto-update surprise:** Users who had auto-update enabled were pushed from the IDE to the standalone app without explicit consent, breaking their workspace.
 - **Two products to maintain:** If you want both the IDE and the new 2.0 features, you now run two separate applications.
 
-**The honest take:** I use both. I keep Antigravity IDE around for quick integrated sessions where I want everything in one window, and I use Antigravity 2.0 for heavier agentic work where I want the new models and multi-agent features. It is not ideal. Google should have kept the IDE as a first-class option instead of forcing a hard split. The standalone app is better for some workflows, but the transition was handled poorly and the community backlash is justified.
+**The honest take:** I use both. I keep Antigravity IDE around for quick integrated sessions where I want everything in one window, and I use Antigravity 2.0 for heavier agentic work where I want the new models and multi-agent features. It is not ideal. Google should have kept the IDE as a first-class option instead of forcing a hard split. The standalone app is better for some workflows, but the transition was handled poorly and the community backlash on [community Reddit reports](https://www.reddit.com/r/developer) is justified.
 
 ---
 
@@ -872,8 +872,9 @@ JSON hooks let you fire webhooks or custom scripts when agent lifecycle events o
 Not well. WSL paths are not always resolved correctly, and the standalone app mounts the local file system differently than the IDE did. I moved my active projects to native macOS for 2.0 and kept WSL work on the old IDE. Google has acknowledged the issue but there is no fix timeline.
 </Accordion>
 
-#### Why does GitHub authentication keep breaking in Antigravity 2.0?
+<Accordion title="Why does GitHub authentication keep breaking in Antigravity 2.0?" subtitle="FAQ">
 The OAuth integration refreshes tokens less gracefully than the IDE. I had to re-authenticate four times in two weeks. My workaround is using a personal access token in `hooks.json` instead of the built-in OAuth for automated PR creation.
+</Accordion>
 
 <Accordion title="What is the Antigravity 2.0 migration backup?" subtitle="FAQ">
 When upgrading from the IDE, Google creates a backup at `~/.gemini/antigravity-backup/`. Mine was 12GB. Check this folder and delete it once you confirm 2.0 is working, or you will lose disk space unexpectedly.
@@ -883,10 +884,11 @@ When upgrading from the IDE, Google creates a backup at `~/.gemini/antigravity-b
 Yes, but they share some configuration directories. My IDE theme and keybindings got partially overwritten by 2.0 preferences. The workaround is separate user profiles or isolating the 2.0 install with Homebrew.
 </Accordion>
 
-#### What is the difference between the three permission modes?
+<Accordion title="What is the difference between the three permission modes?" subtitle="FAQ">
 - **Strict** asks for approval on every sensitive action.
 - **Request-review** asks once per session for common actions, then auto-approves similar ones. This is my default for client work.
 - **Always-proceed** lets the agent run freely. I use this for trusted internal projects and background automation.
+</Accordion>
 
 <Accordion title="What are slash commands in Antigravity 2.0?" subtitle="FAQ">
 Slash commands are chat shortcuts: `/goal` sets a persistent project goal, `/grill-me` makes the agent interview you before coding, `/schedule` creates a background task, `/browser` spawns a browser sub-agent, and `/plan` forces a plan-before-execution step. I use `/grill-me` and `/plan` daily.
@@ -922,6 +924,15 @@ If you found this guide useful, these deep dives will help you build a complete 
 - **[The Complete OpenAI Codex Guide (2026)](/blog/openai-codex-tutorial-complete-guide-2026)** — Everything about Codex pricing, models, and browser-preview workflows.
 - **[50 Claude Code Skills That Actually Work](/blog/50-best-claude-code-skills)** — A practical checklist of verified commands and patterns.
 - **[SEO + AI Automation: The Masterclass](/blog/5-ai-automations-ecommerce)** — How I build ranking content and client acquisition systems with AI tools.
+
+### Useful External Resources
+
+To get the most out of Google Antigravity 2.0, consult these official guides and community links:
+
+- **[Official Google I/O 2026 Developer Portal](https://developer.google.com/io)** — The primary portal for Google developer announcements.
+- **[Google Antigravity 2.0 Product Portal](https://antigravity.google)** — Download and read official docs for the standalone app and CLI.
+- **[Reddit Developer Discussions](https://www.reddit.com/r/developer)** — Community discussions and troubleshooting guides regarding the IDE removal.
+- **[AIFLOXIUM AI Automation Consulting](https://www.aifloxium.online)** — Book a consultation with us to streamline your AI agent workflows.
 
 ---
 
