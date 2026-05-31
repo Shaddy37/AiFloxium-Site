@@ -24,6 +24,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     });
 
     lenisRef.current = lenis;
+    (window as any).lenis = lenis;
 
     let rafId: number;
     let isRunning = true;
@@ -39,6 +40,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     return () => {
       isRunning = false;
       if (rafId) cancelAnimationFrame(rafId);
+      (window as any).lenis = null;
       lenis.destroy();
     };
   }, []);

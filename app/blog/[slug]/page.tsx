@@ -98,6 +98,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <BlogPostLayout
+      slug={slug}
       code={post.code}
       frontmatter={post.frontmatter}
       jsonLd={[jsonLd, breadcrumbJsonLd]}

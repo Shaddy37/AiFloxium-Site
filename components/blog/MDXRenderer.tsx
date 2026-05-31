@@ -10,6 +10,7 @@ import { CodeBlock } from "./CodeBlock";
 import { PostFigurePlaceholder } from "./PostFigurePlaceholder";
 import { BlogArchitecture } from "../sections/BlogArchitecture";
 import { LeadMagnetCTA } from "./LeadMagnetCTA";
+import { Accordion } from "./Accordion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
@@ -207,6 +208,7 @@ const components = {
   BlogArchitecture,
   PostFigurePlaceholder,
   LeadMagnetCTA,
+  Accordion,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {

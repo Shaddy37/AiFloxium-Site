@@ -1,22 +1,28 @@
+import type { PostFrontmatter } from '@/lib/mdx';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Calendar, User, Zap } from 'lucide-react';
 
 import { MDXRenderer } from '@/components/blog/MDXRenderer';
+import { TableOfContents } from '@/components/blog/TableOfContents';
+import { MobileBlogNav } from '@/components/blog/MobileBlogNav';
+import { MobileTopTOC } from '@/components/blog/MobileTopTOC';
 import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
+
 import { Contact2 } from '@/components/ui/contact-2';
-import type { PostFrontmatter } from '@/lib/mdx';
-import { TableOfContents } from '@/components/blog/TableOfContents';
 
 interface BlogPostLayoutProps {
   code: string;
   frontmatter: PostFrontmatter;
   jsonLd: Record<string, unknown> | Record<string, unknown>[];
+  slug?: string;
 }
 
-export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProps) {
-  const { title, date, author, category, description, updatedAt, image } = frontmatter;
+export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayoutProps) {
+  const { title, date, author, category, description, updatedAt, image, canonicalUrl } = frontmatter;
+  const currentSlug = slug || (canonicalUrl ? canonicalUrl.split('/').pop() : '') || '';
   const hasMeta = Boolean(date || author || category || updatedAt);
   const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 
@@ -128,17 +134,20 @@ export function BlogPostLayout({ code, frontmatter, jsonLd }: BlogPostLayoutProp
           </aside>
           
           <div className="lg:col-span-9 max-w-3xl prose prose-zinc prose-headings:text-brand-plum">
+            {currentSlug !== 'google-antigravity-2-0-review-2026' && <MobileTopTOC />}
             <MDXRenderer code={code} />
+
+            <div className="mt-16 not-prose border-t border-zinc-200 pt-12">
+              <Contact2
+                title="Scale Your AI Infrastructure."
+                description="Ready to transition your workflows to multi-agent automation? Contact AiFloxium today for a custom implementation audit."
+              />
+            </div>
           </div>
         </div>
       </article>
 
-      <section className="bg-zinc-950/20 py-16">
-        <Contact2
-          title="Scale Your Infrastructure."
-          description="Ready to build your autonomous systems? Connect with us for a deep-dive audit."
-        />
-      </section>
+      {currentSlug === 'google-antigravity-2-0-review-2026' && <MobileBlogNav />}
 
       <Footer />
     </main>

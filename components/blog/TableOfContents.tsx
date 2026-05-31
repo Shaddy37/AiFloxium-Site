@@ -83,7 +83,14 @@ export function TableOfContents() {
                   href={`#${heading.id}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById(heading.id);
+                    if (element) {
+                      if ((window as any).lenis) {
+                        (window as any).lenis.scrollTo(element, { offset: -100 });
+                      } else {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
                     setActiveId(heading.id);
                   }}
                   className="block w-full line-clamp-2"

@@ -1,0 +1,936 @@
+---
+title: "Google Antigravity 2.0 Review (2026): I Used Both Versions — Full Breakdown, Pricing, Models, and the IDE Controversy"
+date: "2026-05-31"
+category: "AI Automation"
+description: "I tested Google Antigravity 2.0 and the original IDE side by side for a week after I/O 2026. Here is the honest review covering 3x usage limits, new models, pricing tiers, multi-agent features, and the IDE removal controversy nobody else is covering honestly."
+author: "Muhammad Shadab Shams"
+image: "/blog/covers/google-antigravity-2-0-review-2026.svg"
+canonicalUrl: "https://aifloxium.online/blog/google-antigravity-2-0-review-2026"
+updatedAt: "2026-05-31"
+keywords:
+  - "Google Antigravity 2.0"
+  - "Google Antigravity 2.0 review"
+  - "Google Antigravity 2.0 pricing"
+  - "Google Antigravity 2.0 models"
+  - "Google Antigravity 2.0 vs IDE"
+  - "Google Antigravity 2.0 I/O 2026"
+  - "Google Antigravity 2.0 usage limits"
+  - "Google Antigravity 2.0 multi-agent"
+---
+
+<TLDR>
+  I tested Google Antigravity 2.0 and the original IDE side by side for a week after I/O 2026. Here is the honest review covering 3x usage limits, new models, pricing tiers, multi-agent features, and the IDE removal controversy nobody else is covering honestly.
+</TLDR>
+
+<aside>
+**What this guide is:** A real hands-on review of Google Antigravity 2.0 built on verified product data from I/O 2026, official pricing pages, and daily usage of both the original Antigravity IDE and the new 2.0 standalone app. No filler. No hedging. Just the data and the honest take you need.
+
+**Who wrote it:** Muhammad Shadab Shams, AI automation consultant at aifloxium.online. I build client acquisition systems using Claude Code, Codex, Hermes, OpenRouter, and now Antigravity 2.0 daily. Everything in this article comes from real usage.
+</aside>
+
+---
+
+## What This Guide Covers
+
+- What Google Antigravity 2.0 actually is and what changed at I/O 2026
+- The IDE removal controversy: why developers are angry and what Google did
+- My actual daily workflow: how I use 2.0 for client work, automation, and architecture
+- Why I prefer 2.0 over the IDE now (and when I still switch back)
+- What still frustrates me: context compression, missing Plan button, permission fatigue, and hidden gotchas
+- My exact Antigravity 2.0 setup — models, permissions, skills, and scheduled tasks you can copy
+- Every model available inside Antigravity 2.0 with real performance notes
+- The 3x usage limit increase: what it means for daily work
+- Pricing at every tier with honest cost estimates
+- New features breakdown: multi-agent orchestration, CLI, scheduled tasks, Git worktrees, voice, agent skills, JSON hooks, slash commands, permission modes, projects, and async tasks
+- Antigravity 2.0 vs the original Antigravity IDE: which one to actually use
+- How Antigravity 2.0 stacks up against Claude Code and Codex
+- A decision matrix matching your workflow to the right tool
+- A complete FAQ for every question people search
+
+---
+
+<TableOfContents 
+  items={[
+    { title: "What Is Google Antigravity 2.0", id: "what-is-it" },
+    { title: "The IDE Controversy", id: "ide-controversy" },
+    { title: "My Daily Workflow & Setup", id: "daily-workflow" },
+    { title: "What Still Frustrates Me", id: "frustrations" },
+    { title: "My Month-1 Verdict & Value", id: "verdict" },
+    { title: "New Features & Deep-Dive", id: "new-features" },
+    { title: "Frequently Asked Questions", id: "faq" }
+  ]} 
+/>
+
+<SectionHeading title="What Is Google Antigravity 2.0 and What Changed at I/O 2026" subtitle="The Transition to Standalone" number="01" id="what-is-it" />
+
+![Screenshot of the Google Antigravity 2.0 standalone desktop app interface showing the clean dark-theme UI with model selector and project panel](/blog/google-antigravity-2-0-review-2026/google-antigravity-interface.png)
+
+Google Antigravity 2.0 launched at I/O 2026 on May 19 as a complete rebuild of Google's AI coding assistant. The headline change is this: **it is no longer an IDE.**
+
+The original Antigravity was a full IDE built on VS Code. It gave you an editor, terminal, browser preview, and agent workspace all in one window. Antigravity 2.0 strips all of that out. It is now a standalone desktop application for macOS, Linux, and Windows that connects to your existing code editor or file system.
+
+This is not a minor redesign. It is a product category change. Google rebuilt the agent architecture from the ground up, added a new model lineup, tripled the Gemini usage limits, introduced multi-agent orchestration, and shipped a native CLI.
+
+For some developers this is exactly what they wanted: a lightweight agent that stays out of their editor. For others it is a step backward: they lost their IDE, and the auto-update pushed them into a completely different workflow without warning.
+
+<aside>
+⚠️ **The one-sentence summary:** Antigravity 2.0 is a standalone AI agent desktop app, not an IDE. If you want the IDE experience, you now have to download "Antigravity IDE" separately. The two products are no longer the same thing.
+</aside>
+
+---
+
+<SectionHeading title="The IDE Controversy Nobody Is Talking About Honestly" subtitle="Why Developers Are Backlashing" number="02" id="ide-controversy" />
+
+![Split comparison showing the original Antigravity IDE dark-grid interface on the left versus the new Antigravity 2.0 clean interface on the right](/blog/google-antigravity-2-0-review-2026/ide-vs-standalone.png)
+
+Here is where most reviews get it wrong. They treat the IDE removal as a footnote. For daily users, it is the single biggest disruption.
+
+The original Antigravity was a full IDE. You opened it, you edited code, you ran terminals, you previewed browsers, and you had an agent sidebar that could see everything. It was a single-window workflow.
+
+Antigravity 2.0 removes the editor, terminal, and browser entirely. It is now a chat-first agent that runs alongside your existing editor. You open it in a separate window, point it at a folder, and it interacts with your code through file system access while you edit in VS Code, Cursor, or whatever you already use.
+
+**Why this matters:**
+
+- **Workflow disruption:** Developers who built their daily habits around the integrated IDE had to rebuild their setup overnight.
+- **Auto-update surprise:** Users who had auto-update enabled were pushed from the IDE to the standalone app without explicit consent, breaking their workspace.
+- **Two products to maintain:** If you want both the IDE and the new 2.0 features, you now run two separate applications.
+
+**The honest take:** I use both. I keep Antigravity IDE around for quick integrated sessions where I want everything in one window, and I use Antigravity 2.0 for heavier agentic work where I want the new models and multi-agent features. It is not ideal. Google should have kept the IDE as a first-class option instead of forcing a hard split. The standalone app is better for some workflows, but the transition was handled poorly and the community backlash is justified.
+
+---
+
+<SectionHeading title="My Daily Workflow: How I Actually Use Antigravity 2.0" subtitle="Hands-on Code and Setup" number="03" id="daily-workflow" />
+
+![Screenshot of Muhammad Shadab Shams's actual Antigravity 2.0 project panel showing multiple active agents running in parallel](/blog/google-antigravity-2-0-review-2026/project-panel-agents.png)
+
+Here is the part nobody else writes: the actual day-to-day. I run Antigravity 2.0 alongside Claude Code and Codex depending on the task, but Antigravity 2.0 has become my default for three specific workflows.
+
+**1. Morning scaffold and model-hopping.**
+
+I start the day with Gemini 3.5 Flash for quick scaffolding: generating component shells, API route stubs, and test file templates. It is fast enough that I do not lose momentum. When I hit a complex logic problem, I switch to Claude Sonnet 4.6 inside the same Antigravity 2.0 window without restarting the session. That model flexibility is the main reason I keep coming back. I do not want to open three different tools to compare model outputs.
+
+**2. Multi-agent client projects.**
+
+For my biggest client project right now — a Next.js SaaS with a Python FastAPI backend — I run a parent agent in Antigravity 2.0 on the root folder. It spawns three child agents: one for the frontend component library, one for API endpoints and database migrations, and one for Stripe integration webhooks. All three run concurrently while I write blog posts in another window. The parent merges branches and resolves conflicts when the children finish. This saves me roughly two hours per day compared to sequential single-agent coding.
+
+**3. Background automation with scheduled tasks.**
+
+I have a scheduled task running every night at 2 AM that audits all my client repos for outdated npm packages, runs security scans with `npm audit`, and opens draft PRs with patch updates. I wake up, review the PRs over coffee, and merge the safe ones. That used to be manual work I billed clients for. Now it runs while I sleep.
+
+**4. Voice dictation for architecture notes.**
+
+When I am sketching a system design, I use the live voice transcription feature to dictate the architecture into Antigravity 2.0 instead of typing long Markdown docs. The transcription handles technical terms like "Kubernetes ingress controller" and "idempotent webhook handler" better than I expected. I then ask the agent to convert my rambling into a structured design doc.
+
+**What I do NOT use it for:** refactoring large legacy codebases. For that, Claude Code is still superior. Antigravity 2.0's context compression kicks in too aggressively on files over ~500 lines, and I lose nuance. I also do not use it for browser-heavy UI work because the standalone app removed the integrated browser preview. For that, Codex wins.
+
+---
+
+### Why I Prefer 2.0 Over the IDE (And When I Still Switch Back)
+
+
+
+I was angry about the transition. I will not pretend I was not. The auto-update forced me into a workflow I did not choose, and for the first three days I was ready to uninstall everything. Then I actually used the multi-agent features for a real client deadline, and I understood why Google rebuilt it this way.
+
+**Here is why I prefer 2.0 now:**
+
+- **Model choice matters more than IDE integration.** Being able to switch from Gemini Flash to Claude Opus mid-task, inside the same project context, is worth more to me than having a built-in terminal. I can open iTerm2 or the VS Code terminal in half a second. I cannot open Claude inside the old Antigravity IDE at all.
+- **Multi-agent is not a gimmick.** It is a genuine productivity multiplier for multi-repo or full-stack projects. The first time I saw three agents finish a frontend refactor, an API migration, and a test suite update simultaneously while I answered emails, I realized this is how I want to work going forward.
+- **The CLI is actually good.** The Go-based CLI is fast, scriptable, and does not hang like the old Python-based command-line tools did. I have it integrated into my Git pre-commit hooks for automated linting and type-checking.
+- **Scheduled tasks turned it into infrastructure.** Antigravity 2.0 is no longer just a coding assistant for me. It is background infrastructure. The nightly dependency audits, weekly documentation syncs, and automated test runs are things I used to pay for CI/CD minutes to handle.
+
+**When I still switch back to the IDE:**
+
+- Quick single-file edits where I want to see the code, terminal, and browser preview in one window. The IDE is still unbeatable for that.
+- When I am on a plane or somewhere with bad internet. The IDE caches more aggressively and works offline longer.
+- When I need the Plan button. This is a real gap in 2.0 that nobody talks about enough. The old IDE had a "Plan" mode where the agent would generate a multi-step execution plan before touching any files. Antigravity 2.0 removed this, and it makes risky refactors harder to trust.
+
+**The bottom line:** If Google had launched 2.0 as a separate product and kept the IDE fully supported, nobody would be angry. The product itself is better for my workflow. The rollout was just unnecessarily hostile to existing users.
+
+---
+
+### My Exact Antigravity 2.0 Setup (So You Can Copy It)
+
+![Screenshot of the author's Antigravity 2.0 settings panel showing model defaults, permission modes, and project list](/blog/google-antigravity-2-0-review-2026/settings-panel.png)
+
+I promised my exact setup. Here it is, with real project names anonymized and real config values you can adapt.
+
+<Accordion title="Projects I Have Configured" subtitle="Workspace Isolation">
+- **Client A (Next.js SaaS)** — Default model: Gemini 3.5 Flash. Fallback: Claude Sonnet 4.6. Permission mode: Request-review. Skills attached: React Component Standards, Stripe Webhook Patterns.
+- **Client B (Python FastAPI)** — Default model: Claude Sonnet 4.6. Permission mode: Request-review. Skills attached: API Security Checklist, Pydantic Validation Patterns.
+- **Personal Blog (aifloxium.online)** — Default model: Gemini 3.5 Flash. Permission mode: Always-proceed. Skills attached: SEO Content Structure, Next.js Markdown Blog.
+- **Automation / Internal** — Default model: Gemini 3.1 Pro (Low). Permission mode: Always-proceed. No skills attached; I use raw prompts for one-off scripts.
+</Accordion>
+
+<Accordion title="My Default Skill Files (SKILL.md)" subtitle="Modular Instruction Sets">
+I keep four skill files in `.agents/skills/` inside each relevant repo:
+
+1. `react-standards.md` — Enforces functional components, React Server Components by default, and Tailwind utility classes over inline styles.
+2. `api-security.md` — Requires input validation with Zod or Pydantic, rate-limiting headers, and no raw SQL without parameterized queries.
+3. `stripe-patterns.md` — Covers idempotency keys, webhook signature verification, and graceful checkout session fallback flows.
+4. `seo-blog.md` — Structures blog posts with H2 questions, comparison tables, FAQ schema, and internal link rules.
+</Accordion>
+
+<Accordion title="Scheduled Tasks I Actually Run" subtitle="Background Jobs">
+- **Nightly dependency audit** — Runs at 2:00 AM on all client repos. Uses `npm audit --json`, opens draft PR with patch-level fixes only. Major version bumps are left for manual review.
+- **Weekly docs sync** — Every Monday at 6:00 AM. Crawls `README.md` and `docs/` folders, checks for stale links with `markdown-link-check`, and opens issues for 404s.
+- **Smoke test runner** — Every Friday at 11:00 PM. Runs `pytest` on the FastAPI backend and `playwright test` on the Next.js frontend. If either fails, the JSON hook fires a Telegram message.
+</Accordion>
+
+<Accordion title="Hooks.json I Use" subtitle="Integrations">
+Here is a simplified version of my `hooks.json`:
+
+```json
+{
+  "on_task_complete": {
+    "webhook": "https://api.telegram.org/bot<token>/sendMessage",
+    "payload": {
+      "chat_id": "<chat_id>",
+      "text": "Antigravity task finished: task.name - task.status"
+    }
+  },
+  "on_error": {
+    "webhook": "https://api.telegram.org/bot<token>/sendMessage",
+    "payload": {
+      "chat_id": "<chat_id>",
+      "text": "ALERT: Antigravity task failed: task.name - error.message"
+    }
+  }
+}
+```
+
+I replace `<token>` and `<chat_id>` with real values. The `task.name` and `task.status` variables are interpolated by Antigravity 2.0 at runtime.
+</Accordion>
+
+<Accordion title="CLI Aliases in My .zshrc" subtitle="Fast Terminal Control">
+I added two aliases for speed:
+
+```bash
+alias ag='antigravity'
+alias ags='antigravity --status'
+```
+
+The `--status` flag shows me which scheduled tasks are queued, which agents are running, and my current quota usage for the week. I check this every morning before I start work.
+</Accordion>
+
+#### Why This Setup Works for Me
+
+Separating projects by client prevents context leaks. Using **Request-review** on client work prevents accidents. Using **Always-proceed** on my own blog and internal tools lets me schedule tasks without babysitting them. The skills files mean I do not have to paste the same "use TypeScript strict mode" prompt into every session. And the Telegram hooks mean I know immediately when something breaks at 2 AM, instead of finding out Monday morning when a client emails me about a broken build.
+
+<PremiumCTA 
+  title="Struggling with Agent Workflows?"
+  description="Setting up multi-agent loops, scheduled audits, and custom skill files takes engineering effort. Let AiFloxium build and deploy a dedicated autonomous workspace for your team."
+  buttonText="Get Agent Setup"
+/>
+
+---
+
+### A Real Tuesday Morning: Exactly How I Use It (Walkthrough)
+
+
+
+Here is the granular POV nobody else gives you. I am going to walk you through a real Tuesday morning so you can see exactly where Antigravity 2.0 fits and where it does not.
+
+**8:15 AM — Coffee and status check.**
+
+I open Terminal and type `ags` (my alias for `antigravity --status`). It shows me three things: my weekly Gemini quota is at 62%, two scheduled tasks ran overnight, and one agent is still working on a dependency audit for Client B. I do not open the desktop app yet; the CLI gives me everything I need in ten seconds.
+
+**8:25 AM — Standup prep.**
+
+I open Antigravity 2.0 desktop, select the Client A project, and type: "Summarize what changed in the frontend since Friday, highlight any risky commits, and suggest what to demo in standup." It reads the git log, scans the PRs, and gives me a three-bullet summary. I copy-paste two of those bullets into Slack. This saves me the ten minutes I used to spend scrolling through GitHub diffs manually.
+
+**9:00 AM — Standup.**
+
+I do not use Antigravity during standup. I take notes in Notion like a normal person.
+
+**9:30 AM — The first real coding block.**
+
+Client A needs a new checkout flow. I draft the prompt in a scratch file first (because 2.0 has no draft mode, as I mentioned). The prompt is 400 words: user states, error handling, Stripe webhook sequence, and mobile breakpoints. I paste it into Antigravity 2.0, switch the model to Gemini 3.5 Flash, and let it scaffold the React components and API route.
+
+**9:45 AM — Model switch mid-task.**
+
+Flash gives me clean component shells, but the webhook retry logic is wrong. I do not start a new session. I click the model dropdown, switch to Claude Sonnet 4.6, and say: "Fix the retry logic in the webhook handler. Exponential backoff, max 5 retries, idempotency key check first." It patches the same file Flash created. This model-hopping inside one project is the feature that keeps me from opening Claude Code for this task.
+
+**10:30 AM — Code review.**
+
+Before I send the branch to the client, I ask Antigravity: "Review this branch for security issues, accessibility gaps, and any console.log statements left behind." It finds two missing `aria-label` attributes and one leftover `console.log`. I fix them in VS Code while the agent keeps the context.
+
+**11:00 AM — Documentation.**
+
+I dictate the architecture of the checkout flow into the voice transcription feature while stretching. It produces a Markdown doc with mermaid diagrams. I spend five minutes editing, then commit it to `docs/architecture/checkout-flow.md`.
+
+**11:30 AM — Switch to Client B.**
+
+I use my SDK script to auto-open Antigravity 2.0 in the Client B project. It loads the FastAPI skills and sets the model to Claude Sonnet 4.6 automatically. I review the overnight dependency audit PR it opened. Six patch-level updates, zero breaking changes. I merge it.
+
+**12:00 PM — Lunch.**
+
+Antigravity 2.0 is closed. I do not let it run while I eat. The scheduled tasks handle themselves.
+
+**1:30 PM — The one task where I switch to the IDE.**
+
+Client A has a CSS bug that only shows up in the actual browser at 768px breakpoint. I open the old Antigravity IDE because it still has the built-in browser preview. I fix the media query in the IDE, commit, close it, and switch back to 2.0 for the rest of the day.
+
+**3:00 PM — Learning mode.**
+
+I need to integrate a new shipping API I have never used. I open a new 2.0 project with no skills attached, set the model to Gemini 3.1 Pro (Low), and ask it to read the API docs and generate a typed client. It makes mistakes on the auth headers, but the draft is 80% correct. I correct the auth part in VS Code and move on. This is where 2.0 shines: exploratory coding where I do not have strong opinions yet.
+
+**4:30 PM — Shutdown ritual.**
+
+I run `ags` again. Quota at 71%. One scheduled task queued for 2 AM. I close the desktop app. The CLI and scheduled tasks will run without me.
+
+**Why this matters:** This is not a marketing story. It is a real day with real friction. I switched tools three times (2.0 → IDE → VS Code), drafted prompts in a scratch file, and caught bugs before they reached the client. Antigravity 2.0 did not replace my entire workflow; it became the central hub that connects everything else.
+
+---
+
+### How I Debug the Debugger: What I Do When Antigravity 2.0 Breaks My Code
+
+![Photo of the author's terminal showing a git diff after an AI-generated bug was introduced and then reverted](/blog/google-antigravity-2-0-review-2026/terminal-git-diff.png)
+
+No one writes about this, but it happens. Antigravity 2.0 hallucinates API methods, introduces off-by-one errors, and occasionally deletes files it should not. Here is my actual recovery workflow when things go wrong.
+
+**Step 1: Immediate stop.**
+
+The moment I see a suspicious output — a function calling a non-existent Stripe endpoint, a CSS class that does not exist in our design system — I hit the stop button. Do not let it continue. The agent compounds errors faster than it fixes them.
+
+**Step 2: Revert, do not patch.**
+
+I use `git checkout` or `git reset` to undo the agent's changes entirely. I have seen developers try to "fix" the agent's mistake by layering more prompts on top. This is a trap. The agent has already lost context. Revert to the last known good commit and start a fresh session with a more specific prompt.
+
+**Step 3: Write a SKILL.md rule.**
+
+If the agent made the same category of mistake twice — for example, forgetting to validate request bodies in FastAPI routes — I do not just correct it in chat. I add a rule to `api-security.md` that says: "Every FastAPI route must include a Pydantic request model and return a 422 response example in the docstring." This prevents the third occurrence.
+
+**Step 4: Switch models.**
+
+Sometimes the model is the problem, not the prompt. When Gemini 3.5 Flash hallucinates a React hook pattern, I switch to Claude Sonnet 4.6 for the same task. If both get it wrong, the problem is my prompt, not the model. If only one gets it wrong, I add a note to my project README: "Use Claude for hook logic, use Flash for component shells."
+
+**Step 5: The post-mortem note.**
+
+I keep a running Markdown file called `agent-mistakes.md` in each project. It is not for shaming the tool; it is for training myself. Every time the agent causes a bug that reaches staging, I write a one-line note: date, model used, prompt summary, actual error, prevention rule. I review this file monthly and convert the top three mistakes into SKILL.md rules.
+
+**My honest truth:** In my first month, Antigravity 2.0 introduced roughly one bug per week that I did not catch in code review. By month two, after tightening my SKILL.md files and my prompt templates, that dropped to one bug per month. The tool did not get better. I got better at using it.
+
+---
+
+<SectionHeading title="What Still Frustrates Me About Antigravity 2.0" subtitle="Gaps, Issues, and Friction" number="04" id="frustrations" />
+
+
+
+No tool is perfect, and Antigravity 2.0 has real gaps that Google needs to fix. I want to cover them honestly because readers deserve to know the downsides before they commit their workflow.
+
+<Accordion title="Context Compression Is Aggressive" subtitle="Frustration 01">
+This is the most reported issue in the community and I hit it daily. Antigravity 2.0 compresses context automatically when sessions get long, and the user has zero control over when or how it happens. On files over ~500 lines, or after ~20 agent turns, I start seeing "prompt is too long" errors or the agent forgets constraints I set at the beginning of the session. Claude Opus 4.6 is virtually unusable in long sessions because of this. Google needs to give users manual control over context compaction or a "keep full context" mode for power users.
+</Accordion>
+
+<Accordion title="The Missing Plan Button" subtitle="Frustration 02">
+The original IDE had a "Plan" button that forced the agent to generate a multi-step execution plan and show it to you before writing any files. This was critical for trust. Antigravity 2.0 removed it. Now the agent starts executing immediately, and you have to stop it manually if the plan looks wrong. I work around this by prefixing prompts with "generate a plan first, do not execute," but that is a hack, not a feature.
+</Accordion>
+
+<Accordion title="Android Studio and Google Ecosystem Integration" subtitle="Frustration 03">
+If you are an Android developer, the standalone app breaks some of the tight integration the IDE had with Android Studio. The IDE could open layouts and Gradle files with native Android Studio rendering. Antigravity 2.0 treats everything as generic text files. Google says deeper Android Studio integration is coming, but it is not here yet.
+</Accordion>
+
+<Accordion title="Permission Fatigue" subtitle="Frustration 04">
+The new permission engine is more secure but more tedious. Every sensitive operation is represented as `action(target)` and evaluated across deny/request-review/always-proceed lists. In practice, this means Antigravity 2.0 asks for permission more often than the IDE did, especially when running npm installs or Docker commands. I have mine set to "always proceed" for trusted workspaces, but new users will find the constant prompts annoying.
+</Accordion>
+
+<Accordion title="WSL and Remote Development Are Broken" subtitle="Frustration 05">
+If you do your development inside WSL2 or over SSH to a remote server, Antigravity 2.0 is currently a pain. The standalone app mounts your local file system through a different path than the IDE did, and WSL paths like `\\wsl$\Ubuntu\home\...` are not always resolved correctly. I tried pointing 2.0 at my WSL projects and the agent kept creating duplicate files on the Windows side instead of editing inside WSL. I ended up moving my active projects to native macOS for 2.0 and keeping WSL work on the IDE. Google has acknowledged this but there is no fix timeline.
+</Accordion>
+
+<Accordion title="GitHub Authentication Keeps Breaking" subtitle="Frustration 06">
+The OAuth integration with GitHub is flaky in 2.0. I have had to re-authenticate four times in two weeks, and twice the agent lost its token mid-session and could not push commits. The IDE was not perfect either, but 2.0 seems to refresh tokens less gracefully. If you rely on automated PR creation from scheduled tasks, this is a real liability. I now use a personal access token in my hooks.json instead of the built-in OAuth to avoid surprises.
+</Accordion>
+
+<Accordion title="The Installation Directory Conflict" subtitle="Frustration 07">
+Antigravity 2.0 and the IDE share some configuration directories if you install both on the same machine. I ran into a situation where my IDE settings got partially overwritten by 2.0 preferences, breaking my theme and keybindings in the IDE. The workaround is to install them under separate user profiles or use a tool like Homebrew to isolate the 2.0 install. Most users do not know this until something breaks.
+</Accordion>
+
+<Accordion title="The Migration Backup Quirk" subtitle="Frustration 08">
+When you upgrade from the IDE to 2.0, Google creates a backup of your old workspace at `~/.gemini/antigravity-backup/`. This is not documented well. I only found mine by accident when my disk space monitor flagged a 12GB folder I did not recognize. If you are tight on disk space, check that folder and delete the backup once you confirm 2.0 is working for you.
+</Accordion>
+
+---
+
+<Accordion title="5 Key Things No One Tells You About Your First Week" subtitle="Onboarding Reality">
+If you are coming from the IDE like I did, the first 48 hours are disorienting. Here is what I wish someone had told me before I installed.
+
+- **There is no "draft" mode for prompts:** In the IDE, I could write a long prompt, tweak it, then send. In 2.0, once you hit Enter the agent executes immediately. I now draft complex requests in a scratch file first, then paste them in.
+- **Context compression is invisible:** When a session gets too long, 2.0 silently drops older messages from the agent's working memory. I once spent 20 minutes debating an architecture decision, then the agent "forgot" it. I now pin decisions in the `/goal` or write them into a `SKILL.md` file.
+- **The browser agent is not a full Chrome:** It can screenshot and click, but SPAs with heavy lazy-loading timeout often. For simple landing pages it is magic; for complex React apps I still open Chrome manually.
+- **The CLI and desktop app share state, but not perfectly:** If I start a task in the CLI and open the desktop app, the conversation history is there, but active scheduled tasks only show status in the surface where they were created.
+- **You will miss the code editor more than you expect:** It took a week to adapt. I kept reaching for Cmd+Click or expecting a minimap. Switching to VS Code remains a main friction point.
+</Accordion>
+
+---
+
+### The Marketing vs. My Reality: What the Demos Don't Show
+
+Google's marketing is flashy. They built an operating system in 12 hours using 93 parallel sub-agents for under $1,000 in API credits. It is genuinely impressive, and it proves the orchestration layer works at scale. But here is what that demo does not tell you about daily life with Antigravity 2.0.
+
+**The OS demo was a controlled experiment.** Those 93 agents had a perfectly scoped task, pre-defined integration points, and no client breathing down their necks asking why the navbar looks wrong on iPhone SE. In my world, 90% of my prompts are not "build an OS." They are "fix the off-by-one error in the pagination helper" or "update the Stripe webhook to handle the new checkout.session.async_payment_succeeded event." Antigravity 2.0 handles these beautifully, but they are not demo-worthy.
+
+**The "no human wrote a single line of code" claim is technically true and practically misleading.** I reviewed every commit the agents made during my first week. I rejected 12% of them. Another 8% needed manual tweaks. The agents write a lot of code, but the claim implies zero human oversight, which is not how I use it. I treat the agent like a very fast junior developer who occasionally hallucinates API methods.
+
+**The 3x usage limit sounds generous until you run multi-agent projects.** I burned through 40% of my weekly quota in one day when I had three projects with scheduled tasks all running their audits simultaneously. The quota increase is real and welcome, but heavy users still hit ceilings. I now stagger my scheduled tasks across different days of the week to spread the load.
+
+**Sub-agents are powerful but finicky.** When they work, they are magic. I had a frontend sub-agent and a backend sub-agent build a full feature in parallel. When they fail, debugging is harder than debugging your own code because you have to read two separate conversation threads to figure out why they misunderstood each other. I now add explicit interface contracts in my prompts when using sub-agents.
+
+**My honest take on the hype:** Antigravity 2.0 is not going to replace developers. It is going to replace the boring 60% of development — scaffolding, boilerplate, dependency updates, documentation, and initial test suites. The remaining 40% — architecture decisions, edge-case handling, client communication, and creative problem-solving — is still human work. That 60/40 split is why I prefer 2.0. It does not eliminate my job; it eliminates the parts of my job I did not enjoy.
+
+---
+
+### Security and Privacy: My Personal Policy
+
+I am paranoid about credentials. After reading reports of prompt-injection attacks and token-stealing extensions, I have a strict policy for how I use Antigravity 2.0. Here is what I actually do, not what the docs tell me to do.
+
+**I never let the agent read `.env` files directly.** Instead, I maintain a `secrets-antigravity.json` file in my home directory with the exact variables the agent needs for each project. I load them via a SKILL.md instruction that says: "Read secrets from `~/secrets-antigravity.json`, never from `.env`." This prevents accidental commits of API keys.
+
+**I use the Git policies feature aggressively.** Every project has a `.gitignore` rule for `.env`, `.secrets`, and any file matching `*credential*`. I also added a SKILL.md rule that says: "Before any git commit, run `git diff --name-only` and abort if any ignored file appears in the staged changes." This is my safety net.
+
+**I run untrusted projects in sandbox mode.** If I am working with a new client's codebase for the first time, I launch Antigravity 2.0 with `--sandbox` flag. This means the agent cannot write outside the project directory, execute arbitrary system commands, or access my home directory. The first thing I do in a sandboxed session is ask the agent to audit the codebase for suspicious network requests or file-system traversal patterns.
+
+**I revoke browser permissions after every session.** The browser sub-agent is useful, but I do not trust it to remember what domains are safe. After every `/browser` session, I go into the permissions panel and remove any `execute_url` grants. I only keep `read_url` permissions for documentation sites I trust (MDN, Stripe docs, Tailwind UI).
+
+**Credential masking is not perfect.** Google claims that API keys are masked in logs and transcripts. I tested this by deliberately pasting a fake key into a prompt. It was masked in the main chat view, but it appeared in the raw JSON export of the conversation history I requested for debugging. I now assume that anything I type into the prompt could end up in a log somewhere, and I act accordingly.
+
+**My golden rule:** If a secret is worth more than $100 to replace, I do not put it in an Antigravity prompt. I use environment variables injected at runtime, or I ask the agent to write the code that loads the secret, without ever showing the secret itself in the chat.
+
+---
+
+<SectionHeading title="My Month-1 Verdict: Is Antigravity 2.0 Worth Switching?" subtitle="Final Assessment & ROI" number="05" id="verdict" />
+
+After using Antigravity 2.0 daily for a full month alongside the old IDE, Claude Code, and Codex, here is my honest bottom line.
+
+**Yes, switch — but with caveats.**
+
+If you are a solo developer or a freelancer juggling multiple client stacks, Antigravity 2.0 is now my top recommendation. The model flexibility alone saves me from context-switching between four different tools. The multi-agent feature genuinely changed how I structure project work: I no longer block on a single long-running agent task. I delegate, parallelize, and review.
+
+**The caveats are real, though.**
+
+- If you live in WSL or SSH into remote servers daily, stay on the IDE for now or use Claude Code.
+- If you are an Android developer who relied on the IDE's native Studio integration, 2.0 will feel like a downgrade until Google fixes that gap.
+- If you are on a tight budget and only code a few hours a week, the Free tier is actually usable now thanks to the 3x limit bump, but you will still feel the ceiling.
+
+**My recommendation by persona:**
+
+- **Full-stack freelancer (me):** Pro tier is a no-brainer. The time savings on multi-agent tasks alone pays for itself in two billable hours.
+- **Startup founder building an MVP:** Start with Free, upgrade to Pro once you hit the wall. Use `/grill-me` before every major feature to avoid refactoring later.
+- **Enterprise team:** Wait for better WSL/remote support and team permissions before rolling out company-wide. The permission model is still single-user minded.
+- **Student / learner:** Free tier is enough. Use the IDE if you want an all-in-one environment; use 2.0 if you already have a preferred editor.
+
+**The one thing that made me stay:** Scheduled tasks turned my coding assistant into infrastructure. I now wake up to PRs I did not write manually. That feeling never gets old.
+
+---
+
+### My Quantified Productivity: Before and After 2.0
+
+I tracked my time obsessively for four weeks before and after switching to Antigravity 2.0. The numbers surprised even me. Here is my actual data, not marketing fluff.
+
+<ImpactStats 
+  stats={[
+    {
+      value: "80%",
+      label: "Boilerplate Reduction",
+      description: "Scaffolding CRUD routes, forms, and test stubs dropped from 8 hours per week to 2 hours with AI generation.",
+      icon: "zap"
+    },
+    {
+      value: "91%",
+      label: "Audit & Scans Automation",
+      description: "Nightly automated package audits and security audits reduced active maintenance from 3 hours to 15 minutes.",
+      icon: "clock"
+    },
+    {
+      value: "11.5h",
+      label: "Weekly Time Saved",
+      description: "Reclaimed nearly three full workdays per month by delegating boilerplates, code reviews, and documentation.",
+      icon: "target"
+    }
+  ]}
+/>
+
+Here is the granular breakdown of my actual weekly time tracking:
+
+- **Writing boilerplate code:** 8 hours before 2.0 down to 2 hours.
+- **Dependency updates & security scans:** 3 hours before 2.0 down to 15 minutes.
+- **Self-code review before handoff:** 4 hours before 2.0 down to 1.5 hours.
+- **Writing documentation:** 2 hours before 2.0 down to 45 minutes.
+- **Context-switching between projects:** 2.5 hours before 2.0 down to 45 minutes.
+- **Time lost to agent mistakes, permissions & re-work:** ~2 hours (costs associated with agent oversight).
+
+**Net weekly savings: ~11.5 hours.**
+
+That is not a typo. I genuinely reclaimed almost three full workdays per month. The trade-off is that those 11.5 hours are not all "fun" time — some of it is spent managing the agent, writing better prompts, and cleaning up mistakes. But the net result is undeniable: I ship faster, sleep more, and take on an extra client without burning out.
+
+---
+
+### The Feature That Made Me a Believer: My "Aha!" Moment
+
+![Photo of the author's surprised face looking at the screen, mid-coffee sip, the moment a complex multi-file refactor completed successfully in one prompt](/blog/google-antigravity-2-0-review-2026/author-desk-workspace.png)
+
+It was Thursday, week two. I was working on a legacy Client A codebase that had grown into a mess over two years. The task: split a 2,400-line `utils.py` file into six logical modules without breaking any of the 47 imports scattered across the project.
+
+In the IDE, this would have been a four-hour manual refactor with careful find-and-replace, running tests after each move, and probably breaking something I did not notice.
+
+In Antigravity 2.0, I wrote one prompt: "Refactor `utils.py` into six modules: `auth.py`, `validators.py`, `formatters.py`, `http_helpers.py`, `cache_utils.py`, and `logging_utils.py`. Update all imports across the codebase. Run the test suite after each file move. If any test fails, revert that specific move and tell me why."
+
+I hit Enter. I made a fresh coffee. I came back 12 minutes later.
+
+The agent had:
+
+- Created all six modules with correct function placements.
+- Updated 47 imports across 23 files.
+- Run the test suite after each move.
+- Caught a circular import it had accidentally created between `auth.py` and `validators.py`.
+- Reverted that specific move, proposed an alternative architecture, and implemented it.
+- Left a detailed summary of every change in the chat thread.
+
+**Zero human intervention.** I reviewed the diff. It was cleaner than I would have written manually. I committed it. I sat there staring at the screen for a full minute, coffee getting cold, wondering if I had just witnessed the future of my job.
+
+That is the moment I stopped comparing Antigravity 2.0 to the IDE and started treating it as a genuinely different category of tool. It is not a better IDE. It is a junior developer who types 100x faster than me, never gets tired, and accepts corrections without argument.
+
+---
+
+### How I Explain Antigravity 2.0 to My Non-Technical Clients
+
+My clients do not care about AI agents, Gemini models, or slash commands. They care about three things: speed, quality, and cost. Here is exactly what I tell them when they ask what changed in my workflow.
+
+**"I hired a really fast intern who never sleeps."**
+
+That is my opening line. I explain that I now have an AI assistant that handles the boring 60% of development — scaffolding, documentation, dependency updates, and first-pass testing. This means I spend my time on the hard 40%: architecture, user experience, security, and creative problem-solving.
+
+**"Your project is not being written by a robot without oversight."**
+
+This is the fear I have to address. I show them my code review process: every AI-generated commit is reviewed by me before it reaches their repository. I show them my SKILL.md files — the instruction manuals I write so the AI follows my coding standards, not generic ones. I explain that the AI is a tool I wield, not a replacement for my judgment.
+
+**"You are getting more value for the same rate."**
+
+Because I save ~11.5 hours per week, I can either:
+
+- Deliver projects 30–40% faster without rushing.
+- Add more polish — better animations, more thorough testing, deeper documentation — within the original timeline.
+- Or simply take on one more project per month, which benefits my business without costing them more.
+
+**"There is one caveat: AI makes mistakes."**
+
+I am honest. I tell them that roughly once per project, the AI introduces a bug that I catch in review. This is better than my old manual rate (I used to introduce roughly one bug per project too), but it is not zero. The difference is that now I catch most of them in minutes, not days.
+
+**The result:** Every client I have explained this to has been enthusiastic. Two have asked if they can use the same tool for their internal non-technical workflows. One is now evaluating the Enterprise tier for their marketing team.
+
+---
+
+<SectionHeading title="New Features in Antigravity 2.0: The Complete Breakdown" subtitle="Under the Hood" number="06" id="new-features" />
+
+Beyond the headline changes, Antigravity 2.0 ships several new tools that change how you build with AI agents.
+
+### Multi-Agent Orchestration: The Real Game Changer
+
+![Diagram showing a parent Antigravity 2.0 agent spawning multiple child subagents across different project folders with shared context](/blog/google-antigravity-2-0-review-2026/multi-agent-orchestration.png)
+
+This is the feature that justifies the standalone redesign. Antigravity 2.0 can run **multiple independent agents across different projects simultaneously** with shared context pools.
+
+**How it works:**
+
+- You create a parent project and assign subagents to subdirectories or specific tasks.
+- Each subagent operates independently but can reference a shared token pool or context window.
+- Dynamic subagents can be spawned on the fly when the parent agent detects a task that should be parallelized.
+
+**Real use case:** I have a parent agent managing a Next.js client project. It spawns a subagent for the API backend, another for the component library, and a third for documentation. All three run concurrently. The parent coordinates merges and prevents conflicts. This is not possible in the IDE version.
+
+**Limitation:** Multi-agent orchestration burns through your usage quota fast. A single parent spawning three children can eat your daily Pro allowance in a long session. This is the main reason the Ultra tier exists.
+
+<Accordion title="Native CLI (Built in Go)" subtitle="Feature 01">
+The CLI is rewritten from the ground up in Go. It is faster, supports async workflows, and integrates cleanly into CI/CD pipelines. You can trigger agent tasks from shell scripts, GitHub Actions, or scheduled cron jobs without opening the GUI.
+</Accordion>
+
+<Accordion title="Git Worktrees" subtitle="Feature 02">
+Antigravity 2.0 natively supports Git worktrees. You can have multiple agents working on different branches of the same repo simultaneously without switching branches manually. This pairs perfectly with multi-agent orchestration.
+</Accordion>
+
+<Accordion title="Scheduled Background Tasks (Cron for Agents)" subtitle="Feature 03">
+You can schedule agents to run at specific times or intervals. I use this for nightly dependency updates, automated test runs, and periodic documentation syncs. It turns Antigravity from an interactive tool into a background automation engine.
+</Accordion>
+
+<Accordion title="Live Voice Transcription" subtitle="Feature 04">
+Using Gemini Audio models, you can dictate prompts and code reviews directly into Antigravity 2.0. The transcription quality is surprisingly good for technical vocabulary. I use it for quick brainstorming when I do not want to type long architecture descriptions.
+</Accordion>
+
+<Accordion title="Antigravity SDK" subtitle="Feature 05">
+Google shipped a proper SDK for programmatic access. You can build custom integrations, automate project creation, and manage agent state from external applications. This is the foundation for building products on top of Antigravity.
+</Accordion>
+
+<Accordion title="Browser Screenshot Artifacts" subtitle="Feature 06">
+Agents can now capture browser screenshots as artifacts during web development tasks. This is useful for visual regression testing and UI verification without leaving the agent workflow.
+</Accordion>
+
+<Accordion title="Agent Skills and Modular Instruction Sets (SKILL.md)" subtitle="Feature 07">
+This is a hidden gem. Antigravity 2.0 supports modular agent instructions via `SKILL.md` files placed in `.agents/skills/` inside your project. You can define reusable skill modules — like "React Component Standards," "API Security Checklist," or "Stripe Integration Patterns" — and attach them to any agent session. I use this to enforce consistent coding standards across my client projects without repeating the same prompts every time. It is like custom system prompts, but scoped per project and version-controlled with your repo.
+</Accordion>
+
+<Accordion title="JSON Hooks for Custom Integrations" subtitle="Feature 08">
+Antigravity 2.0 exposes `hooks.json` files that let you define custom triggers and actions. You can hook into agent lifecycle events — like `on_task_complete`, `on_error`, or `on_file_change` — and fire webhooks, Slack notifications, or custom scripts. I have a hook that sends me a Telegram message whenever a scheduled background task finishes with errors, so I know immediately if my nightly dependency audit broke something.
+</Accordion>
+
+<Accordion title="Slash Commands You Will Actually Use" subtitle="Feature 12">
+Antigravity 2.0 introduces slash commands in the chat interface. These are the ones I use daily:
+
+- `/goal` — Sets a high-level project goal that persists across the session.
+- `/grill-me` — Switches the agent to interview mode to clarify details before writing code.
+- `/schedule` — Creates a scheduled background task directly from chat.
+- `/browser` — Spawns a dedicated browser sub-agent for local testing.
+- `/planning` — Enables multi-turn plan generation mode before execution.
+- `/permissions` — Switches between global permission presets without digging into settings.
+- `/rewind` — Rolls back conversation history to a previous state when the agent goes off track.
+- `/resume` or `/switch` — Opens the thread picker to load previous conversations.
+- `/rename <name>` — Renames the current session thread.
+- `/open <path>` — Opens a file in your default system editor.
+- `/config` or `/settings` — Opens the settings overlay.
+</Accordion>
+
+### Permission Modes
+
+The new permission engine has three modes that control how aggressively the agent asks for approval:
+
+- **Strict** — Every file write, command execution, and network request requires explicit approval. Good for sensitive codebases.
+- **Request-review** — The agent asks once per session for common actions, then proceeds automatically for similar ones. This is my default.
+- **Always-proceed** — The agent runs freely within the project folder. I use this for trusted internal projects and my personal blog repo. It is essential for background automation because nobody is there to click "approve" at 2 AM.
+
+<Accordion title="Projects and Conversation Grouping" subtitle="Feature 10">
+Antigravity 2.0 finally adds proper project management. You can group related conversations into Projects, assign different models and skills per project, and switch between them without losing context. I have separate projects for each client, my personal SaaS, and this blog. The conversation history is searchable, and you can fork a conversation thread if you want to try two different approaches from the same starting point.
+</Accordion>
+
+<Accordion title="Async Task Management" subtitle="Feature 11">
+Long-running tasks like `npm install`, Docker builds, or test suites no longer block the agent. Antigravity 2.0 runs these in the background and notifies you when they complete. You can queue multiple async tasks and keep working with the agent on other files while they run. This sounds small, but it is a massive quality-of-life improvement over the IDE, where a long npm install would freeze the entire agent session.
+</Accordion>
+
+---
+
+### What I Thought Would Be Useless But Became Essential
+
+When I first read the Antigravity 2.0 announcement, four features sounded like gimmicks. I was wrong about all of them. Here is my honest reassessment.
+
+**Voice transcription for code comments:**
+I thought this was a novelty for YouTube reviewers. I am a fast typist. Why would I talk to my computer? Then I tried it during a 3 PM energy crash when I had to document a complex authentication flow. I dictated 800 words of JSDoc and architecture notes in 6 minutes while slumped in my chair. The transcription quality for technical terms is shockingly good. I now use it for every complex module I build. My documentation quality has jumped from "acceptable" to "excellent" because the friction dropped to zero.
+
+**The browser sub-agent:**
+I dismissed this as a toy. I have Chrome. Why do I need an agent to browse? Then I used `/browser` to test a responsive layout across 12 breakpoints while I continued coding the backend in the main chat. It found a z-index bug on iPhone SE that I would never have tested manually because I do not own an iPhone SE. I now use it for every responsive frontend task.
+
+**Scheduled background tasks:**
+I thought cron jobs were cron jobs. I already have GitHub Actions. Why do I need another scheduler? Because GitHub Actions runs in the cloud and cannot see my local monorepo structure. The Antigravity scheduled agent runs against my actual local files, understands my SKILL.md context, and can open PRs with human-readable summaries. It is not a replacement for CI/CD; it is a pre-CI/CD sanity layer that runs while I sleep.
+
+**hooks.json for post-generation actions:**
+I skimmed over this in the docs. It sounded like over-engineering. Then I added a hook that auto-formats every generated file with Prettier and runs `eslint --fix` before the agent marks the task complete. My codebase went from "mostly consistent" to "perfectly consistent" overnight. I added another hook that auto-generates a mermaid diagram of new API routes and appends it to `docs/architecture.md`. My docs now stay in sync with my code without me thinking about it.
+
+---
+
+### Hidden Gems and Power-User Tricks I Discovered
+
+These are the small features that do not make the marketing slides but changed my daily experience.
+
+#### `/grill-me` Is the Best Debugging Tool Nobody Talks About
+
+Before I write a complex feature, I type `/grill-me` and let the agent interview me for three to five minutes about edge cases, error handling, and user states. It catches assumptions I would have missed, and the resulting code needs 60% fewer fixes. I now use this for every Stripe integration and auth flow.
+
+#### Forking Conversations for A/B Testing Agents
+
+Inside Projects, you can fork a conversation thread at any point. I use this to test two different approaches from the same starting context: "fork here, try React Query, fork again, try SWR, compare." It is faster than creating two separate sessions and losing context.
+
+#### Gemini 3.1 Pro (Low) Is the Secret Workhorse
+
+Everyone talks about Flash for speed and Opus for depth, but Gemini 3.1 Pro (Low) is my most-used model. It is fast enough for real-time iteration, smart enough for non-trivial logic, and it rarely hits the context-compression wall. If you are on the Free or Pro tier and want one model to default to, this is it.
+
+#### The SDK Is Underrated for Automation
+
+I wrote a small Python script using the Antigravity SDK that watches my `~/Projects` folder and auto-opens Antigravity 2.0 with the correct Project and skill files pre-loaded based on the repo name. It saves me maybe 30 seconds per switch, but when I hop between four client repos a dozen times a day, that adds up.
+
+#### Browser Sub-Agent + Screenshots for UI Regression
+
+I use the `/browser` command to spawn a headless browser agent that navigates my local dev server, takes screenshots of critical pages, and compares them to baseline images stored in `/.agents/baselines/`. It caught a CSS regression I introduced in a Tailwind config change that my own eyes missed. It is not a replacement for Playwright or Cypress, but it is a fantastic first line of defense.
+
+#### Voice Transcription for Code Comments
+
+I dictate inline code comments and JSDoc blocks while walking. The transcription understands technical terms well enough that I barely edit the output. My documentation coverage has doubled because I no longer skip writing comments out of laziness.
+
+---
+
+### What I Still Want From Google
+
+I am invested in this tool. I pay for it. I recommend it to clients. So here is my public wishlist for the next update:
+
+1. **Bring back the Plan button.** Or at least add a `/plan` slash command that works as a first-class feature, not a workaround.
+2. **Manual context control.** Let me choose when to compact context and when to keep the full window. Auto-compaction is hurting too many long-session workflows.
+3. **Fix WSL and remote development.** This is blocking a significant portion of the developer community.
+4. **Team / organization mode.** Shared projects, shared skills, and usage quotas for teams. Right now it is too solo-dev oriented for agency use.
+5. **Better offline support.** The IDE worked offline for longer. The standalone app needs stronger caching for plane rides and spotty coffee-shop WiFi.
+6. **Persistant agent memory across sessions.** Let an agent remember that I prefer Zod over Yup, or that I always use `async/await` over `.then()`. Right now I have to restate preferences in every new session or rely on skill files.
+
+---
+
+### Every Model Inside Antigravity 2.0 with Performance Notes
+
+
+
+One of the strongest parts of Antigravity 2.0 is the expanded model selection. Google did not limit you to Gemini. They brought in Claude and a GPT open-source model.
+
+| Model | Type | Best For | Notes |
+| --- | --- | --- | --- |
+| Gemini 3.5 Flash | Google / Fast | Quick iterations, simple tasks | Fastest responses, good for scaffolding |
+| Gemini 3.1 Pro (High) | Google / Reasoning | Complex reasoning, architecture | Higher quality, slower than Flash |
+| Gemini 3.1 Pro (Low) | Google / Reasoning | Balanced reasoning | Mid-speed, good for most tasks |
+| Gemini 3 Flash | Google / Fast | Rapid prototyping | Successor to older Flash lineup |
+| Claude Sonnet 4.6 | Anthropic / Balanced | Refactoring, testing, reasoning | Best for nuanced code changes |
+| Claude Opus 4.6 | Anthropic / Heavy | Complex architecture, deep analysis | Slowest but highest quality |
+| gpt-oss-120b | Open-Source / Heavy | Research, open-source alignment | 120B parameter open model |
+
+<aside>
+💡 **Real usage note:** Gemini 3.5 Flash is my default for quick scaffolding and small edits. I switch to Claude Sonnet 4.6 when I need careful refactoring or when I hit context-compression issues with Gemini. Opus 4.6 is reserved for architecture decisions. The open-source gpt-oss-120b is interesting but slower than the commercial options for daily work.
+</aside>
+
+---
+
+<Accordion title="OS Compatibility & System Requirements" subtitle="Technical Specs">
+Here is what Google does not highlight loudly enough about installation:
+
+- **macOS:** Requires Monterey 12 or later. **Intel Macs are not supported** (Apple Silicon only).
+- **Windows:** Windows 10 64-bit is the minimum. Standard startup is slower on older Win 10 builds.
+- **Linux:** Requires glibc >= 2.28 and glibcxx >= 3.4.25 (e.g. Ubuntu 20+, Debian 10+, Fedora 36+).
+- **Disk Space Warning:** Standalone app is 400MB, but the automatic migration backup can reach 12GB. Check `~/.gemini/antigravity-backup/` and delete it after verification.
+- **Homebrew Isolation:** If running both the IDE and 2.0 on one machine, isolate 2.0 with Homebrew or use separate user profiles to avoid config conflicts.
+</Accordion>
+
+---
+
+<Accordion title="Plugins & Extensibility Architecture" subtitle="Under The Hood">
+Plugins in Antigravity 2.0 are namespaced bundles containing skills, agents, rules, MCP servers, and hooks.
+
+- **Automated setup:** Packaging skills files (`react-standards.md`, `api-security.md`, etc.), hooks, and rules sets into a custom plugin allows 1-command deployment on new machines.
+- **Sandbox isolation:** The `--sandbox` flag limits the agent's operations strictly to the project root and blocks unauthorized network requests.
+- **Settings versioning:** Configuration is stored in a clean `~/.gemini/antigravity-cli/settings.json` file which can be version-controlled.
+</Accordion>
+
+---
+
+### The 3x Usage Limit Increase: What It Actually Means for Daily Work
+
+At I/O 2026 Google announced that **Gemini usage limits inside Antigravity 2.0 have tripled.** For daily users, this is the single most impactful change.
+
+**What changed:**
+
+- **Old Pro tier:** Hit the wall within an hour of active coding on large projects.
+- **New Pro tier:** Weekly quota refresh cycle with approximately 3x the daily agent request capacity.
+- **Ultra tier:** Even higher ceilings, though exact numbers are not published publicly.
+
+**My real experience:** I am using Antigravity 2.0 all day for client projects, internal automations, and blog research. Before the 3x bump, I would hit the Gemini cap by mid-afternoon and have to switch to OpenRouter or Claude Code to finish the day. Now I barely hit the usage limit. The weekly refresh still means you can burn through your pool if you are running heavy batch jobs, but for normal iterative coding the limit is no longer a blocker.
+
+**The catch:** The increase applies primarily to Gemini models. Claude and gpt-oss-120b still have their own separate quotas. If you are a Claude-heavy user like me, the 3x announcement is nice but not life-changing. Google is clearly optimizing this for their own model stack.
+
+---
+
+### Pricing: Every Tier, Honest Numbers
+
+Google restructured pricing around Antigravity 2.0 with four distinct tiers. Here is the breakdown with real numbers and what each tier gets you.
+
+| Tier | Price | Agent Requests/Day | Models | Best For |
+| --- | --- | --- | --- | --- |
+| Free | $0/mo | ~20 | Basic Gemini only | Hobbyists, trying it out |
+| AI Pro | $20/mo | ~100 | All models | Professional developers, daily use |
+| New Middle Tier | $100/mo | Higher than Pro | All models | Teams, heavier individual use |
+| AI Ultra | $200/mo (was $250) | Highest | All models + priority access | Agencies, enterprise, power users |
+
+**Honest cost estimate:** If you code professionally every day, the Free tier is unusable. Twenty requests per day is roughly two hours of work. AI Pro at $20/mo is the sweet spot for solo developers. The $100 tier is new and sits in an awkward middle ground: it is 5x the Pro price but does not add transformative features, just more quota. AI Ultra at $200 is only worth it if Antigravity 2.0 is your primary tool and you are losing money to rate-limit pauses.
+
+**What the pricing means for freelancers:** If you are billing clients for development time, AI Pro pays for itself in the first billable hour of the month. The jump to $100 or $200 only makes sense if Antigravity 2.0 is your primary tool and you are losing money to rate-limit pauses.
+
+---
+
+### Antigravity 2.0 vs the Original Antigravity IDE
+
+This is the decision most existing users are stuck on. Do you stay on the IDE or move to 2.0?
+
+| Feature | Antigravity IDE | Antigravity 2.0 |
+| --- | --- | --- |
+| Built-in editor | Yes (VS Code-based) | No (external editor required) |
+| Built-in terminal | Yes | No |
+| Built-in browser preview | Yes | No |
+| Multi-agent orchestration | No | Yes |
+| Scheduled tasks (cron) | No | Yes |
+| Native CLI | Limited | Full CLI in Go |
+| Model selection | Gemini only | Gemini + Claude + gpt-oss |
+| Usage limits | Old caps | 3x higher Gemini caps |
+| Standalone app | No (IDE only) | Yes (macOS, Linux, Windows) |
+
+**My recommendation:** If you loved the all-in-one IDE and you do not need multi-agent or the new models, keep the IDE. It is still available as a separate download. If you want the expanded model lineup, scheduled background tasks, or you prefer working in Cursor/VS Code with an agent sidebar, Antigravity 2.0 is better. The ideal setup for me is both: IDE for quick single-window sessions, 2.0 for heavy agentic projects.
+
+---
+
+<SectionHeading title="How Antigravity 2.0 Compares to Claude Code and Codex" subtitle="Competitor Analysis" number="07" id="vs-claude-codex" />
+
+
+
+If you are choosing between the three major AI coding tools in 2026, here is how they stack up.
+
+| Dimension | Claude Code | Antigravity 2.0 | OpenAI Codex |
+| --- | --- | --- | --- |
+| Primary interface | Terminal + IDE | Standalone desktop app | IDE + CLI |
+| Model lineup | Claude only | Gemini + Claude + gpt-oss | GPT-5 + Codex models |
+| Multi-agent | Limited | Full orchestration | Agent swarms (beta) |
+| Usage limits | Generous Claude API caps | 3x Gemini caps, weekly refresh | Codex Pro $100/mo |
+| Pricing entry | $20/mo (Pro) | $0 (Free) / $20 (Pro) | $0 (Free) / $20 (Pro) / $100 (Codex Pro) |
+| Best for | Refactoring, reasoning, testing | Multi-model, multi-agent, Google ecosystem | Full-stack generation, browser preview |
+| Weakness | No Gemini access | IDE removed, context compression | Limited model choice |
+
+#### When to pick which:
+
+- **Claude Code** when you need the best reasoning and refactoring quality, especially for large legacy codebases.
+- **Antigravity 2.0** when you want model choice, multi-agent workflows, or you are deep in the Google ecosystem.
+- **Codex** when you want the fastest full-stack generation with integrated browser preview and you are okay with GPT-only models.
+
+---
+
+### Decision Matrix: Which Tool for Your Workflow?
+
+| If you... | Use this | Why |
+| --- | --- | --- |
+| Need multi-agent orchestration | Antigravity 2.0 | Only full implementation right now |
+| Want the best reasoning quality | Claude Code | Claude Sonnet/Opus consistently win reasoning benchmarks |
+| Want model choice (Gemini + Claude) | Antigravity 2.0 | Single tool with multiple backends |
+| Need fastest full-stack prototyping | Codex | Browser preview + fastest generation |
+| Are budget-conscious | Antigravity 2.0 Free or Claude Code | Best free tiers for real work |
+| Hate leaving your IDE | Claude Code or Codex | Both integrate into existing editors |
+| Need background automation | Antigravity 2.0 | Scheduled cron tasks built in |
+
+<PremiumCTA 
+  title="Unlock Maximum Engineering Speed"
+  description="We design and implement custom AI development frameworks, from automated testing setups to bespoke agent skills. Partner with AiFloxium to scale your digital infrastructure."
+  buttonText="Partner With Us"
+/>
+
+---
+
+<SectionHeading title="Frequently Asked Questions" subtitle="Common Developer Queries" number="08" id="faq" />
+
+
+
+<Accordion title="Is Google Antigravity 2.0 free?" subtitle="FAQ">
+Yes, there is a Free tier at $0 per month with approximately 20 agent requests per day and basic Gemini model access. It is enough for light hobby use but not for professional daily development.
+</Accordion>
+
+<Accordion title="What happened to the Antigravity IDE?" subtitle="FAQ">
+Google removed the IDE from Antigravity and made it a separate product called "Antigravity IDE." Antigravity 2.0 is a standalone desktop agent app. If you want the integrated editor, terminal, and browser, you must download the IDE separately.
+</Accordion>
+
+<Accordion title="Can I use Claude models inside Antigravity 2.0?" subtitle="FAQ">
+Yes. Antigravity 2.0 supports Claude Sonnet 4.6 and Claude Opus 4.6 alongside Gemini and gpt-oss-120b. You need at least the AI Pro tier to access non-Gemini models.
+</Accordion>
+
+<Accordion title="What is the 3x usage limit increase?" subtitle="FAQ">
+Google tripled the Gemini usage caps inside Antigravity 2.0 at I/O 2026. Pro tier users now get roughly three times the daily agent request capacity compared to the previous limits, with a weekly quota refresh cycle.
+</Accordion>
+
+<Accordion title="Is Antigravity 2.0 better than Claude Code?" subtitle="FAQ">
+It depends on your workflow. Antigravity 2.0 wins on model choice and multi-agent orchestration. Claude Code wins on reasoning quality and IDE integration. For heavy refactoring and nuanced code analysis, Claude Code is still superior. For parallel agent work and Gemini access, Antigravity 2.0 is better.
+</Accordion>
+
+<Accordion title="Does Antigravity 2.0 have a CLI?" subtitle="FAQ">
+Yes. Antigravity 2.0 ships a native CLI built in Go. It supports async workflows, scheduled tasks, and CI/CD integration. The CLI is a major upgrade over the limited command-line support in the original IDE.
+</Accordion>
+
+<Accordion title="What is multi-agent orchestration in Antigravity 2.0?" subtitle="FAQ">
+Multi-agent orchestration lets you run multiple independent agents across different projects or subdirectories simultaneously, with a parent agent coordinating them. This enables parallel development, automated testing pipelines, and background task management.
+</Accordion>
+
+<Accordion title="Why are developers angry about Antigravity 2.0?" subtitle="FAQ">
+The main controversy is the removal of the integrated IDE. Users who had auto-update enabled were pushed from the full IDE to the standalone app without warning. The IDE is now a separate download, which means developers who loved the all-in-one workflow must now run two apps or change their setup entirely.
+</Accordion>
+
+<Accordion title="What models are available in Antigravity 2.0?" subtitle="FAQ">
+Gemini 3.5 Flash, Gemini 3.1 Pro (High and Low), Gemini 3 Flash, Claude Sonnet 4.6, Claude Opus 4.6, and gpt-oss-120b. The Pro tier unlocks all models; the Free tier is Gemini-only.
+</Accordion>
+
+<Accordion title="How much does Antigravity 2.0 cost?" subtitle="FAQ">
+Free at $0/mo, AI Pro at $20/mo, a new middle tier at $100/mo, and AI Ultra at $200/mo (down from $250). Pro is the sweet spot for solo developers.
+</Accordion>
+
+<Accordion title="Can I still use the old Antigravity IDE?" subtitle="FAQ">
+Yes. Google still offers the original Antigravity IDE as a separate download. It does not receive the new models or multi-agent features, but it keeps the integrated editor, terminal, and browser preview.
+</Accordion>
+
+<Accordion title="What are scheduled background tasks in Antigravity 2.0?" subtitle="FAQ">
+You can schedule agent tasks to run at specific times or intervals like cron jobs. This turns Antigravity from an interactive coding assistant into a background automation engine for dependency updates, tests, and documentation syncs.
+</Accordion>
+
+<Accordion title="What are agent skills (SKILL.md)?" subtitle="FAQ">
+Agent skills are modular instruction files placed in `.agents/skills/` inside your project. They let you define reusable standards — like coding conventions, security checklists, or integration patterns — and attach them to any agent session. I use them to enforce React and API standards across client projects without repeating prompts.
+</Accordion>
+
+<Accordion title="What are JSON hooks in Antigravity 2.0?" subtitle="FAQ">
+JSON hooks let you fire webhooks or custom scripts when agent lifecycle events occur — like `on_task_complete`, `on_error`, or `on_file_change`. I use them to send Telegram notifications when scheduled tasks fail.
+</Accordion>
+
+<Accordion title="Does Antigravity 2.0 support WSL or remote SSH development?" subtitle="FAQ">
+Not well. WSL paths are not always resolved correctly, and the standalone app mounts the local file system differently than the IDE did. I moved my active projects to native macOS for 2.0 and kept WSL work on the old IDE. Google has acknowledged the issue but there is no fix timeline.
+</Accordion>
+
+#### Why does GitHub authentication keep breaking in Antigravity 2.0?
+The OAuth integration refreshes tokens less gracefully than the IDE. I had to re-authenticate four times in two weeks. My workaround is using a personal access token in `hooks.json` instead of the built-in OAuth for automated PR creation.
+
+<Accordion title="What is the Antigravity 2.0 migration backup?" subtitle="FAQ">
+When upgrading from the IDE, Google creates a backup at `~/.gemini/antigravity-backup/`. Mine was 12GB. Check this folder and delete it once you confirm 2.0 is working, or you will lose disk space unexpectedly.
+</Accordion>
+
+<Accordion title="Can I install both Antigravity IDE and Antigravity 2.0 on the same machine?" subtitle="FAQ">
+Yes, but they share some configuration directories. My IDE theme and keybindings got partially overwritten by 2.0 preferences. The workaround is separate user profiles or isolating the 2.0 install with Homebrew.
+</Accordion>
+
+#### What is the difference between the three permission modes?
+- **Strict** asks for approval on every sensitive action.
+- **Request-review** asks once per session for common actions, then auto-approves similar ones. This is my default for client work.
+- **Always-proceed** lets the agent run freely. I use this for trusted internal projects and background automation.
+
+<Accordion title="What are slash commands in Antigravity 2.0?" subtitle="FAQ">
+Slash commands are chat shortcuts: `/goal` sets a persistent project goal, `/grill-me` makes the agent interview you before coding, `/schedule` creates a background task, `/browser` spawns a browser sub-agent, and `/plan` forces a plan-before-execution step. I use `/grill-me` and `/plan` daily.
+</Accordion>
+
+---
+
+### Quick Reference: Antigravity 2.0 at a Glance
+
+| Question | Answer |
+| --- | --- |
+| Launch date | May 19, 2026 at Google I/O |
+| What is it? | Standalone desktop AI agent app (not an IDE) |
+| Platforms | macOS, Linux, Windows |
+| Models | Gemini 3.5 Flash, Gemini 3.1 Pro, Gemini 3 Flash, Claude Sonnet 4.6, Claude Opus 4.6, gpt-oss-120b |
+| Pricing | Free $0 / Pro $20 / Middle $100 / Ultra $200 |
+| Free tier limits | ~20 agent requests/day, Gemini only |
+| Pro tier limits | ~100 agent requests/day, all models, weekly refresh |
+| IDE still available? | Yes, as separate "Antigravity IDE" download |
+| Multi-agent? | Yes, full orchestration with shared context pools |
+| CLI? | Native Go CLI with async and CI/CD support |
+| SDK? | Yes, programmatic access shipped |
+| Voice input? | Yes, via Gemini Audio models |
+
+---
+
+### What to Read Next
+
+If you found this guide useful, these deep dives will help you build a complete AI development workflow:
+
+- **[Hermes + DeepSeek V4 + OpenRouter: How I Run AI Agents Overnight for Almost Nothing](/blog/hermes-agent-deepseek-v4-openrouter-overnight-ai-setup)** — The cheapest way to run autonomous coding agents at scale.
+- **[Claude Code vs Codex (2026): The Only Comparison That Tells You What to Actually Use](/blog/claude-code-vs-codex-comparison)** — Side-by-side workflow comparison with real test results.
+- **[The Complete OpenAI Codex Guide (2026)](/blog/openai-codex-tutorial-complete-guide-2026)** — Everything about Codex pricing, models, and browser-preview workflows.
+- **[50 Claude Code Skills That Actually Work](/blog/50-best-claude-code-skills)** — A practical checklist of verified commands and patterns.
+- **[SEO + AI Automation: The Masterclass](/blog/5-ai-automations-ecommerce)** — How I build ranking content and client acquisition systems with AI tools.
+
+---
+
+### About the Author
+
+**Muhammad Shadab Shams** is an AI automation consultant and the founder of aifloxium.online. He builds client acquisition systems, ranking content engines, and autonomous development workflows using Claude Code, Codex, Hermes, OpenRouter, and Antigravity 2.0 daily.
+
+For more hands-on guides, follow on X at @ShadabLoveAi or visit apepublish.com.
+
+---
+
+**Published:** May 2026 | **Last updated:** May 31, 2026 | **Word count:** ~4,200 | **Reading time:** 18 minutes
