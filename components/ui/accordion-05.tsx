@@ -65,13 +65,12 @@ export function Accordion05() {
       <Accordion type="single" defaultValue="5" collapsible className="w-full">
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id} className="last:border-b border-brand-plum/20">
-            <AccordionTrigger className="text-left pl-6 md:pl-14 overflow-hidden text-white/20 duration-200 hover:no-underline cursor-pointer -space-y-6 data-[state=open]:space-y-0 data-[state=open]:text-white [&>svg]:hidden">
+            <AccordionTrigger className="text-left pl-6 md:pl-14 overflow-hidden text-white/20 hover:text-white data-[state=open]:text-white duration-200 hover:no-underline cursor-pointer -space-y-6 data-[state=open]:space-y-0 [&>svg]:hidden">
               <div className="flex flex-1 items-start gap-4">
                 <p className="text-xs font-mono text-brand-orange/60">{item.id}</p>
                 <h1
                   className={cn(
-                    "uppercase relative text-center text-3xl md:text-5xl font-heading font-black tracking-tighter transition-colors duration-300",
-                    "hover:text-white"
+                    "uppercase relative text-center text-3xl md:text-5xl font-heading font-black tracking-tighter transition-colors duration-300"
                   )}
                 >
                   {item.title}
@@ -79,7 +78,7 @@ export function Accordion05() {
               </div>
             </AccordionTrigger>
 
-            <AccordionContent className="text-white pb-6 pl-6 md:px-20 font-medium leading-relaxed">
+            <AccordionContent className="text-zinc-300 pb-6 pl-6 md:px-20 font-medium leading-relaxed">
               {item.content}
             </AccordionContent>
           </AccordionItem>

@@ -4,22 +4,28 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
 import { BRAND_NAME, BRAND_SIGNATURE_NAME, CALENDLY_URL } from '@/lib/site';
 
-const links = [
+const coreLinks = [
   { name: "Projects", href: "/projects" },
   { name: "Services", href: "/services" },
   { name: "Pricing", href: "/pricing" },
   { name: "Tools", href: "/tools" },
+];
+
+const secondaryLinks = [
   { name: "Consulting", href: "/ai-consulting" },
   { name: "Resources", href: "/resources" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
 ];
+
+const allLinks = [...coreLinks, ...secondaryLinks];
 
 const navVariants = {
   hidden: { y: -100, opacity: 0 },
@@ -54,6 +60,7 @@ const linkVariants = {
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
   const { scrolled, scrollY } = useScroll({ threshold: 50 });
   const lastScrollY = React.useRef(0);
   const [visible, setVisible] = React.useState(true);
@@ -102,6 +109,7 @@ export default function Navbar() {
 
   return (
     <motion.header
+      layout
       initial="hidden"
       animate={visible ? "visible" : "hidden"}
       variants={navVariants}
@@ -109,17 +117,18 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-500',
         {
-          'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:max-w-6xl md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
+          'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
             !open && !isLight,
-          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:max-w-6xl md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
+          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
             scrolled && !open && isLight,
           'bg-brand-bg': open,
         },
       )}
     >
       <motion.nav
+        layout
         className={cn(
-          'container mx-auto flex h-20 w-full items-center justify-between px-6 md:px-10',
+          'flex h-20 w-full items-center justify-between gap-6 px-6 md:px-8',
         )}
         animate={{
           height: 64,
@@ -128,7 +137,7 @@ export default function Navbar() {
         }}
         transition={headerTransition}
       >
-        <div className="flex lg:flex-1 justify-start">
+        <div className="flex justify-start shrink-0">
           <Link href="/" className="relative group z-[110]" onClick={() => setOpen(false)}>
             <motion.div 
               whileHover={{ scale: 1.05 }}
@@ -146,11 +155,11 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col leading-none">
                 <span className={cn(
-                "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
-                isLight && !open 
-                  ? "text-brand-plum" 
-                  : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
-              )}>
+                  "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
+                  isLight && !open 
+                    ? "text-brand-plum" 
+                    : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
+                )}>
                   {BRAND_NAME}
                 </span>
                 <span
@@ -166,10 +175,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden lg:flex flex-auto items-center justify-center gap-1">
-          {links.map((link, i) => (
+        <div 
+          className="hidden lg:flex items-center justify-center gap-1"
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+        >
+          {/* Core Links */}
+          {coreLinks.map((link, i) => (
             <motion.div
-              key={i}
+              layout
+              key={link.name}
               custom={i}
               initial="hidden"
               animate="visible"
@@ -179,7 +194,7 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   buttonVariants({ variant: "ghost" }), 
-                  "rounded-full px-5 text-xs font-bold uppercase tracking-widest transition-all",
+                  "rounded-full px-4 text-[11px] font-bold uppercase tracking-widest transition-all",
                   isLight && !open 
                     ? "text-zinc-700 hover:text-brand-plum hover:bg-brand-plum/5" 
                     : "text-zinc-100/70 hover:text-white hover:bg-white/5"
@@ -189,9 +204,56 @@ export default function Navbar() {
               </Link>
             </motion.div>
           ))}
+
+          {/* Secondary Links */}
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, width: 0, scale: 0.95 }}
+                animate={{ opacity: 1, width: "auto", scale: 1 }}
+                exit={{ opacity: 0, width: 0, scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                className="flex items-center gap-1 overflow-hidden"
+              >
+                {secondaryLinks.map((link) => (
+                  <Link 
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }), 
+                      "rounded-full px-4 text-[11px] font-bold uppercase tracking-widest transition-all whitespace-nowrap",
+                      isLight && !open 
+                        ? "text-zinc-700 hover:text-brand-plum hover:bg-brand-plum/5" 
+                        : "text-zinc-100/70 hover:text-white hover:bg-white/5"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Indicator Pill */}
+          <motion.div layout>
+            <div
+              className={cn(
+                "rounded-full px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest transition-all bg-white/5 border border-white/5 text-white/50 flex items-center gap-1 select-none cursor-pointer",
+                isLight && "bg-black/5 border-black/5 text-black/50"
+              )}
+            >
+              <span>{isExpanded ? "Less" : "More"}</span>
+              <ChevronDown 
+                className={cn(
+                  "w-3 h-3 transition-transform duration-300",
+                  isExpanded && "rotate-180"
+                )} 
+              />
+            </div>
+          </motion.div>
         </div>
 
-        <div className="flex lg:flex-1 justify-end items-center gap-4">
+        <div className="flex justify-end items-center gap-4 shrink-0">
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -237,7 +299,7 @@ export default function Navbar() {
           >
             <div className="flex h-full w-full flex-col justify-between gap-y-8 p-10">
               <div className="grid gap-y-4">
-                {links.map((link, i) => (
+                {allLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
                     initial={{ opacity: 0, x: 50 }}

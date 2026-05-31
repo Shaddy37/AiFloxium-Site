@@ -108,13 +108,16 @@ export default function AboutPage() {
       </section>
 
       {/* Accordion Section */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
+      <section className="py-24 md:py-32 bg-brand-bg relative overflow-hidden border-t border-brand-plum/10" data-theme="dark">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-plum-glow opacity-30 blur-[120px] rounded-full pointer-events-none -z-10" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4 text-brand-plum">WORKING STYLE</h2>
-            <p className="text-zinc-600 font-medium">How I approach projects, delivery, and technical execution.</p>
+            <h2 className="text-xl md:text-4xl font-heading font-black tracking-tight mb-4 text-white uppercase">WORKING STYLE</h2>
+            <p className="text-zinc-400 font-medium">How I approach projects, delivery, and technical execution.</p>
           </div>
-          <Accordion05 />
+          <div className="dark">
+            <Accordion05 />
+          </div>
         </div>
       </section>
 
