@@ -6,32 +6,32 @@ import Link from "next/link"
 import { CornerPlusIcons } from "@/components/ui/geometric-elements"
 
 import { motion } from "framer-motion"
-import { ArrowUpRight, Globe, Bot, LayoutTemplate, BrainCircuit } from "lucide-react"
+import { ArrowUpRight, Zap, FileText, Share2, Layers } from "lucide-react"
 
 const cardContents = [
   {
-    title: "Lead Gen on Autopilot",
+    title: "Speed-to-Lead Automation",
     description:
-      "You shouldn't be chasing leads manually. I build AI systems that find, qualify, and book them — while you sleep. First response in under 90 seconds.",
-    icon: <Bot className="w-6 h-6" />,
+      "Inbound leads go cold in minutes. We build automated outreach systems that qualify, follow up, and book prospects in under 90 seconds, securing pipeline 24/7.",
+    icon: <Zap className="w-6 h-6" />,
   },
   {
-    title: "3D Websites Built with AI",
+    title: "AI Document Extraction",
     description:
-      "A premium 3D site used to cost $10K and take months. Using Claude Code and Codex I ship the same quality — faster, cheaper, and better than a traditional agency.",
-    icon: <Globe className="w-6 h-6" />,
+      "Manually processing invoices and PDFs is slow and error-prone. We deploy AI-powered OCR systems that extract metadata and update QuickBooks or your CRM automatically with zero manual entry.",
+    icon: <FileText className="w-6 h-6" />,
   },
   {
-    title: "Social Content, Automated",
+    title: "Social Content Syndication",
     description:
-      "Posting consistently is a full-time job. I build AI pipelines that write, format, and schedule your content across LinkedIn, Instagram, and X — without touching it yourself.",
-    icon: <LayoutTemplate className="w-6 h-6" />,
+      "Writing and scheduling social content is a full-time job. We engineer custom content pipelines that repurpose long-form assets for LinkedIn and X—driven by our product ApePublish.",
+    icon: <Share2 className="w-6 h-6" />,
   },
   {
-    title: "Whatever AI Can Do for Your Business — I'll Build It",
+    title: "Custom Scaling & Integrations",
     description:
-      "CRM automation, invoice processing, internal tools, custom GPTs, voice agents, content pipelines — I find the right tool and ship the system.",
-    icon: <BrainCircuit className="w-6 h-6" />,
+      "Stuck between disconnected tools? We write custom API layers, sync databases, and act as your B2B agency's white-label AI engineering partner to scale operational capacity.",
+    icon: <Layers className="w-6 h-6" />,
   },
 ]
 
@@ -125,7 +125,7 @@ export default function RuixenBentoCards() {
           >
             <span className="w-12 h-[1px] bg-brand-plum/30" />
             <h2 className="text-white tracking-[0.3em] font-black text-xs uppercase drop-shadow-md">
-              What I Do For Your Business
+              What We Solve
             </h2>
           </motion.div>
 
@@ -136,9 +136,9 @@ export default function RuixenBentoCards() {
             className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter leading-[0.85] mb-6 uppercase drop-shadow-xl"
             style={{ textShadow: "0px 4px 20px rgba(0,0,0,0.8)" }}
           >
-            YOUR BUSINESS<br />
+            BOTTLENECKS<br />
             <span className="relative inline-block mt-2">
-              <span className="text-brush text-4xl md:text-7xl lg:text-8xl text-brand-orange">RUNS ON AI.</span>
+              <span className="text-brush text-4xl md:text-7xl lg:text-8xl text-brand-orange">WE ELIMINATE.</span>
               <motion.span
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
@@ -157,8 +157,7 @@ export default function RuixenBentoCards() {
             className="text-xl text-zinc-200 font-medium leading-tight max-w-2xl drop-shadow-md"
             style={{ textShadow: "0px 2px 10px rgba(0,0,0,0.8)" }}
           >
-            Tell me what you want — leads, a website, content, automation, anything.
-            I implement AI to make it happen. No fluff, no templates. Just results.
+            We systematically replace human friction, slow response times, and manual bookkeeping with high-performing custom operational systems.
           </motion.p>
         </div>
 

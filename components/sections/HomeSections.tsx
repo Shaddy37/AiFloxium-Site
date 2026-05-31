@@ -413,10 +413,10 @@ export function Pricing() {
         
         <div className="w-full lg:w-1/3 flex flex-col justify-center">
           <ul className="space-y-6 mb-12">
-            {[ "Deep Tool Stack Audit", "Custom n8n Pipeline Logic", "Claude Code Built Micro-SaaS", "Autonomous Voice Deployment" ].map((feature, i) => (
-               <li key={i} className="flex items-center gap-4 text-white font-medium">
-                 <CheckCircle2 className="w-5 h-5 text-brand-orange" />
-                 {feature}
+            {[ "Deep Bottleneck & Tool Stack Audit", "Self-Hosted n8n Workflow Pipelines", "Bespoke Portals & Supabase Tools", "Low-Latency Voice AI Agents" ].map((feature, i) => (
+               <li key={i} className="flex items-start gap-4 text-white font-medium">
+                 <CheckCircle2 className="w-5 h-5 text-brand-orange mt-0.5 shrink-0" />
+                 <span>{feature}</span>
                </li>
             ))}
           </ul>

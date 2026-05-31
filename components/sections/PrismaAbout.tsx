@@ -33,11 +33,11 @@ export default function PrismaAbout() {
   const headingSegments = [
     { text: "I am Shadab Shams,", className: "font-normal text-white" },
     { text: "an AI automation engineer.", className: "italic font-serif text-primary" },
-    { text: "I have skills in workflow automation, custom AI systems, and internal tools.", className: "font-normal text-white" },
+    { text: "I design and ship production-grade systems that eliminate operational noise.", className: "font-normal text-white" },
   ];
 
   const bodyText =
-    "Over the last three years, I have worked with startups, agencies, and SMBs to craft robust backend logic, custom APIs, and autonomous agent systems under AIFLOXIUM. Together, we have created work that has earned high client trust and operational scale.";
+    "Over the last three years, I have partnered with fast-growing startups, B2B agencies, and SMBs to replace fragile spreadsheet hacks with self-hosted n8n workflows and ultra-low latency voice agents. Together, we build secure, autonomous infrastructure that lets you scale capacity without growing headcount.";
 
   const chars = bodyText.split("");
   const totalChars = chars.length;

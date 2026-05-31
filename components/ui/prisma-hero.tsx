@@ -149,7 +149,7 @@ const PrismaHero = () => {
                 className="text-sm text-zinc-300 sm:text-base md:text-lg font-medium"
                 style={{ lineHeight: 1.4 }}
               >
-                Custom automation, internal tools, and AI agents that remove bottlenecks and accelerate your team&apos;s workflow.
+                Custom AI automation systems, self-hosted n8n pipelines, and low-latency voice agents built to scale your operations 24/7—without payroll bloat.
               </motion.p>
 
               <motion.div
@@ -164,9 +164,14 @@ const PrismaHero = () => {
                     <ArrowRight className="h-4 w-4 text-brand-orange" />
                   </span>
                 </Link>
-                <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-3 pl-2">
-                  ✓ Get a custom roadmap ($0 cost) • 15 mins
-                </span>
+                <div className="flex flex-col gap-1 mt-3 pl-2">
+                  <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">
+                    ✓ Get a custom roadmap ($0 cost) • 15 mins
+                  </span>
+                  <span className="text-[9px] text-zinc-500 font-semibold tracking-wider">
+                    * Deterministic AI systems built for scale — not brittle templates.
+                  </span>
+                </div>
               </motion.div>
 
             </div>

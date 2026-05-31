@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { Target, Globe, Share2, ArrowRight } from "lucide-react";
+import { Workflow, PhoneCall, LayoutDashboard, ArrowRight } from "lucide-react";
 
 interface FadingVideoProps {
   src: string;
@@ -111,22 +111,22 @@ export default function ProductionEvolved() {
 
   const cards = [
     {
-      title: "Lead Gen on Autopilot",
-      body: "You shouldn't be chasing leads manually. I build AI systems that find, qualify, and book them — while you sleep. First response in under 90 seconds.",
-      icon: Target,
-      tags: ["Find Leads", "Qualify", "Auto-Book", "90s Response"]
+      title: "Autonomous Workflows",
+      body: "We build secure, self-hosted n8n pipelines running on your own VPS. Process millions of tasks with zero scaling fees, zero data leaks, and absolute reliability.",
+      icon: Workflow,
+      tags: ["n8n.io", "Self-Hosted VPS", "API Integration", "Slack Alerts"]
     },
     {
-      title: "3D Websites Built with AI",
-      body: "A premium 3D site used to cost $10K and take months. Using Claude Code and Codex I ship the same quality — faster, cheaper, and better than a traditional agency.",
-      icon: Globe,
-      tags: ["Next.js", "Three.js", "Vibe Coding", "Speed"]
+      title: "Conversational Voice AI",
+      body: "Qualify inbound leads and book appointments automatically with under 500ms response speed voice agents that match your brand tone and integrate with your CRM.",
+      icon: PhoneCall,
+      tags: ["Vapi & Retell", "Sub-500ms Latency", "CRM Sync", "Auto-Booking"]
     },
     {
-      title: "Social Content, Automated",
-      body: "Posting consistently is a full-time job. I build AI pipelines that write, format, and schedule your content across LinkedIn, Instagram, and X — without touching it yourself.",
-      icon: Share2,
-      tags: ["LinkedIn & X", "Auto-Schedule", "Carousels", "3x Reach"]
+      title: "Bespoke Web Portals",
+      body: "Custom internal tools, dashboards, and databases built with Next.js and Supabase. Ditch messy spreadsheets and scale operations with a tailored codebase.",
+      icon: LayoutDashboard,
+      tags: ["Next.js", "Supabase", "Tailored DBs", "Code Ownership"]
     }
   ];
 
@@ -156,10 +156,10 @@ export default function ProductionEvolved() {
             {"// Capabilities"}
           </span>
           <h2 className="font-heading font-black text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-[-3px] uppercase mb-6">
-            OUR BUSINESS<br />RUNS ON AI.
+            SYSTEMS WE<br />ENGINEER.
           </h2>
           <p className="text-lg md:text-xl text-white/70 font-sans font-light leading-relaxed max-w-2xl">
-            Tell me what you want — leads, a website, content, automation, anything. I implement AI to make it happen. No fluff, no templates. Just results.
+            We architect and deploy custom operational infrastructure that automates your work, secures your client data, and removes administrative bottlenecks.
           </p>
         </motion.div>
 

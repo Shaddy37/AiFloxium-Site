@@ -94,11 +94,11 @@ export default function PrismaFeatures() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent z-10 pointer-events-none" />
           
           <p className="relative z-20 text-white text-base sm:text-lg font-bold tracking-wide">
-            Intelligent operations.
+            Intelligent operations. Powered by AIFLOXIUM.
           </p>
         </motion.div>
 
-        {/* Card 2: Project Storyboard */}
+        {/* Card 2: Self-Hosted n8n Workflows */}
         <FeatureCard index={1} isInView={isGridInView}>
           <div className="flex flex-col gap-4">
             {/* Icon Header */}
@@ -113,16 +113,16 @@ export default function PrismaFeatures() {
 
             {/* Title */}
             <h3 className="text-brand-plum text-base sm:text-lg font-bold tracking-tight">
-              Project Storyboard.
+              Self-Hosted n8n.
             </h3>
 
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-2">
               {[
-                "Infinite canvas for non-linear workflow mapping",
-                "Direct integration with CRM and database APIs",
-                "Multi-version workflow execution control",
-                "Instant exports to automated dashboards"
+                "Custom VPS deployment on AWS or DigitalOcean",
+                "Zero third-party transaction or task scaling fees",
+                "Visual canvas for complex, multi-branching API logic",
+                "Active error monitoring and instant Slack alerts"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="h-4.5 w-4.5 text-brand-orange mt-0.5 shrink-0" />
@@ -144,7 +144,7 @@ export default function PrismaFeatures() {
           </Link>
         </FeatureCard>
 
-        {/* Card 3: Smart Critiques */}
+        {/* Card 3: Low-Latency Voice AI */}
         <FeatureCard index={2} isInView={isGridInView}>
           <div className="flex flex-col gap-4">
             {/* Icon Header */}
@@ -159,15 +159,16 @@ export default function PrismaFeatures() {
 
             {/* Title */}
             <h3 className="text-brand-plum text-base sm:text-lg font-bold tracking-tight">
-              Smart Critiques.
+              Low-Latency Voice AI.
             </h3>
 
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-2">
               {[
-                "Automated execution analysis & system logs",
-                "Interactive AI commentary history",
-                "Direct n8n and Make synchronization"
+                "Under 500ms response speed (Vapi & Retell AI)",
+                "Full-duplex logic matching natural human flow",
+                "Auto-booking integrations with Google Calendar/Cal",
+                "Real-time sync to CRM (HubSpot, Salesforce, etc.)"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="h-4.5 w-4.5 text-brand-orange mt-0.5 shrink-0" />
@@ -189,7 +190,7 @@ export default function PrismaFeatures() {
           </Link>
         </FeatureCard>
 
-        {/* Card 4: Immersion Capsule */}
+        {/* Card 4: Bespoke Portals & Tools */}
         <FeatureCard index={3} isInView={isGridInView}>
           <div className="flex flex-col gap-4">
             {/* Icon Header */}
@@ -204,15 +205,16 @@ export default function PrismaFeatures() {
 
             {/* Title */}
             <h3 className="text-brand-plum text-base sm:text-lg font-bold tracking-tight">
-              Immersion Capsule.
+              Bespoke Portals & Tools.
             </h3>
 
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-2">
               {[
-                "Zero-latency autonomous agent execution",
-                "Generative logic flows matching business rules",
-                "Calendar integration for automatic scheduling"
+                "Custom web apps vibe-coded in Next.js & Supabase",
+                "AI-powered OCR for document & invoice processing",
+                "Real-time client/partner dashboard interfaces",
+                "Complete ownership of source code and databases"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="h-4.5 w-4.5 text-brand-orange mt-0.5 shrink-0" />
