@@ -78,7 +78,7 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative group h-full bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-zinc-100 p-10 transition-all duration-300 overflow-hidden"
+        className="relative group h-full bg-white rounded-2xl border border-zinc-100 p-10 transition-colors duration-300 overflow-hidden"
       >
         {/* Hover Glow */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,107,53,0.05)_0%,transparent_70%)]" />
@@ -120,8 +120,8 @@ export default function Services() {
               <div className="w-1.5 h-1.5 bg-brand-orange animate-pulse rounded-full" />
               <h2 className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase">Core Capabilities</h2>
             </div>
-            <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-brand-plum tracking-tighter leading-[0.9]">
-              WHAT I <br /> <span className="text-brand-orange text-3xl md:text-6xl lg:text-7xl mt-2">BUILD.</span>
+            <h3 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95]">
+              What I <br /> <span className="text-brand-orange text-3xl md:text-6xl lg:text-7xl mt-2">build</span>.
             </h3>
           </motion.div>
 

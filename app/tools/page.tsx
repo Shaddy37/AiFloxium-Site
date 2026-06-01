@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Clock3, FileText, Target } from 'lucide-react';
+import { ArrowRight, Clock3, FileText, Target, ChevronRight } from 'lucide-react';
 
 import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
 import { buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 import { toolsHubCards } from '@/lib/tools-data';
+import ToolWaitlistForm from '@/components/tools/ToolWaitlistForm';
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Free Automation Calculators and AI Operations Tools | AIFLOXIUM',
@@ -75,18 +76,17 @@ const valuePoints = [
   }
 ];
 
+const toolsGraphJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [breadcrumbJsonLd, collectionJsonLd]
+};
+
 export default function ToolsPage() {
   return (
-    <main className="min-h-screen bg-brand-bg text-white">
+    <main id="main-content" className="min-h-screen bg-brand-bg text-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
-        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsGraphJsonLd) }}
       />
       <Navbar />
 
@@ -105,8 +105,17 @@ export default function ToolsPage() {
           />
         </div>
 
-        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-          <div>
+        <div className="relative mx-auto max-w-6xl">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <span className="text-white font-black">Tools</span>
+          </nav>
+
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+            <div>
             <p className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.32em] text-brand-orange">
               <span className="h-px w-10 bg-brand-orange/45" />
               Engineered Operations Tools
@@ -136,7 +145,7 @@ export default function ToolsPage() {
             </div>
           </div>
 
-          <article className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-2xl md:p-8">
+          <article className="rounded-[2rem] border border-white/10 bg-zinc-900/80 p-6 md:p-8">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <p className="text-[11px] font-black uppercase tracking-[0.24em] text-brand-orange">
@@ -177,7 +186,8 @@ export default function ToolsPage() {
             </Link>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Why This Exists Section */}
       <section className="bg-[#110714] px-6 py-20 md:py-24">
@@ -248,6 +258,11 @@ export default function ToolsPage() {
                     </span>
                   </div>
                   <p className="text-sm leading-relaxed text-zinc-300">{tool.description}</p>
+                  
+                  {/* Waitlist Subscription */}
+                  <div className="mt-4">
+                    <ToolWaitlistForm toolSlug={tool.slug} toolTitle={tool.title} />
+                  </div>
                 </div>
 
                 <div className="mt-6 pt-5 border-t border-white/5">
@@ -266,7 +281,7 @@ export default function ToolsPage() {
 
       {/* Next Step CTA Section */}
       <section className="bg-[linear-gradient(180deg,#130716_0%,#0d050f_100%)] px-6 py-20 md:py-24 border-t border-white/5">
-        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-8 shadow-[0_32px_90px_rgba(0,0,0,0.24)] backdrop-blur-xl md:p-10">
+        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-zinc-900/80 p-8 md:p-10">
           <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
             Get Started
           </p>

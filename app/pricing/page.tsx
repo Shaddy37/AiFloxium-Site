@@ -26,91 +26,67 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Pricing', path: '/pricing' }
 ]);
 
-const pricingProductJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "AIFLOXIUM AI Automation Services & Retainers",
-  "image": `${SITE_URL}/brand/aifloxium-logo.png`,
-  "description": DEFAULT_DESCRIPTION,
-  "brand": {
-    "@type": "Brand",
-    "name": "AIFLOXIUM"
+const pricingTiers = [
+  {
+    '@type': 'Offer',
+    name: 'Starter Automation Project',
+    price: '2000.00',
+    priceCurrency: 'USD',
+    url: `${SITE_URL}/pricing`
   },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "USD",
-    "lowPrice": "1500",
-    "highPrice": "10000",
-    "offerCount": "3",
-    "url": `${SITE_URL}/pricing`,
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Starter Automation Project",
-        "price": "2000.00",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "2000.00",
-          "priceCurrency": "USD",
-          "valueAddedTaxIncluded": "false"
-        },
-        "url": `${SITE_URL}/pricing`
-      },
-      {
-        "@type": "Offer",
-        "name": "Starter Automation Retainer",
-        "price": "1500.00",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "1500.00",
-          "priceCurrency": "USD",
-          "valueAddedTaxIncluded": "false"
-        },
-        "url": `${SITE_URL}/pricing`
-      },
-      {
-        "@type": "Offer",
-        "name": "Scale AI Project",
-        "price": "4500.00",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "4500.00",
-          "priceCurrency": "USD",
-          "valueAddedTaxIncluded": "false"
-        },
-        "url": `${SITE_URL}/pricing`
-      },
-      {
-        "@type": "Offer",
-        "name": "Scale AI Retainer",
-        "price": "5000.00",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "5000.00",
-          "priceCurrency": "USD",
-          "valueAddedTaxIncluded": "false"
-        },
-        "url": `${SITE_URL}/pricing`
-      },
-      {
-        "@type": "Offer",
-        "name": "Enterprise Hub Retainer",
-        "price": "10000.00",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "10000.00",
-          "priceCurrency": "USD",
-          "valueAddedTaxIncluded": "false"
-        },
-        "url": `${SITE_URL}/pricing`
-      }
-    ]
+  {
+    '@type': 'Offer',
+    name: 'Starter Automation Retainer',
+    price: '1500.00',
+    priceCurrency: 'USD',
+    url: `${SITE_URL}/pricing`
+  },
+  {
+    '@type': 'Offer',
+    name: 'Scale AI Project',
+    price: '4500.00',
+    priceCurrency: 'USD',
+    url: `${SITE_URL}/pricing`
+  },
+  {
+    '@type': 'Offer',
+    name: 'Scale AI Retainer',
+    price: '5000.00',
+    priceCurrency: 'USD',
+    url: `${SITE_URL}/pricing`
+  },
+  {
+    '@type': 'Offer',
+    name: 'Enterprise Hub Retainer',
+    price: '10000.00',
+    priceCurrency: 'USD',
+    url: `${SITE_URL}/pricing`
   }
+];
+
+const pricingProductJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Product',
+      name: 'AIFLOXIUM AI Automation Services & Retainers',
+      image: `${SITE_URL}/brand/aifloxium-logo.png`,
+      description: DEFAULT_DESCRIPTION,
+      brand: {
+        '@type': 'Brand',
+        name: 'AIFLOXIUM'
+      },
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'USD',
+        lowPrice: '1500.00',
+        highPrice: '10000.00',
+        offerCount: pricingTiers.length,
+        url: `${SITE_URL}/pricing`
+      }
+    },
+    ...pricingTiers
+  ]
 };
 
 const pricingFaqJsonLd = {
@@ -152,26 +128,18 @@ const pricingFaqJsonLd = {
   ]
 };
 
+const pricingGraphJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [breadcrumbJsonLd, pricingProductJsonLd, pricingFaqJsonLd]
+};
+
 export default function PricingPage() {
   return (
-    <main className="relative min-h-screen bg-brand-bg">
-      {/* Schema Markups */}
+    <main id="main-content" className="relative min-h-screen bg-brand-bg">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingGraphJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingProductJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqJsonLd) }}
-        suppressHydrationWarning
-      />
-
       <Navbar />
       
       {/* Main Pricing Interactive Section */}

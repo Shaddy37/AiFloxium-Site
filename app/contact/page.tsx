@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 
 import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
@@ -20,30 +22,34 @@ const contactBreadcrumbJsonLd = buildBreadcrumbJsonLd([
 ]);
 
 const contactPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "@id": `${SITE_URL}/contact#webpage`,
-  "url": `${SITE_URL}/contact`,
-  "name": `Contact | ${PERSON_NAME}`,
-  "description": "Book a discovery call or send project details for automation, internal tools, and AI workflow work.",
-  "mainEntity": {
-    "@type": "ProfessionalService",
-    "@id": `${SITE_URL}#service`
+  '@type': 'ContactPage',
+  '@id': `${SITE_URL}/contact#webpage`,
+  url: `${SITE_URL}/contact`,
+  name: `Contact | ${PERSON_NAME}`,
+  description:
+    'Book a discovery call or send project details for automation, internal tools, and AI workflow work.',
+  inLanguage: 'en',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}#website`
+  },
+  about: {
+    '@type': 'ProfessionalService',
+    '@id': `${SITE_URL}#service`
   }
+};
+
+const contactGraphJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [contactBreadcrumbJsonLd, contactPageJsonLd]
 };
 
 export default function ContactPage() {
   return (
-    <main className="relative min-h-screen bg-white">
+    <main id="main-content" className="relative min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
-        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactGraphJsonLd) }}
       />
       <Navbar />
 
@@ -51,11 +57,19 @@ export default function ContactPage() {
         <div className="relative overflow-hidden rounded-[3rem] bg-hero-gradient px-6 py-16 text-white md:px-10 md:py-20">
           <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-plum-glow opacity-60 blur-[120px]" />
           <div className="relative z-10 max-w-3xl">
+            <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+              <Link href="/" className="transition-colors hover:text-white">
+                Home
+              </Link>
+              <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+              <span className="text-white font-black">Contact</span>
+            </nav>
+
             <p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-brand-orange">
               Contact
             </p>
-            <h1 className="mb-6 text-4xl font-heading font-black uppercase tracking-tighter md:text-6xl">
-              BOOK THE CALL OR SEND THE BRIEF.
+            <h1 className="mb-6 text-4xl font-heading font-black tracking-[-0.035em] md:text-6xl leading-[0.95]">
+              Book the call or send the brief.
             </h1>
             <p className="max-w-2xl text-lg font-medium leading-relaxed text-zinc-200 md:text-xl">
               Claim your free 15-minute system map session or send project context below. Scoping response guaranteed within 24 hours.

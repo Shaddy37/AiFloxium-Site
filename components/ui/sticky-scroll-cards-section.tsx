@@ -106,7 +106,7 @@ export function StickyFeatureSection() {
                 <div
                     key={index}
                     // The sticky class makes the card stick to the top of the container.
-                    className={`${feature.bgColor} grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12 p-8 md:p-16 border border-brand-plum/20 shadow-2xl sticky backdrop-blur-md rounded-[2rem] overflow-hidden group transition-all duration-500 hover:border-brand-plum/40`}
+                    className={`${feature.bgColor} grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12 p-8 md:p-16 border border-brand-plum/20 sticky rounded-[2rem] overflow-hidden group transition-colors duration-500 hover:border-brand-plum/40`}
                     // All cards will stick at the same position, creating the stacking effect.
                     style={{ top: `${150 + index * 20}px` }}
                 >

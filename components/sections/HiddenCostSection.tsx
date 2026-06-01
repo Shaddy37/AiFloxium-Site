@@ -112,9 +112,9 @@ export default function HiddenCostSection() {
             YOUR SYSTEM HAS FRICTION
           </span>
 
-          <h2 className="text-[3.5rem] sm:text-[5rem] md:text-[7rem] font-heading font-black tracking-tighter leading-[0.85] text-brand-orange uppercase mb-6">
-            BLEEDING REVENUE<br />
-            <span className="text-white">EVERY HOUR YOU WAIT.</span>
+          <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-heading font-black tracking-[-0.035em] leading-[0.95] text-brand-orange mb-6">
+            Bleeding revenue<br />
+            <span className="text-white">every hour you wait</span>.
           </h2>
 
           <p className="text-white/60 text-lg md:text-xl font-medium max-w-2xl italic">

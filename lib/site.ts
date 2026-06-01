@@ -1,6 +1,6 @@
 export const PERSON_NAME = 'Muhammad Shadab Shams';
 export const BRAND_SIGNATURE_NAME = 'Shadab';
-export const PERSON_ROLE = 'AI Automation Engineer';
+export const PERSON_ROLE = 'Agentic Systems Developer';
 export const BRAND_NAME = 'AIFLOXIUM';
 export const ORGANIZATION_NAME = 'AIFLOXIUM';
 export const SITE_URL = 'https://www.aifloxium.online';
@@ -20,6 +20,7 @@ export const APEPUBLISH_URL = 'https://www.apepublish.com/';
 export const CALENDLY_URL = 'https://calendly.com/shadabshamsaiautomation/30min';
 
 export const DEFAULT_TITLE =
-  'Muhammad Shadab Shams | AI Automation Engineer for Startups and SMBs';
+  'Muhammad Shadab Shams | Agentic Systems Developer';
 export const DEFAULT_DESCRIPTION =
-  'I build AI automation systems, internal tools, and product-grade workflows for startups and growing businesses under AIFLOXIUM.';
+  'I build advanced agentic systems, custom Agentic OS architectures, and apply AI to existing systems and databases using developer frameworks like Antigravity, Claude Code, and OpenAI Codex under AIFLOXIUM.';
+

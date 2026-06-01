@@ -183,7 +183,7 @@ const components = {
         <ArrowRight className="w-3 h-3 text-brand-plum animate-pulse" />
       </div>
       
-      <div className="overflow-x-auto rounded-b-[2rem] md:rounded-[2.5rem] border border-zinc-200 shadow-2xl bg-white">
+      <div className="overflow-x-auto rounded-b-[2rem] md:rounded-[2.5rem] border border-zinc-200 bg-white">
         <table className="w-full border-collapse text-left min-w-[700px]" {...props} />
       </div>
       

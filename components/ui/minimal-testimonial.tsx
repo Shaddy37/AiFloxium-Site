@@ -40,7 +40,7 @@ export function TestimonialsMinimal() {
 
   return (
     <div className="w-full max-w-2xl mx-auto px-6 py-12">
-      <div className="glass-card relative rounded-[2.5rem] p-10 md:p-14 overflow-hidden border border-white/5 shadow-2xl">
+      <div className="relative rounded-[2.5rem] p-10 md:p-14 overflow-hidden border border-white/5 bg-zinc-950/80">
         {/* Subtle Background Glows */}
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-72 h-72 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
@@ -56,7 +56,7 @@ export function TestimonialsMinimal() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-0"
             >
-              <p className="text-3xl md:text-4xl font-light leading-[1.2] tracking-tight text-gradient italic">
+              <p className="text-3xl md:text-4xl font-light leading-[1.2] tracking-tight text-white italic">
                  {'&quot;' + testimonials[active].quote + '&quot;'}
               </p>
             </motion.div>
@@ -66,7 +66,7 @@ export function TestimonialsMinimal() {
         {/* Author Row */}
         <div className="flex items-center gap-8 mt-12">
           {/* Avatars Container */}
-          <div className="flex items-center gap-3 p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl">
+          <div className="flex items-center gap-3 p-1.5 rounded-full bg-zinc-900 border border-white/10">
             {testimonials.map((t, i) => (
               <button
                 key={i}

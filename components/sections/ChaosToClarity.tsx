@@ -33,9 +33,9 @@ export default function ChaosToClarity() {
       <div className="absolute inset-0 bg-radial-glow opacity-30 pointer-events-none" />
 
       <div className="container mx-auto px-6 mb-16 text-center md:text-left relative z-10">
-        <h2 className="text-4xl md:text-6xl font-black font-heading tracking-tighter text-brand-orange mb-6 uppercase">
-          From Operational Chaos <br />
-          <span className="text-white">To Deterministic Clarity.</span>
+        <h2 className="text-4xl md:text-6xl font-black font-heading tracking-[-0.035em] text-white mb-6 leading-[0.95]">
+          From operational chaos <br />
+          <span className="text-brand-orange">to deterministic clarity</span>.
         </h2>
         <p className="text-xl text-white font-medium max-w-2xl">
           Fragmented spreadsheets and brittle Zapier bills leak margins daily. We replace manual workflows with self-hosted n8n pipelines and low-latency custom tools, saving 20+ hours weekly with complete data privacy.

@@ -78,7 +78,7 @@ export const IconContainer = ({
       transition={{ duration: 0.2, delay: delay ?? 0 }}
       className="relative z-50 flex flex-col items-center justify-center space-y-2"
     >
-      <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl glass-card border-brand-plum/20 hover:scale-110 transition-transform duration-300 group">
+      <div         className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-zinc-900/80 border border-brand-plum/20 hover:scale-110 transition-transform duration-300 group">
         <div className="text-white group-hover:text-brand-orange transition-colors duration-300">
           {icon || (
             <svg className="h-6 w-6 md:h-8 md:w-8" fill="currentColor" viewBox="0 0 20 20">
@@ -87,7 +87,7 @@ export const IconContainer = ({
           )}
         </div>
       </div>
-      <div className="hidden rounded-md px-2 py-1 md:block bg-brand-bg/80 mt-2 border border-brand-plum/10 backdrop-blur-md">
+      <div className="hidden rounded-md px-2 py-1 md:block bg-brand-bg mt-2 border border-brand-plum/10">
         <div className="text-center text-[10px] font-bold text-white tracking-widest uppercase font-mono group-hover:text-brand-orange transition-colors">
           {text || "Web Development"}
         </div>

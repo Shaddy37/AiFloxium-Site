@@ -1,0 +1,97 @@
+--- Page 1 ---
+Muhammad Shadab Shams 
+Agentic Systems Developer | AI Automation Specialist  
+shadabshamsaiautomation@gmail.com  |  +92 309 489 8327 | Sargodha, Pakistan |  LinkedIn  |  Portfolio 
+ 
+ 
+PROFILE 
+ 
+Agentic Systems Developer and AI Automation Specialist with a strong delivery record of 200+ production-grade 
+automation systems for international clients across e-commerce, SaaS, and services. Specializes in building intelligent, 
+always-on pipelines using Claude Code, n8n, MCP servers, voice agents, and multi-agent architectures. Founded 
+AIFLOXIUM, a client-facing AI automation agency built entirely with open-source tooling. 
+200+  Production workflows deployed 85%  Avg. reduction in manual work 
+24/7  AI voice agent uptime for clients $2,000+/mo  Saved per client on 
+average 
+TECHNICAL SKILLS 
+ 
+Agentic & AI Systems 
+Claude Code | Antigravity | OpenAI Codex | Multi-Agent 
+Orchestration | MCP Servers | RAG Pipelines | LLM 
+Integration | Prompt Engineering 
+Automation & Workflows 
+n8n | Make.com | Webhooks | REST APIs | Supabase | 
+JavaScript 
+ Voice & Conversational AI 
+Vapi | Voiceflow | AI Chatbots | 
+Lead Qualification Agents 
+Tools & Platforms 
+GitHub | Anthropic API | Open 
+Router | Next.js 
+EXPERIENCE 
+ 
+Agentic Systems Developer & AI Automation Specialist | Remote 
+— International Clients 
+2024 – Present 
+• Designed and deployed 200+ production-grade agentic workflows for clients across e-commerce, SaaS, and 
+service businesses, automating lead capture, invoicing, customer support, and data processing pipelines. 
+• Built AI voice agents using Vapi and Voiceflow to handle inbound calls, qualify leads, and book appointments 
+autonomously with 24/7 uptime and zero human intervention. 
+• Integrated Claude Code and OpenAI models into multi-step business workflows enabling intelligent document 
+parsing, automated decision-making, and agentic task execution. 
+• Architected RAG pipelines and AI research agents connecting Supabase, n8n, and external APIs to deliver context-
+aware, scalable automation solutions. 
+• Developed MCP server integrations connecting Claude to client tools including Notion, Slack, GitHub, and custom 
+databases, eliminating manual data handoffs. 
+• Delivered an average of 85% reduction in manual work per client engagement, saving clients $2,000+ per month in 
+operational costs. 
+ 
+SEO Specialist & Web Developer | ScreenOrbit.com - Independent 
+Project 
+2023 – 2024 
+• Achieved Domain Rating 7 and a number 1 Google ranking for competitive keywords through technical SEO, on-
+page optimization, and content strategy. 
+• Built and maintained full site architecture demonstrating cross-functional web development and API integration 
+capabilities. 
+ 
+ 
+ 
+ 
+ 
+--- Page 2 ---
+ 
+KEY PROJECTS 
+ 
+ApePublish  Next.js 14 | OpenRouter | Multi -Agent Architecture 
+• Founded and launched a live AI content repurposing SaaS. Transforms long-form content into full multi-platform social 
+media campaigns using a specialized multi-agent pipeline with brand voice sync. 
+• Built 12+ specialized AI agents for content calendar planning, carousel generation, LinkedIn and thread optimization, cold 
+DM writing, and direct X and LinkedIn publishing integrations. 
+• Implemented Performance DNA system that analyzes top-performing posts to identify winning hook patterns and feeds 
+insights back into the generation engine for closed-loop learning. 
+AIFLOXIUM — AI Automation Portfolio  Claude Code | n8n | Antigravity | Supabase  | MCP 
+• Founded and launched a client-facing AI automation agency. Full service infrastructure and workflow delivery pipeline 
+built entirely with open-source tooling at zero cost. 
+• Portfolio houses 200+ production workflow case studies across four domains: business and support agents, RAG and 
+research agents, SEO automation, and social media AI pipelines. 
+Claude Code Skills Library  Claude Code | Anthropic | Prompt Engineering 
+• Custom Claude Code skill library featuring a LinkedIn Post Creator with competitor analysis, 50+ proven hooks, content 
+calendar, and multi-platform publishing pipeline. 
+• Includes production skills for code review automation, client reporting generation, and deployment checklists that auto-
+load on context match. 
+Richei AI Chatbot  Voiceflow  | LLM | n8n 
+• Intelligent customer assistant with automated lead qualification and calendar booking. Achieved 100% lead capture rate 
+with full 24/7 availability. 
+• Integrated with Google Calendar and CRM via n8n webhooks for seamless appointment management and follow-up 
+automation. 
+EDUCATION 
+ 
+BS Software Engineering - COMSATS University, Sahiwal, Pakistan 2021 – 2025 
+CERTIFICATIONS 
+ 
+n8n - AI Agents, Automations & AI Voice Agents (No-Code) | Bestseller | Udemy -Verified 2026 
+Claude Code - Advanced Agentic Workflows & Skill Development | Self-directed via Nate Herk, Chase AI & Nick Saraev 
+ 
+LANGUAGES 
+English | Professional Working Proficiency Urdu / Hindi | Native 
+ 

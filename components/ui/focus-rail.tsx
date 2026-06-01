@@ -196,8 +196,8 @@ export function FocusRail({
               >
                 {/* Optimized Container */}
                 <div className={cn(
-                  "relative h-full w-full rounded-3xl overflow-hidden glass-card group/card border border-white/5",
-                  isCenter && "ring-1 ring-white/10 shadow-[0_0_50px_-12px_rgba(255,255,255,0.1)]"
+                  "relative h-full w-full rounded-3xl overflow-hidden bg-zinc-900/80 group/card border border-white/5",
+                  isCenter && "ring-1 ring-white/10"
                 )}>
                   <div className="relative h-full w-full transition-transform duration-700 ease-out grayscale group-hover/card:grayscale-0">
                     <Image
@@ -246,9 +246,9 @@ export function FocusRail({
                     </span>
                   </div>
                 )}
-                <h2 className="text-4xl font-bold font-heading tracking-tight md:text-6xl text-brand-orange">
+                <h2 className="text-4xl font-bold font-heading tracking-tight md:text-6xl text-white">
                   {activeItem.title.split(' ').map((word, i) => (
-                    <span key={i} className={i === activeItem.title.split(' ').length - 1 ? "text-gradient" : ""}>
+                    <span key={i} className={i === activeItem.title.split(' ').length - 1 ? "text-brand-orange" : ""}>
                       {word}{' '}
                     </span>
                   ))}
@@ -263,7 +263,7 @@ export function FocusRail({
           </div>
 
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 p-1.5 rounded-full bg-zinc-900/40 border border-white/5 backdrop-blur-xl">
+            <div className="flex items-center gap-2 p-1.5 rounded-full bg-zinc-900 border border-white/5">
               <button
                 onClick={handlePrev}
                 className="group p-3 text-white transition-all hover:text-white hover:bg-white/5 rounded-full"

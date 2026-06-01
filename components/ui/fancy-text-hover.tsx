@@ -35,7 +35,7 @@ function FancyWord({ label, href }: { label: string; href: string }) {
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="fancy-word text-zinc-600 hover:text-white text-5xl md:text-7xl font-heading font-black uppercase no-underline transition-colors duration-250 ease-[cubic-bezier(0.76,0,0.24,1)] tracking-tighter"
+      className="fancy-word text-zinc-600 hover:text-white text-5xl md:text-7xl font-heading font-black no-underline transition-colors duration-250 ease-[cubic-bezier(0.76,0,0.24,1)] tracking-[-0.035em]"
     >
       {label.split('').map((char, i) => {
         const childIndex = i + 1

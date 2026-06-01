@@ -57,7 +57,7 @@ export default function VsCostCalculator({
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
       {/* Left Input Box */}
-      <div className="glass-card rounded-[2rem] border border-white/5 bg-zinc-950/40 p-6 md:p-8">
+      <div className="rounded-[2rem] border border-white/5 bg-zinc-950/80 p-6 md:p-8">
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.25em] mb-4">
             <Coins className="h-3 w-3" />

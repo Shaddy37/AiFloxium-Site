@@ -146,13 +146,13 @@ export const Contact2 = ({
   };
 
   return (
-    <section id="initiate" className="py-32 px-6 bg-brand-bg border-y border-brand-plum/10">
+    <section id="initiate" className="py-16 md:py-32 px-4 sm:px-6 bg-brand-bg border-y border-brand-plum/10">
       <div className="container mx-auto max-w-6xl">
         <ContactCard
           title={title}
           description={description}
-          className="rounded-[3rem] overflow-visible border-brand-plum/20 bg-brand-bg/80 backdrop-blur-xl shadow-2xl"
-          formSectionClassName="bg-brand-plum/5 p-10 md:p-12 lg:p-14 rounded-[2rem]"
+          className="rounded-[2rem] sm:rounded-[3rem] overflow-visible border-brand-plum/20 bg-brand-bg"
+          formSectionClassName="bg-brand-plum/5 p-4 sm:p-8 md:p-12 lg:p-14 rounded-[1.5rem] sm:rounded-[2rem]"
           contactInfo={[
             {
               icon: PhoneIcon,
@@ -182,7 +182,7 @@ export const Contact2 = ({
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-14 w-full items-center justify-center rounded-xl bg-brand-orange text-center font-bold uppercase tracking-[0.1em] text-white shadow-xl shadow-brand-orange/10 transition-all hover:bg-brand-orange/90 active:scale-[0.98]"
+                className="flex min-h-12 h-auto py-3 px-4 w-full items-center justify-center rounded-xl bg-brand-orange text-center text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-white shadow-xl shadow-brand-orange/10 transition-all hover:bg-brand-orange/90 active:scale-[0.98] sm:min-h-14 sm:py-3.5 sm:px-6"
               >
                 Claim Free 15-Minute Scoping Session
               </a>
@@ -330,7 +330,7 @@ export const Contact2 = ({
                   disabled={status === "loading" || status === "success"}
                   size="lg"
                   className={cn(
-                    "w-full h-14 rounded-xl border-none font-bold uppercase tracking-wider text-sm transition-all active:scale-[0.98]",
+                    "w-full min-h-12 h-auto py-3 px-4 rounded-xl border-none font-bold uppercase tracking-wider text-xs sm:text-sm transition-all active:scale-[0.98] sm:min-h-14 sm:py-3.5 sm:px-6",
                     status === "success" 
                       ? "bg-emerald-600 text-white hover:bg-emerald-600 cursor-default" 
                       : "bg-white text-brand-bg hover:bg-zinc-100"

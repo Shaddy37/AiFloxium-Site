@@ -269,7 +269,7 @@ export default function AutomationRoiCalculator() {
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]">
-      <section className="rounded-[2.2rem] border border-black/8 bg-[#fffaf5] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.12)] md:p-8">
+      <section className="rounded-[2.2rem] border border-black/8 bg-[#fffaf5] p-6 md:p-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl">
             <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
@@ -361,7 +361,7 @@ export default function AutomationRoiCalculator() {
       </section>
 
       <section className="space-y-6">
-        <div className="rounded-[2.2rem] border border-black/8 bg-white p-6 text-black shadow-[0_30px_80px_rgba(0,0,0,0.12)] md:p-8">
+        <div className="rounded-[2.2rem] border border-black/8 bg-white p-6 text-black md:p-8">
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
             <div className="max-w-2xl">
               <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-plum">
@@ -443,7 +443,7 @@ export default function AutomationRoiCalculator() {
           </div>
         </div>
 
-        <div className="rounded-[2.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(17,7,20,0.94),rgba(11,4,13,0.98))] p-6 text-white shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:p-8">
+        <div className="rounded-[2.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(17,7,20,0.94),rgba(11,4,13,0.98))] p-6 text-white md:p-8">
           <div className="mb-6">
             <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
               <FileText className="h-4 w-4" />

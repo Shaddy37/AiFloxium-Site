@@ -4,7 +4,9 @@ import Footer from "@/components/sections/Footer";
 import { Contact2 } from "@/components/ui/contact-2";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { buildPageMetadata } from "@/lib/seo";
+import { ChevronRight } from "lucide-react";
+import { buildPageMetadata, absoluteUrl } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Resources | Free and Premium AI Automation Tools | AIFLOXIUM',
@@ -21,6 +23,59 @@ export const metadata: Metadata = buildPageMetadata({
     'Claude Code templates'
   ]
 });
+
+const resourcesGraphJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'AIFLOXIUM Resources',
+      description:
+        'Curated n8n automation workflows, Claude Code skills, AI agents, and Notion guides. Free and premium resources to supercharge your AI workflow.',
+      url: absoluteUrl('/resources'),
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}#website`
+      }
+    },
+    {
+      '@type': 'ItemList',
+      name: 'AIFLOXIUM Resources Index',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'n8n Automations',
+          url: `${absoluteUrl('/resources')}#n8n`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Claude Skills',
+          url: `${absoluteUrl('/resources')}#claude-skills`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Claude Agents',
+          url: `${absoluteUrl('/resources')}#claude-agents`
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: 'Notion Guides',
+          url: `${absoluteUrl('/resources')}#notion-guides`
+        },
+        {
+          '@type': 'ListItem',
+          position: 5,
+          name: 'Comparisons',
+          url: `${absoluteUrl('/resources')}#comparisons`
+        }
+      ]
+    }
+  ]
+};
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Data
@@ -303,7 +358,7 @@ function ResourceCard({
   blogSlug,
 }: ResourceCardProps) {
   return (
-    <div className="bg-white rounded-2xl border border-zinc-200 p-6 flex flex-col gap-4 group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1">
+    <div className="bg-white rounded-2xl border border-zinc-200 p-6 flex flex-col gap-4 group transition-colors duration-500">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-lg font-bold text-brand-plum font-heading tracking-tight leading-snug group-hover:text-brand-orange transition-colors flex-1">
@@ -405,7 +460,11 @@ function SectionHeader({
 
 export default function ResourcesPage() {
   return (
-    <main className="relative bg-white min-h-screen">
+    <main id="main-content" className="relative bg-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resourcesGraphJsonLd) }}
+      />
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
@@ -415,6 +474,14 @@ export default function ResourcesPage() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] rounded-full bg-brand-plum-glow/30 blur-[120px]" />
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
+          <nav className="mb-8 flex justify-center items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <span className="text-white font-black">Resources</span>
+          </nav>
+
           <div className="flex flex-col items-center text-center">
             <p className="text-xs font-mono text-white/70 uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-white/20 inline-block" />
@@ -422,12 +489,12 @@ export default function ResourcesPage() {
               <span className="w-6 h-[1px] bg-white/20 inline-block" />
             </p>
 
-            <h1 className="text-[2.9rem] sm:text-6xl md:text-[6.5rem] font-heading font-black text-white tracking-tighter leading-[0.9] mb-8">
-              <span className="text-brand-orange">FREE &amp;</span>
+            <h1 className="text-[clamp(2.75rem,6vw,5.5rem)] font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
+              <span className="text-brand-orange">Free &amp;</span>
               <br />
-              PREMIUM
+              premium
               <br />
-              <span className="text-brand-plum sm:text-white/40">RESOURCES.</span>
+              <span className="text-white/40">resources</span>.
             </h1>
 
             <p className="text-xl text-white max-w-2xl leading-relaxed mb-12 font-medium">
@@ -634,7 +701,7 @@ export default function ResourcesPage() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="group relative bg-brand-bg rounded-2xl border border-brand-plum/30 p-6 flex flex-col gap-4 hover:border-brand-plum/60 hover:shadow-[0_20px_50px_rgba(88,28,135,0.15)] transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-brand-bg rounded-2xl border border-brand-plum/30 p-6 flex flex-col gap-4 hover:border-brand-plum/60 transition-colors duration-500 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-brand-plum/0 group-hover:bg-brand-plum/5 transition-colors duration-500 rounded-2xl pointer-events-none" />
                 <div className="flex items-start justify-between gap-3 relative z-10">

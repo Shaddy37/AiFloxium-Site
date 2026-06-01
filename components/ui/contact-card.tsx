@@ -40,7 +40,7 @@ export function ContactCard({
 			<PlusIcon className="absolute -top-3 -right-3 h-6 w-6 text-white" />
 			<PlusIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-white" />
 			<PlusIcon className="absolute -right-3 -bottom-3 h-6 w-6 text-white" />
-			<div className="flex flex-col justify-between lg:col-span-2">
+			<div className="flex flex-col justify-between lg:col-span-2 min-w-0">
 				<div className="relative h-full space-y-4 px-4 py-8 md:p-8">
 					<h1 className="text-3xl font-bold md:text-4xl lg:text-5xl tracking-tighter uppercase font-heading">
 						{title}
@@ -57,7 +57,7 @@ export function ContactCard({
 			</div>
 			<div
 				className={cn(
-					'bg-muted/40 flex h-full w-full items-center border-t p-5 md:col-span-1 md:border-t-0 md:border-l border-white/5',
+					'bg-muted/40 flex h-full w-full items-center border-t p-5 md:col-span-1 md:border-t-0 md:border-l border-white/5 min-w-0',
 					formSectionClassName,
 				)}
 			>

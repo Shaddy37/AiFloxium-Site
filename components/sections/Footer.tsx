@@ -11,6 +11,8 @@ import {
   X_URL
 } from "@/lib/site";
 
+import { LazyVideo } from "@/components/ui/lazy-video";
+
 const SOCIAL_LINKS = [
   { label: "Twitter", href: X_URL },
   { label: "LinkedIn", href: LINKEDIN_URL },
@@ -21,12 +23,8 @@ export default function Footer() {
     <footer className="relative bg-black border-t border-white/10 overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <video
+        <LazyVideo
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
           className="object-cover w-full h-full opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60" />
@@ -47,7 +45,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
           <div className="lg:col-span-2">
             <Link href="/" className="group mb-6 inline-block">
-              <span className="text-2xl font-heading font-black tracking-widest uppercase bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-transparent drop-shadow-lg hover:from-white hover:to-white/80 transition-all duration-300 inline-block">
+              <span className="text-2xl font-heading font-black tracking-widest uppercase text-white drop-shadow-lg hover:text-white/80 transition-colors duration-300 inline-block">
                 {BRAND_NAME}
               </span>
             </Link>
@@ -108,9 +106,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between py-8 md:py-12 mb-8">
-          <h2 className="text-4xl md:text-6xl font-heading font-black tracking-tighter mb-6 md:mb-0 text-white uppercase">
-            READY TO <br />
-            <span className="text-brand-orange">BUILD?</span>
+          <h2 className="text-4xl md:text-6xl font-heading font-black tracking-[-0.035em] mb-6 md:mb-0 text-white leading-[0.95]">
+            Ready to <br />
+            <span className="text-brand-orange">build?</span>
           </h2>
           <Link
             href={CALENDLY_URL}

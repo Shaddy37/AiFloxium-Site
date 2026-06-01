@@ -70,7 +70,7 @@ export function Accordion05() {
                 <p className="text-xs font-mono text-brand-orange/60">{item.id}</p>
                 <h1
                   className={cn(
-                    "uppercase relative text-center text-3xl md:text-5xl font-heading font-black tracking-tighter transition-colors duration-300"
+                    "relative text-center text-3xl md:text-5xl font-heading font-black tracking-[-0.035em] transition-colors duration-300"
                   )}
                 >
                   {item.title}

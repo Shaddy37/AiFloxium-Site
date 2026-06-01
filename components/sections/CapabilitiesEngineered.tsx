@@ -19,13 +19,13 @@ import { useRef, useEffect, useState } from "react";
  */
 
 const words = [
-  { label: "automate.",    sublabel: "Self-hosted n8n pipelines saving 20+ hours weekly with zero scaling fees." },
-  { label: "orchestrate.", sublabel: "Voice AI agents with under 500ms latency to qualify and book leads 24/7." },
-  { label: "build.",       sublabel: "Bespoke internal dashboards replacing fragile spreadsheets in under 14 days." },
-  { label: "deploy.",      sublabel: "Automated OCR systems reducing invoice processing time by 85%." },
-  { label: "integrate.",   sublabel: "Sync HubSpot, email, and Slack to follow up with inbound leads in under 5 minutes." },
+  { label: "automate.",    sublabel: "Intelligent agentic workflows that replace repetitive operations and manual data tasks." },
+  { label: "orchestrate.", sublabel: "Custom Agentic OS architectures and multi-agent systems that run autonomously 24/7." },
+  { label: "build.",       sublabel: "Vibe-coded web applications, client portals, and bespoke database interfaces in under 14 days." },
+  { label: "deploy.",      sublabel: "Conversational voice AI agents with sub-500ms latency to book and qualify leads." },
+  { label: "integrate.",   sublabel: "Apply custom AI reasoning layers directly into your existing databases and software systems." },
   { label: "optimize.",    sublabel: "Deterministic validation checkpoints to eliminate manual entry errors entirely." },
-  { label: "ship.",        sublabel: "White-label operational workflows to double capacity without payroll bloat." },
+  { label: "ship.",        sublabel: "Complete, production-ready operational architectures to double capacity without payroll bloat." },
 ];
 
 const COUNT = words.length;
@@ -64,7 +64,7 @@ export default function CapabilitiesEngineered() {
       >
         {/* Section badge pin — only visible at the top via absolute */}
         <div className="absolute top-8 w-full flex justify-center z-30 pointer-events-none">
-          <div className="flex items-center gap-3 border border-brand-plum/10 bg-brand-plum/[0.03] backdrop-blur-md px-5 py-2 rounded-full shadow-sm">
+          <div className="flex items-center gap-3 border border-brand-plum/10 bg-brand-plum/[0.03] px-5 py-2 rounded-full">
             <div className="w-1.5 h-1.5 bg-brand-orange rounded-full animate-pulse" />
             <span className="text-brand-plum/60 tracking-[0.2em] font-black text-[10px] uppercase">
               Capabilities Engineered
@@ -94,8 +94,8 @@ export default function CapabilitiesEngineered() {
 
             {/* Headline row: "I will [verb]" */}
             <h2 
-              className="flex flex-col md:flex-row items-center md:items-baseline gap-3 md:gap-5 text-center md:text-left font-heading font-black tracking-tighter m-0 uppercase"
-              style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 1.2 }}
+              className="flex flex-col md:flex-row items-center md:items-baseline gap-3 md:gap-5 text-center md:text-left font-heading font-black tracking-[-0.035em] m-0"
+              style={{ fontSize: "clamp(2.5rem, 7vw, 5.5rem)", lineHeight: 1.1 }}
             >
               {/* Static prefix */}
               <span className="text-zinc-400 whitespace-nowrap">

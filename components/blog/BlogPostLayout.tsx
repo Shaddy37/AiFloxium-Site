@@ -2,7 +2,7 @@ import type { PostFrontmatter } from '@/lib/mdx';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Calendar, User, Zap } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Zap, ChevronRight } from 'lucide-react';
 
 import { MDXRenderer } from '@/components/blog/MDXRenderer';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -33,7 +33,6 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
           key={index}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          suppressHydrationWarning
         />
       ))}
 
@@ -42,7 +41,19 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
       <section className="relative px-6 pb-20 pt-32 md:pt-40">
         <div className="pointer-events-none absolute left-1/2 top-0 h-[1000px] w-full -translate-x-1/2 bg-radial-glow opacity-30" />
         <div className="container relative z-10 mx-auto max-w-5xl text-center">
-          <div className="mb-8 md:mb-12 flex items-center justify-start">
+          <div className="mb-8 md:mb-12 flex flex-wrap items-center justify-between gap-4">
+            <nav className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10 text-left">
+              <Link href="/" className="transition-colors hover:text-white">
+                Home
+              </Link>
+              <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+              <Link href="/blog" className="transition-colors hover:text-white">
+                Blog
+              </Link>
+              <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+              <span className="text-white font-black truncate max-w-[150px] sm:max-w-md">{title}</span>
+            </nav>
+
             <Link
               href="/blog"
               className="group inline-flex items-center gap-2 text-zinc-400 transition-colors hover:text-brand-orange"
@@ -91,7 +102,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
 
       {image ? (
         <section className="relative -mt-8 px-6 pb-8 md:-mt-12 md:pb-12">
-          <div className="relative z-10 mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.24)]">
+          <div className="relative z-10 mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-white/10">
             <Image
               src={image}
               alt={title}

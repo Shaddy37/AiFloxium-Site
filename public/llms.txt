@@ -1,6 +1,6 @@
 # AIFLOXIUM
 
-> AIFLOXIUM is an AI automation and technical implementation studio run by Muhammad Shadab Shams. The site focuses on AI workflow automation, internal tools, autonomous agents, technical SEO systems, and product-grade implementation support for startups, agencies, and SMBs.
+> AIFLOXIUM is an Agentic Systems and AI implementation studio run by Muhammad Shadab Shams. The site focuses on agentic systems, Agentic OS architectures, custom vibe coding platforms, applying AI to existing systems and databases, autonomous agents, and product-grade implementation support.
 
 ## Primary pages
 

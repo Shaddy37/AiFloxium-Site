@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
-import { buildPageMetadata } from "@/lib/seo";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { buildPageMetadata, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Terms of Use | AIFLOXIUM',
@@ -10,12 +12,42 @@ export const metadata: Metadata = buildPageMetadata({
   path: '/terms'
 });
 
+const termsWebPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${absoluteUrl('/terms')}#webpage`,
+  url: absoluteUrl('/terms'),
+  name: 'Terms of Use | AIFLOXIUM',
+  description:
+    'Terms of use for AIFLOXIUM services, deliverables, and website access.',
+  inLanguage: 'en',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': `${absoluteUrl('/')}#website`
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': `${absoluteUrl('/')}#organization`
+  }
+};
+
 export default function TermsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(termsWebPageJsonLd) }}
+      />
       <Navbar />
-      <main className="min-h-screen bg-black pt-32 pb-24">
+      <main id="main-content" className="min-h-screen bg-black pt-32 pb-24">
         <div className="container mx-auto px-6 max-w-4xl">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <span className="text-white font-black">Terms</span>
+          </nav>
           <h1 className="text-4xl md:text-5xl font-heading font-black text-white mb-8">Terms of Use</h1>
           
           <div className="prose prose-invert prose-zinc max-w-none">

@@ -35,9 +35,10 @@
   --color-brand-orange: var(--brand-orange);
   --color-brand-bg: var(--brand-bg);
   
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Clash Display", var(--font-geist-sans), sans-serif;
-  --font-brush: var(--font-permanent-marker), cursive;
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-brush: var(--font-caveat-brush), cursive;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -61,8 +62,43 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss02", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: var(--brand-orange);
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.font-mono, code, kbd, samp, pre {
+  font-family: var(--font-mono);
 }
 
 .bg-radial-glow {
@@ -82,37 +118,34 @@ body {
 }
 
 .glass-card {
-  background: rgba(24, 24, 27, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  box-shadow: 
-    0 4px 24px -1px rgba(0, 0, 0, 0.2),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.02);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .glass-card:hover {
-  background: rgba(39, 39, 42, 0.5);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 20px 40px -12px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.text-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #d8b4fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: rgba(39, 39, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .text-brush {
   font-family: var(--font-brush);
+  font-weight: 400;
   color: var(--brand-orange);
-  letter-spacing: -0.02em;
-  transform: rotate(-1deg);
+  letter-spacing: -0.01em;
+  font-size: 0.78em;
+  line-height: 1;
   display: inline-block;
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+  font-family: var(--font-sans);
 }
 
 .bg-brand-plum-glow {

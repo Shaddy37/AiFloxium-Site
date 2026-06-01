@@ -52,7 +52,7 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
   const lines = code.replace(/\n$/, '').split('\n');
 
   return (
-    <div className="my-10 overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-950 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+    <div className="my-10 overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-950">
       <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/80 px-5 py-3">
         <div className="flex gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />

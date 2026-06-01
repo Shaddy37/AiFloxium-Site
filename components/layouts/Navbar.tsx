@@ -9,7 +9,10 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
+import { useFocusTrap } from '@/components/hooks/use-focus-trap';
 import { BRAND_NAME, BRAND_SIGNATURE_NAME, CALENDLY_URL } from '@/lib/site';
+
+const MOBILE_MENU_ID = 'mobile-menu';
 
 const coreLinks = [
   { name: "Projects", href: "/projects" },
@@ -65,6 +68,21 @@ export default function Navbar() {
   const lastScrollY = React.useRef(0);
   const [visible, setVisible] = React.useState(true);
   const [isLight, setIsLight] = React.useState(false);
+  const mobileMenuRef = React.useRef<HTMLDivElement>(null);
+
+  useFocusTrap(mobileMenuRef, open);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [open]);
 
   // Handle scroll-related effects (visibility and theme checking)
   React.useEffect(() => {
@@ -144,7 +162,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="relative flex items-center gap-3"
             >
-              <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+              <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                 <Image
                   src="/brand/aifloxium-logo.png"
                   alt="AIFLOXIUM founder logo"
@@ -156,9 +174,9 @@ export default function Navbar() {
               <div className="flex flex-col leading-none">
                 <span className={cn(
                   "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
-                  isLight && !open 
-                    ? "text-brand-plum" 
-                    : "bg-gradient-to-r from-white via-white to-brand-plum bg-clip-text text-transparent drop-shadow-sm"
+                  isLight && !open
+                    ? "text-brand-plum"
+                    : "text-white drop-shadow-sm"
                 )}>
                   {BRAND_NAME}
                 </span>
@@ -273,15 +291,17 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-          <Button 
-            size="icon" 
-            variant="ghost" 
-            onClick={() => setOpen(!open)} 
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => setOpen(!open)}
             className={cn(
               "lg:hidden z-[110] transition-colors",
               isLight && !open ? "text-brand-plum" : "text-white"
             )}
             aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls={MOBILE_MENU_ID}
           >
             <MenuToggleIcon open={open} className="size-6" duration={300} />
           </Button>
@@ -291,10 +311,15 @@ export default function Navbar() {
       <AnimatePresence mode="wait">
         {open && (
           <motion.div
+            id={MOBILE_MENU_ID}
+            ref={mobileMenuRef}
             initial="hidden"
             animate="visible"
             exit="exit"
             variants={mobileMenuVariants}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
             className="bg-brand-bg fixed inset-0 z-[105] flex flex-col overflow-hidden pt-24 md:hidden"
           >
             <div className="flex h-full w-full flex-col justify-between gap-y-8 p-10">

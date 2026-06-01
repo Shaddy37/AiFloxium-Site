@@ -58,8 +58,8 @@ const ProjectFocus = () => {
           <span className="w-12 h-[1px] bg-zinc-800" /> Operational Excellence
           <span className="w-12 h-[1px] bg-zinc-800" />
         </h2>
-        <h3 className="text-5xl md:text-8xl font-heading font-black text-brand-orange tracking-tighter leading-[0.85] mb-8">
-          SYSTEMS WE <br /> <span className="text-gradient">HAVE DEPLOYED.</span>
+        <h3 className="text-5xl md:text-8xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
+          Systems we <br /> <span className="text-brand-orange">have deployed</span>.
         </h3>
         <p className="text-white font-medium max-w-2xl mx-auto text-sm md:text-lg opacity-80 leading-relaxed">
           Proprietary architectures and agentic workflows designed to eradicate 

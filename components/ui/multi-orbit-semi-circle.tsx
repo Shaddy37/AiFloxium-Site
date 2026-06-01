@@ -115,8 +115,8 @@ export default function MultiOrbitSemiCircle() {
       
       <div className="relative flex flex-col items-center text-center z-10 container mx-auto px-6">
         <span className="text-white font-mono text-sm tracking-[0.3em] uppercase mb-6 block">INFRASTRUCTURE // SYNC</span>
-        <h2 className="mb-8 text-5xl md:text-7xl font-heading font-black text-brand-orange tracking-tighter leading-none">
-          UNIVERSAL <br /> <span className="text-zinc-600">SYNERGY.</span>
+        <h2 className="mb-8 text-5xl md:text-7xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95]">
+          Universal <br /> <span className="text-zinc-500">synergy</span>.
         </h2>
         <p className="mb-20 max-w-xl text-white font-medium leading-relaxed md:text-lg">
           Our agents bridge the gap across your entire tech stack, deploying custom protocols directly into your core workflow.

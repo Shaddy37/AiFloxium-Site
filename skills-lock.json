@@ -5,6 +5,12 @@
       "source": "kylezantos/design-motion-principles",
       "sourceType": "github",
       "computedHash": "8afe9d89a0970cb6f26e42175492a992fd5bbdf8f35d8d80f850a56fb20c2774"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "d7a07155448a6ac09ec3078b0de05f093e0e7e0b7fa92d451f3883d233386050"
     }
   }
 }

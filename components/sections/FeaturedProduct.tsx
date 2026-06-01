@@ -25,10 +25,10 @@ export default function FeaturedProduct() {
             <p className="text-brand-orange text-xs font-black uppercase tracking-[0.3em] mb-6">
               Featured product
             </p>
-            <h2 className="text-4xl md:text-6xl font-heading font-black text-brand-orange tracking-tighter leading-[0.9] mb-6">
-              APEPUBLISH
+            <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-6">
+              ApePublish
               <br />
-              <span className="text-brush text-3xl md:text-5xl">SHIPPED.</span>
+              <span className="text-brush text-3xl md:text-5xl text-brand-orange">shipped</span>.
             </h2>
             <p className="text-white text-lg leading-relaxed max-w-2xl mb-8">
               ApePublish is a live SaaS product I recently built. It turns long-form

@@ -35,17 +35,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] font-heading font-black tracking-tighter leading-[0.8] select-none"
+              className="text-4xl sm:text-5xl md:text-8xl lg:text-[6rem] font-heading font-black tracking-[-0.035em] leading-[0.95] select-none"
             >
               <span className="block relative">
-                <span className="bg-gradient-to-br from-white via-white to-zinc-400/80 bg-clip-text text-transparent font-black relative z-10">
-                  STOP DOING
+                <span className="text-white font-black relative z-10">
+                  Stop doing
                 </span>
               </span>
               <span className="block mt-4 md:mt-8">
-                <span className="text-brush text-5xl sm:text-6xl md:text-8xl lg:text-9xl px-4 py-2 border-2 border-brand-orange/30 rounded-xl bg-brand-orange/5 rotate-[-2deg] inline-block">
-                  ROBOT WORK.
-                </span>
+                <span className="text-brush text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] text-brand-orange inline-block">
+                  robot work
+                </span>.
               </span>
             </motion.h1>
           </div>
@@ -59,7 +59,7 @@ export default function Hero() {
             <p className="text-lg md:text-2xl text-zinc-200 leading-relaxed font-medium tracking-tight px-4 md:px-0">
               Your team deserves to work on <span className="text-white font-bold">high-level strategy</span>, not spreadsheets. I build AI systems that reclaim 40+ hours every week.
             </p>
-            <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-brand-plum/30 bg-brand-plum/10 backdrop-blur-md">
+            <div className="inline-flex items-center gap-3 md:gap-4 px-4 py-1.5 md:px-5 md:py-2 rounded-lg border border-brand-plum/30 bg-brand-plum/10">
                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-white">AI Automation Agency Protocol // v4.0</span>
             </div>
           </motion.div>
@@ -84,7 +84,7 @@ export default function Hero() {
           {/* Geometric Glow Backplate */}
           <div className="absolute inset-0 bg-white blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full" />
           
-          <div className="relative flex items-center gap-4 bg-brand-bg border border-brand-orange/30 pl-8 pr-4 py-4 rounded-full backdrop-blur-3xl shadow-[0_0_50px_rgba(88,28,135,0.3)] overflow-hidden min-w-[200px]">
+          <div className="relative flex items-center gap-4 bg-brand-bg border border-brand-orange/30 pl-8 pr-4 py-4 rounded-full overflow-hidden min-w-[200px]">
             <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/5 to-transparent skew-x-[-20deg] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
             <div className="flex flex-col items-start">
               <span className="text-[9px] font-black text-brand-orange tracking-[0.3em] uppercase leading-none mb-1">Initiate Protocol</span>

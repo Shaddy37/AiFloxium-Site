@@ -39,61 +39,56 @@ export default async function ServicePage({ params }: Props) {
   const currentIndex = servicesData.findIndex((s) => s.slug === slug);
   const nextService = servicesData[(currentIndex + 1) % servicesData.length];
 
+  const priceMap: Record<string, string> = {
+    "n8n-workflow-automation": "2000.00",
+    "autonomous-voice-agents": "2500.00",
+    "vibe-coding": "1500.00",
+    "seo-optimization": "1800.00",
+    "autonomous-agents": "3000.00"
+  };
+  const servicePrice = priceMap[slug] ?? "5000.00";
+
   const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${SITE_URL}/services/${slug}#service`,
-    "name": service.title,
-    "description": service.description,
-    "provider": {
-      "@type": "ProfessionalService",
-      "@id": `${SITE_URL}#service`
+    '@type': 'Service',
+    '@id': `${SITE_URL}/services/${slug}#service`,
+    name: service.title,
+    description: service.description,
+    provider: {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE_URL}#service`
     },
-    "serviceType": "AI Automation",
-    "areaServed": "Worldwide",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": service.slug === "n8n-workflow-automation" ? "2000.00" :
-               service.slug === "autonomous-voice-agents" ? "2500.00" :
-               service.slug === "vibe-coding" ? "1500.00" :
-               service.slug === "seo-optimization" ? "1800.00" :
-               service.slug === "autonomous-agents" ? "3000.00" :
-               "5000.00",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "price": service.slug === "n8n-workflow-automation" ? "2000.00" :
-                 service.slug === "autonomous-voice-agents" ? "2500.00" :
-                 service.slug === "vibe-coding" ? "1500.00" :
-                 service.slug === "seo-optimization" ? "1800.00" :
-                 service.slug === "autonomous-agents" ? "3000.00" :
-                 "5000.00",
-        "priceCurrency": "USD"
-      },
-      "url": `${SITE_URL}/services/${slug}`
+    serviceType: 'AI Automation',
+    areaServed: {
+      '@type': 'Place',
+      name: 'Worldwide'
     },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "AI Services",
-      "itemListElement": service.useCases.map((uc) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": uc
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: servicePrice,
+      url: `${SITE_URL}/services/${slug}`
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'AI Services',
+      itemListElement: service.useCases.map((uc) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: uc
         }
       }))
     }
   };
 
   const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": service.faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
+    '@type': 'FAQPage',
+    mainEntity: service.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
       }
     }))
   };
@@ -104,22 +99,16 @@ export default async function ServicePage({ params }: Props) {
     { name: service.title, path: `/services/${slug}` }
   ]);
 
+  const serviceGraphJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [serviceJsonLd, faqJsonLd, breadcrumbJsonLd]
+  };
+
   return (
-    <main className="relative bg-brand-bg min-h-screen">
+    <main id="main-content" className="relative bg-brand-bg min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceGraphJsonLd) }}
       />
       <Navbar />
 
@@ -142,12 +131,16 @@ export default async function ServicePage({ params }: Props) {
 
         <div className="container mx-auto max-w-6xl relative z-10">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-zinc-600 text-sm mb-12 font-medium">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-brand-plum">{service.title}</span>
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <Link href="/services" className="transition-colors hover:text-white">
+              Services
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <span className="text-white font-black">{service.title}</span>
           </nav>
 
           {/* Section pill */}
@@ -156,8 +149,8 @@ export default async function ServicePage({ params }: Props) {
             <span className="text-white tracking-[0.2em] font-medium text-xs uppercase">Service</span>
           </div>
 
-          <h1 className="text-5xl md:text-8xl font-heading font-black text-white tracking-tighter leading-[0.9] mb-8 uppercase">
-            {service.title.split(' ').slice(0, -1).join(' ')} <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-2">{service.title.split(' ').pop()}</span>.
+          <h1 className="text-5xl md:text-8xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
+            {service.title.split(' ').slice(0, -1).join(' ')} <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-2 text-brand-orange">{service.title.split(' ').pop()}</span>.
           </h1>
           <p className="text-xl md:text-2xl text-white font-medium max-w-2xl leading-relaxed mb-12">
             {service.tagline}
@@ -192,9 +185,9 @@ export default async function ServicePage({ params }: Props) {
             <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-6 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-brand-plum/30" /> What it is
             </p>
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tighter leading-[1.1] mb-8">
-              WHAT THIS SERVICE DOES<br />
-              <span className="text-brush text-2xl md:text-4xl mt-2">AND HOW IT HELPS.</span>
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em] leading-[1.05] mb-8">
+              What this service does<br />
+              <span className="text-brush text-2xl md:text-4xl mt-2 text-brand-orange">and how it helps</span>.
             </h2>
           </div>
           <div>
@@ -215,8 +208,8 @@ export default async function ServicePage({ params }: Props) {
             <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-brand-plum/30" /> Process
             </p>
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tighter leading-[1.0]">
-              HOW I DELIVER IT.
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em] leading-[1.05]">
+              How I deliver it.
             </h2>
           </div>
 
@@ -233,7 +226,7 @@ export default async function ServicePage({ params }: Props) {
                   </div>
                   {/* Content */}
                   <div className="pb-12 flex-1">
-                    <h3 className="text-xl font-heading font-bold text-brand-orange tracking-tight mb-3 group-hover:text-brand-orange transition-colors uppercase">
+                    <h3 className="text-xl font-heading font-bold text-white tracking-tight mb-3 group-hover:text-brand-orange transition-colors">
                       {step.title}
                     </h3>
                     <p className="text-white font-medium leading-relaxed group-hover:text-white transition-colors">
@@ -254,8 +247,8 @@ export default async function ServicePage({ params }: Props) {
             <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-brand-plum/30" /> Use Cases
             </p>
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tighter">
-              REAL PROBLEMS I SOLVE.
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em]">
+              Real problems I solve.
             </h2>
           </div>
 
@@ -282,8 +275,8 @@ export default async function ServicePage({ params }: Props) {
             <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-brand-plum/30" /> Tech Stack
             </p>
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tighter">
-              BUILT WITH THE RIGHT TOOLS.
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em]">
+              Built with the right tools.
             </h2>
           </div>
 
@@ -296,7 +289,7 @@ export default async function ServicePage({ params }: Props) {
                 <p className="font-mono text-brand-orange text-xs mb-2 font-black tracking-widest">
                   {String(i + 1).padStart(2, "0")} {"//"}
                 </p>
-                <p className="font-heading font-bold text-white text-lg tracking-tight group-hover:text-brand-orange transition-colors uppercase">
+                <p className="font-heading font-bold text-white text-lg tracking-tight group-hover:text-brand-orange transition-colors">
                   {tech.name}
                 </p>
                 <p className="text-white text-sm font-medium mt-1 uppercase tracking-widest">{tech.role}</p>
@@ -313,8 +306,8 @@ export default async function ServicePage({ params }: Props) {
             <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
               <span className="w-6 h-[1px] bg-brand-plum/30" /> FAQ
             </p>
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-orange tracking-tighter">
-              QUESTIONS ANSWERED.
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em]">
+              Questions answered.
             </h2>
           </div>
 
@@ -324,7 +317,7 @@ export default async function ServicePage({ params }: Props) {
                 key={i}
                 className="p-8 border border-brand-plum/20 bg-brand-plum/5 hover:border-brand-orange/30 hover:bg-brand-plum/10 transition-all group cursor-default rounded-2xl"
               >
-                <h3 className="text-lg font-heading font-bold text-brand-orange tracking-tight mb-3 flex items-start gap-4 uppercase group-hover:text-brand-orange transition-colors">
+                <h3 className="text-lg font-heading font-bold text-white tracking-tight mb-3 flex items-start gap-4 group-hover:text-brand-orange transition-colors">
                   <span className="font-bold text-brand-plum text-sm shrink-0 mt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -349,8 +342,8 @@ export default async function ServicePage({ params }: Props) {
           <p className="text-brand-plum tracking-[0.2em] font-bold text-xs uppercase mb-8 flex items-center justify-center gap-4">
             <span className="w-8 h-[1px] bg-brand-plum/30" /> Start Today
           </p>
-          <h2 className="text-4xl md:text-6xl font-heading font-black text-brand-orange tracking-tighter leading-[0.95] mb-8 uppercase">
-            {service.ctaHeading.split(' ').slice(0, -2).join(' ')} <span className="text-brush text-2xl md:text-4xl ml-2">{service.ctaHeading.split(' ').slice(-2).join(' ')}</span>
+          <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
+            {service.ctaHeading.split(' ').slice(0, -2).join(' ')} <span className="text-brush text-2xl md:text-4xl ml-2 text-brand-orange">{service.ctaHeading.split(' ').slice(-2).join(' ')}</span>
           </h2>
           <p className="text-white text-xl font-medium max-w-xl mx-auto leading-relaxed mb-12">
             {service.ctaSubtext}
@@ -375,7 +368,7 @@ export default async function ServicePage({ params }: Props) {
         >
           <div>
             <p className="text-brand-plum text-xs font-black uppercase tracking-widest mb-2">Next Service</p>
-            <p className="text-white font-heading font-black text-2xl md:text-4xl tracking-tighter uppercase group-hover:text-brand-orange transition-colors">
+            <p className="text-white font-heading font-black text-2xl md:text-4xl tracking-[-0.035em] group-hover:text-brand-orange transition-colors">
               {nextService.title}
             </p>
           </div>

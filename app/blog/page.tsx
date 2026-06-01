@@ -38,7 +38,7 @@ export default async function BlogPage() {
   };
 
   return (
-    <main className="relative bg-brand-bg min-h-screen text-white font-medium selection:bg-brand-orange selection:text-black overflow-x-hidden">
+    <main id="main-content" className="relative bg-brand-bg min-h-screen text-white font-medium selection:bg-brand-orange selection:text-black overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexJsonLd) }}
@@ -50,13 +50,21 @@ export default async function BlogPage() {
       <section className="pt-40 pb-20 px-6 relative bg-hero-gradient overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-brand-plum-glow opacity-80 pointer-events-none" />
         <div className="container mx-auto max-w-6xl text-center relative z-10">
+          <nav className="mb-8 flex justify-center items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <span className="text-white font-black">Blog</span>
+          </nav>
+
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-white/5 mb-8 animate-fade-in-up">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span className="font-mono text-[10px] uppercase tracking-widest text-white">Research & Intelligence</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white tracking-tighter mb-12 leading-[0.8] uppercase animate-fade-in-up delay-100">
-            INSIGHTS <br /><span className="text-brush text-5xl md:text-7xl lg:text-9xl ml-4">HUB.</span>
+          <h1 className="text-6xl md:text-8xl lg:text-[6rem] font-black text-white tracking-[-0.035em] mb-12 leading-[0.95] animate-fade-in-up delay-100">
+            Insights <br /><span className="text-brush text-5xl md:text-7xl lg:text-[5rem] ml-4 text-brand-orange">hub</span>.
           </h1>
           
           <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed italic border-l-2 border-zinc-800 pl-8 animate-fade-in delay-200">
@@ -69,7 +77,7 @@ export default async function BlogPage() {
       {posts.length > 0 && (
         <section className="py-20 px-6">
           <div className="container mx-auto max-w-6xl">
-            <Link href={`/blog/${posts[0].slug}`} className="group block relative overflow-hidden rounded-[3rem] border border-brand-plum/20 bg-brand-plum/5 backdrop-blur-xl hover:bg-brand-plum/10 transition-colors">
+            <Link href={`/blog/${posts[0].slug}`} className="group block relative overflow-hidden rounded-[3rem] border border-brand-plum/20 bg-brand-plum/5 hover:bg-brand-plum/10 transition-colors">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="aspect-[16/10] lg:aspect-auto relative overflow-hidden order-1 lg:order-2 bg-brand-bg/50">
                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-brand-bg via-brand-bg/30 to-transparent opacity-80" />
@@ -131,7 +139,7 @@ export default async function BlogPage() {
               <Link 
                 key={post.slug} 
                 href={`/blog/${post.slug}`}
-                className="group p-8 md:p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:border-brand-plum/30 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-20px_rgba(88,28,135,0.15)]"
+                className="group p-8 md:p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:border-brand-plum/30 hover:bg-white transition-colors duration-500"
               >
                 <div className="relative mb-8 aspect-[16/10] overflow-hidden rounded-[1.75rem] border border-brand-plum/10 bg-white">
                   <Image

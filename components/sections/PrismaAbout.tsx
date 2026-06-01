@@ -32,12 +32,12 @@ export default function PrismaAbout() {
 
   const headingSegments = [
     { text: "I am Shadab Shams,", className: "font-normal text-white" },
-    { text: "an AI automation engineer.", className: "italic font-serif text-primary" },
-    { text: "I design and ship production-grade systems that eliminate operational noise.", className: "font-normal text-white" },
+    { text: "an Agentic Systems Developer.", className: "italic font-serif text-primary" },
+    { text: "I build agentic systems, Agentic OS, and apply AI to existing databases to eliminate operational noise.", className: "font-normal text-white" },
   ];
 
   const bodyText =
-    "Over the last three years, I have partnered with fast-growing startups, B2B agencies, and SMBs to replace fragile spreadsheet hacks with self-hosted n8n workflows and ultra-low latency voice agents. Together, we build secure, autonomous infrastructure that lets you scale capacity without growing headcount.";
+    "Previously focusing on workflow engines, I shifted to Agentic AI with the release of Claude Code. Today, I use developer frameworks like Antigravity, Claude Code, and OpenAI Codex to build agentic operating systems, vibe-coded dashboards, and low-latency voice agents. I deploy secure, autonomous infrastructure that lets you scale capacity without payroll bloat.";
 
   const chars = bodyText.split("");
   const totalChars = chars.length;
@@ -46,14 +46,17 @@ export default function PrismaAbout() {
     <section 
       id="about" 
       ref={containerRef}
-      className="theme-prisma bg-black py-20 md:py-32 px-4 md:px-8 border-b border-white/5"
+      className="theme-prisma bg-black py-20 md:py-32 px-4 md:px-8 border-b border-white/5 relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto bg-[#101010] rounded-[2rem] p-8 md:p-16 flex flex-col items-center text-center gap-8 md:gap-12 relative overflow-hidden border border-white/5">
+      {/* Background radial violet glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-brand-plum/15 blur-[120px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto bg-gradient-to-br from-[#1f0b27] via-[#130716] to-[#0c030d] rounded-[2rem] p-8 md:p-16 flex flex-col items-center text-center gap-8 md:gap-12 relative overflow-hidden border border-brand-plum/25">
         
         {/* Top small label */}
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 relative z-10">
           <span className="text-primary text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em]">
-            AI Automation Expert
+            Agentic Systems Expert
           </span>
           <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
         </div>

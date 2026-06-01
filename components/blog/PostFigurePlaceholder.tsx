@@ -4,7 +4,7 @@ interface PostFigurePlaceholderProps {
 
 export function PostFigurePlaceholder({ alt }: PostFigurePlaceholderProps) {
   return (
-    <figure className="my-10 overflow-hidden rounded-[2.5rem] border border-zinc-200 bg-[linear-gradient(135deg,#111827,#1f2937_55%,#374151)] shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
+    <figure className="my-10 overflow-hidden rounded-[2.5rem] border border-zinc-200 bg-[linear-gradient(135deg,#111827,#1f2937_55%,#374151)]">
       <div
         aria-label={alt}
         className="flex aspect-[16/9] items-center justify-center px-8 text-center"

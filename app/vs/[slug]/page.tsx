@@ -41,6 +41,12 @@ const iconMap = {
   Zap
 };
 
+const serviceMapping: Record<string, { label: string; href: string }> = {
+  'n8n-vs-zapier': { label: 'Explore n8n Services', href: '/services/n8n-workflow-automation' },
+  'n8n-vs-make': { label: 'Explore n8n Services', href: '/services/n8n-workflow-automation' },
+  'voice-ai-vs-twilio-autodialer': { label: 'Explore Voice AI Services', href: '/services/autonomous-agents' }
+};
+
 // Simple bold tag formatter helper
 function renderFormattedText(text: string) {
   if (!text) return null;
@@ -87,12 +93,11 @@ export default async function VsComparisonPage({ params }: PageProps) {
   // Build JSON-LD structured schemas
   const breadcrumbSchema = buildBreadcrumbJsonLd([
     { name: 'Home', path: '/' },
-    { name: 'Comparisons', path: `/vs/${slug}` },
+    { name: 'Comparisons', path: '/vs' },
     { name: data.title, path: `/vs/${slug}` }
   ]);
 
   const faqSchema = {
-    '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: data.faqs.map(faq => ({
       '@type': 'Question',
@@ -105,75 +110,58 @@ export default async function VsComparisonPage({ params }: PageProps) {
   };
 
   const comparisonWebPageSchema = {
-    '@context': 'https://schema.org',
     '@type': 'WebPage',
     '@id': `${SITE_URL}/vs/${slug}#webpage`,
-    'url': `${SITE_URL}/vs/${slug}`,
-    'name': `${data.title} Comparison`,
-    'description': data.metaDescription,
-    'about': [
-      {
-        '@type': 'Product',
-        'name': `AIFLOXIUM ${data.ourName}`,
-        'brand': {
-          '@type': 'Brand',
-          'name': 'AIFLOXIUM'
-        }
-      },
-      {
-        '@type': 'Product',
-        'name': data.competitorName,
-        'brand': {
-          '@type': 'Brand',
-          'name': data.competitorName
-        }
-      }
-    ]
+    url: `${SITE_URL}/vs/${slug}`,
+    name: `${data.title} Comparison`,
+    description: data.metaDescription,
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/brand/aifloxium-logo.png`
+    },
+    inLanguage: 'en',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}#website`
+    }
   };
 
   const productSchema = {
-    '@context': 'https://schema.org',
     '@type': 'Product',
-    'name': `AIFLOXIUM ${data.ourName} Setup`,
-    'image': `${SITE_URL}/brand/aifloxium-logo.png`,
-    'description': data.overview,
-    'brand': {
+    name: `AIFLOXIUM ${data.ourName} Setup`,
+    image: `${SITE_URL}/brand/aifloxium-logo.png`,
+    description: data.overview,
+    brand: {
       '@type': 'Brand',
-      'name': 'AIFLOXIUM'
+      name: 'AIFLOXIUM'
     },
-    'offers': {
+    category: 'AI Automation Software',
+    offers: {
       '@type': 'AggregateOffer',
-      'priceCurrency': 'USD',
-      'lowPrice': '1500.00',
-      'highPrice': '10000.00',
-      'offerCount': '3',
-      'url': `${SITE_URL}/pricing`
+      priceCurrency: 'USD',
+      lowPrice: '1500.00',
+      highPrice: '10000.00',
+      offerCount: 3,
+      url: `${SITE_URL}/pricing`
     }
+  };
+
+  const comparisonGraphJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema,
+      faqSchema,
+      comparisonWebPageSchema,
+      productSchema
+    ]
   };
 
   return (
     <SmoothScroll>
-      <main className="relative min-h-screen bg-brand-bg text-foreground overflow-x-hidden">
-        {/* Inject Structured Data */}
+      <main id="main-content" className="relative min-h-screen bg-brand-bg text-foreground overflow-x-hidden">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-          suppressHydrationWarning
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-          suppressHydrationWarning
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(comparisonWebPageSchema) }}
-          suppressHydrationWarning
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(comparisonGraphJsonLd) }}
         />
 
         {/* Global Purple/Plum Radial Glow behind Hero */}
@@ -184,13 +172,17 @@ export default async function VsComparisonPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 relative">
           
           {/* Breadcrumbs & Back */}
-          <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-widest mb-8">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
             <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-            <span className="text-zinc-600">Comparisons</span>
+            <Link href="/vs" className="transition-colors hover:text-white">
+              Comparisons
+            </Link>
             <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
             <span className="text-white font-black">{data.title}</span>
-          </div>
+          </nav>
 
           {/* Hero Header */}
           <div className="max-w-4xl mb-16">
@@ -206,11 +198,11 @@ export default async function VsComparisonPage({ params }: PageProps) {
           </div>
 
           {/* TL;DR Summary Block (Restructured) */}
-          <div className="glass-card rounded-[2rem] border border-white/5 bg-zinc-950/40 p-6 md:p-8 mb-16 relative overflow-hidden">
+          <div className="rounded-[2rem] border border-white/5 bg-zinc-950/80 p-6 md:p-8 mb-16 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
-            <h2 className="text-lg font-heading font-black text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+            <h2 className="text-lg font-heading font-black text-white tracking-[-0.035em] mb-3 flex items-center gap-2">
               <Info className="h-5 w-5 text-primary" />
-              The Verdict
+              The verdict
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 mt-4">
@@ -264,8 +256,8 @@ export default async function VsComparisonPage({ params }: PageProps) {
               </p>
             </div>
 
-            <div className="overflow-x-auto rounded-[2rem] border border-white/5 shadow-2xl">
-              <table className="w-full text-left border-collapse bg-zinc-950/30 backdrop-blur-md">
+            <div className="overflow-x-auto rounded-[2rem] border border-white/5">
+              <table className="w-full text-left border-collapse bg-zinc-950">
                 <thead>
                   <tr className="border-b border-white/5 bg-zinc-950/60">
                     <th className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-white w-[25%]">Feature / Metric</th>
@@ -328,7 +320,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
               {data.deepComparison.map((section, idx) => {
                 const Icon = iconMap[section.icon] || Zap;
                 return (
-                  <div key={idx} className="glass-card rounded-[2rem] border border-white/5 bg-zinc-950/40 p-6 md:p-8 flex flex-col justify-between">
+                   <div key={idx} className="rounded-[2rem] border border-white/5 bg-zinc-950/80 p-6 md:p-8 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="h-12 w-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
@@ -443,10 +435,10 @@ export default async function VsComparisonPage({ params }: PageProps) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/"
+                href={serviceMapping[slug]?.href || '/services'}
                 className="w-full sm:w-auto flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 px-8 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-all"
               >
-                Back to Home
+                {serviceMapping[slug]?.label || 'Explore Services'}
               </Link>
             </div>
           </section>
@@ -465,7 +457,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
 
             <div className="space-y-4">
               {data.faqs.map((faq, idx) => (
-                <div key={idx} className="p-6 rounded-2xl border border-white/5 bg-zinc-950/20 backdrop-blur-md">
+                <div key={idx} className="p-6 rounded-2xl border border-white/5 bg-zinc-950">
                   <h3 className="text-base font-bold text-white mb-2 flex gap-3 items-start">
                     <span className="h-6 w-6 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-xs shrink-0 mt-0.5">Q</span>
                     <span>{faq.question}</span>

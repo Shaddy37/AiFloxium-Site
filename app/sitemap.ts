@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9
     },
+    { path: '/vs', file: 'app/vs/page.tsx', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/ai-consulting', file: 'app/ai-consulting/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/privacy', file: 'app/privacy/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
     { path: '/terms', file: 'app/terms/page.tsx', changeFrequency: 'yearly', priority: 0.3 },

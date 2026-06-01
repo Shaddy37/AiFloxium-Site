@@ -45,7 +45,7 @@ export default function HeroContent() {
             <motion.h1 
               variants={fadeUp}
               custom={0.1}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter leading-[1.1] text-brand-plum"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-heading font-black tracking-[-0.035em] leading-[1.05] text-brand-plum"
             >
               Turn messy operations into reliable systems.
             </motion.h1>

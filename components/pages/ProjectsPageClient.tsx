@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 import Navbar from '@/components/layouts/Navbar';
@@ -46,6 +46,14 @@ export default function ProjectsPageClient() {
     <main className="relative bg-white min-h-screen">
       <Navbar />
       <div className="pt-32 pb-20 px-6 container mx-auto">
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-widest relative z-10">
+          <Link href="/" className="transition-colors hover:text-brand-orange">
+            Home
+          </Link>
+          <ChevronRight className="h-3.5 w-3.5 text-zinc-300" />
+          <span className="text-zinc-800 font-black">Projects</span>
+        </nav>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,8 +61,8 @@ export default function ProjectsPageClient() {
           className="mb-16 relative overflow-hidden rounded-b-[3rem] bg-hero-gradient px-4 py-20 text-left md:px-6"
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter mb-8 leading-tight uppercase">
-            SHIPPED <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4">WORK.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-[-0.035em] mb-8 leading-[0.95]">
+            Shipped <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4 text-brand-orange">work</span>.
           </h1>
           <p className="max-w-2xl text-xl font-medium text-white md:text-2xl">
             Practical AI systems for startups and growing businesses: automation,
@@ -191,9 +199,9 @@ export default function ProjectsPageClient() {
         >
           <div className="inline-flex flex-col items-center gap-6 p-12 rounded-[3rem] bg-zinc-50 border border-zinc-200 relative overflow-hidden group w-full max-w-4xl mx-auto">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            <h3 className="text-3xl md:text-5xl font-heading font-black text-brand-plum tracking-tight uppercase leading-tight relative z-10">
-              READY TO BUILD <br />{' '}
-              <span className="text-brand-orange text-2xl md:text-4xl mt-2">SOMETHING USEFUL?</span>
+            <h3 className="text-3xl md:text-5xl font-heading font-black text-brand-plum tracking-[-0.035em] leading-[0.95] relative z-10">
+              Ready to build <br />{' '}
+              <span className="text-brand-orange text-2xl md:text-4xl mt-2">something useful?</span>
             </h3>
             <p className="text-zinc-600 max-w-md font-medium leading-relaxed relative z-10">
               If you need a workflow, internal tool, or product-minded technical build,

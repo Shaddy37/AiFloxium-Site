@@ -13,7 +13,8 @@ import {
   Lock, 
   Code, 
   HelpCircle,
-  Award
+  Award,
+  ChevronRight
 } from "lucide-react";
 import { 
   Accordion, 
@@ -185,6 +186,14 @@ export default function PricingPageClient() {
       <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-brand-plum-glow opacity-30 blur-[150px] rounded-full pointer-events-none -z-10" />
 
       <div className="container mx-auto px-6 max-w-7xl">
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
+          <Link href="/" className="transition-colors hover:text-white">
+            Home
+          </Link>
+          <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+          <span className="text-white font-black">Pricing</span>
+        </nav>
+
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
           <motion.p
@@ -199,10 +208,10 @@ export default function PricingPageClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-heading font-black tracking-tighter uppercase mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-heading font-black tracking-[-0.035em] mb-6 leading-[0.95]"
           >
-            ELITE EXECUTION. <br />
-            <span className="text-gradient">NO PAYROLL BLOAT.</span>
+            Senior execution. <br />
+            <span className="text-brand-orange">No payroll bloat</span>.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -261,8 +270,8 @@ export default function PricingPageClient() {
                 className={cn(
                   "relative flex flex-col justify-between rounded-3xl p-8 transition-all duration-500",
                   isHighlighted 
-                    ? "glass-card border-brand-orange/40 bg-zinc-950/60 shadow-[0_0_50px_rgba(255,107,0,0.15)] ring-1 ring-brand-orange/30" 
-                    : "glass-card",
+                    ? "border-brand-orange/40 bg-zinc-950/80 ring-1 ring-brand-orange/30" 
+                    : "border-white/5 bg-zinc-950/60",
                   hoveredCard === idx ? "scale-[1.02] border-brand-plum/40" : ""
                 )}
                 onMouseEnter={() => setHoveredCard(idx)}
@@ -282,7 +291,7 @@ export default function PricingPageClient() {
 
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-2xl font-heading font-black tracking-tight text-white uppercase italic">
+                    <h3 className="text-2xl font-heading font-black tracking-tight text-white">
                       {tier.name}
                     </h3>
                     <div className="p-2.5 bg-white/5 border border-white/10 rounded-2xl">
@@ -339,15 +348,15 @@ export default function PricingPageClient() {
         {/* Feature Comparison Matrix */}
         <div className="hidden md:block mb-32">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-black tracking-tight text-white uppercase italic">
-              DETAILED COMPARISON MATRIX
+            <h2 className="text-3xl font-heading font-black tracking-[-0.035em] text-white">
+              Detailed comparison matrix
             </h2>
             <p className="text-zinc-400 text-sm mt-2">
               Compare features, capabilities, and delivery models across our tiers.
             </p>
           </div>
 
-          <div className="glass-card rounded-3xl overflow-hidden border border-white/5">
+          <div className="rounded-3xl overflow-hidden border border-white/5 bg-zinc-950/80">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-white/10 bg-white/5">
@@ -394,8 +403,8 @@ export default function PricingPageClient() {
                   100% RISK-FREE ONBOARDING
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-black tracking-tight text-white uppercase italic mb-4">
-                THE AIFLOXIUM MONEY-BACK GUARANTEE
+              <h2 className="text-3xl md:text-4xl font-heading font-black tracking-[-0.035em] text-white mb-4">
+                The AIFLOXIUM money-back guarantee
               </h2>
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">
                 Every project begins with a comprehensive Process Mapping and ROI Audit. If we analyze your workflows and realize there is no viable path to save your team at least <strong className="text-white">10 hours a week</strong> or completely eliminate lead leakage, we will cancel the project and refund your deposit instantly. 
@@ -403,7 +412,7 @@ export default function PricingPageClient() {
                 We also back every build with a <strong className="text-white">30-day post-launch optimization warranty</strong> to tweak instructions and handle API changes at no extra cost.
               </p>
             </div>
-            <div className="shrink-0 flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-xs text-center">
+            <div className="shrink-0 flex flex-col items-center justify-center p-6 bg-zinc-900 border border-white/10 rounded-2xl max-w-xs text-center">
               <span className="text-5xl font-heading font-black text-brand-orange mb-2">10h+</span>
               <span className="text-xs uppercase tracking-widest text-zinc-400 font-bold mb-4">Weekly Time Saved</span>
               <Link
@@ -420,34 +429,34 @@ export default function PricingPageClient() {
 
         {/* Differentiators Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
-          <div className="glass-card p-8 rounded-3xl relative overflow-hidden">
+          <div className="p-8 rounded-3xl relative overflow-hidden bg-zinc-900/80 border border-white/5">
             <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 blur-[30px] rounded-full pointer-events-none" />
             <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl inline-block mb-6">
               <Shield className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-heading font-black text-white uppercase italic mb-3">Self-Hosted Infrastructure</h3>
+            <h3 className="text-xl font-heading font-black tracking-[-0.035em] text-white mb-3">Self-hosted infrastructure</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               We host workflow engines directly on your own private cloud (AWS/DigitalOcean). This ensures total compliance, absolute security, and eliminates {"Zapier's"} scaling transactional fees.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl relative overflow-hidden">
+          <div className="p-8 rounded-3xl relative overflow-hidden bg-zinc-900/80 border border-white/5">
             <div className="absolute top-0 right-0 w-24 h-24 bg-brand-orange/5 blur-[30px] rounded-full pointer-events-none" />
             <div className="p-3 bg-brand-orange/10 border border-brand-orange/20 rounded-2xl inline-block mb-6">
               <Code className="h-6 w-6 text-brand-orange" />
             </div>
-            <h3 className="text-xl font-heading font-black text-white uppercase italic mb-3">Senior Engineer Led</h3>
+            <h3 className="text-xl font-heading font-black tracking-[-0.035em] text-white mb-3">Senior engineer led</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               You work directly with Shadab, a senior AI automation engineer. No middle managers or junior developers. Every prompt, script, and API endpoint is architected for stability.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl relative overflow-hidden">
+          <div className="p-8 rounded-3xl relative overflow-hidden bg-zinc-900/80 border border-white/5">
             <div className="absolute top-0 right-0 w-24 h-24 bg-pink-500/5 blur-[30px] rounded-full pointer-events-none" />
             <div className="p-3 bg-pink-500/10 border border-pink-500/20 rounded-2xl inline-block mb-6">
               <Lock className="h-6 w-6 text-pink-400" />
             </div>
-            <h3 className="text-xl font-heading font-black text-white uppercase italic mb-3">Complete Code Ownership</h3>
+            <h3 className="text-xl font-heading font-black tracking-[-0.035em] text-white mb-3">Complete code ownership</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               Unlike SaaS vendors, we hand over full code ownership. You receive complete access to the visual n8n workflows and Next.js repositories, with no vendor lock-in.
             </p>
@@ -465,12 +474,12 @@ export default function PricingPageClient() {
             >
               FAQ
             </motion.p>
-            <h2 className="text-3xl md:text-5xl font-heading font-black tracking-tight text-white uppercase italic">
-              COMMON OBJECTIONS ANSWERED
+            <h2 className="text-3xl md:text-5xl font-heading font-black tracking-[-0.035em] text-white">
+              Common objections, answered
             </h2>
           </div>
 
-          <div className="glass-card p-6 md:p-8 rounded-3xl">
+          <div className="p-6 md:p-8 rounded-3xl bg-zinc-900/80 border border-white/5">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq) => (
                 <AccordionItem 

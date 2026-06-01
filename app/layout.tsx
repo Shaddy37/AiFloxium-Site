@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono, Permanent_Marker } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono, Caveat_Brush } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import {
@@ -9,30 +9,33 @@ import {
 } from "@/lib/site";
 import {
   buildOgImageUrl,
-  organizationJsonLd,
-  personJsonLd,
-  professionalServiceJsonLd,
-  websiteJsonLd
+  rootGraphJsonLd
 } from "@/lib/seo";
+import { PopupProvider } from "@/components/providers/popup-provider";
+import { PopupRoot } from "@/components/popups/popup-root";
+import MotionProvider from "@/components/providers/MotionProvider";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["400", "500", "600"],
 });
 
-const permanentMarker = Permanent_Marker({
+const caveatBrush = Caveat_Brush({
   weight: "400",
-  variable: "--font-permanent-marker",
+  variable: "--font-caveat-brush",
   subsets: ["latin"],
   display: "swap",
 });
@@ -41,7 +44,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#000000'
+  themeColor: '#130716'
 };
 
 export const metadata: Metadata = {
@@ -128,31 +131,28 @@ export const metadata: Metadata = {
   category: 'technology'
 };
 
-const rootJsonLd = [
-  personJsonLd,
-  organizationJsonLd,
-  websiteJsonLd,
-  professionalServiceJsonLd
-];
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${permanentMarker.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveatBrush.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
       <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
-        {rootJsonLd.map((schema, index) => (
-          <script
-            key={index}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-            suppressHydrationWarning
-          />
-        ))}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootGraphJsonLd) }}
+        />
         <div className="grainy-overlay" />
-        {children}
+        <MotionProvider>
+          <PopupProvider>
+            {children}
+            <PopupRoot />
+          </PopupProvider>
+        </MotionProvider>
         <SpeedInsights />
         <Analytics />
       </body>

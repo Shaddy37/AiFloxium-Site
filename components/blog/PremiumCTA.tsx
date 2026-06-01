@@ -28,7 +28,7 @@ export const PremiumCTA = ({
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="relative z-10 p-8 md:p-12 rounded-[2.5rem] bg-white text-black overflow-hidden shadow-2xl transition-transform duration-500 hover:-translate-y-2"
+        className="relative z-10 p-8 md:p-12 rounded-[2.5rem] bg-white text-black overflow-hidden shadow-2xl"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-plum/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-brand-plum/10 transition-colors duration-500" />
         
@@ -38,7 +38,7 @@ export const PremiumCTA = ({
               <span className="w-8 h-[1px] bg-brand-plum/30" />
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-plum font-black">The Directive</span>
             </div>
-            <h3 className="text-3xl md:text-4xl font-heading font-black tracking-tighter mb-4 leading-[0.9] uppercase text-black">
+            <h3 className="text-3xl md:text-4xl font-heading font-black tracking-[-0.035em] mb-4 leading-[0.95] text-black">
               {title}
             </h3>
             <p className="text-black font-bold text-lg leading-relaxed">

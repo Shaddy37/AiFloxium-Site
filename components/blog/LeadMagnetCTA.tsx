@@ -91,7 +91,7 @@ export const LeadMagnetCTA = ({
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="relative z-10 p-6 md:p-8 rounded-[2rem] bg-zinc-50 border border-brand-plum/10 text-black overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-1"
+        className="relative z-10 p-6 md:p-8 rounded-[2rem] bg-zinc-50 border border-brand-plum/10 text-black overflow-hidden shadow-lg"
       >
         {/* Glow effect */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-brand-plum/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-brand-plum/10 transition-colors duration-500" />
@@ -105,7 +105,7 @@ export const LeadMagnetCTA = ({
                   <span className="w-6 h-[1px] bg-brand-plum/30" />
                   <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-brand-plum font-black">Free Resource</span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-heading font-black tracking-tight uppercase text-black leading-tight">
+                <h3 className="text-xl md:text-2xl font-heading font-black tracking-[-0.035em] text-black leading-tight">
                   {title}
                 </h3>
                 <p className="text-zinc-600 text-sm leading-relaxed font-medium">
@@ -167,8 +167,8 @@ export const LeadMagnetCTA = ({
                 <CheckCircle2 className="w-6 h-6 text-emerald-500 animate-pulse" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-heading font-black uppercase text-black">
-                  Link Granted Successfully!
+                <h3 className="text-xl font-heading font-black text-black tracking-[-0.035em]">
+                  Link granted successfully.
                 </h3>
                 <p className="text-zinc-600 text-sm max-w-md mx-auto font-medium">
                   Thank you. Your {descriptionVerb} <span className="font-bold text-brand-plum">{fileName}</span> is ready below.

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
-import { PERSON_NAME } from '@/lib/site';
+import { PERSON_NAME, SITE_URL } from '@/lib/site';
 import { absoluteUrl, buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 
 interface PageProps {
@@ -65,6 +65,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   } = post.frontmatter;
 
   const postUrl = absoluteUrl(canonicalUrl || `/blog/${slug}`);
+  const postImage = absoluteUrl(image || '/brand/aifloxium-logo.png');
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
@@ -72,29 +73,40 @@ export default async function BlogPostPage({ params }: PageProps) {
   ]);
 
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": title,
-    "description": description,
-    "image": absoluteUrl(image || "/brand/aifloxium-logo.png"),
-    "datePublished": date,
-    "dateModified": updatedAt || date,
-    "author": {
-      "@type": "Person",
-      "name": author || PERSON_NAME,
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: description,
+    image: [
+      {
+        '@type': 'ImageObject',
+        url: postImage,
+        width: 1200,
+        height: 630
+      }
+    ],
+    datePublished: date,
+    dateModified: updatedAt || date,
+    author: {
+      '@type': 'Person',
+      name: author || PERSON_NAME
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "AIFLOXIUM",
-      "logo": {
-        "@type": "ImageObject",
-        "url": absoluteUrl('/brand/aifloxium-logo.png')
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}#organization`,
+      name: 'AIFLOXIUM',
+      logo: {
+        '@type': 'ImageObject',
+        url: absoluteUrl('/brand/aifloxium-logo.png'),
+        width: 600,
+        height: 60
       }
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": postUrl
-    }
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl
+    },
+    url: postUrl
   };
 
   return (

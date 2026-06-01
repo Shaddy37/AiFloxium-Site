@@ -204,8 +204,14 @@ export const organizationJsonLd = {
   '@type': 'Organization',
   '@id': `${SITE_URL}#organization`,
   name: ORGANIZATION_NAME,
+  alternateName: BRAND_NAME,
   url: SITE_URL,
-  logo: absoluteUrl('/brand/aifloxium-logo.png'),
+  logo: {
+    '@type': 'ImageObject',
+    url: absoluteUrl('/brand/aifloxium-logo.png')
+  },
+  image: absoluteUrl('/brand/aifloxium-logo.png'),
+  description: DEFAULT_DESCRIPTION,
   email: PRIMARY_EMAIL,
   telephone: PHONE_NUMBER,
   foundingDate: '2025',
@@ -213,6 +219,19 @@ export const organizationJsonLd = {
     '@type': 'Person',
     '@id': `${SITE_URL}#person`,
     name: PERSON_NAME
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: ADDRESS_LOCALITY,
+    addressCountry: ADDRESS_COUNTRY
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: PRIMARY_EMAIL,
+    telephone: PHONE_NUMBER,
+    areaServed: 'Worldwide',
+    availableLanguage: ['English']
   },
   sameAs: [LINKEDIN_URL, X_URL]
 };
@@ -224,12 +243,16 @@ export const websiteJsonLd = {
   name: BRAND_NAME,
   url: SITE_URL,
   description: DEFAULT_DESCRIPTION,
+  inLanguage: SITE_LOCALE,
   publisher: {
     '@id': `${SITE_URL}#organization`
   },
   potentialAction: {
     '@type': 'SearchAction',
-    target: `${SITE_URL}/blog?query={search_term_string}`,
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/blog?query={search_term_string}`
+    },
     'query-input': 'required name=search_term_string'
   }
 };
@@ -241,13 +264,24 @@ export const professionalServiceJsonLd = {
   name: BRAND_NAME,
   description: DEFAULT_DESCRIPTION,
   url: SITE_URL,
+  image: absoluteUrl('/brand/aifloxium-logo.png'),
   email: PRIMARY_EMAIL,
   telephone: PHONE_NUMBER,
-  areaServed: 'Worldwide',
+  priceRange: '$$',
+  serviceType: 'AI Automation Engineering',
+  areaServed: {
+    '@type': 'Place',
+    name: 'Worldwide'
+  },
   founder: {
     '@type': 'Person',
     '@id': `${SITE_URL}#person`,
     name: PERSON_NAME
+  },
+  parentOrganization: {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}#organization`,
+    name: ORGANIZATION_NAME
   },
   address: {
     '@type': 'PostalAddress',
@@ -255,4 +289,14 @@ export const professionalServiceJsonLd = {
     addressCountry: ADDRESS_COUNTRY
   },
   sameAs: [LINKEDIN_URL, X_URL]
+};
+
+export const rootGraphJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personJsonLd,
+    organizationJsonLd,
+    websiteJsonLd,
+    professionalServiceJsonLd
+  ]
 };

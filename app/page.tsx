@@ -26,92 +26,88 @@ export const metadata: Metadata = buildPageMetadata({
   ]
 });
 
-const homeFaqJsonLd = {
+const homeGraphJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'What does AIFLOXIUM build?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'AIFLOXIUM builds AI automation systems, internal tools, voice workflows, technical SEO systems, and product-grade software for startups, agencies, and SMBs.'
-      }
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does AIFLOXIUM build?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'AIFLOXIUM builds AI automation systems, internal tools, voice workflows, technical SEO systems, and product-grade software for startups, agencies, and SMBs.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Who is Muhammad Shadab Shams?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Muhammad Shadab Shams is the automation engineer behind AIFLOXIUM. He designs and ships workflow automation, AI agents, and implementation systems for growing businesses.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the best fit for AIFLOXIUM services?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The best fit is a business with repetitive manual work, disconnected tools, slow lead handling, reporting bottlenecks, or a need for faster execution without adding headcount.'
+          }
+        }
+      ]
     },
     {
-      '@type': 'Question',
-      name: 'Who is Muhammad Shadab Shams?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Muhammad Shadab Shams is the automation engineer behind AIFLOXIUM. He designs and ships workflow automation, AI agents, and implementation systems for growing businesses.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the best fit for AIFLOXIUM services?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The best fit is a business with repetitive manual work, disconnected tools, slow lead handling, reporting bottlenecks, or a need for faster execution without adding headcount.'
-      }
-    }
-  ]
-};
-
-const homeItemListJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      url: absoluteUrl('/services/n8n-workflow-automation'),
-      name: 'n8n Workflow Automation'
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      url: absoluteUrl('/services/autonomous-voice-agents'),
-      name: 'Autonomous Voice Agents'
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      url: absoluteUrl('/services/vibe-coding'),
-      name: 'Vibe Coding (Claude)'
-    },
-    {
-      '@type': 'ListItem',
-      position: 4,
-      url: absoluteUrl('/services/seo-optimization'),
-      name: 'AI-Powered SEO'
-    },
-    {
-      '@type': 'ListItem',
-      position: 5,
-      url: absoluteUrl('/services/autonomous-agents'),
-      name: 'Autonomous Agents'
-    },
-    {
-      '@type': 'ListItem',
-      position: 6,
-      url: absoluteUrl('/services/agency-scaling-partner'),
-      name: 'Agency Scaling Partner'
+      '@type': 'ItemList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          url: absoluteUrl('/services/n8n-workflow-automation'),
+          name: 'n8n Workflow Automation'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          url: absoluteUrl('/services/autonomous-voice-agents'),
+          name: 'Autonomous Voice Agents'
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          url: absoluteUrl('/services/vibe-coding'),
+          name: 'Vibe Coding (Claude)'
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          url: absoluteUrl('/services/seo-optimization'),
+          name: 'AI-Powered SEO'
+        },
+        {
+          '@type': 'ListItem',
+          position: 5,
+          url: absoluteUrl('/services/autonomous-agents'),
+          name: 'Autonomous Agents'
+        },
+        {
+          '@type': 'ListItem',
+          position: 6,
+          url: absoluteUrl('/services/agency-scaling-partner'),
+          name: 'Agency Scaling Partner'
+        }
+      ]
     }
   ]
 };
 
 export default function Home() {
   return (
-    <main className="relative bg-brand-bg">
+    <main id="main-content" className="relative bg-brand-bg">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeItemListJsonLd) }}
-        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeGraphJsonLd) }}
       />
       <Navbar />
       <PrismaHero />

@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/site";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { LazyVideo } from "@/components/ui/lazy-video";
 
 /* ---------------- WordsPullUp ---------------- */
 interface WordsPullUpProps {
@@ -17,6 +19,7 @@ interface WordsPullUpProps {
 export const WordsPullUp = ({ text, className = "", showAsterisk = false, style }: WordsPullUpProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const prefersReduced = useReducedMotion();
   const words = text.split(" ");
 
   return (
@@ -26,9 +29,13 @@ export const WordsPullUp = ({ text, className = "", showAsterisk = false, style 
         return (
           <motion.span
             key={i}
-            initial={{ y: 20, opacity: 0 }}
+            initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={
+              prefersReduced
+                ? { duration: 0.01 }
+                : { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }
+            }
             className="inline-block relative"
             style={{ marginRight: isLast ? 0 : "0.25em" }}
           >
@@ -58,6 +65,7 @@ interface WordsPullUpMultiStyleProps {
 export const WordsPullUpMultiStyle = ({ segments, className = "", style }: WordsPullUpMultiStyleProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const prefersReduced = useReducedMotion();
 
   const words: { word: string; className?: string }[] = [];
   segments.forEach((seg) => {
@@ -71,9 +79,13 @@ export const WordsPullUpMultiStyle = ({ segments, className = "", style }: Words
       {words.map((w, i) => (
         <motion.span
           key={i}
-          initial={{ y: 20, opacity: 0 }}
+          initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+          transition={
+            prefersReduced
+              ? { duration: 0.01 }
+              : { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }
+          }
           className={`inline-block ${w.className ?? ""}`}
           style={{ marginRight: "0.25em" }}
         >
@@ -93,16 +105,15 @@ const navItems = [
 ];
 
 const PrismaHero = () => {
+  const prefersReduced = useReducedMotion();
+
   return (
-    <section className="h-screen w-full p-2 sm:p-4 bg-black">
+    <section className="h-screen w-full p-2 sm:p-4 bg-brand-bg">
       <div className="relative h-full w-full overflow-hidden rounded-2xl md:rounded-[2rem]">
         
-        {/* Background video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Background video (above fold, preload="auto") */}
+        <LazyVideo
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
         />
@@ -115,7 +126,7 @@ const PrismaHero = () => {
 
         {/* Navbar inside hero */}
         <nav className="absolute left-1/2 top-0 z-20 -translate-x-1/2">
-          <div className="flex items-center gap-3 rounded-b-2xl bg-black/80 backdrop-blur-md px-4 py-2 sm:gap-6 md:gap-12 md:rounded-b-3xl md:px-8 lg:gap-14 border border-white/5 border-t-0">
+          <div className="flex items-center gap-3 rounded-b-2xl bg-black px-4 py-2 sm:gap-6 md:gap-12 md:rounded-b-3xl md:px-8 lg:gap-14 border border-white/5 border-t-0">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -134,7 +145,7 @@ const PrismaHero = () => {
             
             <div className="col-span-12 lg:col-span-8">
               <h1
-                className="font-heading font-black leading-[0.85] tracking-[-0.04em] text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8vw] xl:text-[7.5vw] text-white"
+                className="font-heading font-black leading-[0.9] tracking-[-0.035em] text-[clamp(3.5rem,12vw,6rem)] text-white"
               >
                 <WordsPullUp text="AIFLOXIUM" showAsterisk />
               </h1>
@@ -143,19 +154,19 @@ const PrismaHero = () => {
             <div className="col-span-12 flex flex-col gap-6 pb-4 sm:pb-8 lg:col-span-4 lg:pb-12">
               
               <motion.p
-                initial={{ y: 20, opacity: 0 }}
+                initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="text-sm text-zinc-300 sm:text-base md:text-lg font-medium"
                 style={{ lineHeight: 1.4 }}
               >
-                Custom AI automation systems, self-hosted n8n pipelines, and low-latency voice agents built to scale your operations 24/7—without payroll bloat.
+                Advanced agentic systems, custom Agentic OS architectures, and low-latency voice agents built to scale operations 24/7 using tailored developer frameworks.
               </motion.p>
 
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
+                initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-start"
               >
                 <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-3 sm:text-base">
@@ -183,3 +194,4 @@ const PrismaHero = () => {
 };
 
 export { PrismaHero };
+

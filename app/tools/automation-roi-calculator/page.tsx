@@ -40,7 +40,6 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 ]);
 
 const softwareJsonLd = {
-  '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'Automation ROI Calculator',
   applicationCategory: 'BusinessApplication',
@@ -79,7 +78,6 @@ const faqItems = [
 ];
 
 const faqJsonLd = {
-  '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: faqItems.map((item) => ({
     '@type': 'Question',
@@ -133,23 +131,17 @@ const interpretationPoints = [
   }
 ];
 
+const calculatorGraphJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [breadcrumbJsonLd, softwareJsonLd, faqJsonLd]
+};
+
 export default function AutomationRoiCalculatorPage() {
   return (
-    <main className="min-h-screen bg-brand-bg text-white">
+    <main id="main-content" className="min-h-screen bg-brand-bg text-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorGraphJsonLd) }}
       />
       <Navbar />
 
@@ -216,10 +208,10 @@ export default function AutomationRoiCalculatorPage() {
               {valuePoints.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-5 shadow-[0_22px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl"
+                  className="rounded-[1.7rem] border border-white/10 bg-zinc-900/80 p-5"
                 >
                   <div className="h-9 w-9 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange">
-                    <item.icon className="h-4.5 w-4.5" />
+                    <item.icon className="h-4 w-4" />
                   </div>
                   <p className="mt-4 text-lg font-heading font-black tracking-tight text-white">
                     {item.label}
@@ -375,7 +367,7 @@ export default function AutomationRoiCalculatorPage() {
 
       {/* Call to Action Section */}
       <section className="bg-[#09040b] px-6 py-20 border-t border-white/5">
-        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-8 shadow-[0_32px_90px_rgba(0,0,0,0.24)] backdrop-blur-xl md:p-10">
+        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-zinc-900/80 p-8 md:p-10">
           <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
             <Sparkles className="h-4 w-4" />
             Next Step

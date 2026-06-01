@@ -12,7 +12,7 @@ const steps = [
 
 export function BlogArchitecture() {
   return (
-    <section className="glass-card p-8 md:p-12 rounded-[2.5rem] border border-white/5 relative overflow-hidden group">
+    <section className="p-8 md:p-12 rounded-[2.5rem] border border-white/5 bg-zinc-900/80 relative overflow-hidden group">
       <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800/10 blur-[100px] -z-10 group-hover:bg-zinc-800/20 transition-all duration-700" />
       <div className="flex items-center gap-4 mb-8">
          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-white">
