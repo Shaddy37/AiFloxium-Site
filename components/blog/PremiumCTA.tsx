@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Zap, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { BookCallButton } from "@/components/popups/book-call-button";
 import { cn } from "@/lib/utils";
 import { CALENDLY_URL } from "@/lib/site";
 
@@ -46,13 +46,13 @@ export const PremiumCTA = ({
             </p>
           </div>
 
-          <Link
-            href={href}
+          <BookCallButton
+            externalHref={href}
             className="group/btn relative inline-flex items-center gap-3 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-plum transition-all overflow-hidden shadow-xl hover:shadow-brand-plum/20"
           >
             <span className="relative z-10">{buttonText}</span>
             <ArrowRight className="w-4 h-4 relative z-10 group-hover/btn:translate-x-1 transition-transform" />
-          </Link>
+          </BookCallButton>
         </div>
       </motion.div>
       

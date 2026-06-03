@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0915"/>
+      <stop offset="50%" stop-color="#1b1226"/>
+      <stop offset="100%" stop-color="#3d1d28"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle decorative ambient glows -->
+  <circle cx="100" cy="100" r="250" fill="#f97316" fill-opacity="0.06" filter="blur(60px)"/>
+  <circle cx="1100" cy="500" r="300" fill="#a855f7" fill-opacity="0.05" filter="blur(80px)"/>
+  <circle cx="600" cy="315" r="180" fill="#3b82f6" fill-opacity="0.04" filter="blur(50px)"/>
+
+  <!-- Main border card container -->
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#000000" fill-opacity="0.2" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5"/>
+
+  <!-- Eyebrow Tag -->
+  <text x="118" y="148" fill="#f97316" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" letter-spacing="4">AIFLOXIUM / OPEN-SOURCE AI</text>
+  
+  <!-- Main Title -->
+  <text x="118" y="238" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.02em">Best Open Source</text>
+  <text x="118" y="308" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.02em">AI Models to Try</text>
+  <text x="118" y="378" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.02em">in June 2026</text>
+  
+  <!-- Sub-headlines / Supporting Details -->
+  <text x="118" y="444" fill="#f1f5f9" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" letter-spacing="-0.01em">MiniMax M3 · DeepSeek V4 · MiMo V2.5 · Llama 4 · Kimi K2.6</text>
+  <text x="118" y="494" fill="#ffffff" fill-opacity="0.75" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500">Real benchmarks, pricing, and deployment via Ollama &amp; OpenRouter.</text>
+</svg>

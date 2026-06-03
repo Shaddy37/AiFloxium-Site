@@ -11,6 +11,7 @@ import { PostFigurePlaceholder } from "./PostFigurePlaceholder";
 import { BlogArchitecture } from "../sections/BlogArchitecture";
 import { LeadMagnetCTA } from "./LeadMagnetCTA";
 import { Accordion } from "./Accordion";
+import { AuthorCard } from "./AuthorCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
@@ -209,6 +210,7 @@ const components = {
   PostFigurePlaceholder,
   LeadMagnetCTA,
   Accordion,
+  AuthorCard,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {
