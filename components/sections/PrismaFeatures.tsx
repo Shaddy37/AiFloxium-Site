@@ -129,14 +129,14 @@ export default function PrismaFeatures() {
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-1">
               {[
-                "Custom private infrastructure deployment",
-                "Autonomous multi-agent execution layers",
-                "Dynamic tool & API integration fabric",
-                "Real-time logging & self-healing error flows"
+                "Custom private infrastructure deployment.",
+                "Autonomous multi-agent execution layers.",
+                "Dynamic tool & API integration fabric.",
+                "Real-time logging & self-healing error flows."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="h-[18px] w-[18px] text-brand-orange mt-0.5 shrink-0" />
-                  <span className="text-zinc-400 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-300 transition-colors">
+                  <span className="text-zinc-200 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-100 transition-colors">
                     {item}
                   </span>
                 </li>
@@ -172,14 +172,14 @@ export default function PrismaFeatures() {
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-1">
               {[
-                "Sub-500ms low-latency response speeds",
-                "Full-duplex conversation state machine",
-                "Intelligent scheduling & lead qualification",
-                "Direct CRM & communication channel sync"
+                "Sub-500ms low-latency response speeds.",
+                "Full-duplex conversation state machine.",
+                "Intelligent scheduling & lead qualification.",
+                "Direct CRM & communication channel sync."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="h-[18px] w-[18px] text-brand-orange mt-0.5 shrink-0" />
-                  <span className="text-zinc-400 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-300 transition-colors">
+                  <span className="text-zinc-200 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-100 transition-colors">
                     {item}
                   </span>
                 </li>
@@ -215,14 +215,14 @@ export default function PrismaFeatures() {
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-1">
               {[
-                "Vibe-coded React apps (Next.js & Supabase)",
-                "AI reasoning layers applied to databases",
-                "Custom document & invoice OCR intelligence",
-                "Complete IP ownership of code & storage"
+                "Vibe-coded React apps (Next.js & Supabase).",
+                "AI reasoning layers applied to databases.",
+                "Custom document & invoice OCR intelligence.",
+                "Complete IP ownership of code & storage."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="h-[18px] w-[18px] text-brand-orange mt-0.5 shrink-0" />
-                  <span className="text-zinc-400 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-300 transition-colors">
+                  <span className="text-zinc-200 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-100 transition-colors">
                     {item}
                   </span>
                 </li>

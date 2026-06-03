@@ -152,19 +152,19 @@ export default function ProductionEvolved() {
   const cards = [
     {
       title: "Agentic OS & Infrastructure",
-      body: "We build autonomous agentic operating systems running on secure private VPS infrastructure. Run self-healing multi-agent workflows with zero transaction fees.",
+      body: "Custom agentic operating systems deployed to private VPS servers. Run self-healing multi-agent workflows with zero transaction fees.",
       icon: Cpu,
       tags: ["Agentic OS", "Private VPS", "Multi-Agent Systems", "Self-Healing Logs"]
     },
     {
       title: "Conversational Voice AI",
-      body: "Qualify inbound leads and book appointments automatically with under 500ms response speed voice agents that match your brand tone and integrate with your CRM.",
+      body: "Qualify inbound leads and book appointments automatically. Run sub-500ms voice agents integrated directly with your CRM.",
       icon: PhoneCall,
       tags: ["Vapi & Retell", "Sub-500ms Latency", "CRM Sync", "Auto-Booking"]
     },
     {
       title: "Bespoke Portals & Reasoning",
-      body: "Custom internal tools, dashboards, and databases built with Next.js and Supabase. Apply AI reasoning layers directly to existing databases to eliminate bottlenecks.",
+      body: "Bespoke internal dashboards, customer portals, and databases. We apply AI reasoning layers to eliminate pipeline bottlenecks.",
       icon: LayoutDashboard,
       tags: ["Next.js", "Supabase", "Applied AI Reasoning", "Code Ownership"]
     }
@@ -201,8 +201,8 @@ export default function ProductionEvolved() {
           <h2 className="font-heading font-black text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-[-0.035em] mb-6">
             Systems we<br />engineer.
           </h2>
-          <p className="text-lg md:text-xl text-white/70 font-sans font-light leading-relaxed max-w-2xl">
-            We architect and deploy custom operational infrastructure that automates your work, secures your client data, and removes administrative bottlenecks.
+          <p className="text-lg md:text-xl text-zinc-200 font-sans font-light leading-relaxed max-w-2xl">
+            We architect and deploy custom agentic infrastructure that automates operations, secures data, and eliminates administrative bottlenecks.
           </p>
         </motion.div>
 
@@ -238,7 +238,7 @@ export default function ProductionEvolved() {
                     {card.tags.map((tag, tIndex) => (
                       <span 
                         key={tIndex}
-                        className="bg-white/[0.04] border border-white/5 rounded-full px-3 py-1 text-[11px] text-white/90 font-sans whitespace-nowrap group-hover:border-brand-plum/20 transition-colors"
+                        className="bg-white/[0.04] border border-white/5 rounded-full px-3 py-1 text-[11px] text-white font-sans whitespace-nowrap group-hover:border-brand-plum/20 transition-colors"
                       >
                         {tag}
                       </span>
@@ -252,7 +252,7 @@ export default function ProductionEvolved() {
                     <h3 className="font-heading font-black text-white text-2xl sm:text-3xl tracking-[-0.5px] leading-tight mb-3">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-white/80 font-sans font-light leading-snug max-w-[32ch] mb-6">
+                    <p className="text-sm text-zinc-200 font-sans font-light leading-snug max-w-[32ch] mb-6">
                       {card.body}
                     </p>
                   </div>

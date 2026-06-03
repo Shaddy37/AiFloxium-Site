@@ -279,20 +279,20 @@ export default function AutomationRoiCalculator() {
             <h2 className="text-3xl font-heading font-black tracking-tight text-brand-plum md:text-4xl">
               Estimate the cost of repetitive work before you try to automate it.
             </h2>
-            <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
+            <p className="mt-3 text-sm leading-7 text-zinc-900 md:text-base">
               Fill in a few rough numbers. The calculator will estimate time saved, money saved,
               and which workflows are most likely worth fixing first.
             </p>
           </div>
 
           <div className="rounded-[1.6rem] border border-brand-plum/10 bg-white px-5 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)] md:min-w-[180px] md:text-right">
-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
+            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
               Opportunity level
             </p>
             <p className="mt-2 text-3xl font-heading font-black text-brand-orange">
               {getOpportunityLabel(result.opportunityScore)}
             </p>
-            <p className="mt-1 text-sm text-zinc-600">{result.opportunityScore}/100</p>
+            <p className="mt-1 text-sm text-zinc-800">{result.opportunityScore}/100</p>
           </div>
         </div>
 
@@ -306,7 +306,7 @@ export default function AutomationRoiCalculator() {
                 <h3 className="text-xl font-heading font-black tracking-tight text-brand-plum">
                   {section.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">{section.description}</p>
+                <p className="mt-2 text-sm leading-6 text-zinc-800">{section.description}</p>
               </div>
 
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -328,7 +328,7 @@ export default function AutomationRoiCalculator() {
                       onChange={(event) => handleInputChange(field.key, event.target.value)}
                       className="h-14 rounded-2xl border-black/10 bg-[#fbf7f3] text-base text-zinc-900 placeholder:text-zinc-400"
                     />
-                    <p className="text-sm leading-6 text-zinc-500">{field.helper}</p>
+                    <p className="text-sm leading-6 text-zinc-800">{field.helper}</p>
                   </div>
                 ))}
               </div>
@@ -342,14 +342,14 @@ export default function AutomationRoiCalculator() {
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
                 What this estimate assumes
               </p>
-              <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-700">
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-900">
                 This is a directional model. It combines recoverable labor time, process leakage,
                 and a conservative implementation cost range for startup and small business
                 automation projects.
               </p>
             </div>
             <div className="rounded-2xl border border-black/8 bg-white px-4 py-3 text-center">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
                 Automation recovery rate
               </p>
               <p className="mt-1 text-2xl font-heading font-black text-brand-plum">
@@ -372,14 +372,14 @@ export default function AutomationRoiCalculator() {
                 Your team could recover about {formatNumber(result.hoursSavedPerMonth)} hours a
                 month.
               </h3>
-              <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
+              <p className="mt-3 text-sm leading-7 text-zinc-900 md:text-base">
                 That is the core question this tool answers first. The rest of the numbers help
                 translate that lost time into money, payback, and next-step priority.
               </p>
             </div>
 
             <div className="rounded-[1.4rem] border border-brand-orange/20 bg-brand-orange/10 px-4 py-3 text-right">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-600">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
                 Best read
               </p>
               <p className="mt-1 text-2xl font-heading font-black text-brand-orange">
@@ -418,7 +418,7 @@ export default function AutomationRoiCalculator() {
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-plum/8 text-brand-plum">
                   <card.icon className="h-5 w-5" />
                 </div>
-                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
+                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
                   {card.label}
                 </p>
                 <p className="mt-2 text-2xl font-heading font-black tracking-tight text-black">
@@ -432,7 +432,7 @@ export default function AutomationRoiCalculator() {
             <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
               First workflows to look at
             </p>
-            <ul className="mt-3 space-y-2 text-sm font-medium leading-7 text-zinc-700">
+            <ul className="mt-3 space-y-2 text-sm font-medium leading-7 text-zinc-900">
               {result.recommendations.map((recommendation) => (
                 <li key={recommendation.id} className="flex gap-3">
                   <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-brand-orange" />
@@ -668,7 +668,7 @@ export default function AutomationRoiCalculator() {
                         <Mail className="h-4 w-4" />
                         Live review
                       </p>
-                      <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-700">
+                      <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-900">
                         If the report looks directionally right, the fastest next step is a
                         discovery call to pressure-test the estimate and map the first workflow
                         into a real automation scope.

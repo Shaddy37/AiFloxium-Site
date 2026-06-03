@@ -66,7 +66,7 @@ export default function VsCostCalculator({
           <h3 className="text-2xl md:text-3xl font-heading font-black tracking-tight text-white">
             Estimate Your Custom Infrastructure Savings
           </h3>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+          <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
             Drag the slider below to adjust your monthly volume of {unitName.toLowerCase()} and instantly calculate the price difference.
           </p>
         </div>
@@ -79,7 +79,7 @@ export default function VsCostCalculator({
                 Monthly Volume
               </span>
               <span className="text-2xl font-heading font-black text-primary">
-                {formatNumber(units)} <span className="text-xs text-muted-foreground font-sans uppercase font-bold tracking-widest">{unitName}</span>
+                {formatNumber(units)} <span className="text-xs text-zinc-400 font-sans uppercase font-bold tracking-widest">{unitName}</span>
               </span>
             </div>
 
@@ -93,7 +93,7 @@ export default function VsCostCalculator({
               className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
             
-            <div className="flex justify-between text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-2">
+            <div className="flex justify-between text-[10px] font-bold text-zinc-400 uppercase tracking-widest mt-2">
               <span>{formatNumber(isTimeUnits ? 500 : 5000)}</span>
               <span>{formatNumber(maxRange / 2)}</span>
               <span>{formatNumber(maxRange)}+</span>
@@ -103,15 +103,15 @@ export default function VsCostCalculator({
           {/* Side-by-side pricing models */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-all">
-              <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">
+              <p className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em]">
                 {competitorName} Cost
               </p>
               <p className="mt-2 text-3xl font-heading font-black text-white/90">
                 {formatCurrency(competitorCost)}
-                <span className="text-xs text-muted-foreground font-sans font-medium">/mo</span>
+                <span className="text-xs text-zinc-400 font-sans font-medium">/mo</span>
               </p>
-              <p className="mt-3 text-xs text-muted-foreground leading-relaxed flex gap-2">
-                <AlertCircle className="h-3.5 w-3.5 text-zinc-500 shrink-0 mt-0.5" />
+              <p className="mt-3 text-xs text-zinc-400 leading-relaxed flex gap-2">
+                <AlertCircle className="h-3.5 w-3.5 text-zinc-400 shrink-0 mt-0.5" />
                 <span>{competitorMathLabel}</span>
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function VsCostCalculator({
                 {formatCurrency(ourCost)}
                 <span className="text-xs text-primary/80 font-sans font-medium">/mo</span>
               </p>
-              <p className="mt-3 text-xs text-muted-foreground leading-relaxed flex gap-2">
+              <p className="mt-3 text-xs text-zinc-400 leading-relaxed flex gap-2">
                 <Sparkles className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
                 <span>{ourMathLabel}</span>
               </p>
@@ -144,7 +144,7 @@ export default function VsCostCalculator({
             Projected Savings
           </div>
 
-          <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
+          <p className="text-sm text-zinc-300 font-semibold uppercase tracking-wider">
             Total Monthly Savings
           </p>
           <h4 className="text-5xl font-heading font-black text-emerald-400 mt-2 tracking-tight">
@@ -154,7 +154,7 @@ export default function VsCostCalculator({
 
           <div className="h-px bg-white/10 my-6" />
 
-          <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
+          <p className="text-sm text-zinc-300 font-semibold uppercase tracking-wider">
             Net Annual Savings
           </p>
           <h4 className="text-6xl font-heading font-black text-white mt-2 tracking-tight">
@@ -162,7 +162,7 @@ export default function VsCostCalculator({
             <span className="text-lg text-white/50 font-sans font-normal lowercase"> / yr</span>
           </h4>
 
-          <p className="text-xs text-muted-foreground leading-relaxed mt-4">
+          <p className="text-xs text-zinc-400 leading-relaxed mt-4">
             *Estimates represent direct third-party infrastructure and API savings. VPS hosting and Voice API costs are paid directly to hosting providers (AWS, DigitalOcean, Hetzner) and API providers (Retell, Vapi) — AIFLOXIUM does not charge any monthly markup or hosting fee.
           </p>
         </div>
@@ -177,7 +177,7 @@ export default function VsCostCalculator({
             <Calendar className="h-4 w-4" />
             Claim Your Savings Call
           </Link>
-          <p className="mt-3 text-center text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
+          <p className="mt-3 text-center text-[10px] text-zinc-400 font-bold uppercase tracking-widest">
             30-Minute Free Process Audit & Demo
           </p>
         </div>

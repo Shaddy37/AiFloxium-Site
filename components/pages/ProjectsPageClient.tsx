@@ -1,5 +1,7 @@
 'use client';
 
+'use client';
+
 import { useMemo, useState } from 'react';
 
 import { motion } from 'framer-motion';
@@ -12,6 +14,7 @@ import { ClaudeSkillCard } from '@/components/ui/claude-skill-card';
 import { ProjectCard } from '@/components/ui/project-card';
 import { SkillDetailModal } from '@/components/ui/skill-detail-modal';
 import { WorkflowsCarousel } from '@/components/ui/workflows-carousel';
+import RuixenBentoCards from '@/components/ui/ruixen-bento-cards';
 import { claudeSkills } from '@/lib/claude-skills-data';
 import { categories, projects } from '@/lib/projects-data';
 import { CALENDLY_URL } from '@/lib/site';
@@ -46,12 +49,12 @@ export default function ProjectsPageClient() {
     <main className="relative bg-white min-h-screen">
       <Navbar />
       <div className="pt-32 pb-20 px-6 container mx-auto">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-widest relative z-10">
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-zinc-700 uppercase tracking-widest relative z-10">
           <Link href="/" className="transition-colors hover:text-brand-orange">
             Home
           </Link>
-          <ChevronRight className="h-3.5 w-3.5 text-zinc-300" />
-          <span className="text-zinc-800 font-black">Projects</span>
+          <ChevronRight className="h-3.5 w-3.5 text-zinc-400" />
+          <span className="text-zinc-900 font-black">Projects</span>
         </nav>
 
         <motion.div
@@ -122,7 +125,7 @@ export default function ProjectsPageClient() {
             <span className="w-12 h-[1px] bg-brand-plum/30" />
           </div>
 
-          <p className="text-zinc-600 mb-8 max-w-3xl font-medium leading-relaxed">
+          <p className="text-zinc-900 mb-8 max-w-3xl font-medium leading-relaxed">
             Reusable skills and system patterns that support the delivery work on this
             portfolio. These are part of how I build faster without lowering the bar.
           </p>
@@ -153,7 +156,7 @@ export default function ProjectsPageClient() {
             </div>
           </div>
 
-          <p className="text-zinc-600 mb-8 max-w-3xl">
+          <p className="text-zinc-900 mb-8 max-w-3xl">
             A mix of automation systems, AI workflows, and product work that show how I
             approach real business problems.
           </p>
@@ -191,6 +194,11 @@ export default function ProjectsPageClient() {
           ) : null}
         </motion.div>
 
+        {/* Bottlenecks Section */}
+        <div className="mb-24 mt-12 rounded-[2rem] overflow-hidden">
+          <RuixenBentoCards />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -203,7 +211,7 @@ export default function ProjectsPageClient() {
               Ready to build <br />{' '}
               <span className="text-brand-orange text-2xl md:text-4xl mt-2">something useful?</span>
             </h3>
-            <p className="text-zinc-600 max-w-md font-medium leading-relaxed relative z-10">
+            <p className="text-zinc-900 max-w-md font-medium leading-relaxed relative z-10">
               If you need a workflow, internal tool, or product-minded technical build,
               let&apos;s talk through the fastest credible path.
             </p>

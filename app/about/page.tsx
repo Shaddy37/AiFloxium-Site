@@ -90,7 +90,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
             <h2 className="text-xl md:text-4xl font-heading font-black tracking-[-0.035em] mb-4">How the work evolved</h2>
-            <p className="text-zinc-600 font-medium">From single automations to full systems and shipped products.</p>
+            <p className="text-zinc-800 font-medium">Our progression from workflow scripting to autonomous agentic architectures.</p>
           </div>
           
           <div className="space-y-16 pl-4 md:pl-0 border-l-2 md:border-l-0 border-zinc-200">
@@ -127,7 +127,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-xl md:text-4xl font-heading font-black tracking-[-0.035em] mb-4 text-white">Working style</h2>
-            <p className="text-zinc-400 font-medium">How I approach projects, delivery, and technical execution.</p>
+            <p className="text-zinc-200 font-medium">How we approach technical execution, code quality, and system delivery.</p>
           </div>
           <div className="dark">
             <Accordion05 />

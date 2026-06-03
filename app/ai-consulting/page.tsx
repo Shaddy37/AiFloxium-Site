@@ -89,7 +89,7 @@ export default function AIConsultingPage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-[-0.035em] mb-8 leading-[0.95]">
           Strategic <br/><span className="text-brush text-3xl md:text-6xl lg:text-8xl mt-4 text-brand-orange">consulting</span>.
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl font-medium">
+        <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl font-medium">
           For teams that know they need better systems but want a clear plan
           before they invest in the build.
         </p>
@@ -104,7 +104,7 @@ export default function AIConsultingPage() {
                <h2 className="text-4xl md:text-6xl font-heading font-black tracking-[-0.035em] mb-8 text-brand-plum leading-[0.95]">
                 The delivery <br /> <span className="text-brush text-3xl md:text-5xl mt-2 text-brand-orange">roadmap</span>.
               </h2>
-              <p className="text-zinc-600 font-medium leading-relaxed">A structured way to go from confusion to a build-ready plan.</p>
+              <p className="text-zinc-900 font-medium leading-relaxed">A structured way to go from confusion to a build-ready plan.</p>
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
                {[
@@ -116,7 +116,7 @@ export default function AIConsultingPage() {
                   <div key={i} className="group p-10 bg-gray-50 border border-gray-200 hover:bg-brand-plum hover:text-white transition-all duration-300">
                      <span className="text-sm font-black text-brand-orange uppercase tracking-widest mb-4 block group-hover:text-white transition-colors">Week {wk.w}</span>
                      <h3 className="text-xl font-black font-heading mb-4 text-brand-plum group-hover:text-white transition-colors">{wk.t}</h3>
-                     <p className="text-zinc-600 group-hover:text-white/80 font-medium leading-relaxed transition-colors">{wk.d}</p>
+                     <p className="text-zinc-900 group-hover:text-white/80 font-medium leading-relaxed transition-colors">{wk.d}</p>
                   </div>
                ))}
             </div>

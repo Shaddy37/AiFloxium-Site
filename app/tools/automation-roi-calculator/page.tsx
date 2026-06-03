@@ -216,7 +216,7 @@ export default function AutomationRoiCalculatorPage() {
                   <p className="mt-4 text-lg font-heading font-black tracking-tight text-white">
                     {item.label}
                   </p>
-                  <p className="mt-2 text-xs leading-relaxed text-zinc-400">{item.copy}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-200">{item.copy}</p>
                 </div>
               ))}
             </div>
@@ -236,10 +236,10 @@ export default function AutomationRoiCalculatorPage() {
             </h2>
           </div>
           <div className="rounded-[2rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-6 md:p-8">
-            <p className="text-sm sm:text-base leading-relaxed text-zinc-300">
+            <p className="text-sm sm:text-base leading-relaxed text-zinc-200">
               The calculator factors in team participation, hourly labor rates, weekly friction hours, and monthly volume to estimate:
             </p>
-            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-400">
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
                 Monthly hours lost and payroll drag.
@@ -278,7 +278,7 @@ export default function AutomationRoiCalculatorPage() {
             <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
               Prioritize workflows that show rapid payback.
             </h2>
-            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-400">
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-200">
               Use these directional projections to spot the most expensive bottlenecks in your company, and address high-leverage steps first.
             </p>
           </div>
@@ -291,7 +291,7 @@ export default function AutomationRoiCalculatorPage() {
               >
                 <div>
                   <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-xs leading-relaxed text-zinc-400">{item.text}</p>
+                  <p className="text-xs leading-relaxed text-zinc-200">{item.text}</p>
                 </div>
               </article>
             ))}
@@ -309,7 +309,7 @@ export default function AutomationRoiCalculatorPage() {
             <h2 className="text-4xl font-heading font-black tracking-tight text-brand-plum md:text-5xl leading-tight">
               Focus on highly repeatable workflows.
             </h2>
-            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-700">
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-900">
               Automation yields the highest ROI in pipelines where data is repeatedly transcribed, checked, or routed across systems.
             </p>
           </div>
@@ -354,7 +354,7 @@ export default function AutomationRoiCalculatorPage() {
                     <h3 className="text-lg font-bold tracking-tight text-white">
                       {item.question}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-200">
                       {item.answer}
                     </p>
                   </div>
@@ -377,7 +377,7 @@ export default function AutomationRoiCalculatorPage() {
               <h2 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white leading-tight">
                 Pressure-test your calculations with a real workflow audit.
               </h2>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-200">
                 A calculator yields a directional estimate. In our free 30-minute scoping call, we review your current tools, mapping errors, and operational dependencies to design a precise, fixed-bid implementation plan.
               </p>
             </div>

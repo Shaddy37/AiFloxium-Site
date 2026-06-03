@@ -16,7 +16,7 @@ const AnimatedLetter = ({ char, index, totalChars, scrollYProgress }: AnimatedLe
   const start = Math.max(0, charProgress - 0.1);
   const end = Math.min(1, charProgress + 0.05);
 
-  const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1]);
+  const opacity = useTransform(scrollYProgress, [start, end], [0.75, 1]);
 
   return <motion.span style={{ opacity }}>{char}</motion.span>;
 };
@@ -37,7 +37,7 @@ export default function PrismaAbout() {
   ];
 
   const bodyText =
-    "Previously focusing on workflow engines, I shifted to Agentic AI with the release of Claude Code. Today, I use developer frameworks like Antigravity, Claude Code, and OpenAI Codex to build agentic operating systems, vibe-coded dashboards, and low-latency voice agents. I deploy secure, autonomous infrastructure that lets you scale capacity without payroll bloat.";
+    "Previously building workflow engines, I transitioned to Agentic AI using tools like Claude Code and Antigravity. Today, I build autonomous operating systems, vibe-coded dashboards, and low-latency voice agents that scale operations with zero manual overhead.";
 
   const chars = bodyText.split("");
   const totalChars = chars.length;
@@ -75,7 +75,7 @@ export default function PrismaAbout() {
         {/* Body Paragraph with scroll-linked opacity reveal */}
         <p
           ref={paragraphRef}
-          className="text-[#DEDBC8] text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto"
+          className="text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto"
         >
           {chars.map((char, index) => (
             <AnimatedLetter

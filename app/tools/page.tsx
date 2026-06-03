@@ -65,13 +65,13 @@ const valuePoints = [
   {
     title: 'Data-Backed Decisions',
     description:
-      'Run the calculations first to obtain immediate payback projections before writing a single line of code.',
+      'Run the calculations first to obtain immediate payback projections before writing code.',
     icon: FileText
   },
   {
     title: 'Built for Operators',
     description:
-      'Engineered around real operational bottlenecks (lead routing, reporting syncs, client onboarding) to deliver actionable next steps.',
+      'Engineered around real operational bottlenecks to deliver actionable next steps.',
     icon: Target
   }
 ];
@@ -124,8 +124,8 @@ export default function ToolsPage() {
               Quantify the cost of
               <span className="block text-brand-orange">manual workflow friction.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/74 md:text-xl">
-              Estimate time saved, payroll overhead, and payback metrics before you build. Start with our interactive ROI calculator to model your first automation.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-200 md:text-xl">
+              Estimate time saved, payroll overhead, and payback projections. Start with our interactive ROI calculator to model your first automation.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -160,20 +160,20 @@ export default function ToolsPage() {
               </span>
             </div>
 
-            <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">{liveTool.description}</p>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-200 md:text-base">{liveTool.description}</p>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.5rem] border border-white/5 bg-black/40 p-4">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">
                   Target Audience
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-300">{liveTool.audience}</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-200">{liveTool.audience}</p>
               </div>
               <div className="rounded-[1.5rem] border border-white/5 bg-black/40 p-4">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">
                   Key Metrics Estimated
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-300">{liveTool.shortValue}</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-200">{liveTool.shortValue}</p>
               </div>
             </div>
 
@@ -213,7 +213,7 @@ export default function ToolsPage() {
                 <h3 className="mt-5 text-2xl font-heading font-black tracking-tight text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-400">{item.description}</p>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-200">{item.description}</p>
               </article>
             ))}
           </div>
@@ -232,8 +232,8 @@ export default function ToolsPage() {
                 Upcoming calculators and decision tools in our pipeline.
               </h2>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              We continuously design and build interactive tools to help startup and SMB operators model their processes, find cost leaks, and prioritize development plans.
+            <p className="max-w-xl text-sm leading-relaxed text-zinc-200 md:text-base">
+              We build interactive tools to help startup and SMB operators model processes, find cost leaks, and prioritize development.
             </p>
           </div>
 
@@ -257,7 +257,7 @@ export default function ToolsPage() {
                       planned
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed text-zinc-300">{tool.description}</p>
+                  <p className="text-sm leading-relaxed text-zinc-200">{tool.description}</p>
                   
                   {/* Waitlist Subscription */}
                   <div className="mt-4">
@@ -266,10 +266,10 @@ export default function ToolsPage() {
                 </div>
 
                 <div className="mt-6 pt-5 border-t border-white/5">
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-1.5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-1.5">
                     Modeled Output
                   </p>
-                  <p className="text-xs leading-relaxed text-zinc-400">
+                  <p className="text-xs leading-relaxed text-zinc-200">
                     {tool.shortValue}
                   </p>
                 </div>
@@ -290,8 +290,8 @@ export default function ToolsPage() {
               <h2 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white leading-tight">
                 Book a discovery call once you review your calculations.
               </h2>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Our tools hub creates clarity before you spend a dollar. If our ROI calculator shows significant manual overhead, let{"'"}s connect for a free 30-minute operations audit to map your custom setup.
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-200">
+                If our ROI calculator shows significant manual overhead, let's connect for a free operations audit to map your custom setup.
               </p>
             </div>
             <Link

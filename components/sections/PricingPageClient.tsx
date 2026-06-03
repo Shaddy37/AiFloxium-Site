@@ -217,7 +217,7 @@ export default function PricingPageClient() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium"
+            className="text-lg md:text-xl text-zinc-200 leading-relaxed font-medium"
           >
             Select a project-based one-off build to solve a specific bottleneck, or embed AIFLOXIUM as your ongoing technical partner.
           </motion.p>
@@ -235,7 +235,7 @@ export default function PricingPageClient() {
                 "relative px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer",
                 billingPeriod === "one-off" 
                   ? "bg-brand-orange text-white shadow-lg shadow-brand-orange/20" 
-                  : "text-zinc-400 hover:text-white"
+                  : "text-zinc-300 hover:text-white"
               )}
             >
               One-Off Projects
@@ -246,7 +246,7 @@ export default function PricingPageClient() {
                 "relative px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer",
                 billingPeriod === "retainer" 
                   ? "bg-brand-orange text-white shadow-lg shadow-brand-orange/20" 
-                  : "text-zinc-400 hover:text-white"
+                  : "text-zinc-300 hover:text-white"
               )}
             >
               Monthly Retainer
@@ -284,7 +284,7 @@ export default function PricingPageClient() {
                   </span>
                 )}
                 {!isHighlighted && tier.badge && (
-                  <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider mb-2 block">
+                  <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider mb-2 block">
                     {tier.badge}
                   </span>
                 )}
@@ -299,7 +299,7 @@ export default function PricingPageClient() {
                     </div>
                   </div>
 
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  <p className="text-zinc-200 text-sm leading-relaxed mb-6">
                     {tier.description}
                   </p>
 
@@ -307,7 +307,7 @@ export default function PricingPageClient() {
                     <span className="text-4xl md:text-5xl font-heading font-black text-white tracking-tighter">
                       {price}
                     </span>
-                    <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold">
+                    <span className="text-zinc-300 text-xs uppercase tracking-widest font-bold">
                       / {priceSub}
                     </span>
                   </div>
@@ -318,7 +318,7 @@ export default function PricingPageClient() {
                   {/* Features List */}
                   <ul className="space-y-4 mb-8">
                     {tier.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-3 text-sm text-zinc-300">
+                      <li key={fIdx} className="flex items-start gap-3 text-sm text-zinc-200">
                         <Check className="h-5 w-5 text-brand-orange shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
@@ -351,7 +351,7 @@ export default function PricingPageClient() {
             <h2 className="text-3xl font-heading font-black tracking-[-0.035em] text-white">
               Detailed comparison matrix
             </h2>
-            <p className="text-zinc-400 text-sm mt-2">
+            <p className="text-zinc-200 text-sm mt-2">
               Compare features, capabilities, and delivery models across our tiers.
             </p>
           </div>
@@ -377,8 +377,8 @@ export default function PricingPageClient() {
                     {cat.features.map((feat, featIdx) => (
                       <tr key={featIdx} className="border-b border-white/5 hover:bg-white/2 transition-colors">
                         <td className="p-6 text-sm text-white font-medium">{feat.name}</td>
-                        <td className="p-6 text-sm text-zinc-400">{feat.starter}</td>
-                        <td className="p-6 text-sm text-zinc-300 font-medium">{feat.scale}</td>
+                        <td className="p-6 text-sm text-zinc-200">{feat.starter}</td>
+                        <td className="p-6 text-sm text-zinc-200 font-medium">{feat.scale}</td>
                         <td className="p-6 text-sm text-white font-bold">{feat.enterprise}</td>
                       </tr>
                     ))}
@@ -406,7 +406,7 @@ export default function PricingPageClient() {
               <h2 className="text-3xl md:text-4xl font-heading font-black tracking-[-0.035em] text-white mb-4">
                 The AIFLOXIUM money-back guarantee
               </h2>
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-medium">
+              <p className="text-zinc-200 text-sm md:text-base leading-relaxed font-medium">
                 Every project begins with a comprehensive Process Mapping and ROI Audit. If we analyze your workflows and realize there is no viable path to save your team at least <strong className="text-white">10 hours a week</strong> or completely eliminate lead leakage, we will cancel the project and refund your deposit instantly. 
                 <br /><br />
                 We also back every build with a <strong className="text-white">30-day post-launch optimization warranty</strong> to tweak instructions and handle API changes at no extra cost.
@@ -414,7 +414,7 @@ export default function PricingPageClient() {
             </div>
             <div className="shrink-0 flex flex-col items-center justify-center p-6 bg-zinc-900 border border-white/10 rounded-2xl max-w-xs text-center">
               <span className="text-5xl font-heading font-black text-brand-orange mb-2">10h+</span>
-              <span className="text-xs uppercase tracking-widest text-zinc-400 font-bold mb-4">Weekly Time Saved</span>
+              <span className="text-xs uppercase tracking-widest text-zinc-300 font-bold mb-4">Weekly Time Saved</span>
               <Link
                 href={CALENDLY_URL}
                 target="_blank"
@@ -435,7 +435,7 @@ export default function PricingPageClient() {
               <Shield className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-heading font-black tracking-[-0.035em] text-white mb-3">Self-hosted infrastructure</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-200 text-sm leading-relaxed">
               We host workflow engines directly on your own private cloud (AWS/DigitalOcean). This ensures total compliance, absolute security, and eliminates {"Zapier's"} scaling transactional fees.
             </p>
           </div>
@@ -446,7 +446,7 @@ export default function PricingPageClient() {
               <Code className="h-6 w-6 text-brand-orange" />
             </div>
             <h3 className="text-xl font-heading font-black tracking-[-0.035em] text-white mb-3">Senior engineer led</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-200 text-sm leading-relaxed">
               You work directly with Shadab, a senior AI automation engineer. No middle managers or junior developers. Every prompt, script, and API endpoint is architected for stability.
             </p>
           </div>
@@ -457,7 +457,7 @@ export default function PricingPageClient() {
               <Lock className="h-6 w-6 text-pink-400" />
             </div>
             <h3 className="text-xl font-heading font-black tracking-[-0.035em] text-white mb-3">Complete code ownership</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-200 text-sm leading-relaxed">
               Unlike SaaS vendors, we hand over full code ownership. You receive complete access to the visual n8n workflows and Next.js repositories, with no vendor lock-in.
             </p>
           </div>
@@ -493,7 +493,7 @@ export default function PricingPageClient() {
                       {faq.question}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-zinc-300 text-sm leading-relaxed pl-8 pt-2 pb-4">
+                  <AccordionContent className="text-zinc-200 text-sm leading-relaxed pl-8 pt-2 pb-4">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

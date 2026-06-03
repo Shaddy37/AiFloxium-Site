@@ -192,7 +192,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-[1.1] mb-6">
               {data.h1}
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-zinc-200 leading-relaxed">
               {renderFormattedText(data.overview)}
             </p>
           </div>
@@ -207,13 +207,13 @@ export default async function VsComparisonPage({ params }: PageProps) {
             
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 mt-4">
               <div>
-                <p className="text-sm leading-relaxed text-zinc-300">
+                <p className="text-sm leading-relaxed text-zinc-200">
                   {renderFormattedText(data.whyAlternative)}
                 </p>
               </div>
               <div className="rounded-[1.5rem] border border-white/5 bg-white/[0.01] p-5 flex flex-col justify-center">
                 <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">Architectural Verdict</p>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+                <p className="text-xs text-zinc-200 leading-relaxed">
                   {data.slug.includes('voice-ai') 
                     ? 'Voice AI operates with sub-500ms response times and direct CRM pipeline writes. Traditional IVRs and manual calling are a major drain on conversion speed.'
                     : 'Self-hosted n8n removes execution licensing taxes completely. Your operations scale on a flat VPS fee with complete developer control.'}
@@ -228,7 +228,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
               <h2 className="text-3xl font-heading font-black text-white tracking-tight">
                 Cost & Operation Calculator
               </h2>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="text-sm text-zinc-200 mt-2">
                 Evaluate direct cost savings when migrating away from legacy tools to AIFLOXIUM’s engineered pipelines.
               </p>
             </div>
@@ -251,7 +251,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
               <h2 className="text-3xl font-heading font-black text-white tracking-tight">
                 Feature Comparison Matrix
               </h2>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="text-sm text-zinc-200 mt-2">
                 A point-by-point breakdown of architectural capabilities and limits.
               </p>
             </div>
@@ -262,7 +262,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
                   <tr className="border-b border-white/5 bg-zinc-950/60">
                     <th className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-white w-[25%]">Feature / Metric</th>
                     <th className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-primary w-[35%]">AIFLOXIUM {data.ourName}</th>
-                    <th className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 w-[30%]">{data.competitorName}</th>
+                    <th className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-300 w-[30%]">{data.competitorName}</th>
                     <th className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-white text-center w-[10%]">Winner</th>
                   </tr>
                 </thead>
@@ -271,14 +271,14 @@ export default async function VsComparisonPage({ params }: PageProps) {
                     <tr key={i} className="hover:bg-white/[0.01] transition-colors">
                       <td className="p-6 font-bold text-sm text-white">
                         {feature.name}
-                        <span className="block mt-1.5 text-xs text-muted-foreground font-normal">
+                        <span className="block mt-1.5 text-xs text-zinc-200 font-normal">
                           {feature.details}
                         </span>
                       </td>
                       <td className="p-6 text-sm text-zinc-300 leading-relaxed font-medium bg-primary/[0.01]">
                         {feature.ourValue}
                       </td>
-                      <td className="p-6 text-sm text-zinc-400 leading-relaxed">
+                      <td className="p-6 text-sm text-zinc-200 leading-relaxed">
                         {feature.competitorValue}
                       </td>
                       <td className="p-6 text-center">
@@ -311,7 +311,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
               <h2 className="text-3xl font-heading font-black text-white tracking-tight">
                 Deep-Dive Capability Comparison
               </h2>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="text-sm text-zinc-200 mt-2">
                 A closer look at how operational architecture differs in production.
               </p>
             </div>
@@ -336,16 +336,16 @@ export default async function VsComparisonPage({ params }: PageProps) {
                           <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">
                             AIFLOXIUM Setup
                           </p>
-                          <p className="text-sm leading-relaxed text-zinc-300">
+                          <p className="text-sm leading-relaxed text-zinc-200">
                             {renderFormattedText(section.ourText)}
                           </p>
                         </div>
                         
                         <div>
-                          <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mb-2">
+                          <p className="text-[10px] font-black text-zinc-300 uppercase tracking-[0.2em] mb-2">
                             Standard {data.competitorName} Setup
                           </p>
-                          <p className="text-sm leading-relaxed text-zinc-400">
+                          <p className="text-sm leading-relaxed text-zinc-200">
                             {renderFormattedText(section.competitorText)}
                           </p>
                         </div>
@@ -353,7 +353,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-white/5">
-                      <div className="text-xs italic text-muted-foreground">
+                      <div className="text-xs italic text-zinc-200">
                         <strong className="text-white not-italic uppercase tracking-wider text-[10px] block mb-1">{"Architect's Summary"}</strong>
                         {section.summary}
                       </div>
@@ -372,7 +372,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
                 <Check className="h-6 w-6 text-primary shrink-0" />
                 Who Should Choose AIFLOXIUM
               </h3>
-              <p className="text-xs text-muted-foreground mt-2 mb-6">
+              <p className="text-xs text-zinc-300 mt-2 mb-6">
                 Our custom-engineered infrastructure is ideal if you fit the following profiles:
               </p>
               <ul className="space-y-4">
@@ -389,16 +389,16 @@ export default async function VsComparisonPage({ params }: PageProps) {
 
             {/* Best for Competitor */}
             <div className="p-6 md:p-8 rounded-[2rem] border border-white/5 bg-zinc-950/20">
-              <h3 className="text-xl font-heading font-black text-zinc-400 flex items-center gap-3">
+              <h3 className="text-xl font-heading font-black text-zinc-300 flex items-center gap-3">
                 <X className="h-6 w-6 text-zinc-600 shrink-0" />
                 Who is Better Off with {data.competitorName}
               </h3>
-              <p className="text-xs text-zinc-500 mt-2 mb-6">
+              <p className="text-xs text-zinc-300 mt-2 mb-6">
                 The off-the-shelf competitor is a reasonable path under these scenarios:
               </p>
               <ul className="space-y-4">
                 {data.whoIsBestFor.competitor.map((item, idx) => (
-                  <li key={idx} className="flex gap-3 items-start text-sm leading-relaxed text-zinc-400">
+                  <li key={idx} className="flex gap-3 items-start text-sm leading-relaxed text-zinc-200">
                     <span className="h-5 w-5 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-500 shrink-0 mt-0.5">
                       <X className="h-3 w-3" />
                     </span>
@@ -420,8 +420,8 @@ export default async function VsComparisonPage({ params }: PageProps) {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black tracking-tight text-white mb-6 font-black leading-tight">
               Stop Paying the Scaling Tax.<br className="hidden sm:inline" /> Deploy Engineered Workflows.
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-              Skip brittle templates, unpredictable operations counts, and high-maintenance cloud configurations. Let{"'"}s design a custom self-hosted environment that scales autonomously.
+            <p className="text-sm sm:text-base text-zinc-200 max-w-2xl mx-auto leading-relaxed mb-10">
+              Skip brittle templates, unpredictable operations counts, and high-maintenance cloud configurations. Let's design a custom self-hosted environment that scales autonomously.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -450,7 +450,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
                 <HelpCircle className="h-7 w-7 text-primary" />
                 Frequently Asked Questions
               </h2>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="text-sm text-zinc-200 mt-2">
                 Common questions about architectural migrations, hosting setups, and support.
               </p>
             </div>
@@ -462,7 +462,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
                     <span className="h-6 w-6 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-xs shrink-0 mt-0.5">Q</span>
                     <span>{faq.question}</span>
                   </h3>
-                  <div className="pl-9 text-sm leading-relaxed text-zinc-400">
+                  <div className="pl-9 text-sm leading-relaxed text-zinc-200">
                     {faq.answer}
                   </div>
                 </div>

@@ -375,7 +375,7 @@ function ResourceCard({
       </div>
 
       {/* Description */}
-      <p className="text-sm text-zinc-600 font-medium leading-relaxed flex-1">{description}</p>
+      <p className="text-sm text-zinc-900 font-medium leading-relaxed flex-1">{description}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
@@ -443,7 +443,7 @@ function SectionHeader({
         <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-plum tracking-tight">
           {title}
         </h2>
-        <p className="text-zinc-600 font-medium mt-2 text-sm max-w-xl">{subtitle}</p>
+        <p className="text-zinc-900 font-medium mt-2 text-sm max-w-xl">{subtitle}</p>
       </div>
       {count !== undefined && (
         <span className="text-5xl font-heading font-black text-zinc-200 tabular-nums shrink-0">
@@ -497,7 +497,7 @@ export default function ResourcesPage() {
               <span className="text-white/40">resources</span>.
             </h1>
 
-            <p className="text-xl text-white max-w-2xl leading-relaxed mb-12 font-medium">
+            <p className="text-xl text-zinc-200 max-w-2xl leading-relaxed mb-12 font-medium">
               Battle-tested n8n automations, Claude Code skills, AI agents, and
               step-by-step Notion guides, curated by the Aifloxium team to help
               you build smarter, faster.
@@ -712,7 +712,7 @@ export default function ResourcesPage() {
                     FREE
                   </span>
                 </div>
-                <p className="text-sm text-white/70 font-medium leading-relaxed flex-1 relative z-10">
+                <p className="text-sm text-zinc-200 font-medium leading-relaxed flex-1 relative z-10">
                   {card.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 relative z-10">
@@ -747,7 +747,7 @@ export default function ResourcesPage() {
             <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-4 text-brand-orange">
               DEEP-DIVE BLOGS.
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed font-medium">
+            <p className="text-zinc-200 text-lg leading-relaxed font-medium">
               We write detailed technical breakdowns on every tool and workflow
               we use, n8n architectures, Claude Code patterns, and autonomous
               agent design. Free, always.
@@ -781,7 +781,7 @@ export default function ResourcesPage() {
               <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight text-brand-plum">
                 START WITH THE ROI CALCULATOR.
               </h2>
-              <p className="mt-4 text-zinc-600 text-base leading-relaxed font-medium">
+              <p className="mt-4 text-zinc-900 text-base leading-relaxed font-medium">
                 If you want a faster way to qualify automation opportunities, use the new AI
                 Automation ROI Calculator to estimate hours saved, payroll drag, and the best
                 workflows to automate first.

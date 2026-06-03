@@ -152,7 +152,7 @@ export default async function ServicePage({ params }: Props) {
           <h1 className="text-5xl md:text-8xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
             {service.title.split(' ').slice(0, -1).join(' ')} <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-2 text-brand-orange">{service.title.split(' ').pop()}</span>.
           </h1>
-          <p className="text-xl md:text-2xl text-white font-medium max-w-2xl leading-relaxed mb-12">
+          <p className="text-xl md:text-2xl text-zinc-200 font-medium max-w-2xl leading-relaxed mb-12">
             {service.tagline}
           </p>
 
@@ -182,8 +182,8 @@ export default async function ServicePage({ params }: Props) {
       <section className="py-28 px-6">
         <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-6 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-brand-plum/30" /> What it is
+            <p className="text-brand-orange tracking-[0.2em] font-medium text-xs uppercase mb-6 flex items-center gap-3">
+              <span className="w-6 h-[1px] bg-brand-orange/30" /> What it is
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em] leading-[1.05] mb-8">
               What this service does<br />
@@ -191,7 +191,7 @@ export default async function ServicePage({ params }: Props) {
             </h2>
           </div>
           <div>
-            <p className="text-white text-lg font-medium leading-relaxed">
+            <p className="text-zinc-200 text-lg font-medium leading-relaxed">
               {service.whatItIs}
             </p>
           </div>
@@ -205,8 +205,8 @@ export default async function ServicePage({ params }: Props) {
       <section className="py-28 px-6 bg-brand-plum/5">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-brand-plum/30" /> Process
+            <p className="text-brand-orange tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
+              <span className="w-6 h-[1px] bg-brand-orange/30" /> Process
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em] leading-[1.05]">
               How I deliver it.
@@ -229,7 +229,7 @@ export default async function ServicePage({ params }: Props) {
                     <h3 className="text-xl font-heading font-bold text-white tracking-tight mb-3 group-hover:text-brand-orange transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-white font-medium leading-relaxed group-hover:text-white transition-colors">
+                    <p className="text-zinc-200 font-medium leading-relaxed group-hover:text-zinc-100 transition-colors">
                       {step.body}
                     </p>
                   </div>
@@ -244,8 +244,8 @@ export default async function ServicePage({ params }: Props) {
       <section className="py-28 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-brand-plum/30" /> Use Cases
+            <p className="text-brand-orange tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
+              <span className="w-6 h-[1px] bg-brand-orange/30" /> Use Cases
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em]">
               Real problems I solve.
@@ -259,7 +259,7 @@ export default async function ServicePage({ params }: Props) {
                 className="flex items-start gap-4 p-6 border border-brand-plum/20 bg-brand-plum/5 hover:border-brand-plum/40 hover:bg-brand-plum/10 transition-all group rounded-xl"
               >
                 <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
-                <p className="text-white font-medium leading-relaxed group-hover:text-white transition-colors">
+                <p className="text-zinc-200 font-medium leading-relaxed group-hover:text-zinc-100 transition-colors">
                   {useCase}
                 </p>
               </div>
@@ -272,8 +272,8 @@ export default async function ServicePage({ params }: Props) {
       <section className="py-28 px-6 bg-brand-plum/5">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-brand-plum/30" /> Tech Stack
+            <p className="text-brand-orange tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
+              <span className="w-6 h-[1px] bg-brand-orange/30" /> Tech Stack
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em]">
               Built with the right tools.
@@ -292,7 +292,7 @@ export default async function ServicePage({ params }: Props) {
                 <p className="font-heading font-bold text-white text-lg tracking-tight group-hover:text-brand-orange transition-colors">
                   {tech.name}
                 </p>
-                <p className="text-white text-sm font-medium mt-1 uppercase tracking-widest">{tech.role}</p>
+                <p className="text-zinc-300 text-sm font-medium mt-1 uppercase tracking-widest">{tech.role}</p>
               </div>
             ))}
           </div>
@@ -303,8 +303,8 @@ export default async function ServicePage({ params }: Props) {
       <section className="py-28 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-brand-plum tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-brand-plum/30" /> FAQ
+            <p className="text-brand-orange tracking-[0.2em] font-medium text-xs uppercase mb-4 flex items-center gap-3">
+              <span className="w-6 h-[1px] bg-brand-orange/30" /> FAQ
             </p>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-[-0.035em]">
               Questions answered.
@@ -318,12 +318,12 @@ export default async function ServicePage({ params }: Props) {
                 className="p-8 border border-brand-plum/20 bg-brand-plum/5 hover:border-brand-orange/30 hover:bg-brand-plum/10 transition-all group cursor-default rounded-2xl"
               >
                 <h3 className="text-lg font-heading font-bold text-white tracking-tight mb-3 flex items-start gap-4 group-hover:text-brand-orange transition-colors">
-                  <span className="font-bold text-brand-plum text-sm shrink-0 mt-0.5">
+                  <span className="font-bold text-brand-orange text-sm shrink-0 mt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {faq.q}
                 </h3>
-                <p className="text-white font-medium leading-relaxed pl-10 group-hover:text-white transition-colors">
+                <p className="text-zinc-200 font-medium leading-relaxed pl-10 group-hover:text-zinc-100 transition-colors">
                   {faq.a}
                 </p>
               </div>
@@ -339,13 +339,13 @@ export default async function ServicePage({ params }: Props) {
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-brand-plum/20 to-transparent mb-24" />
 
-          <p className="text-brand-plum tracking-[0.2em] font-bold text-xs uppercase mb-8 flex items-center justify-center gap-4">
-            <span className="w-8 h-[1px] bg-brand-plum/30" /> Start Today
+          <p className="text-brand-orange tracking-[0.2em] font-bold text-xs uppercase mb-8 flex items-center justify-center gap-4">
+            <span className="w-8 h-[1px] bg-brand-orange/30" /> Start Today
           </p>
           <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
             {service.ctaHeading.split(' ').slice(0, -2).join(' ')} <span className="text-brush text-2xl md:text-4xl ml-2 text-brand-orange">{service.ctaHeading.split(' ').slice(-2).join(' ')}</span>
           </h2>
-          <p className="text-white text-xl font-medium max-w-xl mx-auto leading-relaxed mb-12">
+          <p className="text-zinc-200 text-xl font-medium max-w-xl mx-auto leading-relaxed mb-12">
             {service.ctaSubtext}
           </p>
 
@@ -367,7 +367,7 @@ export default async function ServicePage({ params }: Props) {
           className="group flex items-center justify-between px-8 md:px-16 py-12 hover:bg-brand-plum/5 transition-colors"
         >
           <div>
-            <p className="text-brand-plum text-xs font-black uppercase tracking-widest mb-2">Next Service</p>
+            <p className="text-brand-orange text-xs font-black uppercase tracking-widest mb-2">Next Service</p>
             <p className="text-white font-heading font-black text-2xl md:text-4xl tracking-[-0.035em] group-hover:text-brand-orange transition-colors">
               {nextService.title}
             </p>

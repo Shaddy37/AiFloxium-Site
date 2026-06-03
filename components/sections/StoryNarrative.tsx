@@ -109,7 +109,7 @@ export default function StoryNarrative() {
             </h2>
           </div>
           <hr className="my-[1.5vw] border-none border-t border-white/10" />
-          <p className="max-w-[65ch] text-[clamp(1rem,2vw,1.5rem)] font-normal leading-relaxed text-zinc-300">
+          <p className="max-w-[65ch] text-[clamp(1rem,2vw,1.5rem)] font-normal leading-relaxed text-zinc-200">
             Operational scaling on autopilot. I design systems that secure your data, eliminate entry errors, and guarantee a positive ROI.
           </p>
           <hr className="my-[1.5vw] border-none border-t border-white/10" />
@@ -117,26 +117,26 @@ export default function StoryNarrative() {
           <div className="flex flex-wrap gap-[3vw]">
             <div className="min-w-[180px] flex-1">
               <p className="mb-2 text-sm font-bold uppercase tracking-wider text-white font-mono">Speed-to-Lead</p>
-              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-zinc-400">
+              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-zinc-200">
                 Auto-qualify and contact hot leads in under 90 seconds, securing your sales pipeline immediately.
               </p>
             </div>
             <div className="min-w-[180px] flex-1">
               <p className="mb-2 text-sm font-bold uppercase tracking-wider text-white font-mono">85% OCR Invoices</p>
-              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-zinc-400">
+              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-zinc-200">
                 AI extracts data from PDF invoices and updates booking/accounting with zero manual entry errors.
               </p>
             </div>
             <div className="min-w-[180px] flex-1">
               <p className="mb-2 text-sm font-bold uppercase tracking-wider text-white font-mono">CRM Lead Gen</p>
-              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-zinc-400">
+              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-zinc-200">
                 Automatically extract, enrich, and sync 500+ qualified leads weekly to your CRM with zero research.
               </p>
             </div>
           </div>
           
           <div className="flex flex-wrap justify-between items-center gap-6 mt-auto pt-6 border-t border-white/10">
-            <span className="text-zinc-500 text-xs font-mono font-bold tracking-widest uppercase">✓ MEASURED BY METRICS</span>
+            <span className="text-zinc-300 text-xs font-mono font-bold tracking-widest uppercase">✓ MEASURED BY METRICS</span>
             <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-2 pl-6 pr-2 text-xs font-bold uppercase tracking-widest text-white transition-all hover:gap-3 hover:bg-white hover:text-black">
               Book Discovery Call
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white transition-transform group-hover:scale-110 group-hover:bg-brand-orange text-brand-orange group-hover:text-white">

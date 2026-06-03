@@ -99,7 +99,7 @@ export default function VsHubPage() {
 
           <div className="max-w-7xl mx-auto">
             {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-widest mb-8">
+            <div className="flex items-center gap-2 text-xs font-bold text-zinc-200 uppercase tracking-widest mb-8">
               <Link href="/" className="hover:text-primary transition-colors">Home</Link>
               <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
               <span className="text-white font-black">Comparisons</span>
@@ -114,8 +114,8 @@ export default function VsHubPage() {
                 Platform <br className="sm:hidden" />
                 <span className="text-brand-orange">comparisons</span>.
               </h1>
-              <p className="mt-6 text-base leading-8 text-zinc-300 md:text-xl">
-                Compare direct costs, processing speed, security limitations, and custom code integrations of off-the-shelf cloud solutions versus AIFLOXIUM’s tailored self-hosted environments.
+              <p className="mt-6 text-base leading-8 text-zinc-200 md:text-xl">
+                Compare direct costs, processing speeds, security parameters, and custom code integrations of off-the-shelf cloud solutions versus our tailored self-hosted environments.
               </p>
             </div>
 
@@ -142,13 +142,13 @@ export default function VsHubPage() {
                         {comp.title}
                       </h2>
 
-                      <p className="text-sm leading-relaxed text-zinc-400 mb-6 line-clamp-4">
+                      <p className="text-sm leading-relaxed text-zinc-200 mb-6 line-clamp-4">
                         {comp.metaDescription}
                       </p>
                     </div>
 
                     <div className="pt-5 border-t border-white/5 mt-auto flex items-center justify-between">
-                      <div className="text-xs text-zinc-500 font-medium">
+                      <div className="text-xs text-zinc-300 font-medium">
                         Compare {comp.competitorName}
                       </div>
                       <Link
@@ -172,8 +172,8 @@ export default function VsHubPage() {
             <h3 className="text-xl font-heading font-black text-white tracking-[-0.035em] mb-4">
               Need a custom performance audit?
             </h3>
-            <p className="text-sm text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-8">
-              Every workflow automation setup is unique. If you run more than 50,000 tasks per month, let us analyze your data pipelines to calculate exact migration costs and server optimization payback cycles.
+            <p className="text-sm text-zinc-200 leading-relaxed max-w-2xl mx-auto mb-8">
+              If you run more than 50,000 tasks per month, let us analyze your data pipelines to calculate exact migration costs and payback cycles.
             </p>
             <Link
               href="/contact"

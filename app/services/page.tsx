@@ -113,7 +113,7 @@ export default function ServicesPage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-[-0.035em] mb-8 leading-[0.95]">
           What I <span className="text-brush text-3xl md:text-6xl lg:text-8xl ml-4 text-brand-orange">build</span>.
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl font-medium">
+        <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl font-medium">
           Practical AI systems for startups and growing businesses: automation,
           internal software, product builds, and workflows that save real time.
         </p>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
              <h2 className="text-4xl md:text-5xl font-heading font-black tracking-[-0.035em] mb-6 text-brand-plum leading-[0.95]">
                How I <br /> <span className="text-brush text-3xl md:text-5xl mt-2 text-brand-orange">work</span>.
              </h2>
-             <p className="text-zinc-600 font-medium leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
+             <p className="text-zinc-900 font-medium leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
             {serviceFaqs.map((faq, i) => (
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                      <CheckCircle2 className="text-brand-orange shrink-0 group-hover:scale-110 transition-transform" />
                      {faq.q}
                   </h3>
-                  <p className="text-zinc-600 font-medium pl-10 leading-relaxed transition-colors">{faq.a}</p>
+                  <p className="text-zinc-900 font-medium pl-10 leading-relaxed transition-colors">{faq.a}</p>
                </div>
             ))}
           </div>

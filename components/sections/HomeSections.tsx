@@ -149,11 +149,11 @@ export function Process() {
           <BounceCard className="col-span-12 md:col-span-4" prefersReduced={prefersReduced}>
             <span className="text-xs font-mono text-zinc-500 mb-6 block">[01]</span>
             <CardTitle>Bottleneck Analysis</CardTitle>
-            <p className="text-zinc-450 text-sm md:text-[15px] leading-relaxed mt-4 max-w-sm">
-              We audit your manual workflows, track where time is being lost, and define hard metrics for success before writing code.
+            <p className="text-zinc-200 text-sm md:text-[15px] leading-relaxed mt-4 max-w-sm">
+              We audit your manual workflows, locate operational noise, and define clear success metrics.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-600 to-indigo-600 p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-violet-255 mb-2 font-bold text-violet-200">✓ Audit Results</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-violet-200 mb-2 font-bold">✓ Audit Results</span>
               <ul className="text-xs font-semibold text-white space-y-1.5 font-mono">
                 <li>• Reclaim 20+ Hours Weekly</li>
                 <li>• Map Software Tech Stack</li>
@@ -166,11 +166,11 @@ export function Process() {
           <BounceCard className="col-span-12 md:col-span-8" prefersReduced={prefersReduced}>
             <span className="text-xs font-mono text-zinc-500 mb-6 block">[02]</span>
             <CardTitle>System Blueprint</CardTitle>
-            <p className="text-zinc-450 text-sm md:text-[15px] leading-relaxed mt-4 max-w-xl">
-              I map the automation pathways and tool integrations in a visual flowchart, so the execution plan is crystal clear.
+            <p className="text-zinc-200 text-sm md:text-[15px] leading-relaxed mt-4 max-w-xl">
+              We visually map all automation pathways and tool integrations to define a clear blueprint.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-500 to-orange-500 p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-amber-255 mb-2 font-bold text-amber-100">➜ Pipeline Blueprint</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-amber-100 mb-2 font-bold">➜ Pipeline Blueprint</span>
               <div className="text-xs font-mono font-bold text-white flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-none py-1">
                 <span className="bg-white/10 px-2 py-0.5 rounded border border-white/10">Inbound Webhook</span>
                 <span>➜</span>
@@ -185,11 +185,11 @@ export function Process() {
           <BounceCard className="col-span-12 md:col-span-8" prefersReduced={prefersReduced}>
             <span className="text-xs font-mono text-zinc-500 mb-6 block">[03]</span>
             <CardTitle>Core Implementation</CardTitle>
-            <p className="text-zinc-450 text-sm md:text-[15px] leading-relaxed mt-4 max-w-xl">
-              The system is engineered, stress-tested against real edge cases, and hardened with robust error handling.
+            <p className="text-zinc-200 text-sm md:text-[15px] leading-relaxed mt-4 max-w-xl">
+              We build and deploy secure, autonomous pipelines, stress-tested and hardened against errors.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-green-500 to-emerald-500 p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-green-255 mb-2 font-bold text-green-100">⚙ Telemetry Log</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-green-100 mb-2 font-bold">⚙ Telemetry Log</span>
               <div className="text-xs font-mono font-medium text-white/90 space-y-1">
                 <p className="text-green-200 font-bold">$ npm run deploy --secure</p>
                 <p className="text-[11px] opacity-75">Deploying Agent OS... [OK]</p>
@@ -202,11 +202,11 @@ export function Process() {
           <BounceCard className="col-span-12 md:col-span-4" prefersReduced={prefersReduced}>
             <span className="text-xs font-mono text-zinc-500 mb-6 block">[04]</span>
             <CardTitle>Seamless Handoff</CardTitle>
-            <p className="text-zinc-455 text-sm md:text-[15px] leading-relaxed mt-4 max-w-sm">
-              I deploy the systems to your infrastructure, record walkthroughs, and train your team to run them independently.
+            <p className="text-zinc-200 text-sm md:text-[15px] leading-relaxed mt-4 max-w-sm">
+              We hand over full code ownership, record custom walkthroughs, and transition your team.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-pink-500 to-red-500 p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-pink-255 mb-2 font-bold text-pink-100">✓ Operations Completed</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-pink-100 mb-2 font-bold">✓ Operations Completed</span>
               <ul className="text-xs font-semibold text-white space-y-1.5 font-mono">
                 <li>• 100% Code & IP Ownership</li>
                 <li>• Walkthrough Guide Recorded</li>
@@ -263,7 +263,7 @@ export function Trust() {
           <h2 className="font-heading font-black text-white text-3xl sm:text-4xl md:text-5xl leading-[1.1] tracking-[-0.035em] mb-3">
             Operational excellence
           </h2>
-          <p className="text-sm md:text-[15px] leading-[1.6] text-white/60">
+          <p className="text-sm md:text-[15px] leading-[1.6] text-zinc-200">
             A live roadmap of workflow integrations, high-volume operational metrics, and custom automation tools engineered to power the AIFLOXIUM infrastructure.
           </p>
         </div>
@@ -326,11 +326,11 @@ export function Trust() {
         <div className="grid grid-rows-[auto_1fr] gap-4 md:gap-5 lg:h-full">
           {/* Top Client Voice card */}
           <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
-            <p className="text-[13px] sm:text-[13.5px] leading-[1.6] text-white/85 italic relative z-10">
+            <p className="text-[13px] sm:text-[13.5px] leading-[1.6] text-zinc-100 italic relative z-10">
               &quot;{BRAND_SIGNATURE_NAME} automated our entire lead qualification and booking process. We saw a 3x increase in response times and reclaimed over 40 hours a week.&quot;
             </p>
             
-            <div className="text-xs text-white/80 relative z-10">
+            <div className="text-xs text-white relative z-10">
               <strong className="text-white">Elena Brooks</strong>, Operations Director — Halcyon
             </div>
           </div>
@@ -356,7 +356,7 @@ export function Trust() {
             </div>
 
             {/* Bottom caption */}
-            <p className="relative z-20 text-center text-xs tracking-wider uppercase text-white/85 font-medium">
+            <p className="relative z-20 text-center text-xs tracking-wider uppercase text-white font-medium">
               API Tasks Executed
             </p>
           </div>
@@ -420,7 +420,7 @@ export function Trust() {
               <a href={`mailto:${PRIMARY_EMAIL}`} className="text-lg md:text-xl font-medium text-white hover:text-brand-orange transition-colors tracking-tight">
                 {PRIMARY_EMAIL}
               </a>
-              <a href={`tel:${PHONE_NUMBER}`} className="text-sm md:text-base text-white/60 hover:text-white transition-colors">
+              <a href={`tel:${PHONE_NUMBER}`} className="text-sm md:text-base text-zinc-200 hover:text-white transition-colors">
                 {PHONE_NUMBER}
               </a>
             </div>
@@ -451,13 +451,13 @@ export function Pricing() {
           <h3 className="text-4xl md:text-6xl font-heading font-black tracking-[-0.035em] mb-8 text-white leading-[0.95]">
             Pricing <br /> <span className="text-brush text-3xl md:text-5xl lg:text-6xl mt-2 text-brand-orange">philosophy</span>.
           </h3>
-            <p className="text-zinc-300 font-sans font-light text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-            Every business has unique operational needs. Rather than locking you into rigid subscriptions, I provide custom scoping. Most systems recoup their entire investment in under 30 days by reclaiming hundreds of hours of team labor.
+          <p className="text-zinc-200 font-sans font-light text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+            Every business is unique. We provide custom scoping, ensuring most systems recoup their entire investment in under 30 days by reclaiming hundreds of hours of team labor.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 border border-brand-plum/20 rounded-2xl bg-[#1d0a24]/50 w-fit relative overflow-hidden">
              <div className="flex flex-col">
                 <div className="text-sm font-mono text-white uppercase tracking-widest">Typical Investment Range</div>
-                <div className="text-[10px] text-zinc-400 mt-1 uppercase font-bold tracking-wider">Typically reclaiming 80+ hours of manual work monthly</div>
+                <div className="text-[10px] text-zinc-200 mt-1 uppercase font-bold tracking-wider">Typically reclaiming 80+ hours of manual work monthly</div>
              </div>
              <div className="text-2xl md:text-3xl font-black font-heading text-brand-orange">$800 to $5,000+</div>
           </div>
@@ -480,7 +480,7 @@ export function Pricing() {
             Get My Free System Blueprint
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
-          <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mt-3 text-center w-full block">✓ Includes a free 15-minute scoping audit. No obligation.</span>
+          <span className="text-[10px] text-zinc-300 font-bold uppercase tracking-widest mt-3 text-center w-full block">✓ Includes a free 15-minute scoping audit. No obligation.</span>
         </div>
       </div>
     </section>
@@ -523,11 +523,8 @@ export function Founder() {
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white tracking-[-0.035em] mb-6 md:mb-8 leading-[0.95]">
                 Built for <span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2 text-brand-orange">real</span> operations.
               </h3>
-               <p className="text-white text-lg md:text-xl leading-relaxed mb-8 font-medium">
-                 I built AIFLOXIUM as a specialized studio focused on agentic
-                 operating systems, vibe-coded web applications, and database AI integrations.
-                 The goal is simple: deploy systems that autonomously manage
-                 complex business pipelines and scale without code boundaries.
+               <p className="text-zinc-200 text-lg md:text-xl leading-relaxed mb-8 font-normal">
+                 I built AIFLOXIUM to focus on custom agentic operating systems, vibe-coded web applications, and database AI integrations. We build architectures that run autonomously and scale without limits.
                </p>
                <div className="relative mb-10">
                   <span className="absolute -top-4 -left-2 text-6xl text-white/10 font-serif leading-none">&quot;</span>
@@ -541,8 +538,8 @@ export function Founder() {
                     <ArrowUpRight className="w-6 h-6 text-black" />
                  </Link>
                  <Link href="https://www.linkedin.com/in/muhammad-shadab-shams-8b07132b6/" target="_blank" rel="noopener noreferrer">
-                   <p className="text-white font-black font-heading text-xl tracking-[-0.035em]">Muhammad Shadab Shams</p>
-                   <p className="text-brand-orange font-mono text-[10px] font-bold uppercase tracking-[0.3em] mt-1">Agentic Systems Developer</p>
+                    <p className="text-white font-black font-heading text-xl tracking-[-0.035em]">Muhammad Shadab Shams</p>
+                    <p className="text-brand-orange font-mono text-xs font-bold uppercase tracking-[0.2em] mt-1">Agentic Systems Developer</p>
                  </Link>
                </div>
             </div>

@@ -100,7 +100,7 @@ export default async function BlogPage() {
                     {posts[0].frontmatter.title}
                   </h2>
                   
-                  <p className="text-lg text-white mb-12 leading-relaxed max-w-lg">
+                  <p className="text-lg text-zinc-200 mb-12 leading-relaxed max-w-lg">
                     {posts[0].frontmatter.description}
                   </p>
                   
@@ -124,10 +124,10 @@ export default async function BlogPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 border-b border-gray-100 pb-12">
              <div className="max-w-xl">
                <h3 className="text-4xl font-black text-black tracking-tighter uppercase mb-4">Latest Research</h3>
-               <p className="text-black font-bold">Technological explorations in neural workflows, agentic reasoning, and scalable AI architectures.</p>
+               <p className="text-zinc-900 font-bold">Technological explorations in neural workflows, agentic reasoning, and scalable AI architectures.</p>
              </div>
              
-             <p className="max-w-sm text-sm font-medium leading-relaxed text-zinc-600">
+             <p className="max-w-sm text-sm font-medium leading-relaxed text-zinc-900">
                Detailed breakdowns of AI workflows, SEO systems, agents, and internal
                tooling. Each post is written to help operators make a better technical
                decision, not just skim a trend.
@@ -136,7 +136,7 @@ export default async function BlogPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {posts.slice(1).map((post, index) => (
-              <Link 
+               <Link 
                 key={post.slug} 
                 href={`/blog/${post.slug}`}
                 className="group p-8 md:p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:border-brand-plum/30 hover:bg-white transition-colors duration-500"
@@ -163,7 +163,7 @@ export default async function BlogPage() {
                   {post.frontmatter.title}
                 </h3>
                 
-                <p className="text-black text-sm font-medium leading-relaxed mb-10 line-clamp-3">
+                <p className="text-zinc-900 text-sm font-medium leading-relaxed mb-10 line-clamp-3">
                   {post.frontmatter.description}
                 </p>
                 
