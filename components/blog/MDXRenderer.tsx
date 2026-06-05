@@ -9,6 +9,7 @@ import { ImpactStats } from "./ImpactStats";
 import { CodeBlock } from "./CodeBlock";
 import { PostFigurePlaceholder } from "./PostFigurePlaceholder";
 import { BlogArchitecture } from "../sections/BlogArchitecture";
+import { SelfHealingFlowchart } from "./SelfHealingFlowchart";
 import { LeadMagnetCTA } from "./LeadMagnetCTA";
 import { Accordion } from "./Accordion";
 import { AuthorCard } from "./AuthorCard";
@@ -207,6 +208,7 @@ const components = {
   PremiumCTA,
   ImpactStats,
   BlogArchitecture,
+  SelfHealingFlowchart,
   PostFigurePlaceholder,
   LeadMagnetCTA,
   Accordion,
