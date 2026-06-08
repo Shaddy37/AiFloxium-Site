@@ -34,7 +34,7 @@ export const WordsPullUp = ({ text, className = "", showAsterisk = false, style 
             transition={
               prefersReduced
                 ? { duration: 0.01 }
-                : { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }
+                : { duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }
             }
             className="inline-block relative"
             style={{ marginRight: isLast ? 0 : "0.25em" }}
@@ -84,7 +84,7 @@ export const WordsPullUpMultiStyle = ({ segments, className = "", style }: Words
           transition={
             prefersReduced
               ? { duration: 0.01 }
-              : { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }
+              : { duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }
           }
           className={`inline-block ${w.className ?? ""}`}
           style={{ marginRight: "0.25em" }}
@@ -131,7 +131,7 @@ const PrismaHero = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-[10px] font-medium tracking-widest uppercase transition-colors sm:text-xs md:text-sm text-zinc-400 hover:text-white"
+                className="text-[10px] font-medium tracking-widest uppercase transition-colors sm:text-xs md:text-sm text-zinc-400 hover:text-white active:scale-95 active:transition-transform active:duration-100"
               >
                 {item.name}
               </Link>
@@ -169,7 +169,7 @@ const PrismaHero = () => {
                 transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-start"
               >
-                <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-3 sm:text-base">
+                <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-[gap,transform] duration-160 hover:gap-3 active:scale-[0.97] sm:text-base">
                   Map My System (Free)
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
                     <ArrowRight className="h-4 w-4 text-brand-orange" />

@@ -136,7 +136,7 @@ export function Process() {
                  Protocols of <br/><span className="text-brush text-2xl md:text-5xl lg:text-6xl mt-2 text-brand-orange">execution</span>.
                </h3>
             </div>
-            <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-white hover:text-brand-orange transition-colors group shrink-0">
+            <Link href="/resources" className="hidden md:flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-white hover:text-brand-orange transition-[color,transform] duration-200 group shrink-0 active:scale-95">
                View Full Documentation
                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
@@ -231,6 +231,7 @@ const BounceCard = ({ className = "", children, prefersReduced }: BounceCardProp
   return (
     <motion.div
       whileHover={prefersReduced ? {} : { scale: 0.97, rotate: "-0.5deg" }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={cn(
         "group relative min-h-[380px] cursor-pointer overflow-hidden rounded-2xl border border-brand-plum/20 bg-[#120716] p-8 md:p-10 transition-colors duration-500 hover:border-brand-orange/45",
         className
@@ -272,7 +273,7 @@ export function Trust() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="liquid-glass rounded-full px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors border border-white/10"
+            className="liquid-glass rounded-full px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-medium text-white hover:bg-white/10 transition-[background-color,transform] duration-200 border border-white/10 active:scale-[0.97]"
           >
             Let&apos;s Team Up Today
           </a>
@@ -283,7 +284,7 @@ export function Trust() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-7xl mx-auto w-full lg:h-[720px] relative z-10">
         
         {/* Column 1 - Background Card */}
-        <div className="relative rounded-2xl bg-black/60 overflow-hidden p-6 md:p-8 flex flex-col justify-between min-h-[440px] md:min-h-[380px] lg:min-h-[460px] lg:h-full border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
+        <div className="relative rounded-2xl bg-black/60 overflow-hidden p-6 md:p-8 flex flex-col justify-between min-h-[440px] md:min-h-[380px] lg:min-h-[460px] lg:h-full border border-brand-plum/20 hover:border-brand-plum/40 transition-[border-color] duration-200">
           <LazyVideo
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_150203_44a5bd32-516a-47ce-a077-8acbf9aa8991.mp4"
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
@@ -325,7 +326,7 @@ export function Trust() {
         {/* Column 2 - Stacked rows */}
         <div className="grid grid-rows-[auto_1fr] gap-4 md:gap-5 lg:h-full">
           {/* Top Client Voice card */}
-          <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
+          <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-[border-color] duration-200">
             <p className="text-[13px] sm:text-[13.5px] leading-[1.6] text-zinc-100 italic relative z-10">
               &quot;{BRAND_SIGNATURE_NAME} automated our entire lead qualification and booking process. We saw a 3x increase in response times and reclaimed over 40 hours a week.&quot;
             </p>
@@ -336,7 +337,7 @@ export function Trust() {
           </div>
 
           {/* Bottom 10M+ card */}
-          <div className="relative rounded-2xl bg-black/60 p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
+          <div className="relative rounded-2xl bg-black/60 p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-[border-color] duration-200">
             <LazyVideo
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_154543_d5b83fc1-9cea-44f3-b5e8-8f325935211a.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0 opacity-85"
@@ -365,7 +366,7 @@ export function Trust() {
         {/* Column 3 - Stacked */}
         <div className="grid grid-rows-[1fr_auto] gap-4 md:gap-5 lg:h-full">
           {/* Top Daily Software card */}
-          <div className="relative rounded-2xl bg-black/60 p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
+          <div className="relative rounded-2xl bg-black/60 p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-[border-color] duration-200">
             <LazyVideo
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260507_153148_d7a3e1dd-e5d0-4ce6-8306-00d7522ecc44.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0 opacity-85"
@@ -405,7 +406,7 @@ export function Trust() {
           </div>
 
           {/* Bottom Reach Me card */}
-          <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-colors duration-300">
+          <div className="relative rounded-2xl bg-[#25142b]/60 p-6 md:p-8 overflow-hidden noise-overlay flex flex-col justify-between border border-brand-plum/20 hover:border-brand-plum/40 transition-[border-color] duration-200">
             <div className="flex items-center justify-end w-full relative z-10">
               <a
                 href={`mailto:${PRIMARY_EMAIL}`}
@@ -441,7 +442,7 @@ export function Pricing() {
       {/* Violet radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-brand-plum/10 blur-[130px] pointer-events-none" />
 
-      <div className="container mx-auto max-w-7xl relative z-10 bg-[#120716] border border-brand-plum/20 rounded-3xl p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden hover:border-brand-orange/45 transition-colors duration-500">
+      <div className="container mx-auto max-w-7xl relative z-10 bg-[#120716] border border-brand-plum/20 rounded-3xl p-10 md:p-20 flex flex-col lg:flex-row justify-between items-center gap-16 overflow-hidden hover:border-brand-orange/45 transition-[border-color] duration-200">
         <CornerPlusIcons />
         
         <div className="w-full lg:w-3/5">
@@ -476,7 +477,7 @@ export function Pricing() {
                </li>
             ))}
           </ul>
-          <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
+          <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full py-6 rounded-xl bg-brand-orange text-white font-black text-sm uppercase tracking-widest transition-[background-color,transform] duration-160 hover:bg-brand-orange/90 active:scale-[0.97] flex items-center justify-center gap-4 group border-none shadow-[0_0_30px_rgba(255,107,0,0.3)]">
             Get My Free System Blueprint
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>

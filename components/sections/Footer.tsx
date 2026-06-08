@@ -62,7 +62,7 @@ export default function Footer() {
                 href={X_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-colors"
+                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-[background-color,border-color,transform] duration-200 active:scale-95"
                 style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", background: "rgba(0, 0, 0, 0.4)" }}
                 aria-label="Twitter / X profile"
               >
@@ -72,7 +72,7 @@ export default function Footer() {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-colors"
+                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-[background-color,border-color,transform] duration-200 active:scale-95"
                 style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", background: "rgba(0, 0, 0, 0.4)" }}
                 aria-label={`LinkedIn profile of ${PERSON_NAME}`}
               >
@@ -114,10 +114,10 @@ export default function Footer() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-40 w-40 rounded-full bg-brand-orange text-white font-bold text-lg flex flex-col items-center justify-center gap-2 group hover:bg-brand-orange/80 transition-colors shadow-[0_0_50px_rgba(255,107,0,0.2)] shrink-0"
+            className="h-40 w-40 rounded-full bg-brand-orange text-white font-bold text-lg flex flex-col items-center justify-center gap-2 group transition-[background-color,transform] duration-160 hover:bg-brand-orange/80 active:scale-[0.97] shadow-[0_0_50px_rgba(255,107,0,0.2)] shrink-0"
           >
             Book a Call
-            <ArrowRight className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+            <ArrowRight className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-200" />
           </Link>
         </div>
 

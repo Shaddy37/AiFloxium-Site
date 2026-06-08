@@ -219,12 +219,12 @@ export default function ProductionEvolved() {
                   prefersReduced
                     ? { duration: 0.01 }
                     : {
-                        delay: 0.2 + i * 0.15,
-                        duration: 0.8,
+                        delay: 0.15 + i * 0.1,
+                        duration: 0.6,
                         ease: [0.16, 1, 0.3, 1]
                       }
                 }
-                className="bg-[#120716] border border-brand-plum/20 hover:border-brand-orange/45 rounded-[1.25rem] p-6 min-h-[380px] flex flex-col justify-between transition-colors duration-500 group relative z-10"
+                className="bg-[#120716] border border-brand-plum/20 hover:border-brand-orange/45 rounded-[1.25rem] p-6 min-h-[380px] flex flex-col justify-between transition-[border-color] duration-200 group relative z-10"
               >
                 {/* Card Top Row */}
                 <div className="flex items-start justify-between gap-4">
@@ -259,7 +259,7 @@ export default function ProductionEvolved() {
                   
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1.5 text-brand-orange hover:text-brand-orange/80 transition-colors text-xs font-bold tracking-wider uppercase mt-auto"
+                    className="inline-flex items-center gap-1.5 text-brand-orange hover:text-brand-orange/80 transition-[color,transform] duration-200 text-xs font-bold tracking-wider uppercase mt-auto active:scale-95"
                   >
                     See how it works
                     <ArrowRight className="h-3.5 w-3.5" />

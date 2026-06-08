@@ -49,7 +49,7 @@ const mobileMenuVariants = {
     x: 0, 
     transition: { type: "spring" as const, damping: 30, stiffness: 300 } 
   },
-  exit: { opacity: 0, x: "100%", transition: { duration: 0.3 } },
+  exit: { opacity: 0, x: "100%", transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] as any } },
 };
 
 const linkVariants = {
@@ -57,7 +57,7 @@ const linkVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.1 + i * 0.08, duration: 0.4, ease: "easeOut" as const },
+    transition: { delay: 0.1 + i * 0.06, duration: 0.3, ease: "easeOut" as const },
   }),
 };
 
@@ -132,16 +132,17 @@ export default function Navbar() {
       animate={visible ? "visible" : "hidden"}
       variants={navVariants}
       transition={headerTransition}
-      className={cn(
-        'fixed top-0 z-[100] mx-auto w-full border-b border-transparent transition-all duration-500',
-        {
-          'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
-            !open && !isLight,
-          'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
-            scrolled && !open && isLight,
-          'bg-brand-bg': open,
-        },
-      )}
+        className={cn(
+          'fixed top-0 z-[100] mx-auto w-full border-b border-transparent',
+          'transition-[background-color,border-color,box-shadow] duration-300',
+          {
+            'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
+              !open && !isLight,
+            'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
+              scrolled && !open && isLight,
+            'bg-brand-bg': open,
+          },
+        )}
     >
       <motion.nav
         layout
@@ -284,7 +285,8 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: "default" }), 
-                "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest transition-all shadow-lg border-none"
+                "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest shadow-lg border-none",
+                "transition-[background-color,transform] duration-160 active:scale-[0.97]"
               )}
             >
               Book a Call
@@ -329,7 +331,7 @@ export default function Navbar() {
                     key={link.name}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + i * 0.08, duration: 0.4, ease: "easeOut" }}
+                    transition={{ delay: 0.1 + i * 0.06, duration: 0.3, ease: "easeOut" }}
                   >
                     <Link
                       href={link.href}

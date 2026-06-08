@@ -25,12 +25,12 @@ const FeatureCard = ({ index, isInView, children }: FeatureCardProps) => {
         prefersReduced
           ? { duration: 0.01 }
           : {
-              delay: index * 0.15,
+              delay: index * 0.1,
               ease: [0.16, 1, 0.3, 1],
-              duration: 0.8,
+              duration: 0.6,
             }
       }
-      className="relative flex flex-col justify-between h-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/80 p-6 group transition-colors duration-500 hover:border-brand-orange/40 hover:bg-zinc-900"
+      className="relative flex flex-col justify-between h-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/80 p-6 group transition-[border-color,background-color] duration-200 hover:border-brand-orange/40 hover:bg-zinc-900"
     >
       {/* Decorative inner gradient glow */}
       <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full bg-brand-orange/5 blur-2xl group-hover:bg-brand-orange/10 transition-colors duration-500 pointer-events-none" />
@@ -92,15 +92,15 @@ export default function PrismaFeatures() {
               : {
                   delay: 0,
                   ease: [0.16, 1, 0.3, 1],
-                  duration: 0.8,
+                  duration: 0.6,
                 }
           }
-          className="relative flex flex-col min-h-[320px] lg:min-h-0 rounded-2xl overflow-hidden border border-white/10 justify-end p-6 bg-zinc-950 group transition-colors duration-500 hover:border-brand-orange/40"
+          className="relative flex flex-col min-h-[320px] lg:min-h-0 rounded-2xl overflow-hidden border border-white/10 justify-end p-6 bg-zinc-950 group transition-[border-color] duration-200 hover:border-brand-orange/40"
         >
           {/* Video */}
           <LazyVideo
             preload="none"
-            className="absolute inset-0 h-full w-full object-cover z-0 opacity-80 group-hover:scale-105 transition-transform duration-700"
+            className="absolute inset-0 h-full w-full object-cover z-0 opacity-80 group-hover:scale-105 transition-transform duration-500"
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
           />
           {/* Subtle overlay */}
@@ -116,7 +116,7 @@ export default function PrismaFeatures() {
           <div className="flex flex-col gap-5 relative z-10">
             {/* Icon Header */}
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-orange/10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-brand-orange/10">
                 <Workflow className="w-5 h-5" />
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function PrismaFeatures() {
             className="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors hover:text-white"
           >
             Learn more
-            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-200 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
           </Link>
         </FeatureCard>
 
@@ -159,7 +159,7 @@ export default function PrismaFeatures() {
           <div className="flex flex-col gap-5 relative z-10">
             {/* Icon Header */}
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-orange/10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-brand-orange/10">
                 <BrainCircuit className="w-5 h-5" />
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function PrismaFeatures() {
             className="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors hover:text-white"
           >
             Learn more
-            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-200 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
           </Link>
         </FeatureCard>
 
@@ -202,7 +202,7 @@ export default function PrismaFeatures() {
           <div className="flex flex-col gap-5 relative z-10">
             {/* Icon Header */}
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-orange/10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-brand-orange/10">
                 <LayoutDashboard className="w-5 h-5" />
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function PrismaFeatures() {
             className="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors hover:text-white"
           >
             Learn more
-            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-200 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
           </Link>
         </FeatureCard>
 

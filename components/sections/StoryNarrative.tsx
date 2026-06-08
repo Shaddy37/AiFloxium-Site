@@ -137,7 +137,7 @@ export default function StoryNarrative() {
           
           <div className="flex flex-wrap justify-between items-center gap-6 mt-auto pt-6 border-t border-white/10">
             <span className="text-zinc-300 text-xs font-mono font-bold tracking-widest uppercase">✓ MEASURED BY METRICS</span>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-2 pl-6 pr-2 text-xs font-bold uppercase tracking-widest text-white transition-all hover:gap-3 hover:bg-white hover:text-black">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-2 pl-6 pr-2 text-xs font-bold uppercase tracking-widest text-white transition-[gap,background-color,color,transform] duration-200 hover:gap-3 hover:bg-white hover:text-black active:scale-[0.97]">
               Book Discovery Call
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white transition-transform group-hover:scale-110 group-hover:bg-brand-orange text-brand-orange group-hover:text-white">
                 <ArrowRight className="h-3 w-3" />

@@ -20,6 +20,7 @@ export default function FeaturedProduct() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8"
+          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         >
           <div className="border border-brand-plum/20 bg-brand-plum/5 rounded-[2rem] p-10 md:p-12">
             <p className="text-brand-orange text-xs font-black uppercase tracking-[0.3em] mb-6">
@@ -40,14 +41,14 @@ export default function FeaturedProduct() {
                 href={APEPUBLISH_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all"
+                className="inline-flex items-center justify-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-[background-color,transform] duration-160 hover:bg-brand-orange/90 active:scale-[0.97]"
               >
                 Visit ApePublish
                 <ArrowUpRight className="w-4 h-4" />
               </a>
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center gap-3 border border-brand-plum/30 bg-brand-bg/60 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-brand-plum/10 transition-all"
+                className="inline-flex items-center justify-center gap-3 border border-brand-plum/30 bg-brand-bg/60 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-[background-color,border-color,transform] duration-160 hover:bg-brand-plum/10 active:scale-[0.97]"
               >
                 See more proof
               </Link>

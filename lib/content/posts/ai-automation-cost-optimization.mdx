@@ -83,6 +83,8 @@ A few data points that frame why cost discipline matters right now:
 
 AI automations get expensive quietly. A workflow that cost $30/month at launch becomes $600/month at scale because cost grows with *volume × tokens × model price* — and all three tend to climb at once.
 
+![Why AI automation costs spiral out of control — 7 Common Cost Leaks](/blog/ai-automation-cost-optimization/02-cost-leaks-english.png)
+
 Here are the seven most common cost leaks I see in production n8n workflows:
 
 | Cost leak | Why it's expensive | Typical fix |
@@ -100,16 +102,7 @@ Here are the seven most common cost leaks I see in production n8n workflows:
 <SectionHeading title="The 7 layers of AI automation cost optimization" subtitle="A Step-by-Step Savings Framework" number="04" id="7-layers-optimization" />
 
 Think of cost optimization as a stack. Each layer compounds on the one below it, so applying all seven is what gets you to 80% savings rather than 20%.
-
-```mermaid
-flowchart TD
-	A["1. Measure: log tokens + cost per run"] --> B["2. Right-size: match model to task"]
-	B --> C["3. Reduce input: trim prompts + RAG chunks"]
-	C --> D["4. Batch: group items per AI call"]
-	D --> E["5. Cache: reuse static context + results"]
-	E --> F["6. Route: fallback chains cheap to premium"]
-	F --> G["7. Infra: self-host on fixed-cost VPS"]
-```
+![7-Layer AI Automation Cost Optimization Stack](/blog/ai-automation-cost-optimization/01-seven-layers-english.png)
 
 ### Layer 1 — Measure cost per run first
 
@@ -156,6 +149,8 @@ Every input token is billed on every run. Trim verbose system prompts, drop redu
 
 Processing items one-by-one re-sends the entire system prompt for each item. Batching 3–10 items per call amortizes that overhead. A real n8n example from the community: a Reddit-reply workflow went from **126 calls at ~$8.50/run to 42 batched calls at ~$4.25/run** — a 50% cut — just by setting the AI Agent node's batch size to 3.
 
+![One-by-one vs Batch Processing](/blog/ai-automation-cost-optimization/03-batching-english.png)
+
 ### Layer 5 — Cache static context and results
 
 If your system prompt, instructions, or knowledge base don't change between runs, use prompt caching (supported by most major providers in 2026) so the static prefix isn't re-billed at full rate. For deterministic lookups, cache the *result* itself keyed by input hash — a repeat question shouldn't cost a second API call.
@@ -163,6 +158,8 @@ If your system prompt, instructions, or knowledge base don't change between runs
 ### Layer 6 — Route with fallback chains
 
 Start with the cheapest model that *might* work and escalate only when it fails a quality check. A typical chain: free model → mid-tier → premium. With OpenRouter (or a self-hosted router like LiteLLM), you can express this in a single routing step.
+
+![Free to Flagship Model Routing Chain](/blog/ai-automation-cost-optimization/04-fallback-chain-english.png)
 
 ```jsx
 // n8n Code node — cheapest-capable model routing
@@ -231,6 +228,8 @@ For AIFLOXIUM client builds, my default cost-control stack is: **self-hosted n8n
 <SectionHeading title="Case study: cutting an automation bill from $740 to $96/month" subtitle="An 87% Reduction in Practice" number="08" id="case-study" />
 
 *Representative example based on a typical AIFLOXIUM audit; figures are rounded and anonymized.*
+
+![Compressing Monthly Bill from $740 to $96](/blog/ai-automation-cost-optimization/05-case-study-english.png)
 
 A B2B lead-gen client was running a content + outreach pipeline that had quietly crept to **~$740/month** in combined model and execution costs. Here's what the audit changed, in order of impact:
 
