@@ -16,7 +16,8 @@ export async function generateStaticParams() {
       slug !== 'claude-code-vs-codex-comparison' &&
       slug !== 'google-antigravity-2-0-review-2026' &&
       slug !== 'best-open-source-ai-models' &&
-      slug !== 'self-healing-n8n-workflows'
+      slug !== 'self-healing-n8n-workflows' &&
+      slug !== 'ai-automation-cost-optimization'
   );
   return slugs.map((slug) => ({ slug }));
 }
