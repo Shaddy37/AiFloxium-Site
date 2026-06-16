@@ -29,8 +29,8 @@ export const WordsPullUp = ({ text, className = "", showAsterisk = false, style 
         return (
           <motion.span
             key={i}
-            initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-            animate={isInView ? { y: 0, opacity: 1 } : {}}
+            initial={prefersReduced ? { y: 0, opacity: 1, filter: "blur(0px)" } : { y: 20, opacity: 0, filter: "blur(4px)" }}
+            animate={isInView ? { y: 0, opacity: 1, filter: "blur(0px)" } : {}}
             transition={
               prefersReduced
                 ? { duration: 0.01 }
@@ -79,8 +79,8 @@ export const WordsPullUpMultiStyle = ({ segments, className = "", style }: Words
       {words.map((w, i) => (
         <motion.span
           key={i}
-          initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
+          initial={prefersReduced ? { y: 0, opacity: 1, filter: "blur(0px)" } : { y: 20, opacity: 0, filter: "blur(4px)" }}
+          animate={isInView ? { y: 0, opacity: 1, filter: "blur(0px)" } : {}}
           transition={
             prefersReduced
               ? { duration: 0.01 }

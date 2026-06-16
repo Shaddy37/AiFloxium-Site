@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { WordsPullUpMultiStyle } from "@/components/ui/prisma-hero";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 interface AnimatedLetterProps {
   char: string;
@@ -24,6 +25,7 @@ const AnimatedLetter = ({ char, index, totalChars, scrollYProgress }: AnimatedLe
 export default function PrismaAbout() {
   const containerRef = useRef<HTMLDivElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const prefersReduced = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: paragraphRef,
@@ -73,20 +75,29 @@ export default function PrismaAbout() {
         <div className="w-16 h-px bg-white/10 my-4" />
 
         {/* Body Paragraph with scroll-linked opacity reveal */}
-        <p
-          ref={paragraphRef}
-          className="text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto"
-        >
-          {chars.map((char, index) => (
-            <AnimatedLetter
-              key={index}
-              char={char}
-              index={index}
-              totalChars={totalChars}
-              scrollYProgress={scrollYProgress}
-            />
-          ))}
-        </p>
+        {prefersReduced ? (
+          <p
+            ref={paragraphRef}
+            className="text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto"
+          >
+            {bodyText}
+          </p>
+        ) : (
+          <p
+            ref={paragraphRef}
+            className="text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl mx-auto"
+          >
+            {chars.map((char, index) => (
+              <AnimatedLetter
+                key={index}
+                char={char}
+                index={index}
+                totalChars={totalChars}
+                scrollYProgress={scrollYProgress}
+              />
+            ))}
+          </p>
+        )}
 
       </div>
     </section>

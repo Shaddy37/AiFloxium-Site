@@ -69,7 +69,7 @@ export function Vision() {
               initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={prefersReduced ? { duration: 0.01 } : {}}
+            transition={prefersReduced ? { duration: 0.01 } : { duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-brand-orange tracking-[0.2em] font-medium text-xs md:text-sm uppercase mb-6 flex items-center gap-4">
                 <span className="w-8 h-[1px] bg-brand-plum" /> My Vision
@@ -498,7 +498,7 @@ export function Founder() {
             initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={prefersReduced ? { duration: 0.01 } : {}}
+              transition={prefersReduced ? { duration: 0.01 } : { duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative border border-dashed border-brand-plum/30 bg-brand-plum/5 rounded-3xl p-10 md:p-16 flex flex-col lg:flex-row gap-16 items-center overflow-hidden"
          >
             <CornerPlusIcons />

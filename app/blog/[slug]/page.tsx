@@ -17,7 +17,8 @@ export async function generateStaticParams() {
       slug !== 'google-antigravity-2-0-review-2026' &&
       slug !== 'best-open-source-ai-models' &&
       slug !== 'self-healing-n8n-workflows' &&
-      slug !== 'ai-automation-cost-optimization'
+      slug !== 'ai-automation-cost-optimization' &&
+      slug !== 'agentic-workflows-n8n'
   );
   return slugs.map((slug) => ({ slug }));
 }

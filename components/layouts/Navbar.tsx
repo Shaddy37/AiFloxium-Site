@@ -11,6 +11,7 @@ import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
 import { useFocusTrap } from '@/components/hooks/use-focus-trap';
 import { BRAND_NAME, BRAND_SIGNATURE_NAME, CALENDLY_URL } from '@/lib/site';
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 
 const MOBILE_MENU_ID = 'mobile-menu';
 
@@ -69,6 +70,7 @@ export default function Navbar() {
   const [visible, setVisible] = React.useState(true);
   const [isLight, setIsLight] = React.useState(false);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
+  const prefersReduced = useReducedMotion();
 
   useFocusTrap(mobileMenuRef, open);
 
@@ -128,10 +130,10 @@ export default function Navbar() {
   return (
     <motion.header
       layout
-      initial="hidden"
+      initial={prefersReduced ? "visible" : "hidden"}
       animate={visible ? "visible" : "hidden"}
       variants={navVariants}
-      transition={headerTransition}
+      transition={prefersReduced ? { duration: 0.01 } : headerTransition}
         className={cn(
           'fixed top-0 z-[100] mx-auto w-full border-b border-transparent',
           'transition-[background-color,border-color,box-shadow] duration-300',
@@ -159,8 +161,8 @@ export default function Navbar() {
         <div className="flex justify-start shrink-0">
           <Link href="/" className="relative group z-[110]" onClick={() => setOpen(false)}>
             <motion.div 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={prefersReduced ? {} : { scale: 1.05 }}
+              whileTap={prefersReduced ? {} : { scale: 0.95 }}
               className="relative flex items-center gap-3"
             >
               <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
@@ -205,9 +207,9 @@ export default function Navbar() {
               layout
               key={link.name}
               custom={i}
-              initial="hidden"
+              initial={prefersReduced ? "visible" : "hidden"}
               animate="visible"
-              variants={linkVariants}
+              variants={prefersReduced ? { visible: { opacity: 1, y: 0 } } : linkVariants}
             >
               <Link 
                 href={link.href}
@@ -228,10 +230,10 @@ export default function Navbar() {
           <AnimatePresence>
             {isExpanded && (
               <motion.div
-                initial={{ opacity: 0, width: 0, scale: 0.95 }}
+                initial={prefersReduced ? { opacity: 1, width: "auto", scale: 1 } : { opacity: 0, width: 0, scale: 0.95 }}
                 animate={{ opacity: 1, width: "auto", scale: 1 }}
-                exit={{ opacity: 0, width: 0, scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                exit={prefersReduced ? { opacity: 0, width: 0, scale: 0.95 } : { opacity: 0, width: 0, scale: 0.95 }}
+                transition={prefersReduced ? { duration: 0.01 } : { type: "spring", stiffness: 350, damping: 30 }}
                 className="flex items-center gap-1 overflow-hidden"
               >
                 {secondaryLinks.map((link) => (
@@ -274,9 +276,9 @@ export default function Navbar() {
 
         <div className="flex justify-end items-center gap-4 shrink-0">
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={prefersReduced ? { duration: 0.01 } : { duration: 0.5, delay: 0.6 }}
             className="hidden lg:block z-[110]"
           >
             <Link 
@@ -318,7 +320,8 @@ export default function Navbar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            variants={mobileMenuVariants}
+            variants={prefersReduced ? { hidden: { opacity: 0 }, visible: { opacity: 1 }, exit: { opacity: 0 } } : mobileMenuVariants}
+            transition={prefersReduced ? { duration: 0.01 } : undefined}
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
@@ -329,9 +332,9 @@ export default function Navbar() {
                 {allLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
-                    initial={{ opacity: 0, x: 50 }}
+                    initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + i * 0.06, duration: 0.3, ease: "easeOut" }}
+                    transition={prefersReduced ? { duration: 0.01 } : { delay: 0.1 + i * 0.06, duration: 0.3, ease: "easeOut" }}
                   >
                     <Link
                       href={link.href}
@@ -344,9 +347,9 @@ export default function Navbar() {
                 ))}
               </div>
               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
+                initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
+                transition={prefersReduced ? { duration: 0.01 } : { delay: 0.5, duration: 0.4 }}
                 className="flex flex-col gap-4 mb-8"
               >
                 <Link 

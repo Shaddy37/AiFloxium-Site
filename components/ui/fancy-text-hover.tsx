@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { useReducedMotion } from '@/lib/use-reduced-motion'
 
 const SCATTER_TRANSFORMS: Record<number, { x: string; y: string; rotate: number }> = {
   1: { x: '-15%', y: '60%', rotate: 8 },
@@ -27,6 +28,7 @@ interface FancyTextHoverProps {
 
 function FancyWord({ label, href }: { label: string; href: string }) {
   const [hovered, setHovered] = useState(false)
+  const prefersReduced = useReducedMotion()
 
   return (
     <a
@@ -48,12 +50,12 @@ function FancyWord({ label, href }: { label: string; href: string }) {
           <motion.span
             key={i}
             className="inline-block"
-            animate={{
+            animate={prefersReduced ? { x: 0, y: 0, rotate: 0 } : {
               x: xPercent,
               y: yPercent,
               rotate: rotation,
             }}
-            transition={{
+            transition={prefersReduced ? { duration: 0.01 } : {
               duration: hovered ? 0.2 : 0.35,
               ease: [0.76, 0, 0.24, 1],
             }}

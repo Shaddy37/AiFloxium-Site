@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { APEPUBLISH_URL } from "@/lib/site";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const highlights = [
   "Built as a live SaaS product, not just a concept",
@@ -12,15 +13,17 @@ const highlights = [
 ];
 
 export default function FeaturedProduct() {
+  const prefersReduced = useReducedMotion();
+
   return (
     <section className="py-24 md:py-32 px-6 bg-brand-bg border-y border-brand-plum/10">
       <div className="container mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8"
-          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+          transition={prefersReduced ? { duration: 0.01 } : { duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="border border-brand-plum/20 bg-brand-plum/5 rounded-[2rem] p-10 md:p-12">
             <p className="text-brand-orange text-xs font-black uppercase tracking-[0.3em] mb-6">
