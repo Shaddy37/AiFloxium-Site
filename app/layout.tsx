@@ -138,6 +138,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveatBrush.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossOrigin="anonymous" />
+      </head>
       <body className="bg-background text-foreground min-h-screen overflow-x-hidden" suppressHydrationWarning>
         <a href="#main-content" className="skip-link">
           Skip to main content

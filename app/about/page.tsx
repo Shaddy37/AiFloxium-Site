@@ -86,7 +86,7 @@ export default function AboutPage() {
       <CapabilitiesEngineered />
 
       {/* Cinematic Timeline Section */}
-      <section className="py-24 md:py-32 bg-zinc-50 text-brand-plum relative z-20 border-y border-zinc-200">
+      <section className="py-24 md:py-32 bg-zinc-50 text-brand-plum relative z-20 border-y border-zinc-200" data-theme="light">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
             <h2 className="text-xl md:text-4xl font-heading font-black tracking-[-0.035em] mb-4">How the work evolved</h2>

@@ -8,7 +8,7 @@ const SLUG = 'ai-automation-cost-optimization';
 const TITLE = 'AI Automation Cost Optimization: Cut Your n8n Bill 2026';
 const DESCRIPTION =
   'Learn how to cut AI automation costs in 2026: smart model routing, token batching, caching, free-tier fallbacks, and self-hosted n8n + OpenRouter tactics.';
-const CANONICAL = 'https://aifloxium.online/blog/ai-automation-cost-optimization';
+const CANONICAL = 'https://www.aifloxium.online/blog/ai-automation-cost-optimization';
 const IMAGE = 'https://aifloxium.online/blog/covers/ai-automation-cost-optimization.svg';
 
 export const metadata: Metadata = {

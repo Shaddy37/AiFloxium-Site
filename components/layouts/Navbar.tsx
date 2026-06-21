@@ -86,35 +86,45 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [open]);
 
-  // Handle scroll-related effects (visibility and theme checking)
+  // Handle scroll-related visibility
   React.useEffect(() => {
-    // 1. Update Visibility
     if (scrollY > lastScrollY.current && scrollY > 100) {
       setVisible(false);
     } else {
       setVisible(true);
     }
     lastScrollY.current = scrollY;
+  }, [scrollY]);
 
-    // 2. Update Theme based on section under navbar
-    const checkTheme = () => {
-      const lightSections = document.querySelectorAll('section[data-theme="light"]');
-      let currentIsLight = false;
+  // Handle active theme checking using optimized IntersectionObserver
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
 
-      lightSections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        // If the top of a light section has passed the navbar top 
-        // OR if the navbar is currently within a light section
-        if (rect.top <= 40 && rect.bottom >= 40) {
-          currentIsLight = true;
-        }
-      });
+    const sections = document.querySelectorAll('section');
+    if (sections.length === 0) return;
 
-      setIsLight(currentIsLight);
+    const observerOptions = {
+      rootMargin: '-40px 0px -95% 0px',
+      threshold: 0,
     };
 
-    checkTheme();
-  }, [scrollY]);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const theme = entry.target.getAttribute('data-theme');
+          setIsLight(theme === 'light');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   React.useEffect(() => {
     if (open) {

@@ -145,29 +145,28 @@ const PrismaHero = () => {
             
             <div className="col-span-12 lg:col-span-8">
               <h1
-                className="font-heading font-black leading-[0.9] tracking-[-0.035em] text-[clamp(3.5rem,12vw,6rem)] text-white"
+                className="font-heading font-black leading-[0.9] tracking-[-0.035em] text-[clamp(3.5rem,12vw,6rem)] text-white animate-fade-in-up"
+                style={{ animationDelay: prefersReduced ? "0ms" : "200ms" }}
               >
-                <WordsPullUp text="AIFLOXIUM" showAsterisk />
+                <span className="relative inline-block">
+                  AIFLOXIUM
+                  <span className="absolute top-[0.65em] -right-[0.3em] text-[0.31em]">*</span>
+                </span>
               </h1>
             </div>
 
             <div className="col-span-12 flex flex-col gap-6 pb-4 sm:pb-8 lg:col-span-4 lg:pb-12">
               
-              <motion.p
-                initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-sm text-zinc-300 sm:text-base md:text-lg font-medium"
-                style={{ lineHeight: 1.4 }}
+              <p
+                className="text-sm text-zinc-300 sm:text-base md:text-lg font-medium animate-fade-in-up"
+                style={{ lineHeight: 1.4, animationDelay: prefersReduced ? "0ms" : "500ms" }}
               >
                 Advanced agentic systems, custom Agentic OS architectures, and low-latency voice agents built to scale operations 24/7 using tailored developer frameworks.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={prefersReduced ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-start"
+              <div
+                className="flex flex-col items-start animate-fade-in-up"
+                style={{ animationDelay: prefersReduced ? "0ms" : "700ms" }}
               >
                 <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-bold uppercase tracking-widest text-white transition-[gap,transform] duration-160 hover:gap-3 active:scale-[0.97] sm:text-base">
                   Map My System (Free)
@@ -183,7 +182,7 @@ const PrismaHero = () => {
                     * Deterministic AI systems built for scale — not brittle templates.
                   </span>
                 </div>
-              </motion.div>
+              </div>
 
             </div>
           </div>

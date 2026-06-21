@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 
 /**
  * CapabilitiesEngineered
@@ -34,24 +35,21 @@ export default function CapabilitiesEngineered() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const el = sectionRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const sectionH = el.offsetHeight;
-      // How far the top of the section is above the viewport top (negative = scrolled past)
-      const scrolled = -rect.top;
-      const p = Math.max(0, Math.min(1, scrolled / (sectionH - window.innerHeight)));
-      // Map progress 0-1 to word index 0-(COUNT-1)
-      const idx = Math.min(COUNT - 1, Math.floor(p * COUNT));
-      setActiveIndex(idx);
-    };
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  useEffect(() => {
+    const latest = scrollYProgress.get();
+    const idx = Math.min(COUNT - 1, Math.floor(latest * COUNT));
+    setActiveIndex(idx);
+  }, [scrollYProgress]);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const idx = Math.min(COUNT - 1, Math.floor(latest * COUNT));
+    setActiveIndex(idx);
+  });
 
   return (
     <>
