@@ -18,11 +18,13 @@ keywords:
 
 We are witnessing the transition from deterministic automation—fixed triggers and static templates—to stochastic reasoning, where autonomous agents perform per-lead forensic audits at sub-second speeds.
 
+![The Autonomous Sales Rep — Neural Loop Architecture](/blog/autonomous-sales-rep/neural-loop.svg)
+
 ## I. Abstract
 
 This treatise explores the architectural shift from manual Outbound Sales Development (SDR) to fully autonomous, agent-led engagement loops. At the center of this evolution is the displacement of the "Lead Research" phase—traditionally the most expensive and error-prone component of the sales cycle—by high-context Large Language Models (LLMs) orchestrated via scalable workflow engines.
 
-We propose a framework designated as the **Aifloxium Neural Loop**, which leverages n8n as a visual orchestration layer and Claude 3.5 Sonnet as a reasoning engine.
+We propose a framework designated as the **Aifloxium Neural Loop**, which leverages [n8n](https://n8n.io/) as a visual orchestration layer and [Claude 3.5 Sonnet](https://docs.anthropic.com/en/docs/about-claude/models) as a reasoning engine.
 
 <ImpactStats 
   stats={[
@@ -42,9 +44,9 @@ The **Lead Enrichment Lag (LEL)** represents the delta in market opportunity cos
 
 The architecture is bifurcated into two primary operational domains: the **Signal Ingestion Layer** and the **Reasoning/Cognition Engine**. Unlike legacy automation, which follows a linear IF/THEN path, the Neural Loop operates as a feedback system.
 
-<BlogArchitecture />
+![The Autonomous Sales Rep — Neural Loop Architecture](/blog/autonomous-sales-rep/neural-loop.svg)
 
-At Aifloxium, we utilize **n8n** as our primary orchestration layer rather than hardcoded Python scripts. The rationale is double-faceted: auditability and visual debugging. For the reasoning layer, we have standardized on **Claude 3.5 Sonnet**.
+At Aifloxium, we utilize [n8n](https://n8n.io/) as our primary orchestration layer rather than hardcoded Python scripts. The rationale is double-faceted: auditability and visual debugging. For the reasoning layer, we have standardized on [Claude 3.5 Sonnet](https://docs.anthropic.com/en/docs/about-claude/models).
 
 ## IV. Per-Lead Forensic Audits
 
@@ -66,7 +68,7 @@ By analyzing the "Careers" page, the system identifies specific tools the compan
 
 A significant barrier to enterprise AI adoption is data residency. Aifloxium deploys all n8n instances within a **Self-Hosted VPC**, ensuring that PII never touches third-party databases outside of the direct API routes.
 
-- **Point-to-Point Encryption**: All data inflight is TLS 1.3 encrypted.
+- **Point-to-Point Encryption**: All data in flight is [TLS 1.3](https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/) encrypted.
 - **Stateless Processing**: Temporary lead data is purged after dispatch.
 - **GDPR Consent Scoping**: Automated verification of Legitimate Interest (LI).
 

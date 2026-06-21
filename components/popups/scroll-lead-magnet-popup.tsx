@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, Mail, ShieldCheck, Sparkles } from "lucide-react";
 
 import { PopupShell } from "@/components/popups/ui/popup-shell";
 import { usePopupControls } from "@/components/providers/popup-provider";
@@ -30,6 +30,17 @@ export function ScrollLeadMagnetPopup() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const redirectUrl = getPopupDefinition(POPUP_ID).redirectUrl;
+
+  useEffect(() => {
+    if (status === "success" && redirectUrl) {
+      const timer = setTimeout(() => {
+        window.open(redirectUrl, "_blank", "noopener,noreferrer");
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [status, redirectUrl]);
 
   const validateEmail = (val: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
@@ -145,7 +156,7 @@ export function ScrollLeadMagnetPopup() {
               <div className="flex items-center gap-2 text-emerald-400">
                 <CheckCircle2 className="h-5 w-5" />
                 <span className="text-sm font-bold uppercase tracking-widest">
-                  Sent
+                  Unlocked
                 </span>
               </div>
               <div className="space-y-1.5">
@@ -156,6 +167,17 @@ export function ScrollLeadMagnetPopup() {
                   {copy.successBody}
                 </p>
               </div>
+              {redirectUrl && (
+                <a
+                  href={redirectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-orange hover:text-brand-orange/80 transition-colors"
+                >
+                  Open audit now
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              )}
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3">

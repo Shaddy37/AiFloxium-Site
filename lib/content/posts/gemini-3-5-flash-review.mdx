@@ -1,0 +1,316 @@
+---
+title: "Gemini 3.5 Flash Review (2026): Speed, Benchmarks, Pricing & Honest Verdict"
+date: "2026-06-21"
+author: "Muhammad Shadab Shams"
+category: "AI Model Review"
+image: "/blog/gemini-3-5-flash-review/cover.svg"
+description: "An honest, hands-on Gemini 3.5 Flash review for 2026 — real benchmarks, pricing, speed tests, the token-cost problem nobody mentions, and how it compares to GPT-5.5 and Claude. Verdict + FAQ inside."
+keywords: ["Gemini 3.5 Flash review", "gemini 3.5 flash benchmarks", "gemini 3.5 flash pricing", "gemini 3.5 flash vs gpt 5.5", "gemini 3.5 flash vs claude", "gemini 3.5 flash speed", "is gemini 3.5 flash good", "gemini 3.5 flash coding", "gemini 3.5 flash agentic", "google antigravity", "gemini api"]
+canonicalUrl: "https://aifloxium.online/blog/gemini-3-5-flash-review"
+---
+
+<TLDR>
+  Gemini 3.5 Flash (GA May 19, 2026) is the fastest frontier-class model I have ever used: ~4x the output speed of comparable frontier models and a 1M-token context window, with near-Pro intelligence (Artificial Analysis Intelligence Index of **50**, vs a tier median of 29). It is genuinely best-in-class for **agentic and MCP workflows** (83.6% MCP Atlas, 56.5% Toolathlon — both category-leading). **But** there is a catch nobody puts on the marketing page: it is a *token hog*. The price tripled vs Gemini 3 Flash (now $1.50 in / $9.00 out per 1M tokens), and because it "thinks" and outputs so much, real-world bills can balloon. **Best for:** high-volume agentic automation, rapid prototyping, and long-horizon coding *with supervision*. **Skip it for:** budget-sensitive high-volume jobs (use Flash-Lite) and creative roleplay. **My score: 4.2 / 5.**
+</TLDR>
+
+<aside>
+**Why trust this review?** I'm Muhammad Shadab Shams, an AI automation consultant. I build production agent systems and n8n automations for clients, I'm building ApePublish, and I've shipped hands-on reviews of Claude Opus 4.8, Antigravity 2.0, and the best AI coding agents of 2026. For this review I ran Gemini 3.5 Flash for ~3 weeks across [Google AI Studio](https://aistudio.google.com/), the [Gemini API](https://ai.google.dev/gemini-api/docs), and [Google Antigravity](https://antigravity.google/) — on real coding, scraping, and multi-agent workloads — and cross-checked my experience against [Artificial Analysis](https://artificialanalysis.ai/), the [DeepMind model card](https://deepmind.google/), and dozens of developer reports on Reddit, LinkedIn, Quora, and Hacker News. Nothing here is copy-pasted from a press release.
+</aside>
+
+---
+
+## The 30-second answer
+
+<aside>
+**Is Gemini 3.5 Flash worth using in 2026?** Yes — if your workload is agentic, tool-heavy, or latency-sensitive. It runs at roughly **150–280 tokens/second**, holds a **1M-token context window**, accepts text, images, audio, video, and PDFs, and beats [Gemini 3.1 Pro](/blog/google-antigravity-2-0-review-2026) on most coding and agentic benchmarks while costing far less than flagship models. The single biggest caveat: it consumes tokens aggressively, so **monitor your spend** and cap your thinking effort. For pure budget/high-volume work, drop to Gemini 3.1 Flash-Lite; for the hardest reasoning, reach for a full frontier model.
+</aside>
+
+---
+
+## What is Gemini 3.5 Flash?
+
+Gemini 3.5 Flash is the first model in Google's **Gemini 3.5** family, announced at Google I/O 2026 and made generally available on **May 19, 2026**. Google's framing is deliberate: *"frontier intelligence with action."* It is not pitched as the smartest model on every reasoning leaderboard — it's the model built to **do things**: drive agents, write and verify code, and run long-horizon workflows at a speed and cost that make those things economical at scale. You can try it free in the [Gemini app](https://gemini.google.com/) or build with it in [Google AI Studio](https://aistudio.google.com/).
+
+A few things make this release notable:
+
+- It is a **Flash-tier** model that outperforms the previous generation's **Pro** model ([Gemini 3.1 Pro](/blog/google-antigravity-2-0-review-2026)) on most coding and agentic benchmarks.
+- It was built for the **agentic era** — sub-agent deployment, multi-step workflows, and rapid agentic loops are first-class use cases, not afterthoughts.
+- Google says **3.5 Pro** is already in internal use and ships next.
+
+<aside>
+**Plain-English analogy:** If Gemini 3.1 Pro was a careful senior engineer who thinks before every move, Gemini 3.5 Flash is a brilliant junior who types at 200 words per second. It gets an astonishing amount done in a short time — but you need to review its work, and it'll happily burn through your budget if you let it run unsupervised.
+</aside>
+
+## Gemini 3.5 Flash specs at a glance
+
+| Spec | Detail |
+| --- | --- |
+| Release date | May 19, 2026 (Generally Available, stable) |
+| Model ID | gemini-3.5-flash |
+| Context window | 1,000,000 tokens |
+| Max output | ~64K–65K tokens |
+| Inputs | Text, images, audio, video, PDF (multimodal) |
+| Output | Text only |
+| Knowledge cutoff | January 2025 |
+| Speed | ~150 t/s (Artificial Analysis "high"); up to ~280 t/s floor target; ~4x faster than comparable frontier models |
+| Intelligence Index | 50 (Artificial Analysis; tier median 29) |
+| Thinking | Configurable effort: low / medium (new default) / high; automatic thought preservation across turns |
+| Tooling | Function calling, structured output, code execution, search-as-a-tool (all first-party). Computer Use not supported yet. |
+| Pricing | $1.50 input / $9.00 output per 1M tokens; $0.15 context caching |
+| Where to use | Gemini app, AI Mode in Search, [Google AI Studio](https://aistudio.google.com/), [Gemini API](https://ai.google.dev/gemini-api/docs), [Antigravity](https://antigravity.google/), Android Studio, Gemini Enterprise, [Make](https://www.make.com/), [OpenRouter](https://openrouter.ai/) |
+
+<aside>
+For the curious: a widely-cited Hacker News analysis estimates Gemini 3.5 Flash is roughly **250–300B total parameters with ~10–16B active** (a sparse MoE), likely served mostly in FP4/FP8 and engineered to run efficiently on a single 8th-gen TPU — which explains the eye-watering throughput. Google has not officially confirmed parameter counts.
+</aside>
+
+## Benchmarks: how good is it, really?
+
+Here's Google's own published benchmark table (DeepMind model card), with the competitive set. I've kept the numbers exactly as published — the bold winners are noted in the text below.
+
+| Benchmark (what it measures) | Gemini 3.5 Flash | Gemini 3 Flash | Gemini 3.1 Pro | Claude Opus 4.7 | GPT-5.5 |
+| --- | --- | --- | --- | --- | --- |
+| Terminal-bench 2.1 (agentic terminal coding) | 76.2% | 58.0% | 70.3% | 66.1% | 78.2% |
+| SWE-Bench Pro, Public (agentic coding) | 55.1% | 49.6% | 54.2% | 64.3% | 58.6% |
+| MCP Atlas (multi-step MCP workflows) | 83.6% | 62.0% | 78.2% | 79.1% | 75.3% |
+| Toolathlon (real-world tool use) | 56.5% | 49.4% | — | — | 55.6% |
+| MMMU-Pro (multimodal reasoning) | 83.6% | 81.2% | 80.5% | 75.2% | 81.2% |
+| Blueprint-Bench 2 (spatial reasoning) | 33.6% | 0.0% | 26.5% | 24.5% | 36.2% |
+| CharXiv Reasoning | 84.2% | — | — | — | — |
+
+**How to read this:**
+
+- **Agentic / tool use is where it wins outright.** It tops the table on **MCP Atlas (83.6%)**, **Toolathlon (56.5%)**, and **MMMU-Pro (83.6%)** — beating Gemini 3.1 Pro, Claude Opus 4.7, and GPT-5.5. If your work is [agents calling tools and MCP servers](/blog/agentic-workflows-n8n), this is the standout result.
+- **Coding is strong but not the outright king.** On Terminal-bench 2.1 (76.2%) it edges past 3.1 Pro and Opus 4.7 but trails GPT-5.5 (78.2%). On SWE-Bench Pro (55.1%) it sits behind both Opus 4.7 and GPT-5.5 — Opus is still the heavyweight for hard, single-shot software engineering.
+- **It is a massive jump over Gemini 3 Flash.** Across the board the deltas vs the prior Flash are large (e.g., MCP Atlas 62% → 83.6%, Blueprint-Bench 0% → 33.6%).
+
+Third-party data backs this up. On the **[Appwrite Arena](https://appwrite.io/)** backend benchmark it scored **90.70 overall** and finished in **13 minutes — the fastest model in the entire 90+ point top tier**, at $1.14 per run. [Artificial Analysis](https://artificialanalysis.ai/) pegs its Intelligence Index at **50**, comfortably above the ~29 median for its price tier.
+
+<aside>
+**Verdict on benchmarks:** Best-in-class for agentic/MCP and multimodal; top-3 for coding; not the best for the hardest single-shot software-engineering tasks. For its price tier, the intelligence-per-dollar is exceptional — on paper.
+</aside>
+
+![Agentic workflow orchestration with multiple sub-agents](/blog/gemini-3-5-flash-review/03-agentic-workflows.svg)
+
+## Speed: this is the headline, and it's real
+
+Google claims Gemini 3.5 Flash is **4x faster** than other frontier models in output tokens per second. In my testing this was not marketing fluff. Independent measurements put it at roughly:
+
+- **~150 tokens/second** on the Artificial Analysis "high" configuration
+- **~127 tokens/second** on OpenRouter's throughput test
+- **~280 tokens/second** as Google's stated floor-speed target
+
+What that *feels* like: I asked it to generate six different payment-UI variations, and it produced all six in under a minute. Spinning up multi-agent loops in [Antigravity](/blog/google-antigravity-2-0-review-2026), the models finished faster than I could read their output. One developer on LinkedIn put it perfectly: *"the Human is now officially the bottleneck — reviewing the output takes more time than it took the model to generate it."*
+
+![Speed comparison showing Gemini 3.5 Flash at 280 tokens per second compared to slower models](/blog/gemini-3-5-flash-review/01-speed-comparison.svg)
+
+## Pricing: the part nobody puts on the marketing slide
+
+This is the most important section of the review, so don't skip it.
+
+| Cost component | Gemini 3 Flash (previous) | Gemini 3.5 Flash (new) |
+| --- | --- | --- |
+| Input (per 1M tokens) | $0.50 | $1.50 |
+| Output (per 1M tokens, incl. thinking) | $3.00 | $9.00 |
+| Context caching | — | $0.15 |
+| Effective change | baseline | ~3x more expensive |
+
+The sticker price tripled. But the *real* cost is worse than the sticker, because Gemini 3.5 Flash thinks more and outputs more. A widely-shared r/LLMDevs post (flagged by Simon Willison) ran the **same Artificial Analysis benchmark suite** on both models:
+
+![Token cost comparison showing 5.5x real cost difference](/blog/gemini-3-5-flash-review/02-token-cost.svg)
+
+<aside>
+**The bill that went viral:** Completing the Artificial Analysis benchmark suite cost **~$278 on Gemini 3 Flash** but **$1,551 on Gemini 3.5 Flash** — roughly **5.5x more**, despite the headline price being only 3x higher. The extra came from the model generating far more thinking + output tokens. *"Everyone's hyped on Gemini 3.5 Flash, but nobody's talking about the bill."*
+</aside>
+
+Multiple Antigravity users echoed this. One on the Google AI dev forum wrote: *"I now know why Gemini 3.5 is called Flash"* — not for speed, but because it burns through token quota faster than any model they'd used, getting **1 issue resolved per usage bar vs 5 issues per bar on the pricier Opus 4.6.** The lesson: **fast + token-hungry can be more expensive than slow + efficient.**
+
+<aside>
+**How to control the cost (what worked for me):**
+
+1. **Set thinking effort to `low` or `medium`.** The new default is already `medium` (down from `high`), and `low` was significantly improved for short agentic/coding tasks. Reserve `high` for genuinely hard problems.
+2. **Use context caching ($0.15)** for repeated long-context prompts.
+3. **Cap output tokens** in your API config so a runaway agent can't dump 60K tokens into the chat.
+4. **Route by task:** send cheap, high-volume work to **Gemini 3.1 Flash-Lite** and only escalate to 3.5 Flash when you need the reasoning.
+</aside>
+
+## Gemini 3.5 Flash vs the competition
+
+| Model | Input / Output (per 1M) | Context | Best at | Watch out for |
+| --- | --- | --- | --- | --- |
+| Gemini 3.5 Flash | $1.50 / $9.00 | 1M | Speed, agentic/MCP, multimodal, prototyping | Token consumption; sloppy when rushed |
+| GPT-5.5 | mid-tier | large | Hard coding (Terminal-bench 78.2%), mature Codex/ChatGPT ecosystem | Slower than Flash; pricier per task |
+| Claude Opus 4.7 | premium (~$3 / $15+) | 1M | Hardest single-shot SWE (SWE-Bench Pro 64.3%), careful reasoning | Far more expensive; slower |
+| Claude Haiku 4.5 | cheaper than Flash | no 1M / multimodal | Cheap output-heavy coding (SWE-bench Verified 73.3%) | No 1M context, no multimodal |
+| Gemini 3.1 Flash-Lite | lowest | large | High-volume, low-cost, efficiency | Lower reasoning depth than 3.5 |
+
+**Quick decision guide:**
+
+- **Pick Gemini 3.5 Flash** if you need speed + agentic/tool performance + multimodal + 1M context, and you can supervise spend.
+- **Pick GPT-5.5** if you live in the Codex/ChatGPT ecosystem and want the strongest single-shot coding.
+- **Pick Claude Opus 4.7** for the hardest engineering tasks where accuracy beats speed and budget is no object.
+- **Pick Claude Haiku 4.5** for cheap, output-heavy coding that doesn't need 1M context or multimodal.
+- **Pick Gemini 3.1 Flash-Lite** for the cheapest high-volume workloads.
+
+## What developers actually say (Reddit, LinkedIn, Hacker News, Quora)
+
+I read through dozens of real threads. The sentiment is genuinely split, and the divide is almost always **speed-lovers vs cost-watchers**.
+
+<aside>
+**The fans**
+
+- **Ethan Mollick (LinkedIn, early access):** *"Very fast for a flash model and very capable, though not as powerful as a full frontier model."*
+- **r/google_antigravity:** *"Gemini 3.5 Flash is amazing (speed, quality) with the new Antigravity CLI"* — with a strong implementation plan, *"the risk of failure is very low."*
+- **Google Cloud Medium writeup:** a developer shipped an "Always-On Task Engine" to production **without writing or modifying a single line of code** — all generated by 3.5 Flash.
+- **Addy Osmani's thread:** the real value is parallel agents + long-running tasks + preserved context speeding up prototyping (paired with strong human review).
+</aside>
+
+<aside>
+**The critics**
+
+- **r/LLMDevs:** *"Everyone's hyped on Gemini 3.5 Flash, but nobody's talking about the bill"* — the 3x-to-5.5x cost story above.
+- **r/GoogleAntigravityIDE:** *"Avoid Gemini 3.5 Flash (Medium). It's too fast to follow along… a GIGANORMOUS token hog. It outputs too much into the chat, and it makes syntactic and orthographic errors."*
+- **Google AI dev forum:** *"I now know why Gemini 3.5 is called Flash"* — unusable token burn for multi-hour work intervals vs Opus.
+- **PCMag:** *"The fastest AI coding model I've used — and extremely error[-prone]"*; speed comes with sloppy execution.
+- **r/SillyTavernAI:** *"3.5 Flash Gemini is horrible"* for roleplay — shorter, more restrictive responses than before.
+</aside>
+
+<aside>
+**My read on the split:** Both camps are right. Gemini 3.5 Flash is phenomenal when you (a) give it a clear plan, (b) cap its thinking/output, and (c) review its work. It disappoints when you let it run wide-open and unsupervised — that's when you get the token bills and the sloppy edits. It is a power tool, not an autopilot.
+</aside>
+
+## Best real-world use cases
+
+From Google's demos and my own testing, this is where Gemini 3.5 Flash shines:
+
+- **[Agentic automation & MCP workflows](/blog/agentic-workflows-n8n)** — its strongest category. Multi-step tool use, sub-agent orchestration, long-horizon tasks. See the [MCP docs](https://modelcontextprotocol.io/) for protocol details.
+- **Rapid prototyping** — generating multiple UI/app variations in seconds to explore options.
+- **Codebase modernization** — Google demoed transforming a messy legacy codebase to Next.js via the Antigravity harness.
+- **High-volume document processing** — multimodal ingestion of PDFs, images, audio, and video at scale (now available in Make for automations).
+- **Builder + player loops** — two agents collaborating in a rapid self-improvement loop (e.g., coding a playable game).
+- **Search-grounded answering** — first-party search-as-a-tool and grounding with [Google Search](https://developers.google.com/search/docs/guides/get-started) / Maps.
+
+<aside>
+**Where it's NOT the best pick:** ultra-tight-budget high-volume jobs (use Flash-Lite), the very hardest single-shot engineering (use Opus 4.7 / GPT-5.5), creative roleplay/long-form fiction, and anything needing Computer Use (not supported yet).
+</aside>
+
+## How to use Gemini 3.5 Flash (step-by-step)
+
+### Option 1 — Free, no code (Gemini app / AI Studio)
+
+- Try it in 60 seconds
+    1. Open the **Gemini app** or **AI Mode in Google Search** — 3.5 Flash is free for everyone there.
+    2. For building/prototyping, go to **Google AI Studio**, pick `gemini-3.5-flash` from the model dropdown, and start prompting. The free tier has no charge for input/output (with rate limits).
+    3. Adjust the **thinking effort** (low / medium / high) to trade speed for depth.
+
+### Option 2 — [Gemini API](https://ai.google.dev/gemini-api/docs) (developers)
+
+- Get an API key and make your first call
+    1. In [**Google AI Studio**](https://aistudio.google.com/), create an **API key** and set it as an environment variable.
+    2. Install the [Google Gen AI SDK](https://github.com/googleapis/python-genai) for your language (Python, TypeScript, Go, Java, etc.).
+    3. Call the model with ID `gemini-3.5-flash`. Minimal Python example:
+
+```python
+from google import genai
+
+client = genai.Client()  # reads GEMINI_API_KEY from env
+
+response = client.models.generate_content(
+    model="gemini-3.5-flash",
+    contents="Summarize this quarterly report and list 3 risks.",
+    config={
+        "thinking_config": {"thinking_level": "low"},  # control cost!
+        "max_output_tokens": 2048,
+    },
+)
+print(response.text)
+```
+
+    4. For agentic workloads, Google recommends the new **Interactions API** (built for background tasks and long-running agents), but the GenerateContent API above works for most use cases.
+    5. **Migration note:** the default thinking effort changed from `high` to `medium`. If you migrated from Gemini 3 Flash and your bills jumped, this (plus the price change) is why — set it explicitly.
+
+### Option 3 — Inside an agent IDE ([Antigravity](https://antigravity.google/) / Android Studio / Cursor)
+
+- Use it for agentic coding
+    1. In [**Google Antigravity**](/blog/google-antigravity-2-0-review-2026) (Google's agent-first IDE), select **Gemini 3.5 Flash** as your model. This is where its sub-agent and long-horizon strengths show best.
+    2. **Always write an implementation plan first** and verify it before you let the agent execute — multiple devs report that a solid plan makes the failure rate very low, while skipping it leads to runaway token use.
+    3. It's also available in **Android Studio**, **[Cursor](https://cursor.sh/)**, **[OpenRouter](https://openrouter.ai/)**, and **[Make](https://www.make.com/)** for automation workflows.
+
+## Pros and cons
+
+| Pros | Cons |
+| --- | --- |
+| Fastest frontier-class model (~4x output speed) | 3x price increase vs Gemini 3 Flash |
+| Best-in-class agentic / MCP performance | Token-hungry — real bills can be ~5x higher |
+| 1M-token context + full multimodal input | Sloppy / error-prone when run too fast |
+| Beats Gemini 3.1 Pro on most benchmarks | Not the best for hardest single-shot coding |
+| Free in Gemini app & Search AI Mode | No Computer Use support yet |
+| Huge intelligence-per-dollar on paper | Weak for creative roleplay / long-form fiction |
+
+## Final verdict
+
+<aside>
+**Gemini 3.5 Flash — 4.2 / 5.** Google delivered on the promise of "frontier intelligence with action." For agentic automation, MCP workflows, multimodal tasks, and rapid prototyping, it is the best speed-to-intelligence ratio on the market right now, and it genuinely outperforms last generation's Pro model. The one thing standing between it and a near-perfect score is the **cost behavior**: between the 3x price hike and its appetite for thinking/output tokens, an unsupervised agent can get expensive fast. Treat it as a high-performance power tool — give it a plan, cap its effort, watch the meter — and it's outstanding. Let it run wild and your invoice will remind you why they call it *Flash*.
+</aside>
+
+---
+
+### Keep reading
+
+- [Best AI Coding Agents 2026: I Tested 12 of Them](/blog/best-open-source-ai-models)
+- [Claude Opus 4.8 Review (2026)](/blog/claude-code-vs-codex-comparison)
+
+---
+
+<FAQSection
+  title="Frequently Asked Questions"
+  subtitle="Got questions? We have answers."
+  faqs={[
+    {
+      question: "Is Gemini 3.5 Flash free?",
+      answer: "Yes — it's free to use in the Gemini app and AI Mode in Google Search, and the Google AI Studio free tier has no input/output charge (with rate limits). API usage on the paid tier costs $1.50 per 1M input tokens and $9.00 per 1M output tokens."
+    },
+    {
+      question: "Is Gemini 3.5 Flash better than Gemini 3.1 Pro?",
+      answer: "On most coding and agentic benchmarks, yes — and it's faster and cheaper. For the very hardest reasoning tasks a full Pro/flagship model can still edge ahead, but for the majority of real-world agentic and coding work, 3.5 Flash is the better practical choice."
+    },
+    {
+      question: "How fast is Gemini 3.5 Flash?",
+      answer: "Roughly 150–280 tokens per second depending on configuration — about 4x faster than comparable frontier models in output speed, and the fastest model in the top tier of the Appwrite Arena benchmark (13-minute run)."
+    },
+    {
+      question: "Why is my Gemini 3.5 Flash bill so high?",
+      answer: "Two reasons: the price tripled vs Gemini 3 Flash ($1.50/$9.00 per 1M tokens), and the model generates a lot of thinking + output tokens. Real-world benchmark runs cost ~5.5x more than Gemini 3 Flash. Fix it by setting thinking effort to low/medium, capping max output tokens, using context caching, and routing cheap work to Flash-Lite."
+    },
+    {
+      question: "What's the context window and knowledge cutoff?",
+      answer: "1,000,000-token context window with up to ~64K output tokens, and a knowledge cutoff of January 2025. It accepts text, images, audio, video, and PDFs as input."
+    },
+    {
+      question: "Does Gemini 3.5 Flash support Computer Use?",
+      answer: "Not at the moment. It supports function calling, structured output, code execution, and search-as-a-tool, but Computer Use is not yet available for this model."
+    },
+    {
+      question: "Is Gemini 3.5 Flash good for coding?",
+      answer: "Yes for agentic and iterative coding (Terminal-bench 2.1 76.2%, MCP Atlas 83.6%), especially inside [Antigravity](/blog/google-antigravity-2-0-review-2026) with a clear implementation plan. For the hardest single-shot software-engineering tasks, Claude Opus 4.7 and GPT-5.5 still score higher on SWE-Bench Pro. It can also be error-prone when run too fast, so review its output."
+    },
+    {
+      question: "Gemini 3.5 Flash vs GPT-5.5 — which should I choose?",
+      answer: "Choose Gemini 3.5 Flash for speed, agentic/MCP workflows, multimodal input, and a 1M context at lower cost. Choose GPT-5.5 if you're already in the Codex/ChatGPT ecosystem and want the strongest single-shot coding (it leads Terminal-bench at 78.2%)."
+    }
+  ]}
+/>
+
+---
+
+<AuthorSection
+  name="Muhammad Shadab Shams"
+  role="AI Automation Consultant & Software Engineer"
+  bio="I architect agentic operating systems and build production-grade AI workflows at AIFLOXIUM. This review is based on 3 weeks of hands-on testing across Google AI Studio, the Gemini API, and Google Antigravity on real coding, scraping, and multi-agent workloads, cross-referenced with the Google DeepMind model card, Artificial Analysis, Appwrite Arena, OpenRouter, and primary developer discussion on Reddit, LinkedIn, Hacker News, and Google's AI dev forum."
+  expertise={["AI Automation", "Agentic Workflows", "n8n", "Claude Code", "Google Antigravity", "Gemini API"]}
+/>
+
+---
+
+**Review methodology**
+
+This review combines ~3 weeks of hands-on testing across Google AI Studio, the Gemini API, and Google Antigravity on real coding, scraping, and multi-agent workloads, cross-referenced with the Google DeepMind model card, Artificial Analysis, Appwrite Arena, OpenRouter, and primary developer discussion on Reddit, LinkedIn, Hacker News, and Google's AI dev forum. Benchmark figures are quoted as published by their sources as of June 2026. Pricing reflects Google's published API rates at the time of writing and may change.

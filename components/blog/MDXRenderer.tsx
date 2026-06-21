@@ -13,6 +13,8 @@ import { SelfHealingFlowchart } from "./SelfHealingFlowchart";
 import { LeadMagnetCTA } from "./LeadMagnetCTA";
 import { Accordion } from "./Accordion";
 import { AuthorCard } from "./AuthorCard";
+import { AuthorSection } from "./AuthorSection";
+import { FAQSection } from "./FAQSection";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
@@ -213,6 +215,8 @@ const components = {
   LeadMagnetCTA,
   Accordion,
   AuthorCard,
+  AuthorSection,
+  FAQSection,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {

@@ -26,6 +26,8 @@ In 2026, building automations is easy; keeping them running is the real challeng
 
 A self-healing architecture ensures your automation layer acts as a reliable foundation for your business. Every pattern below comes from real-world workflows run in production for B2B operations.
 
+![5-Layer Self-Healing Architecture — idempotency, retries, rollbacks, DLQ, observability](/blog/self-healing-n8n-workflows/architecture.svg)
+
 ## What this guide covers
 
 - What "self-healing" actually means for an n8n automation (plain-English definition)
@@ -94,7 +96,7 @@ Notice the pattern: **not every error should be retried.** Retrying a 422 (bad d
 
 Every resilient automation I build stacks these five layers. You don't need all five on day one, but mission-critical workflows need every layer.
 
-<SelfHealingFlowchart />
+![5-Layer Self-Healing Architecture — idempotency, retries, rollbacks, DLQ, observability](/blog/self-healing-n8n-workflows/architecture.svg)
 
 1. **Idempotency guard** — block duplicate processing before any side effect happens.
 2. **Smart retries** — absorb transient failures automatically.

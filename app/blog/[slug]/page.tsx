@@ -18,7 +18,10 @@ export async function generateStaticParams() {
       slug !== 'best-open-source-ai-models' &&
       slug !== 'self-healing-n8n-workflows' &&
       slug !== 'ai-automation-cost-optimization' &&
-      slug !== 'agentic-workflows-n8n'
+      slug !== 'agentic-workflows-n8n' &&
+      slug !== 'gemini-3-5-flash-review' &&
+      slug !== 'best-mcp-servers-2026' &&
+      slug !== 'best-ai-coding-agents-2026'
   );
   return slugs.map((slug) => ({ slug }));
 }

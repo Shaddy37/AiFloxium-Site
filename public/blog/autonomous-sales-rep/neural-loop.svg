@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="white"/>
+  <g stroke="#111" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Title -->
+    <text x="600" y="50" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#111" text-anchor="middle" letter-spacing="0.08em">THE AUTONOMOUS SALES REP — NEURAL LOOP</text>
+    
+    <!-- Signal Ingestion Layer -->
+    <rect x="60" y="100" width="500" height="180" rx="12" stroke-width="2"/>
+    <text x="310" y="130" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#111" text-anchor="middle">SIGNAL INGESTION LAYER</text>
+    
+    <!-- Inputs -->
+    <rect x="90" y="150" width="120" height="50" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="150" y="180" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">LinkedIn</text>
+    <rect x="230" y="150" width="120" height="50" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="290" y="180" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">Website HTML</text>
+    <rect x="370" y="150" width="120" height="50" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="430" y="180" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">CRM Data</text>
+    
+    <text x="310" y="240" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">Per-lead forensic audit at sub-second speeds</text>
+    
+    <!-- Arrow down -->
+    <line x1="310" y1="280" x2="310" y2="320" stroke-width="2" marker-end="url(#arrow2)"/>
+    
+    <!-- Reasoning Engine -->
+    <rect x="340" y="340" width="520" height="120" rx="12" stroke-width="2" stroke="#f97316"/>
+    <text x="600" y="370" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#f97316" text-anchor="middle">REASONING / COGNITION ENGINE</text>
+    <text x="600" y="395" font-family="system-ui, sans-serif" font-size="12" fill="#666" text-anchor="middle">Claude 3.5 Sonnet + n8n Orchestration</text>
+    <text x="600" y="420" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">Revenue driver ID | Hiring intent signals | Bottleneck hypothesis</text>
+    <text x="600" y="440" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">Personalized outreach synthesis in &lt;1200ms</text>
+    
+    <!-- Side: Output -->
+    <rect x="880" y="100" width="260" height="180" rx="12" stroke-width="2"/>
+    <text x="1010" y="130" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#111" text-anchor="middle">OUTPUT</text>
+    <text x="1010" y="160" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">Personalized Email Draft</text>
+    <text x="1010" y="180" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">LinkedIn Connection Note</text>
+    <text x="1010" y="200" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">CRM Enrichment Record</text>
+    <text x="1010" y="220" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">Follow-up Sequence</text>
+    <text x="1010" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#ccc" text-anchor="middle">Zero human intervention</text>
+    
+    <!-- Stats -->
+    <rect x="200" y="500" width="800" height="60" rx="8" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="350" y="530" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111" text-anchor="middle">300% PERSONALIZATION</text>
+    <text x="600" y="530" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111" text-anchor="middle">&lt;1200ms RESEARCH</text>
+    <text x="850" y="530" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111" text-anchor="middle">ZERO OVERHEAD</text>
+    
+    <text x="600" y="600" font-family="system-ui, sans-serif" font-size="10" fill="#ccc" text-anchor="middle">AIFLOXIUM — Autonomous Sales Rep Architecture</text>
+  </g>
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <style>
+      .text { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; }
+      .line { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .label { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 14px; fill: #1a1a1a; font-weight: bold; }
+      .label-sm { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 11px; fill: #666; }
+      .label-orange { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 14px; fill: #f97316; font-weight: bold; }
+      .label-blue { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 12px; fill: #3b82f6; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="675" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="70" class="label" text-anchor="middle" font-size="20">Agentic Workflow Orchestration</text>
+  <text x="600" y="95" class="label-sm" text-anchor="middle" font-size="13">83.6% MCP Atlas - Category Leading</text>
+  
+  <!-- Main orchestrator (Xiaohei) in center -->
+  <g transform="translate(600, 300)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="50" ry="55" fill="#1a1a1a"/>
+    <!-- Eyes focused -->
+    <circle cx="-14" cy="-18" r="6" fill="white"/>
+    <circle cx="14" cy="-18" r="6" fill="white"/>
+    <!-- Determined mouth -->
+    <line x1="-8" y1="5" x2="8" y2="5" stroke="white" stroke-width="2"/>
+    <!-- Legs -->
+    <line x1="-22" y1="52" x2="-30" y2="95" class="line"/>
+    <line x1="22" y1="52" x2="30" y2="95" class="line"/>
+    <!-- Arms reaching out to sub-agents -->
+    <line x1="-50" y1="-10" x2="-120" y2="-60" class="line"/>
+    <line x1="50" y1="-10" x2="120" y2="-60" class="line"/>
+    <line x1="-50" y1="10" x2="-120" y2="60" class="line"/>
+    <line x1="50" y1="10" x2="120" y2="60" class="line"/>
+  </g>
+  
+  <!-- Sub-agent 1 (top left) -->
+  <g transform="translate(450, 220)">
+    <ellipse cx="0" cy="0" rx="30" ry="35" fill="#e5e5e5" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-8" cy="-10" r="3" fill="#1a1a1a"/>
+    <circle cx="8" cy="-10" r="3" fill="#1a1a1a"/>
+    <line x1="-10" y1="32" x2="-12" y2="55" class="line"/>
+    <line x1="10" y1="32" x2="12" y2="55" class="line"/>
+  </g>
+  <text x="450" y="300" class="label-sm" text-anchor="middle">Code Agent</text>
+  
+  <!-- Sub-agent 2 (top right) -->
+  <g transform="translate(750, 220)">
+    <ellipse cx="0" cy="0" rx="30" ry="35" fill="#e5e5e5" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-8" cy="-10" r="3" fill="#1a1a1a"/>
+    <circle cx="8" cy="-10" r="3" fill="#1a1a1a"/>
+    <line x1="-10" y1="32" x2="-12" y2="55" class="line"/>
+    <line x1="10" y1="32" x2="12" y2="55" class="line"/>
+  </g>
+  <text x="750" y="300" class="label-sm" text-anchor="middle">Search Agent</text>
+  
+  <!-- Sub-agent 3 (bottom left) -->
+  <g transform="translate(450, 380)">
+    <ellipse cx="0" cy="0" rx="30" ry="35" fill="#e5e5e5" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-8" cy="-10" r="3" fill="#1a1a1a"/>
+    <circle cx="8" cy="-10" r="3" fill="#1a1a1a"/>
+    <line x1="-10" y1="32" x2="-12" y2="55" class="line"/>
+    <line x1="10" y1="32" x2="12" y2="55" class="line"/>
+  </g>
+  <text x="450" y="460" class="label-sm" text-anchor="middle">Tool Agent</text>
+  
+  <!-- Sub-agent 4 (bottom right) -->
+  <g transform="translate(750, 380)">
+    <ellipse cx="0" cy="0" rx="30" ry="35" fill="#e5e5e5" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-8" cy="-10" r="3" fill="#1a1a1a"/>
+    <circle cx="8" cy="-10" r="3" fill="#1a1a1a"/>
+    <line x1="-10" y1="32" x2="-12" y2="55" class="line"/>
+    <line x1="10" y1="32" x2="12" y2="55" class="line"/>
+  </g>
+  <text x="750" y="460" class="label-sm" text-anchor="middle">Data Agent</text>
+  
+  <!-- Connection lines (orange for main flow) -->
+  <circle cx="450" cy="220" r="3" fill="#f97316"/>
+  <circle cx="750" cy="220" r="3" fill="#f97316"/>
+  <circle cx="450" cy="380" r="3" fill="#f97316"/>
+  <circle cx="750" cy="380" r="3" fill="#f97316"/>
+  
+  <!-- Flow arrows -->
+  <path d="M 480 235 Q 540 260 560 280" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M 720 235 Q 660 260 640 280" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M 480 365 Q 540 340 560 320" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M 720 365 Q 660 340 640 320" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Labels -->
+  <text x="510" y="255" class="label-blue" font-size="10">delegate</text>
+  <text x="670" y="255" class="label-blue" font-size="10">delegate</text>
+  <text x="510" y="350" class="label-blue" font-size="10">delegate</text>
+  <text x="670" y="350" class="label-blue" font-size="10">delegate</text>
+  
+  <!-- Central label -->
+  <text x="600" y="180" class="label-orange" text-anchor="middle" font-size="16">Orchestrator</text>
+  
+  <!-- MCP score badge -->
+  <g transform="translate(150, 550)">
+    <rect x="0" y="0" width="200" height="70" rx="15" fill="#fef3c7" stroke="#f97316" stroke-width="2"/>
+    <text x="100" y="30" class="label-orange" text-anchor="middle" font-size="16">83.6%</text>
+    <text x="100" y="52" class="label-sm" text-anchor="middle">MCP Atlas Score</text>
+  </g>
+  
+  <!-- Tool use badge -->
+  <g transform="translate(850, 550)">
+    <rect x="0" y="0" width="200" height="70" rx="15" fill="#fef3c7" stroke="#f97316" stroke-width="2"/>
+    <text x="100" y="30" class="label-orange" text-anchor="middle" font-size="16">56.5%</text>
+    <text x="100" y="52" class="label-sm" text-anchor="middle">Toolathlon Score</text>
+  </g>
+  
+  <!-- Annotation -->
+  <text x="600" y="620" class="label" text-anchor="middle" font-size="14">Best-in-class for multi-step tool use</text>
+</svg>

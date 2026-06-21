@@ -33,6 +33,7 @@ export interface PopupDefinition {
   readonly permanentSuppressAfterSubmit: boolean;
   readonly excludePathPatterns: readonly RegExp[];
   readonly copy: PopupCopy;
+  readonly redirectUrl?: string;
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -56,17 +57,18 @@ const SCROLL_LEAD_MAGNET: PopupDefinition = {
   cooldownDays: 30,
   permanentSuppressAfterSubmit: true,
   excludePathPatterns: [],
+  redirectUrl:
+    "https://shadabautomate.notion.site/The-AI-Automation-Audit-Interactive-Experience-3a404b8c385046e291ff33bc56eb334c",
   copy: {
-    eyebrow: "Free 25-Page Audit",
+    eyebrow: "Free AI Automation Audit",
     headline: "See exactly where your ops are leaking time and money.",
     subhead:
       "30 checkpoints across leads, voice, docs, and infrastructure. Built from 50+ production deployments.",
-    ctaLabel: "Send me the audit",
+    ctaLabel: "Unlock the audit",
     declineLabel: "No thanks, I'll figure it out myself",
     microcopy: "No spam. Unsubscribe anytime. Used by 800+ founders.",
-    successHeadline: "Check your inbox.",
-    successBody:
-      "Your AI Automation Audit is on the way. While you read it, want a 30-min audit call to map your top 3 wins?",
+    successHeadline: "Opening your audit...",
+    successBody: "Redirecting you to the full interactive experience.",
   },
 };
 

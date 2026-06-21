@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="white"/>
+  <g stroke="#111" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Title -->
+    <text x="600" y="45" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#111" text-anchor="middle" letter-spacing="0.08em">50 BEST CLAUDE CODE SKILLS — ECOSYSTEM MAP</text>
+    
+    <!-- Center: Claude Code -->
+    <circle cx="600" cy="315" r="70" stroke-width="3" stroke="#f97316"/>
+    <text x="600" y="310" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#f97316" text-anchor="middle">CLAUDE</text>
+    <text x="600" y="328" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#f97316" text-anchor="middle">CODE</text>
+    
+    <!-- Top Left: Frontend & Design -->
+    <rect x="80" y="90" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="180" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">FRONTEND &amp; DESIGN</text>
+    <text x="180" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">frontend-design (277K+)</text>
+    <text x="180" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Color Expert (286K words)</text>
+    <text x="180" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Hand-Drawn Diagrams</text>
+    <text x="180" y="189" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 5 more skills</text>
+    
+    <!-- Top Center: Social & Content -->
+    <rect x="310" y="90" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="410" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">SOCIAL &amp; CONTENT</text>
+    <text x="410" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Charlie Hills Social OS</text>
+    <text x="410" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">voice-builder (17 skills)</text>
+    <text x="410" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">tweetclaw (40+ actions)</text>
+    <text x="410" y="189" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 6 more skills</text>
+    
+    <!-- Top Right: Research & Analysis -->
+    <rect x="540" y="90" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="640" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">RESEARCH &amp; ANALYSIS</text>
+    <text x="640" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Daydream (autonomous)</text>
+    <text x="640" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Autoresearch (self-improving)</text>
+    <text x="640" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Deep Research (8-phase)</text>
+    <text x="640" y="189" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 3 more skills</text>
+    
+    <!-- Right: Marketing & SEO -->
+    <rect x="770" y="90" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="870" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">MARKETING &amp; SEO</text>
+    <text x="870" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">GEO/SEO Claude (3.5K+)</text>
+    <text x="870" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Marketing Module (43 skills)</text>
+    <text x="870" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Email Marketing Bible</text>
+    <text x="870" y="189" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 5 more skills</text>
+    
+    <!-- Bottom Left: Engineering & Dev -->
+    <rect x="80" y="440" width="200" height="110" rx="10" fill="#fafafa" stroke="#f97316" stroke-width="2"/>
+    <text x="180" y="465" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f97316" text-anchor="middle">ENGINEERING &amp; DEV</text>
+    <text x="180" y="488" font-family="system-ui, sans-serif" font-size="10" fill="#111" text-anchor="middle" font-weight="700">Superpowers (725K+)</text>
+    <text x="180" y="505" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Repomix (codebase → file)</text>
+    <text x="180" y="522" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Dev Browser (QA testing)</text>
+    <text x="180" y="539" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 5 more skills</text>
+    
+    <!-- Bottom Center: Product & Strategy -->
+    <rect x="310" y="440" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="410" y="465" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">PRODUCT &amp; STRATEGY</text>
+    <text x="410" y="488" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">PM Skills (100+ skills)</text>
+    <text x="410" y="505" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">JTBD Interview Tool</text>
+    <text x="410" y="522" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">AI Transformation Discovery</text>
+    <text x="410" y="539" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 3 more skills</text>
+    
+    <!-- Bottom Right: Video & Media -->
+    <rect x="540" y="440" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="640" y="465" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">VIDEO &amp; MEDIA</text>
+    <text x="640" y="488" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Remotion Best Practices</text>
+    <text x="640" y="505" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">AI Video Toolkit</text>
+    <text x="640" y="522" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">AI Music Album Production</text>
+    <text x="640" y="539" font-family="system-ui, sans-serif" font-size="9" fill="#999" text-anchor="middle">+ 2 more skills</text>
+    
+    <!-- Far Right: Health & Science -->
+    <rect x="770" y="440" width="200" height="110" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="870" y="465" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle">HEALTH &amp; SCIENCE</text>
+    <text x="870" y="488" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">Personal Health Assistant</text>
+    <text x="870" y="505" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">DNA Analysis (23andMe)</text>
+    <text x="870" y="522" font-family="system-ui, sans-serif" font-size="10" fill="#666" text-anchor="middle">+ 2 more skills</text>
+    
+    <!-- Stats bar -->
+    <rect x="200" y="575" width="800" height="35" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="300" y="597" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">50 SKILLS</text>
+    <text x="500" y="597" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">9 CATEGORIES</text>
+    <text x="700" y="597" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">725K+ SUPERPOWERS INSTALLED</text>
+    
+    <text x="600" y="625" font-family="system-ui, sans-serif" font-size="10" fill="#ccc" text-anchor="middle">AIFLOXIUM — Claude Code Skills Ecosystem</text>
+  </g>
+</svg>

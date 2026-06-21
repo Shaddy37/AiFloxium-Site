@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <style>
+      @font-face { font-family: 'HandDrawn'; }
+      .text { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; }
+      .line { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .line-thin { fill: none; stroke: #1a1a1a; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .label { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 14px; fill: #1a1a1a; font-weight: bold; }
+      .label-sm { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 11px; fill: #666; }
+      .label-orange { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 14px; fill: #f97316; font-weight: bold; }
+      .label-red { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 12px; fill: #ef4444; font-weight: bold; }
+      .label-blue { font-family: 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive; font-size: 12px; fill: #3b82f6; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="675" fill="white"/>
+  
+  <!-- Xiaohei - the fast runner -->
+  <g transform="translate(700, 280)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="45" ry="50" fill="#1a1a1a"/>
+    <!-- Eyes -->
+    <circle cx="-12" cy="-15" r="5" fill="white"/>
+    <circle cx="12" cy="-15" r="5" fill="white"/>
+    <!-- Legs running -->
+    <line x1="-20" y1="45" x2="-35" y2="90" class="line"/>
+    <line x1="20" y1="45" x2="40" y2="85" class="line"/>
+    <!-- Speed lines -->
+    <line x1="-80" y1="-10" x2="-120" y2="-10" stroke="#f97316" stroke-width="2" stroke-dasharray="8,4"/>
+    <line x1="-85" y1="10" x2="-130" y2="10" stroke="#f97316" stroke-width="2" stroke-dasharray="8,4"/>
+    <line x1="-75" y1="30" x2="-110" y2="30" stroke="#f97316" stroke-width="2" stroke-dasharray="8,4"/>
+  </g>
+  
+  <!-- Speed label for Xiaohei -->
+  <text x="700" y="430" class="label-orange" text-anchor="middle">~280 tokens/sec</text>
+  <text x="700" y="450" class="label-sm" text-anchor="middle">Gemini 3.5 Flash</text>
+  
+  <!-- Slow model 1 -->
+  <g transform="translate(250, 300)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="40" ry="45" fill="#e5e5e5" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Eyes tired -->
+    <line x1="-15" y1="-15" x2="-5" y2="-12" class="line-thin"/>
+    <line x1="5" y1="-12" x2="15" y2="-15" class="line-thin"/>
+    <!-- Legs walking slowly -->
+    <line x1="-15" y1="40" x2="-20" y2="75" class="line-thin"/>
+    <line x1="15" y1="40" x2="18" y2="72" class="line-thin"/>
+  </g>
+  <text x="250" y="410" class="label" text-anchor="middle">~70 t/s</text>
+  <text x="250" y="430" class="label-sm" text-anchor="middle">Gemini 3.1 Pro</text>
+  
+  <!-- Slow model 2 -->
+  <g transform="translate(450, 310)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="38" ry="42" fill="#e5e5e5" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Eyes tired -->
+    <line x1="-12" y1="-12" x2="-4" y2="-10" class="line-thin"/>
+    <line x1="4" y1="-10" x2="12" y2="-12" class="line-thin"/>
+    <!-- Legs walking slowly -->
+    <line x1="-12" y1="38" x2="-15" y2="68" class="line-thin"/>
+    <line x1="12" y1="38" x2="14" y2="65" class="line-thin"/>
+  </g>
+  <text x="450" y="400" class="label" text-anchor="middle">~80 t/s</text>
+  <text x="450" y="420" class="label-sm" text-anchor="middle">Claude Opus 4.7</text>
+  
+  <!-- Race track line -->
+  <line x1="100" y1="500" x2="1100" y2="500" stroke="#e5e5e5" stroke-width="3"/>
+  
+  <!-- Finish line -->
+  <line x1="1050" y1="480" x2="1050" y2="520" stroke="#1a1a1a" stroke-width="4"/>
+  
+  <!-- Annotations -->
+  <text x="600" y="120" class="label-orange" text-anchor="middle" font-size="18">4x Faster Output Speed</text>
+  <text x="600" y="145" class="label-sm" text-anchor="middle" font-size="13">The fastest frontier model in 2026</text>
+  
+  <!-- Arrow showing speed -->
+  <path d="M 620 160 Q 660 200 680 260" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="680,260 670,245 690,250" fill="#f97316"/>
+  
+  <!-- Little sweat drops on slow models -->
+  <g transform="translate(280, 260)">
+    <ellipse cx="0" cy="0" rx="3" ry="5" fill="#3b82f6"/>
+  </g>
+  <g transform="translate(475, 270)">
+    <ellipse cx="0" cy="0" rx="3" ry="5" fill="#3b82f6"/>
+  </g>
+</svg>

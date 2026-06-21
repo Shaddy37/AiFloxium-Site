@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="white"/>
+  <g stroke="#111" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Title -->
+    <text x="600" y="50" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#111" text-anchor="middle" letter-spacing="0.08em">NEURAL CONTENT ORCHESTRATION</text>
+    
+    <!-- Phase 1: Signal Ingestion -->
+    <rect x="80" y="100" width="280" height="120" rx="12" stroke-width="2"/>
+    <text x="220" y="130" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#111" text-anchor="middle">SIGNAL INGESTION</text>
+    <line x1="120" y1="150" x2="180" y2="150" stroke-width="1.5"/>
+    <line x1="120" y1="165" x2="200" y2="165" stroke-width="1.5"/>
+    <line x1="120" y1="180" x2="170" y2="180" stroke-width="1.5"/>
+    <text x="230" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#666">RSS Feeds</text>
+    <text x="230" y="170" font-family="system-ui, sans-serif" font-size="11" fill="#666">Google News</text>
+    <text x="230" y="185" font-family="system-ui, sans-serif" font-size="11" fill="#666">Notion DB</text>
+    
+    <!-- Arrow 1 -->
+    <line x1="360" y1="160" x2="440" y2="160" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Phase 2: Cognitive Synthesis -->
+    <rect x="460" y="100" width="280" height="120" rx="12" stroke-width="2" stroke="#f97316"/>
+    <text x="600" y="130" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#f97316" text-anchor="middle">COGNITIVE SYNTHESIS</text>
+    <text x="600" y="155" font-family="system-ui, sans-serif" font-size="12" fill="#666" text-anchor="middle">Claude 3.5 Sonnet</text>
+    <text x="600" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">Voice Audit + Insight</text>
+    <text x="600" y="195" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">Generation + Brand Match</text>
+    
+    <!-- Arrow 2 -->
+    <line x1="740" y1="160" x2="820" y2="160" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Phase 3: Automated Dispatch -->
+    <rect x="840" y="100" width="280" height="120" rx="12" stroke-width="2"/>
+    <text x="980" y="130" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#111" text-anchor="middle">AUTOMATED DISPATCH</text>
+    <text x="980" y="155" font-family="system-ui, sans-serif" font-size="12" fill="#666" text-anchor="middle">n8n OAuth + LinkedIn API</text>
+    <text x="980" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">Image Upload</text>
+    <text x="980" y="195" font-family="system-ui, sans-serif" font-size="11" fill="#999" text-anchor="middle">3x Daily Scheduling</text>
+    
+    <!-- Bottom: Results -->
+    <rect x="200" y="300" width="800" height="80" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="350" y="335" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111" text-anchor="middle">300% ENGAGEMENT</text>
+    <text x="350" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">Measured in 30 days</text>
+    <text x="600" y="335" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111" text-anchor="middle">15hr/wk SAVED</text>
+    <text x="600" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">Manual labor eliminated</text>
+    <text x="850" y="335" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111" text-anchor="middle">24/7 POSTING</text>
+    <text x="850" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#666" text-anchor="middle">Zero-latency dispatch</text>
+    
+    <!-- Footer -->
+    <text x="600" y="440" font-family="system-ui, sans-serif" font-size="10" fill="#ccc" text-anchor="middle">AIFLOXIUM — Neural Content Orchestration Architecture</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111"/>
+    </marker>
+  </defs>
+</svg>

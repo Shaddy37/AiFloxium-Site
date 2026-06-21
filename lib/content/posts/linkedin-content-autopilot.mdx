@@ -20,6 +20,8 @@ In the economy of attention, consistency is the primary currency. Yet, for most 
 
 We proposed a shift from manual drafting to **Neural Content Orchestration**.
 
+![Neural Content Orchestration Architecture — signal ingestion, cognitive synthesis, automated dispatch](/blog/linkedin-content-autopilot/architecture.svg)
+
 <ImpactStats 
   stats={[
     { label: "Engagement Increase", value: "300%", description: "Measured across total impressions and interactions within 30 days.", icon: "zap" },
@@ -41,14 +43,14 @@ When done manually, this process takes approximately 45–60 minutes per post. F
 
 ## II. The Architecture of Autonomy
 
-We built a closed-loop system using **n8n** as our visual backbone and **Claude 3.5 Sonnet** as the cognitive engine.
+We built a closed-loop system using [n8n](https://n8n.io/) as our visual backbone and [Claude 3.5 Sonnet](https://docs.anthropic.com/en/docs/about-claude/models) as the cognitive engine.
 
-<BlogArchitecture />
+![Neural Content Orchestration Architecture — signal ingestion, cognitive synthesis, automated dispatch](/blog/linkedin-content-autopilot/architecture.svg)
 
 The workflow is bifurcated into three distinct phases:
 1. **Signal Ingestion**: Monitor RSS feeds, Google News, and client Notion databases for raw "intel".
-2. **Cognitive Synthesis**: Claude 3.5 Sonnet performs a "voice audit" to ensure the generated post matches the client's past successful content.
-3. **Automated Dispatch**: n8n handles the OAuth handshakes with the LinkedIn API, managing image uploads and multi-stage scheduling.
+2. **Cognitive Synthesis**: [Claude 3.5 Sonnet](https://docs.anthropic.com/en/docs/about-claude/models) performs a "voice audit" to ensure the generated post matches the client's past successful content.
+3. **Automated Dispatch**: [n8n](https://n8n.io/) handles the OAuth handshakes with the [LinkedIn API](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2), managing image uploads and multi-stage scheduling.
 
 
 
