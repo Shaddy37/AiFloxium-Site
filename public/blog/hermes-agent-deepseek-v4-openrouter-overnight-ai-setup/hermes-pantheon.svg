@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <!-- Definitions for Gradients, Shadows, Glows -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0b10" />
+      <stop offset="100%" stop-color="#141620" />
+    </linearGradient>
+    <radialGradient id="orangeGlow" cx="80%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="20%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#475569" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e202e" />
+      <stop offset="100%" stop-color="#12131c" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+  <rect width="1200" height="675" fill="url(#orangeGlow)" />
+  <rect width="1200" height="675" fill="url(#purpleGlow)" />
+
+  <!-- Browser Frame Wrapper -->
+  <g transform="translate(60, 40)" filter="url(#dropShadow)">
+    <!-- Browser Window Background -->
+    <rect width="1080" height="595" fill="#0d0f17" rx="16" stroke="url(#borderGrad)" stroke-width="1.5" />
+
+    <!-- Browser Window Header / Top Bar -->
+    <rect width="1080" height="50" fill="#141724" rx="16" />
+    <!-- Rounded corners overlay for bottom of top bar -->
+    <rect y="40" width="1080" height="10" fill="#141724" />
+
+    <!-- Window Dots -->
+    <circle cx="25" cy="25" r="6" fill="#ef4444" />
+    <circle cx="45" cy="25" r="6" fill="#f59e0b" />
+    <circle cx="65" cy="25" r="6" fill="#10b981" />
+
+    <!-- Address Bar -->
+    <rect x="120" y="10" width="840" height="30" fill="#090a0f" rx="6" stroke="#1e293b" stroke-width="1" />
+    <text x="140" y="30" font-family="monospace" font-size="13" fill="#94a3b8">pantheon.hermes.ai/config/orpheus</text>
+
+    <!-- Navigation / Breadcrumbs -->
+    <text x="40" y="85" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">Pantheon Dashboard</text>
+    <text x="40" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Configure autonomous agent personalities and backend cognitive routing</text>
+
+    <!-- Divider Line -->
+    <line x1="40" y1="130" x2="1040" y2="130" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Left Column: Persona Details Card -->
+    <g transform="translate(40, 155)">
+      <rect width="480" height="390" fill="url(#cardGrad)" rx="12" stroke="#334155" stroke-width="1" />
+      
+      <!-- Card Title -->
+      <text x="24" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Orpheus Configuration</text>
+      <text x="24" y="62" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Current active code orchestration persona</text>
+
+      <!-- Parameter 1: Conductor Model -->
+      <rect x="24" y="90" width="432" height="70" fill="#161824" rx="8" stroke="#334155" stroke-width="0.75" />
+      <text x="40" y="115" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#ea580c">CONDUCTOR (PLANNER)</text>
+      <text x="40" y="142" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">Claude 3.5 Opus</text>
+      <!-- Mode Tag -->
+      <rect x="350" y="110" width="90" height="24" fill="#6366f1" fill-opacity="0.2" rx="12" stroke="#6366f1" stroke-width="1"/>
+      <text x="395" y="126" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#818cf8" text-anchor="middle">REASONING</text>
+
+      <!-- Parameter 2: Worker Model -->
+      <rect x="24" y="180" width="432" height="70" fill="#161824" rx="8" stroke="#334155" stroke-width="0.75" />
+      <text x="40" y="205" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#10b981">PRIMARY WORKER</text>
+      <text x="40" y="232" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">DeepSeek V4 (Chat)</text>
+      <!-- Mode Tag -->
+      <rect x="350" y="200" width="90" height="24" fill="#10b981" fill-opacity="0.2" rx="12" stroke="#10b981" stroke-width="1"/>
+      <text x="395" y="216" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#34d399" text-anchor="middle">AUTONOMOUS</text>
+
+      <!-- System Prompt Area -->
+      <text x="24" y="285" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#cbd5e1">System Prompt Core</text>
+      <rect x="24" y="300" width="432" height="66" fill="#090a0f" rx="6" stroke="#1e293b" stroke-width="1" />
+      <text x="36" y="325" font-family="monospace" font-size="12" fill="#94a3b8">"Run task-oriented refactoring agent loops.</text>
+      <text x="36" y="345" font-family="monospace" font-size="12" fill="#94a3b8"> Verify lint state on every step before commit."</text>
+    </g>
+
+    <!-- Right Column: Settings and Telemetry -->
+    <g transform="translate(545, 155)">
+      <rect width="495" height="390" fill="url(#cardGrad)" rx="12" stroke="#334155" stroke-width="1" />
+      
+      <!-- Telemetry Stats -->
+      <text x="24" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Telemetry &amp; Limits</text>
+      <text x="24" y="62" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Real-time metrics for current execution loop</text>
+
+      <!-- Context Window Slider Mock -->
+      <text x="24" y="110" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#cbd5e1">CONTEXT WINDOW SIZE</text>
+      <text x="471" y="110" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ea580c" text-anchor="end">128,000 Tokens</text>
+      <line x1="24" y1="130" x2="470" y2="130" stroke="#1e293b" stroke-width="6" stroke-linecap="round" />
+      <line x1="24" y1="130" x2="350" y2="130" stroke="#ea580c" stroke-width="6" stroke-linecap="round" />
+      <circle cx="350" cy="130" r="8" fill="#f97316" stroke="#fff" stroke-width="2" />
+
+      <!-- Agent Temperature Slider Mock -->
+      <text x="24" y="180" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#cbd5e1">AGENT TEMPERATURE (DIVERSITY)</text>
+      <text x="471" y="180" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#3b82f6" text-anchor="end">0.15 (Strict)</text>
+      <line x1="24" y1="200" x2="470" y2="200" stroke="#1e293b" stroke-width="6" stroke-linecap="round" />
+      <line x1="24" y1="200" x2="110" y2="200" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" />
+      <circle cx="110" cy="200" r="8" fill="#3b82f6" stroke="#fff" stroke-width="2" />
+
+      <!-- Telemetry Values -->
+      <rect x="24" y="240" width="215" height="126" fill="#161824" rx="8" stroke="#1e293b" stroke-width="1" />
+      <text x="40" y="270" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">AVG COST / STEP</text>
+      <text x="40" y="305" font-family="monospace" font-size="28" font-weight="bold" fill="#10b981">$0.0042</text>
+      <text x="40" y="335" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">97.2% cheaper than direct</text>
+
+      <rect x="256" y="240" width="215" height="126" fill="#161824" rx="8" stroke="#1e293b" stroke-width="1" />
+      <text x="272" y="270" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">ITERATION TIME</text>
+      <text x="272" y="305" font-family="monospace" font-size="28" font-weight="bold" fill="#6366f1">1.8s</text>
+      <text x="272" y="335" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8">Includes deep-reason loops</text>
+    </g>
+  </g>
+</svg>
