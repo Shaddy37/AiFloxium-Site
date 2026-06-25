@@ -27,7 +27,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
   const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-background font-medium text-zinc-300 selection:bg-brand-orange selection:text-white font-sans-clean">
+    <main className="relative min-h-screen overflow-x-hidden bg-background font-medium text-zinc-300 selection:bg-brand-orange selection:text-white">
       {schemas.map((schema, index) => (
         <script
           key={index}

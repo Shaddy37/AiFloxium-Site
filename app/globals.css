@@ -73,14 +73,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Premium Readable Sans-serif stack for the blog page */
-.font-sans-clean {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  --font-heading: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  font-family: var(--font-sans) !important;
-}
-
-
 .skip-link {
   position: fixed;
   top: -100px;

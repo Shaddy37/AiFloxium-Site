@@ -19,17 +19,17 @@ keywords:
 ---
 
 <TLDR>
-  Hermes Agent is a free, open-source (MIT) autonomous AI agent from **Nous Research**, released February 2026. Unlike a chatbot or an IDE copilot, it **lives on your own server**, **remembers everything across sessions**, and **writes its own reusable skills** so it gets smarter the longer you run it. Install it in one command, connect any LLM (OpenRouter, Anthropic, OpenAI, or Nous Portal), and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or the terminal. It runs happily on a $5 VPS and has crossed **64,000+ GitHub stars**, triggering a migration wave away from OpenClaw.
+  Hermes Agent is a free, open-source (MIT) autonomous AI agent from Nous Research, released February 2026. Unlike a chatbot or an IDE copilot, it lives on your own server, remembers everything across sessions, and writes its own reusable skills so it gets smarter the longer you run it. Install it in one command, connect any LLM (OpenRouter, Anthropic, OpenAI, or Nous Portal), and talk to it from Telegram, Discord, Slack, WhatsApp, Signal, or the terminal. It runs happily on a $5 VPS and has crossed 64,000+ GitHub stars, triggering a migration wave away from OpenClaw.
 </TLDR>
 
 **Best for:** developers, founders, and power users who want a persistent, always-on AI "operator" they fully own and control — not another subscription chatbot that forgets you tomorrow.
 
 <aside>
-  ✍️ **Written by Muhammad Shadab Shams, AI Automation Consultant.** I deploy autonomous agents for real businesses, and this guide is based on hands-on setup across VPS, desktop, and serverless environments — plus everything verified against the official Nous Research docs, the GitHub repo, and real community reports from Reddit and Discord. Last updated **June 2026** (Hermes Agent v0.17.0).
+   **Written by Muhammad Shadab Shams, AI Automation Consultant.** I deploy autonomous agents for real businesses, and this guide is based on hands-on setup across VPS, desktop, and serverless environments — plus everything verified against the official Nous Research docs, the GitHub repo, and real community reports from Reddit and Discord. Last updated **June 2026** (Hermes Agent v0.17.0).
 </aside>
 
 <aside>
-  📌 **Hermes Agent at a glance**
+   **Hermes Agent at a glance**
 
   - **What it is:** open-source, self-hosted autonomous AI agent
   - **Built by:** Nous Research
@@ -42,7 +42,7 @@ keywords:
   - **Traction:** 64,000+ GitHub stars
 </aside>
 
-<TableOfContents 
+<TableOfContents
   items={[
     { title: "What is Hermes Agent?", id: "what-is-hermes" },
     { title: "Why Hermes Agent Blew Up", id: "why-hermes" },
@@ -61,16 +61,16 @@ keywords:
     { title: "Hermes vs Alternatives", id: "alternatives" },
     { title: "Glossary & Key Terms", id: "glossary" },
     { title: "The Honest Verdict", id: "verdict" }
-  ]} 
+  ]}
 />
 
 <SectionHeading title="What is Hermes Agent?" subtitle="The Stateful AI Assistant" number="01" id="what-is-hermes" />
 
-Hermes Agent is an **open-source, self-hosted autonomous AI agent** built by Nous Research and first released in **February 2026**. The official tagline says it best: *"the agent that grows with you."*
+Hermes Agent is an open-source, self-hosted autonomous AI agent built by Nous Research and first released in February 2026. The official tagline says it best: *"the agent that grows with you."*
 
-Here's the key mental shift. Most AI tools are **stateless** — you prompt them, they answer, and the moment the session ends they forget who you are. You re-explain your project, your stack, and your preferences every single day, like training a brand-new intern each morning.
+Here's the key mental shift. Most AI tools are stateless — you prompt them, they answer, and the moment the session ends they forget who you are. You re-explain your project, your stack, and your preferences every single day, like training a brand-new intern each morning.
 
-Hermes is different. It's a **stateful, persistent operator** that:
+Hermes is different. It's a stateful, persistent operator that:
 
 - Runs **continuously** on a server or VPS (not tied to your laptop), so it keeps working even after you close the chat.
 - **Remembers** your projects, preferences, and environment across every session.
@@ -78,34 +78,34 @@ Hermes is different. It's a **stateful, persistent operator** that:
 - **Reaches you anywhere** — Telegram, Discord, Slack, WhatsApp, Signal, or the CLI, all from one gateway process.
 
 <aside>
-  💡 **The one-line definition:** Hermes Agent is less a "chatbot" and more a **personal AI employee** that you install once, own completely, and that compounds in usefulness over time.
+   **The one-line definition:** Hermes Agent is less a "chatbot" and more a **personal AI employee** that you install once, own completely, and that compounds in usefulness over time.
 </aside>
 
 ### Hermes Agent vs. Hermes 3 / Hermes 4 models — don't confuse them
 
 This trips up almost everyone, so let's clear it up immediately:
 
-**🪽 Hermes Agent**
+**Hermes Agent**
 
 The *software* — an autonomous agent framework you install and run. It's model-agnostic, so it can be powered by almost any LLM. This is what this guide covers.
 
-**🧠 Hermes 3 / 4 models**
+**Hermes 3 / 4 models**
 
 The *LLMs* — Nous Research's family of open-weight fine-tuned language models (e.g., Hermes 3 405B, Hermes 4.3). These are models you *could* plug into the agent, but they are not the agent itself.
 
-In short: **Hermes Agent is the body, an LLM is the brain.** You can give it a Nous brain, a Claude brain, a GPT brain, or a local Qwen brain.
+In short: Hermes Agent is the body, an LLM is the brain. You can give it a Nous brain, a Claude brain, a GPT brain, or a local Qwen brain.
 
 ### Hermes Agent key features at a glance
 
-- **🔁 Self-improving skills** — writes reusable skill docs after hard tasks and refines them over time.
-- **🧠 Persistent memory** — remembers you across sessions, machines, and platforms.
-- **💬 Omni-channel access** — one gateway process serves Telegram, Discord, Slack, WhatsApp, Signal, and the CLI.
-- **🧩 Parallel subagents** — spawns isolated workers to keep context small and tasks tidy.
-- **🛠️ 40+ bundled skills** — plus a community skill marketplace via the agentskills.io standard.
-- **🔌 MCP + Tool Gateway** — web search, image generation, TTS, and a browser, extensible with Model Context Protocol servers.
-- **⏰ Cron scheduling** — runs recurring jobs autonomously, 24/7.
-- **🔐 Private by default** — zero telemetry, local-only memory, hardened sandboxes.
-- **🧰 Model-agnostic** — mix a powerful main model with cheaper auxiliary models per task.
+- **Self-improving skills** — writes reusable skill docs after hard tasks and refines them over time.
+- **Persistent memory** — remembers you across sessions, machines, and platforms.
+- **Omni-channel access** — one gateway process serves Telegram, Discord, Slack, WhatsApp, Signal, and the CLI.
+- **Parallel subagents** — spawns isolated workers to keep context small and tasks tidy.
+- **40+ bundled skills** — plus a community skill marketplace via the agentskills.io standard.
+- **MCP + Tool Gateway** — web search, image generation, TTS, and a browser, extensible with Model Context Protocol servers.
+- **Cron scheduling** — runs recurring jobs autonomously, 24/7.
+- **Private by default** — zero telemetry, local-only memory, hardened sandboxes.
+- **Model-agnostic** — mix a powerful main model with cheaper auxiliary models per task.
 
 ---
 
@@ -114,7 +114,7 @@ In short: **Hermes Agent is the body, an LLM is the brain.** You can give it a N
 Hermes didn't trend by accident. A few numbers and signals explain the hype:
 
 <aside>
-  ⭐ **64,000+ GitHub stars** since February 2026 — one of the fastest-growing open-source agent projects ever, and widely described as a **migration wave away from OpenClaw**, the previously dominant framework.
+   **64,000+ GitHub stars** since February 2026 — one of the fastest-growing open-source agent projects ever, and widely described as a **migration wave away from OpenClaw**, the previously dominant framework.
 </aside>
 
 - **It's genuinely free and yours.** MIT license, zero telemetry, all memory stored locally in `~/.hermes/` on your machine. No cloud lock-in.
@@ -131,33 +131,33 @@ Hermes didn't trend by accident. A few numbers and signals explain the hype:
 Four pillars make Hermes feel less like a script and more like a teammate. Understanding them is the difference between "cool demo" and "actually useful."
 
 <aside>
-  🔁 **1. The closed learning loop**
+   **1. The closed learning loop**
 
-  When Hermes completes a complex task, it **autonomously writes a reusable skill** documenting how it did it. Skills then **self-improve during use**. It also gives itself periodic "nudges" to persist important knowledge to memory. This is the single feature that no other mainstream agent ships by default.
+  When Hermes completes a complex task, it autonomously writes a reusable skill documenting how it did it. Skills then self-improve during use. It also gives itself periodic "nudges" to persist important knowledge to memory. This is the single feature that no other mainstream agent ships by default.
 </aside>
 
 ![Xiaohei operates the closed learning loop by mapping hard tasks into reusable skill documents](/blog/hermes-agent-guide/01-learning-loop.png)
 
 <aside>
-  🧠 **2. Persistent, layered memory**
+   **2. Persistent, layered memory**
 
-  Hermes maintains multiple memory layers for cross-session continuity, uses **FTS5 full-text search with LLM summarization** to recall past conversations, and uses **Honcho dialectic user modeling** to build a deepening model of who you are. The longer it runs, the better it knows you.
+  Hermes maintains multiple memory layers for cross-session continuity, uses FTS5 full-text search with LLM summarization to recall past conversations, and uses Honcho dialectic user modeling to build a deepening model of who you are. The longer it runs, the better it knows you.
 </aside>
 
 ![Xiaohei organizes and retrieves memory files from Workspace, SQLite FTS5 database, and External anchors](/blog/hermes-agent-guide/02-layered-memory.png)
 
 <aside>
-  📚 **3. The skills system**
+   **3. The skills system**
 
-  Hermes ships with **40+ bundled skills** (MLOps, GitHub management, research/summarization, productivity automation, and more). The community `awesome-hermes-agent` repo adds curated skills, and everything is compatible with the **agentskills.io** open standard — so you can import, share, and compose skills into workflows.
+  Hermes ships with 40+ bundled skills (MLOps, GitHub management, research/summarization, productivity automation, and more). The community `awesome-hermes-agent` repo adds curated skills, and everything is compatible with the agentskills.io open standard — so you can import, share, and compose skills into workflows.
 </aside>
 
 ![The official AgentSkills.io standard defines reusable and portable agent skills](/blog/hermes-agent-guide/agentskills-homepage.png)
 
 <aside>
-  🧩 **4. Delegation & parallel subagents**
+   **4. Delegation & parallel subagents**
 
-  Hermes spawns **short-lived, isolated subagents** with their own focused context and tools for parallel workstreams. It can also write Python scripts that call tools via RPC, collapsing multi-step pipelines into near zero-context-cost turns. This keeps the main agent's context window small — ideal for local models.
+  Hermes spawns short-lived, isolated subagents with their own focused context and tools for parallel workstreams. It can also write Python scripts that call tools via RPC, collapsing multi-step pipelines into near zero-context-cost turns. This keeps the main agent's context window small — ideal for local models.
 </aside>
 
 ![Xiaohei controller delegating tasks to multiple isolated subagent workers for parallel execution](/blog/hermes-agent-guide/04-subagents.png)
@@ -167,7 +167,7 @@ Four pillars make Hermes feel less like a script and more like a teammate. Under
 <SectionHeading title="Prerequisites &amp; Setup" subtitle="Before You Start" number="04" id="prerequisites" />
 
 <aside>
-  ✅ You only really need three things to get going:
+   You only really need three things to get going:
 
   1. **A machine to run it on** — your local computer (macOS, Linux, or Windows via WSL2), or a $5+ VPS (DigitalOcean, Hostinger, etc.) for 24/7 operation.
   2. **An LLM API key** — from any supported provider (see the section below). OpenRouter is the easiest starting point.
@@ -176,13 +176,13 @@ Four pillars make Hermes feel less like a script and more like a teammate. Under
 
 **Minimum vs. recommended setup:**
 
-**🟠 Minimum (just to try it)**
+**Minimum (just to try it)**
 
 - 1 vCPU, 1 GB RAM VPS — or your own laptop
 - A free OpenRouter API key
 - macOS, Linux, or Windows with WSL2
 
-**🔵 Recommended (always-on)**
+**Recommended (always-on)**
 
 - 2+ vCPU, 4 GB+ RAM VPS, or a local RTX/DGX machine
 - Docker installed for sandboxing
@@ -194,7 +194,7 @@ Four pillars make Hermes feel less like a script and more like a teammate. Under
 
 <SectionHeading title="Installation Guide" subtitle="Desktop App vs CLI Setup" number="05" id="installation" />
 
-There are two paths: the **Desktop app** (easiest for beginners) and the **command-line install** (best for servers/VPS). Pick one.
+There are two paths: the Desktop app (easiest for beginners) and the command-line install (best for servers/VPS). Pick one.
 
 ### Option A — Hermes Desktop (recommended for beginners)
 
@@ -202,22 +202,22 @@ Since the June 2026 "Surface Release" (v0.16.0+), Hermes ships a native desktop 
 
 1. Go to **hermes-agent.nousresearch.com** and download the installer for your OS (macOS `.dmg` or Windows `.exe`).
 2. Run the installer and launch the app.
-3. On first run, choose **Quick Setup via Nous Portal** to get from install to first message in seconds.
+3. On first run, choose Quick Setup via Nous Portal to get from install to first message in seconds.
 
 ### Option B — Command-line install (best for VPS / servers)
 
 <aside>
-  🐧 **Linux / macOS / WSL2 / Android (Termux)** — run the official one-line install command from the Hermes docs (`hermes-agent.nousresearch.com/docs`). It installs everything automatically with no prerequisites.
+   **Linux / macOS / WSL2 / Android (Termux)** — run the official one-line install command from the Hermes docs (`hermes-agent.nousresearch.com/docs`). It installs everything automatically with no prerequisites.
 </aside>
 
-On **Windows (native)**, run this in PowerShell:
+On Windows (native), run this in PowerShell:
 
 ```powershell
 iex (irm https://hermes-agent.nousresearch.com/install.ps1)
 ```
 
 <aside>
-  ⚠️ **Security tip:** Always read what an install script does before piping it into your shell — this is good practice for *any* `curl | sh`-style installer, not just Hermes. The official docs explain exactly what the installer does and the per-user vs. root layout.
+   **Security tip:** Always read what an install script does before piping it into your shell — this is good practice for *any* `curl | sh`-style installer, not just Hermes. The official docs explain exactly what the installer does and the per-user vs. root layout.
 </aside>
 
 ### The fastest path to a working agent
@@ -228,7 +228,7 @@ After installing, run:
 hermes setup --portal
 ```
 
-One OAuth login wires up a model **plus** all four Tool Gateway tools at once: **web search, image generation, text-to-speech, and a browser**. Inspect what's connected with `hermes portal info`.
+One OAuth login wires up a model plus all four Tool Gateway tools at once: web search, image generation, text-to-speech, and a browser. Inspect what's connected with `hermes portal info`.
 
 ---
 
@@ -246,7 +246,7 @@ Hermes is **provider- and model-agnostic**. You can connect almost any LLM. Here
 | **Local (Qwen 3.6)** | Privacy / offline | Run fully local on RTX/DGX hardware; 27B–35B models are enough for Hermes. |
 
 <aside>
-  💡 **Pro tip — use multiple models at once.** Hermes has a **main model** (what it thinks with) and **auxiliary models** (smaller side-jobs: context compression, vision, web-page summarization, approval scoring, MCP routing, skill search). Match the model to the task: a strong reasoner for planning, a cheap fast model for lightweight actions. This is what makes Hermes feel like a real agent *system*, not a single chatbot.
+   **Pro tip — use multiple models at once.** Hermes has a **main model** (what it thinks with) and **auxiliary models** (smaller side-jobs: context compression, vision, web-page summarization, approval scoring, MCP routing, skill search). Match the model to the task: a strong reasoner for planning, a cheap fast model for lightweight actions. This is what makes Hermes feel like a real agent *system*, not a single chatbot.
 </aside>
 
 ### Your first chat & verifying it works
@@ -254,7 +254,7 @@ Hermes is **provider- and model-agnostic**. You can connect almost any LLM. Here
 Once a model is connected, start a chat and try a real task:
 
 ```bash
-❯ What's my disk usage? Show the top 5 largest directories.
+ What's my disk usage? Show the top 5 largest directories.
 ```
 
 The agent runs the terminal commands on your behalf and shows the results. Then **verify session memory works** — this is the whole point of Hermes:
@@ -267,19 +267,19 @@ hermes -c           # Short form
 This should bring you right back to the conversation you just had. If it doesn't, check that you're in the same profile and that the session actually saved.
 
 <aside>
-  ⌨️ **Handy controls:** Type a new message mid-task to **interrupt and redirect** the agent (or press `Ctrl+C`). The terminal UI also supports multiline editing, slash-command autocomplete, and streaming tool output.
+  ⌨ **Handy controls:** Type a new message mid-task to **interrupt and redirect** the agent (or press `Ctrl+C`). The terminal UI also supports multiline editing, slash-command autocomplete, and streaming tool output.
 </aside>
 
 ---
 
 <SectionHeading title="Connect Messaging Platforms" subtitle="The Remote Gateway" number="07" id="messaging" />
 
-This is what makes Hermes feel magical: you can talk to it **from your phone** while it works on a cloud VM you never SSH into. It supports **Telegram, Discord, Slack, WhatsApp, and Signal** from a single gateway process, with voice-memo transcription and cross-platform conversation continuity.
+This is what makes Hermes feel magical: you can talk to it from your phone while it works on a cloud VM you never SSH into. It supports Telegram, Discord, Slack, WhatsApp, and Signal from a single gateway process, with voice-memo transcription and cross-platform conversation continuity.
 
-The most popular setup, straight from community guides, is **Telegram on a VPS**:
+The most popular setup, straight from community guides, is Telegram on a VPS:
 
 1. Deploy Hermes on a VPS (e.g., DigitalOcean or Hostinger) so it runs 24/7.
-2. Create a Telegram bot using **@BotFather** and copy the bot token.
+2. Create a Telegram bot using @BotFather and copy the bot token.
 3. Add the token to your Hermes messaging configuration.
 4. Message your bot — and you now have a persistent agent in your pocket.
 
@@ -292,7 +292,7 @@ The most popular setup, straight from community guides, is **Telegram on a VPS**
 Skills are what make Hermes compound in value. A **skill** is a reusable, searchable document that captures *how* to do something — and Hermes both ships with them and writes new ones itself.
 
 <aside>
-  📚 **Three ways skills grow:**
+   **Three ways skills grow:**
 
   1. **Bundled** — 40+ curated skills ship out of the box (MLOps, GitHub, research, productivity, and more).
   2. **Auto-created** — when Hermes solves a hard problem, it writes a new skill so it never relearns it.
@@ -310,7 +310,7 @@ Skills are what make Hermes compound in value. A **skill** is a reusable, search
 
 <SectionHeading title="Scheduling &amp; Automation" subtitle="Always-On Cron Jobs" number="09" id="scheduling" />
 
-This is where Hermes stops being a chatbot and becomes an *operator*. Because it runs continuously, it can execute **scheduled cron jobs** with no human in the loop.
+This is where Hermes stops being a chatbot and becomes an *operator*. Because it runs continuously, it can execute scheduled cron jobs with no human in the loop.
 
 Popular always-on automations:
 
@@ -320,7 +320,7 @@ Popular always-on automations:
 - **Recurring research** — track a topic weekly and build on previous findings.
 
 <aside>
-  ⏰ **Why it matters:** combined with persistent memory, scheduled jobs *build on each other*. A weekly research agent doesn't start from scratch — it remembers last week and improves its own workflow over time.
+   **Why it matters:** combined with persistent memory, scheduled jobs *build on each other*. A weekly research agent doesn't start from scratch — it remembers last week and improves its own workflow over time.
 </aside>
 
 ---
@@ -331,10 +331,10 @@ Hermes speaks the **Model Context Protocol (MCP)**, the open standard for connec
 
 Out of the box, the **Tool Gateway** gives Hermes four core tools after a single `hermes setup --portal`:
 
-- **🔎 Web search** — live information retrieval
-- **🖼️ Image generation** — create visuals on demand
-- **🔊 Text-to-speech** — natural voice output
-- **🌐 Browser** — navigate and act on real web pages
+- **Web search** — live information retrieval
+- **Image generation** — create visuals on demand
+- **Text-to-speech** — natural voice output
+- **Browser** — navigate and act on real web pages
 
 Layer MCP servers on top (databases, SaaS APIs, internal tools) to give your agent superpowers specific to your stack.
 
@@ -342,32 +342,32 @@ Layer MCP servers on top (databases, SaaS APIs, internal tools) to give your age
 
 <SectionHeading title="Real-World Use Cases" subtitle="What People Are Building" number="11" id="use-cases" />
 
-Hermes shines on **long-running, repeatable** work. Real examples reported by users and the official docs:
+Hermes shines on long-running, repeatable work. Real examples reported by users and the official docs:
 
-**🧑‍💼 Personal & productivity**
+**‍ Personal & productivity**
 
 - A personal assistant that remembers your projects week to week
 - Daily briefings delivered to Discord/Slack/Notion/email every morning
 - Voice-memo capture that turns into organized notes
 
-**⚙️ Developer & ops**
+**Developer & ops**
 
 - Execute shell commands and manage servers from a chat window
 - Automated PR reviews and monitoring alerts
 - Deploy apps with an agent that learns from past deploys
 
-**🔬 Research & content**
+**Research & content**
 
 - A research agent that watches a topic, writes briefs, and suggests angles — improving its own workflow over time
 - Turning one-off prompts into research → draft → review pipelines
 
-**🔗 Automation & integrations**
+**Automation & integrations**
 
 - Connect APIs like Stripe, Notion, and GitHub to scheduled cron jobs
 - Spawn parallel subagents to scout problems, research, and build fixes with one human approval
 
 <aside>
-  🗣️ **Real community signal:** On r/AgentsOfAI, one user documented a full DigitalOcean + Telegram + memory-testing workflow and called out that *"most tutorials skip the hands-on details."* On r/AISEOInsider, the consensus is that Hermes' **multi-model setup** is what makes it feel like a real 2026 agent stack — research, planning, browser actions, and reporting can each use a different model.
+   **Real community signal:** On r/AgentsOfAI, one user documented a full DigitalOcean + Telegram + memory-testing workflow and called out that *"most tutorials skip the hands-on details."* On r/AISEOInsider, the consensus is that Hermes' **multi-model setup** is what makes it feel like a real 2026 agent stack — research, planning, browser actions, and reporting can each use a different model.
 </aside>
 
 ---
@@ -375,7 +375,7 @@ Hermes shines on **long-running, repeatable** work. Real examples reported by us
 <SectionHeading title="Pricing &amp; Cost" subtitle="Is Hermes Agent Free?" number="12" id="pricing" />
 
 <aside>
-  💰 **The agent software itself is 100% free and open-source (MIT).** Your only real cost is the **LLM tokens** you consume, billed by whichever provider you choose. Run a cheap/local model and your cost can be nearly zero; run a frontier model heavily and you'll pay normal API rates.
+   **The agent software itself is 100% free and open-source (MIT).** Your only real cost is the **LLM tokens** you consume, billed by whichever provider you choose. Run a cheap/local model and your cost can be nearly zero; run a frontier model heavily and you'll pay normal API rates.
 </aside>
 
 **Nous Portal** (optional) bundles model access into tiers — **Free, Plus, Super, and Ultra** — each including monthly credits, access to 300+ models, and built-in tool use, plus 10% off token-billed providers. It's the most frictionless way to pay, but you're never locked in — bring your own API key anytime.
@@ -392,7 +392,7 @@ This is one of Hermes' strongest selling points for businesses:
 - **MIT license** — you can audit every line of code.
 
 <aside>
-  🔐 **Best practice:** For anything sensitive or multi-user, run Hermes inside **Docker or a remote sandbox** rather than directly on your host, and add a **human-in-the-loop approval gate** for destructive actions. Several users on r/hermesagent specifically asked for this pattern for compliance and kid-facing bots.
+   **Best practice:** For anything sensitive or multi-user, run Hermes inside **Docker or a remote sandbox** rather than directly on your host, and add a **human-in-the-loop approval gate** for destructive actions. Several users on r/hermesagent specifically asked for this pattern for compliance and kid-facing bots.
 </aside>
 
 ---
@@ -417,7 +417,7 @@ This is one of Hermes' strongest selling points for businesses:
     
 
 <aside>
-  📊 **Power-user move:** the community built **"Hermes HUD"**, a TUI dashboard that watches your agent think — reading from its memory and tracking skills, sessions, corrections, projects, and cron jobs. Great for keeping an always-on agent observable.
+   **Power-user move:** the community built **"Hermes HUD"**, a TUI dashboard that watches your agent think — reading from its memory and tracking skills, sessions, corrections, projects, and cron jobs. Great for keeping an always-on agent observable.
 </aside>
 
 ---
@@ -428,7 +428,7 @@ How does Hermes compare to the other ways people run autonomous agents in 2026?
 
 **Hermes vs. OpenClaw**
 
-OpenClaw popularized self-hosted agents, but Hermes adds the **closed learning loop** and **persistent user modeling** OpenClaw lacks — the single biggest reason for the 2026 migration wave.
+OpenClaw popularized self-hosted agents, but Hermes adds the closed learning loop and persistent user modeling OpenClaw lacks — the single biggest reason for the 2026 migration wave.
 
 **Hermes vs. IDE copilots**
 
@@ -462,7 +462,7 @@ First-gen autonomous agents were notoriously unreliable. Hermes' curated, stress
 <SectionHeading title="The Honest Verdict" subtitle="Rating &amp; Final Assessment" number="17" id="verdict" />
 
 <aside>
-  🏁 **Should you use Hermes Agent?** If you want a **persistent, self-owned AI operator** that compounds in value and runs 24/7 on cheap infra — yes, it's the most exciting open-source agent of 2026, and the learning loop is genuinely unique. If you just want a quick Q&A chatbot or an IDE autocomplete, it's overkill; use a copilot instead.
+   **Should you use Hermes Agent?** If you want a **persistent, self-owned AI operator** that compounds in value and runs 24/7 on cheap infra — yes, it's the most exciting open-source agent of 2026, and the learning loop is genuinely unique. If you just want a quick Q&A chatbot or an IDE autocomplete, it's overkill; use a copilot instead.
 
   **Rating: 4.7/5** — docked slightly for a learning curve that still rewards comfort with the terminal and a VPS.
 </aside>
