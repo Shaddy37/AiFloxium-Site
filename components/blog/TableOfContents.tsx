@@ -56,7 +56,7 @@ export function TableOfContents() {
 
   return (
     <nav className="hidden lg:block pr-4">
-      <h4 className="text-sm font-bold uppercase tracking-widest text-brand-plum mb-6">On this page</h4>
+      <h4 className="text-sm font-bold uppercase tracking-widest text-brand-orange mb-6">On this page</h4>
       <div className="relative border-l border-zinc-200">
         <ul className="flex flex-col gap-3 relative">
           {headings.map((heading) => {
@@ -67,7 +67,7 @@ export function TableOfContents() {
                 className={cn(
                   "relative pl-4 transition-all duration-300",
                   heading.level === 3 ? "ml-4 text-sm" : "text-base font-medium",
-                  isActive ? "text-brand-orange font-bold" : "text-zinc-500 hover:text-brand-plum"
+                  isActive ? "text-brand-orange font-bold" : "text-zinc-500 hover:text-brand-orange"
                 )}
               >
                 {isActive && (

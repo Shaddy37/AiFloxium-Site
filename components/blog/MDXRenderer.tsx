@@ -72,38 +72,33 @@ const components = {
   p: (props: ComponentPropsWithoutRef<"p">) => (
     <p 
       className="mb-6 text-base md:text-lg font-normal leading-relaxed text-zinc-800" 
-      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
       {...props} 
     />
   ),
   ul: (props: ComponentPropsWithoutRef<"ul">) => (
     <ul 
       className="mb-8 list-disc space-y-3 pl-6 text-base md:text-lg text-zinc-800 marker:text-brand-orange" 
-      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
       {...props} 
     />
   ),
   ol: (props: ComponentPropsWithoutRef<"ol">) => (
     <ol 
       className="mb-8 list-decimal space-y-3 pl-6 text-base md:text-lg text-zinc-800 marker:font-bold marker:text-brand-orange" 
-      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
       {...props} 
     />
   ),
   li: (props: ComponentPropsWithoutRef<"li">) => (
-    <li className="pl-1 text-zinc-800 font-normal" {...props} />
+    <li className="pl-1 text-zinc-800 font-normal leading-relaxed" {...props} />
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote 
-      className="border-l-2 border-brand-orange/50 pl-8 my-12 italic text-xl md:text-2xl text-zinc-800 leading-relaxed font-normal" 
-      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      className="border-l-4 border-brand-orange pl-8 my-12 italic text-xl md:text-2xl text-zinc-800 leading-relaxed font-normal bg-brand-orange/[0.02] py-6 pr-6 rounded-r-3xl" 
       {...props} 
     />
   ),
   aside: (props: ComponentPropsWithoutRef<"aside">) => (
     <aside 
-      className="my-12 rounded-[2rem] border border-zinc-200 bg-zinc-50 px-6 py-6 text-zinc-800 shadow-sm md:px-8 font-normal" 
-      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      className="my-12 rounded-[2rem] border-l-4 border-brand-orange border-y border-r border-zinc-200 bg-zinc-50/50 px-6 py-8 text-zinc-800 shadow-sm md:px-8 font-normal leading-relaxed" 
       {...props} 
     />
   ),
@@ -112,7 +107,7 @@ const components = {
     if (/^https?:\/\//.test(props.href)) {
       return (
         <a
-          className="font-bold text-brand-plum underline underline-offset-4 transition-colors hover:text-brand-orange"
+          className="font-bold text-brand-orange hover:text-brand-orange/80 underline underline-offset-4 transition-colors"
           href={props.href}
           rel="noreferrer"
           target="_blank"
@@ -122,7 +117,7 @@ const components = {
       );
     }
     return (
-      <Link className="underline underline-offset-4 text-brand-plum hover:text-brand-orange transition-colors font-bold" href={props.href}>
+      <Link className="underline underline-offset-4 text-brand-orange hover:text-brand-orange/80 transition-colors font-bold" href={props.href}>
         {props.children}
       </Link>
     );
@@ -132,7 +127,7 @@ const components = {
       return <code {...props} />;
     }
     return (
-      <code className="bg-brand-plum/5 border border-brand-plum/10 px-1.5 py-0.5 rounded text-sm font-mono text-brand-plum" {...props} />
+      <code className="bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono text-zinc-900" {...props} />
     );
   },
   pre: (props: ComponentPropsWithoutRef<"pre">) => {
@@ -152,10 +147,10 @@ const components = {
   },
   hr: () => <hr className="my-14 border-zinc-200" />,
   TLDR: ({ children }: { children: React.ReactNode }) => (
-    <div className="my-12 p-8 rounded-3xl bg-brand-plum/5 border border-brand-plum/10 relative overflow-hidden shadow-sm">
-      <div className="absolute top-0 left-0 w-2 h-full bg-brand-plum" />
-      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-plum/60 mb-4 font-black">Executive Summary // TL;DR</div>
-      <div className="text-xl font-bold text-brand-plum leading-relaxed">
+    <div className="my-12 p-8 rounded-3xl bg-brand-orange/[0.02] border border-brand-orange/15 relative overflow-hidden shadow-sm">
+      <div className="absolute top-0 left-0 w-2.5 h-full bg-brand-orange" />
+      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-orange/80 mb-4 font-black">Executive Summary // TL;DR</div>
+      <div className="text-xl font-bold text-zinc-900 leading-relaxed">
         {children}
       </div>
     </div>
@@ -163,23 +158,23 @@ const components = {
   SectionHeading: ({ title, subtitle, number, id }: { title: string, subtitle?: string, number?: string, id?: string }) => (
     <div className="mt-16 md:mt-20 mb-8 group">
       <div className="flex items-center gap-4 mb-4">
-        {number && <span className="text-sm font-mono text-brand-plum/40 tracking-tighter font-black">{number}</span>}
-        <span className="h-[1px] flex-1 bg-brand-plum/10 group-hover:bg-brand-plum/30 transition-colors" />
+        {number && <span className="text-sm font-mono text-brand-orange/60 tracking-tighter font-black">{number}</span>}
+        <span className="h-[1px] flex-1 bg-brand-orange/15 group-hover:bg-brand-orange/35 transition-colors" />
       </div>
       <h2 id={id} className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-brand-plum">
         {title}
       </h2>
-      {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-brand-plum/60 font-black">{subtitle}</p>}
+      {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-zinc-500 font-bold">{subtitle}</p>}
     </div>
   ),
   TableOfContents: ({ items }: { items: { title: string, id: string }[] }) => (
-    <nav className="my-12 p-8 rounded-3xl border border-brand-plum/10 bg-brand-plum/5">
-      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-plum mb-8 underline decoration-brand-plum/20 font-black">Navigation Architecture</div>
+    <nav className="my-12 p-8 rounded-3xl border border-brand-orange/15 bg-brand-orange/[0.02]">
+      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-orange mb-8 underline decoration-brand-orange/20 font-black">Navigation Architecture</div>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
         {items.map((item, i) => (
-          <li key={i} className="group flex items-center gap-4 border-b border-brand-plum/5 pb-2">
-            <span className="text-[10px] font-mono text-brand-plum/30 group-hover:text-brand-plum transition-colors font-black">0{i+1}</span>
-            <a href={`#${item.id}`} className="text-sm font-bold uppercase tracking-tight text-brand-plum hover:text-brand-orange transition-colors">
+          <li key={i} className="group flex items-center gap-4 border-b border-zinc-100 pb-2">
+            <span className="text-[10px] font-mono text-brand-orange/40 group-hover:text-brand-orange transition-colors font-black">0{i+1}</span>
+            <a href={`#${item.id}`} className="text-sm font-bold uppercase tracking-tight text-zinc-800 hover:text-brand-orange transition-colors">
               {item.title}
             </a>
           </li>

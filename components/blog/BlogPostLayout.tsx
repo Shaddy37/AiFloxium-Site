@@ -27,7 +27,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
   const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-background font-medium text-zinc-300 selection:bg-brand-orange selection:text-white">
+    <main className="relative min-h-screen overflow-x-hidden bg-background font-medium text-zinc-300 selection:bg-brand-orange selection:text-white font-sans-clean">
       {schemas.map((schema, index) => (
         <script
           key={index}
@@ -132,14 +132,14 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-zinc-800">
           <aside className="lg:col-span-3 lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 hidden lg:flex lg:flex-col lg:gap-8 scrollbar-thin scrollbar-thumb-zinc-200 scrollbar-track-transparent">
             <TableOfContents />
-            <div className="rounded-3xl border border-brand-plum/10 bg-brand-plum/5 p-6 shadow-sm">
-              <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-plum font-black mb-4">Expert Support</h3>
+            <div className="rounded-3xl border border-brand-orange/15 bg-brand-orange/[0.02] p-6 shadow-sm">
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-orange font-black mb-4">Expert Support</h3>
               <p className="text-sm text-zinc-900 mb-6 font-bold leading-relaxed">
                 Ready to scale your autonomous systems? Let&apos;s talk strategy.
               </p>
               <Link 
                 href="/contact" 
-                className="block text-center w-full rounded-full bg-brand-plum px-4 py-3 text-xs font-bold text-white shadow-md transition-transform hover:scale-105"
+                className="block text-center w-full rounded-full bg-brand-orange px-4 py-3 text-xs font-bold text-white shadow-md transition-transform hover:scale-105 hover:bg-brand-orange/90"
               >
                 BOOK A CONSULTATION
               </Link>
