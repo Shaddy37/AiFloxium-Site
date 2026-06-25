@@ -21,7 +21,8 @@ export async function generateStaticParams() {
       slug !== 'agentic-workflows-n8n' &&
       slug !== 'gemini-3-5-flash-review' &&
       slug !== 'best-mcp-servers-2026' &&
-      slug !== 'best-ai-coding-agents-2026'
+      slug !== 'best-ai-coding-agents-2026' &&
+      slug !== 'hermes-agent-guide'
   );
   return slugs.map((slug) => ({ slug }));
 }

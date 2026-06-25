@@ -70,22 +70,42 @@ const components = {
     />
   ),
   p: (props: ComponentPropsWithoutRef<"p">) => (
-    <p className="mb-6 text-lg font-medium leading-relaxed text-black" {...props} />
+    <p 
+      className="mb-6 text-base md:text-lg font-normal leading-relaxed text-zinc-800" 
+      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      {...props} 
+    />
   ),
   ul: (props: ComponentPropsWithoutRef<"ul">) => (
-    <ul className="mb-8 list-disc space-y-4 pl-6 text-lg text-black marker:text-brand-plum" {...props} />
+    <ul 
+      className="mb-8 list-disc space-y-3 pl-6 text-base md:text-lg text-zinc-800 marker:text-brand-orange" 
+      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      {...props} 
+    />
   ),
   ol: (props: ComponentPropsWithoutRef<"ol">) => (
-    <ol className="mb-8 list-decimal space-y-4 pl-6 text-lg text-black marker:font-bold marker:text-brand-plum" {...props} />
+    <ol 
+      className="mb-8 list-decimal space-y-3 pl-6 text-base md:text-lg text-zinc-800 marker:font-bold marker:text-brand-orange" 
+      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      {...props} 
+    />
   ),
   li: (props: ComponentPropsWithoutRef<"li">) => (
-    <li className="pl-1 text-black" {...props} />
+    <li className="pl-1 text-zinc-800 font-normal" {...props} />
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
-    <blockquote className="border-l-2 border-brand-plum/30 pl-8 my-12 italic text-xl md:text-2xl text-zinc-900 leading-relaxed font-light" {...props} />
+    <blockquote 
+      className="border-l-2 border-brand-orange/50 pl-8 my-12 italic text-xl md:text-2xl text-zinc-800 leading-relaxed font-normal" 
+      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      {...props} 
+    />
   ),
   aside: (props: ComponentPropsWithoutRef<"aside">) => (
-    <aside className="my-12 rounded-[2rem] border border-zinc-200 bg-zinc-50 px-6 py-6 text-black shadow-sm md:px-8" {...props} />
+    <aside 
+      className="my-12 rounded-[2rem] border border-zinc-200 bg-zinc-50 px-6 py-6 text-zinc-800 shadow-sm md:px-8 font-normal" 
+      style={{ fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      {...props} 
+    />
   ),
   a: (props: ComponentPropsWithoutRef<"a">) => {
     if (!props.href) return <span {...props}>{props.children}</span>;

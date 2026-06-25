@@ -111,6 +111,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug }: BlogPostLayo
               className="h-auto w-full bg-brand-bg object-contain"
               sizes="(max-width: 1024px) 100vw, 1100px"
               priority
+              unoptimized
             />
           </div>
         </section>

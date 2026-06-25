@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect width="1160" height="590" x="20" y="20" fill="none" stroke="#27272a" stroke-width="2" rx="24"/>
+  
+  <!-- Subtle Grid Pattern in background -->
+  <path d="M 0,90 L 1200,90 M 0,180 L 1200,180 M 0,270 L 1200,270 M 0,360 L 1200,360 M 0,450 L 1200,450 M 0,540 L 1200,540" stroke="#18181b" stroke-width="1"/>
+  <path d="M 180,0 L 180,630 M 360,0 L 360,630 M 540,0 L 540,630 M 720,0 L 720,630 M 900,0 L 900,630 M 1080,0 L 1080,630" stroke="#18181b" stroke-width="1"/>
+
+  <text x="80" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#f97316" font-weight="700" letter-spacing="4">HANDS-ON DEPLOYMENT GUIDE</text>
+  
+  <text x="80" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="76" fill="#ffffff" font-weight="900" letter-spacing="-2">HERMES AGENT</text>
+  <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="44" fill="#a1a1aa" font-weight="700" letter-spacing="-1">The Complete 2026 Setup &amp; Architecture Guide</text>
+  
+  <text x="80" y="530" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#71717a" font-weight="500" letter-spacing="1">AUTHOR: MUHAMMAD SHADAB SHAMS</text>
+  <text x="80" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#71717a" font-weight="500" letter-spacing="1">VERSION: v0.17.0 // MIT LICENSE</text>
+
+  <!-- Glowing vector art representation of Hermes wings/brain -->
+  <g transform="translate(920, 315)">
+    <!-- Radial Glows -->
+    <circle cx="0" cy="0" r="160" fill="url(#orangeGlow)" opacity="0.15"/>
+    <circle cx="0" cy="0" r="100" fill="url(#plumGlow)" opacity="0.2"/>
+    
+    <!-- Geometric Rings -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="10, 8" opacity="0.6"/>
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#a21caf" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#f97316" stroke-width="3" opacity="0.8"/>
+    
+    <!-- Central core -->
+    <circle cx="0" cy="0" r="20" fill="#f97316"/>
+  </g>
+
+  <defs>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="plumGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a21caf"/>
+      <stop offset="100%" stop-color="#a21caf" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
