@@ -63,7 +63,7 @@ const resourcesGraphJsonLd = {
         {
           '@type': 'ListItem',
           position: 4,
-          name: 'Notion Guides',
+          name: 'Guides & Tutorials',
           url: `${absoluteUrl('/resources')}#notion-guides`
         },
         {
@@ -82,10 +82,10 @@ const resourcesGraphJsonLd = {
 // ──────────────────────────────────────────────────────────────────────────────
 
 const categories = [
-  { id: "n8n", label: "n8n Automations" },
+  { id: "n8n", label: "n8n Workflows" },
   { id: "claude-skills", label: "Claude Skills" },
   { id: "claude-agents", label: "Claude Agents" },
-  { id: "notion-guides", label: "Notion Guides" },
+  { id: "notion-guides", label: "Guides & Tutorials" },
   { id: "comparisons", label: "Comparisons" },
 ];
 
@@ -280,6 +280,16 @@ const claudeAgents = [
 
 const notionGuides = [
   {
+    title: "Complete Setup Guide: $0 Agentic Coding Stack",
+    description:
+      "Deploy a production-ready developer agent stack for $0. Set up Cohere North Mini Code (OpenRouter) and GLM-5.2 (Cloudflare Workers AI) to work with local developer agents like Hermes Agent or OpenCode.",
+    tags: ["AI Stack", "OpenRouter", "Cloudflare", "Hermes Agent"],
+    badge: "FREE",
+    badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
+    link: "/resources/zero-dollar-agentic-coding-stack",
+    readTime: "15 min read",
+  },
+  {
     title: "The Complete Claude Code Guide 2026: Zero to Advanced",
     description:
       "A comprehensive deep-dive from absolute beginner to advanced Claude Code power user. Covers memory systems, skills architecture, agentic workflows, and production patterns.",
@@ -393,14 +403,23 @@ function ResourceCard({
 
       {/* CTA Row */}
       <div className="flex items-center gap-3 mt-1">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 text-center py-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-md text-xs font-bold uppercase tracking-widest text-brand-plum transition-all duration-300"
-        >
-          View Resource →
-        </a>
+        {link.startsWith("/") ? (
+          <Link
+            href={link}
+            className="flex-1 text-center py-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-md text-xs font-bold uppercase tracking-widest text-brand-plum transition-all duration-300"
+          >
+            Open Guide →
+          </Link>
+        ) : (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 text-center py-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-md text-xs font-bold uppercase tracking-widest text-brand-plum transition-all duration-300"
+          >
+            View Resource →
+          </a>
+        )}
         {blogSlug && (
           <Link
             href={`/blog/${blogSlug}`}
@@ -640,13 +659,13 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* ── Notion Guides ─────────────────────────────────────────── */}
+        {/* ── Guides & Tutorials ─────────────────────────────────────── */}
         <section>
           <SectionHeader
             id="notion-guides"
             eyebrow="Structured Learning"
-            title="Notion Guides"
-            subtitle="Comprehensive step-by-step guides for Claude Code, Ollama, and AI automation, written by practitioners, not theorists."
+            title="Guides & Tutorials"
+            subtitle="Comprehensive step-by-step guides for Claude Code, Ollama, free agentic stacks, and AI automation, written by practitioners."
             count={notionGuides.length}
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

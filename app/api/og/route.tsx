@@ -291,5 +291,3 @@ export async function GET(request: Request) {
     }
   );
 }
-
-export { contentType, size };
