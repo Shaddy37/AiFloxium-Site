@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0015"/>
+      <stop offset="100%" stop-color="#130825"/>
+    </linearGradient>
+    <linearGradient id="g-layer1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="g-layer2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g-layer3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-card)" rx="32"/>
+  
+  <!-- Title -->
+  <text x="80" y="80" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.02em">The 2026 Pro AI Writing Stack</text>
+  <text x="80" y="115" fill="#a1a1aa" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="400">Draft, optimize, polish — three layers, one workflow.</text>
+
+  <!-- Workflow arrow background -->
+  <path d="M200,200 L600,200 L600,450 L200,450 Z" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" stroke-dasharray="8 4" rx="16"/>
+
+  <!-- Layer 1: Draft -->
+  <rect x="100" y="180" width="300" height="80" rx="16" fill="url(#g-layer1)" fill-opacity="0.15" stroke="url(#g-layer1)" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="250" y="218" fill="#c084fc" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">LAYER 01</text>
+  <text x="250" y="245" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" text-anchor="middle">Draft</text>
+  <text x="120" y="285" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400">Claude / ChatGPT for natural long-form,</text>
+  <text x="120" y="305" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400">Jasper for brand-governed marketing copy.</text>
+
+  <!-- Arrow 1 -->
+  <g opacity="0.4">
+    <line x1="420" y1="220" x2="470" y2="220" stroke="#ffffff" stroke-width="1.5"/>
+    <polygon points="475,220 465,213 465,227" fill="#ffffff"/>
+  </g>
+
+  <!-- Layer 2: Optimize -->
+  <rect x="500" y="180" width="300" height="80" rx="16" fill="url(#g-layer2)" fill-opacity="0.15" stroke="url(#g-layer2)" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="650" y="218" fill="#22d3ee" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">LAYER 02</text>
+  <text x="650" y="245" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" text-anchor="middle">Optimize</text>
+  <text x="520" y="285" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400">Surfer SEO / Frase for real-time scoring,</text>
+  <text x="520" y="305" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400">keyword data, and AEO visibility checks.</text>
+
+  <!-- Arrow 2 -->
+  <g opacity="0.4" transform="translate(820, 400)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#ffffff" stroke-width="1.5"/>
+    <polygon points="55,0 45,-7 45,7" fill="#ffffff"/>
+  </g>
+
+  <!-- Layer 3: Polish -->
+  <rect x="100" y="420" width="300" height="80" rx="16" fill="url(#g-layer3)" fill-opacity="0.15" stroke="url(#g-layer3)" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="250" y="458" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">LAYER 03</text>
+  <text x="250" y="485" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" text-anchor="middle">Polish</text>
+  <text x="120" y="525" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400">Grammarly for final tone adjustments,</text>
+  <text x="120" y="545" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400">clarity rewrites, and error catches.</text>
+
+  <!-- Down arrow from Layer 1 -->
+  <g opacity="0.3">
+    <line x1="250" y1="330" x2="250" y2="400" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4"/>
+    <polygon points="250,405 245,395 255,395" fill="#ffffff"/>
+  </g>
+
+  <!-- Down arrow from Layer 2 -->
+  <g opacity="0.3">
+    <line x1="650" y1="330" x2="650" y2="340" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="650" y1="340" x2="250" y2="340" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="250" y1="340" x2="250" y2="400" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4"/>
+    <polygon points="250,405 245,395 255,395" fill="#ffffff"/>
+  </g>
+
+  <!-- Bottom result badge -->
+  <rect x="400" y="550" width="400" height="60" rx="30" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="600" y="580" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="1" text-anchor="middle">→ PUBLISH-READY CONTENT THAT RANKS + GETS CITED</text>
+
+  <!-- Right side stats -->
+  <g transform="translate(880, 180)">
+    <rect x="0" y="0" width="260" height="160" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    <text x="130" y="45" fill="#22d3ee" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" text-anchor="middle">3</text>
+    <text x="130" y="70" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Simple Steps</text>
+    <text x="130" y="100" fill="#a1a1aa" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" text-anchor="middle">Draft → Optimize → Polish</text>
+    <line x1="30" y1="115" x2="230" y2="115" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    <text x="130" y="142" fill="#a1a1aa" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" text-anchor="middle">No single tool does it all.</text>
+  </g>
+</svg>

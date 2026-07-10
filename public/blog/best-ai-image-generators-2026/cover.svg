@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00100d"/>
+      <stop offset="50%" stop-color="#002a22"/>
+      <stop offset="100%" stop-color="#001a12"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="200" cy="150" r="300" fill="#06b6d4" fill-opacity="0.06" filter="blur(70px)"/>
+  <circle cx="1000" cy="480" r="260" fill="#10b981" fill-opacity="0.07" filter="blur(60px)"/>
+  <circle cx="600" cy="315" r="200" fill="#06b6d4" fill-opacity="0.03" filter="blur(50px)"/>
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#000" fill-opacity="0.25" stroke="#fff" stroke-opacity="0.08" stroke-width="1.5"/>
+  <text x="118" y="148" fill="#22d3ee" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="4">AIFLOXIUM / AI IMAGE GENERATORS</text>
+  <text x="118" y="248" fill="#fff" font-family="Arial, sans-serif" font-size="52" font-weight="bold" letter-spacing="-1">Best AI Image</text>
+  <text x="118" y="318" fill="#fff" font-family="Arial, sans-serif" font-size="52" font-weight="bold" letter-spacing="-1">Generators in 2026:</text>
+  <text x="118" y="388" fill="#22d3ee" font-family="Arial, sans-serif" font-size="52" font-weight="bold" letter-spacing="-1">10 Tools Tested</text>
+  <text x="118" y="452" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="22" font-weight="normal" letter-spacing="-0.5">Nano Banana · Midjourney · Flux · GPT Image · Recraft</text>
+  <text x="118" y="500" fill="#fff" fill-opacity="0.75" font-family="Arial, sans-serif" font-size="17" font-weight="normal">Realism, text rendering, vectors, and commercial safety compared.</text>
+</svg>

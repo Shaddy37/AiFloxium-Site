@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0015"/>
+      <stop offset="50%" stop-color="#1f0033"/>
+      <stop offset="100%" stop-color="#0d001a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="200" cy="150" r="300" fill="#f59e0b" fill-opacity="0.06" filter="blur(70px)"/>
+  <circle cx="1000" cy="480" r="260" fill="#a855f7" fill-opacity="0.07" filter="blur(60px)"/>
+  <circle cx="600" cy="315" r="200" fill="#f59e0b" fill-opacity="0.03" filter="blur(50px)"/>
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#000" fill-opacity="0.25" stroke="#fff" stroke-opacity="0.08" stroke-width="1.5"/>
+  <text x="118" y="148" fill="#fbbf24" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="4">AIFLOXIUM / AI VOICE GENERATORS</text>
+  <text x="118" y="248" fill="#fff" font-family="Arial, sans-serif" font-size="52" font-weight="bold" letter-spacing="-1">Best AI Voice</text>
+  <text x="118" y="318" fill="#fff" font-family="Arial, sans-serif" font-size="52" font-weight="bold" letter-spacing="-1">Generators in 2026:</text>
+  <text x="118" y="388" fill="#fbbf24" font-family="Arial, sans-serif" font-size="52" font-weight="bold" letter-spacing="-1">9 Tools Tested</text>
+  <text x="118" y="452" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="22" font-weight="normal" letter-spacing="-0.5">ElevenLabs · Inworld · Cartesia · Amazon Polly · Play.ht</text>
+  <text x="118" y="500" fill="#fff" fill-opacity="0.75" font-family="Arial, sans-serif" font-size="17" font-weight="normal">Natural voices, cloning, low-latency agents, and enterprise TTS compared.</text>
+</svg>

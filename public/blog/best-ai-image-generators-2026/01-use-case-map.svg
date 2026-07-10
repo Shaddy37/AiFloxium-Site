@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00100d"/>
+      <stop offset="100%" stop-color="#002a22"/>
+    </linearGradient>
+    <linearGradient id="g-real" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g-art" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="g-vec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="g-safe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="32"/>
+  <text x="80" y="80" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="-0.5">How to Pick AI Image Generator by Use Case</text>
+  <text x="80" y="115" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="16">The right model depends on what you are building — realism, art, vectors, or brand-safe assets.</text>
+
+  <!-- Column 1: Photorealism -->
+  <rect x="80" y="150" width="260" height="460" rx="20" fill="#06b6d4" fill-opacity="0.06" stroke="#06b6d4" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="80" y="150" width="260" height="60" rx="20" fill="url(#g-real)" fill-opacity="0.15"/>
+  <text x="210" y="185" fill="#22d3ee" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">PHOTOREALISM</text>
+  <text x="100" y="245" fill="#06b6d4" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1">BEST CHOICE</text>
+  <text x="100" y="270" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Nano Banana Pro</text>
+  <text x="100" y="300" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">Product photography,</text>
+  <text x="100" y="320" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">ecommerce mockups,</text>
+  <text x="100" y="340" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">infographics with text.</text>
+  <line x1="100" y1="360" x2="320" y2="360" stroke="#06b6d4" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="100" y="385" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ALSO GOOD</text>
+  <text x="100" y="408" fill="#fff" font-family="Arial, sans-serif" font-size="14">Nano Banana 2 (speed)</text>
+  <text x="100" y="428" fill="#fff" font-family="Arial, sans-serif" font-size="14">GPT Image (ease)</text>
+
+  <!-- Column 2: Artistic -->
+  <rect x="360" y="150" width="260" height="460" rx="20" fill="#a855f7" fill-opacity="0.06" stroke="#a855f7" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="360" y="150" width="260" height="60" rx="20" fill="url(#g-art)" fill-opacity="0.15"/>
+  <text x="490" y="185" fill="#c084fc" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">ART &amp; AESTHETICS</text>
+  <text x="380" y="245" fill="#a855f7" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1">BEST CHOICE</text>
+  <text x="380" y="270" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Midjourney v7</text>
+  <text x="380" y="300" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">Editorial art, cinematic</text>
+  <text x="380" y="320" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">posters, concept art,</text>
+  <text x="380" y="340" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">stylised illustrations.</text>
+  <line x1="380" y1="360" x2="600" y2="360" stroke="#a855f7" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="380" y="385" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ALSO GOOD</text>
+  <text x="380" y="408" fill="#fff" font-family="Arial, sans-serif" font-size="14">Leonardo Phoenix</text>
+  <text x="380" y="428" fill="#fff" font-family="Arial, sans-serif" font-size="14">Flux 2 (custom styles)</text>
+
+  <!-- Column 3: Vector -->
+  <rect x="640" y="150" width="260" height="460" rx="20" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="640" y="150" width="260" height="60" rx="20" fill="url(#g-vec)" fill-opacity="0.15"/>
+  <text x="770" y="185" fill="#fbbf24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">VECTORS &amp; LOGOS</text>
+  <text x="660" y="245" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1">BEST CHOICE</text>
+  <text x="660" y="270" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Recraft</text>
+  <text x="660" y="300" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">True vector output,</text>
+  <text x="660" y="320" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">logos, icons, scalable</text>
+  <text x="660" y="340" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">brand assets.</text>
+  <line x1="660" y1="360" x2="880" y2="360" stroke="#f59e0b" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="660" y="385" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ALSO GOOD</text>
+  <text x="660" y="408" fill="#fff" font-family="Arial, sans-serif" font-size="14">GPT Image (concepts)</text>
+  <text x="660" y="428" fill="#fff" font-family="Arial, sans-serif" font-size="14">Nano Banana Pro</text>
+
+  <!-- Column 4: Commercial -->
+  <rect x="920" y="150" width="200" height="460" rx="20" fill="#10b981" fill-opacity="0.06" stroke="#10b981" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="920" y="150" width="200" height="60" rx="20" fill="url(#g-safe)" fill-opacity="0.15"/>
+  <text x="1020" y="185" fill="#34d399" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">COMMERCIAL</text>
+  <text x="940" y="245" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1">BEST CHOICE</text>
+  <text x="940" y="270" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Adobe Firefly</text>
+  <text x="940" y="300" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="12">Licensed training</text>
+  <text x="940" y="318" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="12">data, brand-safe</text>
+  <text x="940" y="336" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="12">commercial use.</text>
+  <line x1="940" y1="360" x2="1100" y2="360" stroke="#10b981" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="940" y="385" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="11" font-weight="bold">ALSO GOOD</text>
+  <text x="940" y="408" fill="#fff" font-family="Arial, sans-serif" font-size="12">Stable Audio</text>
+</svg>

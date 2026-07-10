@@ -1,6 +1,13 @@
 # AGENTS.md - Developer Guidelines for This Project
 
-This file provides comprehensive guidelines for AI coding agents working on this project. Always read this file to understand the architecture, commands, and code styling patterns.
+> **SESSION START INSTRUCTION**: When opening this codebase for the first time in a new session, always read this file. It provides comprehensive guidelines for AI coding agents working on this project.
+> 
+> **CRITICAL MEMORY SYNCHRONIZATION RULE (SECOND BRAIN)**:
+> 1. **Start of Session**: Read the Second Brain configuration notes at `C:\Users\Cc\Desktop\Second Brain\Home.md` (and related `Projects/`, `System/` or `Skills/` notes) to bootstrap your context.
+> 2. **During Session**: If codebases, files, features, configurations, templates, or schemas are added, edited, or removed, you MUST automatically update the corresponding Second Brain note under `C:\Users\Cc\Desktop\Second Brain\Projects/` or `System/` or `Skills/`.
+> 3. **End of Session**: Log a summary of actions, code modifications, and where the next session should begin inside the Daily Journal: `C:\Users\Cc\Desktop\Second Brain\Journal/YYYY-MM-DD.md` (creating it if it doesn't exist).
+
+---
 
 ## Project Overview
 

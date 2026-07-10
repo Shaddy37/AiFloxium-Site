@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0015"/>
+      <stop offset="100%" stop-color="#120020"/>
+    </linearGradient>
+    <linearGradient id="g-vocal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="g-instr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="g-score" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g-bgm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="32"/>
+  
+  <text x="80" y="80" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="-0.5">4 Types of AI Music Generators in 2026</text>
+  <text x="80" y="115" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="16">Pick by what you are actually producing — songs, sound, scores, or background.</text>
+
+  <!-- Category 1: Songs & Vocals -->
+  <rect x="80" y="150" width="520" height="220" rx="20" fill="#ec4899" fill-opacity="0.06" stroke="#ec4899" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="80" y="150" width="4" height="220" rx="2" fill="url(#g-vocal)"/>
+  <text x="110" y="195" fill="#f472b6" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2">TYPE 01</text>
+  <text x="110" y="225" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="bold" letter-spacing="-0.5">Full Songs &amp; Vocal Tracks</text>
+  <text x="110" y="255" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">Complete tracks with lyrics, melody,</text>
+  <text x="110" y="275" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">harmony, and natural-sounding vocals.</text>
+  <text x="110" y="310" fill="#f472b6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Best: Suno, Udio</text>
+  <rect x="110" y="330" width="90" height="22" rx="11" fill="#ec4899" fill-opacity="0.2"/>
+  <text x="155" y="345" fill="#f472b6" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Content Creators</text>
+
+  <!-- Category 2: Instrumentals -->
+  <rect x="620" y="150" width="520" height="220" rx="20" fill="#a855f7" fill-opacity="0.06" stroke="#a855f7" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="620" y="150" width="4" height="220" rx="2" fill="url(#g-instr)"/>
+  <text x="650" y="195" fill="#c084fc" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2">TYPE 02</text>
+  <text x="650" y="225" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="bold" letter-spacing="-0.5">Studio Instrumentals &amp; Sound Design</text>
+  <text x="650" y="255" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">High-fidelity audio, clean instrument</text>
+  <text x="650" y="275" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">separation, stems, and editing control.</text>
+  <text x="650" y="310" fill="#c084fc" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Best: Udio, Soundful</text>
+  <rect x="650" y="330" width="90" height="22" rx="11" fill="#a855f7" fill-opacity="0.2"/>
+  <text x="695" y="345" fill="#c084fc" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Music Producers</text>
+
+  <!-- Category 3: Scores -->
+  <rect x="80" y="395" width="520" height="220" rx="20" fill="#06b6d4" fill-opacity="0.06" stroke="#06b6d4" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="80" y="395" width="4" height="220" rx="2" fill="url(#g-score)"/>
+  <text x="110" y="440" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2">TYPE 03</text>
+  <text x="110" y="470" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="bold" letter-spacing="-0.5">Cinematic Scores &amp; Orchestral</text>
+  <text x="110" y="500" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">Film, trailer, and game composition</text>
+  <text x="110" y="520" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">with full ownership on paid plans.</text>
+  <text x="110" y="555" fill="#22d3ee" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Best: AIVA</text>
+  <rect x="110" y="575" width="90" height="22" rx="11" fill="#06b6d4" fill-opacity="0.2"/>
+  <text x="155" y="590" fill="#22d3ee" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Film &amp; Game Devs</text>
+
+  <!-- Category 4: BGM -->
+  <rect x="620" y="395" width="520" height="220" rx="20" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="620" y="395" width="4" height="220" rx="2" fill="url(#g-bgm)"/>
+  <text x="650" y="440" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2">TYPE 04</text>
+  <text x="650" y="470" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="bold" letter-spacing="-0.5">Royalty-Free Background Music</text>
+  <text x="650" y="500" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">Length-targeted tracks, commercial</text>
+  <text x="650" y="520" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">licensing built in, zero copyright risk.</text>
+  <text x="650" y="555" fill="#fbbf24" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Best: Mubert, Stable Audio</text>
+  <rect x="650" y="575" width="90" height="22" rx="11" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="695" y="590" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">YouTubers</text>
+</svg>

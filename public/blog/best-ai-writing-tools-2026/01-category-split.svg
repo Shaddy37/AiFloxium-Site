@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0a1a"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+    <linearGradient id="g-brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="g-seo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g-gtm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="g-ecom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-card)" rx="32"/>
+  
+  <!-- Title -->
+  <text x="80" y="80" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.02em">The 4 Categories of AI Writing Tools in 2026</text>
+  <text x="80" y="115" fill="#a1a1aa" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="400">Picking the wrong category costs more than picking the wrong tool.</text>
+
+  <!-- Category 1: Brand Governance -->
+  <rect x="80" y="150" width="520" height="220" rx="20" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-opacity="0.25" stroke-width="1.5"/>
+  <rect x="80" y="150" width="4" height="220" rx="2" fill="url(#g-brand)"/>
+  
+  <text x="110" y="195" fill="#c084fc" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CATEGORY 01</text>
+  <text x="110" y="225" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em">Brand Governance &amp; Marketing</text>
+  <text x="110" y="255" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">Training AI on your tone, knowledge base,</text>
+  <text x="110" y="275" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">and style guides. Multi-channel campaigns.</text>
+  <text x="110" y="310" fill="#a855f7" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Best: Jasper, Writer</text>
+  <rect x="110" y="330" width="80" height="22" rx="11" fill="#7c3aed" fill-opacity="0.2"/>
+  <text x="150" y="345" fill="#c084fc" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Marketing Teams</text>
+
+  <!-- Category 2: SEO/AEO -->
+  <rect x="620" y="150" width="520" height="220" rx="20" fill="#06b6d4" fill-opacity="0.06" stroke="#06b6d4" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="620" y="150" width="4" height="220" rx="2" fill="url(#g-seo)"/>
+  
+  <text x="650" y="195" fill="#22d3ee" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CATEGORY 02</text>
+  <text x="650" y="225" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em">SEO &amp; AEO Content</text>
+  <text x="650" y="255" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">SERP research, live optimization scoring,</text>
+  <text x="650" y="275" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">and AI-visibility tracking across engines.</text>
+  <text x="650" y="310" fill="#22d3ee" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Best: Surfer SEO, Frase</text>
+  <rect x="650" y="330" width="80" height="22" rx="11" fill="#06b6d4" fill-opacity="0.2"/>
+  <text x="690" y="345" fill="#22d3ee" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">SEO Teams</text>
+
+  <!-- Category 3: GTM Funnel -->
+  <rect x="80" y="395" width="520" height="220" rx="20" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="80" y="395" width="4" height="220" rx="2" fill="url(#g-gtm)"/>
+  
+  <text x="110" y="440" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CATEGORY 03</text>
+  <text x="110" y="470" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em">GTM &amp; Sales-Marketing Funnel</text>
+  <text x="110" y="500" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">Workflows, agents, and actions that</text>
+  <text x="110" y="520" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">automate the entire go-to-market engine.</text>
+  <text x="110" y="555" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Best: Copy.ai</text>
+  <rect x="110" y="575" width="80" height="22" rx="11" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="150" y="590" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Sales Teams</text>
+
+  <!-- Category 4: Budget/Long-Form -->
+  <rect x="620" y="395" width="520" height="220" rx="20" fill="#ec4899" fill-opacity="0.06" stroke="#ec4899" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="620" y="395" width="4" height="220" rx="2" fill="url(#g-ecom)"/>
+  
+  <text x="650" y="440" fill="#f472b6" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="2">CATEGORY 04</text>
+  <text x="650" y="470" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em">Long-Form &amp; Budget Blogging</text>
+  <text x="650" y="500" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">Natural prose, thought leadership,</text>
+  <text x="650" y="520" fill="#d4d4d8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">and cost-efficient SEO publishing.</text>
+  <text x="650" y="555" fill="#f472b6" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Best: Claude, KoalaWriter</text>
+  <rect x="650" y="575" width="80" height="22" rx="11" fill="#ec4899" fill-opacity="0.2"/>
+  <text x="690" y="590" fill="#f472b6" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Bloggers</text>
+
+  <!-- Decorative arrows showing flow -->
+  <g opacity="0.15">
+    <path d="M600,260 L620,260" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+    <path d="M600,505 L620,505" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>

@@ -22,6 +22,11 @@ export async function generateStaticParams() {
       slug !== 'gemini-3-5-flash-review' &&
       slug !== 'best-mcp-servers-2026' &&
       slug !== 'best-ai-coding-agents-2026' &&
+      slug !== 'best-ai-note-taking-apps-2026' &&
+      slug !== 'best-ai-presentation-tools-2026' &&
+      slug !== 'best-ai-search-engines-2026' &&
+      slug !== 'best-ai-video-generators-2026' &&
+      slug !== 'chatgpt-5-6-sol-terra-luna' &&
       slug !== 'hermes-agent-guide'
   );
   return slugs.map((slug) => ({ slug }));

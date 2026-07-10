@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0015"/>
+      <stop offset="100%" stop-color="#1f0033"/>
+    </linearGradient>
+    <linearGradient id="g-s1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="g-s2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="g-s3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g-s4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="32"/>
+  <text x="80" y="80" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="-0.5">Text-to-Speech Generation Workflow</text>
+  <text x="80" y="115" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="16">From raw text to production-ready audio in four steps.</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="180" width="260" height="80" rx="16" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5"/>
+  <text x="190" y="218" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">STEP 01</text>
+  <text x="190" y="245" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Input Your Text</text>
+  <text x="60" y="285" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">Raw script, SSML tags,</text>
+  <text x="60" y="305" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">or API payload with</text>
+  <text x="60" y="325" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">voice parameters.</text>
+  <line x1="340" y1="220" x2="380" y2="220" stroke="#fff" stroke-opacity="0.15" stroke-width="1.5"/>
+  <polygon points="385,220 375,213 375,227" fill="#fff" fill-opacity="0.15"/>
+
+  <!-- Step 2 -->
+  <rect x="400" y="180" width="260" height="80" rx="16" fill="#7c3aed" fill-opacity="0.1" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1.5"/>
+  <text x="530" y="218" fill="#a855f7" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">STEP 02</text>
+  <text x="530" y="245" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Select Your Voice</text>
+  <text x="400" y="285" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">Choose from library or</text>
+  <text x="400" y="305" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">upload a 30-second</text>
+  <text x="400" y="325" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">clone sample.</text>
+  <line x1="680" y1="220" x2="720" y2="220" stroke="#fff" stroke-opacity="0.15" stroke-width="1.5"/>
+  <polygon points="725,220 715,213 715,227" fill="#fff" fill-opacity="0.15"/>
+
+  <!-- Step 3 -->
+  <rect x="740" y="180" width="260" height="80" rx="16" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="1.5"/>
+  <text x="870" y="218" fill="#22d3ee" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">STEP 03</text>
+  <text x="870" y="245" fill="#fff" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Generate Audio</text>
+  <text x="740" y="285" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">Model processes with</text>
+  <text x="740" y="305" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">emotional tone, pacing,</text>
+  <text x="740" y="325" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">and pronunciation rules.</text>
+  <line x1="1020" y1="220" x2="1060" y2="220" stroke="#fff" stroke-opacity="0.15" stroke-width="1.5"/>
+  <polygon points="1065,220 1055,213 1055,227" fill="#fff" fill-opacity="0.15"/>
+
+  <!-- Step 4 -->
+  <rect x="1080" y="180" width="80" height="80" rx="16" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5"/>
+  <text x="1120" y="218" fill="#34d399" font-family="Arial, sans-serif" font-size="11" font-weight="bold" letter-spacing="1.5" text-anchor="middle">STEP 04</text>
+  <text x="1120" y="245" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Export</text>
+
+  <!-- Key Metrics -->
+  <g transform="translate(100, 430)">
+    <rect x="0" y="0" width="300" height="150" rx="16" fill="#fff" fill-opacity="0.03" stroke="#fff" stroke-opacity="0.06" stroke-width="1"/>
+    <text x="150" y="40" fill="#f59e0b" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle">75ms</text>
+    <text x="150" y="65" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Lowest Real-Time Latency</text>
+    <text x="150" y="95" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">ElevenLabs Flash at ~75ms;</text>
+    <text x="150" y="115" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Cartesia and Inworld go lower.</text>
+  </g>
+
+  <g transform="translate(450, 430)">
+    <rect x="0" y="0" width="300" height="150" rx="16" fill="#fff" fill-opacity="0.03" stroke="#fff" stroke-opacity="0.06" stroke-width="1"/>
+    <text x="150" y="40" fill="#a855f7" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle">30s</text>
+    <text x="150" y="65" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Voice Clone Sample</text>
+    <text x="150" y="95" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">A 30-second audio sample</text>
+    <text x="150" y="115" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">produces a usable clone.</text>
+  </g>
+
+  <g transform="translate(800, 430)">
+    <rect x="0" y="0" width="300" height="150" rx="16" fill="#fff" fill-opacity="0.03" stroke="#fff" stroke-opacity="0.06" stroke-width="1"/>
+    <text x="150" y="40" fill="#22d3ee" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle">29+</text>
+    <text x="150" y="65" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Languages Supported</text>
+    <text x="150" y="95" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Top tools support 29+</text>
+    <text x="150" y="115" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">languages with native accents.</text>
+  </g>
+</svg>
