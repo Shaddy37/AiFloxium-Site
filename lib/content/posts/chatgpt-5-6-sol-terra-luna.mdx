@@ -1,0 +1,265 @@
+---
+title: "GPT-5.6 Sol, Terra & Luna: OpenAI's New Three-Model Family (2026)"
+date: "2026-07-10"
+author: "Muhammad Shadab Shams"
+category: "AI Frontiers"
+image: "/blog/chatgpt-5-6-sol-terra-luna/cover.svg"
+description: "A complete deep-dive into OpenAI's GPT-5.6 family (Sol, Terra, Luna): pricing, benchmarks, max effort reasoning, GPT-Live, ChatGPT Work, and plan availability."
+keywords: ["GPT-5.6 Sol Terra Luna", "OpenAI GPT 5.6 family", "GPT-5.6 pricing", "Sol vs Terra vs Luna", "GPT-5.6 benchmarks", "Programmatic Tool Calling", "ChatGPT Work agent", "GPT-Live voice models", "max reasoning effort OpenAI", "Sol Ultra Terminal-Bench"]
+canonicalUrl: "https://aifloxium.online/blog/chatgpt-5-6-sol-terra-luna"
+---
+
+<TLDR>
+  On **July 9, 2026**, OpenAI released **GPT-5.6**, introducing a three-model structure. **Sol** is the flagship for advanced reasoning and coding, **Terra** is the balanced everyday model at half the cost of GPT-5.5, and **Luna** is the fast, affordable option for high-volume jobs. The launch also includes **GPT-Live** real-time voice and the **ChatGPT Work** autonomous agent.
+</TLDR>
+
+<ImpactStats
+  stats={[
+    {
+      value: "91.9%",
+      label: "Sol Ultra Coding",
+      description: "Scores a record high on Terminal-Bench 2.1 using the multi-agent reasoning mode.",
+      icon: "target"
+    },
+    {
+      value: "2x",
+      label: "Terra Cost Savings",
+      description: "Delivers GPT-5.5-level intelligence at roughly half the standard pricing ($2.50/$15 per 1M tokens).",
+      icon: "zap"
+    },
+    {
+      value: "1.5M",
+      label: "Context Window",
+      description: "Increased capacity for long-context workflows, RAG systems, and complex code refactoring.",
+      icon: "clock"
+    }
+  ]}
+/>
+
+<aside>
+  ✍️ **Why trust this guide?**
+  
+  I'm Muhammad Shadab Shams, an Agentic Systems Developer. I design and build production-grade automation workflows, database connectors, and agent networks for startups and enterprises. I regularly test frontier models to verify instruction-following, tool calling, and API stability under production loads. This analysis focuses on real-world utility and development costs rather than raw marketing claims. *Last updated July 2026.*
+</aside>
+
+---
+
+<TableOfContents
+  items={[
+    { title: "What is GPT-5.6?", id: "what-is-gpt-56" },
+    { title: "Meet the Three Models: Sol, Terra & Luna", id: "meet-the-three-models" },
+    { title: "GPT-5.6 Pricing Breakdown", id: "pricing-breakdown" },
+    { title: "What's Genuinely New in GPT-5.6?", id: "whats-new" },
+    { title: "GPT-5.6 Benchmarks: How Good Is It?", id: "benchmarks" },
+    { title: "GPT-Live: Real-Time Full-Duplex Voice", id: "gpt-live" },
+    { title: "ChatGPT Work: The Long-Running Agent", id: "chatgpt-work" },
+    { title: "Plan Availability & Access", id: "plan-availability" },
+    { title: "The Government Hold: Security Delays", id: "government-hold" },
+    { title: "Verdict & Comparison", id: "verdict" },
+  ]}
+/>
+
+---
+
+<SectionHeading number="01" title="What is GPT-5.6?" id="what-is-gpt-56" subtitle="A New Model Architecture" />
+
+GPT-5.6 is OpenAI's latest model generation, released on July 9, 2026. Structurally, it departs from the single-flagship approach. OpenAI has split the generation into three durable capability tiers: Sol, Terra, and Luna.
+
+OpenAI describes these names as permanent capability tiers that will receive updates on their own cadences, similar to how Anthropic manages its Opus, Sonnet, and Haiku models.
+
+- **Sol:** The flagship tier designed for complex reasoning, terminal coding, and autonomous agents.
+- **Terra:** The balanced tier providing solid capability at a lower cost.
+- **Luna:** The fast, low-cost tier built for high-volume routing and simple subtasks.
+
+---
+
+<SectionHeading number="02" title="Meet the Three Models: Sol, Terra & Luna" id="meet-the-three-models" subtitle="OpenAI's Three-Model Family" />
+
+### Sol — The Flagship
+
+Sol is OpenAI's most capable model, optimized for advanced reasoning, codebase editing, cybersecurity, and computer use.
+
+- **Best for:** Multi-step agent systems, complex code refactoring, scientific analysis, and logic-heavy tasks.
+- **API Pricing:** $5.00 input ($0.50 cached) / $30.00 output per 1M tokens. This is the same rate as the previous generation flagship, offering a free capability upgrade.
+
+### Terra — The Everyday Model
+
+Terra is the everyday workhorse, competitive with GPT-5.5 performance while being half the cost.
+
+- **Best for:** Content writing, general chat, standard scripting, and general business tasks.
+- **API Pricing:** $2.50 input ($0.25 cached) / $15.00 output per 1M tokens.
+
+### Luna — The Fast, Cheap Tier
+
+Luna is the fastest and most affordable model in the family, designed to act as a subagent or utility model in larger pipelines.
+
+- **Best for:** Classification, routing, basic data extraction, and high-frequency, latency-sensitive jobs.
+- **API Pricing:** $1.00 input ($0.10 cached) / $6.00 output per 1M tokens.
+
+![OpenAI Sol, Terra, and Luna Model Family](/blog/chatgpt-5-6-sol-terra-luna/01-three-model-family.png)
+
+---
+
+<SectionHeading number="03" title="GPT-5.6 Pricing Breakdown" id="pricing-breakdown" subtitle="API and Token Costs" />
+
+The following table compares the pricing and coding benchmark scores for the GPT-5.6 family:
+
+| **Model** | **Primary Use Case** | **Input ($/1M)** | **Output ($/1M)** | **Terminal-Bench 2.1** |
+| --- | --- | --- | --- | --- |
+| **GPT-5.6 Sol** | Frontier reasoning & agentic coding | $5.00 (cached $0.50) | $30.00 | 88.8% (91.9% in `ultra`) |
+| **GPT-5.6 Terra** | Everyday chat & business workflows | $2.50 (cached $0.25) | $15.00 | 82.5% |
+| **GPT-5.6 Luna** | High-volume jobs & subagents | $1.00 (cached $0.10) | $6.00 | 84.3% |
+| **GPT-5.5** *(Ref)* | Previous generation flagship | $5.00 | $30.00 | 88.0% |
+
+### Explicit Prompt Caching
+
+GPT-5.6 updates prompt caching with explicit cache breakpoints, letting you define which prompt prefixes are cached, alongside a 30-minute minimum cache lifespan. Cached reads keep a 90% discount, while cache writes are billed at 1.25x the uncached input rate. This setup is highly cost-effective for long-context applications like document analysis or RAG databases.
+
+<PremiumCTA
+  title="Ready to Build with GPT-5.6 Sol?"
+  description="I build custom agentic pipelines and database connectors using the GPT-5.6 API. Let's design a high-throughput, low-latency system utilizing Sol, Terra, and Luna to optimize your development costs."
+  buttonText="Book a Tech Consultation"
+  href="https://calendly.com/shadabshamsaiautomation/30min"
+/>
+
+---
+
+<SectionHeading number="04" title="What's Genuinely New in GPT-5.6?" id="whats-new" subtitle="New Features and APIs" />
+
+### Max Reasoning Effort (`max`)
+
+GPT-5.6 introduces a `max` reasoning effort setting. This gives Sol more time to think through logic before returning an answer, which is helpful for math, science, and codebase edits where correctness is valued over speed.
+
+### Multi-Agent Mode (`ultra`)
+
+The new `ultra` mode allows the model to spawn parallel subagents to tackle components of a task before synthesizing the results. This approach helps Sol Ultra reach 91.9% on Terminal-Bench 2.1 compared to 88.8% for the base Sol model.
+
+### Programmatic Tool Calling (PTC)
+
+Instead of sending tool outputs back to the model over multiple chat turns, Programmatic Tool Calling lets the model write lightweight JavaScript scripts. These scripts execute tool calls and process inputs locally in a hosted runtime, preventing intermediate data from filling the context window.
+
+This setup can lead to significant resource savings; early reports show code generation workflows using PTC require up to 63.5% fewer total tokens and 50.1% fewer model turns.
+
+![Programmatic Tool Calling vs. Standard Cloud Roundtrips](/blog/chatgpt-5-6-sol-terra-luna/02-programmatic-tool-calling.png)
+
+---
+
+<SectionHeading number="05" title="GPT-5.6 Benchmarks: How Good Is It?" id="benchmarks" subtitle="Performance Evaluation" />
+
+### Agentic Coding (Terminal-Bench 2.1)
+
+Sol Ultra leads the coding benchmark at **91.9%**, with base Sol at **88.8%**. This outperforms GPT-5.5 (88.0%), Claude Mythos 5 (84.3%), and Claude Opus 4.8 (78.9%), making it a strong choice for terminal scripting and repository editing.
+
+### Novel Reasoning (ARC-AGI-3)
+
+Sol running in `max` effort mode averages **7.78%** on the semi-private evaluation set and is the first model to win a public ARC-AGI-3 game (ft09, 87%). Evaluations show it handles unfamiliar logical structures well by correcting failed hypotheses rather than looping.
+
+### SWE-Bench Pro and GDPval Omissions
+
+OpenAI did not report SWE-Bench Verified or GDPval scores during the initial release. On SWE-Bench Pro, Sol scored 64.6% compared to Claude Fable 5's 80%. OpenAI subsequently published a paper highlighting formatting and validation errors in roughly 30% of SWE-Bench Pro tasks, suggesting developers rely on custom, task-specific evaluation suites.
+
+---
+
+<SectionHeading number="06" title="GPT-Live: Real-Time Full-Duplex Voice" id="gpt-live" subtitle="Listen and Speak Simultaneously" />
+
+OpenAI also released the GPT-Live voice models. Unlike previous voice modes that function like walkie-talkies, GPT-Live runs in full-duplex, allowing users to interrupt the model mid-sentence for a more natural conversation.
+
+GPT-Live can dynamically delegate difficult reasoning tasks to GPT-5.5 in the background, keeping conversation latency low while still providing detailed, accurate answers when needed.
+
+---
+
+<SectionHeading number="07" title="ChatGPT Work: The Long-Running Agent" id="chatgpt-work" subtitle="Steerable Autonomous Agent" />
+
+ChatGPT Work is a long-running agent built for comprehensive projects rather than single-prompt answers.
+
+- **Research and Analysis:** Works across connected files, spreadsheets, and databases.
+- **Deliverables:** Generates documents, presentations, sheets, and structured sites.
+- **Human-in-the-Loop:** Users can monitor progress, respond to questions, alter paths, and approve specific system actions.
+- **Scheduled Automation:** Runs recurring checks or monitors external events.
+
+![ChatGPT Work Agent and Human-in-the-Loop Approval](/blog/chatgpt-5-6-sol-terra-luna/03-chatgpt-work-agent.png)
+
+---
+
+<SectionHeading number="08" title="Plan Availability & Access" id="plan-availability" subtitle="Who Gets What?" />
+
+The model picker in the standard ChatGPT interface only displays **Sol**; Terra and Luna operate behind the scenes in ChatGPT Work, Codex, and the API.
+
+- **Free / Go plans:** No access to Sol.
+- **Plus plan:** Access to Sol with Medium and High reasoning effort.
+- **Pro plan:** Access to Sol with all effort levels (Medium, High, Extra High, Pro).
+- **Business / Enterprise:** Full Sol access, with admin options to control model selection.
+- **API Users:** Complete access to Sol, Terra, and Luna, including Programmatic Tool Calling.
+
+---
+
+<SectionHeading number="09" title="The Government Hold: Security Delays" id="government-hold" subtitle="Export and National Security Reviews" />
+
+The release of GPT-5.6 was delayed because OpenAI voluntarily limited the initial preview to U.S. government partners, specifically the Department of Commerce's Center for AI Standards and Innovation. This allowed officials to evaluate national-security risks, focusing on cyberattack capabilities, before the public rollout.
+
+While the administration cleared the models for release, OpenAI pushed back on making government reviews a standard release requirement, arguing it delays the distribution of helpful tools.
+
+---
+
+<SectionHeading number="10" title="Verdict & Comparison" id="verdict" subtitle="Final Recommendations" />
+
+**Overall Verdict: 4.8/5.** GPT-5.6's three-model family provides a clear, cost-effective structure for builders. Sol leads in terminal coding and logical reasoning, Terra acts as a solid daily driver at half the price of the previous generation, and Luna makes high-volume token routing highly affordable.
+
+If your projects rely on agentic pipelines, the combination of Sol as an orchestrator and Luna as a subagent helper is a strong architecture to deploy.
+
+<PremiumCTA
+  title="Build GPT-5.6 Pipelines with Me"
+  description="I architect and deploy production-grade AI agent networks, custom CRM sync systems, and local database integrations. Skip the basic wrappers and build custom, low-latency business automation."
+  buttonText="Book a Project Discovery Call"
+  href="https://calendly.com/shadabshamsaiautomation/30min"
+/>
+
+---
+
+## Frequently Asked Questions
+
+### Is ChatGPT 5.6 free?
+No. GPT-5.6 Sol is not available on Free or Go plans. You need at least a Plus subscription for Sol in standard chat. Terra and Luna are accessible through ChatGPT Work, Codex, and the API.
+
+### What do Sol, Terra, and Luna mean?
+They are capability tiers rather than version numbers. Sol is the flagship, Terra is the balanced everyday model, and Luna is the fast, low-cost utility tier.
+
+### How much does the GPT-5.6 API cost?
+Per 1M tokens: Sol is $5.00 input / $30.00 output, Terra is $2.50 input / $15.00 output, and Luna is $1.00 input / $6.00 output. Cached reads receive a 90% discount.
+
+### What is the difference between max and ultra mode?
+`max` is a reasoning effort setting that gives the model more processing time to complete logic. `ultra` is a multi-agent mode that coordinates parallel subagents to compile a final answer.
+
+---
+
+## Glossary: AI terms decoded
+
+- **Programmatic Tool Calling:** Letting the model write JavaScript to coordinate tool inputs and outputs locally without roundtrips to the cloud.
+- **Diarization:** The model's ability to distinguish and attribute speech to specific individuals.
+- **Prompt Caching:** Storing prompt prefixes in memory to speed up response times and lower API costs.
+- **Full-Duplex:** Communication that allows both parties to send and receive data at the same time, enabling voice interruptions.
+
+---
+
+## Keep reading
+
+- [Best AI Coding Agents in 2026](/blog/best-ai-coding-agents-2026)
+- [Best AI Presentation Tools in 2026](/blog/best-ai-presentation-tools-2026)
+- [Best AI Note-Taking Apps in 2026](/blog/best-ai-note-taking-apps-2026)
+
+---
+
+<AuthorSection
+  name="Muhammad Shadab Shams"
+  role="Agentic Systems Developer"
+  bio="I build and integrate advanced AI automation workflows, database architectures, and agentic pipelines for companies looking to streamline operations. I benchmark LLMs on real-world workflow automation to design optimal production systems."
+  expertise={["GPT-5.6 API", "Agentic Workflows", "Database Connectors", "Tool Integration", "n8n Pipelines"]}
+/>
+
+---
+
+**Methodology & sources**
+
+Rankings and comparisons are based on hands-on API testing, benchmark performance data from Terminal-Bench and ARC Prize, and public developer evaluations. Pricing and model specifications are verified against official documentation as of July 2026.
+
+*Written by Muhammad Shadab Shams | Agentic Systems Developer | [Aifloxium](/services) | [ApePublish](https://www.apepublish.com/) | X [@ShadabLoveAi](https://x.com/ShadabLoveAi)*
