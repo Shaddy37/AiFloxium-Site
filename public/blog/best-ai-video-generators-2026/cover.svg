@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f080a"/>
+      <stop offset="50%" stop-color="#1c0d18"/>
+      <stop offset="100%" stop-color="#0f050a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle decorative ambient glows (Magenta, Rose, Violet) -->
+  <circle cx="150" cy="150" r="280" fill="#ec4899" fill-opacity="0.07" filter="blur(70px)"/>
+  <circle cx="1050" cy="480" r="250" fill="#f43f5e" fill-opacity="0.06" filter="blur(60px)"/>
+  <circle cx="600" cy="315" r="200" fill="#a855f7" fill-opacity="0.04" filter="blur(55px)"/>
+
+  <!-- Main border card container -->
+  <rect x="72" y="74" width="1056" height="482" rx="42" fill="#000000" fill-opacity="0.25" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+
+  <!-- Eyebrow Tag -->
+  <text x="118" y="148" fill="#f472b6" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" letter-spacing="4">AIFLOXIUM / AI VIDEO</text>
+  
+  <!-- Main Title -->
+  <text x="118" y="248" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.02em">Best AI Video</text>
+  <text x="118" y="318" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.02em">Generators in 2026:</text>
+  <text x="118" y="388" fill="#f472b6" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.02em">8 Tested and Ranked</text>
+  
+  <!-- Sub-headlines / Supporting Details -->
+  <text x="118" y="450" fill="#f1f5f9" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.01em">Veo 3.1 · Kling 3.0 · Runway Gen-4.5 · Sora 2</text>
+  <text x="118" y="498" fill="#ffffff" fill-opacity="0.75" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="500">Honest pros, cons, pricing, and the right generator for every project.</text>
+</svg>
