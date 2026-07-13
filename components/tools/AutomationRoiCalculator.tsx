@@ -269,30 +269,30 @@ export default function AutomationRoiCalculator() {
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]">
-      <section className="rounded-[2.2rem] border border-black/8 bg-[#fffaf5] p-6 md:p-8">
+      <section className="rounded-[2.2rem] border border-white/5 bg-white/[0.01] p-6 md:p-8 text-white liquid-glass">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-2xl">
-            <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
+          <div className="max-w-2xl font-inter">
+            <span className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF]">
               <Gauge className="h-4 w-4" />
               Live calculator
-            </p>
-            <h2 className="text-3xl font-heading font-black tracking-tight text-brand-plum md:text-4xl">
+            </span>
+            <h2 className="text-3xl font-instrument text-white tracking-tight md:text-4xl leading-[1.05]">
               Estimate the cost of repetitive work before you try to automate it.
             </h2>
-            <p className="mt-3 text-sm leading-7 text-zinc-900 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-white/60 font-light">
               Fill in a few rough numbers. The calculator will estimate time saved, money saved,
               and which workflows are most likely worth fixing first.
             </p>
           </div>
 
-          <div className="rounded-[1.6rem] border border-brand-plum/10 bg-white px-5 py-4 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)] md:min-w-[180px] md:text-right">
-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
+          <div className="rounded-[1.6rem] border border-white/5 bg-white/[0.01] px-5 py-4 text-left shadow-sm md:min-w-[180px] md:text-right liquid-glass">
+            <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block font-inter">
               Opportunity level
-            </p>
-            <p className="mt-2 text-3xl font-heading font-black text-brand-orange">
+            </span>
+            <p className="mt-2 text-3xl font-instrument italic text-[#E0AAFF]">
               {getOpportunityLabel(result.opportunityScore)}
             </p>
-            <p className="mt-1 text-sm text-zinc-800">{result.opportunityScore}/100</p>
+            <p className="mt-1 text-xs text-white/50 font-inter font-light">{result.opportunityScore}/100</p>
           </div>
         </div>
 
@@ -300,21 +300,21 @@ export default function AutomationRoiCalculator() {
           {inputSections.map((section) => (
             <div
               key={section.title}
-              className="rounded-[1.8rem] border border-black/8 bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.04)] md:p-6"
+              className="rounded-[1.8rem] border border-white/5 bg-white/[0.01] p-5 shadow-sm md:p-6 liquid-glass"
             >
-              <div className="mb-5">
-                <h3 className="text-xl font-heading font-black tracking-tight text-brand-plum">
+              <div className="mb-5 font-inter">
+                <h3 className="text-xl font-semibold tracking-wide text-white">
                   {section.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-800">{section.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/60 font-light">{section.description}</p>
               </div>
 
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 {section.fields.map((field) => (
-                  <div key={field.key} className="space-y-2">
+                  <div key={field.key} className="space-y-2 font-inter">
                     <Label
                       htmlFor={field.key}
-                      className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800"
+                      className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/50"
                     >
                       {field.label}
                     </Label>
@@ -326,9 +326,9 @@ export default function AutomationRoiCalculator() {
                       step={field.step}
                       value={inputs[field.key]}
                       onChange={(event) => handleInputChange(field.key, event.target.value)}
-                      className="h-14 rounded-2xl border-black/10 bg-[#fbf7f3] text-base text-zinc-900 placeholder:text-zinc-400"
+                      className="h-14 rounded-2xl border-white/10 bg-white/[0.01] text-base text-white placeholder:text-white/30 focus:border-[#7B2CBF]/40"
                     />
-                    <p className="text-sm leading-6 text-zinc-800">{field.helper}</p>
+                    <p className="text-xs leading-relaxed text-white/40 font-light">{field.helper}</p>
                   </div>
                 ))}
               </div>
@@ -336,23 +336,23 @@ export default function AutomationRoiCalculator() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-[1.8rem] border border-brand-orange/15 bg-[linear-gradient(135deg,rgba(255,107,0,0.08),rgba(88,28,135,0.04))] p-5">
+        <div className="mt-8 rounded-[1.8rem] border border-white/5 bg-[#7B2CBF]/5 p-5">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
+            <div className="font-inter">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70 block">
                 What this estimate assumes
-              </p>
-              <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-900">
+              </span>
+              <p className="mt-2 max-w-2xl text-xs leading-relaxed text-white/60 font-light">
                 This is a directional model. It combines recoverable labor time, process leakage,
                 and a conservative implementation cost range for startup and small business
                 automation projects.
               </p>
             </div>
-            <div className="rounded-2xl border border-black/8 bg-white px-4 py-3 text-center">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
+            <div className="rounded-2xl border border-white/5 bg-white/[0.01] px-4 py-3 text-center liquid-glass">
+              <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block font-inter">
                 Automation recovery rate
-              </p>
-              <p className="mt-1 text-2xl font-heading font-black text-brand-plum">
+              </span>
+              <p className="mt-1 text-2xl font-instrument italic text-[#E0AAFF]">
                 {Math.round(result.recoveryRate * 100)}%
               </p>
             </div>
@@ -361,28 +361,27 @@ export default function AutomationRoiCalculator() {
       </section>
 
       <section className="space-y-6">
-        <div className="rounded-[2.2rem] border border-black/8 bg-white p-6 text-black md:p-8">
+        <div className="rounded-[2.2rem] border border-white/5 bg-white/[0.01] p-6 text-white md:p-8 liquid-glass">
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
             <div className="max-w-2xl">
-              <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-plum">
+              <span className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] font-inter">
                 <Clock3 className="h-4 w-4" />
                 Immediate summary
-              </p>
-              <h3 className="text-3xl font-heading font-black tracking-tight text-brand-plum">
-                Your team could recover about {formatNumber(result.hoursSavedPerMonth)} hours a
-                month.
+              </span>
+              <h3 className="text-3xl font-instrument text-white tracking-tight leading-[1.05]">
+                Your team could recover about <span className="font-instrument text-[#E0AAFF] italic">{formatNumber(result.hoursSavedPerMonth)}</span> hours a month.
               </h3>
-              <p className="mt-3 text-sm leading-7 text-zinc-900 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-white/60 font-inter font-light">
                 That is the core question this tool answers first. The rest of the numbers help
                 translate that lost time into money, payback, and next-step priority.
               </p>
             </div>
 
-            <div className="rounded-[1.4rem] border border-brand-orange/20 bg-brand-orange/10 px-4 py-3 text-right">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
+            <div className="rounded-[1.4rem] border border-[#7B2CBF]/20 bg-[#7B2CBF]/5 px-4 py-3 text-right">
+              <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block font-inter">
                 Best read
-              </p>
-              <p className="mt-1 text-2xl font-heading font-black text-brand-orange">
+              </span>
+              <p className="mt-1 text-2xl font-instrument italic text-[#E0AAFF]">
                 {getOpportunityLabel(result.opportunityScore)}
               </p>
             </div>
@@ -413,29 +412,29 @@ export default function AutomationRoiCalculator() {
             ].map((card) => (
               <div
                 key={card.label}
-                className="rounded-[1.5rem] border border-black/6 bg-[#fbf7f3] p-4"
+                className="rounded-[1.5rem] border border-white/5 bg-white/[0.01] p-4 liquid-glass"
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-plum/8 text-brand-plum">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#7B2CBF]/5 text-[#E0AAFF]">
                   <card.icon className="h-5 w-5" />
                 </div>
-                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-800">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block font-inter">
                   {card.label}
-                </p>
-                <p className="mt-2 text-2xl font-heading font-black tracking-tight text-black">
+                </span>
+                <p className="mt-2 text-2xl font-instrument italic text-[#E0AAFF]">
                   {card.value}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 rounded-[1.5rem] border border-brand-orange/20 bg-brand-orange/8 p-4">
-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
+          <div className="mt-6 rounded-[1.5rem] border border-[#7B2CBF]/20 bg-[#7B2CBF]/5 p-4">
+            <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#E0AAFF] block font-inter">
               First workflows to look at
-            </p>
-            <ul className="mt-3 space-y-2 text-sm font-medium leading-7 text-zinc-900">
+            </span>
+            <ul className="mt-3 space-y-2 text-sm font-inter font-light leading-relaxed text-white/70">
               {result.recommendations.map((recommendation) => (
                 <li key={recommendation.id} className="flex gap-3">
-                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-brand-orange" />
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#E0AAFF]" />
                   <span>{recommendation.title}</span>
                 </li>
               ))}
@@ -443,26 +442,26 @@ export default function AutomationRoiCalculator() {
           </div>
         </div>
 
-        <div className="rounded-[2.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(17,7,20,0.94),rgba(11,4,13,0.98))] p-6 text-white md:p-8">
-          <div className="mb-6">
-            <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
+        <div className="rounded-[2.2rem] border border-white/5 bg-white/[0.01] p-6 text-white md:p-8 liquid-glass">
+          <div className="mb-6 font-inter">
+            <span className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF]">
               <FileText className="h-4 w-4" />
               Downloadable report
-            </p>
-            <h3 className="text-2xl font-heading font-black tracking-tight text-white">
+            </span>
+            <h3 className="text-2xl font-semibold tracking-wide text-white">
               Get the report by email, then download it and keep the roadmap.
             </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-white/66">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/60 font-light">
               The on-page summary stays visible. Email is only required if you want the report
               download and the fuller recommendation view.
             </p>
           </div>
 
           <form className="grid grid-cols-1 gap-4 md:grid-cols-3" onSubmit={handleLeadSubmit}>
-            <div className="space-y-2 md:col-span-1">
+            <div className="space-y-2 md:col-span-1 font-inter">
               <Label
                 htmlFor="tool-email"
-                className="text-[11px] font-black uppercase tracking-[0.2em] text-white"
+                className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/50"
               >
                 Work email
               </Label>
@@ -475,13 +474,13 @@ export default function AutomationRoiCalculator() {
                   setLeadForm((current) => ({ ...current, email: event.target.value }))
                 }
                 placeholder="ops@company.com"
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/50"
+                className="h-14 rounded-2xl border-white/10 bg-white/[0.01] text-white placeholder:text-white/30 focus:border-[#7B2CBF]/40"
               />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 font-inter">
               <Label
                 htmlFor="tool-company"
-                className="text-[11px] font-black uppercase tracking-[0.2em] text-white"
+                className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/50"
               >
                 Company
               </Label>
@@ -492,13 +491,13 @@ export default function AutomationRoiCalculator() {
                   setLeadForm((current) => ({ ...current, company: event.target.value }))
                 }
                 placeholder="Acme Corp (Optional)"
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/50"
+                className="h-14 rounded-2xl border-white/10 bg-white/[0.01] text-white placeholder:text-white/30 focus:border-[#7B2CBF]/40"
               />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 font-inter">
               <Label
                 htmlFor="tool-team-size"
-                className="text-[11px] font-black uppercase tracking-[0.2em] text-white"
+                className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/50"
               >
                 Team size
               </Label>
@@ -512,19 +511,19 @@ export default function AutomationRoiCalculator() {
                 onChange={(event) =>
                   setLeadForm((current) => ({ ...current, teamSize: event.target.value }))
                 }
-                className="h-14 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-white/50"
+                className="h-14 rounded-2xl border-white/10 bg-white/[0.01] text-white placeholder:text-white/30 focus:border-[#7B2CBF]/40"
               />
             </div>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 font-inter">
               <Button
                 type="submit"
                 size="lg"
                 disabled={gateState === 'submitting'}
-                className="h-14 w-full rounded-2xl border-none bg-brand-orange text-sm font-black uppercase tracking-[0.2em] text-white hover:bg-brand-orange/90 transition-all active:scale-[0.98]"
+                className="h-14 w-full rounded-2xl border-none bg-white text-black hover:bg-[#E0AAFF] button-glow text-xs font-semibold uppercase tracking-wider transition-all active:scale-[0.98] cursor-pointer"
               >
                 {gateState === 'submitting' ? 'Preparing report...' : 'Get the report & roadmap'}
               </Button>
-              <div className="mt-3 flex items-center justify-center gap-1.5 text-white/40 text-[9px] font-bold uppercase tracking-widest">
+              <div className="mt-3 flex items-center justify-center gap-1.5 text-white/40 text-[9px] font-semibold uppercase tracking-widest">
                 <ShieldCheck className="h-3.5 w-3.5 text-white/50" />
                 <span>Free report. No credit card required.</span>
               </div>
@@ -534,7 +533,7 @@ export default function AutomationRoiCalculator() {
           {gateMessage ? (
             <p
               className={cn(
-                'mt-4 text-sm leading-7',
+                'mt-4 text-sm leading-7 font-inter font-light',
                 gateState === 'error' ? 'text-amber-300' : 'text-emerald-300'
               )}
             >
@@ -542,12 +541,12 @@ export default function AutomationRoiCalculator() {
             </p>
           ) : null}
 
-          <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+          <div className="mt-6 rounded-[1.5rem] border border-white/5 bg-black/40 p-5 liquid-glass">
             {!reportUnlocked ? (
-              <div className="space-y-3">
-                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
+              <div className="space-y-3 font-inter">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/45 block">
                   What the report includes
-                </p>
+                </span>
                 <div className="grid gap-3 md:grid-cols-3">
                   {[
                     'A downloadable summary of your result',
@@ -556,7 +555,7 @@ export default function AutomationRoiCalculator() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-dashed border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/55"
+                      className="rounded-2xl border border-dashed border-white/10 bg-white/[0.01] p-4 text-xs leading-relaxed text-white/50 font-light liquid-glass"
                     >
                       {item}
                     </div>
@@ -564,13 +563,13 @@ export default function AutomationRoiCalculator() {
                 </div>
               </div>
             ) : (
-              <div className="space-y-6">
+              <div className="space-y-6 font-inter">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <div>
-                    <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-orange">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E0AAFF] block">
                       Report ready
-                    </p>
-                    <p className="mt-2 text-sm leading-7 text-white/72">
+                    </span>
+                    <p className="mt-2 text-xs leading-relaxed text-white/60 font-light">
                       Download the report, then use the roadmap below to decide what deserves
                       scoping first.
                     </p>
@@ -579,7 +578,7 @@ export default function AutomationRoiCalculator() {
                     type="button"
                     size="lg"
                     onClick={handleDownload}
-                    className="h-12 rounded-full border-none bg-white text-brand-bg hover:bg-zinc-100"
+                    className="h-12 rounded-full border-none bg-white text-black hover:bg-[#E0AAFF] button-glow text-xs font-semibold uppercase tracking-wider cursor-pointer"
                   >
                     <Download className="mr-2 h-4 w-4" />
                     Download report
@@ -587,70 +586,70 @@ export default function AutomationRoiCalculator() {
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-3">
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
+                  <div className="rounded-2xl border border-white/5 bg-white/[0.01] p-4 liquid-glass">
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block">
                       Estimated project range
-                    </p>
-                    <p className="mt-2 text-2xl font-heading font-black text-white">
+                    </span>
+                    <p className="mt-2 text-2xl font-instrument italic text-[#E0AAFF]">
                       {formatCurrency(result.implementationCost)}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-white/60">
+                    <p className="mt-2 text-xs leading-relaxed text-white/60 font-light">
                       Based on workflow count, team complexity, and monthly operating volume.
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
+                  <div className="rounded-2xl border border-white/5 bg-white/[0.01] p-4 liquid-glass">
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block">
                       Revenue recovered
-                    </p>
-                    <p className="mt-2 text-2xl font-heading font-black text-white">
+                    </span>
+                    <p className="mt-2 text-2xl font-instrument italic text-[#E0AAFF]">
                       {formatCurrency(result.revenueLeakageRecoveredPerMonth)}/mo
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-white/60">
+                    <p className="mt-2 text-xs leading-relaxed text-white/60 font-light">
                       This is only included when your volume and unit value suggest real downstream
                       loss.
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
+                  <div className="rounded-2xl border border-white/5 bg-white/[0.01] p-4 liquid-glass">
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block">
                       Best fit next step
-                    </p>
-                    <p className="mt-2 text-2xl font-heading font-black text-white">
+                    </span>
+                    <p className="mt-2 text-2xl font-instrument italic text-[#E0AAFF]">
                       {result.recommendations[0]?.serviceLabel || 'Discovery call'}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-white/60">
+                    <p className="mt-2 text-xs leading-relaxed text-white/60 font-light">
                       The strongest path based on your workload mix and process shape.
                     </p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-brand-orange">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E0AAFF] block">
                     Top workflows to automate first
-                  </p>
+                  </span>
                   <div className="mt-4 grid gap-4">
                     {result.recommendations.map((recommendation, index) => (
                       <div
                         key={recommendation.id}
-                        className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5"
+                        className="rounded-[1.5rem] border border-white/5 bg-white/[0.01] p-5 liquid-glass"
                       >
                         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                           <div>
-                            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/45">
+                            <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 block">
                               Priority {index + 1}
-                            </p>
-                            <h4 className="mt-2 text-xl font-heading font-black text-white">
+                            </span>
+                            <h4 className="mt-2 text-xl font-semibold text-white tracking-wide">
                               {recommendation.title}
                             </h4>
-                            <p className="mt-2 text-sm leading-7 text-white/70">
+                            <p className="mt-2 text-xs leading-relaxed text-white/60 font-light">
                               {recommendation.summary}
                             </p>
-                            <p className="mt-3 text-sm leading-7 text-white/60">
+                            <p className="mt-3 text-xs leading-relaxed text-white/50 font-light">
                               {recommendation.reason}
                             </p>
                           </div>
                           <Link
                             href={recommendation.serviceHref}
-                            className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white transition-colors hover:border-brand-orange hover:text-brand-orange"
+                            className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/[0.01] px-4 py-2 text-[10px] font-semibold uppercase tracking-wider text-white transition-colors hover:border-[#E0AAFF] hover:text-[#E0AAFF]"
                           >
                             {recommendation.serviceLabel}
                             <ArrowRight className="h-3.5 w-3.5" />
@@ -661,14 +660,14 @@ export default function AutomationRoiCalculator() {
                   </div>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-brand-orange/20 bg-brand-orange/8 p-5">
+                <div className="rounded-[1.5rem] border border-[#7B2CBF]/20 bg-[#7B2CBF]/5 p-5">
                   <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
-                      <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-brand-plum">
+                      <span className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E0AAFF]">
                         <Mail className="h-4 w-4" />
                         Live review
-                      </p>
-                      <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-900">
+                      </span>
+                      <p className="mt-2 max-w-2xl text-xs leading-relaxed text-white/60 font-light">
                         If the report looks directionally right, the fastest next step is a
                         discovery call to pressure-test the estimate and map the first workflow
                         into a real automation scope.
@@ -678,7 +677,7 @@ export default function AutomationRoiCalculator() {
                       href={CALENDLY_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-brand-orange/90"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-6 py-3 text-xs font-semibold uppercase tracking-wider hover:bg-[#E0AAFF] button-glow"
                     >
                       Book discovery call
                       <ArrowRight className="h-4 w-4" />

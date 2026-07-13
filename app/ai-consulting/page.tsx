@@ -67,7 +67,7 @@ const consultingGraphJsonLd = {
 
 export default function AIConsultingPage() {
   return (
-    <main id="main-content" className="relative bg-brand-bg min-h-screen">
+    <main id="main-content" className="relative bg-white min-h-screen text-zinc-900 selection:bg-[#7B2CBF] selection:text-zinc-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingGraphJsonLd) }}
@@ -75,21 +75,21 @@ export default function AIConsultingPage() {
       <Navbar />
       
       {/* Dark Cinematic Hero */}
-      <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto relative overflow-hidden bg-hero-gradient rounded-b-[3rem]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-plum-glow opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto relative overflow-hidden bg-gradient-to-b from-black to-[#0a0608] rounded-b-[3rem]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B2CBF]/10 opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
         
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
-          <Link href="/" className="transition-colors hover:text-white">
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest relative z-10 font-inter">
+          <Link href="/" className="transition-colors hover:text-zinc-900">
             Home
           </Link>
-          <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-          <span className="text-white font-black">AI Consulting</span>
+          <ChevronRight className="h-3 w-3 text-white/30" />
+          <span className="text-zinc-900 font-bold">AI Consulting</span>
         </nav>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-[-0.035em] mb-8 leading-[0.95]">
-          Strategic <br/><span className="text-brush text-3xl md:text-6xl lg:text-8xl mt-4 text-brand-orange">consulting</span>.
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-instrument text-zinc-900 tracking-tight mb-8 leading-[1.05]">
+          Strategic <br/><span className="font-instrument text-[#E0AAFF] italic">consulting.</span>
         </h1>
-        <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl font-medium">
+        <p className="text-lg md:text-xl text-zinc-600 max-w-2xl font-inter font-light leading-relaxed">
           For teams that know they need better systems but want a clear plan
           before they invest in the build.
         </p>
@@ -97,26 +97,26 @@ export default function AIConsultingPage() {
 
       <RadarScanner />
 
-      {/* Pristine White Audit Roadmap Section */}
-      <section className="py-32 bg-white text-black relative -mt-4 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+      {/* Audit Roadmap Section */}
+      <section className="py-32 bg-white text-zinc-900 relative -mt-4 border-t border-white/5 shadow-2xl">
          <div className="container mx-auto px-6 max-w-6xl flex flex-col lg:flex-row gap-16">
             <div className="w-full lg:w-1/3">
-               <h2 className="text-4xl md:text-6xl font-heading font-black tracking-[-0.035em] mb-8 text-brand-plum leading-[0.95]">
-                The delivery <br /> <span className="text-brush text-3xl md:text-5xl mt-2 text-brand-orange">roadmap</span>.
+               <h2 className="text-3xl md:text-5xl font-instrument text-zinc-900 tracking-tight mb-8 leading-[1.05]">
+                The delivery <br /> <span className="font-instrument text-[#E0AAFF] italic">roadmap.</span>
               </h2>
-              <p className="text-zinc-900 font-medium leading-relaxed">A structured way to go from confusion to a build-ready plan.</p>
+              <p className="text-zinc-500 font-inter font-light leading-relaxed">A structured way to go from confusion to a build-ready plan.</p>
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
                {[
-                  { w: "01", t: "Current-State Review", d: "We review the workflow, tools, bottlenecks, and business constraints so the real problem is defined clearly." },
+                  { w: "01", t: "Current-State Review", d: "I review the workflow, tools, bottlenecks, and business constraints so the real problem is defined clearly." },
                   { w: "02", t: "Feasibility & Scope", d: "I map what should be automated, what should stay human, and what the best implementation path looks like." },
                   { w: "03", t: "Build Plan", d: "You get a concrete delivery roadmap with scope, priorities, and the tradeoffs that matter before build work starts." },
                   { w: "04", t: "Execution Option", d: "Your team can use the roadmap internally, or I can stay involved and build the system with you." }
                ].map((wk, i) => (
-                  <div key={i} className="group p-10 bg-gray-50 border border-gray-200 hover:bg-brand-plum hover:text-white transition-all duration-300">
-                     <span className="text-sm font-black text-brand-orange uppercase tracking-widest mb-4 block group-hover:text-white transition-colors">Week {wk.w}</span>
-                     <h3 className="text-xl font-black font-heading mb-4 text-brand-plum group-hover:text-white transition-colors">{wk.t}</h3>
-                     <p className="text-zinc-900 group-hover:text-white/80 font-medium leading-relaxed transition-colors">{wk.d}</p>
+                  <div key={i} className="group p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.01] hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 transition-all duration-500 liquid-glass">
+                     <span className="text-[9px] font-semibold text-[#E0AAFF] uppercase tracking-wider mb-4 block font-inter">Week {wk.w}</span>
+                     <h3 className="text-xl font-semibold font-inter mb-4 text-zinc-900">{wk.t}</h3>
+                     <p className="text-zinc-500 font-inter font-light leading-relaxed">{wk.d}</p>
                   </div>
                ))}
             </div>
@@ -126,7 +126,7 @@ export default function AIConsultingPage() {
       <Trust />
       <Pricing />
       
-      <section className="bg-brand-bg/20 border-t border-brand-plum/10">
+      <section className="bg-white border-t border-white/5">
         <Contact2 
           title="Book a Consulting Call."
           description="Bring the workflow, product, or systems problem. I will help define the right implementation path."

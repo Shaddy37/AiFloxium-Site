@@ -164,7 +164,7 @@ export default function ProductionEvolved() {
     },
     {
       title: "Bespoke Portals & Reasoning",
-      body: "Bespoke internal dashboards, customer portals, and databases. We apply AI reasoning layers to eliminate pipeline bottlenecks.",
+      body: "Bespoke internal dashboards, customer portals, and databases. I apply AI reasoning layers to eliminate pipeline bottlenecks.",
       icon: LayoutDashboard,
       tags: ["Next.js", "Supabase", "Applied AI Reasoning", "Code Ownership"]
     }
@@ -173,18 +173,18 @@ export default function ProductionEvolved() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen bg-black overflow-hidden py-32 px-6 sm:px-8 md:px-16 lg:px-20 flex flex-col justify-center"
+      className="relative min-h-screen bg-[#0a0608] text-white overflow-hidden py-32 px-6 sm:px-8 md:px-16 lg:px-20 flex flex-col justify-center border-b border-white/5"
     >
       {/* Background Video */}
       <FadingVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_094631_d30ab262-45ee-4b7d-99f3-5d5848c8ef13.mp4"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
       />
       {/* Dark video overlay with brand gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#130716]/80 via-[#0a030d]/75 to-black z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0608]/80 via-[#0a0608]/90 to-[#0a0608] z-[1] pointer-events-none" />
 
       {/* Violet radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-brand-plum/20 blur-[130px] pointer-events-none z-[1]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-[#7B2CBF]/10 blur-[130px] pointer-events-none z-[1]" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col flex-1 justify-between">
         
@@ -192,17 +192,18 @@ export default function ProductionEvolved() {
         <motion.div
           initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           animate={isContainerInView ? { opacity: 1, y: 0 } : {}}
-          transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={prefersReduced ? { duration: 0.01 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-12 md:mb-20 max-w-4xl"
         >
-          <span className="block text-sm font-sans tracking-[0.2em] uppercase text-brand-orange mb-4">
-            {"// Capabilities"}
+          <span className="block text-xs font-inter tracking-[0.2em] uppercase text-[#E0AAFF] font-semibold mb-4">
+            // Capabilities
           </span>
-          <h2 className="font-heading font-black text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-[-0.035em] mb-6">
-            Systems we<br />engineer.
+          <h2 className="font-instrument text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-tight mb-6">
+            Systems I <br />
+            <span className="font-instrument text-[#E0AAFF] italic">engineer.</span>
           </h2>
-          <p className="text-lg md:text-xl text-zinc-200 font-sans font-light leading-relaxed max-w-2xl">
-            We architect and deploy custom agentic infrastructure that automates operations, secures data, and eliminates administrative bottlenecks.
+          <p className="text-lg md:text-xl text-white/70 font-inter font-light leading-relaxed max-w-2xl">
+            I architect and deploy custom agentic infrastructure that automates operations, secures data, and eliminates administrative bottlenecks.
           </p>
         </motion.div>
 
@@ -221,16 +222,16 @@ export default function ProductionEvolved() {
                     : {
                         delay: 0.15 + i * 0.1,
                         duration: 0.6,
-                        ease: [0.16, 1, 0.3, 1]
+                        ease: [0.22, 1, 0.36, 1]
                       }
                 }
-                className="bg-[#120716] border border-brand-plum/20 hover:border-brand-orange/45 rounded-[1.25rem] p-6 min-h-[380px] flex flex-col justify-between transition-[border-color] duration-200 group relative z-10"
+                className="bg-[#0a0608] text-white/40 border border-white/5 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 rounded-[1.5rem] p-8 min-h-[380px] flex flex-col justify-between transition-[border-color,background-color] duration-300 group relative z-10 liquid-glass"
               >
                 {/* Card Top Row */}
                 <div className="flex items-start justify-between gap-4">
                   {/* Left Square Icon */}
-                  <div className="w-11 h-11 rounded-[0.75rem] flex items-center justify-center bg-brand-plum/10 border border-brand-plum/30 shrink-0 group-hover:scale-110 transition-transform">
-                    <IconComponent className="h-5 w-5 text-brand-orange" strokeWidth={1.5} />
+                  <div className="w-11 h-11 rounded-[0.75rem] flex items-center justify-center bg-[#7B2CBF]/5 border border-[#7B2CBF]/20 text-[#E0AAFF] shrink-0 group-hover:scale-115 transition-all duration-300">
+                    <IconComponent className="h-5 w-5" strokeWidth={1.5} />
                   </div>
 
                   {/* Right Tags */}
@@ -238,7 +239,7 @@ export default function ProductionEvolved() {
                     {card.tags.map((tag, tIndex) => (
                       <span 
                         key={tIndex}
-                        className="bg-white/[0.04] border border-white/5 rounded-full px-3 py-1 text-[11px] text-white font-sans whitespace-nowrap group-hover:border-brand-plum/20 transition-colors"
+                        className="bg-[#0a0608] text-white/[0.02] border border-white/5 rounded-full px-3 py-1 text-[10px] text-white/60 font-inter font-light group-hover:border-[#7B2CBF]/20 transition-colors duration-300 whitespace-nowrap"
                       >
                         {tag}
                       </span>
@@ -249,17 +250,17 @@ export default function ProductionEvolved() {
                 {/* Card Bottom Content */}
                 <div className="mt-8 flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className="font-heading font-black text-white text-2xl sm:text-3xl tracking-[-0.5px] leading-tight mb-3">
+                    <h3 className="font-inter font-semibold text-white text-2xl tracking-wide leading-tight mb-3">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-zinc-200 font-sans font-light leading-snug max-w-[32ch] mb-6">
+                    <p className="text-sm text-white/60 font-inter font-light leading-relaxed mb-6">
                       {card.body}
                     </p>
                   </div>
                   
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1.5 text-brand-orange hover:text-brand-orange/80 transition-[color,transform] duration-200 text-xs font-bold tracking-wider uppercase mt-auto active:scale-95"
+                    className="inline-flex items-center gap-1.5 text-[#E0AAFF] hover:text-white transition-colors duration-200 text-xs font-semibold tracking-wider uppercase mt-auto font-inter"
                   >
                     See how it works
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -274,4 +275,3 @@ export default function ProductionEvolved() {
     </section>
   );
 }
-

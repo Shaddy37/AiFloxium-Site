@@ -39,60 +39,61 @@ export default function PrivacyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(privacyWebPageJsonLd) }}
       />
       <Navbar />
-      <main id="main-content" className="min-h-screen bg-black pt-32 pb-24">
+      <main id="main-content" className="min-h-screen bg-white text-zinc-800 selection:bg-[#7B2CBF] selection:text-zinc-900 pt-40 pb-24 font-inter">
         <div className="container mx-auto px-6 max-w-4xl">
-          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
-            <Link href="/" className="transition-colors hover:text-white">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-zinc-500 uppercase tracking-widest relative z-10 font-inter">
+            <Link href="/" className="transition-colors hover:text-zinc-900">
               Home
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-            <span className="text-white font-black">Privacy Policy</span>
+            <ChevronRight className="h-3 w-3 text-zinc-300" />
+            <span className="text-zinc-900 font-bold">Privacy Policy</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-heading font-black text-white mb-8">Privacy Policy</h1>
           
-          <div className="prose prose-invert prose-zinc max-w-none">
-            <p className="text-white text-lg mb-8">
-              Welcome to <span className="text-white">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> as AIFLOXIUM. We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies concerning those users of the Site (&quot;Visitors&quot;) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by AIFLOXIUM (collectively, &quot;Services&quot;) (&quot;Authorized Customers&quot;).
+          <h1 className="text-4xl md:text-5xl font-instrument text-zinc-900 mb-8 tracking-tight">Privacy Policy</h1>
+          
+          <div className="prose prose-invert prose-purple max-w-none font-inter font-light">
+            <p className="text-zinc-600 text-lg mb-8 leading-relaxed">
+              Welcome to <span className="text-zinc-900">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by me, <span className="text-zinc-900 font-semibold">Muhammad Shadab Shams</span>, as AIFLOXIUM. I understand that privacy online is important to users of my Site, especially when conducting business. This statement governs my privacy policies concerning those users of the Site (&quot;Visitors&quot;) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by me (collectively, &quot;Services&quot;) (&quot;Authorized Customers&quot;).
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Personally Identifiable Information</h2>
-              <p className="text-white">
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Personally Identifiable Information</h2>
+              <p className="text-zinc-500 leading-relaxed">
                 Refers to any information that can be used to identify, contact, or locate the person to whom such information pertains, including, but not limited to, name, address, phone number, fax number, email address, financial profile, social security number, and credit card information. Personally Identifiable Information does not include information that is collected anonymously (that is, without identification of the individual user) or demographic information not connected to an identified individual.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">What Personally Identifiable Information is collected?</h2>
-              <p className="text-white">
-                We may collect basic user profile information from all of our Visitors. We collect the following additional information from our Authorized Customers: the name, email address, phone number, address, social media profile information.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">What Personally Identifiable Information is collected?</h2>
+              <p className="text-zinc-500 leading-relaxed">
+                I may collect basic user profile information from all of my Visitors. I collect the following additional information from my Authorized Customers: the name, email address, phone number, address, and social media profile information.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">What organizations are collecting the information?</h2>
-              <p className="text-white">
-                In addition to our direct collection of information, our third-party service vendors (such as credit card companies, clearinghouses, and banks) who may provide such services as credit, insurance, and escrow services may collect this information from our Visitors and Authorized Customers. We do not control how these third parties use such information, but we do ask them to disclose how they use personal information provided to them by Visitors and Authorized Customers.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">What organizations are collecting the information?</h2>
+              <p className="text-zinc-500 leading-relaxed">
+                In addition to my direct collection of information, my third-party service vendors (such as credit card companies, clearinghouses, and banks) who may provide such services as credit, insurance, and escrow services may collect this information from my Visitors and Authorized Customers. I do not control how these third parties use such information, but I do ask them to disclose how they use personal information provided to them by Visitors and Authorized Customers.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">How does the Site use Personally Identifiable Information?</h2>
-              <p className="text-white">
-                We use Personally Identifiable Information to customize the Site, make appropriate service offerings, and fulfill buying and selling requests on the Site. We may email Visitors and Authorized Customers about research or purchase and selling opportunities on the Site or information related to the subject matter of the Site.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">How does the Site use Personally Identifiable Information?</h2>
+              <p className="text-zinc-500 leading-relaxed">
+                I use Personally Identifiable Information to customize the Site, make appropriate service offerings, and fulfill buying and selling requests on the Site. I may email Visitors and Authorized Customers about research or purchase and selling opportunities on the Site or information related to the subject matter of the Site.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Cookies</h2>
-              <p className="text-white">
-                A cookie is a string of information that a website stores on a visitor&apos;s computer, and that the visitor&apos;s browser provides to the website each time the visitor returns. We use &quot;cookies&quot; to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Cookies</h2>
+              <p className="text-zinc-500 leading-relaxed">
+                A cookie is a string of information that a website stores on a visitor&apos;s computer, and that the visitor&apos;s browser provides to the website each time the visitor returns. I use &quot;cookies&quot; to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Your Rights</h2>
-              <ul className="text-white list-disc pl-6 space-y-2">
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Your Rights</h2>
+              <ul className="text-zinc-500 list-disc pl-6 space-y-2 font-light">
                 <li>The right to access</li>
                 <li>The right to rectification</li>
                 <li>The right to erasure</li>
@@ -105,20 +106,20 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Children&apos;s Privacy</h2>
-              <p className="text-white">
-                Our Service does not address &quot;Children&quot;, anyone under the age of 18 years, and we do not knowingly collect personally identifiable information from children under 18 years. If you are a parent or guardian and you are aware that your child has provided us with Personal Information, please get in touch with us immediately.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Children&apos;s Privacy</h2>
+              <p className="text-zinc-500 leading-relaxed">
+                My Service does not address &quot;Children&quot;, anyone under the age of 18 years, and I do not knowingly collect personally identifiable information from children under 18 years. If you are a parent or guardian and you are aware that your child has provided me with Personal Information, please get in touch with me immediately.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Contact Us</h2>
-              <p className="text-white">
-                If you have any questions about this Privacy Policy, get in touch with us at <span className="text-white">muhammadshadabshams@gmail.com</span> or <span className="text-white">info@aifloxium.online</span>
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Contact Us</h2>
+              <p className="text-zinc-500 leading-relaxed">
+                If you have any questions about this Privacy Policy, please get in touch with me at <span className="text-zinc-900 font-medium">muhammadshadabshams@gmail.com</span> or <span className="text-zinc-900 font-medium">info@aifloxium.online</span>
               </p>
             </section>
 
-            <p className="text-white text-sm mt-12">Last Updated: October 10, 2025</p>
+            <p className="text-zinc-400 text-xs mt-12 font-mono">Last Updated: October 10, 2025</p>
           </div>
         </div>
       </main>

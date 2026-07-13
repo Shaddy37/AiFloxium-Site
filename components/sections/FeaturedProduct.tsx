@@ -16,25 +16,25 @@ export default function FeaturedProduct() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-brand-bg border-y border-brand-plum/10">
+    <section className="py-24 md:py-32 px-6 bg-[#0a0608] border-y border-white/5">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8"
-          transition={prefersReduced ? { duration: 0.01 } : { duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={prefersReduced ? { duration: 0.01 } : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="border border-brand-plum/20 bg-brand-plum/5 rounded-[2rem] p-10 md:p-12">
-            <p className="text-brand-orange text-xs font-black uppercase tracking-[0.3em] mb-6">
+          {/* Left panel */}
+          <div className="border border-white/5 bg-[#0a0608] text-white/[0.01] rounded-[2.5rem] p-10 md:p-12 liquid-glass">
+            <span className="text-[#E0AAFF] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] mb-6 block font-inter">
               Featured product
-            </p>
-            <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-6">
-              ApePublish
-              <br />
-              <span className="text-brush text-3xl md:text-5xl text-brand-orange">shipped</span>.
+            </span>
+            <h2 className="text-4xl md:text-6xl font-instrument text-white tracking-tight leading-[1.05] mb-6">
+              ApePublish <br />
+              <span className="font-instrument text-[#E0AAFF] italic">shipped.</span>
             </h2>
-            <p className="text-white text-lg leading-relaxed max-w-2xl mb-8">
+            <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mb-8 font-inter font-light">
               ApePublish is a live SaaS product I recently built. It turns long-form
               content into ready-to-publish social content, which gives this portfolio
               real product proof, not just service claims.
@@ -44,37 +44,38 @@ export default function FeaturedProduct() {
                 href={APEPUBLISH_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-[background-color,transform] duration-160 hover:bg-brand-orange/90 active:scale-[0.97]"
+                className="inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-full font-semibold uppercase tracking-wider text-xs transition-all duration-300 hover:bg-[#E0AAFF] button-glow font-inter"
               >
                 Visit ApePublish
                 <ArrowUpRight className="w-4 h-4" />
               </a>
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center gap-3 border border-brand-plum/30 bg-brand-bg/60 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-[background-color,border-color,transform] duration-160 hover:bg-brand-plum/10 active:scale-[0.97]"
+                className="inline-flex items-center justify-center gap-3 border border-white/20 bg-transparent text-white px-8 py-4 rounded-full font-semibold uppercase tracking-wider text-xs transition-colors duration-200 hover:bg-[#0a0608] text-white/5 font-inter"
               >
                 See more proof
               </Link>
             </div>
           </div>
 
-          <div className="border border-brand-plum/20 bg-brand-bg rounded-[2rem] p-10 md:p-12">
-            <p className="text-white text-xs font-black uppercase tracking-[0.3em] mb-6">
+          {/* Right panel */}
+          <div className="border border-white/5 bg-[#0a0608] text-white/[0.01] rounded-[2.5rem] p-10 md:p-12 liquid-glass">
+            <span className="text-white/50 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] mb-6 block font-inter">
               Why it matters here
-            </p>
+            </span>
             <div className="space-y-5 mb-8">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
-                  <p className="text-white leading-relaxed">{item}</p>
+                  <CheckCircle2 className="w-4.5 h-4.5 text-[#E0AAFF] shrink-0 mt-1" />
+                  <p className="text-white/70 leading-relaxed font-inter font-light text-sm sm:text-base">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="border border-brand-plum/20 bg-brand-plum/5 rounded-2xl p-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-3">
+            <div className="border border-white/10 bg-[#0a0608] text-white/[0.01] rounded-2xl p-6 liquid-glass">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E0AAFF] mb-3 block font-inter">
                 My role
-              </p>
-              <p className="text-white leading-relaxed">
+              </span>
+              <p className="text-white/60 leading-relaxed font-inter font-light text-sm">
                 Positioning, landing page strategy, product UI, application build,
                 metadata, and launch execution.
               </p>

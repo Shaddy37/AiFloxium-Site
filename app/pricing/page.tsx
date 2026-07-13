@@ -135,7 +135,7 @@ const pricingGraphJsonLd = {
 
 export default function PricingPage() {
   return (
-    <main id="main-content" className="relative min-h-screen bg-brand-bg">
+    <main id="main-content" className="relative min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingGraphJsonLd) }}

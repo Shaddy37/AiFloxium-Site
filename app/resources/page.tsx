@@ -329,7 +329,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
   return (
     <a
       href={`#${id}`}
-      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-white/20 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all duration-300"
+      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-zinc-200 text-[10px] font-semibold uppercase tracking-widest text-zinc-600 hover:bg-[#7B2CBF]/5 hover:border-[#7B2CBF]/30 hover:text-zinc-900 transition-all duration-300 font-inter"
     >
       {label}
     </a>
@@ -338,7 +338,7 @@ function CategoryAnchor({ id, label }: { id: string; label: string }) {
 
 function TagPill({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-zinc-100 text-zinc-600">
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[9px] font-semibold uppercase tracking-wider bg-white/[0.01] text-white/50 border border-zinc-200 font-inter">
       {label}
     </span>
   );
@@ -368,15 +368,15 @@ function ResourceCard({
   blogSlug,
 }: ResourceCardProps) {
   return (
-    <div className="bg-white rounded-2xl border border-zinc-200 p-6 flex flex-col gap-4 group transition-colors duration-500">
+    <div className="bg-white/[0.01] rounded-2xl border border-white/5 p-6 flex flex-col gap-4 group transition-all duration-500 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 liquid-glass">
       {/* Header */}
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="text-lg font-bold text-brand-plum font-heading tracking-tight leading-snug group-hover:text-brand-orange transition-colors flex-1">
+      <div className="flex items-start justify-between gap-3 font-inter">
+        <h3 className="text-lg font-semibold tracking-wide text-zinc-900 group-hover:text-[#E0AAFF] transition-colors flex-1 leading-snug">
           {title}
         </h3>
         <span
           className={cn(
-            "shrink-0 text-[10px] font-black uppercase tracking-widest border px-2 py-1 rounded-md",
+            "shrink-0 text-[9px] font-semibold uppercase tracking-wider border px-2 py-1 rounded-md",
             badgeColor
           )}
         >
@@ -385,7 +385,7 @@ function ResourceCard({
       </div>
 
       {/* Description */}
-      <p className="text-sm text-zinc-900 font-medium leading-relaxed flex-1">{description}</p>
+      <p className="text-sm text-zinc-500 font-inter font-light leading-relaxed flex-1">{description}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
@@ -396,17 +396,17 @@ function ResourceCard({
 
       {/* Install Snippet */}
       {copyText && (
-        <div className="bg-zinc-50 px-4 py-3 font-mono text-[11px] text-zinc-800 border border-zinc-200 truncate select-all rounded-md">
+        <div className="bg-black/40 px-4 py-3 font-mono text-[10px] text-zinc-900 border border-white/5 truncate select-all rounded-md">
           {copyText}
         </div>
       )}
 
       {/* CTA Row */}
-      <div className="flex items-center gap-3 mt-1">
+      <div className="flex items-center gap-3 mt-1 font-inter">
         {link.startsWith("/") ? (
           <Link
             href={link}
-            className="flex-1 text-center py-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-md text-xs font-bold uppercase tracking-widest text-brand-plum transition-all duration-300"
+            className="flex-1 text-center py-2.5 bg-white text-black hover:bg-[#E0AAFF] rounded-md text-xs font-semibold uppercase tracking-wider transition-all duration-300 button-glow"
           >
             Open Guide →
           </Link>
@@ -415,7 +415,7 @@ function ResourceCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center py-2.5 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 rounded-md text-xs font-bold uppercase tracking-widest text-brand-plum transition-all duration-300"
+            className="flex-1 text-center py-2.5 bg-white text-black hover:bg-[#E0AAFF] rounded-md text-xs font-semibold uppercase tracking-wider transition-all duration-300 button-glow"
           >
             View Resource →
           </a>
@@ -423,7 +423,7 @@ function ResourceCard({
         {blogSlug && (
           <Link
             href={`/blog/${blogSlug}`}
-            className="px-4 py-2.5 bg-brand-plum text-white rounded-md text-xs font-bold uppercase tracking-widest hover:bg-brand-plum-light transition-all duration-300"
+            className="px-4 py-2.5 bg-white/[0.02] border border-zinc-200 text-zinc-900 rounded-md text-xs font-semibold uppercase tracking-wider hover:bg-zinc-100 transition-all duration-300"
           >
             Read Guide
           </Link>
@@ -431,7 +431,7 @@ function ResourceCard({
       </div>
 
       {meta && (
-        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest text-right -mt-1">
+        <p className="text-[9px] font-mono text-white/40 uppercase tracking-widest text-right -mt-1 font-inter">
           {meta}
         </p>
       )}
@@ -455,17 +455,17 @@ function SectionHeader({
   return (
     <div id={id} className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 scroll-mt-32">
       <div>
-        <p className="text-xs font-mono text-brand-orange uppercase tracking-[0.25em] mb-3 flex items-center gap-2">
-          <span className="w-4 h-[1px] bg-brand-orange inline-block" />
+        <p className="text-[9px] font-semibold text-[#E0AAFF] uppercase tracking-[0.25em] mb-3 flex items-center gap-2 font-inter">
+          <span className="w-4 h-[1px] bg-[#E0AAFF] inline-block" />
           {eyebrow}
         </p>
-        <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-plum tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-instrument text-zinc-900 tracking-tight">
           {title}
         </h2>
-        <p className="text-zinc-900 font-medium mt-2 text-sm max-w-xl">{subtitle}</p>
+        <p className="text-zinc-500 font-inter font-light mt-2 text-sm max-w-xl leading-relaxed">{subtitle}</p>
       </div>
       {count !== undefined && (
-        <span className="text-5xl font-heading font-black text-zinc-200 tabular-nums shrink-0">
+        <span className="text-5xl font-instrument text-white/10 tabular-nums shrink-0">
           {String(count).padStart(2, "0")}
         </span>
       )}
@@ -479,7 +479,7 @@ function SectionHeader({
 
 export default function ResourcesPage() {
   return (
-    <main id="main-content" className="relative bg-white min-h-screen">
+    <main id="main-content" className="relative bg-white min-h-screen text-zinc-800 selection:bg-[#7B2CBF] selection:text-zinc-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(resourcesGraphJsonLd) }}
@@ -487,43 +487,41 @@ export default function ResourcesPage() {
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden bg-brand-bg rounded-b-[3rem]">
+      <section className="relative pt-40 pb-24 px-6 overflow-hidden bg-gradient-to-b from-black to-[#0a0608] rounded-b-[3rem]">
         {/* Ambient glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] rounded-full bg-brand-plum-glow/30 blur-[120px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] rounded-full bg-[#7B2CBF]/5 blur-[120px]" />
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
-          <nav className="mb-8 flex justify-center items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
-            <Link href="/" className="transition-colors hover:text-white">
+          <nav className="mb-8 flex justify-center items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest relative z-10 font-inter">
+            <Link href="/" className="transition-colors hover:text-zinc-900">
               Home
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-            <span className="text-white font-black">Resources</span>
+            <ChevronRight className="h-3 w-3 text-white/30" />
+            <span className="text-zinc-900 font-bold">Resources</span>
           </nav>
 
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs font-mono text-white/70 uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
-              <span className="w-6 h-[1px] bg-white/20 inline-block" />
+            <p className="text-[9px] font-semibold text-zinc-500 uppercase tracking-[0.3em] mb-6 flex items-center gap-3 font-inter">
+              <span className="w-6 h-[1px] bg-zinc-100 inline-block" />
               Aifloxium Resources
-              <span className="w-6 h-[1px] bg-white/20 inline-block" />
+              <span className="w-6 h-[1px] bg-zinc-100 inline-block" />
             </p>
 
-            <h1 className="text-[clamp(2.75rem,6vw,5.5rem)] font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
-              <span className="text-brand-orange">Free &amp;</span>
-              <br />
-              premium
-              <br />
-              <span className="text-white/40">resources</span>.
+            <h1 className="text-[clamp(2.75rem,6vw,5.5rem)] font-instrument text-zinc-900 tracking-tight leading-[1.05] mb-8">
+              Free &amp; <br />
+              <span className="font-instrument text-[#E0AAFF] italic">premium</span> <br />
+              resources.
             </h1>
 
-            <p className="text-xl text-zinc-200 max-w-2xl leading-relaxed mb-12 font-medium">
+            <p className="text-lg md:text-xl text-zinc-600 max-w-2xl leading-relaxed mb-12 font-inter font-light">
               Battle-tested n8n automations, Claude Code skills, AI agents, and
-              step-by-step Notion guides, curated by the Aifloxium team to help
+              step-by-step Notion guides, curated by me to help
               you build smarter, faster.
             </p>
 
             {/* Stats Row */}
-            <div className="flex flex-wrap justify-center gap-8 mb-14">
+            <div className="flex flex-wrap justify-center gap-8 mb-14 font-inter">
               {[
                 { value: "6+", label: "n8n Workflows" },
                 { value: "6+", label: "Claude Skills" },
@@ -531,8 +529,8 @@ export default function ResourcesPage() {
                 { value: "3+", label: "Notion Guides" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <p className="text-3xl font-heading font-black text-white">{s.value}</p>
-                  <p className="text-[11px] font-mono uppercase tracking-widest text-white/50 mt-1">
+                  <p className="text-3xl font-instrument text-zinc-900">{s.value}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/40 mt-1">
                     {s.label}
                   </p>
                 </div>
@@ -550,7 +548,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* ── Divider ─────────────────────────────────────────────────── */}
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
+      <div className="w-full h-[1px] bg-zinc-50" />
 
       <div className="container mx-auto max-w-6xl px-6 space-y-28 py-24">
 
@@ -559,7 +557,7 @@ export default function ResourcesPage() {
           <SectionHeader
             id="n8n"
             eyebrow="Workflow Engineering"
-            title="n8n Automations"
+            title="n8n Workflows"
             subtitle="Production-ready automation workflows. Copy, deploy, and adapt, built to save hours every week."
             count={n8nWorkflows.length}
           />
@@ -577,12 +575,12 @@ export default function ResourcesPage() {
               />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center font-inter">
             <a
               href="https://n8n.io/workflows/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-zinc-200 text-xs font-bold uppercase tracking-widest text-brand-plum hover:bg-zinc-50 transition-all duration-300"
+              className="px-8 py-4 rounded-full bg-white/[0.01] border border-zinc-200 text-xs font-semibold uppercase tracking-wider text-zinc-600 hover:bg-[#7B2CBF]/5 hover:border-[#7B2CBF]/30 hover:text-zinc-900 transition-all duration-300"
             >
               Browse All 8,000+ n8n Workflows →
             </a>
@@ -612,12 +610,12 @@ export default function ResourcesPage() {
               />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center font-inter">
             <a
               href="https://www.aitmpl.com/skills/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-zinc-200 text-xs font-bold uppercase tracking-widest text-brand-plum hover:bg-zinc-50 transition-all duration-300"
+              className="px-8 py-4 rounded-full bg-white/[0.01] border border-zinc-200 text-xs font-semibold uppercase tracking-wider text-zinc-600 hover:bg-[#7B2CBF]/5 hover:border-[#7B2CBF]/30 hover:text-zinc-900 transition-all duration-300"
             >
               Explore All Claude Skills →
             </a>
@@ -647,12 +645,12 @@ export default function ResourcesPage() {
               />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center font-inter">
             <a
               href="https://www.aitmpl.com/agents"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-zinc-200 text-xs font-bold uppercase tracking-widest text-brand-plum hover:bg-zinc-50 transition-all duration-300"
+              className="px-8 py-4 rounded-full bg-white/[0.01] border border-zinc-200 text-xs font-semibold uppercase tracking-wider text-zinc-600 hover:bg-[#7B2CBF]/5 hover:border-[#7B2CBF]/30 hover:text-zinc-900 transition-all duration-300"
             >
               Explore All 600+ Claude Agents →
             </a>
@@ -668,7 +666,7 @@ export default function ResourcesPage() {
             subtitle="Comprehensive step-by-step guides for Claude Code, Ollama, free agentic stacks, and AI automation, written by practitioners."
             count={notionGuides.length}
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {notionGuides.map((g) => (
               <ResourceCard
                 key={g.title}
@@ -720,32 +718,31 @@ export default function ResourcesPage() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="group relative bg-brand-bg rounded-2xl border border-brand-plum/30 p-6 flex flex-col gap-4 hover:border-brand-plum/60 transition-colors duration-500 overflow-hidden"
+                className="group relative bg-white/[0.01] border border-white/5 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 transition-all duration-500 overflow-hidden liquid-glass"
               >
-                <div className="absolute inset-0 bg-brand-plum/0 group-hover:bg-brand-plum/5 transition-colors duration-500 rounded-2xl pointer-events-none" />
-                <div className="flex items-start justify-between gap-3 relative z-10">
-                  <h3 className="text-lg font-bold text-white font-heading tracking-tight leading-snug group-hover:text-brand-orange transition-colors flex-1">
+                <div className="flex items-start justify-between gap-3 relative z-10 font-inter">
+                  <h3 className="text-lg font-semibold tracking-wide text-zinc-900 group-hover:text-[#E0AAFF] transition-colors flex-1 leading-snug">
                     {card.title}
                   </h3>
-                  <span className="shrink-0 text-[10px] font-black uppercase tracking-widest border border-brand-orange/30 bg-brand-orange/10 text-brand-orange px-2 py-1 rounded-md">
+                  <span className="shrink-0 text-[9px] font-semibold uppercase tracking-wider border border-[#E0AAFF]/20 bg-[#E0AAFF]/5 text-[#E0AAFF] px-2 py-1 rounded-md">
                     FREE
                   </span>
                 </div>
-                <p className="text-sm text-zinc-200 font-medium leading-relaxed flex-1 relative z-10">
+                <p className="text-sm text-zinc-500 font-inter font-light leading-relaxed flex-1 relative z-10">
                   {card.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 relative z-10">
                   {card.tags.map((t) => (
-                    <span key={t} className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest bg-white/5 text-white/50 border border-white/10">
+                    <span key={t} className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[9px] font-semibold uppercase tracking-wider bg-white/[0.01] text-white/50 border border-zinc-200 font-inter">
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-2 border-t border-white/10 relative z-10">
-                  <span className="text-xs font-black text-brand-orange uppercase tracking-widest">
+                <div className="flex items-center justify-between pt-2 border-t border-white/5 relative z-10 font-inter">
+                  <span className="text-[10px] font-semibold text-[#E0AAFF] uppercase tracking-wider">
                     {card.saving}
                   </span>
-                  <span className="text-xs font-bold text-white/40 group-hover:text-white/70 transition-colors uppercase tracking-widest">
+                  <span className="text-[10px] font-semibold text-white/40 group-hover:text-zinc-600 transition-colors uppercase tracking-wider">
                     Read comparison →
                   </span>
                 </div>
@@ -757,31 +754,31 @@ export default function ResourcesPage() {
       </div>
 
       {/* ── Blog CTA Band ─────────────────────────────────────────────── */}
-      <section className="py-24 bg-brand-bg text-white border-y border-brand-plum/20 my-8">
+      <section className="py-24 bg-white text-zinc-900 border-y border-white/5 my-8">
         <div className="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl">
-            <p className="text-xs font-mono uppercase tracking-[0.25em] text-white/50 mb-4">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-white/40 mb-4 font-inter">
               Internal Guides
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight mb-4 text-brand-orange">
-              DEEP-DIVE BLOGS.
+            <h2 className="text-4xl md:text-5xl font-instrument tracking-tight mb-4 text-zinc-900">
+              Deep-dive blogs.
             </h2>
-            <p className="text-zinc-200 text-lg leading-relaxed font-medium">
-              We write detailed technical breakdowns on every tool and workflow
-              we use, n8n architectures, Claude Code patterns, and autonomous
+            <p className="text-zinc-500 text-lg leading-relaxed font-inter font-light">
+              I write detailed technical breakdowns on every tool and workflow
+              I use, n8n architectures, Claude Code patterns, and autonomous
               agent design. Free, always.
             </p>
           </div>
-          <div className="shrink-0 flex flex-col gap-4">
+          <div className="shrink-0 flex flex-col gap-4 font-inter">
             <Link
               href="/blog"
-              className="px-10 py-4 rounded-full bg-white text-brand-plum font-bold text-sm uppercase tracking-widest hover:bg-zinc-200 transition-colors"
+              className="px-10 py-4 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow text-center"
             >
               Read the Blog →
             </Link>
             <Link
               href="/blog/autonomous-sales-rep"
-              className="px-10 py-4 rounded-full border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors"
+              className="px-10 py-4 rounded-full bg-white/[0.01] border border-zinc-200 text-zinc-600 font-semibold text-xs uppercase tracking-wider hover:bg-zinc-100 transition-colors text-center"
             >
               AI Sales Rep Deep-Dive →
             </Link>
@@ -789,33 +786,33 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* ── Contact CTA ──────────────────────────────────────────────── */}
-      <section className="bg-white py-24 border-y border-zinc-200">
+      {/* ── ROI Calculator CTA ────────────────────────────────────────── */}
+      <section className="bg-white py-24 border-y border-white/5">
         <div className="container mx-auto max-w-6xl px-6">
-          <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8 md:p-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="rounded-[2.5rem] border border-white/5 bg-white/[0.01] p-8 md:p-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between liquid-glass">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange mb-4">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] mb-4 font-inter">
                 New Tools Hub
               </p>
-              <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight text-brand-plum">
-                START WITH THE ROI CALCULATOR.
+              <h2 className="text-4xl md:text-5xl font-instrument tracking-tight text-zinc-900">
+                Start with the ROI calculator.
               </h2>
-              <p className="mt-4 text-zinc-900 text-base leading-relaxed font-medium">
+              <p className="mt-4 text-zinc-500 text-base leading-relaxed font-inter font-light">
                 If you want a faster way to qualify automation opportunities, use the new AI
                 Automation ROI Calculator to estimate hours saved, payroll drag, and the best
                 workflows to automate first.
               </p>
             </div>
-            <div className="shrink-0 flex flex-col sm:flex-row gap-4">
+            <div className="shrink-0 flex flex-col sm:flex-row gap-4 font-inter">
               <Link
                 href="/tools/automation-roi-calculator"
-                className="px-8 py-4 rounded-full bg-brand-orange text-white font-bold text-sm uppercase tracking-widest hover:bg-brand-orange/90 transition-colors text-center"
+                className="px-8 py-4 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow text-center"
               >
                 Open Calculator →
               </Link>
               <Link
                 href="/tools"
-                className="px-8 py-4 rounded-full border border-zinc-200 text-brand-plum font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors text-center"
+                className="px-8 py-4 rounded-full bg-white/[0.01] border border-zinc-200 text-zinc-600 font-semibold text-xs uppercase tracking-wider hover:bg-zinc-100 transition-colors text-center"
               >
                 Browse Tools →
               </Link>
@@ -824,10 +821,10 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section className="bg-zinc-50 border-t border-zinc-200 py-24">
+      <section className="bg-white border-t border-white/5 py-24">
         <Contact2
           title="Need a Custom Workflow?"
-          description="Tell us what you're trying to automate. We'll build the exact n8n workflow, Claude agent, or full automation system you need."
+          description="Tell me what you're trying to automate. I will build the exact n8n workflow, Claude agent, or full automation system you need."
         />
       </section>
 

@@ -39,44 +39,45 @@ export default function DmcaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(dmcaWebPageJsonLd) }}
       />
       <Navbar />
-      <main id="main-content" className="min-h-screen bg-black pt-32 pb-24">
+      <main id="main-content" className="min-h-screen bg-white text-zinc-800 selection:bg-[#7B2CBF] selection:text-zinc-900 pt-40 pb-24 font-inter">
         <div className="container mx-auto px-6 max-w-4xl">
-          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest relative z-10">
-            <Link href="/" className="transition-colors hover:text-white">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-zinc-500 uppercase tracking-widest relative z-10 font-inter">
+            <Link href="/" className="transition-colors hover:text-zinc-900">
               Home
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-            <span className="text-white font-black">DMCA Policy</span>
+            <ChevronRight className="h-3 w-3 text-zinc-300" />
+            <span className="text-zinc-900 font-bold">DMCA Policy</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-heading font-black text-white mb-8">DMCA Policy</h1>
           
-          <div className="prose prose-invert prose-zinc max-w-none">
-            <p className="text-white text-lg mb-8">
-              Welcome to <span className="text-white">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by <span className="text-white font-bold">Muhammad Shadab Shams</span> trading as AIFLOXIUM. We respect the intellectual property rights of others just as we expect others to respect our rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to us via our DMCA Agent listed below.
+          <h1 className="text-4xl md:text-5xl font-instrument text-zinc-900 mb-8 tracking-tight">DMCA Policy</h1>
+          
+          <div className="prose prose-invert prose-purple max-w-none font-inter font-light">
+            <p className="text-zinc-600 text-lg mb-8 leading-relaxed">
+              Welcome to <span className="text-zinc-900">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by me, <span className="text-zinc-900 font-semibold">Muhammad Shadab Shams</span>, trading as AIFLOXIUM. I respect the intellectual property rights of others just as I expect others to respect my rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to me via my DMCA Agent listed below.
             </p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Notice of Infringement - Claim</h2>
-              <p className="text-white mb-4">To submit a good faith infringement claim to us, you must submit the notice to us that sets forth the following information:</p>
-              <ol className="text-white list-decimal pl-6 space-y-2">
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Notice of Infringement - Claim</h2>
+              <p className="text-zinc-500 mb-4 leading-relaxed font-light">To submit a good faith infringement claim, you must submit the notice setting forth the following information:</p>
+              <ol className="text-zinc-500 list-decimal pl-6 space-y-2 font-light">
                 <li>A physical or electronic signature of the copyright owner (or someone authorized to act on behalf of the owner);</li>
                 <li>Identification of the copyrighted work claimed to have been infringed;</li>
-                <li>Identification of the infringing material to be removed, and information reasonably sufficient to permit the service provider to locate the material;</li>
-                <li>Information reasonably sufficient to permit the service provider to contact the complaining party, including your name, physical address, email address, phone number, and fax number;</li>
-                <li>A statement that the complaining party has a good faith belief that the use of the material is unauthorized by the copyright agent; and</li>
-                <li>A statement that the information in the notification is accurate, and, under penalty of perjury, that the complaining party is authorized to act on behalf of the copyright owner.</li>
+                <li>Identification of the infringing material to be removed, and information reasonably sufficient to permit me to locate the material;</li>
+                <li>Information reasonably sufficient to permit me to contact you, including your name, physical address, email address, phone number, and fax number;</li>
+                <li>A statement that you have a good faith belief that the use of the material is unauthorized by the copyright agent; and</li>
+                <li>A statement that the information in the notification is accurate, and, under penalty of perjury, that you are authorized to act on behalf of the copyright owner.</li>
               </ol>
-              <p className="text-white mt-4">
+              <p className="text-zinc-500 mt-4 leading-relaxed font-light">
                 Title 17 USC Section 512(f) provides civil damage penalties, including costs and attorney fees, against any person who knowingly and materially misrepresents certain information in a notification of infringement under 17 USC Section 512(c)(3).
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Counter Notification - Restoration of Material</h2>
-              <p className="text-white mb-4">
-                If you have received a notice of material being taken down because of a copyright infringement claim, you may provide us with a counter-notification to have the material in question restored to the site. Said notification must be given in writing to our DMCA Agent and must contain substantially the following elements pursuant to 17 USC Section 512(g)(3):
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Counter Notification - Restoration of Material</h2>
+              <p className="text-zinc-500 mb-4 leading-relaxed font-light font-light">
+                If you have received a notice of material being taken down because of a copyright infringement claim, you may provide me with a counter-notification to have the material in question restored to the site. Said notification must be given in writing to my DMCA Agent and must contain substantially the following elements pursuant to 17 USC Section 512(g)(3):
               </p>
-              <ol className="text-white list-decimal pl-6 space-y-2">
+              <ol className="text-zinc-500 list-decimal pl-6 space-y-2 font-light">
                 <li>Your physical or electronic signature.</li>
                 <li>A description of the material that has been taken down and the original location of the material before it was taken down.</li>
                 <li>A statement under penalty of perjury that you have a good faith belief that the material was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled.</li>
@@ -85,41 +86,41 @@ export default function DmcaPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Repeat Infringer Policy</h2>
-              <p className="text-white">
-                We take copyright infringement very seriously. Pursuant to the repeat infringer policy requirements of the Digital Millennium Copyright Act, we maintain a list of DMCA notices from copyright holders and make a good faith effort to identify any repeat infringers. Those who violate our internal repeat infringer policy will have their accounts terminated.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Repeat Infringer Policy</h2>
+              <p className="text-zinc-500 leading-relaxed font-light">
+                I take copyright infringement very seriously. Pursuant to the repeat infringer policy requirements of the Digital Millennium Copyright Act, I maintain a list of DMCA notices from copyright holders and make a good faith effort to identify any repeat infringers. Those who violate my repeat infringer policy will have their accounts terminated.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Copyright for Media</h2>
-              <p className="text-white">
-                All media, including videos, audio files, and AI-generated content, are protected under international copyright laws. Unauthorized duplication or distribution is strictly prohibited and may result in legal action under the DMCA.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Copyright for Media</h2>
+              <p className="text-zinc-500 leading-relaxed font-light font-light">
+                All media, including videos, audio files, and AI-generated content, are protected under international copyright laws. Duplication or distribution is prohibited and may result in legal action under the DMCA.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">AI Content Ownership</h2>
-              <p className="text-white">
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">AI Content Ownership</h2>
+              <p className="text-zinc-500 leading-relaxed font-light font-light">
                 Content generated using AI tools is owned by AIFLOXIUM unless otherwise agreed. Users are prohibited from using AI-generated outputs for commercial purposes or public distribution without explicit permission.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Modifications</h2>
-              <p className="text-white">
-                We reserve the right to modify the contents of this page and its policy for handling DMCA claims at any time for any reason. You are encouraged to check back to review this policy frequently for any changes.
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Modifications</h2>
+              <p className="text-zinc-500 leading-relaxed font-light">
+                I reserve the right to modify the contents of this page and my policy for handling DMCA claims at any time for any reason. You are encouraged to check back to review this policy frequently for any changes.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-brand-orange mb-4">Contact Us</h2>
-              <p className="text-white">
-                If you have any questions about this DMCA Policy, get in touch with us at <span className="text-white">muhammadshadabshams@gmail.com</span> or <span className="text-white">info@aifloxium.online</span>
+              <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Contact Us</h2>
+              <p className="text-zinc-500 leading-relaxed font-light">
+                If you have any questions about this DMCA Policy, please get in touch with me at <span className="text-zinc-900 font-medium">muhammadshadabshams@gmail.com</span> or <span className="text-zinc-900 font-medium">info@aifloxium.online</span>
               </p>
             </section>
 
-            <p className="text-white text-sm mt-12">Last Updated: October 10, 2025</p>
+            <p className="text-zinc-400 text-xs mt-12 font-mono">Last Updated: October 10, 2025</p>
           </div>
         </div>
       </main>

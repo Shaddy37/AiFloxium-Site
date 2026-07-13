@@ -1,132 +1,45 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
-import { useScroll } from '@/components/ui/use-scroll';
-import { useFocusTrap } from '@/components/hooks/use-focus-trap';
-import { BRAND_NAME, BRAND_SIGNATURE_NAME, CALENDLY_URL } from '@/lib/site';
-import { useReducedMotion } from '@/lib/use-reduced-motion';
-
-const MOBILE_MENU_ID = 'mobile-menu';
-
-const coreLinks = [
-  { name: "Projects", href: "/projects" },
-  { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Tools", href: "/tools" },
-];
-
-const secondaryLinks = [
-  { name: "Consulting", href: "/ai-consulting" },
-  { name: "Resources", href: "/resources" },
-  { name: "About", href: "/about" },
-  { name: "Blog", href: "/blog" },
-];
-
-const allLinks = [...coreLinks, ...secondaryLinks];
-
-const navVariants = {
-  hidden: { y: -100, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
-};
-
-const headerTransition = {
-  type: "spring" as const,
-  stiffness: 260,
-  damping: 22,
-  mass: 0.5,
-};
-
-const mobileMenuVariants = {
-  hidden: { opacity: 0, x: "100%" },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { type: "spring" as const, damping: 30, stiffness: 300 } 
-  },
-  exit: { opacity: 0, x: "100%", transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] as any } },
-};
-
-const linkVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.1 + i * 0.06, duration: 0.3, ease: "easeOut" as const },
-  }),
-};
+import { CALENDLY_URL } from '@/lib/site';
 
 export default function Navbar() {
-  const [open, setOpen] = React.useState(false);
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const { scrolled, scrollY } = useScroll({ threshold: 50 });
-  const lastScrollY = React.useRef(0);
-  const [visible, setVisible] = React.useState(true);
-  const [isLight, setIsLight] = React.useState(false);
-  const mobileMenuRef = React.useRef<HTMLDivElement>(null);
-  const prefersReduced = useReducedMotion();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
-  useFocusTrap(mobileMenuRef, open);
-
-  React.useEffect(() => {
-    if (!open) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        setOpen(false);
+  // Monitor scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Scrolled state
+      if (currentScrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open]);
 
-  // Handle scroll-related visibility
-  React.useEffect(() => {
-    if (scrollY > lastScrollY.current && scrollY > 100) {
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
-    lastScrollY.current = scrollY;
-  }, [scrollY]);
+      // Visible state: hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY.current && currentScrollY > 120) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
 
-  // Handle active theme checking using optimized IntersectionObserver
-  React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const sections = document.querySelectorAll('section');
-    if (sections.length === 0) return;
-
-    const observerOptions = {
-      rootMargin: '-40px 0px -95% 0px',
-      threshold: 0,
+      lastScrollY.current = currentScrollY;
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const theme = entry.target.getAttribute('data-theme');
-          setIsLight(theme === 'light');
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  React.useEffect(() => {
+  // Body overflow locking
+  useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -137,245 +50,186 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // Stagger variants for mobile menu
+  const menuVariants = {
+    hidden: { x: "100%" },
+    visible: { 
+      x: 0, 
+      transition: { type: "spring" as const, stiffness: 380, damping: 35 } 
+    },
+    exit: { 
+      x: "100%", 
+      transition: { ease: [0.22, 1, 0.36, 1] as const, duration: 0.3 } 
+    }
+  };
+
+  const linkVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.15 + i * 0.075,
+        ease: [0.22, 1, 0.36, 1] as const,
+        duration: 0.4
+      }
+    })
+  };
+
+  const btnVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.45,
+        ease: [0.22, 1, 0.36, 1] as const,
+        duration: 0.4
+      }
+    }
+  };
+
+  const navLinks = [
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Projects", href: "/projects" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Tools", href: "/tools" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" }
+  ];
+
   return (
-    <motion.header
-      layout
-      initial={prefersReduced ? "visible" : "hidden"}
-      animate={visible ? "visible" : "hidden"}
-      variants={navVariants}
-      transition={prefersReduced ? { duration: 0.01 } : headerTransition}
-        className={cn(
-          'fixed top-0 z-[100] mx-auto w-full border-b border-transparent',
-          'transition-[background-color,border-color,box-shadow] duration-300',
-          {
-            'bg-brand-bg/80 supports-[backdrop-filter]:bg-brand-bg/40 border-brand-plum/10 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_0_40px_rgba(0,0,0,0.6)] left-1/2 -translate-x-1/2':
-              !open && !isLight,
-            'bg-white/90 border-gray-200 backdrop-blur-xl md:top-4 md:w-max md:max-w-[95vw] md:rounded-full md:border md:shadow-[0_10px_30px_rgba(0,0,0,0.08)] left-1/2 -translate-x-1/2':
-              scrolled && !open && isLight,
-            'bg-brand-bg': open,
-          },
-        )}
-    >
-      <motion.nav
-        layout
-        className={cn(
-          'flex h-20 w-full items-center justify-between gap-6 px-6 md:px-8',
-        )}
-        animate={{
-          height: 64,
-          paddingTop: 8,
-          paddingBottom: 8,
+    <>
+      <motion.header
+        initial={{ y: 0, opacity: 1 }}
+        animate={{ 
+          y: visible ? 0 : -100, 
+          opacity: visible ? 1 : 0 
         }}
-        transition={headerTransition}
+        transition={{ ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-all duration-300",
+          scrolled 
+            ? "bg-[#0a0608]/75 backdrop-blur-md border-b border-white/5 py-4" 
+            : "bg-transparent"
+        )}
       >
-        <div className="flex justify-start shrink-0">
-          <Link href="/" className="relative group z-[110]" onClick={() => setOpen(false)}>
-            <motion.div 
-              whileHover={prefersReduced ? {} : { scale: 1.05 }}
-              whileTap={prefersReduced ? {} : { scale: 0.95 }}
-              className="relative flex items-center gap-3"
-            >
-              <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                <Image
-                  src="/brand/aifloxium-logo.png"
-                  alt="AIFLOXIUM founder logo"
-                  fill
-                  className="object-contain"
-                  sizes="40px"
-                />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className={cn(
-                  "text-lg font-heading font-black tracking-widest uppercase transition-all duration-300",
-                  isLight && !open
-                    ? "text-brand-plum"
-                    : "text-white drop-shadow-sm"
-                )}>
-                  {BRAND_NAME}
-                </span>
-                <span
-                  className={cn(
-                    'mt-1 text-[9px] font-bold uppercase tracking-[0.25em] transition-colors',
-                    isLight && !open ? 'text-zinc-500' : 'text-white/70'
-                  )}
-                >
-                  by {BRAND_SIGNATURE_NAME}
-                </span>
-              </div>
-            </motion.div>
-          </Link>
-        </div>
+        {/* Left: Cursive Brand Name */}
+        <Link href="/" className="font-dancing text-2xl md:text-3xl text-white tracking-wide cursor-pointer z-50">
+          Aifloxium
+        </Link>
 
-        <div 
-          className="hidden lg:flex items-center justify-center gap-1"
-          onMouseEnter={() => setIsExpanded(true)}
-          onMouseLeave={() => setIsExpanded(false)}
-        >
-          {/* Core Links */}
-          {coreLinks.map((link, i) => (
-            <motion.div
-              layout
-              key={link.name}
-              custom={i}
-              initial={prefersReduced ? "visible" : "hidden"}
-              animate="visible"
-              variants={prefersReduced ? { visible: { opacity: 1, y: 0 } } : linkVariants}
-            >
-              <Link 
-                href={link.href}
-                className={cn(
-                  buttonVariants({ variant: "ghost" }), 
-                  "rounded-full px-4 text-[11px] font-bold uppercase tracking-widest transition-all",
-                  isLight && !open 
-                    ? "text-zinc-700 hover:text-brand-plum hover:bg-brand-plum/5" 
-                    : "text-zinc-100/70 hover:text-white hover:bg-white/5"
-                )}
-              >
-                {link.name}
-              </Link>
-            </motion.div>
-          ))}
-
-          {/* Secondary Links */}
-          <AnimatePresence>
-            {isExpanded && (
-              <motion.div
-                initial={prefersReduced ? { opacity: 1, width: "auto", scale: 1 } : { opacity: 0, width: 0, scale: 0.95 }}
-                animate={{ opacity: 1, width: "auto", scale: 1 }}
-                exit={prefersReduced ? { opacity: 0, width: 0, scale: 0.95 } : { opacity: 0, width: 0, scale: 0.95 }}
-                transition={prefersReduced ? { duration: 0.01 } : { type: "spring", stiffness: 350, damping: 30 }}
-                className="flex items-center gap-1 overflow-hidden"
-              >
-                {secondaryLinks.map((link) => (
-                  <Link 
-                    key={link.name}
-                    href={link.href}
-                    className={cn(
-                      buttonVariants({ variant: "ghost" }), 
-                      "rounded-full px-4 text-[11px] font-bold uppercase tracking-widest transition-all whitespace-nowrap",
-                      isLight && !open 
-                        ? "text-zinc-700 hover:text-brand-plum hover:bg-brand-plum/5" 
-                        : "text-zinc-100/70 hover:text-white hover:bg-white/5"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Indicator Pill */}
-          <motion.div layout>
-            <div
-              className={cn(
-                "rounded-full px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest transition-all bg-white/5 border border-white/5 text-white/50 flex items-center gap-1 select-none cursor-pointer",
-                isLight && "bg-black/5 border-black/5 text-black/50"
-              )}
-            >
-              <span>{isExpanded ? "Less" : "More"}</span>
-              <ChevronDown 
-                className={cn(
-                  "w-3 h-3 transition-transform duration-300",
-                  isExpanded && "rotate-180"
-                )} 
-              />
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="flex justify-end items-center gap-4 shrink-0">
-          <motion.div 
-            initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={prefersReduced ? { duration: 0.01 } : { duration: 0.5, delay: 0.6 }}
-            className="hidden lg:block z-[110]"
-          >
+        {/* Center: Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+          {navLinks.map((link) => (
             <Link 
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "default" }), 
-                "rounded-full bg-brand-orange text-white hover:bg-brand-orange/90 px-6 text-xs font-bold uppercase tracking-widest shadow-lg border-none",
-                "transition-[background-color,transform] duration-160 active:scale-[0.97]"
-              )}
+              key={link.name} 
+              href={link.href}
+              className="text-white/80 hover:text-white text-xs uppercase tracking-widest transition-colors font-inter font-semibold"
             >
-              Book a Call
+              {link.name}
             </Link>
-          </motion.div>
+          ))}
+        </nav>
 
-          <Button
-            size="icon"
-            variant="ghost"
+        {/* Right: Desktop Consultation Button / Mobile Hamburger */}
+        <div className="flex items-center gap-4">
+          {/* Desktop Button */}
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:block bg-white text-black px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow font-inter uppercase"
+          >
+            Book a call
+          </Link>
+
+          {/* Mobile Hamburger */}
+          <button
             onClick={() => setOpen(!open)}
-            className={cn(
-              "lg:hidden z-[110] transition-colors",
-              isLight && !open ? "text-brand-plum" : "text-white"
-            )}
+            className="lg:hidden flex flex-col justify-between w-6 h-[18px] cursor-pointer focus:outline-none z-50 relative"
             aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls={MOBILE_MENU_ID}
           >
-            <MenuToggleIcon open={open} className="size-6" duration={300} />
-          </Button>
+            <span
+              style={{ transition: 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s' }}
+              className={cn(
+                "w-full h-[1.5px] bg-white rounded-full origin-left",
+                open && "rotate-45 translate-y-[4.5px] translate-x-[2px]"
+              )}
+            />
+            <span
+              style={{ transition: 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s' }}
+              className={cn(
+                "w-full h-[1.5px] bg-white rounded-full",
+                open && "opacity-0 scale-0"
+              )}
+            />
+            <span
+              style={{ transition: 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s' }}
+              className={cn(
+                "w-full h-[1.5px] bg-white rounded-full origin-left",
+                open && "-rotate-45 -translate-y-[4.5px] translate-x-[2px]"
+              )}
+            />
+          </button>
         </div>
-      </motion.nav>
+      </motion.header>
 
-      <AnimatePresence mode="wait">
+      {/* MOBILE SLIDE-IN MENU */}
+      <AnimatePresence>
         {open && (
-          <motion.div
-            id={MOBILE_MENU_ID}
-            ref={mobileMenuRef}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={prefersReduced ? { hidden: { opacity: 0 }, visible: { opacity: 1 }, exit: { opacity: 0 } } : mobileMenuVariants}
-            transition={prefersReduced ? { duration: 0.01 } : undefined}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
-            className="bg-brand-bg fixed inset-0 z-[105] flex flex-col overflow-hidden pt-24 md:hidden"
-          >
-            <div className="flex h-full w-full flex-col justify-between gap-y-8 p-10">
-              <div className="grid gap-y-4">
-                {allLinks.map((link, i) => (
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
+            />
+
+            {/* Slide Panel */}
+            <motion.div
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed top-0 right-0 h-screen w-[85%] max-w-[340px] z-40 bg-[#0a0608]/95 backdrop-blur-xl border-l border-white/10 flex flex-col justify-between p-10 pt-32 lg:hidden"
+            >
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
-                    initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={prefersReduced ? { duration: 0.01 } : { delay: 0.1 + i * 0.06, duration: 0.3, ease: "easeOut" }}
+                    custom={i}
+                    variants={linkVariants}
                   >
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="text-4xl font-black text-white hover:text-brand-orange transition-colors uppercase italic tracking-tighter"
+                      className="text-white/80 hover:text-white text-2xl font-instrument italic tracking-wide block py-2 transition-colors"
                     >
                       {link.name}
                     </Link>
                   </motion.div>
                 ))}
               </div>
-              <motion.div 
-                initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={prefersReduced ? { duration: 0.01 } : { delay: 0.5, duration: 0.4 }}
-                className="flex flex-col gap-4 mb-8"
-              >
-                <Link 
+
+              <motion.div variants={btnVariants} className="w-full">
+                <Link
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="w-full h-16 rounded-3xl bg-brand-orange text-white flex items-center justify-center font-bold uppercase tracking-widest text-sm hover:bg-brand-orange/90 transition-all shadow-xl shadow-brand-orange/10"
+                  className="w-full h-12 bg-white text-black font-semibold rounded-full flex items-center justify-center text-xs tracking-wider uppercase hover:bg-[#E0AAFF] button-glow transition-all duration-300 font-inter"
                 >
-                  Book a Discovery Call
+                  Book a call
                 </Link>
               </motion.div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   );
 }

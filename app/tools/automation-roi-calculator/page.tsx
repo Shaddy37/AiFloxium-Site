@@ -138,7 +138,7 @@ const calculatorGraphJsonLd = {
 
 export default function AutomationRoiCalculatorPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-brand-bg text-white">
+    <main id="main-content" className="min-h-screen bg-[#0a0608] text-white selection:bg-[#7B2CBF] selection:text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorGraphJsonLd) }}
@@ -146,10 +146,10 @@ export default function AutomationRoiCalculatorPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-white/8 bg-[radial-gradient(circle_at_top,_rgba(255,107,0,0.12),_transparent_28%),radial-gradient(circle_at_75%_15%,_rgba(88,28,135,0.24),_transparent_32%),linear-gradient(180deg,#180a1f_0%,#120716_52%,#0c040f_100%)] px-6 pb-20 pt-36 md:pb-24 md:pt-40">
+      <section className="relative overflow-hidden border-b border-white/5 bg-[#0a0608] px-6 pb-20 pt-36 md:pb-24 md:pt-40">
         <div className="pointer-events-none absolute inset-0">
           <div
-            className="absolute inset-0 opacity-[0.08]"
+            className="absolute inset-0 opacity-[0.01]"
             style={{
               backgroundImage:
                 'linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px)',
@@ -159,36 +159,36 @@ export default function AutomationRoiCalculatorPage() {
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          <nav className="mb-8 flex flex-wrap items-center gap-2 text-xs font-bold text-white/55 uppercase tracking-widest">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest font-inter">
             <Link href="/" className="transition-colors hover:text-white">
               Home
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
+            <ChevronRight className="h-3 w-3 text-white/30" />
             <Link href="/tools" className="transition-colors hover:text-white">
               Tools
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-            <span className="text-white font-black">Automation ROI Calculator</span>
+            <ChevronRight className="h-3 w-3 text-white/30" />
+            <span className="text-white font-bold font-inter">Automation ROI Calculator</span>
           </nav>
 
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center">
             <div>
-              <p className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.32em] text-brand-orange">
-                <span className="h-px w-10 bg-brand-orange/45" />
+              <span className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#E0AAFF] font-inter">
+                <span className="h-px w-10 bg-[#7B2CBF]/45" />
                 Interactive Operations Tool
-              </p>
-              <h1 className="max-w-4xl text-[3rem] font-heading font-black leading-[0.9] tracking-[-0.04em] text-white md:text-[5.8rem]">
-                Quantify your team{"'"}s
-                <span className="block text-brand-orange">manual workload drag.</span>
+              </span>
+              <h1 className="max-w-4xl text-[3rem] font-instrument leading-[1.05] tracking-tight text-white md:text-[5.8rem]">
+                Quantify your team{"'"}s <br />
+                <span className="font-instrument text-[#E0AAFF] italic">manual workload drag.</span>
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/76 md:text-xl">
+              <p className="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-white/70 font-inter font-light">
                 Translate repetitive spreadsheet tasks, slow handoffs, and manual entries into clear time, payroll, and payback metrics.
               </p>
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row font-inter">
                 <a
                   href="#calculator"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-brand-orange/90 shadow-[0_10px_30px_rgba(255,107,0,0.2)]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-6 py-4 text-xs font-semibold uppercase tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow"
                 >
                   Configure Calculator
                   <ArrowRight className="h-4 w-4" />
@@ -197,7 +197,7 @@ export default function AutomationRoiCalculatorPage() {
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:border-white/25 hover:bg-white/[0.08]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-4 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/5"
                 >
                   Book 1-on-1 Audit
                 </Link>
@@ -208,15 +208,15 @@ export default function AutomationRoiCalculatorPage() {
               {valuePoints.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-[1.7rem] border border-white/10 bg-zinc-900/80 p-5"
+                  className="rounded-[1.7rem] border border-white/5 bg-white/[0.01] p-5 liquid-glass"
                 >
-                  <div className="h-9 w-9 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange">
+                  <div className="h-9 w-9 rounded-xl bg-[#7B2CBF]/5 border border-[#7B2CBF]/20 flex items-center justify-center text-[#E0AAFF]">
                     <item.icon className="h-4 w-4" />
                   </div>
-                  <p className="mt-4 text-lg font-heading font-black tracking-tight text-white">
+                  <p className="mt-4 text-lg font-semibold tracking-wide text-white font-inter">
                     {item.label}
                   </p>
-                  <p className="mt-2 text-xs leading-relaxed text-zinc-200">{item.copy}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-white/60 font-inter font-light">{item.copy}</p>
                 </div>
               ))}
             </div>
@@ -225,35 +225,35 @@ export default function AutomationRoiCalculatorPage() {
       </section>
 
       {/* What It Measures Section */}
-      <section className="bg-[#100612] px-6 py-16 md:py-20 border-b border-white/5">
+      <section className="bg-[#0a0608] px-6 py-16 md:py-20 border-b border-white/5">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
           <div>
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
+            <span className="mb-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] block font-inter">
               Calculation Logic
-            </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
+            </span>
+            <h2 className="text-4xl font-instrument text-white tracking-tight leading-[1.05]">
               An objective baseline to evaluate process changes.
             </h2>
           </div>
-          <div className="rounded-[2rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-6 md:p-8">
-            <p className="text-sm sm:text-base leading-relaxed text-zinc-200">
+          <div className="rounded-[2rem] border border-white/5 bg-white/[0.01] p-6 md:p-8 liquid-glass">
+            <p className="text-sm sm:text-base leading-relaxed text-white/70 font-inter font-light">
               The calculator factors in team participation, hourly labor rates, weekly friction hours, and monthly volume to estimate:
             </p>
-            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-white/60 font-inter font-light">
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E0AAFF]" />
                 Monthly hours lost and payroll drag.
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E0AAFF]" />
                 Downstream value leaks in high-frequency queues.
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E0AAFF]" />
                 Estimated project development cost range.
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E0AAFF]" />
                 Investment payback timeline in months.
               </li>
             </ul>
@@ -262,23 +262,23 @@ export default function AutomationRoiCalculatorPage() {
       </section>
 
       {/* The Calculator Component */}
-      <section id="calculator" className="bg-[#f6efe8] px-6 py-20 text-black md:py-24">
+      <section id="calculator" className="bg-[#0a0608] px-6 py-20 text-white md:py-24 border-b border-white/5">
         <div className="mx-auto max-w-6xl">
           <AutomationRoiCalculator />
         </div>
       </section>
 
       {/* Interpretation Section */}
-      <section className="bg-[#0e0611] px-6 py-20 md:py-24 border-t border-white/5">
+      <section className="bg-[#0a0608] px-6 py-20 md:py-24 border-b border-white/5">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
           <div>
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
+            <span className="mb-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] block font-inter">
               How to Read Output
-            </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
+            </span>
+            <h2 className="text-4xl font-instrument text-white tracking-tight leading-[1.05]">
               Prioritize workflows that show rapid payback.
             </h2>
-            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-200">
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-white/60 font-inter font-light">
               Use these directional projections to spot the most expensive bottlenecks in your company, and address high-leverage steps first.
             </p>
           </div>
@@ -287,11 +287,11 @@ export default function AutomationRoiCalculatorPage() {
             {interpretationPoints.map((item, idx) => (
               <article
                 key={idx}
-                className="rounded-[1.6rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-5 flex flex-col justify-between"
+                className="rounded-[1.6rem] border border-white/5 bg-white/[0.01] p-5 flex flex-col justify-between liquid-glass"
               >
                 <div>
-                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-xs leading-relaxed text-zinc-200">{item.text}</p>
+                  <h3 className="text-base font-semibold text-white mb-2 font-inter tracking-wide">{item.title}</h3>
+                  <p className="text-xs leading-relaxed text-white/60 font-inter font-light">{item.text}</p>
                 </div>
               </article>
             ))}
@@ -300,16 +300,16 @@ export default function AutomationRoiCalculatorPage() {
       </section>
 
       {/* Best Fit Workflows Section */}
-      <section className="border-y border-black/10 bg-[#f3ece4] px-6 py-20 text-black md:py-24">
+      <section className="bg-[#0a0608] px-6 py-20 text-white md:py-24 border-b border-white/5">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
           <div>
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-plum">
+            <span className="mb-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] block font-inter">
               Best-Fit Use Cases
-            </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-brand-plum md:text-5xl leading-tight">
+            </span>
+            <h2 className="text-4xl font-instrument text-white tracking-tight leading-[1.05]">
               Focus on highly repeatable workflows.
             </h2>
-            <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-900">
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-white/60 font-inter font-light">
               Automation yields the highest ROI in pipelines where data is repeatedly transcribed, checked, or routed across systems.
             </p>
           </div>
@@ -318,9 +318,9 @@ export default function AutomationRoiCalculatorPage() {
             {calculatorUseCases.map((useCase) => (
               <div
                 key={useCase}
-                className="rounded-[1.4rem] border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.04)] flex items-center gap-3"
+                className="rounded-[1.4rem] border border-white/5 bg-white/[0.01] px-5 py-4 text-sm font-semibold text-white/80 shadow-sm flex items-center gap-3 liquid-glass font-inter"
               >
-                <span className="h-2 w-2 rounded-full bg-brand-plum shrink-0" />
+                <span className="h-2 w-2 rounded-full bg-[#E0AAFF] shrink-0" />
                 <span>{useCase}</span>
               </div>
             ))}
@@ -329,13 +329,13 @@ export default function AutomationRoiCalculatorPage() {
       </section>
 
       {/* FAQs Section */}
-      <section className="bg-[#0e0611] px-6 py-20 md:py-24 border-t border-white/5">
+      <section className="bg-[#0a0608] px-6 py-20 md:py-24 border-b border-white/5">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
+            <span className="mb-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] block font-inter">
               Common Questions
-            </p>
-            <h2 className="text-4xl font-heading font-black tracking-tight text-white md:text-5xl leading-tight">
+            </span>
+            <h2 className="text-4xl font-instrument text-white tracking-tight leading-[1.05]">
               Understanding ROI Estimates
             </h2>
           </div>
@@ -344,17 +344,17 @@ export default function AutomationRoiCalculatorPage() {
             {faqItems.map((item, index) => (
               <article
                 key={item.question}
-                className="rounded-[1.7rem] border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] p-6"
+                className="rounded-[1.7rem] border border-white/5 bg-white/[0.01] p-6 liquid-glass"
               >
                 <div className="flex gap-4">
-                  <span className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-brand-orange shrink-0">
+                  <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E0AAFF] shrink-0 font-inter">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-white">
+                    <h3 className="text-lg font-semibold tracking-wide text-white font-inter">
                       {item.question}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-200">
+                    <p className="mt-2 text-sm leading-relaxed text-white/60 font-inter font-light">
                       {item.answer}
                     </p>
                   </div>
@@ -366,26 +366,27 @@ export default function AutomationRoiCalculatorPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-[#09040b] px-6 py-20 border-t border-white/5">
-        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/10 bg-zinc-900/80 p-8 md:p-10">
-          <p className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em] text-brand-orange">
+      <section className="bg-[#0a0608] px-6 py-20">
+        <div className="mx-auto max-w-6xl rounded-[2.4rem] border border-white/5 bg-white/[0.01] p-8 md:p-10 liquid-glass">
+          <span className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E0AAFF] font-inter">
             <Sparkles className="h-4 w-4" />
             Next Step
-          </p>
+          </span>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-3xl">
-              <h2 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white leading-tight">
-                Pressure-test your calculations with a real workflow audit.
+              <h2 className="text-3xl sm:text-4xl font-instrument text-white tracking-tight leading-[1.05]">
+                Pressure-test your calculations <br />{' '}
+                <span className="font-instrument text-[#E0AAFF] italic">with a real workflow audit.</span>
               </h2>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-200">
-                A calculator yields a directional estimate. In our free 30-minute scoping call, we review your current tools, mapping errors, and operational dependencies to design a precise, fixed-bid implementation plan.
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/60 font-inter font-light">
+                A calculator yields a directional estimate. In my free 30-minute scoping call, I review your current tools, mapping errors, and operational dependencies to design a precise, fixed-bid implementation plan.
               </p>
             </div>
             <Link
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-8 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-brand-orange/90 shadow-[0_10px_30px_rgba(255,107,0,0.2)] shrink-0"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-8 py-4 text-xs font-semibold uppercase tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow shrink-0 font-inter"
             >
               Book Discovery Call
               <ArrowRight className="h-4 w-4" />

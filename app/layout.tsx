@@ -14,6 +14,7 @@ import {
 import { PopupProvider } from "@/components/providers/popup-provider";
 import { PopupRoot } from "@/components/popups/popup-root";
 import MotionProvider from "@/components/providers/MotionProvider";
+import Navbar from "@/components/layouts/Navbar";
 
 import "./globals.css";
 
@@ -152,6 +153,7 @@ export default function RootLayout({
         <div className="grainy-overlay" />
         <MotionProvider>
           <PopupProvider>
+            <Navbar />
             {children}
             <PopupRoot />
           </PopupProvider>

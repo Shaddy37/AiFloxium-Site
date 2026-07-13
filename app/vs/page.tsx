@@ -72,7 +72,7 @@ export default function VsHubPage() {
 
   return (
     <SmoothScroll>
-      <main id="main-content" className="min-h-screen bg-brand-bg text-white overflow-x-hidden">
+      <main id="main-content" className="min-h-screen bg-[#0a0608] text-white overflow-x-hidden selection:bg-[#7B2CBF] selection:text-white">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(vsGraphJsonLd) }}
@@ -80,15 +80,15 @@ export default function VsHubPage() {
         <Navbar />
 
         {/* Global Purple/Plum Radial Glow behind Hero */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-brand-plum-glow opacity-30 blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[#7B2CBF]/5 opacity-30 blur-[120px] pointer-events-none -z-10" />
 
         {/* Hero Section */}
         <section className="relative overflow-hidden px-6 pb-20 pt-36 md:pb-24 md:pt-40">
           <div className="pointer-events-none absolute inset-0 -z-10">
-            <div className="absolute left-[10%] top-10 h-56 w-56 rounded-full bg-brand-orange/5 blur-[95px]" />
-            <div className="absolute right-[15%] top-12 h-72 w-72 rounded-full bg-brand-plum/20 blur-[125px]" />
+            <div className="absolute left-[10%] top-10 h-56 w-56 rounded-full bg-[#7B2CBF]/5 blur-[95px]" />
+            <div className="absolute right-[15%] top-12 h-72 w-72 rounded-full bg-[#7B2CBF]/10 blur-[125px]" />
             <div
-              className="absolute inset-0 opacity-[0.06]"
+              className="absolute inset-0 opacity-[0.01]"
               style={{
                 backgroundImage:
                   'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
@@ -99,23 +99,23 @@ export default function VsHubPage() {
 
           <div className="max-w-7xl mx-auto">
             {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-xs font-bold text-zinc-200 uppercase tracking-widest mb-8">
-              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-              <ChevronRight className="h-3.5 w-3.5 text-zinc-600" />
-              <span className="text-white font-black">Comparisons</span>
+            <div className="flex items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest mb-8 font-inter">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <ChevronRight className="h-3 w-3 text-white/30" />
+              <span className="text-white font-bold">Comparisons</span>
             </div>
 
             <div className="max-w-3xl mb-16">
-              <p className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.32em] text-brand-orange">
-                <span className="h-px w-10 bg-brand-orange/45" />
+              <span className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#E0AAFF] font-inter">
+                <span className="h-px w-10 bg-[#7B2CBF]/45" />
                 Architectural Breakdown
-              </p>
-              <h1 className="text-[2.6rem] font-heading font-black leading-[0.95] tracking-[-0.035em] text-white md:text-[5rem]">
+              </span>
+              <h1 className="text-[2.6rem] font-instrument text-white leading-[1.05] tracking-tight md:text-[5rem]">
                 Platform <br className="sm:hidden" />
-                <span className="text-brand-orange">comparisons</span>.
+                <span className="font-instrument text-[#E0AAFF] italic">comparisons.</span>
               </h1>
-              <p className="mt-6 text-base leading-8 text-zinc-200 md:text-xl">
-                Compare direct costs, processing speeds, security parameters, and custom code integrations of off-the-shelf cloud solutions versus our tailored self-hosted environments.
+              <p className="mt-6 text-lg md:text-xl leading-relaxed text-white/70 font-inter font-light">
+                Compare direct costs, processing speeds, security parameters, and custom code integrations of off-the-shelf cloud solutions versus my tailored self-hosted environments.
               </p>
             </div>
 
@@ -126,34 +126,34 @@ export default function VsHubPage() {
                 return (
                   <article
                     key={comp.slug}
-                    className="group relative rounded-[2rem] border border-white/5 bg-zinc-950 p-6 transition-colors duration-300 hover:border-brand-orange/20 hover:bg-zinc-900 flex flex-col justify-between"
+                    className="group relative rounded-[2rem] border border-white/5 bg-white/[0.01] p-6 transition-colors duration-300 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 flex flex-col justify-between liquid-glass"
                   >
                     <div>
                       <div className="flex items-start justify-between mb-6">
-                        <div className="h-12 w-12 rounded-2xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange transition-transform duration-300 group-hover:scale-105">
+                        <div className="h-12 w-12 rounded-2xl bg-[#7B2CBF]/5 border border-[#7B2CBF]/20 flex items-center justify-center text-[#E0AAFF] transition-transform duration-300 group-hover:scale-105">
                           <Icon className="h-6 w-6" />
                         </div>
-                        <span className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-primary">
+                        <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/50 font-inter">
                           Analysis
                         </span>
                       </div>
 
-                      <h2 className="text-2xl font-heading font-black tracking-tight text-white mb-3 group-hover:text-brand-orange transition-colors">
+                      <h2 className="text-2xl font-semibold font-inter tracking-wide text-white mb-3 group-hover:text-[#E0AAFF] transition-colors">
                         {comp.title}
                       </h2>
 
-                      <p className="text-sm leading-relaxed text-zinc-200 mb-6 line-clamp-4">
+                      <p className="text-sm leading-relaxed text-white/60 mb-6 line-clamp-4 font-inter font-light">
                         {comp.metaDescription}
                       </p>
                     </div>
 
-                    <div className="pt-5 border-t border-white/5 mt-auto flex items-center justify-between">
-                      <div className="text-xs text-zinc-300 font-medium">
+                    <div className="pt-5 border-t border-white/5 mt-auto flex items-center justify-between font-inter">
+                      <div className="text-xs text-white/50 font-light">
                         Compare {comp.competitorName}
                       </div>
                       <Link
                         href={`/vs/${comp.slug}`}
-                        className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-[0.15em] text-white group-hover:text-brand-orange transition-colors"
+                        className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#E0AAFF] group-hover:text-white transition-colors"
                       >
                         Read Comparison
                         <ArrowRight className="h-3.5 w-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
@@ -167,17 +167,17 @@ export default function VsHubPage() {
         </section>
 
         {/* Informational Callout */}
-        <section className="bg-brand-bg-dark border-t border-white/5 py-16 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-xl font-heading font-black text-white tracking-[-0.035em] mb-4">
-              Need a custom performance audit?
+        <section className="bg-[#0a0608] border-t border-white/5 py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center rounded-[2.4rem] border border-white/5 bg-white/[0.01] p-10 liquid-glass">
+            <h3 className="text-2xl font-instrument text-white tracking-tight leading-[1.05] mb-4">
+              Need a custom <span className="font-instrument text-[#E0AAFF] italic">performance audit?</span>
             </h3>
-            <p className="text-sm text-zinc-200 leading-relaxed max-w-2xl mx-auto mb-8">
-              If you run more than 50,000 tasks per month, let us analyze your data pipelines to calculate exact migration costs and payback cycles.
+            <p className="text-sm sm:text-base text-white/60 leading-relaxed max-w-2xl mx-auto mb-8 font-inter font-light">
+              If you run more than 50,000 tasks per month, let me analyze your data pipelines to calculate exact migration costs and payback cycles.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3.5 text-xs font-black uppercase tracking-[0.2em] text-white hover:bg-brand-orange/90 transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-black px-6 py-3.5 text-xs font-semibold uppercase tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow shadow-sm"
             >
               Request Free Audit
               <ArrowRight className="h-4 w-4" />

@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Check, ArrowRight, Workflow, BrainCircuit, LayoutDashboard } from "lucide-react";
-import { WordsPullUpMultiStyle } from "@/components/ui/prisma-hero";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { LazyVideo } from "@/components/ui/lazy-video";
 import Link from "next/link";
@@ -26,14 +25,14 @@ const FeatureCard = ({ index, isInView, children }: FeatureCardProps) => {
           ? { duration: 0.01 }
           : {
               delay: index * 0.1,
-              ease: [0.16, 1, 0.3, 1],
+              ease: [0.22, 1, 0.36, 1],
               duration: 0.6,
             }
       }
-      className="relative flex flex-col justify-between h-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/80 p-6 group transition-[border-color,background-color] duration-200 hover:border-brand-orange/40 hover:bg-zinc-900"
+      className="relative flex flex-col justify-between h-full rounded-3xl border border-white/5 bg-[#0a0608] text-white/[0.01] p-8 group transition-[border-color,background-color] duration-300 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 liquid-glass"
     >
       {/* Decorative inner gradient glow */}
-      <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full bg-brand-orange/5 blur-2xl group-hover:bg-brand-orange/10 transition-colors duration-500 pointer-events-none" />
+      <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full bg-[#7B2CBF]/5 blur-2xl group-hover:bg-[#7B2CBF]/10 transition-colors duration-500 pointer-events-none" />
       {children}
     </motion.div>
   );
@@ -46,17 +45,14 @@ export default function PrismaFeatures() {
   const isGridInView = useInView(gridRef, { once: true, margin: "-100px" });
   const prefersReduced = useReducedMotion();
 
-  const headingLine1 = [{ text: "Production-grade workflows for visionary builders.", className: "text-white font-black" }];
-  const headingLine2 = [{ text: "Built for pure efficiency. Powered by intelligence.", className: "text-zinc-500 font-bold" }];
-
   return (
     <section 
       id="features" 
-      className="min-h-screen bg-black py-20 md:py-32 px-4 md:px-8 relative overflow-hidden border-b border-white/5"
+      className="min-h-screen bg-[#0a0608] text-white py-24 md:py-32 px-4 md:px-8 relative overflow-hidden border-b border-white/5"
     >
       {/* Background gradients */}
-      <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] rounded-full bg-brand-orange/5 blur-[120px] pointer-events-none" />
-      <div className="absolute top-12 left-12 w-[30vw] h-[30vw] rounded-full bg-purple-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] rounded-full bg-[#7B2CBF]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-12 left-12 w-[30vw] h-[30vw] rounded-full bg-[#9D4EDD]/5 blur-[100px] pointer-events-none" />
 
       {/* Header section */}
       <motion.div 
@@ -66,14 +62,13 @@ export default function PrismaFeatures() {
         transition={prefersReduced ? { duration: 0.01 } : { duration: 0.6 }}
         className="max-w-6xl mx-auto flex flex-col gap-3 mb-16 md:mb-24 text-center md:text-left"
       >
-        <WordsPullUpMultiStyle
-          segments={headingLine1}
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl justify-center md:justify-start font-heading font-black"
-        />
-        <WordsPullUpMultiStyle
-          segments={headingLine2}
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl justify-center md:justify-start font-heading font-black"
-        />
+        <span className="text-white/50 tracking-[0.2em] font-medium text-xs md:text-sm uppercase font-inter block mb-2">
+          // Capabilities
+        </span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.5rem] font-instrument text-white leading-[1.05] tracking-tight max-w-5xl">
+          Production-grade workflows for visionary builders. <br/>
+          <span className="font-instrument text-[#E0AAFF] italic">Built for pure efficiency, powered by intelligence.</span>
+        </h2>
       </motion.div>
 
       {/* Cards Grid */}
@@ -91,23 +86,23 @@ export default function PrismaFeatures() {
               ? { duration: 0.01 }
               : {
                   delay: 0,
-                  ease: [0.16, 1, 0.3, 1],
+                  ease: [0.22, 1, 0.36, 1],
                   duration: 0.6,
                 }
           }
-          className="relative flex flex-col min-h-[320px] lg:min-h-0 rounded-2xl overflow-hidden border border-white/10 justify-end p-6 bg-zinc-950 group transition-[border-color] duration-200 hover:border-brand-orange/40"
+          className="relative flex flex-col min-h-[320px] lg:min-h-0 rounded-3xl overflow-hidden border border-white/20 justify-end p-8 bg-zinc-950 group transition-[border-color] duration-200 hover:border-[#7B2CBF]/30 liquid-glass"
         >
           {/* Video */}
           <LazyVideo
             preload="none"
-            className="absolute inset-0 h-full w-full object-cover z-0 opacity-80 group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 h-full w-full object-cover z-0 opacity-40 group-hover:scale-105 transition-transform duration-500 pointer-events-none"
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
           />
           {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent z-10 pointer-events-none" />
 
-          <p className="relative z-20 text-white text-base sm:text-lg font-bold tracking-wide leading-snug">
-            Intelligent operations. Powered by AIFLOXIUM.
+          <p className="relative z-20 text-white text-base sm:text-lg font-inter font-light tracking-wide leading-snug">
+            Intelligent operations. <br/>Powered by AIFLOXIUM.
           </p>
         </motion.div>
 
@@ -116,27 +111,27 @@ export default function PrismaFeatures() {
           <div className="flex flex-col gap-5 relative z-10">
             {/* Icon Header */}
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-brand-orange/10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/5 text-[#E0AAFF] transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-[#7B2CBF]/10">
                 <Workflow className="w-5 h-5" />
               </div>
             </div>
 
             {/* Title */}
-            <h3 className="text-white text-lg sm:text-xl font-bold tracking-tight">
-              Agentic OS & Automations.
+            <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide font-inter">
+              Agentic OS & Automations
             </h3>
 
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-1">
               {[
-                "Custom private infrastructure deployment.",
-                "Autonomous multi-agent execution layers.",
-                "Dynamic tool & API integration fabric.",
-                "Real-time logging & self-healing error flows."
+                "Custom private VPS deployments",
+                "Autonomous multi-agent execution",
+                "Dynamic tools & API integrations",
+                "Self-healing logger scripts"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <Check className="h-[18px] w-[18px] text-brand-orange mt-0.5 shrink-0" />
-                  <span className="text-zinc-200 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-100 transition-colors">
+                  <Check className="h-[18px] w-[18px] text-[#E0AAFF] mt-0.5 shrink-0" />
+                  <span className="text-white/60 text-xs sm:text-[13px] leading-snug group-hover:text-white/90 transition-colors font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -147,7 +142,7 @@ export default function PrismaFeatures() {
           {/* Action Link */}
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-[#E0AAFF] hover:text-white font-semibold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors font-inter"
           >
             Learn more
             <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-200 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
@@ -159,27 +154,27 @@ export default function PrismaFeatures() {
           <div className="flex flex-col gap-5 relative z-10">
             {/* Icon Header */}
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-brand-orange/10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/5 text-[#E0AAFF] transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-[#7B2CBF]/10">
                 <BrainCircuit className="w-5 h-5" />
               </div>
             </div>
 
             {/* Title */}
-            <h3 className="text-white text-lg sm:text-xl font-bold tracking-tight">
-              Conversational Voice AI.
+            <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide font-inter">
+              Conversational Voice AI
             </h3>
 
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-1">
               {[
-                "Sub-500ms low-latency response speeds.",
-                "Full-duplex conversation state machine.",
-                "Intelligent scheduling & lead qualification.",
-                "Direct CRM & communication channel sync."
+                "Sub-500ms real response speeds",
+                "Full-duplex call state machines",
+                "Intelligent lead scheduling",
+                "Direct CRM & tag sync setups"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <Check className="h-[18px] w-[18px] text-brand-orange mt-0.5 shrink-0" />
-                  <span className="text-zinc-200 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-100 transition-colors">
+                  <Check className="h-[18px] w-[18px] text-[#E0AAFF] mt-0.5 shrink-0" />
+                  <span className="text-white/60 text-xs sm:text-[13px] leading-snug group-hover:text-white/90 transition-colors font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -190,7 +185,7 @@ export default function PrismaFeatures() {
           {/* Action Link */}
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-[#E0AAFF] hover:text-white font-semibold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors font-inter"
           >
             Learn more
             <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-200 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
@@ -202,27 +197,27 @@ export default function PrismaFeatures() {
           <div className="flex flex-col gap-5 relative z-10">
             {/* Icon Header */}
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-brand-orange transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-brand-orange/10">
+              <div className="flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/5 text-[#E0AAFF] transition-[transform,background-color] duration-200 group-hover:scale-110 group-hover:bg-[#7B2CBF]/10">
                 <LayoutDashboard className="w-5 h-5" />
               </div>
             </div>
 
             {/* Title */}
-            <h3 className="text-white text-lg sm:text-xl font-bold tracking-tight">
-              Bespoke Portals & Reasoning.
+            <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide font-inter">
+              Bespoke Portals & Reasoning
             </h3>
 
             {/* Checklist */}
             <ul className="flex flex-col gap-3 mt-1">
               {[
-                "Vibe-coded React apps (Next.js & Supabase).",
-                "AI reasoning layers applied to databases.",
-                "Custom document & invoice OCR intelligence.",
-                "Complete IP ownership of code & storage."
+                "Next.js & Supabase custom builds",
+                "Applied database reasoning layers",
+                "Document OCR & processing pipelines",
+                "Full code ownership & IP rights"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <Check className="h-[18px] w-[18px] text-brand-orange mt-0.5 shrink-0" />
-                  <span className="text-zinc-200 text-xs sm:text-[13px] leading-snug group-hover:text-zinc-100 transition-colors">
+                  <Check className="h-[18px] w-[18px] text-[#E0AAFF] mt-0.5 shrink-0" />
+                  <span className="text-white/60 text-xs sm:text-[13px] leading-snug group-hover:text-white/90 transition-colors font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -233,7 +228,7 @@ export default function PrismaFeatures() {
           {/* Action Link */}
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-[#E0AAFF] hover:text-white font-semibold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors font-inter"
           >
             Learn more
             <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-200 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
@@ -244,4 +239,3 @@ export default function PrismaFeatures() {
     </section>
   );
 }
-
