@@ -1,0 +1,149 @@
+---
+title: "Complete Setup Guide: $0 Agentic Coding Stack (North Mini Code & GLM-5.2)"
+date: "2026-06-27"
+author: "Muhammad Shadab Shams"
+category: "AI Automation"
+image: "/blog/covers/zero-dollar-agentic-coding-stack.svg"
+description: "A step-by-step setup guide to deploying a production-ready developer agent stack for $0. Learn how to configure Cohere North Mini Code and GLM-5.2 with OpenRouter and Cloudflare Workers AI for developer frameworks."
+keywords: ["agentic coding stack", "free AI coding models", "Cohere North Mini Code", "GLM-5.2 Cloudflare", "Cloudflare Workers AI tutorial", "free OpenRouter models", "Hermes Agent configuration", "OpenCode model setup"]
+canonicalUrl: "https://www.aifloxium.online/resources/zero-dollar-agentic-coding-stack"
+---
+
+<TLDR>
+  Setting up a production-ready agentic coding workspace does not require expensive closed-source model subscriptions. By combining OpenRouter's free tier (hosting Cohere North Mini Code) with Cloudflare Workers AI (hosting GLM-5.2), you can build a fully autonomous, zero-cost developer stack. This guide walks you through step-by-step credentials configuration and client launch.
+</TLDR>
+
+## Model Stack Specifications
+
+| Feature | North Mini Code (OpenRouter Free) | GLM-5.2 (Cloudflare Workers AI) |
+| --- | --- | --- |
+| **Architecture** | 30B MoE (3B active) | Dense Coding Model |
+| **Context Window** | 32k tokens | 262k tokens |
+| **Native Features**| Agentic coding loops | Native Tool Calling |
+| **Daily Limit** | Model dependent (high) | 10,000 neurons/day ($0) |
+
+
+---
+
+<SectionHeading title="Method 1: Cohere North Mini Code" subtitle="Free via OpenRouter" number="01" id="method-1" />
+
+North Mini Code is a 30B Mixture-of-Experts (MoE) model with only 3B active parameters, specifically tuned for multi-step agentic coding tasks.
+
+### 1. Create an OpenRouter Account
+
+- Go to [OpenRouter.ai](https://openrouter.ai/).
+- Sign up or log in (no credit card or billing details required for free models).
+
+### 2. Generate an API Key
+
+- Navigate to **Keys** (or Account Settings -> API Keys).
+- Click **Create Key** and give it a name (e.g., `Coding Agents`).
+- Copy the generated key immediately (it looks like `sk-or-v1-...`).
+
+### 3. Configure Environment Variables
+
+For macOS / Linux (Bash):
+```bash
+export OPENROUTER_API_KEY=your_copied_api_key_here
+```
+
+For Windows (PowerShell):
+```powershell
+$env:OPENROUTER_API_KEY="your_copied_api_key_here"
+```
+
+*Tip: Add this command to your shell profile (~/.bashrc, ~/.zshrc) to make the variable persistent across sessions.*
+
+### 4. Add to Agent Configuration
+
+Configure your developer agent (e.g., OpenCode, Hermes) to use the following provider credentials:
+
+- **Base URL:** `https://openrouter.ai/api/v1`
+- **Model ID:** `cohere/north-mini-code:free`
+
+---
+
+<SectionHeading title="Method 2: GLM-5.2 Configuration" subtitle="Free via Cloudflare Workers AI" number="02" id="method-2" />
+
+GLM-5.2 is a state-of-the-art coding model featuring native tool calling capabilities and a massive **262,144 token context window**, running 100% free with a daily allocation of 10,000 neurons (resets daily).
+
+### 1. Create a Cloudflare Account
+
+- Sign up for a free account at [dash.cloudflare.com](https://dash.cloudflare.com/).
+- No paid subscriptions are required for the daily free Neurons allocation.
+
+### 2. Locate your Account ID & REST API
+
+1. From the left-hand navigation sidebar, toggle the **AI** menu and select **Workers AI**.
+2. On the Workers AI dashboard homepage, click the **REST API** button to load details.
+3. Locate and copy your alphanumeric **Account ID** displayed in the panel.
+
+### 3. Create an API Token
+
+1. Go to **My Profile** (user icon in top-right menu -> click *My Profile*).
+2. Click **API Tokens** in the sidebar -> click **Create Token**.
+3. Choose **Create Custom Token** (at the bottom).
+4. Configure Custom Token permissions: **Account -> Workers AI -> Edit**.
+5. Click **Continue to summary** and confirm with **Create Token**.
+6. Copy the generated custom token.
+
+### 4. Configure custom provider details
+
+Add Cloudflare as a custom OpenAI-compatible endpoint in your agent configuration:
+
+- **Base URL:** `https://api.cloudflare.com/client/v4/accounts/YOUR_ACCOUNT_ID/ai/v1`
+- **Header Configuration:** `Authorization: Bearer YOUR_API_TOKEN`
+- **Model ID:** `@cf/zai-org/glm-5.2`
+
+---
+
+<SectionHeading title="Start Your Agent" subtitle="Execution" number="03" id="execution" />
+
+Once your credentials are set, launch your coding agent environment (such as `opencode` or `hermes-agent`) pointing to the model you configured.
+
+For example, to execute a local CLI developer agent using your OpenRouter free model parameters, run:
+
+```bash
+hermes-agent --model cohere/north-mini-code:free --api-key $OPENROUTER_API_KEY
+```
+
+You now have a fully operational, zero-cost developer agent capable of reading file systems, performing search actions, executing CLI commands, and editing codebases.
+
+<PremiumCTA 
+  title="Looking for advanced agent structures?" 
+  description="To explore persistent SQLite memories, telegram control loops, and custom terminal setups, read my comprehensive Hermes Agent Setup Guide."
+  buttonText="Read Guide"
+  href="/blog/hermes-agent-guide"
+/>
+
+---
+
+## Stack FAQs
+
+<FAQSchema items={[
+  {
+    question: "Is this agentic coding stack really free to run?",
+    answer: "Yes, both OpenRouter's Cohere North Mini Code (cohere/north-mini-code:free) and Cloudflare Workers AI GLM-5.2 (@cf/zai-org/glm-5.2) models are available on free/zero-cost tiers with no daily caps or payment details required."
+  },
+  {
+    question: "Which model is better for agentic coding workflows?",
+    answer: "Cohere North Mini Code is a 30B MoE model tuned for multi-step agent actions. GLM-5.2 is a general-purpose model with native tool-calling and a massive 262k context window. Both are excellent for starting agent environments."
+  },
+  {
+    question: "Which developer clients can I use with these models?",
+    answer: "You can use any OpenAI-compatible client, such as Hermes Agent, OpenCode, or Claude Code, by setting the custom Base URL and Bearer Authorization headers."
+  }
+]} />
+
+<HowToSchema 
+  name="How to set up a $0 agentic coding stack"
+  description="Configure Cohere North Mini Code via OpenRouter and GLM-5.2 via Cloudflare Workers AI to run local developer agents for free."
+  image="https://www.aifloxium.online/blog/covers/zero-dollar-agentic-coding-stack.svg"
+  steps={[
+    { name: "Create an OpenRouter Account & API Key", text: "Sign up at OpenRouter and generate an API key (e.g., Coding Agents) to access the free Cohere model tier." },
+    { name: "Configure Environment Variables", text: "Export the OPENROUTER_API_KEY environment variable in your terminal or configure it in your workspace .env file." },
+    { name: "Set up Cloudflare Workers AI", text: "Sign up for a free Cloudflare account, retrieve your Account ID, and click REST API on the Workers AI dashboard." },
+    { name: "Create Custom Workers AI API Token", text: "Go to My Profile -> API Tokens and create a custom token with Workers AI Edit permissions." },
+    { name: "Configure Model Providers and Launch Your Agent", text: "Add the custom OpenAI-compatible endpoint configurations for OpenRouter and Cloudflare, and run your developer agent client." }
+  ]}
+/>

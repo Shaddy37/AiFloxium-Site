@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
-import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
+import { getResourceBySlug, getAllResourceSlugs } from "@/lib/mdx";
 import { PERSON_NAME, SITE_URL } from '@/lib/site';
 import { absoluteUrl, buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 
@@ -10,18 +10,18 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
+  const slugs = getAllResourceSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getResourceBySlug(slug);
 
   if (!post) {
     return buildPageMetadata({
-      title: 'Post Not Found | AIFLOXIUM',
-      description: 'The requested blog post could not be found.',
+      title: 'Resource Not Found | AIFLOXIUM',
+      description: 'The requested resource could not be found.',
       noIndex: true
     });
   }
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({
     title: `${title} | AIFLOXIUM`,
     description,
-    path: canonicalUrl || `/blog/${slug}`,
+    path: canonicalUrl || `/resources/${slug}`,
     type: 'article',
     images: [image || '/brand/aifloxium-logo.png'],
     keywords,
@@ -41,9 +41,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
+export default async function ResourcePage({ params }: PageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getResourceBySlug(slug);
 
   if (!post) {
     notFound();
@@ -59,17 +59,17 @@ export default async function BlogPostPage({ params }: PageProps) {
     updatedAt
   } = post.frontmatter;
 
-  const postUrl = absoluteUrl(canonicalUrl || `/blog/${slug}`);
+  const postUrl = absoluteUrl(canonicalUrl || `/resources/${slug}`);
   const postImage = absoluteUrl(image || '/brand/aifloxium-logo.png');
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: 'Home', path: '/' },
-    { name: 'Blog', path: '/blog' },
-    { name: title, path: canonicalUrl || `/blog/${slug}` }
+    { name: 'Resources', path: '/resources' },
+    { name: title, path: canonicalUrl || `/resources/${slug}` }
   ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'Article',
     headline: title,
     description: description,
     image: [

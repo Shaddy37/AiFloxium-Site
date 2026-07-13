@@ -3,7 +3,7 @@ import path from 'path';
 
 import { MetadataRoute } from 'next';
 
-import { getAllPosts } from '@/lib/mdx';
+import { getAllPosts, getAllResources } from '@/lib/mdx';
 import { servicesData } from '@/lib/services-data';
 import { vsData } from '@/lib/vs-data';
 import { SITE_URL } from '@/lib/site';
@@ -31,18 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/about', file: 'app/about/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/blog', file: 'app/blog/page.tsx', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/contact', file: 'app/contact/page.tsx', changeFrequency: 'monthly', priority: 0.7 },
-    { path: '/projects', file: 'app/projects/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/resources', file: 'app/resources/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/services', file: 'app/services/page.tsx', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/tools', file: 'app/tools/page.tsx', changeFrequency: 'weekly', priority: 0.9 },
     {
       path: '/tools/automation-roi-calculator',
       file: 'app/tools/automation-roi-calculator/page.tsx',
       changeFrequency: 'weekly',
       priority: 0.9
     },
-    { path: '/vs', file: 'app/vs/page.tsx', changeFrequency: 'weekly', priority: 0.8 },
-    { path: '/ai-consulting', file: 'app/ai-consulting/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/privacy', file: 'app/privacy/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
     { path: '/terms', file: 'app/terms/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
     { path: '/dmca', file: 'app/dmca/page.tsx', changeFrequency: 'yearly', priority: 0.3 }
@@ -78,5 +74,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8
   }));
 
-  return [...pages, ...serviceRoutes, ...blogRoutes, ...vsRoutes];
+  const resourceRoutes = getAllResources().map((resource) => ({
+    url: `${SITE_URL}/resources/${resource.slug}`,
+    lastModified: resource.frontmatter.updatedAt || resource.frontmatter.date,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  return [...pages, ...serviceRoutes, ...blogRoutes, ...vsRoutes, ...resourceRoutes];
 }

@@ -15,6 +15,8 @@ import { Accordion } from "./Accordion";
 import { AuthorCard } from "./AuthorCard";
 import { AuthorSection } from "./AuthorSection";
 import { FAQSection } from "./FAQSection";
+import { FAQSchema } from "../mdx/FAQSchema";
+import { HowToSchema } from "../mdx/HowToSchema";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
@@ -232,6 +234,8 @@ const components = {
   AuthorCard,
   AuthorSection,
   FAQSection,
+  FAQSchema,
+  HowToSchema,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {
