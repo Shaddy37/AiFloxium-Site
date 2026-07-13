@@ -5,6 +5,96 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { CALENDLY_URL } from '@/lib/site';
+import { ChevronDown } from 'lucide-react';
+
+type NavLinkItem = {
+  name: string;
+  href?: string;
+  items?: { name: string; href: string }[];
+};
+
+function DesktopNavItem({ link }: { link: NavLinkItem }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      {link.href ? (
+        <Link
+          href={link.href}
+          className="flex items-center gap-1 text-white/80 hover:text-white text-xs uppercase tracking-widest transition-colors duration-200 ease-[var(--ease-out)] font-inter font-semibold py-6"
+        >
+          {link.name}
+        </Link>
+      ) : (
+        <div className="flex items-center gap-1 text-white/80 hover:text-white text-xs uppercase tracking-widest transition-colors font-inter font-semibold cursor-default py-6">
+          {link.name}
+          <ChevronDown
+            className={cn("w-3 h-3 opacity-50 transition-transform duration-300", isOpen && "rotate-180")}
+          />
+        </div>
+      )}
+
+      {/* Dropdown Menu */}
+      {link.items && (
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute top-full left-0 pt-2 w-56 z-50"
+            >
+              <div className="bg-[#0a0608]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl flex flex-col gap-1 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
+                {link.items.map((subItem) => (
+                  <Link
+                    key={subItem.name}
+                    href={subItem.href}
+                    className="px-4 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/5 text-xs font-inter font-medium tracking-wide transition-colors duration-150 ease-[var(--ease-out)] relative z-10 block"
+                  >
+                    {subItem.name}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+    </div>
+  );
+}
+
+const navLinks: NavLinkItem[] = [
+  {
+    name: "Services",
+    items: [
+      { name: "Consulting", href: "/services#consulting" },
+      { name: "Projects", href: "/services#projects" },
+      { name: "Pricing", href: "/services#pricing" }
+    ]
+  },
+  {
+    name: "Resources",
+    items: [
+      { name: "Free Tools", href: "/resources#tools" },
+      { name: "Comparisons", href: "/resources#comparisons" },
+      { name: "Guides", href: "/resources#notion-guides" }
+    ]
+  },
+  { name: "Blog", href: "/blog" },
+  {
+    name: "Company",
+    items: [
+      { name: "About", href: "/about" },
+      { name: "Contact", href: "/contact" }
+    ]
+  }
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -89,15 +179,6 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Projects", href: "/projects" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Tools", href: "/tools" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" }
-  ];
 
   return (
     <>
@@ -109,7 +190,7 @@ export default function Navbar() {
         }}
         transition={{ ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-[background-color,border-color,padding] duration-300 ease-[var(--ease-out)]",
           scrolled 
             ? "bg-[#0a0608]/75 backdrop-blur-md border-b border-white/5 py-4" 
             : "bg-transparent"
@@ -123,13 +204,7 @@ export default function Navbar() {
         {/* Center: Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              className="text-white/80 hover:text-white text-xs uppercase tracking-widest transition-colors font-inter font-semibold"
-            >
-              {link.name}
-            </Link>
+            <DesktopNavItem key={link.name} link={link} />
           ))}
         </nav>
 
@@ -140,7 +215,7 @@ export default function Navbar() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:block bg-white text-black px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider hover:bg-[#E0AAFF] transition-all duration-300 button-glow font-inter uppercase"
+            className="hidden lg:block bg-white text-black px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider hover:bg-[#E0AAFF] transition-[transform,background-color,filter] duration-200 ease-[var(--ease-out)] active:scale-[0.97] button-glow font-inter uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608]"
           >
             Book a call
           </Link>
@@ -197,20 +272,43 @@ export default function Navbar() {
               exit="exit"
               className="fixed top-0 right-0 h-screen w-[85%] max-w-[340px] z-40 bg-[#0a0608]/95 backdrop-blur-xl border-l border-white/10 flex flex-col justify-between p-10 pt-32 lg:hidden"
             >
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 overflow-y-auto pb-6">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
                     custom={i}
                     variants={linkVariants}
+                    className="flex flex-col gap-2"
                   >
-                    <Link
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="text-white/80 hover:text-white text-2xl font-instrument italic tracking-wide block py-2 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.href ? (
+                      <Link
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="text-white/80 hover:text-white text-2xl font-instrument italic tracking-wide block py-2 transition-colors duration-200 ease-[var(--ease-out)]"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <div className="text-white/80 text-2xl font-instrument italic tracking-wide py-2">
+                        {link.name}
+                      </div>
+                    )}
+                    
+                    {/* Mobile Submenu */}
+                    {link.items && (
+                      <div className="flex flex-col pl-4 gap-3 border-l border-white/10 ml-2 mt-2">
+                        {link.items.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            onClick={() => setOpen(false)}
+                            className="text-white/60 hover:text-[#E0AAFF] text-sm font-inter tracking-wide transition-colors duration-200 ease-[var(--ease-out)]"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </div>
@@ -221,7 +319,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="w-full h-12 bg-white text-black font-semibold rounded-full flex items-center justify-center text-xs tracking-wider uppercase hover:bg-[#E0AAFF] button-glow transition-all duration-300 font-inter"
+                  className="w-full h-12 bg-white text-black font-semibold rounded-full flex items-center justify-center text-xs tracking-wider uppercase hover:bg-[#E0AAFF] button-glow transition-[transform,background-color,filter] duration-200 ease-[var(--ease-out)] active:scale-[0.97] font-inter focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608]"
                 >
                   Book a call
                 </Link>

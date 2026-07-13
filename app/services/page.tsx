@@ -6,6 +6,9 @@ import Services from "@/components/sections/Services";
 import { Process } from "@/components/sections/HomeSections";
 import { StickyFeatureSection } from "@/components/ui/sticky-scroll-cards-section";
 import { Contact2 } from "@/components/ui/contact-2";
+import { RadarScanner } from "@/components/sections/RadarScanner";
+import { Pricing, Trust } from "@/components/sections/HomeSections";
+import ProjectsPageClient from '@/components/pages/ProjectsPageClient';
 import { CheckCircle2, ChevronRight } from "lucide-react";
 import { PERSON_NAME } from "@/lib/site";
 import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
@@ -145,6 +148,53 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* --- Merged AI Consulting Section --- */}
+      <section id="consulting" className="relative bg-white pt-24 pb-12 border-t border-zinc-100">
+        <div className="container mx-auto px-6 max-w-6xl mb-12 text-center md:text-left">
+          <h2 className="text-4xl md:text-5xl font-instrument text-zinc-900 tracking-tight leading-[1.05]">
+            Strategic <span className="font-instrument text-[#7B2CBF] italic">consulting.</span>
+          </h2>
+          <p className="text-zinc-600 font-inter font-light leading-relaxed max-w-2xl mt-4">
+            For teams that know they need better systems but want a clear plan before they invest in the build.
+          </p>
+        </div>
+        <RadarScanner />
+        <div className="container mx-auto px-6 max-w-6xl flex flex-col lg:flex-row gap-16 py-20 mt-8 border-t border-zinc-100">
+          <div className="w-full lg:w-1/3">
+            <h2 className="text-3xl md:text-4xl font-instrument text-zinc-900 tracking-tight mb-8 leading-[1.05]">
+              The delivery <br /> <span className="font-instrument text-[#7B2CBF] italic">roadmap.</span>
+            </h2>
+            <p className="text-zinc-500 font-inter font-light leading-relaxed">A structured way to go from confusion to a build-ready plan.</p>
+          </div>
+          <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { w: "01", t: "Current-State Review", d: "I review the workflow, tools, bottlenecks, and business constraints so the real problem is defined clearly." },
+              { w: "02", t: "Feasibility & Scope", d: "I map what should be automated, what should stay human, and what the best implementation path looks like." },
+              { w: "03", t: "Build Plan", d: "You get a concrete delivery roadmap with scope, priorities, and the tradeoffs that matter before build work starts." },
+              { w: "04", t: "Execution Option", d: "Your team can use the roadmap internally, or I can stay involved and build the system with you." }
+            ].map((wk, i) => (
+              <div key={i} className="group p-8 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 transition-all duration-300 shadow-sm">
+                  <span className="text-[9px] font-semibold text-[#7B2CBF] uppercase tracking-wider mb-4 block font-inter">Step {wk.w}</span>
+                  <h3 className="text-lg font-semibold font-inter mb-3 text-zinc-900">{wk.t}</h3>
+                  <p className="text-zinc-500 font-inter font-light leading-relaxed text-sm">{wk.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Merged Projects Section --- */}
+      <section id="projects" className="relative bg-white border-t border-zinc-100 py-12">
+        <ProjectsPageClient />
+      </section>
+
+      {/* --- Merged Pricing Section --- */}
+      <section id="pricing" className="relative bg-white border-t border-zinc-100 pb-12">
+        <Trust />
+        <Pricing />
+      </section>
+
       
       <section className="bg-white border-t border-zinc-100">
         <Contact2 

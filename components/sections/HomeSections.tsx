@@ -339,7 +339,7 @@ export function Trust() {
           {/* Top Client Voice card */}
           <div className="relative rounded-3xl bg-[#0a0608] text-white/[0.01] p-6 md:p-8 overflow-hidden flex flex-col justify-between border border-white/5 hover:border-[#7B2CBF]/30 transition-[border-color] duration-200 liquid-glass">
             <p className="text-[13px] sm:text-[13.5px] leading-[1.6] text-white/85 italic relative z-10 font-inter font-light">
-              &quot;{BRAND_SIGNATURE_NAME} automated my entire lead qualification and booking process. I saw a 3x increase in response times and reclaimed over 40 hours a week.&quot;
+              {`"${BRAND_SIGNATURE_NAME} automated my entire lead qualification and booking process. I saw a 3x increase in response times and reclaimed over 40 hours a week."`}
             </p>
             
             <div className="text-xs text-white/60 relative z-10 mt-6">

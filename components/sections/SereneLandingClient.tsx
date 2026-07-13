@@ -32,83 +32,8 @@ const CustomButton: React.FC<ButtonProps> = ({ children, className = '', ...prop
   );
 };
 
-// --- HERO SECTION ---
-interface HeroProps {
-  isMuted: boolean;
-  setIsMuted: (muted: boolean) => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ isMuted, setIsMuted }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
-
-  return (
-    <section className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between select-none">
-      {/* Background Video */}
-      <video
-        ref={videoRef}
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260613_180732_a54afbf6-b30d-470e-861f-669871f09f67.mp4"
-        autoPlay
-        muted={isMuted}
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-      />
-
-      {/* CENTER CONTENT */}
-      <div className="relative z-20 flex-1 flex flex-col items-center justify-center -mt-[120px] px-6">
-        <h1 className="font-instrument text-white text-[38px] md:text-7xl lg:text-[110px] leading-[0.95] tracking-tight text-center text-glow max-w-5xl">
-          Intelligent software.<br className="hidden sm:inline" /> Radiant presence.
-        </h1>
-        <p className="font-inter text-white/70 text-sm md:text-base text-center mt-6 md:mt-7 max-w-xl leading-relaxed">
-          Expert SaaS products, custom AI builds, and holistic business automations, delivered with precision and intention.
-        </p>
-        <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="mt-8 md:mt-9">
-          <CustomButton>Begin your project →</CustomButton>
-        </Link>
-      </div>
-
-      {/* SOUND INDICATOR (Desktop Only) */}
-      <div className="hidden md:flex items-center gap-4 absolute bottom-8 left-8 z-20 pointer-events-auto">
-        <button
-          onClick={toggleMute}
-          className="w-10 h-10 rounded-full border border-white/20 hover:border-white/50 flex items-center justify-center transition-colors cursor-pointer group bg-black/10 backdrop-blur-sm"
-          aria-label={isMuted ? "Unmute background video" : "Mute background video"}
-        >
-          {isMuted ? (
-            <span className="w-2.5 h-[1.5px] bg-white group-hover:scale-x-125 transition-transform" />
-          ) : (
-            <div className="flex gap-[2px] items-center h-[8px]">
-              <span className="w-[1.5px] h-[6px] bg-white animate-[pulse_0.8s_infinite]" />
-              <span className="w-[1.5px] h-[8px] bg-white animate-[pulse_0.6s_infinite]" />
-              <span className="w-[1.5px] h-[5px] bg-white animate-[pulse_0.7s_infinite]" />
-            </div>
-          )}
-        </button>
-        <div className="flex flex-col text-left leading-none">
-          <span className="text-white/60 text-[10px] uppercase tracking-widest font-inter">Experience</span>
-          <span className="text-white/40 text-[10px] uppercase tracking-widest font-inter mt-1">with sound</span>
-        </div>
-      </div>
-    </section>
-  );
-};
+// --- HERO SECTION IMPORTED FROM COMPONENT ---
+import MountainParallaxHero from '@/components/sections/MountainParallaxHero';
 
 // --- QUOTE / PHILOSOPHY SECTION WITH PARALLAX ---
 const QuoteSection: React.FC = () => {
@@ -257,11 +182,9 @@ const QuoteSection: React.FC = () => {
 
 // --- MAIN WRAPPER COMPONENT ---
 export default function SereneLandingClient() {
-    const [isMuted, setIsMuted] = useState(true);
-
   return (
-    <div className="relative bg-[#0a0608] min-h-screen text-white overflow-x-hidden font-inter selection:bg-[#7B2CBF] selection:text-white">
-      <Hero isMuted={isMuted} setIsMuted={setIsMuted} />
+    <div className="relative bg-[#0a0608] min-h-screen text-white overflow-clip font-inter selection:bg-[#7B2CBF] selection:text-white">
+      <MountainParallaxHero />
       <QuoteSection />
       <PrismaFeatures />
       <StoryNarrative />
