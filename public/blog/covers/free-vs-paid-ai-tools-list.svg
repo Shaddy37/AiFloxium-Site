@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect width="1160" height="590" x="20" y="20" fill="none" stroke="#27272a" stroke-width="2" rx="24"/>
+  
+  <!-- Subtle Grid Pattern in background -->
+  <path d="M 0,90 L 1200,90 M 0,180 L 1200,180 M 0,270 L 1200,270 M 0,360 L 1200,360 M 0,450 L 1200,450 M 0,540 L 1200,540" stroke="#18181b" stroke-width="1"/>
+  <path d="M 180,0 L 180,630 M 360,0 L 360,630 M 540,0 L 540,630 M 720,0 L 720,630 M 900,0 L 900,630 M 1080,0 L 1080,630" stroke="#18181b" stroke-width="1"/>
+
+  <!-- Eyebrow Tag -->
+  <text x="80" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#f97316" font-weight="700" letter-spacing="4">AIFLOXIUM / AI MASTERLIST</text>
+  
+  <!-- Title & Subtitle -->
+  <text x="80" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="76" fill="#ffffff" font-weight="900" letter-spacing="-2">400+ BEST</text>
+  <text x="80" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="76" fill="#ffffff" font-weight="900" letter-spacing="-2">AI TOOLS</text>
+  <text x="80" y="415" font-family="system-ui, -apple-system, sans-serif" font-size="34" fill="#a1a1aa" font-weight="700" letter-spacing="-1">Free vs Paid Software Directory (2026)</text>
+  
+  <!-- Author & License Footer info -->
+  <text x="80" y="525" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#71717a" font-weight="500" letter-spacing="1">AUTHOR: MUHAMMAD SHADAB SHAMS</text>
+  <text x="80" y="555" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#71717a" font-weight="500" letter-spacing="1">CATEGORIES: LLMS, VIDEO, CODE, MARKETING &amp; AUTOMATION</text>
+
+  <!-- Glowing vector art representing the AI stack -->
+  <g transform="translate(930, 315)">
+    <!-- Radial Glows -->
+    <circle cx="0" cy="0" r="170" fill="url(#purpleGlow)" opacity="0.15"/>
+    <circle cx="0" cy="0" r="110" fill="url(#orangeGlow)" opacity="0.18"/>
+    
+    <!-- Concentric geometric nodes/rings -->
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#7B2CBF" stroke-width="1.5" stroke-dasharray="8, 6" opacity="0.5"/>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#f97316" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#7B2CBF" stroke-width="3" stroke-dasharray="14, 10" opacity="0.8"/>
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Central Grid / Nodes representing databases and tools -->
+    <g transform="translate(-20, -20)" stroke="#ffffff" stroke-width="2" fill="none">
+      <rect x="5" y="5" width="12" height="12" rx="2"/>
+      <rect x="23" y="5" width="12" height="12" rx="2"/>
+      <rect x="5" y="23" width="12" height="12" rx="2"/>
+      <rect x="23" y="23" width="12" height="12" rx="2"/>
+      <path d="M17,11 L23,11 M11,17 L11,23 M17,29 L23,29 M29,17 L29,23" stroke="#f97316" stroke-width="1.5"/>
+    </g>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#f97316" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <defs>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="100%" stop-color="#7B2CBF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

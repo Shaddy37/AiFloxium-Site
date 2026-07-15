@@ -305,6 +305,16 @@ const claudeAgents = [
 
 const notionGuides = [
   {
+    title: "400+ Best AI Tools (Free vs Paid) Masterlist for 2026",
+    description:
+      "Stop guessing which AI software is worth the cost. Explore our ultimate directory of 422 free and paid AI tools for marketing, coding, video, and automation in 2026.",
+    tags: ["AI Stack", "Directory", "Tools Comparison"],
+    badge: "FREE",
+    badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
+    link: "/resources/free-vs-paid-ai-tools-list",
+    readTime: "25 min read",
+  },
+  {
     title: "Complete Setup Guide: $0 Agentic Coding Stack",
     description:
       "Deploy a production-ready developer agent stack for $0. Set up Cohere North Mini Code (OpenRouter) and GLM-5.2 (Cloudflare Workers AI) to work with local developer agents like Hermes Agent or OpenCode.",
@@ -548,10 +558,10 @@ export default function ResourcesPage() {
             {/* Stats Row */}
             <div className="flex flex-wrap justify-center gap-8 mb-14 font-inter">
               {[
-                { value: "6+", label: "n8n Workflows" },
-                { value: "6+", label: "Claude Skills" },
-                { value: "6+", label: "Claude Agents" },
-                { value: "3+", label: "Notion Guides" },
+                { value: `${n8nWorkflows.length}+`, label: "n8n Workflows" },
+                { value: `${claudeSkills.length}+`, label: "Claude Skills" },
+                { value: `${claudeAgents.length}+`, label: "Claude Agents" },
+                { value: `${notionGuides.length}+`, label: "Notion Guides" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
                   <p className="text-3xl font-instrument text-zinc-900">{s.value}</p>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Bricolage_Grotesque, JetBrains_Mono, Caveat_Brush } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono, Caveat_Brush, League_Gothic } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import {
@@ -37,6 +37,13 @@ const jetbrainsMono = JetBrains_Mono({
 const caveatBrush = Caveat_Brush({
   weight: "400",
   variable: "--font-caveat-brush",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const leagueGothic = League_Gothic({
+  weight: "400",
+  variable: "--font-league-gothic",
   subsets: ["latin"],
   display: "swap",
 });
@@ -138,7 +145,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveatBrush.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveatBrush.variable} ${leagueGothic.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossOrigin="anonymous" />
       </head>
@@ -150,7 +157,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootGraphJsonLd) }}
         />
-        <div className="grainy-overlay" />
+
         <MotionProvider>
           <PopupProvider>
             <Navbar />

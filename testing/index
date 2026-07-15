@@ -1,0 +1,161 @@
+<!DOCTYPE html><!-- Handled by Exflow.site --><html data-wf-page="6a566248a1d91cef13526f37" data-wf-site="6a566247a1d91cef13526ec9" data-wf-status="1" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website-files.com" rel="preconnect" /><title>3D CMS Cube Gallery with GSAP Interactions in Webflow</title><meta content="Learn how to build a fully CMS-powered 3D cube gallery in Webflow using GSAP Interactions. Create synchronized image transitions, staggered text animations, cube rotations, and scroll-driven 3D effects without writing complex JavaScript." name="description"/><meta content="3D CMS Cube Gallery with GSAP Interactions in Webflow" property="og:title"/><meta content="Learn how to build a fully CMS-powered 3D cube gallery in Webflow using GSAP Interactions. Create synchronized image transitions, staggered text animations, cube rotations, and scroll-driven 3D effects without writing complex JavaScript." property="og:description"/><meta content="images/mastering-20gsap-20in-20webflow-20-2314-20-20open-20graph-20image-20-1-.jpg" property="og:image"/><meta content="3D CMS Cube Gallery with GSAP Interactions in Webflow" name="twitter:title"/><meta content="Learn how to build a fully CMS-powered 3D cube gallery in Webflow using GSAP Interactions. Create synchronized image transitions, staggered text animations, cube rotations, and scroll-driven 3D effects without writing complex JavaScript." name="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="css/muhammads-exceptional-site-2b1698.webflow.shared.e5976d73a.css" rel="stylesheet" type="text/css"  /><style>html.w-mod-js:not(.w-mod-ix3) :is([data-image-text="2"], [data-image-text="3"], [data-image-text="4"], [data-image-text="5"], [data-image-text="6"]) {visibility: hidden !important;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" /><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["League Gothic:300,400,500,600,700"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="images/favicon.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)"/><link href="images/favicon.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)"/><link href="images/favicon-1.png" rel="icon" type="image/png" sizes="48x48"/><link href="images/app-icon.png" rel="apple-touch-icon" sizes="180x180"/><link href="images/webclip.png" rel="icon" type="image/png" sizes="192x192"/><link href="images/webclip-1.png" rel="icon" type="image/png" sizes="512x512"/></head><body><div class="global-styles w-embed"><style>
+  html,
+  body {
+    overscroll-behavior: none;
+  }
+</style></div><div class="codrops-frame w-embed"><header class="frame">
+  <h1 class="frame__title">GSAP Cubic Scrollable Image Gallery</h1>
+
+  <a class="frame__back" href="https://tympanus.net/codrops/?p=115602"> Read the tutorial </a>
+
+  <a class="frame__cloneable" href="https://webflow.com/made-in-webflow/website/gsap-cubic-scrollable-image-gallery"> Webflow cloneable </a>
+
+  <a class="frame__tutorial" href="https://youtu.be/9MJsvdA37p8"> Watch the tutorial </a>
+
+  <a class="frame__archive" href="https://tympanus.net/codrops/hub/"> All demos </a>
+
+  <nav class="frame__tags">
+    <a href="https://tympanus.net/codrops/hub/tag/webflow/"> #webflow </a>
+
+    <a href="https://tympanus.net/codrops/hub/tag/gsap/"> #gsap </a>
+
+    <a href="https://tympanus.net/codrops/hub/tag/scroll/"> #scroll </a>
+
+    <a href="https://tympanus.net/codrops/hub/tag/cube/"> #cube </a>
+  </nav>
+</header>
+
+<style>
+  .frame {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: grid;
+    align-content: space-between;
+    justify-items: start;
+    gap: 2rem;
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    font-size: 1.15rem;
+
+    pointer-events: none;
+
+    grid-template-columns: 1fr auto auto auto;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      'title back cloneable tutorial archive'
+      'tags  tags tags .';
+  }
+
+  .frame a,
+  .frame button {
+    pointer-events: auto;
+  }
+
+  .frame__title {
+    grid-area: title;
+
+    margin: 0;
+
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1;
+
+    color: black;
+  }
+
+  .frame__back {
+    grid-area: back;
+  }
+
+  .frame__cloneable {
+
+  grid-area: cloneable;
+
+}
+
+  .frame__tutorial {
+
+  grid-area: tutorial;
+
+}
+
+  .frame__archive {
+    grid-area: archive;
+  }
+
+  .frame__tags {
+    grid-area: tags;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    align-self: end;
+  }
+</style></div><section data-animate="section" class="section"><div class="w-layout-blockcontainer main-container w-container"><div class="section_content-wrapper"><div class="pictures_list-wrapper w-dyn-list"><div role="list" class="pictures_list w-dyn-items"><div data-background-image="6" role="listitem" class="pictures_list-item w-dyn-item"><img src="images/6.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/6-p-500.avif 500w, images/6-p-800.avif 800w, images/6-p-1080.avif 1080w, images/6-p-1600.avif 1600w, images/6.avif 2464w" class="pictures_image"/><div class="pictures_overlay"></div><div data-image-text="6" class="pictures_text">Saki Nishimura</div></div><div data-background-image="5" role="listitem" class="pictures_list-item w-dyn-item"><img src="images/5.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/5-p-500.avif 500w, images/5-p-800.avif 800w, images/5-p-1080.avif 1080w, images/5-p-1600.avif 1600w, images/5.avif 2464w" class="pictures_image"/><div class="pictures_overlay"></div><div data-image-text="5" class="pictures_text">Reina Endo</div></div><div data-background-image="4" role="listitem" class="pictures_list-item w-dyn-item"><img src="images/4.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/4-p-500.avif 500w, images/4-p-800.avif 800w, images/4-p-1080.avif 1080w, images/4-p-1600.avif 1600w, images/4.avif 2464w" class="pictures_image"/><div class="pictures_overlay"></div><div data-image-text="4" class="pictures_text">Yuna Fujita</div></div><div data-background-image="3" role="listitem" class="pictures_list-item w-dyn-item"><img src="images/3.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/3-p-500.avif 500w, images/3-p-800.avif 800w, images/3-p-1080.avif 1080w, images/3-p-1600.avif 1600w, images/3.avif 2464w" class="pictures_image"/><div class="pictures_overlay"></div><div data-image-text="3" class="pictures_text">Kana Sakurai</div></div><div data-background-image="2" role="listitem" class="pictures_list-item w-dyn-item"><img src="images/1.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/1-p-500.avif 500w, images/1-p-800.avif 800w, images/1-p-1080.avif 1080w, images/1-p-1600.avif 1600w, images/1.avif 2464w" class="pictures_image"/><div class="pictures_overlay"></div><div data-image-text="2" class="pictures_text">Ayaka Mizuno</div></div><div data-background-image="1" role="listitem" class="pictures_list-item w-dyn-item"><img src="images/2.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/2-p-500.avif 500w, images/2-p-800.avif 800w, images/2-p-1080.avif 1080w, images/2-p-1600.avif 1600w, images/2.avif 2464w" class="pictures_image"/><div class="pictures_overlay"></div><div data-image-text="1" class="pictures_text">Reina Takagi</div></div></div></div><div data-animate="cube-list-wrapper" class="pictures_cube-list-wrapper w-dyn-list"><div data-animate="cube-list" role="list" class="pictures_cube-list w-dyn-items"><div role="listitem" class="pictures_cube-item w-dyn-item"><div class="pictures_cube-image-wrapper"><img src="images/2.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/2-p-500.avif 500w, images/2-p-800.avif 800w, images/2-p-1080.avif 1080w, images/2-p-1600.avif 1600w, images/2.avif 2464w" class="pictures_cube-image"/><div class="pictures_cube-css w-embed"><style>
+  .pictures_cube-item:nth-child(1) {
+    transform-origin: calc(0 * 100%) calc(0 * 100%);
+    transform: translateX(calc(0 * 100%))
+  			   translateY(calc(0 * 100%))
+  			   translateZ(calc(0.5 * 100cqw))
+  			   rotateX(calc(0 * 90deg))
+  			   rotateY(calc(0 * 90deg))
+  			   rotateZ(calc(0 * 90deg));
+  }
+</style></div></div></div><div role="listitem" class="pictures_cube-item w-dyn-item"><div class="pictures_cube-image-wrapper"><img src="images/1.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/1-p-500.avif 500w, images/1-p-800.avif 800w, images/1-p-1080.avif 1080w, images/1-p-1600.avif 1600w, images/1.avif 2464w" class="pictures_cube-image"/><div class="pictures_cube-css w-embed"><style>
+  .pictures_cube-item:nth-child(2) {
+    transform-origin: calc(1 * 100%) calc(0 * 100%);
+    transform: translateX(calc(-1 * 100%))
+  			   translateY(calc(0 * 100%))
+  			   translateZ(calc(0.5 * 100cqw))
+  			   rotateX(calc(0 * 90deg))
+  			   rotateY(calc(-1 * 90deg))
+  			   rotateZ(calc(0 * 90deg));
+  }
+</style></div></div></div><div role="listitem" class="pictures_cube-item w-dyn-item"><div class="pictures_cube-image-wrapper"><img src="images/3.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/3-p-500.avif 500w, images/3-p-800.avif 800w, images/3-p-1080.avif 1080w, images/3-p-1600.avif 1600w, images/3.avif 2464w" class="pictures_cube-image"/><div class="pictures_cube-css w-embed"><style>
+  .pictures_cube-item:nth-child(3) {
+    transform-origin: calc(0.5 * 100%) calc(0.5 * 100%);
+    transform: translateX(calc(0 * 100%))
+  			   translateY(calc(0 * 100%))
+  			   translateZ(calc(-0.5 * 100cqw))
+  			   rotateX(calc(0 * 90deg))
+  			   rotateY(calc(2 * 90deg))
+  			   rotateZ(calc(0 * 90deg));
+  }
+</style></div></div></div><div role="listitem" class="pictures_cube-item w-dyn-item"><div class="pictures_cube-image-wrapper"><img src="images/4.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/4-p-500.avif 500w, images/4-p-800.avif 800w, images/4-p-1080.avif 1080w, images/4-p-1600.avif 1600w, images/4.avif 2464w" class="pictures_cube-image"/><div class="pictures_cube-css w-embed"><style>
+  .pictures_cube-item:nth-child(4) {
+    transform-origin: calc(0.5 * 100%) calc(0.5 * 100%);
+    transform: translateX(calc(0 * 100%))
+  			   translateY(calc(0.5 * 100%))
+  			   translateZ(calc(0 * 100cqw))
+  			   rotateX(calc(-1 * 90deg))
+  			   rotateY(calc(0 * 90deg))
+  			   rotateZ(calc(2 * 90deg));
+  }
+</style></div></div></div><div role="listitem" class="pictures_cube-item w-dyn-item"><div class="pictures_cube-image-wrapper"><img src="images/5.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/5-p-500.avif 500w, images/5-p-800.avif 800w, images/5-p-1080.avif 1080w, images/5-p-1600.avif 1600w, images/5.avif 2464w" class="pictures_cube-image"/><div class="pictures_cube-css w-embed"><style>
+  .pictures_cube-item:nth-child(5) {
+    transform-origin: calc(0.5 * 100%) calc(0.5 * 100%);
+    transform: translateX(calc(0.5 * 100%))
+  			   translateY(calc(0 * 100%))
+  			   translateZ(calc(0 * 100cqw))
+  			   rotateX(calc(0 * 90deg))
+  			   rotateY(calc(1 * 90deg))
+  			   rotateZ(calc(1 * 90deg));
+  }
+</style></div></div></div><div role="listitem" class="pictures_cube-item w-dyn-item"><div class="pictures_cube-image-wrapper"><img src="images/6.avif" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="images/6-p-500.avif 500w, images/6-p-800.avif 800w, images/6-p-1080.avif 1080w, images/6-p-1600.avif 1600w, images/6.avif 2464w" class="pictures_cube-image"/><div class="pictures_cube-css w-embed"><style>
+  .pictures_cube-item:nth-child(6) {
+    transform-origin: calc(0 * 100%) calc(1 * 100%);
+    transform: translateX(calc(0 * 100%))
+  			   translateY(calc(-1 * 100%))
+  			   translateZ(calc(0.5 * 100cqw))
+  			   rotateX(calc(1 * 90deg))
+  			   rotateY(calc(0 * 90deg))
+  			   rotateZ(calc(0 * 90deg));
+  }
+</style></div></div></div></div></div></div></div></section><script src="js/jquery.js?site=6a566247a1d91cef13526ec9" type="text/javascript"  ></script><script src="js/webflow.schunk.a3140c51201be139.js" type="text/javascript"  ></script><script src="js/webflow.schunk.f383f5e6d5965c7d.js" type="text/javascript"  ></script><script src="js/webflow-script.js" type="text/javascript"  ></script><script src="js/gsap.min.js" type="text/javascript"></script><script src="js/splittext.min.js" type="text/javascript"></script><script src="js/scrolltrigger.min.js" type="text/javascript"></script></body></html>

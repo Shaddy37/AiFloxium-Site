@@ -1,0 +1,310 @@
+/* ============================================================
+   WEBFLOW 3D CUBE GALLERY — SCOPED STYLES
+   Desktop-first, fully responsive to 320px wide.
+   ============================================================ */
+
+/* ── Outer wrapper ── */
+.cube-gallery-wrapper {
+  background-color: #030108;
+  position: relative;
+}
+
+/* ── 600vh scroll track ── */
+.cube-gallery-wrapper .section {
+  height: 600vh;
+  position: relative;
+  background-color: #030108;
+}
+
+/* ── Sticky viewport frame ── */
+.cube-gallery-wrapper .main-container {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+/* ── Full-size content area ── */
+.cube-gallery-wrapper .section_content-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ── Background image list ── */
+.cube-gallery-wrapper .pictures_list-wrapper,
+.cube-gallery-wrapper .pictures_list {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cube-gallery-wrapper .pictures_list-item {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  inset: 0%;
+}
+
+.cube-gallery-wrapper .pictures_image {
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.62) saturate(1.05);
+}
+
+/* ── Subtle side vignette ── */
+.cube-gallery-wrapper .pictures_overlay {
+  background-image: linear-gradient(
+    90deg,
+    #000a 0%,
+    transparent 35%,
+    transparent 65%,
+    #000a 100%
+  );
+  position: absolute;
+  inset: 0%;
+  z-index: 2;
+}
+
+/* ── CUBE WRAPPER ──
+   GSAP sets x/y via gsap.set() + timeline tweens.
+   CSS owns none of the transform — avoids conflicts.
+── */
+.cube-gallery-wrapper .pictures_cube-list-wrapper {
+  pointer-events: none;
+  perspective: 1200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  inset: 0%;
+  z-index: 10;
+  will-change: transform;
+}
+
+/* ── CUBE
+   container-type:size required — faces use 100cqw units.
+── */
+.cube-gallery-wrapper .pictures_cube-list {
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  width: min(22vw, 22vh);
+  position: relative;
+  container-type: size;
+  will-change: transform;
+}
+
+/* ── CUBE FACES ── */
+.cube-gallery-wrapper .pictures_cube-item {
+  pointer-events: none;
+  position: absolute;
+  inset: 0%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Each face uses a CSS background-image set by GSAP */
+.cube-gallery-wrapper .pictures_cube-face-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ── TEXT LABEL ──
+   Desktop: large display type at bottom of viewport.
+   The split-word-mask clips each word during the slide animation.
+── */
+.cube-gallery-wrapper .pictures_text {
+  text-transform: uppercase;
+  font-family: var(--font-league-gothic), 'League Gothic', sans-serif;
+  font-size: 10vw;
+  line-height: 0.9;
+  position: absolute;
+  bottom: 12%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 5;
+  color: #fff;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+/* Word-level clip mask */
+.cube-gallery-wrapper .split-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.06em;
+  line-height: 0.95;
+}
+
+.cube-gallery-wrapper .split-word {
+  display: inline-block;
+  line-height: 0.95;
+  will-change: transform;
+}
+
+/* ── SCROLL HINT (mobile only) ── */
+.cube-gallery-wrapper .scroll-hint {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════
+   TABLET  ≤ 991px
+═══════════════════════════════════════════════ */
+@media screen and (max-width: 991px) {
+  .cube-gallery-wrapper .main-container {
+    height: 100dvh;
+  }
+
+  .cube-gallery-wrapper .section {
+    height: 600dvh;
+  }
+
+  /* Slightly larger cube so it reads well on tablet */
+  .cube-gallery-wrapper .pictures_cube-list {
+    width: min(28vw, 28vh);
+  }
+
+  .cube-gallery-wrapper .pictures_text {
+    font-size: 12vw;
+    bottom: 10%;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE  ≤ 767px
+   On mobile:
+   - Cube is centered vertically, NOT pushed left/right
+   - Text is bigger and lower (thumb-readable zone)
+   - Layout stacks: cube in upper half, text lower half
+═══════════════════════════════════════════════ */
+@media screen and (max-width: 767px) {
+  /* Smaller per-slide scroll distance on mobile keeps transitions
+     proportional to the smaller viewport */
+  .cube-gallery-wrapper .section {
+    height: 500dvh;
+  }
+
+  .cube-gallery-wrapper .pictures_cube-list {
+    /* Smaller than 52vw — cube diagonal during rotation = size × √2.
+       At 35vw on a 390px phone: 136px × 1.41 = 192px max diagonal, safe. */
+    width: min(35vw, 28vh);
+  }
+
+  /* Clip anything that bleeds outside during 3D rotation */
+  .cube-gallery-wrapper .main-container {
+    overflow: hidden;
+  }
+
+  .cube-gallery-wrapper .section_content-wrapper {
+    overflow: hidden;
+  }
+
+  /* Cube wrapper center override — on mobile the cube always centers.
+     GSAP still animates Y but X is locked at center. */
+  .cube-gallery-wrapper .pictures_cube-list-wrapper {
+    perspective: 700px; /* lower perspective = cube appears smaller in 3D space */
+  }
+
+  .cube-gallery-wrapper .pictures_text {
+    font-size: 14vw;
+    bottom: 8%;
+    letter-spacing: 0.01em;
+    /* Drop shadow for contrast on bright images */
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Taller overlay on mobile — more contrast for text */
+  .cube-gallery-wrapper .pictures_overlay {
+    background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      transparent 20%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.7) 85%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  /* Scroll hint visible on mobile */
+  .cube-gallery-wrapper .scroll-hint {
+    display: flex;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.5;
+    animation: scrollHintFade 2s ease-in-out infinite;
+  }
+
+  .cube-gallery-wrapper .scroll-hint-line {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, transparent, #fff 60%, transparent);
+    animation: scrollHintLine 2s ease-in-out infinite;
+  }
+
+  .cube-gallery-wrapper .scroll-hint-label {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   SMALL PHONE  ≤ 479px
+═══════════════════════════════════════════════ */
+@media screen and (max-width: 479px) {
+  .cube-gallery-wrapper .pictures_cube-list {
+    width: min(40vw, 26vh); /* was 60vw — much smaller to fit narrow screens */
+  }
+
+  .cube-gallery-wrapper .pictures_text {
+    font-size: 16vw;
+    bottom: 7%;
+    line-height: 0.85;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   VERY SMALL  ≤ 380px  (iPhone SE, Galaxy A series)
+═══════════════════════════════════════════════ */
+@media screen and (max-width: 380px) {
+  .cube-gallery-wrapper .pictures_cube-list {
+    width: min(44vw, 24vh); /* iPhone SE: 375px × 44% = 165px cube */
+  }
+
+  .cube-gallery-wrapper .pictures_text {
+    font-size: 18vw;
+    bottom: 6%;
+  }
+}
+
+@keyframes scrollHintFade {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
+}
+
+@keyframes scrollHintLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}

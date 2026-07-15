@@ -8,6 +8,7 @@ import { CALENDLY_URL } from '@/lib/site';
 import PrismaFeatures from '@/components/sections/PrismaFeatures';
 import StoryNarrative from '@/components/sections/StoryNarrative';
 import ProductionEvolved from '@/components/sections/ProductionEvolved';
+import CubicScrollGallery from '@/components/sections/cubic-scroll-gallery';
 import { EarthContactCTA } from '@/components/sections/EarthContactCTA';
 import { LazySections } from '@/components/sections/LazySections';
 import Footer from '@/components/sections/Footer';
@@ -184,7 +185,7 @@ const QuoteSection: React.FC = () => {
 export default function SereneLandingClient() {
   return (
     <div className="relative bg-[#0a0608] min-h-screen text-white overflow-clip font-inter selection:bg-[#7B2CBF] selection:text-white">
-      <MountainParallaxHero />
+      <CubicScrollGallery />
       <QuoteSection />
       <PrismaFeatures />
       <StoryNarrative />
