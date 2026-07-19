@@ -48,20 +48,20 @@ const PROJECTS: FocusRailItem[] = [
 
 const ProjectFocus = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-background overflow-hidden border-t border-white/5">
+    <section className="relative py-16 md:py-24 bg-background overflow-hidden border-t border-black/5">
       {/* Background Geometric Elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-black/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-black/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-6 mb-20 text-center relative z-10">
-        <h2 className="text-white tracking-[0.4em] font-medium text-[10px] md:text-xs uppercase mb-8 flex items-center justify-center gap-6">
+        <h2 className="text-black tracking-[0.4em] font-medium text-[10px] md:text-xs uppercase mb-8 flex items-center justify-center gap-6">
           <span className="w-12 h-[1px] bg-zinc-800" /> Operational Excellence
           <span className="w-12 h-[1px] bg-zinc-800" />
         </h2>
-        <h3 className="text-5xl md:text-8xl font-heading font-black text-white tracking-[-0.035em] leading-[0.95] mb-8">
+        <h3 className="text-5xl md:text-8xl font-heading font-black text-black tracking-[-0.035em] leading-[0.95] mb-8">
           Systems we <br /> <span className="text-brand-orange">have deployed</span>.
         </h3>
-        <p className="text-white font-medium max-w-2xl mx-auto text-sm md:text-lg opacity-80 leading-relaxed">
+        <p className="text-black font-medium max-w-2xl mx-auto text-sm md:text-lg opacity-80 leading-relaxed">
           Proprietary architectures and agentic workflows designed to eradicate 
           bottlenecks and scale intelligence across your entire operational stack.
         </p>
@@ -77,7 +77,7 @@ const ProjectFocus = () => {
       </div>
       
       {/* Bottom Geometric Line */}
-      <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-black/5 to-transparent" />
     </section>
   )
 }

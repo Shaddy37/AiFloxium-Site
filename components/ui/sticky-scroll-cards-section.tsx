@@ -10,28 +10,28 @@ const features = [
     description: "Scale your operations with custom n8n agents that handle everything from lead qualification to automated fulfillment, running 24/7 without direct supervision.",
     imageUrl: "/images/nano-banana/banana-ai.webp",
     bgColor: "bg-brand-plum/5",
-    textColor: "text-zinc-400"
+    textColor: "text-black"
   },
   {
     title: "Claude Code Integration",
     description: "Architecting high-speed development environments using Claude Code. Shift your engineering from manual coding to agentic orchestration for 10x velocity.",
     imageUrl: "/images/nano-banana/banana-code.webp",
     bgColor: "bg-brand-plum/10",
-    textColor: "text-zinc-400"
+    textColor: "text-black"
   },
   {
     title: "Multi-Model Intelligence",
     description: "Don't get locked into one provider. I deploy custom routers that switch between OpenAI, Claude, and DeepSeek based on task complexity and cost efficiency.",
     imageUrl: "/images/nano-banana/banana-brain.webp",
     bgColor: "bg-brand-plum/5",
-    textColor: "text-zinc-400"
+    textColor: "text-black"
   },
   {
     title: "Secure Data Pipelines",
     description: "Enterprise-grade privacy at the core. I build secure, encrypted pipelines that keep your proprietary data isolated from public training sets while maximizing AI utility.",
     imageUrl: "/images/nano-banana/banana-data.webp",
     bgColor: "bg-brand-plum/10",
-    textColor: "text-zinc-400"
+    textColor: "text-black"
   },
 ];
 
@@ -80,7 +80,7 @@ const AnimatedHeader = () => {
             </h2>
             <p 
                 ref={pRef}
-                className={`text-xl md:text-2xl text-white mt-6 transition-all duration-1000 ease-out delay-300 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`text-xl md:text-2xl text-black mt-6 transition-all duration-1000 ease-out delay-300 ${pInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 I transition your business from static processes to dynamic, autonomous agentic systems.

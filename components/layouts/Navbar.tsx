@@ -13,10 +13,11 @@ type NavLinkItem = {
 
 const navLinks: NavLinkItem[] = [
   { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Tools", href: "/tools/automation-roi-calculator" },
-  { name: "Comparisons", href: "/vs" },
+  { name: "Projects", href: "/services#projects" },
+  { name: "Pricing", href: "/services#pricing" },
+  { name: "Tools", href: "/resources#tools" },
   { name: "Resources", href: "/resources" },
+  { name: "Comparisons", href: "/resources#comparisons" },
   { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
 ];
@@ -143,7 +144,7 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="relative px-3 py-1.5 text-sm font-medium text-black/70 hover:text-black transition-colors duration-300 rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+                    className="relative px-3 py-1.5 text-sm font-medium text-black transition-colors duration-300 rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
                   >
                     {link.name}
                   </Link>
@@ -234,7 +235,7 @@ export default function Navbar() {
                     className="flex items-center justify-between py-4 text-3xl sm:text-4xl font-medium text-black/80 hover:text-black transition-colors border-b border-black/5 focus-visible:outline-none focus-visible:text-black"
                   >
                     <span>{link.name}</span>
-                    <svg className="w-5 h-5 text-black/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>

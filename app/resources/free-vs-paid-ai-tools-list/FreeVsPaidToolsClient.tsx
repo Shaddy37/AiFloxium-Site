@@ -211,14 +211,14 @@ export default function FreeVsPaidToolsClient() {
 
               {/* Price Filter Toggles */}
               <div className="flex items-center border border-zinc-200 rounded-xl bg-white p-1 shrink-0 font-inter">
-                {[
+                {([
                   { id: "all", label: "All Pricing" },
                   { id: "free", label: "Free / Freemium" },
                   { id: "paid", label: "Paid Only" },
-                ].map((opt) => (
+                ] as const).map((opt) => (
                   <button
                     key={opt.id}
-                    onClick={() => setPriceFilter(opt.id as any)}
+                    onClick={() => setPriceFilter(opt.id)}
                     className={`px-4 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                       priceFilter === opt.id
                         ? "bg-[#7B2CBF]/10 text-[#7B2CBF]"

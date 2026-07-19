@@ -41,7 +41,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     { path: '/privacy', file: 'app/privacy/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
     { path: '/terms', file: 'app/terms/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
-    { path: '/dmca', file: 'app/dmca/page.tsx', changeFrequency: 'yearly', priority: 0.3 }
+    { path: '/dmca', file: 'app/dmca/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
+    {
+      path: '/resources/free-vs-paid-ai-tools-list',
+      file: 'app/resources/free-vs-paid-ai-tools-list/page.tsx',
+      changeFrequency: 'monthly',
+      priority: 0.7
+    }
   ];
 
   const pages = staticRoutes.map((route) => ({

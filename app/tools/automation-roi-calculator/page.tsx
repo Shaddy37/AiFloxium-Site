@@ -164,7 +164,7 @@ export default function AutomationRoiCalculatorPage() {
               Home
             </Link>
             <ChevronRight className="h-3 w-3 text-white/30" />
-            <Link href="/tools" className="transition-colors hover:text-white">
+            <Link href="/resources#tools" className="transition-colors hover:text-white">
               Tools
             </Link>
             <ChevronRight className="h-3 w-3 text-white/30" />

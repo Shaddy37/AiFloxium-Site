@@ -75,7 +75,7 @@ export default function HeroContent() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/projects"
+                href="/services#projects"
                 className="text-zinc-600 hover:text-zinc-900 transition-colors text-sm font-bold uppercase tracking-widest"
               >
                 View proof

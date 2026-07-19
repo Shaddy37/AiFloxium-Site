@@ -39,29 +39,29 @@ export default function DmcaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(dmcaWebPageJsonLd) }}
       />
       <Navbar />
-      <main id="main-content" className="min-h-screen bg-[var(--background)] text-white selection:bg-[#7B2CBF] selection:text-white pt-40 pb-24 font-inter">
+      <main id="main-content" className="min-h-screen bg-[var(--background)] text-black selection:bg-[#7B2CBF]/20 selection:text-black pt-40 pb-24 font-inter">
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-[400px] bg-[var(--brand-purple-glow)] opacity-30 blur-[100px] rounded-full pointer-events-none" />
           
-          <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest relative z-10 font-inter">
-            <Link href="/" className="transition-colors hover:text-white">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-black uppercase tracking-widest relative z-10 font-inter">
+            <Link href="/" className="transition-colors hover:text-black">
               Home
             </Link>
-            <ChevronRight className="h-3 w-3 text-white/30" />
-            <span className="text-white font-bold">DMCA Policy</span>
+            <ChevronRight className="h-3 w-3 text-black" />
+            <span className="text-black font-bold">DMCA Policy</span>
           </nav>
           
-          <h1 className="text-4xl md:text-5xl font-instrument text-white mb-8 tracking-tight">DMCA Policy</h1>
+          <h1 className="text-4xl md:text-5xl font-instrument text-black mb-8 tracking-tight">DMCA Policy</h1>
           
-          <div className="prose prose-invert prose-purple max-w-none font-inter font-light relative z-10 glass-card p-8 md:p-12 rounded-[2rem] border border-white/5 bg-white/[0.01]">
-            <p className="text-white/70 text-lg mb-8 leading-relaxed">
-              Welcome to <span className="text-white">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by me, <span className="text-white font-semibold">Muhammad Shadab Shams</span>, trading as AIFLOXIUM. I respect the intellectual property rights of others just as I expect others to respect my rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to me via my DMCA Agent listed below.
+          <div className="prose prose-gray max-w-none font-inter font-light relative z-10 glass-card p-8 md:p-12 rounded-[2rem] border border-black/5 bg-[var(--muted)]">
+            <p className="text-black text-lg mb-8 leading-relaxed">
+              Welcome to <span className="text-black font-semibold">https://www.aifloxium.online</span> (the &quot;Site&quot;), operated by me, <span className="text-black font-semibold">Muhammad Shadab Shams</span>, trading as AIFLOXIUM. I respect the intellectual property rights of others just as I expect others to respect my rights. Pursuant to the Digital Millennium Copyright Act, Title 17, United States Code, Section 512(c), a copyright owner or their agent may submit a takedown notice to me via my DMCA Agent listed below.
             </p>
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Notice of Infringement - Claim</h2>
-              <p className="text-white/60 mb-4 leading-relaxed font-light">To submit a good faith infringement claim, you must submit the notice setting forth the following information:</p>
-              <ol className="text-white/60 list-decimal pl-6 space-y-2 font-light">
+              <p className="text-black mb-4 leading-relaxed font-light">To submit a good faith infringement claim, you must submit the notice setting forth the following information:</p>
+              <ol className="text-black list-decimal pl-6 space-y-2 font-light">
                 <li>A physical or electronic signature of the copyright owner (or someone authorized to act on behalf of the owner);</li>
                 <li>Identification of the copyrighted work claimed to have been infringed;</li>
                 <li>Identification of the infringing material to be removed, and information reasonably sufficient to permit me to locate the material;</li>
@@ -69,17 +69,17 @@ export default function DmcaPage() {
                 <li>A statement that you have a good faith belief that the use of the material is unauthorized by the copyright agent; and</li>
                 <li>A statement that the information in the notification is accurate, and, under penalty of perjury, that you are authorized to act on behalf of the copyright owner.</li>
               </ol>
-              <p className="text-white/60 mt-4 leading-relaxed font-light">
+              <p className="text-black mt-4 leading-relaxed font-light">
                 Title 17 USC Section 512(f) provides civil damage penalties, including costs and attorney fees, against any person who knowingly and materially misrepresents certain information in a notification of infringement under 17 USC Section 512(c)(3).
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Counter Notification - Restoration of Material</h2>
-              <p className="text-white/60 mb-4 leading-relaxed font-light font-light">
+              <p className="text-black mb-4 leading-relaxed font-light">
                 If you have received a notice of material being taken down because of a copyright infringement claim, you may provide me with a counter-notification to have the material in question restored to the site. Said notification must be given in writing to my DMCA Agent and must contain substantially the following elements pursuant to 17 USC Section 512(g)(3):
               </p>
-              <ol className="text-white/60 list-decimal pl-6 space-y-2 font-light">
+              <ol className="text-black list-decimal pl-6 space-y-2 font-light">
                 <li>Your physical or electronic signature.</li>
                 <li>A description of the material that has been taken down and the original location of the material before it was taken down.</li>
                 <li>A statement under penalty of perjury that you have a good faith belief that the material was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled.</li>
@@ -89,40 +89,40 @@ export default function DmcaPage() {
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Repeat Infringer Policy</h2>
-              <p className="text-white/60 leading-relaxed font-light">
+              <p className="text-black leading-relaxed font-light">
                 I take copyright infringement very seriously. Pursuant to the repeat infringer policy requirements of the Digital Millennium Copyright Act, I maintain a list of DMCA notices from copyright holders and make a good faith effort to identify any repeat infringers. Those who violate my repeat infringer policy will have their accounts terminated.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Copyright for Media</h2>
-              <p className="text-white/60 leading-relaxed font-light font-light">
+              <p className="text-black leading-relaxed font-light">
                 All media, including videos, audio files, and AI-generated content, are protected under international copyright laws. Duplication or distribution is prohibited and may result in legal action under the DMCA.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">AI Content Ownership</h2>
-              <p className="text-white/60 leading-relaxed font-light font-light">
+              <p className="text-black leading-relaxed font-light">
                 Content generated using AI tools is owned by AIFLOXIUM unless otherwise agreed. Users are prohibited from using AI-generated outputs for commercial purposes or public distribution without explicit permission.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Modifications</h2>
-              <p className="text-white/60 leading-relaxed font-light">
+              <p className="text-black leading-relaxed font-light">
                 I reserve the right to modify the contents of this page and my policy for handling DMCA claims at any time for any reason. You are encouraged to check back to review this policy frequently for any changes.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-[#7B2CBF] font-inter tracking-wide mb-4">Contact Us</h2>
-              <p className="text-white/60 leading-relaxed font-light">
-                If you have any questions about this DMCA Policy, please get in touch with me at <span className="text-white font-medium">muhammadshadabshams@gmail.com</span> or <span className="text-white font-medium">info@aifloxium.online</span>
+              <p className="text-black leading-relaxed font-light">
+                If you have any questions about this DMCA Policy, please get in touch with me at <span className="text-black font-medium">muhammadshadabshams@gmail.com</span> or <span className="text-black font-medium">info@aifloxium.online</span>
               </p>
             </section>
 
-            <p className="text-white/40 text-xs mt-12 font-mono">Last Updated: October 10, 2025</p>
+            <p className="text-black text-xs mt-12 font-mono">Last Updated: October 10, 2025</p>
           </div>
         </div>
       </main>

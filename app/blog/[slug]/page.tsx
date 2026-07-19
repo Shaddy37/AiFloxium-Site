@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogPostLayout } from "@/components/blog/BlogPostLayout";
-import { getPostBySlug, getAllPostSlugs } from "@/lib/mdx";
+import { getPostBySlug, getAllPostSlugs, getAllPosts } from "@/lib/mdx";
 import { PERSON_NAME, SITE_URL } from '@/lib/site';
 import { absoluteUrl, buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 
@@ -61,6 +61,18 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const postUrl = absoluteUrl(canonicalUrl || `/blog/${slug}`);
   const postImage = absoluteUrl(image || '/brand/aifloxium-logo.png');
+
+  const allPosts = getAllPosts();
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== slug)
+    .slice(0, 3)
+    .map((p) => ({
+      slug: p.slug,
+      title: p.frontmatter.title,
+      description: p.frontmatter.description,
+      category: p.frontmatter.category,
+    }));
+
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
@@ -110,6 +122,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       code={post.code}
       frontmatter={post.frontmatter}
       jsonLd={[jsonLd, breadcrumbJsonLd]}
+      relatedPosts={relatedPosts}
     />
   );
 }

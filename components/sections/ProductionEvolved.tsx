@@ -28,7 +28,7 @@ const Card = ({ card, index }: CardProps) => {
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease, delay: index * 0.1 }}
-      className="bg-black/5 backdrop-blur-xl text-black/40 border border-black/10 hover:border-black/25 hover:bg-black/[0.07] rounded-[1.5rem] p-8 md:p-10 flex flex-col justify-between transition-[border-color,background-color] duration-300 group"
+      className="bg-black/5 backdrop-blur-xl text-black border border-black/10 hover:border-black/25 hover:bg-black/[0.07] rounded-[1.5rem] p-8 md:p-10 flex flex-col justify-between transition-[border-color,background-color] duration-300 group"
     >
       <div>
         <div className="flex flex-col md:flex-row items-start justify-between gap-4 mb-8">
@@ -39,7 +39,7 @@ const Card = ({ card, index }: CardProps) => {
             {card.tags.map((tag, i) => (
               <span
                 key={i}
-                className="bg-black/5 border border-black/10 rounded-full px-3 py-1 text-[11px] text-black/70 font-inter font-light group-hover:border-black/25 transition-colors duration-300 whitespace-nowrap"
+                className="bg-black/5 border border-black/10 rounded-full px-3 py-1 text-[11px] text-black font-inter font-light group-hover:border-black/25 transition-colors duration-300 whitespace-nowrap"
               >
                 {tag}
               </span>
@@ -50,14 +50,14 @@ const Card = ({ card, index }: CardProps) => {
         <h3 className="font-inter font-semibold text-black text-2xl md:text-3xl tracking-tight leading-tight mb-4">
           {card.title}
         </h3>
-        <p className="text-base text-black/60 font-inter font-light leading-relaxed">
+        <p className="text-base text-black font-inter font-light leading-relaxed">
           {card.body}
         </p>
       </div>
 
       <Link
         href="/contact"
-        className="inline-flex items-center gap-2 text-black/70 hover:text-black transition-colors duration-200 text-sm font-semibold tracking-wide mt-8 font-inter w-fit"
+        className="inline-flex items-center gap-2 text-black hover:text-black transition-colors duration-200 text-sm font-semibold tracking-wide mt-8 font-inter w-fit"
       >
         See how it works
         <ArrowRight className="h-4 w-4" />
@@ -110,7 +110,7 @@ export default function ProductionEvolved() {
             initial={{ opacity: 0, y: 12 }}
             animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease }}
-            className="block text-[10px] font-inter tracking-[0.3em] uppercase text-black/50 font-medium mb-8 flex items-center gap-2"
+            className="block text-[10px] font-inter tracking-[0.3em] uppercase text-black font-medium mb-8 flex items-center gap-2"
           >
             <span className="w-8 h-[2px] bg-gradient-to-r from-black/30 to-transparent" /> System Architecture
           </motion.span>
@@ -127,7 +127,7 @@ export default function ProductionEvolved() {
             initial={{ opacity: 0, y: 16 }}
             animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease, delay: 0.2 }}
-            className="text-lg md:text-xl text-black/60 font-inter font-light leading-relaxed max-w-2xl"
+             className="text-lg md:text-xl text-black font-inter font-light leading-relaxed max-w-2xl"
           >
             I architect and deploy custom agentic infrastructure that automates operations, secures data, and eliminates administrative bottlenecks.
           </motion.p>

@@ -77,12 +77,12 @@ export default function PrismaFeatures() {
         style={{ y: headerY }}
         className="max-w-[1400px] w-full mx-auto flex flex-col gap-4 mb-24 md:mb-40 text-center md:text-left relative z-20 will-change-transform"
       >
-        <span className="text-black/40 tracking-[0.25em] font-bold text-xs md:text-sm uppercase font-inter block mb-4 flex items-center gap-2">
+        <span className="text-[#7B2CBF] tracking-[0.25em] font-bold text-xs md:text-sm uppercase font-inter block mb-4 flex items-center gap-2">
           <span className="w-8 h-[2px] bg-gradient-to-r from-black/30 to-transparent" /> Capabilities
         </span>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(4rem,6vw,6.5rem)] font-instrument text-black leading-[1.02] tracking-[-0.04em] max-w-6xl text-balance">
           Production-grade workflows for visionary builders. <br/>
-          <span className="font-instrument text-black/40 italic">Built for pure efficiency.</span>
+          <span className="font-instrument text-black italic">Built for pure efficiency.</span>
         </h2>
       </motion.div>
 
@@ -117,7 +117,7 @@ export default function PrismaFeatures() {
         <FeatureCard index={0} progress={scrollYProgress} className="lg:col-span-5 md:col-span-1">
           <div className="flex flex-col gap-6 relative z-10">
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black/70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
                 <Workflow className="w-6 h-6" />
               </div>
             </div>
@@ -134,8 +134,8 @@ export default function PrismaFeatures() {
                 "Self-healing logger scripts"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-black/30 mt-0.5 shrink-0 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-black/70" />
-                  <span className="text-black/60 text-sm sm:text-base leading-snug group-hover:text-black/90 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter font-light">
+                  <Check className="h-5 w-5 text-[#7B2CBF] mt-0.5 shrink-0" />
+                  <span className="text-black text-sm sm:text-base leading-snug font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -145,7 +145,7 @@ export default function PrismaFeatures() {
 
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-black/50 hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
+            className="flex items-center gap-2 text-black hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
           >
             Learn more
             <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
@@ -156,7 +156,7 @@ export default function PrismaFeatures() {
         <FeatureCard index={1} progress={scrollYProgress} className="lg:col-span-5 md:col-span-1">
           <div className="flex flex-col gap-6 relative z-10">
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black/70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
                 <BrainCircuit className="w-6 h-6" />
               </div>
             </div>
@@ -173,8 +173,8 @@ export default function PrismaFeatures() {
                 "Direct CRM & tag sync setups"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-black/30 mt-0.5 shrink-0 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-black/70" />
-                  <span className="text-black/60 text-sm sm:text-base leading-snug group-hover:text-black/90 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter font-light">
+                  <Check className="h-5 w-5 text-[#7B2CBF] mt-0.5 shrink-0" />
+                  <span className="text-black text-sm sm:text-base leading-snug font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -184,7 +184,7 @@ export default function PrismaFeatures() {
 
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-black/50 hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
+            className="flex items-center gap-2 text-black hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
           >
             Learn more
             <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
@@ -195,7 +195,7 @@ export default function PrismaFeatures() {
         <FeatureCard index={2} progress={scrollYProgress} className="lg:col-span-7 md:col-span-2">
           <div className="flex flex-col gap-6 relative z-10">
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black/70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
                 <LayoutDashboard className="w-6 h-6" />
               </div>
             </div>
@@ -212,8 +212,8 @@ export default function PrismaFeatures() {
                 "Full code ownership & IP rights"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-black/30 mt-0.5 shrink-0 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-black/70" />
-                  <span className="text-black/60 text-sm sm:text-base leading-snug group-hover:text-black/90 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter font-light">
+                  <Check className="h-5 w-5 text-[#7B2CBF] mt-0.5 shrink-0" />
+                  <span className="text-black text-sm sm:text-base leading-snug font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -223,7 +223,7 @@ export default function PrismaFeatures() {
 
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-black/50 hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
+            className="flex items-center gap-2 text-black hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
           >
             Learn more
             <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />

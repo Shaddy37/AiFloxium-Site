@@ -3,14 +3,9 @@ import Link from 'next/link';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
 import Services from "@/components/sections/Services";
-import { Process } from "@/components/sections/HomeSections";
-import { StickyFeatureSection } from "@/components/ui/sticky-scroll-cards-section";
 import { Contact2 } from "@/components/ui/contact-2";
-import { RadarScanner } from "@/components/sections/RadarScanner";
-import { Pricing, Trust } from "@/components/sections/HomeSections";
-import ProjectsPageClient from '@/components/pages/ProjectsPageClient';
-import { CheckCircle2, ChevronRight } from "lucide-react";
-import { PERSON_NAME } from "@/lib/site";
+import { CheckCircle2, ChevronRight, ArrowRight } from "lucide-react";
+import { PERSON_NAME, CALENDLY_URL } from "@/lib/site";
 import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -94,7 +89,7 @@ const servicesPageJsonLd = {
 
 export default function ServicesPage() {
   return (
-    <main id="main-content" className="relative bg-[var(--background)] text-white min-h-screen selection:bg-[#7B2CBF] selection:text-white">
+    <main id="main-content" className="relative bg-[var(--background)] text-black min-h-screen selection:bg-[#7B2CBF]/20 selection:text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageJsonLd) }}
@@ -105,102 +100,153 @@ export default function ServicesPage() {
       <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto relative overflow-hidden bg-[var(--background)]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--brand-purple-glow)] opacity-50 blur-[150px] rounded-full pointer-events-none -z-10" />
         
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest relative z-10 font-inter">
-          <Link href="/" className="transition-colors hover:text-white">
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-black uppercase tracking-widest relative z-10 font-inter">
+          <Link href="/" className="transition-colors hover:text-black">
             Home
           </Link>
-          <ChevronRight className="h-3 w-3 text-white/30" />
-          <span className="text-white font-bold">Services</span>
+          <ChevronRight className="h-3 w-3 text-black" />
+          <span className="text-black font-bold">Services</span>
         </nav>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-instrument text-white tracking-tight mb-8 leading-[1.05]">
-          What I <span className="font-instrument text-[#E0AAFF] italic">build.</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-instrument text-black tracking-tight mb-8 leading-[1.05]">
+          What I <span className="font-instrument text-[#7B2CBF] italic">build.</span>
         </h1>
-        <p className="text-lg md:text-xl text-zinc-400 max-w-2xl font-inter font-light leading-relaxed">
+        <p className="text-lg md:text-xl text-black max-w-2xl font-inter font-light leading-relaxed">
           Practical AI systems for startups and growing businesses: automation,
           internal software, product builds, and workflows that save real time.
         </p>
       </div>
 
       <Services />
-      <Process />
-      <StickyFeatureSection />
+
+      {/* Process Timeline — Vertical */}
+      <section className="py-24 md:py-32 px-6 bg-[var(--background)] text-black relative border-t border-black/5 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-[#7B2CBF]/5 blur-[130px] pointer-events-none" />
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-20">
+            <p className="text-[9px] font-semibold text-[#7B2CBF] uppercase tracking-[0.25em] mb-4 flex items-center justify-center gap-3 font-inter">
+              <span className="w-8 h-[1px] bg-[#7B2CBF]/40 inline-block" />
+              Delivery Process
+              <span className="w-8 h-[1px] bg-[#7B2CBF]/40 inline-block" />
+            </p>
+            <h2 className="text-4xl md:text-6xl font-instrument text-black tracking-tight leading-[1.05]">
+              How I <span className="font-instrument text-[#7B2CBF] italic">deliver.</span>
+            </h2>
+            <p className="text-black font-inter font-light mt-4 max-w-xl mx-auto">A structured approach from discovery to deployment, designed for speed without cutting corners.</p>
+          </div>
+
+          <div className="relative max-w-4xl mx-auto">
+            {/* Central vertical line */}
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#7B2CBF]/40 via-[#7B2CBF]/20 to-transparent" />
+
+            {[
+              {
+                step: "01",
+                title: "Discovery & Audit",
+                desc: "I review your workflows, tools, bottlenecks, and business constraints. You get a clear picture of what's worth automating and what should stay human.",
+                color: "from-[#7B2CBF] to-[#5a1c97]",
+                items: ["Workflow mapping session", "Tool stack inventory", "ROI opportunity scoring"]
+              },
+              {
+                step: "02",
+                title: "Architecture & Scope",
+                desc: "I design the system architecture, define data flows, and produce a detailed scope document with timelines and cost projections before any code is written.",
+                color: "from-[#9F4EFF] to-[#7B2CBF]",
+                items: ["System architecture design", "Technology selection", "Scope & timeline proposal"]
+              },
+              {
+                step: "03",
+                title: "Build & Iterate",
+                desc: "I build the system in focused sprints with regular check-ins. You see progress weekly and can adjust direction as we go.",
+                color: "from-[#E0AAFF] to-[#9F4EFF]",
+                items: ["Agile sprint delivery", "Weekly progress reviews", "Mid-flight adjustments"]
+              },
+              {
+                step: "04",
+                title: "Deploy & Handoff",
+                desc: "The system goes live. I provide full documentation, recorded walkthroughs, and remain available for support and iteration as needed.",
+                color: "from-[#7B2CBF] to-[#3c1763]",
+                items: ["Production deployment", "Documentation & walkthroughs", "Ongoing support option"]
+              }
+            ].map((phase, i) => (
+              <div key={i} className={`relative flex flex-col md:flex-row gap-6 md:gap-12 mb-16 last:mb-0 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                {/* Circle on the line */}
+                <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full bg-[#7B2CBF] border-[3px] border-[var(--background)] -translate-x-1/2 z-10 shadow-[0_0_12px_rgba(123,44,191,0.4)]" />
+                
+                {/* Content side */}
+                <div className="md:w-[calc(50%-2rem)] ml-16 md:ml-0">
+                  <div className="bg-black/[0.02] border border-black/5 rounded-2xl p-8 hover:border-[#7B2CBF]/30 hover:bg-black/[0.04] transition-all duration-500 liquid-glass">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[9px] font-semibold text-[#7B2CBF] uppercase tracking-wider font-inter">{phase.step}</span>
+                      <span className="h-px flex-1 bg-gradient-to-r from-[#7B2CBF]/20 to-transparent" />
+                    </div>
+                    <h3 className="text-2xl font-semibold font-inter mb-3 text-black">{phase.title}</h3>
+                    <p className="text-black font-inter font-light leading-relaxed mb-6">{phase.desc}</p>
+                    <ul className="space-y-2">
+                      {phase.items.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm text-black font-inter">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#7B2CBF] shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Empty side for alignment */}
+                <div className="hidden md:block md:w-[calc(50%-2rem)]" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Accordion Block */}
-      <section className="py-32 px-6 bg-[var(--background)] text-white relative border-t border-white/5">
-        <div className="container mx-auto max-w-6xl flex flex-col lg:flex-row gap-16">
+      <section className="py-24 px-6 bg-[var(--background)] text-black relative border-t border-black/5">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-purple-glow)] opacity-30 blur-[120px] rounded-full pointer-events-none" />
+        <div className="container mx-auto max-w-6xl flex flex-col lg:flex-row gap-16 relative z-10">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-4xl md:text-5xl font-instrument text-white tracking-tight mb-6 leading-[1.05]">
-              How I <br /> <span className="font-instrument text-[#E0AAFF] italic">work.</span>
+            <p className="text-[9px] font-semibold text-[#7B2CBF] uppercase tracking-[0.25em] mb-4 font-inter">Common Questions</p>
+            <h2 className="text-4xl md:text-5xl font-instrument text-black tracking-tight mb-6 leading-[1.05]">
+              How I <br /> <span className="font-instrument text-[#7B2CBF] italic">work.</span>
             </h2>
-            <p className="text-white/60 font-inter font-light leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
+            <p className="text-black font-inter font-light leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
             {serviceFaqs.map((faq, i) => (
-              <div key={i} className="group p-8 bg-[var(--muted)] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 rounded-[1.5rem] glass-card shadow-sm">
-                <h3 className="text-xl font-medium font-inter mb-4 text-white flex gap-4 items-start">
-                  <CheckCircle2 className="w-6 h-6 text-[#E0AAFF] shrink-0 mt-0.5" />
+              <div key={i} className="group p-8 bg-black/[0.02] border border-black/5 hover:border-black/20 hover:bg-black/5 transition-all duration-300 rounded-[1.5rem] liquid-glass">
+                <h3 className="text-xl font-medium font-inter mb-4 text-black flex gap-4 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-[#7B2CBF] shrink-0 mt-0.5" />
                   {faq.q}
                 </h3>
-                <p className="text-white/70 font-inter font-light leading-relaxed pl-10">{faq.a}</p>
+                <p className="text-black font-inter font-light leading-relaxed pl-10">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* --- Merged AI Consulting Section --- */}
-      <section id="consulting" className="relative bg-white pt-24 pb-12 border-t border-zinc-100">
-        <div className="container mx-auto px-6 max-w-6xl mb-12 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-instrument text-zinc-900 tracking-tight leading-[1.05]">
-            Strategic <span className="font-instrument text-[#7B2CBF] italic">consulting.</span>
+      {/* CTA */}
+      <section className="py-24 px-6 bg-[var(--background)] border-t border-black/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(123,44,191,0.05)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <p className="text-[9px] font-semibold text-[#7B2CBF] uppercase tracking-[0.25em] mb-4 font-inter">Start Building</p>
+          <h2 className="text-4xl md:text-6xl font-instrument text-black tracking-tight mb-6 leading-[1.05]">
+            Ready to <span className="font-instrument text-[#7B2CBF] italic">ship?</span>
           </h2>
-          <p className="text-zinc-600 font-inter font-light leading-relaxed max-w-2xl mt-4">
-            For teams that know they need better systems but want a clear plan before they invest in the build.
+          <p className="text-black font-inter font-light max-w-xl mx-auto mb-10">
+            Tell me what you need built, automated, fixed, or shipped. I will scope it, cost it, and ship it.
           </p>
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-[#7B2CBF] button-glow transition-all duration-300 font-inter"
+          >
+            Book a Discovery Call
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
-        <RadarScanner />
-        <div className="container mx-auto px-6 max-w-6xl flex flex-col lg:flex-row gap-16 py-20 mt-8 border-t border-zinc-100">
-          <div className="w-full lg:w-1/3">
-            <h2 className="text-3xl md:text-4xl font-instrument text-zinc-900 tracking-tight mb-8 leading-[1.05]">
-              The delivery <br /> <span className="font-instrument text-[#7B2CBF] italic">roadmap.</span>
-            </h2>
-            <p className="text-zinc-500 font-inter font-light leading-relaxed">A structured way to go from confusion to a build-ready plan.</p>
-          </div>
-          <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { w: "01", t: "Current-State Review", d: "I review the workflow, tools, bottlenecks, and business constraints so the real problem is defined clearly." },
-              { w: "02", t: "Feasibility & Scope", d: "I map what should be automated, what should stay human, and what the best implementation path looks like." },
-              { w: "03", t: "Build Plan", d: "You get a concrete delivery roadmap with scope, priorities, and the tradeoffs that matter before build work starts." },
-              { w: "04", t: "Execution Option", d: "Your team can use the roadmap internally, or I can stay involved and build the system with you." }
-            ].map((wk, i) => (
-              <div key={i} className="group p-8 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 transition-all duration-300 shadow-sm">
-                  <span className="text-[9px] font-semibold text-[#7B2CBF] uppercase tracking-wider mb-4 block font-inter">Step {wk.w}</span>
-                  <h3 className="text-lg font-semibold font-inter mb-3 text-zinc-900">{wk.t}</h3>
-                  <p className="text-zinc-500 font-inter font-light leading-relaxed text-sm">{wk.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- Merged Projects Section --- */}
-      <section id="projects" className="relative bg-white border-t border-zinc-100 py-12">
-        <ProjectsPageClient />
-      </section>
-
-      {/* --- Merged Pricing Section --- */}
-      <section id="pricing" className="relative bg-white border-t border-zinc-100 pb-12">
-        <Trust />
-        <Pricing />
-      </section>
-
-      
-      <section className="bg-white border-t border-zinc-100">
-        <Contact2 
-          title="Book a Discovery Call."
-          description="Tell me what you need built, automated, fixed, or shipped."
-        />
       </section>
 
       <Footer />

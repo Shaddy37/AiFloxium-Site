@@ -436,7 +436,7 @@ export default function PricingPageClient() {
             </div>
             <h3 className="text-xl font-semibold font-inter tracking-wide text-zinc-900 mb-3">Self-hosted infrastructure</h3>
             <p className="text-zinc-500 text-sm leading-relaxed font-inter font-light">
-              I host workflow engines directly on your own private cloud (AWS/DigitalOcean). This ensures total compliance, absolute security, and eliminates Zapier's scaling transactional fees.
+              I host workflow engines directly on your own private cloud (AWS/DigitalOcean). This ensures total compliance, absolute security, and eliminates Zapier&apos;s scaling transactional fees.
             </p>
           </div>
 

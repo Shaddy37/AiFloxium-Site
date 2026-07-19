@@ -43,7 +43,7 @@ const contactGraphJsonLd = {
 
 export default function ContactPage() {
   return (
-    <main id="main-content" className="relative min-h-screen bg-[var(--background)] text-white selection:bg-[#7B2CBF] selection:text-white">
+    <main id="main-content" className="relative min-h-screen bg-[var(--background)] text-black selection:bg-[#7B2CBF]/20 selection:text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactGraphJsonLd) }}

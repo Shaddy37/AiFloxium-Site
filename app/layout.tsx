@@ -145,7 +145,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveatBrush.variable} ${leagueGothic.variable} antialiased selection:bg-accent selection:text-white`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveatBrush.variable} ${leagueGothic.variable} antialiased selection:bg-accent/20 selection:text-black`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossOrigin="anonymous" />
       </head>

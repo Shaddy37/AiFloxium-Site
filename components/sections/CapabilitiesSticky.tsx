@@ -95,7 +95,7 @@ export default function CapabilitiesSticky() {
         {/* Left Side: Sticky Titles */}
         <div className="md:sticky md:top-0 md:h-screen w-full md:w-1/2 flex flex-col justify-center py-20 pr-10 z-20">
           <span className="text-[#E0AAFF] tracking-[0.2em] font-medium text-xs uppercase font-inter mb-12 block">
-            // Capabilities
+            {'// Capabilities'}
           </span>
           <div className="flex flex-col gap-6">
             {capabilities.map((cap, i) => (

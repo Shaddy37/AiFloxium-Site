@@ -97,11 +97,12 @@ export default function Footer() {
             <h3 className="text-white/40 font-semibold mb-6 tracking-widest uppercase text-xs font-inter">Pages</h3>
             <ul className="flex flex-col gap-4 font-inter text-sm font-light">
               <li><Link href="/about" className="text-zinc-400 hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/tools" className="text-zinc-400 hover:text-white transition-colors">Tools</Link></li>
+              <li><Link href="/resources#tools" className="text-zinc-400 hover:text-white transition-colors">Tools</Link></li>
               <li><Link href="/resources" className="text-zinc-400 hover:text-white transition-colors">Resources</Link></li>
-              <li><Link href="/pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href="/services#pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</Link></li>
               <li><Link href="/blog" className="text-zinc-400 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/projects" className="text-zinc-400 hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/services#projects" className="text-zinc-400 hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/resources#comparisons" className="text-zinc-400 hover:text-white transition-colors">Comparisons</Link></li>
               <li><Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>

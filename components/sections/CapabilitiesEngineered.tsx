@@ -43,7 +43,10 @@ export default function CapabilitiesEngineered() {
   useEffect(() => {
     const latest = scrollYProgress.get();
     const idx = Math.min(COUNT - 1, Math.floor(latest * COUNT));
-    setActiveIndex(idx);
+    const timer = setTimeout(() => {
+      setActiveIndex(idx);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [scrollYProgress]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {

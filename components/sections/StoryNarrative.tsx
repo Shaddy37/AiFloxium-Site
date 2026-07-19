@@ -27,7 +27,7 @@ const Panel = ({ eyebrow, heading, description, stats, index, cta }: PanelProps)
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease }}
-          className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-black/50 font-inter"
+          className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#7B2CBF] font-inter"
         >
           {eyebrow}
         </motion.p>
@@ -44,7 +44,7 @@ const Panel = ({ eyebrow, heading, description, stats, index, cta }: PanelProps)
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease, delay: 0.2 }}
-          className="max-w-[65ch] text-[clamp(1rem,2vw,1.25rem)] font-inter font-light leading-relaxed text-black/70"
+          className="max-w-[65ch] text-[clamp(1rem,2vw,1.25rem)] font-inter font-light leading-relaxed text-black"
         >
           {description}
         </motion.p>
@@ -57,8 +57,8 @@ const Panel = ({ eyebrow, heading, description, stats, index, cta }: PanelProps)
         >
           {stats.map((stat, i) => (
             <div key={i} className="min-w-[180px] flex-1">
-              <p className="mb-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white/90 font-inter">{stat.label}</p>
-              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-black/50 font-inter font-light">
+              <p className="mb-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-black font-inter">{stat.label}</p>
+              <p className="text-[clamp(0.85rem,1.2vw,1rem)] leading-relaxed text-black font-inter font-light">
                 {stat.text}
               </p>
             </div>
@@ -72,7 +72,7 @@ const Panel = ({ eyebrow, heading, description, stats, index, cta }: PanelProps)
             transition={{ duration: 0.6, ease, delay: 0.4 }}
             className="flex flex-wrap justify-between items-center gap-6 mt-8 pt-8"
           >
-            <span className="text-white/40 text-[10px] font-semibold tracking-widest uppercase font-inter">Measured by metrics</span>
+            <span className="text-black text-[10px] font-semibold tracking-widest uppercase font-inter">Measured by metrics</span>
             <a
               href={CALENDLY_URL}
               target="_blank"
@@ -97,12 +97,12 @@ export default function StoryNarrative() {
       <Panel
         eyebrow="01 — The Problem"
         heading={
-          <h1 className="text-[clamp(2.5rem,7vw,6rem)] font-instrument text-white leading-[0.85] tracking-[-0.04em] text-balance">
+          <h1 className="text-[clamp(2.5rem,7vw,6rem)] font-instrument text-black leading-[0.85] tracking-[-0.04em] text-balance">
             Stop the
             <br />
             manual
             <br />
-            <span className="font-instrument text-white italic">chaos.</span>
+            <span className="font-instrument text-[#7B2CBF] italic">chaos.</span>
           </h1>
         }
         description="Your team is burning 20+ hours weekly on repetitive manual tasks, copying data between disconnected systems. Lead response times lag, and payroll bloat is killing your margins."
@@ -114,17 +114,17 @@ export default function StoryNarrative() {
         index={0}
       />
 
-      <div className="w-full max-w-6xl mx-auto px-6"><div className="border-t border-white/10" /></div>
+      <div className="w-full max-w-6xl mx-auto px-6"><div className="border-t border-black/10" /></div>
 
       <Panel
         eyebrow="02 — The Mission"
         heading={
-          <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-instrument text-white leading-[0.85] tracking-[-0.04em] text-balance">
+          <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-instrument text-black leading-[0.85] tracking-[-0.04em] text-balance">
             Autonomous
             <br />
             systems.
             <br />
-            <span className="font-instrument text-white italic">24/7 Run.</span>
+            <span className="font-instrument text-[#7B2CBF] italic">24/7 Run.</span>
           </h2>
         }
         description="Founded under AIFLOXIUM, I build secure agentic architectures and Agentic OS systems. I replace fragile manual tasks with systems that run autonomously."
@@ -136,17 +136,17 @@ export default function StoryNarrative() {
         index={1}
       />
 
-      <div className="w-full max-w-6xl mx-auto px-6"><div className="border-t border-white/10" /></div>
+      <div className="w-full max-w-6xl mx-auto px-6"><div className="border-t border-black/10" /></div>
 
       <Panel
         eyebrow="03 — Outcomes"
         heading={
-          <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-instrument text-white leading-[0.85] tracking-[-0.04em] text-balance">
+          <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-instrument text-black leading-[0.85] tracking-[-0.04em] text-balance">
             Engineered
             <br />
             for
             <br />
-            <span className="font-instrument text-white italic">scale.</span>
+            <span className="font-instrument text-[#7B2CBF] italic">scale.</span>
           </h2>
         }
         description="Operational scaling on autopilot. I design systems that secure your data, eliminate entry errors, and guarantee a positive ROI."

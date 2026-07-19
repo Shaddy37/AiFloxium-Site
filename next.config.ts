@@ -16,23 +16,8 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
-        source: '/pricing',
-        destination: '/services#pricing',
-        permanent: true
-      },
-      {
-        source: '/projects',
-        destination: '/services#projects',
-        permanent: true
-      },
-      {
         source: '/ai-consulting',
         destination: '/services#consulting',
-        permanent: true
-      },
-      {
-        source: '/tools',
-        destination: '/resources#tools',
         permanent: true
       },
       {

@@ -264,7 +264,7 @@ export function SelfHealingFlowchart() {
                     <div className="flex items-center gap-2.5 mb-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
                       <span className="text-[10px] font-mono uppercase tracking-widest text-brand-orange font-bold">
-                        Step 0{activeStep + 1} // {stepsInfo[selectedPath][activeStep]?.title}
+                        Step 0{activeStep + 1} {'//'} {stepsInfo[selectedPath][activeStep]?.title}
                       </span>
                     </div>
                     <p className="text-white text-base font-bold leading-snug">

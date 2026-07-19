@@ -87,7 +87,7 @@ export default function NeuralKineticsHero() {
                 Book a discovery call
                 <ArrowRight className="nk-hero-btn-icon" />
               </Link>
-              <Link href="/projects" className="nk-hero-btn-secondary">
+              <Link href="/services#projects" className="nk-hero-btn-secondary">
                 View proof
               </Link>
             </motion.div>

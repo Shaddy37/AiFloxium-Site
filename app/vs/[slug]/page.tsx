@@ -177,7 +177,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
               Home
             </Link>
             <ChevronRight className="h-3 w-3 text-white/30" />
-            <Link href="/vs" className="transition-colors hover:text-white">
+            <Link href="/resources#comparisons" className="transition-colors hover:text-white">
               Comparisons
             </Link>
             <ChevronRight className="h-3 w-3 text-white/30" />
@@ -421,7 +421,7 @@ export default async function VsComparisonPage({ params }: PageProps) {
               Stop Paying the Scaling Tax.<br className="hidden sm:inline" /> Deploy <span className="font-instrument text-[#E0AAFF] italic">Engineered Workflows.</span>
             </h2>
             <p className="text-sm sm:text-base text-white/60 max-w-2xl mx-auto leading-relaxed mb-10 font-inter font-light">
-              Skip brittle templates, unpredictable operations counts, and high-maintenance cloud configurations. Let's design a custom self-hosted environment that scales autonomously.
+              Skip brittle templates, unpredictable operations counts, and high-maintenance cloud configurations. Let&apos;s design a custom self-hosted environment that scales autonomously.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 font-inter">
@@ -467,6 +467,42 @@ export default async function VsComparisonPage({ params }: PageProps) {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* ── Other Comparisons ──────────────────────────────────────── */}
+          <section className="mb-20 font-inter">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-instrument text-white tracking-tight">
+                Other <span className="font-instrument text-[#E0AAFF] italic">Comparisons</span>
+              </h2>
+              <p className="text-sm text-white/60 mt-2 font-light">
+                Explore more side-by-side breakdowns.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {Object.values(vsData)
+                .filter((other) => other.slug !== slug)
+                .slice(0, 3)
+                .map((other) => (
+                  <Link
+                    key={other.slug}
+                    href={`/vs/${other.slug}`}
+                    className="group relative bg-white/[0.01] border border-white/5 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 transition-all duration-500 liquid-glass"
+                  >
+                    <h3 className="text-lg font-semibold tracking-wide text-white group-hover:text-[#E0AAFF] transition-colors leading-snug">
+                      {other.title}
+                    </h3>
+                    <p className="text-sm text-white/50 font-light leading-relaxed flex-1 line-clamp-3">
+                      {other.overview.replace(/\*\*/g, '').slice(0, 150)}...
+                    </p>
+                    <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                      <span className="text-[10px] font-semibold text-[#E0AAFF] uppercase tracking-wider">
+                        Read comparison →
+                      </span>
+                    </div>
+                  </Link>
+                ))}
             </div>
           </section>
 
