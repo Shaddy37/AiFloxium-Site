@@ -109,7 +109,7 @@ export const AuthorCard = ({
             </p>
           </div>
           
-          <p className="text-zinc-700 text-base md:text-lg leading-relaxed font-bold mb-6">
+          <p className="text-black text-base md:text-lg leading-relaxed font-bold mb-6">
             {bio}
           </p>
 

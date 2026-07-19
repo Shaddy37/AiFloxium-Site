@@ -49,58 +49,58 @@ function slugify(children: React.ReactNode): string {
 const components = {
   h1: (props: ComponentPropsWithoutRef<"h1">) => (
     <h1
-      className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9] uppercase text-white"
+      className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9] uppercase text-black"
       id={props.id ?? slugify(props.children)}
       {...props}
     />
   ),
   h2: (props: ComponentPropsWithoutRef<"h2">) => (
     <h2
-      className="text-3xl md:text-4xl font-bold tracking-tight mb-6 mt-16 flex items-center gap-4 text-white"
+      className="text-3xl md:text-4xl font-bold tracking-tight mb-6 mt-16 flex items-center gap-4 text-black"
       id={props.id ?? slugify(props.children)}
       {...props}
     >
-      <span className="w-8 h-[1px] bg-[#E0AAFF]/30" />
+      <span className="w-8 h-[1px] bg-brand-plum/30" />
       {props.children}
     </h2>
   ),
   h3: (props: ComponentPropsWithoutRef<"h3">) => (
     <h3
-      className="text-2xl font-bold tracking-tight mb-4 mt-8 text-white"
+      className="text-2xl font-bold tracking-tight mb-4 mt-8 text-black"
       id={props.id ?? slugify(props.children)}
       {...props}
     />
   ),
   p: (props: ComponentPropsWithoutRef<"p">) => (
     <p 
-      className="mb-6 text-base md:text-lg font-normal leading-relaxed text-zinc-300" 
+      className="mb-6 text-base md:text-lg font-normal leading-relaxed text-black" 
       {...props} 
     />
   ),
   ul: (props: ComponentPropsWithoutRef<"ul">) => (
     <ul 
-      className="mb-8 list-disc space-y-3 pl-6 text-base md:text-lg text-zinc-300 marker:text-brand-orange" 
+      className="mb-8 list-disc space-y-3 pl-6 text-base md:text-lg text-black marker:text-brand-orange" 
       {...props} 
     />
   ),
   ol: (props: ComponentPropsWithoutRef<"ol">) => (
     <ol 
-      className="mb-8 list-decimal space-y-3 pl-6 text-base md:text-lg text-zinc-300 marker:font-bold marker:text-brand-orange" 
+      className="mb-8 list-decimal space-y-3 pl-6 text-base md:text-lg text-black marker:font-bold marker:text-brand-orange" 
       {...props} 
     />
   ),
   li: (props: ComponentPropsWithoutRef<"li">) => (
-    <li className="pl-1 text-zinc-300 font-normal leading-relaxed" {...props} />
+    <li className="pl-1 text-black font-normal leading-relaxed" {...props} />
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote 
-      className="border-l-4 border-brand-orange pl-8 my-12 italic text-xl md:text-2xl text-zinc-300 leading-relaxed font-normal bg-brand-orange/[0.02] py-6 pr-6 rounded-r-3xl" 
+      className="border-l-4 border-brand-orange pl-8 my-12 italic text-xl md:text-2xl text-black leading-relaxed font-normal bg-brand-orange/[0.02] py-6 pr-6 rounded-r-3xl" 
       {...props} 
     />
   ),
   aside: (props: ComponentPropsWithoutRef<"aside">) => (
     <aside 
-      className="my-12 rounded-[2rem] border-l-4 border-brand-orange border-y border-r border-white/10 bg-white/5 px-6 py-8 text-zinc-300 shadow-sm md:px-8 font-normal leading-relaxed glass-card" 
+      className="my-12 rounded-[2rem] border-l-4 border-brand-orange border-y border-r border-zinc-200 bg-zinc-50/50 px-6 py-8 text-black shadow-sm md:px-8 font-normal leading-relaxed" 
       {...props} 
     />
   ),
@@ -129,7 +129,7 @@ const components = {
       return <code {...props} />;
     }
     return (
-      <code className="bg-white/5 border border-white/10 px-1.5 py-0.5 rounded text-sm font-mono text-[#E0AAFF]" {...props} />
+      <code className="bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono text-black" {...props} />
     );
   },
   pre: (props: ComponentPropsWithoutRef<"pre">) => {
@@ -147,12 +147,12 @@ const components = {
 
     return <CodeBlock code={code} language={language} />;
   },
-  hr: () => <hr className="my-14 border-white/10" />,
+  hr: () => <hr className="my-14 border-zinc-200" />,
   TLDR: ({ children }: { children: React.ReactNode }) => (
     <div className="my-12 p-8 rounded-3xl bg-brand-orange/[0.02] border border-brand-orange/15 relative overflow-hidden shadow-sm">
       <div className="absolute top-0 left-0 w-2.5 h-full bg-brand-orange" />
       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-orange/80 mb-4 font-black">Executive Summary // TL;DR</div>
-      <div className="text-xl font-bold text-zinc-100 leading-relaxed">
+      <div className="text-xl font-bold text-black leading-relaxed">
         {children}
       </div>
     </div>
@@ -163,10 +163,10 @@ const components = {
         {number && <span className="text-sm font-mono text-brand-orange/60 tracking-tighter font-black">{number}</span>}
         <span className="h-[1px] flex-1 bg-brand-orange/15 group-hover:bg-brand-orange/35 transition-colors" />
       </div>
-      <h2 id={id} className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-[#E0AAFF]">
+      <h2 id={id} className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-brand-plum">
         {title}
       </h2>
-      {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-zinc-500 font-bold">{subtitle}</p>}
+      {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-black/60 font-bold">{subtitle}</p>}
     </div>
   ),
   TableOfContents: ({ items }: { items: { title: string, id: string }[] }) => (
@@ -174,9 +174,9 @@ const components = {
       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-orange mb-8 underline decoration-brand-orange/20 font-black">Navigation Architecture</div>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
         {items.map((item, i) => (
-          <li key={i} className="group flex items-center gap-4 border-b border-white/5 pb-2">
+          <li key={i} className="group flex items-center gap-4 border-b border-zinc-100 pb-2">
             <span className="text-[10px] font-mono text-brand-orange/40 group-hover:text-brand-orange transition-colors font-black">0{i+1}</span>
-            <a href={`#${item.id}`} className="text-sm font-bold uppercase tracking-tight text-zinc-300 hover:text-brand-orange transition-colors">
+            <a href={`#${item.id}`} className="text-sm font-bold uppercase tracking-tight text-black hover:text-brand-orange transition-colors">
               {item.title}
             </a>
           </li>
@@ -185,7 +185,7 @@ const components = {
     </nav>
   ),
   img: (props: ComponentPropsWithoutRef<"img">) => (
-    <div className="my-10 relative rounded-[2.5rem] overflow-hidden border border-white/5 shadow-lg bg-black/20">
+    <div className="my-10 relative rounded-[2.5rem] overflow-hidden border border-zinc-100 shadow-lg">
       <Image
         src={String(props.src) || '/og-image.jpg'}
         alt={props.alt || ''}
@@ -199,30 +199,30 @@ const components = {
   table: (props: ComponentPropsWithoutRef<"table">) => (
     <div className="my-12 relative group">
       {/* Mobile Scroll Indicator */}
-      <div className="md:hidden flex items-center justify-between px-6 py-3 bg-[#7B2CBF]/10 border border-white/5 rounded-t-[2rem] mb-[-1px]">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#E0AAFF] font-black">Swipe to Explore</span>
-        <ArrowRight className="w-3 h-3 text-[#E0AAFF] animate-pulse" />
+      <div className="md:hidden flex items-center justify-between px-6 py-3 bg-brand-plum/5 border border-brand-plum/10 rounded-t-[2rem] mb-[-1px]">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-brand-plum font-black">Swipe to Explore</span>
+        <ArrowRight className="w-3 h-3 text-brand-plum animate-pulse" />
       </div>
       
-      <div className="overflow-x-auto rounded-b-[2rem] md:rounded-[2.5rem] border border-white/5 bg-black/40 glass-card">
+      <div className="overflow-x-auto rounded-b-[2rem] md:rounded-[2.5rem] border border-zinc-200 bg-white">
         <table className="w-full border-collapse text-left min-w-[700px]" {...props} />
       </div>
       
       {/* Decorative Glow similar to CTA */}
-      <div className="absolute -inset-4 bg-[#7B2CBF]/5 blur-2xl rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute -inset-4 bg-brand-plum/5 blur-2xl rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   ),
   thead: (props: ComponentPropsWithoutRef<"thead">) => (
-    <thead className="bg-white/5 border-b border-white/10" {...props} />
+    <thead className="bg-zinc-50 border-b border-zinc-200" {...props} />
   ),
   th: (props: ComponentPropsWithoutRef<"th">) => (
-    <th className="px-8 py-6 text-sm font-mono uppercase tracking-[0.3em] font-black text-[#E0AAFF] border-r border-white/5 last:border-none" {...props} />
+    <th className="px-8 py-6 text-sm font-mono uppercase tracking-[0.3em] font-black text-brand-plum border-r border-zinc-100 last:border-none" {...props} />
   ),
   td: (props: ComponentPropsWithoutRef<"td">) => (
-    <td className="px-8 py-6 text-[15px] font-bold text-zinc-300 border-r border-white/5 last:border-r-0" {...props} />
+    <td className="px-8 py-6 text-[15px] font-bold text-black border-r border-zinc-100 last:border-r-0" {...props} />
   ),
   tr: (props: ComponentPropsWithoutRef<"tr">) => (
-    <tr className="border-b border-white/5 last:border-none hover:bg-white/5 transition-colors" {...props} />
+    <tr className="border-b border-zinc-100 last:border-none hover:bg-zinc-50/50 transition-colors" {...props} />
   ),
   PremiumCTA,
   ImpactStats,

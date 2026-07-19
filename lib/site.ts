@@ -22,5 +22,5 @@ export const CALENDLY_URL = 'https://calendly.com/shadabshamsaiautomation/30min'
 export const DEFAULT_TITLE =
   'Muhammad Shadab Shams | Agentic Systems Developer';
 export const DEFAULT_DESCRIPTION =
-  'I build advanced agentic systems, custom Agentic OS architectures, and apply AI to existing systems and databases using developer frameworks like Antigravity, Claude Code, and OpenAI Codex under AIFLOXIUM.';
+  'I build advanced agentic systems and custom Agentic OS architectures, applying AI to existing systems using Antigravity, Claude Code, and OpenAI Codex.';
 

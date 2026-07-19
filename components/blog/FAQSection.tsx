@@ -40,7 +40,7 @@ export const FAQSection = ({
             {subtitle}
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-zinc-900">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-black">
           {title}
         </h2>
       </div>
@@ -75,7 +75,7 @@ export const FAQSection = ({
                 <span
                   className={cn(
                     "text-lg font-bold transition-colors",
-                    openIndex === index ? "text-brand-orange" : "text-zinc-900"
+                    openIndex === index ? "text-brand-orange" : "text-black"
                   )}
                 >
                   {faq.question}
@@ -100,7 +100,7 @@ export const FAQSection = ({
               )}
             >
               <div className="px-6 pb-6 pl-[4.5rem]">
-                <p className="text-zinc-700 leading-relaxed font-medium">
+                <p className="text-black leading-relaxed font-medium">
                   {faq.answer}
                 </p>
               </div>

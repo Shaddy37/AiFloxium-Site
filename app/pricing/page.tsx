@@ -1,12 +1,14 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/sections/Footer";
-import { Pricing, Trust } from "@/components/sections/HomeSections";
-import { Contact2 } from "@/components/ui/contact-2";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import { PERSON_NAME, CALENDLY_URL } from "@/lib/site";
 import { absoluteUrl, buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/seo";
+
+const Trust = dynamic(() => import('@/components/sections/HomeSections').then(m => ({ default: m.Trust })));
+const PricingSection = dynamic(() => import('@/components/sections/HomeSections').then(m => ({ default: m.Pricing })));
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Pricing | ${PERSON_NAME}`,
@@ -78,7 +80,7 @@ export default function PricingPage() {
       </div>
 
       <Trust />
-      <Pricing />
+      <PricingSection />
 
       {/* FAQ */}
       <section className="py-24 px-6 bg-[var(--background)] border-t border-white/5 relative overflow-hidden">

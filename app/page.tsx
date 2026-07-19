@@ -3,7 +3,7 @@ import SereneLandingClient from '@/components/sections/SereneLandingClient';
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildPageMetadata({
-  title: 'Muhammad Shadab Shams | Agentic Systems Developer & AI Specialist | AIFLOXIUM',
+  title: 'Muhammad Shadab Shams | Agentic Systems Developer | AIFLOXIUM',
   description:
     'Custom AI automation systems, SaaS builds, mini-SaaS products, and enterprise n8n workflows designed by Muhammad Shadab Shams.',
   path: '/',

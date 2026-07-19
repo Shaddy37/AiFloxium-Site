@@ -23,7 +23,7 @@ export function Accordion({ title, subtitle, children, defaultOpen = false }: Ac
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-plum/60 font-black">
             {subtitle || "Detail Segment"}
           </span>
-          <h4 className="text-xl font-extrabold tracking-tight text-zinc-900">
+          <h4 className="text-xl font-extrabold tracking-tight text-black">
             {title}
           </h4>
         </div>
@@ -41,7 +41,7 @@ export function Accordion({ title, subtitle, children, defaultOpen = false }: Ac
           isOpen ? "max-h-[5000px] opacity-100 border-t border-zinc-100 bg-white" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <div className="px-8 py-6 text-zinc-700">
+        <div className="px-8 py-6 text-black">
           {children}
         </div>
       </div>

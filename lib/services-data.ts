@@ -26,7 +26,7 @@ export const servicesData: ServiceData[] = [
     title: "n8n Workflow Automation",
     tagline: "Save 20+ hours weekly with self-hosted, secure operational pipelines.",
     description:
-      "We engineer custom n8n automation pipelines on your own VPS to eliminate manual copy-pasting, sync disconnected CRMs, and route data securely. Zero recurring transaction fees. Projects start at $2,000.",
+      "Custom n8n automation pipelines on your VPS. Eliminate manual copy-pasting, sync disconnected CRMs, and route data securely. Zero recurring fees. Projects from $2,000.",
     heroIcon: "Workflow",
     color: "zinc",
     whatItIs:
@@ -99,7 +99,7 @@ export const servicesData: ServiceData[] = [
     title: "Autonomous Voice Agents",
     tagline: "Qualify, book, and answer inbound leads 24/7 with under 500ms voice response latency.",
     description:
-      "We deploy custom human-like voice agents using Vapi & Retell AI. Integrated directly with your CRM and calendar, our agents answer inbound calls and follow up with leads in real-time. Starting at $2,500.",
+      "Deploy human-like voice agents using Vapi & Retell AI. Integrated with your CRM and calendar to answer inbound calls and follow up on leads. From $2,500.",
     heroIcon: "Phone",
     color: "zinc",
     whatItIs:
@@ -166,7 +166,7 @@ export const servicesData: ServiceData[] = [
     title: "Vibe Coding (Claude)",
     tagline: "Build custom web applications and internal tools in under 14 days.",
     description:
-      "We combine Next.js, Supabase, and AI-assisted development (Claude Code & Cursor) to build bespoke internal dashboards and client portals at 10x traditional development speed. Projects start at $1,500.",
+      "Combine Next.js, Supabase, and AI-assisted development to build bespoke dashboards and client portals at 10x traditional speed. Projects from $1,500.",
     heroIcon: "Code2",
     color: "zinc",
     whatItIs:
@@ -238,7 +238,7 @@ export const servicesData: ServiceData[] = [
     title: "AI-Powered SEO",
     tagline: "Scale organic lead generation with technical SEO and custom content syndication.",
     description:
-      "We build custom AI content engines that generate optimized, on-brand articles, coupled with technical audits to rank for high-intent keywords. Projects start at $1,800.",
+      "Custom AI content engines generating optimized articles, paired with technical audits to rank for high-intent keywords. Projects from $1,800.",
     heroIcon: "Search",
     color: "zinc",
     whatItIs:
@@ -305,7 +305,7 @@ export const servicesData: ServiceData[] = [
     title: "Autonomous Agents",
     tagline: "Deploy secure, multi-agent AI systems that automate complex operational logic.",
     description:
-      "We build autonomous agent networks powered by Claude & GPT-4 to handle B2B sales research, automated inbox management, and document parsing with human-in-the-loop controls. Projects start at $3,000.",
+      "Autonomous agent networks powered by Claude & GPT-4 for B2B sales research, inbox management, and document parsing with human-in-the-loop controls. From $3,000.",
     heroIcon: "Brain",
     color: "zinc",
     whatItIs:
@@ -377,7 +377,7 @@ export const servicesData: ServiceData[] = [
     title: "Agency Scaling Partner",
     tagline: "Your white-label AI engineering team. We build the systems, you sell them.",
     description:
-      "We partner with B2B marketing, operations, and lead gen agencies as an invisible technical backend. Offer premium custom automations and AI systems under your brand. Retainers start at $5,000/month.",
+      "Partner with B2B agencies as an invisible technical backend. Offer premium custom automations and AI systems under your brand. Retainers from $5,000/mo.",
     heroIcon: "TrendingUp",
     color: "zinc",
     whatItIs:

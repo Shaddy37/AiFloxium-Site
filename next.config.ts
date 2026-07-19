@@ -15,11 +15,7 @@ const nextConfig: NextConfig = {
         destination: 'https://www.aifloxium.online/:path*',
         permanent: true
       },
-      {
-        source: '/ai-consulting',
-        destination: '/services#consulting',
-        permanent: true
-      },
+
       {
         source: '/vs',
         destination: '/resources#comparisons',

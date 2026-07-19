@@ -13,9 +13,9 @@ type NavLinkItem = {
 
 const navLinks: NavLinkItem[] = [
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/services#projects" },
-  { name: "Pricing", href: "/services#pricing" },
-  { name: "Tools", href: "/resources#tools" },
+  { name: "Projects", href: "/projects" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Tools", href: "/tools" },
   { name: "Resources", href: "/resources" },
   { name: "Comparisons", href: "/resources#comparisons" },
   { name: "Blog", href: "/blog" },
