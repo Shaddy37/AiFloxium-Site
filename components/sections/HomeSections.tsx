@@ -39,7 +39,7 @@ export function Vision() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-[#0a0608] border-b border-white/5">
+    <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-[#0a0608] border-b border-white/5">
       {/* Background Plum Glow */}
       <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#7B2CBF]/20 to-transparent -z-10" />
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#7B2CBF]/10 opacity-70 blur-[150px] rounded-full pointer-events-none -z-10" />
@@ -123,7 +123,7 @@ export function Process() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="py-24 md:py-40 px-4 md:px-6 relative bg-[#0a0608] border-y border-white/5 overflow-hidden">
+    <section className="py-16 md:py-24 px-4 md:px-6 relative bg-[#0a0608] border-y border-white/5 overflow-hidden">
       {/* Subtle grid pattern overlay */}
       <div 
         className="absolute inset-0 opacity-[0.01] pointer-events-none" 
@@ -163,11 +163,11 @@ export function Process() {
               I audit your manual workflows, locate operational noise, and define clear success metrics.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#7B2CBF] to-[#5a1c97] p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">✓ Audit Results</span>
+              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">âœ“ Audit Results</span>
               <ul className="text-xs text-white space-y-1.5 font-inter font-light">
-                <li>• Reclaim 20+ Hours Weekly</li>
-                <li>• Map Software Tech Stack</li>
-                <li>• Define Clear ROI Metrics</li>
+                <li>â€¢ Reclaim 20+ Hours Weekly</li>
+                <li>â€¢ Map Software Tech Stack</li>
+                <li>â€¢ Define Clear ROI Metrics</li>
               </ul>
             </div>
           </BounceCard>
@@ -180,12 +180,12 @@ export function Process() {
               I visually map all automation pathways and tool integrations to define a clear blueprint.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#5c2494] to-[#3f126d] p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">➜ Pipeline Blueprint</span>
+              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">âžœ Pipeline Blueprint</span>
               <div className="text-xs font-mono text-white flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-none py-1">
                 <span className="bg-[#0a0608] text-white/10 px-2 py-0.5 rounded border border-white/10">Inbound Webhook</span>
-                <span>➜</span>
+                <span>âžœ</span>
                 <span className="bg-[#0a0608] text-white/10 px-2 py-0.5 rounded border border-white/10">Voice AI Agent</span>
-                <span>➜</span>
+                <span>âžœ</span>
                 <span className="bg-[#0a0608] text-white/10 px-2 py-0.5 rounded border border-white/10">CRM Sync Pipeline</span>
               </div>
             </div>
@@ -199,7 +199,7 @@ export function Process() {
               I build and deploy secure, autonomous pipelines, stress-tested and hardened against errors.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#3c1763] to-[#250d40] p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">⚙ Telemetry Log</span>
+              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">âš™ Telemetry Log</span>
               <div className="text-xs font-mono text-white/90 space-y-1">
                 <p className="text-[#E0AAFF] font-semibold">$ npm run deploy --secure</p>
                 <p className="text-[11px] opacity-75">Deploying Agent OS... [OK]</p>
@@ -216,11 +216,11 @@ export function Process() {
               I hand over full code ownership, record custom walkthroughs, and transition your team.
             </p>
             <div className="absolute bottom-0 left-4 right-4 top-48 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#2b0f4a] to-[#120524] p-5 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg] shadow-2xl flex flex-col justify-start">
-              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">✓ Operations Completed</span>
+              <span className="text-[10px] font-inter tracking-widest uppercase text-purple-200 mb-2 font-semibold">âœ“ Operations Completed</span>
               <ul className="text-xs text-white space-y-1.5 font-inter font-light">
-                <li>• 100% Code & IP Ownership</li>
-                <li>• Walkthrough Guide Recorded</li>
-                <li>• Continuous Support Active</li>
+                <li>â€¢ 100% Code & IP Ownership</li>
+                <li>â€¢ Walkthrough Guide Recorded</li>
+                <li>â€¢ Continuous Support Active</li>
               </ul>
             </div>
           </BounceCard>
@@ -264,7 +264,7 @@ const CardTitle = ({ children }: { children: React.ReactNode }) => {
 // --- TRUST / METRICS SECTION ---
 export function Trust() {
   return (
-    <section className="relative bg-[#0a0608] text-white font-inter antialiased py-24 md:py-32 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-white/5 z-10">
+    <section className="relative bg-[#0a0608] text-white font-inter antialiased py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14 overflow-hidden border-b border-white/5 z-10">
       
       {/* Background Plum Glow */}
       <div className="absolute inset-0 bg-[#7B2CBF]/5 opacity-25 pointer-events-none z-0" />
@@ -343,7 +343,7 @@ export function Trust() {
             </p>
             
             <div className="text-xs text-white/60 relative z-10 mt-6">
-              <strong className="text-white font-semibold">Elena Brooks</strong>, Operations Director — Halcyon
+              <strong className="text-white font-semibold">Elena Brooks</strong>, Operations Director â€” Halcyon
             </div>
           </div>
 
@@ -446,7 +446,7 @@ export function Trust() {
 // --- PRICING SECTION ---
 export function Pricing() {
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden bg-[#0a0608] border-y border-white/5">
+    <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-[#0a0608] border-y border-white/5">
       {/* Subtle grid pattern overlay */}
       <div 
         className="absolute inset-0 opacity-[0.01] pointer-events-none" 
@@ -500,7 +500,7 @@ export function Pricing() {
             Get My Free System Blueprint
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
-          <span className="text-[10px] text-white/40 font-semibold uppercase tracking-widest mt-3 text-center w-full block font-inter">✓ Includes a free 15-minute scoping audit. No obligation.</span>
+          <span className="text-[10px] text-white/40 font-semibold uppercase tracking-widest mt-3 text-center w-full block font-inter">âœ“ Includes a free 15-minute scoping audit. No obligation.</span>
         </div>
       </div>
     </section>
@@ -512,7 +512,7 @@ export function Founder() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="py-24 md:py-40 px-6 relative bg-[#0a0608]">
+    <section className="py-16 md:py-24 px-6 relative bg-[#0a0608]">
       <div className="container mx-auto max-w-7xl">
         <motion.div 
           initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

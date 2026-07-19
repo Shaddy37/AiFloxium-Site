@@ -55,7 +55,7 @@ const aboutGraphJsonLd = {
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="relative bg-white text-zinc-900 min-h-screen selection:bg-[#7B2CBF] selection:text-zinc-900">
+    <main id="main-content" className="relative bg-[var(--background)] text-white min-h-screen selection:bg-[#7B2CBF] selection:text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutGraphJsonLd) }}
@@ -63,8 +63,8 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Dark Cinematic Hero */}
-      <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden bg-gradient-to-b from-black via-[#0a0608] to-[#0a0608] rounded-b-[3rem]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B2CBF]/10 opacity-70 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="pt-40 pb-32 px-6 container mx-auto relative overflow-hidden bg-[var(--background)]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--brand-purple-glow)] opacity-50 blur-[150px] rounded-full pointer-events-none -z-10" />
         
         <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest relative z-10 font-inter">
           <Link href="/" className="transition-colors hover:text-white">
@@ -86,14 +86,14 @@ export default function AboutPage() {
       <CapabilitiesEngineered />
 
       {/* Cinematic Timeline Section */}
-      <section className="py-24 md:py-32 bg-white text-zinc-900 relative z-20 border-y border-white/5">
+      <section className="py-24 md:py-32 bg-[var(--background)] text-white relative z-20 border-y border-white/5">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
-            <h2 className="text-xl md:text-4xl font-instrument text-zinc-900 tracking-tight mb-4">How the work evolved</h2>
-            <p className="text-zinc-500 font-inter font-light">My progression from workflow scripting to autonomous agentic architectures.</p>
+            <h2 className="text-xl md:text-4xl font-instrument tracking-tight mb-4">How the work evolved</h2>
+            <p className="text-white/60 font-inter font-light">My progression from workflow scripting to autonomous agentic architectures.</p>
           </div>
           
-          <div className="space-y-16 pl-4 md:pl-0 border-l border-zinc-200 md:border-l-0">
+          <div className="space-y-16 pl-4 md:pl-0 border-l border-white/10 md:border-l-0">
             {[
               { year: "Phase 1", title: "Workflow Automation Foundations", desc: "Engineered high-volume data integration pipelines and workflow scripts, helping businesses automate repetitive operations and manual data tasks.", icon: <Cpu className="w-5 h-5 text-[#E0AAFF]" /> },
               { year: "Phase 2", title: "Shift to Agentic AI & Vibe Coding", desc: "Adopted tools like Antigravity, Claude Code, and OpenAI Codex to build agentic operating systems, custom vibe-coded dashboards, and dynamic multi-agent tools.", icon: <Database className="w-5 h-5 text-[#E0AAFF]" /> },
@@ -101,16 +101,16 @@ export default function AboutPage() {
             ].map((item, i) => (
               <div key={i} className="relative flex flex-col md:flex-row gap-8 md:items-center">
                 <div className="hidden md:flex flex-col items-center absolute left-1/2 -translate-x-1/2 w-full h-full">
-                  <div className="w-[1px] h-full bg-zinc-200" />
-                  <div className="absolute top-0 w-12 h-12 bg-zinc-50 border border-zinc-200 text-zinc-900 rounded-full flex items-center justify-center shadow-lg -translate-y-1/2 liquid-glass-light">
+                  <div className="w-[1px] h-full bg-white/10" />
+                  <div className="absolute top-0 w-12 h-12 bg-[#0a0608] border border-white/10 text-white rounded-full flex items-center justify-center shadow-lg -translate-y-1/2 glass-card">
                     {item.icon}
                   </div>
                 </div>
                 
                 <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:ml-auto'}`}>
-                  <span className="text-xs font-semibold text-[#7B2CBF] uppercase tracking-wider block mb-2 font-inter">{item.year}</span>
-                  <h3 className="text-2xl font-semibold font-inter mb-4 text-zinc-900">{item.title}</h3>
-                  <p className="text-zinc-600 font-inter font-light leading-relaxed bg-zinc-50/50 p-6 rounded-2xl border border-zinc-200 shadow-sm liquid-glass-light">{item.desc}</p>
+                  <span className="text-xs font-semibold text-[#E0AAFF] uppercase tracking-wider block mb-2 font-inter">{item.year}</span>
+                  <h3 className="text-2xl font-semibold font-inter mb-4 text-white">{item.title}</h3>
+                  <p className="text-white/70 font-inter font-light leading-relaxed bg-white/5 p-6 rounded-[1.5rem] border border-white/5 shadow-sm glass-card">{item.desc}</p>
                 </div>
                 
                 {/* Mobile icon dot */}
@@ -122,8 +122,8 @@ export default function AboutPage() {
       </section>
 
       {/* Accordion Section */}
-      <section className="py-24 md:py-32 bg-[#0a0608] relative overflow-hidden border-t border-white/5">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#7B2CBF]/10 opacity-40 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <section className="py-24 md:py-32 bg-[var(--background)] relative overflow-hidden border-t border-white/5">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-purple-glow)] opacity-30 blur-[120px] rounded-full pointer-events-none -z-10" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-xl md:text-4xl font-instrument text-white tracking-tight mb-4">Working style</h2>

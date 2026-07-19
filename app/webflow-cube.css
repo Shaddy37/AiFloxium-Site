@@ -5,7 +5,7 @@
 
 /* ── Outer wrapper ── */
 .cube-gallery-wrapper {
-  background-color: #030108;
+  background-color: var(--background);
   position: relative;
 }
 
@@ -13,7 +13,7 @@
 .cube-gallery-wrapper .section {
   height: 600vh;
   position: relative;
-  background-color: #030108;
+  background-color: var(--background);
 }
 
 /* ── Sticky viewport frame ── */

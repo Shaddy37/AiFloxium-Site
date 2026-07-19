@@ -48,7 +48,7 @@ const PROJECTS: FocusRailItem[] = [
 
 const ProjectFocus = () => {
   return (
-    <section className="relative py-24 md:py-48 bg-background overflow-hidden border-t border-white/5">
+    <section className="relative py-16 md:py-24 bg-background overflow-hidden border-t border-white/5">
       {/* Background Geometric Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.01] rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />

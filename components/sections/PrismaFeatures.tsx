@@ -9,16 +9,14 @@ import Link from "next/link";
 interface FeatureCardProps {
   index: number;
   progress: MotionValue<number>;
+  className?: string;
   children: React.ReactNode;
 }
 
-const FeatureCard = ({ index, progress, children }: FeatureCardProps) => {
-  // Map parallax speeds based on index.
-  // We want cards to float up at different rates as the user scrolls down.
-  // Card 1 floats up fastest, Card 3 slower, etc., to break the rigid grid.
+const FeatureCard = ({ index, progress, className = "", children }: FeatureCardProps) => {
   const speedRanges = [
-    ["20%", "-20%"],  // Card 2
-    ["40%", "-40%"],  // Card 3
+    ["15%", "-15%"],  // Card 2
+    ["25%", "-25%"],  // Card 3
     ["10%", "-10%"],  // Card 4
   ];
   
@@ -30,11 +28,15 @@ const FeatureCard = ({ index, progress, children }: FeatureCardProps) => {
   return (
     <motion.div
       style={{ y, opacity }}
-      className="relative flex flex-col justify-between h-full rounded-3xl border border-white/5 bg-[#0a0608] text-white p-8 group transition-[border-color,background-color] duration-300 ease-[var(--ease-out)] hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 liquid-glass z-10 shadow-lg"
+      className={`relative flex flex-col justify-between h-full rounded-[2rem] bg-black/5 p-2 group shadow-lg z-10 ${className}`}
     >
-      {/* Decorative inner gradient glow */}
-      <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full bg-[#7B2CBF]/5 blur-2xl group-hover:bg-[#7B2CBF]/15 transition-colors duration-500 pointer-events-none" />
-      {children}
+      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-black/0 via-black/0 to-black/0 group-hover:from-black/5 group-hover:via-black/[0.02] group-hover:to-black/5 transition-all duration-700 blur-xl opacity-0 group-hover:opacity-100" />
+      <div className="absolute inset-0 rounded-[2rem] border border-black/5 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-black/15" />
+      
+      <div className="relative h-full w-full rounded-[1.5rem] border border-black/5 glass-panel p-8 md:p-10 flex flex-col justify-between overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[var(--glow-primary)]/10 blur-3xl group-hover:bg-[var(--glow-primary)]/30 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none" />
+        {children}
+      </div>
     </motion.div>
   );
 };
@@ -47,91 +49,93 @@ export default function PrismaFeatures() {
     offset: ["start end", "end start"]
   });
 
-  // Header Parallax
-  const headerY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  
-  // Video Card Parallax (moves slower to anchor the section)
-  const videoCardY = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+  const headerY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const videoCardY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const blurBottomY = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+  const blurTopY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
     <section 
       ref={containerRef}
       id="features" 
-      className="min-h-screen bg-[#0a0608] text-white py-24 md:py-40 px-4 md:px-8 relative overflow-hidden border-b border-white/5"
+      className="min-h-screen bg-[var(--background)] text-black py-24 md:py-32 px-4 md:px-8 relative overflow-hidden border-b border-black/5"
     >
-      {/* Background gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-[var(--glow-secondary)]/10 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-[var(--primary)]/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[50vw] h-[50vh] bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[var(--secondary)]/10 to-transparent pointer-events-none" />
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]) }}
-        className="absolute bottom-0 right-0 w-[40vw] h-[40vw] rounded-full bg-[#7B2CBF]/10 blur-[150px] pointer-events-none" 
+        style={{ y: blurBottomY }}
+        className="absolute bottom-0 right-0 w-[40vw] h-[40vw] rounded-full bg-black/[0.03] blur-[150px] pointer-events-none" 
       />
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]) }}
-        className="absolute top-12 left-12 w-[30vw] h-[30vw] rounded-full bg-[#9D4EDD]/10 blur-[130px] pointer-events-none" 
+        style={{ y: blurTopY }}
+        className="absolute top-12 left-12 w-[30vw] h-[30vw] rounded-full bg-black/[0.03] blur-[130px] pointer-events-none" 
       />
 
       {/* Header section */}
       <motion.div 
         style={{ y: headerY }}
-        className="max-w-6xl mx-auto flex flex-col gap-3 mb-20 md:mb-32 text-center md:text-left relative z-20"
+        className="max-w-[1400px] w-full mx-auto flex flex-col gap-4 mb-24 md:mb-40 text-center md:text-left relative z-20 will-change-transform"
       >
-        <span className="text-white/50 tracking-[0.2em] font-medium text-xs md:text-sm uppercase font-inter block mb-2">
-          // Capabilities
+        <span className="text-black/40 tracking-[0.25em] font-bold text-xs md:text-sm uppercase font-inter block mb-4 flex items-center gap-2">
+          <span className="w-8 h-[2px] bg-gradient-to-r from-black/30 to-transparent" /> Capabilities
         </span>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(3.5rem,5vw,5rem)] font-instrument text-white leading-[1.05] tracking-[-0.04em] max-w-5xl text-balance">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(4rem,6vw,6.5rem)] font-instrument text-black leading-[1.02] tracking-[-0.04em] max-w-6xl text-balance">
           Production-grade workflows for visionary builders. <br/>
-          <span className="font-instrument text-[#E0AAFF] italic">Built for pure efficiency, powered by intelligence.</span>
+          <span className="font-instrument text-black/40 italic">Built for pure efficiency.</span>
         </h2>
       </motion.div>
 
-      {/* Cards Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      {/* Cards Grid - Asymmetrical Bento */}
+      <div className="max-w-[1400px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6 relative z-10">
         
         {/* Card 1: Video Background Card */}
         <motion.div
           style={{ y: videoCardY }}
-          className="relative flex flex-col min-h-[350px] lg:min-h-[450px] rounded-3xl overflow-hidden border border-white/10 justify-end p-8 bg-[#0a0608] group transition-[border-color] duration-300 ease-[var(--ease-out)] hover:border-[#7B2CBF]/40 liquid-glass shadow-lg z-20"
+          className="lg:col-span-7 md:col-span-2 relative flex flex-col min-h-[400px] lg:min-h-[500px] rounded-[2rem] p-2 group shadow-2xl will-change-transform z-20 bg-[#0a0a0a]"
         >
-          {/* Video */}
-          <LazyVideo
-            preload="none"
-            className="absolute inset-0 h-full w-full object-cover z-0 opacity-50 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
-          />
-          {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 rounded-[2rem] border border-white/5 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-white/20" />
+          
+          <div className="relative h-full w-full rounded-[1.5rem] border border-white/5 bg-[#111111] p-8 md:p-12 flex flex-col justify-end overflow-hidden transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:bg-[#1a1a1a]">
+            <LazyVideo
+              preload="none"
+              className="absolute inset-0 h-full w-full object-cover z-0 opacity-40 group-hover:scale-105 group-hover:opacity-50 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none will-change-transform"
+              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10 pointer-events-none" />
 
-          <p className="relative z-20 text-white text-lg sm:text-xl font-inter font-light tracking-wide leading-snug">
-            Intelligent operations. <br/>
-            <span className="font-semibold text-[#E0AAFF]">Powered by AIFLOXIUM.</span>
-          </p>
+            <div className="relative z-20 mt-auto">
+              <p className="text-white/90 text-2xl sm:text-3xl font-instrument tracking-tight leading-snug">
+                Intelligent operations. <br/>
+                <span className="text-white/50 italic">Powered by AIFLOXIUM.</span>
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Card 2: Agentic OS & Automations */}
-        <FeatureCard index={0} progress={scrollYProgress}>
-          <div className="flex flex-col gap-5 relative z-10">
-            {/* Icon Header */}
+        <FeatureCard index={0} progress={scrollYProgress} className="lg:col-span-5 md:col-span-1">
+          <div className="flex flex-col gap-6 relative z-10">
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/10 text-[#E0AAFF] transition-[transform,background-color] duration-300 ease-[var(--ease-out)] group-hover:scale-[1.05] group-hover:bg-[#7B2CBF]/20">
-                <Workflow className="w-5 h-5" />
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black/70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
+                <Workflow className="w-6 h-6" />
               </div>
             </div>
 
-            {/* Title */}
-            <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide font-inter">
+            <h3 className="text-black text-xl sm:text-2xl font-medium tracking-tight font-inter">
               Agentic OS & Automations
             </h3>
 
-            {/* Checklist */}
-            <ul className="flex flex-col gap-3 mt-1">
+            <ul className="flex flex-col gap-4 mt-2">
               {[
                 "Custom private VPS deployments",
                 "Autonomous multi-agent execution",
                 "Dynamic tools & API integrations",
                 "Self-healing logger scripts"
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <Check className="h-[18px] w-[18px] text-[#E0AAFF] mt-0.5 shrink-0" />
-                  <span className="text-white/70 text-xs sm:text-[13px] leading-snug group-hover:text-white transition-colors duration-200 ease-[var(--ease-out)] font-inter font-light">
+                <li key={i} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-black/30 mt-0.5 shrink-0 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-black/70" />
+                  <span className="text-black/60 text-sm sm:text-base leading-snug group-hover:text-black/90 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -139,42 +143,38 @@ export default function PrismaFeatures() {
             </ul>
           </div>
 
-          {/* Action Link */}
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-[#E0AAFF] hover:text-white font-semibold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors duration-200 ease-[var(--ease-out)] font-inter focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608] rounded-sm"
+            className="flex items-center gap-2 text-black/50 hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
           >
             Learn more
-            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
           </Link>
         </FeatureCard>
 
         {/* Card 3: Conversational Voice AI */}
-        <FeatureCard index={1} progress={scrollYProgress}>
-          <div className="flex flex-col gap-5 relative z-10">
-            {/* Icon Header */}
+        <FeatureCard index={1} progress={scrollYProgress} className="lg:col-span-5 md:col-span-1">
+          <div className="flex flex-col gap-6 relative z-10">
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/10 text-[#E0AAFF] transition-[transform,background-color] duration-300 ease-[var(--ease-out)] group-hover:scale-[1.05] group-hover:bg-[#7B2CBF]/20">
-                <BrainCircuit className="w-5 h-5" />
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black/70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
+                <BrainCircuit className="w-6 h-6" />
               </div>
             </div>
 
-            {/* Title */}
-            <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide font-inter">
+            <h3 className="text-black text-xl sm:text-2xl font-medium tracking-tight font-inter">
               Conversational Voice AI
             </h3>
 
-            {/* Checklist */}
-            <ul className="flex flex-col gap-3 mt-1">
+            <ul className="flex flex-col gap-4 mt-2">
               {[
                 "Sub-500ms real response speeds",
                 "Full-duplex call state machines",
                 "Intelligent lead scheduling",
                 "Direct CRM & tag sync setups"
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <Check className="h-[18px] w-[18px] text-[#E0AAFF] mt-0.5 shrink-0" />
-                  <span className="text-white/70 text-xs sm:text-[13px] leading-snug group-hover:text-white transition-colors duration-200 ease-[var(--ease-out)] font-inter font-light">
+                <li key={i} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-black/30 mt-0.5 shrink-0 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-black/70" />
+                  <span className="text-black/60 text-sm sm:text-base leading-snug group-hover:text-black/90 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -182,42 +182,38 @@ export default function PrismaFeatures() {
             </ul>
           </div>
 
-          {/* Action Link */}
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-[#E0AAFF] hover:text-white font-semibold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors duration-200 ease-[var(--ease-out)] font-inter focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608] rounded-sm"
+            className="flex items-center gap-2 text-black/50 hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
           >
             Learn more
-            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
           </Link>
         </FeatureCard>
 
         {/* Card 4: Bespoke Portals & Reasoning */}
-        <FeatureCard index={2} progress={scrollYProgress}>
-          <div className="flex flex-col gap-5 relative z-10">
-            {/* Icon Header */}
+        <FeatureCard index={2} progress={scrollYProgress} className="lg:col-span-7 md:col-span-2">
+          <div className="flex flex-col gap-6 relative z-10">
             <div className="flex justify-between items-start">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/10 text-[#E0AAFF] transition-[transform,background-color] duration-300 ease-[var(--ease-out)] group-hover:scale-[1.05] group-hover:bg-[#7B2CBF]/20">
-                <LayoutDashboard className="w-5 h-5" />
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-black/10 bg-black/5 text-black/70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:bg-black/10 group-hover:text-black">
+                <LayoutDashboard className="w-6 h-6" />
               </div>
             </div>
 
-            {/* Title */}
-            <h3 className="text-white text-lg sm:text-xl font-semibold tracking-wide font-inter">
+            <h3 className="text-black text-xl sm:text-2xl font-medium tracking-tight font-inter">
               Bespoke Portals & Reasoning
             </h3>
 
-            {/* Checklist */}
-            <ul className="flex flex-col gap-3 mt-1">
+            <ul className="flex flex-col gap-4 mt-2">
               {[
                 "Next.js & Supabase custom builds",
                 "Applied database reasoning layers",
                 "Document OCR & processing pipelines",
                 "Full code ownership & IP rights"
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <Check className="h-[18px] w-[18px] text-[#E0AAFF] mt-0.5 shrink-0" />
-                  <span className="text-white/70 text-xs sm:text-[13px] leading-snug group-hover:text-white transition-colors duration-200 ease-[var(--ease-out)] font-inter font-light">
+                <li key={i} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-black/30 mt-0.5 shrink-0 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-black/70" />
+                  <span className="text-black/60 text-sm sm:text-base leading-snug group-hover:text-black/90 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter font-light">
                     {item}
                   </span>
                 </li>
@@ -225,13 +221,12 @@ export default function PrismaFeatures() {
             </ul>
           </div>
 
-          {/* Action Link */}
           <Link
             href="/#contact"
-            className="flex items-center gap-2 text-[#E0AAFF] hover:text-white font-semibold text-xs uppercase tracking-wider mt-8 group/link w-fit relative z-10 transition-colors duration-200 ease-[var(--ease-out)] font-inter focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608] rounded-sm"
+            className="flex items-center gap-2 text-black/50 hover:text-black font-medium text-sm tracking-wide mt-12 group/link w-fit relative z-10 transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] font-inter focus-visible:outline-none"
           >
             Learn more
-            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+            <ArrowRight className="h-4 w-4 transform -rotate-45 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
           </Link>
         </FeatureCard>
 
@@ -239,3 +234,4 @@ export default function PrismaFeatures() {
     </section>
   );
 }
+

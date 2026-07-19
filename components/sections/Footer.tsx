@@ -18,6 +18,8 @@ const SOCIAL_LINKS = [
   { label: "LinkedIn", href: LINKEDIN_URL },
 ];
 
+const socialIconStyle = { backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", background: "rgba(0, 0, 0, 0.4)" } as const;
+
 export default function Footer() {
   return (
     <footer className="relative bg-black border-t border-white/10 overflow-hidden">
@@ -27,7 +29,7 @@ export default function Footer() {
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
           className="object-cover w-full h-full opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0608] via-transparent to-[#0a0608] opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60" />
       </div>
 
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
@@ -62,8 +64,8 @@ export default function Footer() {
                 href={X_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-[#7B2CBF] hover:border-[#7B2CBF] hover:text-white transition-[background-color,border-color,transform] duration-200 active:scale-95"
-                style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", background: "rgba(0, 0, 0, 0.4)" }}
+                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-white hover:border-white hover:text-black transition-[background-color,border-color,transform] duration-200 active:scale-95"
+                style={socialIconStyle}
                 aria-label="Twitter / X profile"
               >
                 <span className="font-semibold text-sm text-white font-inter">X</span>
@@ -72,8 +74,8 @@ export default function Footer() {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-[#7B2CBF] hover:border-[#7B2CBF] hover:text-white transition-[background-color,border-color,transform] duration-200 active:scale-95"
-                style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", background: "rgba(0, 0, 0, 0.4)" }}
+                className="w-12 h-12 rounded-full flex items-center justify-center liquid-glass border border-white/10 hover:bg-white hover:border-white hover:text-black transition-[background-color,border-color,transform] duration-200 active:scale-95"
+                style={socialIconStyle}
                 aria-label={`LinkedIn profile of ${PERSON_NAME}`}
               >
                 <span className="font-semibold text-sm uppercase text-white font-inter">in</span>
@@ -84,23 +86,23 @@ export default function Footer() {
           <div>
             <h3 className="text-white/40 font-semibold mb-6 tracking-widest uppercase text-xs font-inter">Services</h3>
             <ul className="flex flex-col gap-4 font-inter text-sm font-light">
-              <li><Link href="/services/n8n-workflow-automation" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">n8n Workflow Automation</Link></li>
-              <li><Link href="/services/vibe-coding" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Product & Tool Builds</Link></li>
-              <li><Link href="/services/autonomous-agents" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Autonomous Agents</Link></li>
-              <li><Link href="/services/agency-scaling-partner" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Implementation Partner</Link></li>
+              <li><Link href="/services/n8n-workflow-automation" className="text-zinc-400 hover:text-white transition-colors">n8n Workflow Automation</Link></li>
+              <li><Link href="/services/vibe-coding" className="text-zinc-400 hover:text-white transition-colors">Product & Tool Builds</Link></li>
+              <li><Link href="/services/autonomous-agents" className="text-zinc-400 hover:text-white transition-colors">Autonomous Agents</Link></li>
+              <li><Link href="/services/agency-scaling-partner" className="text-zinc-400 hover:text-white transition-colors">Implementation Partner</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white/40 font-semibold mb-6 tracking-widest uppercase text-xs font-inter">Pages</h3>
             <ul className="flex flex-col gap-4 font-inter text-sm font-light">
-              <li><Link href="/about" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">About</Link></li>
-              <li><Link href="/tools" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Tools</Link></li>
-              <li><Link href="/resources" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Resources</Link></li>
-              <li><Link href="/pricing" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Pricing</Link></li>
-              <li><Link href="/blog" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Blog</Link></li>
-              <li><Link href="/projects" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Projects</Link></li>
-              <li><Link href="/contact" className="text-zinc-400 hover:text-[#E0AAFF] transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="text-zinc-400 hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/tools" className="text-zinc-400 hover:text-white transition-colors">Tools</Link></li>
+              <li><Link href="/resources" className="text-zinc-400 hover:text-white transition-colors">Resources</Link></li>
+              <li><Link href="/pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href="/blog" className="text-zinc-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/projects" className="text-zinc-400 hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
@@ -108,13 +110,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between py-8 md:py-12 mb-8 border-t border-white/5 pt-12">
           <h2 className="text-4xl md:text-6xl font-instrument text-white leading-[0.95] tracking-tight mb-6 md:mb-0">
             Ready to <br />
-            <span className="font-instrument text-[#E0AAFF] italic">build?</span>
+            <span className="font-instrument text-white italic">build?</span>
           </h2>
           <Link
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-40 w-40 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider flex flex-col items-center justify-center gap-2 group transition-all duration-300 hover:bg-[#E0AAFF] button-glow shrink-0 active:scale-[0.97]"
+            className="h-40 w-40 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider flex flex-col items-center justify-center gap-2 group transition-all duration-300 hover:bg-white/90 button-glow shrink-0 active:scale-[0.97]"
           >
             Book a Call
             <ArrowRight className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-200" />

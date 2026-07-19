@@ -96,7 +96,7 @@ export function StickyFeatureSection() {
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
           {/* The main section for the features */}
-          <section className="py-32 md:py-48 flex flex-col items-center">
+          <section className="py-24 md:py-32 flex flex-col items-center">
             
             <AnimatedHeader />
 

@@ -105,7 +105,7 @@ function PremiumCard({ cap, index }: { cap: typeof capabilities[0]; index: numbe
 
 export default function Services() {
   return (
-    <section id="services" className="py-40 px-4 md:px-6 relative overflow-hidden bg-white border-b border-white/5">
+    <section id="services" className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden bg-white border-b border-white/5">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
       <div className="container mx-auto max-w-7xl relative z-10">

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Mail, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CALENDLY_URL } from '@/lib/site';
+import { LazyVideo } from '@/components/ui/lazy-video';
 
 export const EarthContactCTA = () => {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -25,12 +26,9 @@ export const EarthContactCTA = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24 select-none">
       {/* Background Video */}
-      <video
+      <LazyVideo
+        preload="none"
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260602_150901_c45b90ec-18d7-42ff-90e2-b95d7109e330.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
       />
 
@@ -41,7 +39,7 @@ export const EarthContactCTA = () => {
       <div className="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-white via-white/50 to-transparent z-10 pointer-events-none" />
       
       {/* Smooth fade into the footer (which is dark) */}
-      <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#0a0608] to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-16">
@@ -51,7 +49,7 @@ export const EarthContactCTA = () => {
             Start the dialogue
           </span>
           <h2 className="font-instrument text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6">
-            Let&apos;s build <br/><span className="text-[#E0AAFF] italic">your next system.</span>
+            Let&apos;s build <br/><span className="text-white italic">your next system.</span>
           </h2>
           <p className="font-inter text-white/80 text-base md:text-lg max-w-md leading-relaxed mb-10">
             Whether you need a custom internal tool, a mini-SaaS, or an enterprise n8n workflow—I design solutions that respect your time and nature.
@@ -68,7 +66,7 @@ export const EarthContactCTA = () => {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="mailto:hello@aifloxium.com"
+              href="mailto:info@aifloxium.online"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 text-white border border-white/20 px-8 py-3.5 text-xs font-semibold uppercase tracking-wider hover:bg-white/20 transition-all duration-300 font-inter backdrop-blur-md"
             >
               <Mail className="h-4 w-4" />
@@ -81,13 +79,13 @@ export const EarthContactCTA = () => {
         <div className="w-full lg:w-1/2 max-w-lg">
           <div className="rounded-[2rem] bg-black/20 backdrop-blur-2xl border border-white/10 p-8 md:p-10 shadow-2xl relative overflow-hidden">
             {/* Subtle glow inside the card */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#7B2CBF]/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             
             <h3 className="font-inter text-white text-xl font-medium mb-8">Send a brief</h3>
 
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
-                <CheckCircle2 className="h-16 w-16 text-[#E0AAFF] mb-4" />
+                <CheckCircle2 className="h-16 w-16 text-white mb-4" />
                 <h4 className="font-instrument text-2xl text-white mb-2">Received.</h4>
                 <p className="font-inter text-white/70 text-sm">I&apos;ll be in touch within 24 hours.</p>
               </div>
@@ -141,7 +139,7 @@ export const EarthContactCTA = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="mt-2 w-full bg-white text-black rounded-xl py-4 font-semibold text-xs tracking-wider uppercase hover:bg-[#E0AAFF] transition-all duration-300 font-inter disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="mt-2 w-full bg-white text-black rounded-xl py-4 font-semibold text-xs tracking-wider uppercase hover:bg-white/90 transition-all duration-300 font-inter disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {status === "loading" ? "Sending..." : "Submit Brief"}
                 </button>

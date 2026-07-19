@@ -94,7 +94,7 @@ const servicesPageJsonLd = {
 
 export default function ServicesPage() {
   return (
-    <main id="main-content" className="relative bg-white text-zinc-900 min-h-screen selection:bg-[#7B2CBF] selection:text-zinc-900">
+    <main id="main-content" className="relative bg-[var(--background)] text-white min-h-screen selection:bg-[#7B2CBF] selection:text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageJsonLd) }}
@@ -102,8 +102,8 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Dark Cinematic Hero */}
-      <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto relative overflow-hidden bg-gradient-to-b from-black via-[#0a0608] to-[#0a0608] rounded-b-[3rem]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B2CBF]/10 opacity-60 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="pt-40 pb-20 px-4 md:px-6 container mx-auto relative overflow-hidden bg-[var(--background)]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--brand-purple-glow)] opacity-50 blur-[150px] rounded-full pointer-events-none -z-10" />
         
         <nav className="mb-8 flex flex-wrap items-center gap-2 text-[10px] font-semibold text-white/50 uppercase tracking-widest relative z-10 font-inter">
           <Link href="/" className="transition-colors hover:text-white">
@@ -127,22 +127,22 @@ export default function ServicesPage() {
       <StickyFeatureSection />
 
       {/* FAQ Accordion Block */}
-      <section className="py-32 px-6 bg-white text-zinc-900 relative border-t border-zinc-100">
+      <section className="py-32 px-6 bg-[var(--background)] text-white relative border-t border-white/5">
         <div className="container mx-auto max-w-6xl flex flex-col lg:flex-row gap-16">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-4xl md:text-5xl font-instrument text-zinc-900 tracking-tight mb-6 leading-[1.05]">
-              How I <br /> <span className="font-instrument text-[#7B2CBF] italic">work.</span>
+            <h2 className="text-4xl md:text-5xl font-instrument text-white tracking-tight mb-6 leading-[1.05]">
+              How I <br /> <span className="font-instrument text-[#E0AAFF] italic">work.</span>
             </h2>
-            <p className="text-zinc-600 font-inter font-light leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
+            <p className="text-white/60 font-inter font-light leading-relaxed">Clear answers on process, timelines, delivery, and how the work is handled.</p>
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
             {serviceFaqs.map((faq, i) => (
-              <div key={i} className="group p-8 bg-zinc-50 border border-zinc-200 hover:border-[#7B2CBF]/30 hover:bg-[#7B2CBF]/5 transition-all duration-300 rounded-2xl liquid-glass-light shadow-sm">
-                <h3 className="text-xl font-semibold font-inter mb-4 flex items-center gap-4 text-zinc-900 group-hover:text-[#7B2CBF] transition-colors">
-                  <CheckCircle2 className="text-[#7B2CBF] shrink-0 group-hover:scale-110 transition-transform" />
+              <div key={i} className="group p-8 bg-[var(--muted)] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 rounded-[1.5rem] glass-card shadow-sm">
+                <h3 className="text-xl font-medium font-inter mb-4 text-white flex gap-4 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-[#E0AAFF] shrink-0 mt-0.5" />
                   {faq.q}
                 </h3>
-                <p className="text-zinc-600 font-inter font-light pl-10 leading-relaxed transition-colors">{faq.a}</p>
+                <p className="text-white/70 font-inter font-light leading-relaxed pl-10">{faq.a}</p>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { CALENDLY_URL } from '@/lib/site';
 
@@ -14,13 +14,15 @@ type NavLinkItem = {
 const navLinks: NavLinkItem[] = [
   { name: "Services", href: "/services" },
   { name: "Pricing", href: "/pricing" },
-  { name: "Tools", href: "/tools" },
+  { name: "Tools", href: "/tools/automation-roi-calculator" },
   { name: "Comparisons", href: "/vs" },
   { name: "Resources", href: "/resources" },
   { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" }
 ];
+
+// Custom easing for high-end feel
+const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -28,19 +30,15 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
 
-  // Monitor scroll
+  // Monitor scroll for floating island & hide/show behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Scrolled state
-      if (currentScrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      // Floating island state
+      setScrolled(currentScrollY > 40);
 
-      // Visible state: hide on scroll down, show on scroll up
+      // Hide on scroll down, show on scroll up
       if (currentScrollY > lastScrollY.current && currentScrollY > 120) {
         setVisible(false);
       } else {
@@ -54,7 +52,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Body overflow locking
+  // Body overflow locking for mobile menu
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
@@ -66,177 +64,204 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // Stagger variants for mobile menu
-  const menuVariants = {
-    hidden: { x: "100%" },
+  const menuVariants: Variants = {
+    hidden: { y: "-100%", opacity: 0 },
     visible: { 
-      x: 0, 
-      transition: { type: "spring" as const, stiffness: 380, damping: 35 } 
+      y: 0, 
+      opacity: 1,
+      transition: { type: "spring", stiffness: 280, damping: 30, mass: 0.8 } 
     },
     exit: { 
-      x: "100%", 
-      transition: { ease: [0.22, 1, 0.36, 1] as const, duration: 0.3 } 
+      y: "-100%", 
+      opacity: 0,
+      transition: { ease: easeOutExpo, duration: 0.5 } 
     }
   };
 
   const linkVariants = {
-    hidden: { opacity: 0, x: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: (i: number) => ({
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        delay: 0.15 + i * 0.05,
-        ease: [0.22, 1, 0.36, 1] as const,
-        duration: 0.4
+        delay: 0.1 + i * 0.05,
+        ease: easeOutExpo,
+        duration: 0.6
       }
     })
   };
 
-  const btnVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.4,
-        ease: [0.22, 1, 0.36, 1] as const,
-        duration: 0.4
-      }
-    }
-  };
-
-
   return (
     <>
-      <motion.header
-        initial={{ y: 0, opacity: 1 }}
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
         animate={{ 
           y: visible ? 0 : -100, 
           opacity: visible ? 1 : 0 
         }}
-        transition={{ ease: [0.22, 1, 0.36, 1], duration: 0.4 }}
+        transition={{ ease: easeOutExpo, duration: 0.6 }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-[background-color,border-color,padding] duration-300 ease-[var(--ease-out)]",
-          scrolled 
-            ? "bg-[#0a0608]/85 backdrop-blur-md border-b border-white/5 py-4" 
-            : "bg-transparent"
+          "fixed inset-x-0 z-50 flex justify-center px-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          scrolled ? "top-4 sm:top-6" : "top-0 sm:top-2"
         )}
       >
-        {/* Left: Cursive Brand Name */}
-        <Link href="/" className="font-dancing text-2xl md:text-3xl text-white tracking-wide cursor-pointer z-50">
-          Aifloxium
-        </Link>
-
-        {/* Center: Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="flex items-center gap-1 text-white/80 hover:text-[#E0AAFF] text-[11px] xl:text-xs uppercase tracking-widest transition-colors duration-200 ease-[var(--ease-out)] font-inter font-semibold py-2"
+        <div 
+          className={cn(
+            "w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            scrolled ? "max-w-4xl" : "max-w-7xl"
+          )}
+        >
+          {/* Double-Bezel Architecture */}
+          <div className={cn(
+            "transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full",
+            scrolled 
+              ? "p-[1px] bg-gradient-to-b from-black/10 to-black/0 shadow-[0_12px_40px_rgba(0,0,0,0.1)]" 
+              : "p-0 bg-transparent shadow-none"
+          )}>
+            <header
+              className={cn(
+                "flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative",
+                scrolled 
+                  ? "px-4 py-2 sm:py-2.5 rounded-full bg-[var(--background)] shadow-[0_0_0_1px_rgba(0,0,0,1)_inset,0_0_0_1.5px_rgba(0,0,0,0.03)_inset]" 
+                  : "px-4 sm:px-8 py-6 bg-transparent"
+              )}
             >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+              {/* Brand */}
+              <Link 
+                href="/" 
+                className="relative z-50 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 rounded-lg px-2 py-1 -ml-2"
+                aria-label="Home"
+              >
+                <span className="font-sans font-bold text-xl sm:text-2xl tracking-tighter text-black">
+                  Aifloxium<span className="text-[var(--glow-primary)]">.</span>
+                </span>
+              </Link>
 
-        {/* Right: Desktop Consultation Button / Mobile Hamburger */}
-        <div className="flex items-center gap-4">
-          {/* Desktop Button */}
-          <Link
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:block bg-white text-black px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider hover:bg-[#E0AAFF] transition-[transform,background-color,filter] duration-200 ease-[var(--ease-out)] active:scale-[0.97] button-glow font-inter uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608]"
-          >
-            Book a call
-          </Link>
+              {/* Desktop Nav */}
+              <nav className="hidden lg:flex items-center gap-1 xl:gap-2 absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="relative px-3 py-1.5 text-sm font-medium text-black/70 hover:text-black transition-colors duration-300 rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden flex flex-col justify-between w-6 h-[18px] cursor-pointer focus:outline-none z-50 relative"
-            aria-label={open ? "Close menu" : "Open menu"}
-          >
-            <span
-              style={{ transition: 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s' }}
-              className={cn(
-                "w-full h-[1.5px] bg-white rounded-full origin-left",
-                open && "rotate-45 translate-y-[4.5px] translate-x-[2px]"
-              )}
-            />
-            <span
-              style={{ transition: 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s' }}
-              className={cn(
-                "w-full h-[1.5px] bg-white rounded-full",
-                open && "opacity-0 scale-0"
-              )}
-            />
-            <span
-              style={{ transition: 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s' }}
-              className={cn(
-                "w-full h-[1.5px] bg-white rounded-full origin-left",
-                open && "-rotate-45 -translate-y-[4.5px] translate-x-[2px]"
-              )}
-            />
-          </button>
+              {/* CTA & Mobile Toggle */}
+              <div className="flex items-center gap-2 sm:gap-3 z-50">
+                <Link
+                  href="/contact"
+                  className={cn(
+                    "relative group items-center justify-center rounded-full text-sm font-semibold tracking-wide transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden",
+                    scrolled 
+                      ? "hidden sm:flex px-4 py-2 sm:px-5 sm:py-2.5" 
+                      : "hidden sm:flex px-5 py-2.5 sm:px-6 sm:py-3 bg-[var(--foreground)] text-[var(--background)] hover:scale-[0.98] active:scale-95 shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)]"
+                  )}
+                  style={{
+                    background: scrolled ? 'transparent' : 'var(--foreground)',
+                    color: scrolled ? 'var(--foreground)' : 'var(--background)'
+                  }}
+                >
+                  {scrolled && (
+                    <div className="absolute inset-0 rounded-full border border-[var(--foreground)]/20 bg-[var(--foreground)]/5 transition-colors group-hover:bg-[var(--foreground)]/10" />
+                  )}
+                  <span className="relative z-10 flex items-center gap-2">
+                    Book a call
+                  </span>
+                </Link>
+
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setOpen(!open)}
+                  className="lg:hidden flex flex-col justify-center gap-[5px] w-9 h-9 items-center rounded-full bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)]/30"
+                  aria-expanded={open}
+                  aria-label={open ? "Close menu" : "Open menu"}
+                >
+                  <span
+                    className={cn(
+                      "w-4 h-[1.5px] bg-[var(--foreground)] rounded-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                      open ? "rotate-45 translate-y-[6.5px]" : ""
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "w-4 h-[1.5px] bg-[var(--foreground)] rounded-full transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                      open ? "opacity-0" : "opacity-100"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "w-4 h-[1.5px] bg-[var(--foreground)] rounded-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                      open ? "-rotate-45 -translate-y-[6.5px]" : ""
+                    )}
+                  />
+                </button>
+              </div>
+            </header>
+          </div>
         </div>
-      </motion.header>
+      </motion.div>
 
-      {/* MOBILE SLIDE-IN MENU */}
+      {/* MOBILE FULL-SCREEN OVERLAY MENU */}
       <AnimatePresence>
         {open && (
-          <>
-            {/* Backdrop Overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
-            />
+          <motion.div
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-40 bg-[var(--background)]/95 backdrop-blur-3xl lg:hidden flex flex-col justify-center px-6"
+          >
+            {/* Background ambient light */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/5 via-transparent to-transparent pointer-events-none" />
 
-            {/* Slide Panel */}
-            <motion.div
-              variants={menuVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="fixed top-0 right-0 h-screen w-[85%] max-w-[340px] z-40 bg-[#0a0608]/95 backdrop-blur-xl border-l border-white/10 flex flex-col justify-between p-10 pt-32 lg:hidden"
-            >
-              <div className="flex flex-col gap-6 overflow-y-auto pb-6">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    custom={i}
-                    variants={linkVariants}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="text-white/90 hover:text-[#E0AAFF] text-2xl font-instrument italic tracking-wide block py-2 transition-colors duration-200 ease-[var(--ease-out)]"
-                    >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-
-              <motion.div variants={btnVariants} className="w-full mt-8">
-                <Link
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="w-full h-12 bg-white text-black font-semibold rounded-full flex items-center justify-center text-xs tracking-wider uppercase hover:bg-[#E0AAFF] button-glow transition-[transform,background-color,filter] duration-200 ease-[var(--ease-out)] active:scale-[0.97] font-inter focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0AAFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0608]"
+            <nav className="flex flex-col gap-6 w-full max-w-sm mx-auto relative z-10" aria-label="Mobile navigation">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  custom={i}
+                  variants={linkVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
                 >
-                  Book a call
-                </Link>
-              </motion.div>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center justify-between py-4 text-3xl sm:text-4xl font-medium text-black/80 hover:text-black transition-colors border-b border-black/5 focus-visible:outline-none focus-visible:text-black"
+                  >
+                    <span>{link.name}</span>
+                    <svg className="w-5 h-5 text-black/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
+
+            <motion.div 
+              className="mt-auto relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6, ease: easeOutExpo }}
+            >
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="w-full h-14 bg-[var(--foreground)] text-[var(--background)] font-semibold rounded-full flex items-center justify-center text-sm tracking-wide hover:opacity-90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50"
+              >
+                Book a consultation
+              </Link>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
   );
 }
+
