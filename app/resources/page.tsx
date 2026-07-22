@@ -7,30 +7,6 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { buildPageMetadata, absoluteUrl } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
-import { toolsHubCards } from '@/lib/tools-data';
-import ToolWaitlistForm from '@/components/tools/ToolWaitlistForm';
-import { ArrowRight, Clock3, FileText, Target } from 'lucide-react';
-
-const liveTool = toolsHubCards.find((tool) => tool.status === 'live') ?? toolsHubCards[0]!;
-const plannedTools = toolsHubCards.filter((tool) => tool.status === 'planned');
-
-const valuePoints = [
-  {
-    title: 'Quantify Manual Overhead',
-    description: 'Translate repetitive tasks, slow handoffs, and spreadsheet friction into clear financial metrics.',
-    icon: Clock3
-  },
-  {
-    title: 'Data-Backed Decisions',
-    description: 'Run the calculations first to obtain immediate payback projections before writing code.',
-    icon: FileText
-  },
-  {
-    title: 'Built for Operators',
-    description: 'Engineered around real operational bottlenecks to deliver actionable next steps.',
-    icon: Target
-  }
-];
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Resources | Free and Premium AI Automation Tools | AIFLOXIUM',
@@ -106,7 +82,6 @@ const resourcesGraphJsonLd = {
 // ──────────────────────────────────────────────────────────────────────────────
 
 const categories = [
-  { id: "tools", label: "Free Tools" },
   { id: "n8n", label: "n8n Workflows" },
   { id: "claude-skills", label: "Claude Skills" },
   { id: "claude-agents", label: "Claude Agents" },
@@ -586,94 +561,6 @@ export default function ResourcesPage() {
       <div className="w-full h-[1px] bg-zinc-50" />
 
       <div className="container mx-auto max-w-6xl px-6 space-y-28 py-24">
-
-        {/* ── Free Tools ─────────────────────────────────────────────── */}
-        <section id="tools" className="scroll-mt-32">
-          <SectionHeader
-            id="tools-header"
-            eyebrow="Engineered Operations Tools"
-            title="Free Interactive Tools"
-            subtitle="Quantify the cost of manual workflow friction before you start building."
-            count={toolsHubCards.length}
-          />
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center mb-16">
-            <div>
-              <h3 className="max-w-4xl text-[2rem] font-instrument leading-[1.05] tracking-tight text-zinc-900 md:text-[3rem]">
-                Quantify the cost of <br />
-                <span className="font-instrument text-[#7B2CBF] italic">manual workflow friction.</span>
-              </h3>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 font-inter font-light">
-                Estimate time saved, payroll overhead, and payback projections. Start with my interactive ROI calculator to model your first automation.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href={liveTool.href}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 text-white px-6 py-4 text-xs font-semibold uppercase tracking-wider hover:bg-[#7B2CBF] transition-all duration-300 button-glow font-inter"
-                >
-                  Launch ROI Calculator
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            <article className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-6 md:p-8 liquid-glass-light shadow-sm">
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#7B2CBF] font-inter">
-                    Live Calculator
-                  </span>
-                  <h4 className="mt-3 text-2xl font-semibold font-inter tracking-wide text-zinc-900">
-                    {liveTool.title}
-                  </h4>
-                </div>
-                <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-emerald-600 font-inter">
-                  active
-                </span>
-              </div>
-
-              <p className="mt-4 text-sm leading-relaxed text-zinc-600 font-inter font-light">{liveTool.description}</p>
-
-              <Link
-                href={liveTool.href}
-                className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-white border border-zinc-200 px-6 py-4 text-xs font-semibold uppercase tracking-wider text-zinc-900 hover:bg-zinc-100 transition-colors font-inter"
-              >
-                Open Interactive Tool
-                <ArrowRight className="h-4 w-4 text-[#7B2CBF]" />
-              </Link>
-            </article>
-          </div>
-
-          <div className="grid gap-5 lg:grid-cols-3">
-            {plannedTools.map((tool) => (
-              <article
-                key={tool.slug}
-                className="rounded-[1.8rem] border border-zinc-200 bg-white p-6 flex flex-col justify-between liquid-glass-light shadow-sm"
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-5">
-                    <div>
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#7B2CBF] font-inter">
-                        {tool.eyebrow}
-                      </span>
-                      <h4 className="mt-2 text-xl font-semibold font-inter tracking-wide text-zinc-900">
-                        {tool.title}
-                      </h4>
-                    </div>
-                    <span className="rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-500 shrink-0 font-inter">
-                      planned
-                    </span>
-                  </div>
-                  <p className="text-sm leading-relaxed text-zinc-500 font-inter font-light">{tool.description}</p>
-                  
-                  <div className="mt-4">
-                    <ToolWaitlistForm toolSlug={tool.slug} toolTitle={tool.title} />
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
 
         {/* ── n8n Automations ─────────────────────────────────────────── */}
         <section>
