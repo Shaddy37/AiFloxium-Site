@@ -280,6 +280,16 @@ const claudeAgents = [
 
 const notionGuides = [
   {
+    title: "Best Hermes Skills in 2026: The 17 I Would Install First",
+    description:
+      "The 17 Hermes agent skills worth installing in 2026, with live star counts, install commands, day-one order, and the four I would skip at first.",
+    tags: ["Hermes Agent", "Agent Skills", "482K+ Stars", "Context Budget"],
+    badge: "FREE",
+    badgeColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
+    link: "/resources/best-hermes-skills",
+    readTime: "18 min read",
+  },
+  {
     title: "400+ Best AI Tools (Free vs Paid) Masterlist for 2026",
     description:
       "Stop guessing which AI software is worth the cost. Explore our ultimate directory of 422 free and paid AI tools for marketing, coding, video, and automation in 2026.",

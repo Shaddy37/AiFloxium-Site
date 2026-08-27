@@ -1,3 +1,9 @@
+
+## 📚 Resource Library (consult BEFORE any task)
+> Shadab's agent-agnostic rule: on EVERY task, check his curated repo/website library and propose
+> matching resources BEFORE acting. Read the full protocol: `C:\Users\Cc\Desktop\Second Brain\Resources\AGENT-RULE.md`
+> (machine-readable list: `...\Resources\resources.json`). Always explain WHY a repo fits and WAIT for go-ahead.
+
 # AGENTS.md - Developer Guidelines for This Project
 
 > **SESSION START INSTRUCTION**: When opening this codebase for the first time in a new session, always read this file. It provides comprehensive guidelines for AI coding agents working on this project.

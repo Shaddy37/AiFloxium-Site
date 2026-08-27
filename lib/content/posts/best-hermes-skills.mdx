@@ -1,0 +1,442 @@
+---
+title: "Best Hermes Skills in 2026: The 17 I Would Install First"
+date: "2026-08-27"
+updatedAt: "2026-08-27"
+author: "Muhammad Shadab Shams"
+category: "Agent Tooling"
+image: "/blog/covers/best-hermes-skills.svg"
+description: "The 17 Hermes agent skills worth installing in 2026, with live star counts, install commands, day-one order, and the four I would skip at first."
+keywords: ["Hermes skills", "best Hermes skills", "Hermes agent skills", "agent skills 2026", "how to install Hermes skills", "Hermes Agent setup", "what are agent skills", "Hermes skills install command", "best agent skills for coding", "agent skill for YouTube transcripts", "how to remove AI writing tells", "agent skills star count", "oh-my-hermes vs superpowers", "do agent skills use context window", "best free agent skills", "Hermes Agent Nous Research skills"]
+canonicalUrl: "https://aifloxium.online/resources/best-hermes-skills"
+---
+
+<TLDR>
+  If I wiped Hermes today, I would not open a blank chat and figure it out. I would install skills first. The seventeen below cover almost every real job I hand an agent: research, engineering, security, video, browser control, writing cleanup, repo memory and loop discipline.
+
+  **Install five on day one:** Agent-Reach for internet access, addyosmani/agent-skills for engineering discipline, Humanizer for anything public-facing, Defuddle for clean web input, and Minions so you can actually see what your agents are doing.
+
+  The other twelve are excellent and situational. Loading all seventeen on a fresh install is the most common mistake, and the reason is not difficulty, it is context budget. Every loaded skill pack competes for the same window your actual work needs.
+
+  Fourteen of the seventeen repositories carry **482,000+ combined GitHub stars** as of August 27, 2026. Three I could not verify, and I say which.
+</TLDR>
+
+## Who wrote this, and how
+
+I'm Muhammad Shadab Shams, an AI Automation Consultant. I ship products by directing agents rather than typing every line myself, and I currently run a dozen production agents across two live properties. Skills are the layer that made that possible, so this is not a curiosity list.
+
+**How the numbers were checked.** Every star count, repository owner and description in this post was pulled live from the GitHub API on August 27, 2026. That matters because skill repos are moving fast enough that a figure from three weeks ago is already wrong. Two examples: `mattpocock/skills` is at 238,275 stars, not the ~224k circulating in most write-ups, and `blader/humanizer` has 38,179 stars, a number almost nobody quotes at all.
+
+**What I did not verify.** Three of the seventeen (Composio skills, Browser Harness, Loopy / Loop Library) did not resolve to a confirmable canonical repository during checking. They stay on the list because the jobs they do are real and I use those categories, but they carry an explicit unverified flag instead of a made-up number. A missing figure beats an invented one.
+
+*Last updated: August 27, 2026.*
+
+---
+
+## At a Glance
+
+| Metric | Value | Note |
+| :--- | :--- | :--- |
+| **Total skills covered** | 17 | All external modular skill packages |
+| **Combined verified stars** | 482,000+ | Across 14 verified repositories |
+| **Largest repository** | `mattpocock/skills` | 238,275 stars |
+| **Smallest repository** | `resemble-ai/detect-skill` | 65 stars |
+| **Install on day one** | 5 | Core input, process, and output stack |
+| **Cost of day-one five** | $0 | 100% Free and open source |
+| **Biggest hidden cost** | Context window | Not financial; token overhead |
+| **Unverified entries** | 3 | Flagged individually in the roster |
+| **Verification date** | August 27, 2026 | Pulled live from GitHub API |
+
+---
+
+## What an Agent Skill Actually Is
+
+An agent skill is a written procedure your agent loads on demand when a task matches it. Think of it as a recipe card rather than a plugin: it does not add a capability to the model, it tells the model how you want a job done, every time, without you re-explaining.
+
+The difference shows up in three places:
+
+1. **Without skills**, you re-explain the same workflow every session, output quality tracks whatever the model feels like that day, and multi-step work drifts because nothing anchors the process.
+2. **With skills**, the steps are written down once, the agent pulls them when the task matches, and the same procedure travels across projects and machines.
+3. Hermes ships with a good set already. The seventeen below are the external packs people bolt on when they want a setup that behaves like infrastructure rather than a chat window.
+
+> **The bottom line:** A skill converts a workflow you keep in your head into one the agent can execute without you.
+
+---
+
+## The Whole Roster, Ranked by Stars
+
+Ordered by verified GitHub stars, highest first.
+
+| # | Skill / Package | Repository | Stars | Day-One? | Primary Purpose | Install Command |
+| :- | :--- | :--- | :--- | :-: | :--- | :--- |
+| **01** | **Matt Pocock skills** | `mattpocock/skills` | 238,275 | No | TypeScript, app engineering & triage | `npx skills@latest add mattpocock/skills` |
+| **02** | **addyosmani/agent-skills** | `addyosmani/agent-skills` | 90,115 | **Yes** | Gated software engineering lifecycle | `npx skills add addyosmani/agent-skills` |
+| **03** | **Agent-Reach** | `Panniantong/Agent-Reach` | 75,763 | **Yes** | Read access to X, Reddit, YT, GitHub | `npx skills add Panniantong/Agent-Reach` |
+| **04** | **OpenMontage** | `calesthio/OpenMontage` | 51,586 | No | Agentic video editing & production | `npx skills add calesthio/OpenMontage` |
+| **05** | **codebase-memory-mcp** | `DeusData/codebase-memory-mcp` | 40,809 | No | Persistent repo knowledge graph | `npx skills add DeusData/codebase-memory-mcp` |
+| **06** | **Humanizer** | `blader/humanizer` | 38,179 | **Yes** | Removes AI writing tells & de-slops | `npx skills add blader/humanizer` |
+| **07** | **Cybersecurity Skills** | `mukul975/Anthropic-Cybersecurity-Skills` | 31,306 | No | 817 security & red-team playbooks | `npx skills add mukul975/Anthropic-Cybersecurity-Skills` |
+| **08** | **Defuddle** | `kepano/defuddle` | 9,173 | **Yes** | Strips HTML boilerplate into clean text | `npx skills add kepano/defuddle` |
+| **09** | **make-interfaces-feel-better** | `jakubkrehel/make-interfaces-feel-better` | 3,024 | No | UI polish, hit areas, typography & feel | `npx skills add jakubkrehel/make-interfaces-feel-better` |
+| **10** | **SkillClaw** | `AMAP-ML/SkillClaw` | 2,517 | No | Self-improving skills from real sessions | `npx skills add AMAP-ML/SkillClaw` |
+| **11** | **Minions** | `agent37-platform/minions` | 624 | **Yes** | Kanban mission control for parallel agents | `npx minionsai` |
+| **12** | **youtube-skills** | `ZeroPointRepo/youtube-skills` | 572 | No | YouTube transcripts & playlist scraper | `hermes skills install skills-sh/ZeroPointRepo/youtube-skills/skills/youtube-full` |
+| **13** | **oh-my-hermes** | `witt3rd/oh-my-hermes` | 291 | No | Multi-agent research & plan orchestration | `hermes skills install skills-sh/witt3rd/oh-my-hermes` |
+| **14** | **Resemble AI Detect** | `resemble-ai/detect-skill` | 65 | No | Deepfake & AI audio/video detection | `npx skills add resemble-ai/detect-skill` |
+| **15** | **Composio skills** | `composiohq/skills` | *Unverified* | No | Auth & tool router for 200+ SaaS apps | `npx skills add composiohq/skills` |
+| **16** | **Browser Harness** | *Category Recommendation* | *Unverified* | No | Logged-in browser control & helper memory | *Verify source before installing* |
+| **17** | **Loopy / Loop Library** | *Category Recommendation* | *Unverified* | No | Guarded loops with strict stop rules | *Define stop rules & cap loops* |
+
+> ⚠️ **On star counts:** Stars measure attention, not quality. A 65-star skill from Resemble AI is a production tool from a real company. A 200,000-star repo can still be wrong for your workflow. Read the star column as "how many people found this," never as "how good this is."
+
+---
+
+<SectionHeading title="Day-One Essentials" subtitle="Install These Five First" number="01" id="day-one-five" />
+
+The honest version of the advice. If you install all seventeen before you have run a single job, you will spend your first week debugging your setup rather than shipping.
+
+* **Agent-Reach:** So the agent can see the public internet at all.
+* **addyosmani/agent-skills:** So engineering work has gates instead of vibes.
+* **Humanizer:** So nothing you publish reads like a press release.
+* **Defuddle:** So web pages arrive as clean text instead of nav bars and cookie banners.
+* **Minions:** So you can see what five parallel agents are actually doing.
+
+Those five cover **research in**, **work through**, and **output out**. Everything else is a specialist you add the first time you genuinely need it.
+
+**Skip on day one:** The cybersecurity library (huge, and pointless until you have an authorized target), OpenMontage (only if you actually produce video), Resemble Detect (only if you handle user-generated media), and SkillClaw (it improves skills from real usage, so it needs usage to exist first).
+
+---
+
+<SectionHeading title="Internet & Research Skills" subtitle="Clean Input Pipeline" number="02" id="internet-research" />
+
+### 1. Agent-Reach — 75,763 stars
+`Panniantong/Agent-Reach`
+
+Agent-Reach is a CLI that gives your agent read access to the public internet across X, Reddit, YouTube, GitHub, Bilibili and XiaoHongShu, with no paid API keys. That last part is the reason it has 75,000 stars.
+
+The problem it fixes is specific and familiar. Your agent writes code fine, then you ask it to check reactions on X or summarize a YouTube tutorial and it falls over: blocked scrapers, paywalled APIs, login walls, unparseable HTML.
+
+After installing, the instructions become plain language: search X for what people are saying about a tool, pull a YouTube transcript and summarize it, or check whether anyone on Reddit has hit the same bug.
+
+* **Use it for:** Content research, competitor checks, social listening, debugging against community reports.
+
+### 2. Defuddle — 9,173 stars
+`kepano/defuddle`
+
+Defuddle takes a messy web page and returns the main content as clean HTML or Markdown. URL in, readable article out. It comes out of the Obsidian Web Clipper world, which is why it is unusually good at deciding what on a page is actually the content.
+
+Agents choke on raw HTML. Navigation, ad slots, cookie banners and six levels of nested divs all burn tokens and none of it is the article. Defuddle strips it before the agent ever sees it.
+
+* **Use it for:** Research pipelines, clipping into notes, feeding clean context into any agent. Pair it with Agent-Reach and your research input problem is basically solved.
+
+### 3. youtube-skills — 572 stars
+`ZeroPointRepo/youtube-skills`
+
+This package pulls YouTube transcripts, searches videos, browses channels and extracts playlists without fighting yt-dlp blocks on cloud IPs. "Summarize this YouTube video" is one of the single most common agent failures, and this is purpose-built for it.
+
+```bash
+hermes skills install skills-sh/ZeroPointRepo/youtube-skills/skills/youtube-full
+```
+
+* **Use it for:** Learning from tutorials, competitor video breakdowns, turning a conference talk into notes. However, the underlying transcript API runs on a credit model, so confirm the current free tier before you build anything that depends on it at volume.
+
+---
+
+<SectionHeading title="Engineering & Shipping Skills" subtitle="Code Discipline & Structure" number="03" id="engineering-shipping" />
+
+### 4. Matt Pocock skills — 238,275 stars
+`mattpocock/skills`
+
+The most-starred skill pack on this list by a wide margin, and the philosophy is the reason: small, composable, editable skills rather than one large framework.
+
+The pitch is that big process frameworks take control away from you. When your agent has a giant opaque process and something goes wrong, you cannot debug it. When it has no process at all, work drifts. Matt's set sits deliberately in the middle: small enough that you can open one and hack it.
+
+```bash
+npx skills@latest add mattpocock/skills
+```
+
+Then run the setup skill once per repository.
+
+* **Use it for:** TypeScript and app engineering, ticket triage, planning, day-to-day shipping.
+
+### 5. addyosmani/agent-skills — 90,115 stars
+`addyosmani/agent-skills`
+
+Production engineering skills built around a lifecycle: **define, plan, build, verify, review, ship**. What it fixes is vibe coding with no gates. These skills force habits senior engineers already have: write the spec, cut the work small, test it, review it.
+
+```bash
+npx skills add addyosmani/agent-skills
+```
+
+* **Use it for:** Real products rather than throwaway scripts, especially frontend work and anything spanning more than a day.
+
+### 6. make-interfaces-feel-better — 3,024 stars
+`jakubkrehel/make-interfaces-feel-better`
+
+A skill dedicated entirely to UI polish: animation, type, icons, hover states, hit areas, shadows, optical alignment. The details that separate an interface that works from one that feels intentional.
+
+AI-built UIs have a signature. They function, and they feel slightly off. Spacing is almost right. Hover states are dead. Buttons are a few pixels too small on mobile. Nothing is broken and everything feels cheap. Run it as a second pass after your agent ships a page, and ask it to review for feel rather than features.
+
+```bash
+npx skills add jakubkrehel/make-interfaces-feel-better
+```
+
+* **Use it for:** Landing pages, dashboards, internal tools, any frontend an agent just built.
+
+### 7. codebase-memory-mcp — 40,809 stars
+`DeusData/codebase-memory-mcp`
+
+An MCP server that indexes your codebase into a persistent knowledge graph, covering 158 languages with sub-millisecond queries and a claimed 99% reduction in tokens. It ships as a single static binary with no dependencies.
+
+The problem is context. Every time an agent needs to understand your repo, it reads files, and reading files is the most expensive thing it does. A knowledge graph answers structural questions (what calls this, where is this defined, what breaks if I change it) without loading the files at all.
+
+* **Use it for:** Any repository large enough that your agent keeps rediscovering the same architecture. The token savings compound daily.
+
+---
+
+<SectionHeading title="Orchestration & Control Skills" subtitle="Multi-Agent Systems" number="04" id="orchestration-control" />
+
+### 8. oh-my-hermes — 291 stars
+`witt3rd/oh-my-hermes`
+
+Multi-agent orchestration built natively for Hermes primitives, inspired by oh-my-claudecode. Small repo, disproportionate value if you work on things bigger than one session. What it fixes is one agent freestyling a large task: skipping requirements, producing a weak plan, then declaring victory with no proof.
+
+Suggested flow: `research → interview → ralplan → ralph`
+
+* **Use it for:** Unfamiliar domains, multi-day features, anything where plan quality matters more than speed.
+
+### 9. Minions — 624 stars
+`agent37-platform/minions`
+
+A Kanban-style mission control for Hermes: create tasks, watch them run, review output, and stop long jobs from vanishing into terminal scrollback.
+
+Hermes is strong. Managing five parallel sessions across five raw terminals is not. You lose track of what finished, what is stuck, and what is silently waiting on you. Minions provides an in-progress / review / done board, live streaming of tool calls, human sign-off before anything is marked done, per-task model settings, scheduled jobs, and a local-first SQLite database.
+
+```bash
+npx minionsai
+```
+Then open `http://localhost:6969`.
+
+* **Use it for:** The moment you run Hermes as a worker rather than a chat toy. This is the skill that makes parallel agents feel manageable, and it is why it made my day-one five despite the modest star count.
+
+### 10. Loopy / Loop Library — unverified
+Repeatable agent loops with checks and stop rules. The category matters more than the specific package: a loop without a stop rule is how you wake up to a burned budget and 400 commits of nonsense.
+
+I could not confirm a canonical repository for this one during fact-checking, so treat the entry as a category recommendation rather than a specific install. If you already run loops, the discipline to copy is simple: define the success check, define the stop condition, and cap the iterations before you start.
+
+### 11. Composio skills — unverified count
+Distributable skills that teach agents to work with Composio: Tool Router, auth, sessions, triggers and production patterns.
+
+Connecting an agent to Gmail, Slack, GitHub or a CRM is messy, and most of the mess is authentication and session handling rather than the API calls. Composio is the integration layer, and these skills teach the agent the safe patterns around it.
+
+```bash
+npx skills add composiohq/skills
+```
+
+* **Use it for:** Any setup that needs to take real actions in real apps rather than edit local files. Confirm against Composio's documentation before relying on it.
+
+### 12. Browser Harness — unverified
+The agent drives your real browser, in your real session, and learns reusable helpers as it goes. The learning part is the interesting bit: rather than re-deriving how to navigate a site every run, it accumulates helpers.
+
+Verify the source before installing anything that gets access to a logged-in browser session, because that is one of the highest-trust permissions you can grant an agent.
+
+---
+
+<SectionHeading title="Media & Specialist Skills" subtitle="Heavy Duty Tooling" number="05" id="media-specialist" />
+
+### 13. OpenMontage — 51,586 stars
+`calesthio/OpenMontage`
+
+An open-source agentic video production system: 12 production pipelines, 100+ tools, and over 700 agent skill and production-knowledge files. It is trying to turn a coding agent into something closer to a small video crew.
+
+Video is a pile of separate tools: script, b-roll, edit, captions, export. Most agents can discuss video competently and produce nothing. OpenMontage aims at the actual production workflow.
+
+* **Use it for:** Short-form content, explainers, product demos. However, this is the heaviest install on the list by a wide margin, so do not add it until you are genuinely producing video with an agent in the loop.
+
+### 14. Anthropic Cybersecurity Skills — 31,306 stars
+`mukul975/Anthropic-Cybersecurity-Skills`
+
+817 structured cybersecurity skills across 29 security domains, mapped to six frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF and MITRE F3. Apache 2.0.
+
+> ⚠️ **Read the name carefully:** This is a **community project, not an official Anthropic product**. The repository name is doing a lot of work it has not earned, and plenty of people install it assuming a vendor guarantee that does not exist.
+>
+> It also contains offensive and dual-use techniques intended for authorized testing, defense, research and education. Point it only at systems you own or have written permission to test.
+
+* **Use it for:** Security reviews, incident response drafts, threat modeling, authorized red-team prep, or learning security workflows with an agent as tutor.
+
+### 15. Resemble AI Detect — 65 stars
+`resemble-ai/detect-skill`
+
+A media safety skill that detects AI-generated or manipulated audio, images and video using Resemble's detection stack. The smallest repo on the list, and one of the few built by a company whose actual business is the thing the skill does.
+
+* **Use it for:** Content moderation pipelines, brand safety review, "is this clip real" checks. Treat detection scores as signals rather than absolute proof.
+
+---
+
+<SectionHeading title="Writing & Memory Skills" subtitle="Quality & Continuous Learning" number="06" id="writing-memory" />
+
+### 16. Humanizer — 38,179 stars
+`blader/humanizer`
+
+A skill that rewrites AI-sounding text so it reads like a person wrote it, built on Wikipedia's documented "signs of AI writing" patterns. At 38,179 stars it is one of the most popular skills in existence.
+
+The problem is instantly recognizable. Your agent's draft is factually useful and reads like a press release: *"pivotal," "landscape," "it's not X, it's Y,"* three-item lists in perfect parallel, and hype with no specifics behind it.
+
+**How it works in practice:**
+1. Rewrite once without preserving the AI structure.
+2. Scan what remains for AI tells.
+3. Rewrite again.
+4. Keep every fact, invent no names or numbers.
+
+> **The tip that actually matters:** Paste two or three paragraphs of your own writing and ask it to match your voice. Generic de-slopping produces text that sounds like nobody. Voice-matched de-slopping produces text that sounds like you.
+
+### 17. SkillClaw — 2,517 stars
+`AMAP-ML/SkillClaw`
+
+A system where skills evolve from real use. You work normally. In the background it digests sessions, improves the skills you actually used, removes ones that never fire, and compounds that experience across agents and devices.
+
+* **Use it for:** Long-running setups where the same categories of work recur. Install it after you have real usage history, since a system that learns from sessions needs sessions to learn from.
+
+---
+
+<SectionHeading title="The Context Budget Problem" subtitle="The Hidden Constraint" number="07" id="context-budget" />
+
+Here is the thing missing from every list of this kind: **skills consume context**.
+
+Not just when they run, but when they are available. Descriptions, triggers and loaded procedures all occupy the same window your actual task needs. Install seventeen packs, several of which contain hundreds of individual skills, and you have spent a meaningful share of your budget before typing a word.
+
+* The cybersecurity library alone is **817 skills**.
+* OpenMontage carries **over 700 skill and production-knowledge files**.
+
+### Three rules I follow:
+1. **Install per project, not globally:** A video project does not need security playbooks. A security review does not need UI polish.
+2. **Uninstall what never fires:** If a pack has not triggered in a month, it is paying rent with your context.
+3. **Prefer small composable packs over large frameworks:** This is exactly why Matt Pocock's set works so effectively.
+
+Every skill here is free. Context is the actual scarce resource, and it is the one nobody budgets.
+
+---
+
+## What is Missing from This List
+
+Being honest about the gaps is more useful than pretending seventeen is a complete map:
+
+* **The two largest skill repositories on GitHub are omitted:** `obra/superpowers` sits at 278,274 stars and `anthropics/skills`, the official Anthropic library, at 171,918. Their absence is defensible because this list focuses on external add-on packs rather than foundational base frameworks.
+* **Other notable packs outside the seventeen:** `Leonxlnx/taste-skill` (81,181 stars) to eliminate generic AI design slop; `mvanhorn/last30days-skill` (59,370 stars) for cross-platform recency research; `coreyhaines31/marketingskills` (45,797 stars) for CRO and copywriting; and `kepano/obsidian-skills` (47,352 stars) for Obsidian notes integration.
+
+---
+
+## Honest Limitations
+
+1. **Three entries are unverified:** Composio skills, Browser Harness and Loopy / Loop Library did not resolve to confirmable canonical repositories. Treat them as category patterns.
+2. **Star counts decay fast:** Figures are a snapshot dated August 27, 2026.
+3. **Skills do not fix a weak model:** A skill is a procedure, not a capability. It makes a capable agent consistent; it does not make a limited one smart.
+4. **More skills is not better:** Past a certain point you are trading context for options you never exercise.
+
+---
+
+## How to Choose in 60 Seconds
+
+1. **What does your agent fail at most often?** Install the skill for that, alone, and use it for a week. Failure-driven installation beats aspirational installation every time.
+2. **Is the work repetitive or exploratory?** Repetitive means loops, mission control, and memory (`Minions`, `codebase-memory-mcp`). Exploratory means research and planning (`Agent-Reach`, `oh-my-hermes`, `Defuddle`).
+3. **Does anything you produce get published?** If yes, `Humanizer` is not optional. It is the difference between human voice and machine slop.
+
+---
+
+<PremiumCTA 
+  title="Need Custom Multi-Agent Systems?" 
+  description="I architect autonomous agent pipelines, custom skills, and self-healing automation infrastructure for growing businesses."
+  buttonText="Book Architecture Call"
+  href="/contact"
+/>
+
+---
+
+## Glossary of Agent Architecture Terms
+
+* **Agent skill:** A written procedure an agent loads on demand when a task matches it. Adds consistency, not capability.
+* **Hermes Agent:** The Nous Research agent runtime these skills target, though most work across Claude Code, Codex, Cursor and other runtimes too.
+* **MCP (Model Context Protocol):** The standard connectivity layer for exposing tools and data to agents.
+* **Knowledge graph:** A structured map of entities and relationships used to understand codebases without consuming tokens by reading full files.
+* **Context window:** The working memory an agent has for a task. Loaded skills consume it whether they run or not.
+* **Skill pack:** A repository containing multiple related skills installed together.
+* **Harness:** The layer around the model handling tools, memory, permissions and recovery.
+* **Agent loop:** A repeating cycle where an agent acts, checks the result, and continues. Requires strict stop rules.
+* **AI tells:** Recognizable patterns marking text as machine-written (hype adjectives, uniform parallelism).
+* **Dual-use:** Techniques usable for defense or attack requiring strict authorization.
+
+---
+
+## Frequently Asked Questions
+
+<FAQSchema items={[
+  {
+    question: "What is an agent skill?",
+    answer: "An agent skill is a written procedure your agent loads on demand when a task matches it. It does not add new capability to the model, it records how you want a job done so you stop re-explaining the same workflow every session. Skills make output consistent across sessions, projects and machines."
+  },
+  {
+    question: "What are the best Hermes skills to install first?",
+    answer: "Five: Agent-Reach for internet access, addyosmani/agent-skills for engineering discipline, Humanizer for anything you publish, Defuddle for clean web content, and Minions for visibility into parallel jobs. Together they cover research input, work process and output quality, and all five are free."
+  },
+  {
+    question: "How do I install a Hermes skill?",
+    answer: "Find the skill's repository and confirm it is the canonical source. Run npx skills add owner/repo or hermes skills install skills-sh/owner/repo/skills/name for Hermes-native packs. Run per-repo setup, test on a small task, and remove if unused."
+  },
+  {
+    question: "Do agent skills use up my context window?",
+    answer: "Yes, and this is the most overlooked cost. Skills consume context when they are available, not only when they run. Large packs are the issue: the cybersecurity library contains 817 skills and OpenMontage over 700 files. Install per project rather than globally, and uninstall anything that has not fired in a month."
+  },
+  {
+    question: "Are agent skills free?",
+    answer: "Every skill in this list is free and open source, most under MIT or Apache 2.0. Some depend on external services with their own pricing, notably the YouTube transcript API behind youtube-skills and Resemble AI's detection stack. The real cost of skills is context window, not money."
+  },
+  {
+    question: "Is the Anthropic Cybersecurity Skills repo official?",
+    answer: "No. Despite the name, mukul975/Anthropic-Cybersecurity-Skills is a community project and not an official Anthropic product. It contains 817 skills across 29 domains mapped to six frameworks including MITRE ATT&CK and NIST CSF 2.0, and it includes offensive dual-use techniques intended only for authorized testing, defense, research and education."
+  },
+  {
+    question: "Which Hermes skill has the most GitHub stars?",
+    answer: "mattpocock/skills at 238,275 stars as of August 27, 2026, followed by addyosmani/agent-skills at 90,115 and Panniantong/Agent-Reach at 75,763. For wider context, the largest skills repository on GitHub is obra/superpowers at 278,274 stars, which is not part of this seventeen because it is a foundational framework rather than an add-on pack."
+  },
+  {
+    question: "Can an AI agent really edit video?",
+    answer: "With OpenMontage, closer than you would expect. It ships 12 production pipelines, over 100 tools and more than 700 skill and production-knowledge files, covering script through b-roll, edit, captions and export. At 51,586 stars it has real adoption. However, it is the heaviest install on this list, so only add it if you genuinely produce video."
+  },
+  {
+    question: "How do I stop my AI writing from sounding like AI?",
+    answer: "Use the Humanizer skill, which is built on Wikipedia's documented signs of AI writing and has 38,179 stars. It rewrites, scans for remaining tells, then rewrites again while preserving facts. The step most people miss: paste two or three paragraphs of your own writing and ask it to match your voice, because generic de-slopping produces text that sounds like nobody."
+  },
+  {
+    question: "What is the difference between an agent skill and an MCP server?",
+    answer: "A skill is a written procedure telling the agent how to do a job, while an MCP server is a running service exposing tools and data the agent can call. Skills change behavior, MCP servers add reach. Some entries here are both: codebase-memory-mcp is an MCP server that gives an agent structural access to a repository."
+  },
+  {
+    question: "Should I install all 17 skills at once?",
+    answer: "No. Install five on day one and add the rest by need. Installing everything at once burns context budget, and more importantly you will not know which skill caused which behavior when something goes wrong. Failure-driven installation, adding the skill for whatever your agent keeps getting wrong, beats installing aspirationally."
+  },
+  {
+    question: "Do these skills only work with Hermes?",
+    answer: "Most work across runtimes. The repository topics for these packs commonly list Claude Code, Codex, Cursor, Gemini CLI, OpenClaw and Windsurf alongside Hermes Agent. The exceptions built specifically for Hermes primitives are oh-my-hermes and Minions, which is mission control for Hermes agents specifically."
+  },
+  {
+    question: "Can agent skills improve themselves over time?",
+    answer: "Yes, that is SkillClaw's premise. It digests your real sessions in the background, improves the skills you actually used, removes ones that never fire, and compounds that experience across agents and devices. Install it after you have accumulated real usage, since a system that learns from sessions has nothing to work with on a fresh machine."
+  }
+]} />
+
+<HowToSchema 
+  name="How to install a Hermes agent skill"
+  description="Install an external skill pack into a Hermes Agent setup and confirm it fires."
+  image="https://aifloxium.online/blog/covers/best-hermes-skills.svg"
+  steps={[
+    { name: "Find the repository", text: "Locate the skill's repository and confirm it is the canonical source." },
+    { name: "Run the install command", text: "Run npx skills add owner/repo for most packs." },
+    { name: "Use the Hermes path for native packs", text: "Run hermes skills install skills-sh/owner/repo/skills/name for Hermes-native skills." },
+    { name: "Run setup", text: "Run any per-repository setup step the skill documents." },
+    { name: "Trigger it once", text: "Run a small task that should match the skill to confirm it fires." },
+    { name: "Prune later", text: "Remove the skill if it has not triggered after a few weeks of real work." }
+  ]}
+/>
+
+---
+
+*Written by Muhammad Shadab Shams | AI Automation Consultant | [aifloxium.online](https://aifloxium.online) | X [@ShadabLoveAi](https://x.com/ShadabLoveAi)*

@@ -14,7 +14,7 @@ export function Accordion({ title, subtitle, children, defaultOpen = false }: Ac
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="my-6 rounded-3xl border border-zinc-200 bg-zinc-50/50 overflow-hidden transition-all duration-300 shadow-sm hover:border-zinc-300">
+    <div data-faq-item="true" className="my-6 rounded-3xl border border-zinc-200 bg-zinc-50/50 overflow-hidden transition-all duration-300 shadow-sm hover:border-zinc-300">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between px-8 py-6 text-left focus:outline-none"

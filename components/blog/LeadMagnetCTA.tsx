@@ -36,13 +36,14 @@ export const LeadMagnetCTA = ({
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
   };
 
-  const isExternal = downloadUrl.startsWith("http") && 
-    !downloadUrl.endsWith(".zip") && 
-    !downloadUrl.endsWith(".json") && 
-    !downloadUrl.endsWith(".pdf");
+  const safeUrl = downloadUrl || "#generate-checklist";
+  const isExternal = safeUrl.startsWith("http") && 
+    !safeUrl.endsWith(".zip") && 
+    !safeUrl.endsWith(".json") && 
+    !safeUrl.endsWith(".pdf");
   const defaultSuccessText = isExternal ? `Access ${fileName}` : `Download ${fileName}`;
   const buttonLabel = successButtonText || defaultSuccessText;
-  const isGithub = downloadUrl.includes("github.com");
+  const isGithub = safeUrl.includes("github.com");
   const descriptionVerb = isExternal ? "link for" : "download for";
   const subText = isGithub 
     ? "This will redirect you directly to the official GitHub repository." 
@@ -175,15 +176,28 @@ export const LeadMagnetCTA = ({
                 </p>
               </div>
 
-              <a
-                href={downloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-emerald-700 transition-all shadow-md shadow-emerald-600/20 active:scale-95"
+              <button
+                onClick={() => {
+                  if (safeUrl.startsWith("http")) {
+                    window.open(safeUrl, "_blank");
+                  } else {
+                    const checklistText = `# Autonomous Agent Security & Credential Delegation Audit Checklist (2026)\nAuthor: Muhammad Shadab Shams | AI Automation Consultant\n\n## 1. Credential & Access Scoping\n- [ ] Create dedicated service accounts for AI agents (never share personal admin credentials).\n- [ ] Implement Least Privilege Access (LPA) scoped strictly to target databases or API endpoints.\n- [ ] Enable session token expiration limits (max 24h) for persistent agent VMs.\n\n## 2. Execution & Safeguards\n- [ ] Enforce human-in-the-loop approval gates for destructive write/delete actions.\n- [ ] Audit prompt injection surfaces on external web scraping workflows.\n- [ ] Isolate persistent agent cloud computers inside dedicated VPC sandboxes.\n\n## 3. Cost & Budget Controls\n- [ ] Set hard monthly spending caps on agent model API keys.\n- [ ] Monitor sub-agent spawning loops to prevent token exhaustion.\n- [ ] Audit 12-month seat commitments against per-task serverless execution alternatives.`;
+                    const blob = new Blob([checklistText], { type: "text/markdown" });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = "Autonomous_Agent_Security_Checklist_2026.md";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                  }
+                }}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#7B2CBF] text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[#6C22AD] transition-all shadow-md shadow-[#7B2CBF]/20 active:scale-95 cursor-pointer"
               >
-                {isExternal ? <ExternalLink className="w-4 h-4" /> : <Download className="w-4 h-4" />}
-                <span>{buttonLabel}</span>
-              </a>
+                <Download className="w-4 h-4" />
+                <span>Download Security Checklist (.md)</span>
+              </button>
 
               <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-bold">
                 {subText}

@@ -180,11 +180,13 @@ export default async function BlogPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[var(--background)] border-t border-black/5">
-        <Contact2 
-          title="Custom Workflows Built for Scale."
-          description="Ready to automate your operations with state-of-the-art AI infrastructure? Let's connect."
-        />
+      <section className="bg-[var(--background)] border-t border-black/5 py-12 md:py-20 px-4 sm:px-6">
+        <div className="container mx-auto max-w-5xl">
+          <Contact2 
+            title="Custom Workflows Built for Scale."
+            description="Ready to automate your operations with state-of-the-art AI infrastructure? Let's connect."
+          />
+        </div>
       </section>
 
       <Footer />

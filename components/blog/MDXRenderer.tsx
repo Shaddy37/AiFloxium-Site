@@ -17,6 +17,10 @@ import { AuthorSection } from "./AuthorSection";
 import { FAQSection } from "./FAQSection";
 import { FAQSchema } from "../mdx/FAQSchema";
 import { HowToSchema } from "../mdx/HowToSchema";
+import { AgentCostCalculator } from "./AgentCostCalculator";
+import { AgentBenchmarkVisualizer } from "./AgentBenchmarkVisualizer";
+import { BlogQuickActions } from "./BlogQuickActions";
+import { FAQFilter } from "./FAQFilter";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ComponentPropsWithoutRef } from "react";
@@ -49,24 +53,24 @@ function slugify(children: React.ReactNode): string {
 const components = {
   h1: (props: ComponentPropsWithoutRef<"h1">) => (
     <h1
-      className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9] uppercase text-black"
+      className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9] uppercase text-[#7B2CBF]"
       id={props.id ?? slugify(props.children)}
       {...props}
     />
   ),
   h2: (props: ComponentPropsWithoutRef<"h2">) => (
     <h2
-      className="text-3xl md:text-4xl font-bold tracking-tight mb-6 mt-16 flex items-center gap-4 text-black"
+      className="text-3xl md:text-4xl font-bold tracking-tight mb-6 mt-16 flex items-center gap-4 text-[#7B2CBF]"
       id={props.id ?? slugify(props.children)}
       {...props}
     >
-      <span className="w-8 h-[1px] bg-brand-plum/30" />
+      <span className="w-8 h-[1px] bg-[#7B2CBF]/30" />
       {props.children}
     </h2>
   ),
   h3: (props: ComponentPropsWithoutRef<"h3">) => (
     <h3
-      className="text-2xl font-bold tracking-tight mb-4 mt-8 text-black"
+      className="text-2xl font-bold tracking-tight mb-4 mt-8 text-[#7B2CBF]"
       id={props.id ?? slugify(props.children)}
       {...props}
     />
@@ -79,13 +83,13 @@ const components = {
   ),
   ul: (props: ComponentPropsWithoutRef<"ul">) => (
     <ul 
-      className="mb-8 list-disc space-y-3 pl-6 text-base md:text-lg text-black marker:text-brand-orange" 
+      className="mb-8 list-disc space-y-3 pl-6 text-base md:text-lg text-black marker:text-[#7B2CBF]" 
       {...props} 
     />
   ),
   ol: (props: ComponentPropsWithoutRef<"ol">) => (
     <ol 
-      className="mb-8 list-decimal space-y-3 pl-6 text-base md:text-lg text-black marker:font-bold marker:text-brand-orange" 
+      className="mb-8 list-decimal space-y-3 pl-6 text-base md:text-lg text-black marker:font-bold marker:text-[#7B2CBF]" 
       {...props} 
     />
   ),
@@ -94,13 +98,13 @@ const components = {
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote 
-      className="border-l-4 border-brand-orange pl-8 my-12 italic text-xl md:text-2xl text-black leading-relaxed font-normal bg-brand-orange/[0.02] py-6 pr-6 rounded-r-3xl" 
+      className="border-l-4 border-[#7B2CBF] pl-8 my-12 italic text-xl md:text-2xl text-black leading-relaxed font-normal bg-[#7B2CBF]/[0.03] py-6 pr-6 rounded-r-3xl" 
       {...props} 
     />
   ),
   aside: (props: ComponentPropsWithoutRef<"aside">) => (
     <aside 
-      className="my-12 rounded-[2rem] border-l-4 border-brand-orange border-y border-r border-zinc-200 bg-zinc-50/50 px-6 py-8 text-black shadow-sm md:px-8 font-normal leading-relaxed" 
+      className="my-12 rounded-[2rem] border-l-4 border-[#7B2CBF] border-y border-r border-zinc-200 bg-zinc-50/50 px-6 py-8 text-black shadow-sm md:px-8 font-normal leading-relaxed" 
       {...props} 
     />
   ),
@@ -109,7 +113,7 @@ const components = {
     if (/^https?:\/\//.test(props.href)) {
       return (
         <a
-          className="font-bold text-brand-orange hover:text-brand-orange/80 underline underline-offset-4 transition-colors"
+          className="font-bold text-[#7B2CBF] hover:text-[#7B2CBF]/80 underline underline-offset-4 transition-colors"
           href={props.href}
           rel="noreferrer"
           target="_blank"
@@ -119,7 +123,7 @@ const components = {
       );
     }
     return (
-      <Link className="underline underline-offset-4 text-brand-orange hover:text-brand-orange/80 transition-colors font-bold" href={props.href}>
+      <Link className="underline underline-offset-4 text-[#7B2CBF] hover:text-[#7B2CBF]/80 transition-colors font-bold" href={props.href}>
         {props.children}
       </Link>
     );
@@ -129,7 +133,7 @@ const components = {
       return <code {...props} />;
     }
     return (
-      <code className="bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono text-black" {...props} />
+      <code className="bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono text-[#7B2CBF]" {...props} />
     );
   },
   pre: (props: ComponentPropsWithoutRef<"pre">) => {
@@ -149,9 +153,9 @@ const components = {
   },
   hr: () => <hr className="my-14 border-zinc-200" />,
   TLDR: ({ children }: { children: React.ReactNode }) => (
-    <div className="my-12 p-8 rounded-3xl bg-brand-orange/[0.02] border border-brand-orange/15 relative overflow-hidden shadow-sm">
-      <div className="absolute top-0 left-0 w-2.5 h-full bg-brand-orange" />
-      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-orange/80 mb-4 font-black">Executive Summary // TL;DR</div>
+    <div className="my-12 p-8 rounded-3xl bg-[#7B2CBF]/[0.03] border border-[#7B2CBF]/20 relative overflow-hidden shadow-sm">
+      <div className="absolute top-0 left-0 w-2.5 h-full bg-[#7B2CBF]" />
+      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#7B2CBF] mb-4 font-black">Executive Summary // TL;DR</div>
       <div className="text-xl font-bold text-black leading-relaxed">
         {children}
       </div>
@@ -160,23 +164,23 @@ const components = {
   SectionHeading: ({ title, subtitle, number, id }: { title: string, subtitle?: string, number?: string, id?: string }) => (
     <div className="mt-16 md:mt-20 mb-8 group">
       <div className="flex items-center gap-4 mb-4">
-        {number && <span className="text-sm font-mono text-brand-orange/60 tracking-tighter font-black">{number}</span>}
-        <span className="h-[1px] flex-1 bg-brand-orange/15 group-hover:bg-brand-orange/35 transition-colors" />
+        {number && <span className="text-sm font-mono text-[#7B2CBF] tracking-tighter font-black">{number}</span>}
+        <span className="h-[1px] flex-1 bg-[#7B2CBF]/20 group-hover:bg-[#7B2CBF]/50 transition-colors" />
       </div>
-      <h2 id={id} className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-brand-plum">
+      <h2 id={id} className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-2 text-[#7B2CBF]">
         {title}
       </h2>
-      {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-black/60 font-bold">{subtitle}</p>}
+      {subtitle && <p className="text-sm font-mono uppercase tracking-[0.2em] text-[#7B2CBF]/70 font-bold">{subtitle}</p>}
     </div>
   ),
   TableOfContents: ({ items }: { items: { title: string, id: string }[] }) => (
-    <nav className="my-12 p-8 rounded-3xl border border-brand-orange/15 bg-brand-orange/[0.02]">
-      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-orange mb-8 underline decoration-brand-orange/20 font-black">Navigation Architecture</div>
+    <nav className="my-12 p-8 rounded-3xl border border-[#7B2CBF]/20 bg-[#7B2CBF]/[0.03]">
+      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#7B2CBF] mb-8 underline decoration-[#7B2CBF]/20 font-black">Navigation Architecture</div>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
         {items.map((item, i) => (
           <li key={i} className="group flex items-center gap-4 border-b border-zinc-100 pb-2">
-            <span className="text-[10px] font-mono text-brand-orange/40 group-hover:text-brand-orange transition-colors font-black">0{i+1}</span>
-            <a href={`#${item.id}`} className="text-sm font-bold uppercase tracking-tight text-black hover:text-brand-orange transition-colors">
+            <span className="text-[10px] font-mono text-[#7B2CBF]/50 group-hover:text-[#7B2CBF] transition-colors font-black">0{i+1}</span>
+            <a href={`#${item.id}`} className="text-sm font-bold uppercase tracking-tight text-black hover:text-[#7B2CBF] transition-colors">
               {item.title}
             </a>
           </li>
@@ -185,7 +189,7 @@ const components = {
     </nav>
   ),
   img: (props: ComponentPropsWithoutRef<"img">) => (
-    <div className="my-10 relative rounded-[2.5rem] overflow-hidden border border-zinc-100 shadow-lg">
+    <span className="block my-10 relative rounded-[2.5rem] overflow-hidden border border-zinc-100 shadow-lg">
       <Image
         src={String(props.src) || '/og-image.jpg'}
         alt={props.alt || ''}
@@ -194,7 +198,7 @@ const components = {
         className="h-auto w-full object-cover hover:scale-105 transition-transform duration-700"
         sizes="(max-width: 768px) 100vw, 900px"
       />
-    </div>
+    </span>
   ),
   table: (props: ComponentPropsWithoutRef<"table">) => (
     <div className="my-12 relative group">
@@ -236,6 +240,10 @@ const components = {
   FAQSection,
   FAQSchema,
   HowToSchema,
+  AgentCostCalculator,
+  AgentBenchmarkVisualizer,
+  BlogQuickActions,
+  FAQFilter,
 };
 
 export function MDXRenderer({ code }: MDXRendererProps) {

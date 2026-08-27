@@ -12,6 +12,7 @@ import Navbar from '@/components/layouts/Navbar';
 import Footer from '@/components/sections/Footer';
 
 import { Contact2 } from '@/components/ui/contact-2';
+import { ReadingProgressBar } from '@/components/blog/ReadingProgressBar';
 
 interface RelatedPost {
   slug: string;
@@ -44,6 +45,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug, relatedPosts }
         />
       ))}
 
+      <ReadingProgressBar />
       <Navbar />
 
       <section className="relative px-6 pb-20 pt-32 md:pt-40 bg-[var(--background)]">
@@ -71,7 +73,7 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug, relatedPosts }
             </Link>
           </div>
 
-          <h1 className="mb-8 text-4xl sm:text-5xl md:text-6xl font-instrument text-black tracking-tight leading-[1.05]">
+          <h1 className="mb-8 text-4xl sm:text-5xl md:text-6xl font-instrument text-[#7B2CBF] tracking-tight leading-[1.05]">
             {title}
           </h1>
 
@@ -146,16 +148,19 @@ export function BlogPostLayout({ code, frontmatter, jsonLd, slug, relatedPosts }
           <div className="lg:col-span-9 max-w-3xl prose prose-invert prose-purple prose-headings:font-instrument prose-headings:font-semibold prose-headings:text-black prose-a:text-[#7B2CBF] prose-a:no-underline hover:prose-a:underline prose-strong:text-black prose-code:text-[#7B2CBF] prose-pre:bg-[var(--muted)] prose-pre:border prose-pre:border-black/5">
             {currentSlug !== 'google-antigravity-2-0-review-2026' && <MobileTopTOC />}
             <MDXRenderer code={code} />
-
-            <div className="mt-16 not-prose border-t border-black/5 pt-12">
-              <Contact2
-                title="Scale Your AI Infrastructure."
-                description="Ready to transition your workflows to multi-agent automation? Contact me today for a custom implementation audit."
-              />
-            </div>
           </div>
         </div>
       </article>
+
+      {/* Full-width Contact Section */}
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-[var(--background)] border-t border-black/5">
+        <div className="container mx-auto max-w-5xl">
+          <Contact2
+            title="Scale Your AI Infrastructure."
+            description="Ready to transition your workflows to multi-agent automation? Contact me today for a custom implementation audit."
+          />
+        </div>
+      </section>
 
       {relatedPosts && relatedPosts.length > 0 && (
         <section className="py-24 px-6 bg-[var(--background)] border-t border-black/5">
